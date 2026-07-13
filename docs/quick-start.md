@@ -23,10 +23,10 @@ https://github.com/amitray007/claude-code-schema/releases/download/v2.1.207/sett
 Add the release URL as `$schema` to receive editor completion and validation. See
 [`examples/settings.json`](../examples/settings.json).
 
-The schema's `env` property references the sibling `environment.schema.json`, so
-recognized environment-variable names are also available while editing
-`settings.json`. Networked schema resolvers fetch that sibling release asset
-automatically; offline validators should load both schema files.
+The schema's `env` property uses a bundled copy of `environment.schema.json`, so
+recognized environment-variable names are available while editing `settings.json`.
+The downloaded settings schema compiles by itself in offline validators; load the
+separate environment schema only when validating an environment map directly.
 
 `settings.catalog.json` is supporting evidence. Most users do not need it. Use it
 only when auditing source provenance, scope classification, or runtime
@@ -68,8 +68,8 @@ must not be treated as supported public variables.
 - `manifest.json` and `validation-report.json` are integrity and CI records.
 - `review.catalog.json` is maintainer-only evidence and never accepted
   configuration.
-- `claude-code.schema.json` is a synthetic multi-surface testing envelope. Claude
-  Code does not consume it.
+- `claude-code.schema.json` is a self-contained synthetic multi-surface testing
+  envelope. Claude Code does not consume it.
 
 The generated `catalog.json` exposes the same choice under `startHere` and groups
 the remaining files by audience under `audiences`.

@@ -85,6 +85,7 @@ export function normalizeArtifacts(
   artifacts[combinedSchemaFile] = combinedSchema(
     version,
     baseUrl.replace(/\/$/, ""),
+    artifacts,
   );
   artifacts["catalog.json"] = releaseCatalog(version, targetPrefix);
 

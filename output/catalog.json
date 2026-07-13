@@ -23,7 +23,7 @@
         }
       },
       "supportingEvidence": "settings.catalog.json",
-      "environmentVariables": "The settings schema's env property references environment.schema.json."
+      "environmentVariables": "The settings schema bundles the environment schema for standalone use; environment.schema.json remains available separately."
     },
     "environmentVariables": {
       "file": "environment.schema.json",

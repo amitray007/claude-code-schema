@@ -109,8 +109,8 @@ All required checks pass before atomic publication:
    sources have recorded digests.
 2. **Parser structure:** expected sections/tables exist once; routes still appear in
    `llms.txt`; fields and counts are plausible.
-3. **Schema correctness:** draft-07 meta-schema compilation and local `$ref`
-   resolution succeed.
+3. **Schema correctness:** every draft-07 schema compiles in isolation and all
+   internal `$ref` values resolve without sibling registration.
 4. **Positive and negative fixtures:** official/tagged examples and curated
    invalid/mutation cases behave as expected.
 5. **Catalog invariants:** unique identities within scope, aliases normalized,

@@ -57,8 +57,9 @@ outputs without mixing documented facts with binary-only candidates.
 - `environment`; and
 - `keybindings`.
 
-It is a tooling envelope, not a file read by Claude Code. Relative `$ref` values
-point to the individual schemas in the same release directory. See
+It is a tooling envelope, not a file read by Claude Code. Internal `$ref` values
+point to bundled definitions of the five individual schemas, so the envelope
+compiles offline as a single downloaded file. See
 [`examples/combined.json`](../examples/combined.json).
 
 ## Atomic output
