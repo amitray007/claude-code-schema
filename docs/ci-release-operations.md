@@ -49,6 +49,10 @@ An intervening release that was already older than npm `latest` when discovered 
 labeled `superseded` and closed as not planned. It never enters the analysis or
 publication states.
 
+If a run stops after issue creation but before assigning a lifecycle label, the next
+run resumes that issue. Issues already running, failed, awaiting review, approved,
+published, or superseded are not dispatched again.
+
 Failed analysis is labeled `analysis-failed`, linked to its workflow log, and leaves
 the issue open. A successful publication adds the immutable release link, marks the
 issue `published`, and closes it only after the release exists.

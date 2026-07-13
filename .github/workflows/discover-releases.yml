@@ -64,18 +64,25 @@ jobs:
             marker="claude-code-schema-release:${version}"
             existing=$(gh issue list --repo "$GITHUB_REPOSITORY" --state all --label claude-release --limit 1000 --json number,body --jq ".[] | select(.body != null and (.body | contains(\"$marker\"))) | .number" | head -n 1)
             if [[ -n "$existing" ]]; then
-              continue
+              issue_number=$existing
+              lifecycle_labels=$(gh issue view "$issue_number" --repo "$GITHUB_REPOSITORY" --json labels --jq '.labels[].name')
+              if grep -Eq '^(analysis-running|analysis-failed|needs-review|approved-for-pr|published|superseded)$' <<< "$lifecycle_labels"; then
+                continue
+              fi
+            else
+              body=$(mktemp)
+              printf '<!-- %s -->\n# Claude Code %s schema review\n\n- [x] Release detected\n- [ ] Candidate generated\n- [ ] Automated validation passed\n- [ ] Human review completed\n- [ ] Candidate PR merged\n- [ ] Release published\n\nDiscovery workflow: %s/%s/actions/runs/%s\n' "$marker" "$version" "$GITHUB_SERVER_URL" "$GITHUB_REPOSITORY" "$GITHUB_RUN_ID" > "$body"
+              url=$(gh issue create --repo "$GITHUB_REPOSITORY" --title "Claude Code ${version} — schema release review" --body-file "$body" --label claude-release)
+              issue_number=${url##*/}
             fi
-            body=$(mktemp)
-            printf '<!-- %s -->\n# Claude Code %s schema review\n\n- [x] Release detected\n- [ ] Candidate generated\n- [ ] Automated validation passed\n- [ ] Human review completed\n- [ ] Candidate PR merged\n- [ ] Release published\n\nDiscovery workflow: %s/%s/actions/runs/%s\n' "$marker" "$version" "$GITHUB_SERVER_URL" "$GITHUB_REPOSITORY" "$GITHUB_RUN_ID" > "$body"
-            url=$(gh issue create --repo "$GITHUB_REPOSITORY" --title "Claude Code ${version} — schema release review" --body-file "$body" --label claude-release)
-            issue_number=${url##*/}
             if [[ "$version" != "$analysis_version" ]]; then
-              gh issue edit "$issue_number" --repo "$GITHUB_REPOSITORY" --add-label superseded
               gh issue comment "$issue_number" --repo "$GITHUB_REPOSITORY" --body "A newer npm latest release was already available when this version was discovered. Mutable documentation cannot be attributed accurately to this historical version, so deterministic analysis was not started. The exact release remains recorded by this issue."
-              gh issue close "$issue_number" --repo "$GITHUB_REPOSITORY" --reason "not planned"
+              if [[ "$(gh issue view "$issue_number" --repo "$GITHUB_REPOSITORY" --json state --jq .state)" != "CLOSED" ]]; then
+                gh issue close "$issue_number" --repo "$GITHUB_REPOSITORY" --reason "not planned"
+              fi
+              gh issue edit "$issue_number" --repo "$GITHUB_REPOSITORY" --add-label superseded
             elif [[ "$ANALYZE" == "true" ]]; then
-              gh issue edit "$issue_number" --repo "$GITHUB_REPOSITORY" --add-label analysis-running
               gh workflow run analyze-version.yml --repo "$GITHUB_REPOSITORY" --ref main -f version="$version" -f issue_number="$issue_number" -f platform_package="@anthropic-ai/claude-code-linux-x64"
+              gh issue edit "$issue_number" --repo "$GITHUB_REPOSITORY" --add-label analysis-running
             fi
           done < <(jq -r '.publishedVersions[]' .work/discovery.json)

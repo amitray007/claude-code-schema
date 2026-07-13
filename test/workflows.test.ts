@@ -38,6 +38,8 @@ test("release discovery analyzes only npm latest and records superseded versions
   assert.match(workflow, /"\$version" != "\$analysis_version"/);
   assert.match(workflow, /--add-label superseded/);
   assert.match(workflow, /--reason "not planned"/);
+  assert.match(workflow, /lifecycle_labels=\$\(gh issue view/);
+  assert.match(workflow, /analysis-running\|analysis-failed\|needs-review/);
 });
 
 test("release PR preparation uses a collision-free workflow-attempt branch", async () => {
