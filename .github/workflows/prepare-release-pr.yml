@@ -63,7 +63,7 @@ jobs:
           ISSUE_NUMBER: ${{ inputs.issue_number }}
           ANALYSIS_RUN_ID: ${{ inputs.analysis_run_id }}
         run: |
-          branch="automation/claude-code-${VERSION}"
+          branch="automation/claude-code-${VERSION}-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}"
           git config user.name github-actions[bot]
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
           git switch -c "$branch"

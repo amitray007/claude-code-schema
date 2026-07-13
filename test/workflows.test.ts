@@ -36,3 +36,14 @@ test("release discovery analyzes only npm latest and records superseded versions
   assert.match(workflow, /--add-label superseded/);
   assert.match(workflow, /--reason "not planned"/);
 });
+
+test("release PR preparation uses a collision-free workflow-attempt branch", async () => {
+  const workflow = await readFile(
+    resolve(repositoryRoot, ".github/workflows/prepare-release-pr.yml"),
+    "utf8",
+  );
+  assert.match(
+    workflow,
+    /automation\/claude-code-\$\{VERSION\}-\$\{GITHUB_RUN_ID\}-\$\{GITHUB_RUN_ATTEMPT\}/,
+  );
+});
