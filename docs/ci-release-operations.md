@@ -64,8 +64,12 @@ Before enabling publication:
    and conversation resolution.
 2. Set Actions workflow permissions to read by default, then allow GitHub Actions
    to create pull requests for `prepare-release-pr.yml`.
-3. Create a `production` environment with a required reviewer, prevent
-   self-review, and disable administrator bypass.
+3. Create a `production` environment with a required reviewer. In a
+   single-maintainer repository, allow self-review so that maintainer can approve a
+   deployment they initiated; with multiple maintainers, prevent self-review.
+   Disable administrator bypass in the GitHub UI when the repository policy
+   requires an unbypassable gate (the environment REST endpoint does not expose
+   that toggle).
 4. Keep Issues enabled. Discovery creates and updates the required labels.
 5. Keep `SCHEMA_BASE_URL` unset to use this repository's immutable GitHub Release
    download URL. Set it only when deliberately migrating every schema `$id`.
