@@ -53,10 +53,21 @@ function linkSettingsEnvironment(artifacts: Record<string, JsonObject>): void {
   const current = properties.env;
   if (!current || typeof current !== "object" || Array.isArray(current)) return;
   const linked = cloneJson(current);
+  const embeddedEnvironment = cloneJson(environment);
+  delete embeddedEnvironment.$schema;
+  delete embeddedEnvironment.$id;
   delete linked.type;
   delete linked.properties;
   delete linked.additionalProperties;
-  linked.allOf = [{ $ref: "environment.schema.json" }];
+  const definitions =
+    settings.definitions &&
+    typeof settings.definitions === "object" &&
+    !Array.isArray(settings.definitions)
+      ? settings.definitions
+      : {};
+  definitions.environment = embeddedEnvironment;
+  settings.definitions = definitions;
+  linked.allOf = [{ $ref: "#/definitions/environment" }];
   linked["x-shared-schema"] = "environment.schema.json";
   properties.env = linked;
 }
@@ -228,7 +239,7 @@ export function releaseCatalog(
         },
         supportingEvidence: "settings.catalog.json",
         environmentVariables:
-          "The settings schema's env property references environment.schema.json.",
+          "The settings schema bundles the environment schema for standalone use; environment.schema.json remains available separately.",
       },
       environmentVariables: {
         file: "environment.schema.json",

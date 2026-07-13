@@ -173,13 +173,21 @@ test("offline production generation is complete, formatted, validated, and deter
   const settingsProperties = settingsSchema.properties as JsonObject;
   const settingsEnvironment = settingsProperties.env as JsonObject;
   assert.deepEqual(settingsEnvironment.allOf, [
-    { $ref: "environment.schema.json" },
+    { $ref: "#/definitions/environment" },
   ]);
   assert.equal(
     settingsEnvironment["x-shared-schema"],
     "environment.schema.json",
   );
   assert.equal(settingsEnvironment.properties, undefined);
+  const standaloneSettings = new Ajv({
+    strict: false,
+    validateFormats: false,
+  }).compile(settingsSchema);
+  const standaloneCombined = new Ajv({
+    strict: false,
+    validateFormats: false,
+  }).compile(combined);
   const validateSettings = ajv.getSchema(String(settingsSchema.$id));
   const validateEnvironment = ajv.getSchema(String(environmentSchema.$id));
   assert.ok(validateSettings, "settings schema must be registered by $id");
@@ -188,7 +196,7 @@ test("offline production generation is complete, formatted, validated, and deter
     "environment schema must be registered by $id",
   );
   assert.equal(
-    validateSettings(
+    standaloneSettings(
       await readJson(resolve(repositoryRoot, "examples/settings.json")),
     ),
     true,
@@ -202,9 +210,14 @@ test("offline production generation is complete, formatted, validated, and deter
     JSON.stringify(validateEnvironment.errors, null, 2),
   );
   assert.equal(
-    validateSettings({ env: { ANTHROPIC_API_KEY: 42 } }),
+    standaloneSettings({ env: { ANTHROPIC_API_KEY: 42 } }),
     false,
     "settings.env must retain the string-valued environment contract",
+  );
+  assert.equal(
+    standaloneCombined(example),
+    true,
+    JSON.stringify(standaloneCombined.errors, null, 2),
   );
 
   for (const file of await readdir(first)) {
@@ -221,6 +234,10 @@ test("offline production generation is complete, formatted, validated, and deter
   const diff = await compareDirectories(first, second);
   assert.deepEqual((diff.settingsPaths as JsonObject).added, []);
   assert.deepEqual((diff.settingsPaths as JsonObject).removed, []);
+  assert.ok(
+    Number((diff.settingsPaths as JsonObject).retainedCount) > 300,
+    "semantic diff must follow the bundled environment definition",
+  );
 
   const issue = releaseIssueMarkdown(
     manifest,

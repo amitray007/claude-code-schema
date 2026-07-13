@@ -20,6 +20,24 @@ function manifest(): SurfaceManifest {
   };
 }
 
+function schemaArtifacts(settings?: JsonObject): Record<string, JsonObject> {
+  const objectSchema: JsonObject = {
+    $schema: "http://json-schema.org/draft-07/schema#",
+    type: "object",
+    properties: {},
+  };
+  return {
+    "settings.schema.json": settings ?? {
+      ...objectSchema,
+      $id: "https://example.invalid/claude-code/2.1.207/settings.schema.json",
+    },
+    "global-config.schema.json": objectSchema,
+    "desktop-managed-settings.schema.json": objectSchema,
+    "env.schema.json": objectSchema,
+    "keybindings.schema.json": objectSchema,
+  };
+}
+
 test("artifact normalization rewrites IDs, strips experiment markers, and hashes outputs", () => {
   const settings: JsonObject = {
     $schema: "http://json-schema.org/draft-07/schema#",
@@ -31,7 +49,7 @@ test("artifact normalization rewrites IDs, strips experiment markers, and hashes
     "x-artifact-kind": "settings-json-schema",
   };
   const result = normalizeArtifacts(
-    { "manifest.json": manifest(), "settings.schema.json": settings },
+    { "manifest.json": manifest(), ...schemaArtifacts(settings) },
     "https://schemas.test/x/",
   );
   const normalized = result.artifacts["settings.schema.json"]!;
@@ -65,6 +83,7 @@ test("production normalization removes historical AI review policy", () => {
   const result = normalizeArtifacts(
     {
       "manifest.json": manifest(),
+      ...schemaArtifacts(),
       "changelog-review.schema.json": {
         title: "Claude Code changelog AI or human review",
         "x-review-policy": "AI output is advisory",

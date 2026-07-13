@@ -17,9 +17,10 @@ https://github.com/amitray007/claude-code-schema/releases/download/v2.1.207/sett
 https://github.com/amitray007/claude-code-schema/releases/download/v2.1.207/claude-code.schema.json
 ```
 
-These versioned download URLs are also the schemas' canonical `$id` values. Relative
-references in `claude-code.schema.json` therefore resolve to sibling assets in the
-same release.
+These versioned download URLs are also the schemas' canonical `$id` values.
+`settings.schema.json` and `claude-code.schema.json` use internal references to
+bundled definitions, so each release asset can be downloaded and compiled alone.
+The individual surface schemas remain separate assets for focused consumers.
 
 Consumers can discover assets through GitHub's public Releases API or download them
 directly. Public release metadata and assets do not require authentication. See the

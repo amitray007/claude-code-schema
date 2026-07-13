@@ -109,11 +109,19 @@
       "status": "passed"
     },
     {
+      "name": "schema compiles standalone: claude-code.schema.json",
+      "status": "passed"
+    },
+    {
       "name": "schema compiles: claude-code.schema.json",
       "status": "passed"
     },
     {
       "name": "schema ID matches filename: claude-code.schema.json",
+      "status": "passed"
+    },
+    {
+      "name": "schema compiles standalone: desktop-managed-settings.schema.json",
       "status": "passed"
     },
     {
@@ -125,11 +133,19 @@
       "status": "passed"
     },
     {
+      "name": "schema compiles standalone: environment.schema.json",
+      "status": "passed"
+    },
+    {
       "name": "schema compiles: environment.schema.json",
       "status": "passed"
     },
     {
       "name": "schema ID matches filename: environment.schema.json",
+      "status": "passed"
+    },
+    {
+      "name": "schema compiles standalone: global-config.schema.json",
       "status": "passed"
     },
     {
@@ -141,6 +157,10 @@
       "status": "passed"
     },
     {
+      "name": "schema compiles standalone: keybindings.compat.schema.json",
+      "status": "passed"
+    },
+    {
       "name": "schema compiles: keybindings.compat.schema.json",
       "status": "passed"
     },
@@ -149,11 +169,19 @@
       "status": "passed"
     },
     {
+      "name": "schema compiles standalone: keybindings.schema.json",
+      "status": "passed"
+    },
+    {
       "name": "schema compiles: keybindings.schema.json",
       "status": "passed"
     },
     {
       "name": "schema ID matches filename: keybindings.schema.json",
+      "status": "passed"
+    },
+    {
+      "name": "schema compiles standalone: settings.schema.json",
       "status": "passed"
     },
     {
@@ -181,7 +209,7 @@
       "status": "passed"
     },
     {
-      "name": "settings env reuses the standalone environment schema",
+      "name": "settings env bundles the standalone environment schema",
       "status": "passed"
     },
     {
@@ -191,8 +219,8 @@
     }
   ],
   "counts": {
-    "checks": 46,
-    "passed": 46,
+    "checks": 53,
+    "passed": 53,
     "failed": 0,
     "declaredArtifacts": 13,
     "compiledSchemas": 7,

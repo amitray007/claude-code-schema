@@ -263,7 +263,9 @@ knowledge base honest.
 
 - **Decision:** emit `claude-code.schema.json` with required `settings`,
   `globalConfig`, `desktopManagedSettings`, `environment`, and `keybindings`
-  properties, each using a relative reference to its standalone schema.
+  properties, each using an internal reference to a bundled definition of its
+  standalone schema. Rewrite nested fragment references into the bundled location
+  so the aggregate compiles offline as one file.
 - **Boundary:** this object is never presented as a file Claude Code consumes. CLI
   catalogs, behavioral defaults, evidence catalogs, and the manifest are excluded
   because they are not configuration instances.

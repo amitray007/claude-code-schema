@@ -16,8 +16,8 @@ dependency.
 ## Release files
 
 Start with `settings.schema.json` for `settings.json`, or
-`environment.schema.json` for environment variables. The settings schema reuses
-the environment schema for its `env` field.
+`environment.schema.json` for environment variables. Both files are self-contained;
+the settings schema bundles the environment schema for its `env` field.
 
 | File                                   | Contains                                      |
 | -------------------------------------- | --------------------------------------------- |
@@ -68,7 +68,8 @@ fully offline reproduction of the frozen 2.1.207 reference.
 The generated [`output/catalog.json`](output/catalog.json) is the machine-readable
 entry point. [`output/claude-code.schema.json`](output/claude-code.schema.json)
 combines settings, global configuration, Desktop policy, environment, and
-keybindings under explicit property names. A validated instance is available at
+keybindings under explicit property names in one self-contained artifact. A
+validated instance is available at
 [`examples/combined.json`](examples/combined.json).
 
 Immutable versions are separate assets on GitHub Releases. For example:

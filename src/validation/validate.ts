@@ -224,6 +224,12 @@ export async function validateDirectory(
     try {
       const schema = await readJson<JsonObject>(resolve(directory, file));
       schemas.set(file, schema);
+      new Ajv({
+        allErrors: true,
+        strict: false,
+        validateFormats: false,
+      }).compile(schema as object);
+      pass(`schema compiles standalone: ${file}`);
       ajv.addSchema(schema as object);
       pass(`schema compiles: ${file}`);
       if (typeof schema.$id === "string" && schema.$id.endsWith(`/${file}`))
@@ -300,14 +306,18 @@ export async function validateDirectory(
         )
     : [];
   if (
-    environmentRefs.includes("environment.schema.json") &&
+    environmentRefs.includes("#/definitions/environment") &&
+    settings?.definitions &&
+    typeof settings.definitions === "object" &&
+    !Array.isArray(settings.definitions) &&
+    Boolean(settings.definitions.environment) &&
     settingsEnvironment?.["x-shared-schema"] === "environment.schema.json"
   )
-    pass("settings env reuses the standalone environment schema");
+    pass("settings env bundles the standalone environment schema");
   else
     fail(
-      "settings env reuses the standalone environment schema",
-      "settings.properties.env must reference environment.schema.json",
+      "settings env bundles the standalone environment schema",
+      "settings.properties.env must reference #/definitions/environment",
     );
   const typed = settings
     ? topLevelTypedCount(settings)

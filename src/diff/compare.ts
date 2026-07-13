@@ -2,34 +2,66 @@ import { resolve } from "node:path";
 import type { JsonObject, SurfaceManifest } from "../domain/types.js";
 import { readJson } from "../shared/json.js";
 
+function resolveLocalReference(
+  rootSchema: JsonObject,
+  reference: string,
+): JsonObject | undefined {
+  if (reference === "#") return rootSchema;
+  if (!reference.startsWith("#/")) return undefined;
+  let current: unknown = rootSchema;
+  for (const rawToken of reference.slice(2).split("/")) {
+    if (!current || typeof current !== "object" || Array.isArray(current))
+      return undefined;
+    const token = rawToken.replaceAll("~1", "/").replaceAll("~0", "~");
+    current = (current as JsonObject)[token];
+  }
+  return current && typeof current === "object" && !Array.isArray(current)
+    ? (current as JsonObject)
+    : undefined;
+}
+
 function propertyPaths(
   schema: JsonObject,
   prefix = "",
   output = new Set<string>(),
   siblingSchemas = new Map<string, JsonObject>(),
   activeReferences = new Set<string>(),
+  rootSchema = schema,
 ): Set<string> {
   const allOf = Array.isArray(schema.allOf) ? schema.allOf : [];
   for (const entry of allOf) {
     if (!entry || typeof entry !== "object" || Array.isArray(entry)) continue;
     const branch = entry as JsonObject;
     const reference = branch.$ref;
-    if (typeof reference === "string" && !reference.startsWith("#")) {
-      const file = reference.split("#", 1)[0]!.split("/").at(-1)!;
-      const referenced = siblingSchemas.get(file);
-      if (referenced && !activeReferences.has(file)) {
-        activeReferences.add(file);
+    if (typeof reference === "string") {
+      const local = reference.startsWith("#");
+      const key = local
+        ? reference
+        : reference.split("#", 1)[0]!.split("/").at(-1)!;
+      const referenced = local
+        ? resolveLocalReference(rootSchema, reference)
+        : siblingSchemas.get(key);
+      if (referenced && !activeReferences.has(key)) {
+        activeReferences.add(key);
         propertyPaths(
           referenced,
           prefix,
           output,
           siblingSchemas,
           activeReferences,
+          local ? rootSchema : referenced,
         );
-        activeReferences.delete(file);
+        activeReferences.delete(key);
       }
     } else {
-      propertyPaths(branch, prefix, output, siblingSchemas, activeReferences);
+      propertyPaths(
+        branch,
+        prefix,
+        output,
+        siblingSchemas,
+        activeReferences,
+        rootSchema,
+      );
     }
   }
   const properties = schema.properties;
@@ -49,6 +81,7 @@ function propertyPaths(
         output,
         siblingSchemas,
         activeReferences,
+        rootSchema,
       );
   }
   return output;

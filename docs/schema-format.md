@@ -53,7 +53,9 @@ separate GitHub Release assets.
 validate JSON instances: settings, global configuration, Desktop managed policy,
 environment, and keybindings. It does not attempt to compose catalogs or the
 manifest, and Claude Code never reads this aggregate object. The envelope exists
-for tooling that needs one validated snapshot of all configuration surfaces. See
+for tooling that needs one validated snapshot of all configuration surfaces. It
+bundles those schemas under internal `definitions`, so it compiles without sibling
+files. See
 [`examples/combined.json`](../examples/combined.json).
 
 ## Common metadata
@@ -115,11 +117,12 @@ separate opt-in artifact and is not the default compatibility validator.
 
 ## Environment schema
 
-`settings.schema.json` reuses this schema through its real `env` property instead
-of embedding a second copy of every environment-variable definition. The relative
-reference resolves to the sibling `environment.schema.json` release asset. This is
-a real relationship in Claude Code configuration, unlike the synthetic
-multi-surface envelope.
+`settings.schema.json` reuses this schema through its real `env` property by
+bundling it under `#/definitions/environment`. This keeps the common settings
+download self-contained. The identical top-level `environment.schema.json` remains
+available for tools that validate an environment map directly. This is a real
+relationship in Claude Code configuration, unlike the synthetic multi-surface
+envelope.
 
 The schema validates a JSON representation such as:
 
