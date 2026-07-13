@@ -18,6 +18,14 @@ test("GitHub releases use the unprefixed vX.Y.Z name", async () => {
   assert.match(workflow, /git config user\.name github-actions\[bot\]/);
   assert.match(workflow, /git config user\.email 41898282\+github-actions/);
   assert.match(workflow, /gh release create "\$tag".*--title "\$tag"/);
+  assert.match(
+    workflow,
+    /settings\.json keys and validation: settings\.schema\.json/,
+  );
+  assert.match(
+    workflow,
+    /environment-variable names: environment\.schema\.json/,
+  );
   assert.doesNotMatch(workflow, /claude-code-v\$\{VERSION\}/);
   assert.match(workflow, /sha256sum -- \*\.json/);
   assert.match(workflow, /subject-path: output\/\*\.json/);

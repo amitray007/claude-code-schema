@@ -56,6 +56,7 @@ function topLevelTypedCount(schema: JsonObject): {
       record.enum ??
       record.oneOf ??
       record.anyOf ??
+      record.allOf ??
       record.$ref ??
       record.const,
     );
@@ -135,6 +136,50 @@ export async function validateDirectory(
       fail(
         "release catalog indexes every JSON artifact",
         `records=${records.length}, files=${declaredFiles.length}, missing=${missing.join(", ")}, undeclared=${undeclared.join(", ")}`,
+      );
+
+    const startHere = catalog.startHere as JsonObject | undefined;
+    const settingsStart = startHere?.settingsJson as JsonObject | undefined;
+    const environmentStart = startHere?.environmentVariables as
+      JsonObject | undefined;
+    const expectedBaseUrl = String(catalog.releaseBaseUrl ?? "").replace(
+      /\/$/,
+      "",
+    );
+    if (
+      settingsStart?.file === "settings.schema.json" &&
+      settingsStart.downloadUrl === `${expectedBaseUrl}/settings.schema.json` &&
+      environmentStart?.file === "environment.schema.json" &&
+      environmentStart.downloadUrl ===
+        `${expectedBaseUrl}/environment.schema.json`
+    )
+      pass(
+        "release catalog has unambiguous settings and environment entry points",
+      );
+    else
+      fail(
+        "release catalog has unambiguous settings and environment entry points",
+        "startHere must point to the primary settings and environment schemas",
+      );
+
+    const audiences = catalog.audiences as JsonObject | undefined;
+    const audienceFiles = Object.values(audiences ?? {}).flatMap((value) =>
+      Array.isArray(value)
+        ? value.filter((file): file is string => typeof file === "string")
+        : [],
+    );
+    const expectedAudienceFiles = declaredFiles
+      .filter((file) => file !== "catalog.json")
+      .sort();
+    if (
+      new Set(audienceFiles).size === audienceFiles.length &&
+      audienceFiles.sort().join("\n") === expectedAudienceFiles.join("\n")
+    )
+      pass("release catalog assigns every non-index artifact to one audience");
+    else
+      fail(
+        "release catalog assigns every non-index artifact to one audience",
+        `expected=${expectedAudienceFiles.join(", ")}, received=${audienceFiles.join(", ")}`,
       );
   } catch (error) {
     fail(
@@ -241,6 +286,29 @@ export async function validateDirectory(
   }
 
   const settings = schemas.get("settings.schema.json");
+  const settingsProperties = settings?.properties as JsonObject | undefined;
+  const settingsEnvironment = settingsProperties?.env as JsonObject | undefined;
+  const environmentRefs = Array.isArray(settingsEnvironment?.allOf)
+    ? settingsEnvironment.allOf
+        .map((entry) =>
+          entry && typeof entry === "object" && !Array.isArray(entry)
+            ? (entry as JsonObject).$ref
+            : undefined,
+        )
+        .filter(
+          (reference): reference is string => typeof reference === "string",
+        )
+    : [];
+  if (
+    environmentRefs.includes("environment.schema.json") &&
+    settingsEnvironment?.["x-shared-schema"] === "environment.schema.json"
+  )
+    pass("settings env reuses the standalone environment schema");
+  else
+    fail(
+      "settings env reuses the standalone environment schema",
+      "settings.properties.env must reference environment.schema.json",
+    );
   const typed = settings
     ? topLevelTypedCount(settings)
     : { typed: 0, total: 0, untyped: ["settings schema missing"] };

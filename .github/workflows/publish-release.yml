@@ -72,7 +72,14 @@ jobs:
             done
             echo "Release $tag already exists with the exact reviewed assets; leaving it unchanged."
           else
-            gh release create "$tag" --repo "$GITHUB_REPOSITORY" --verify-tag --title "$tag" --notes "Generated from first-party evidence and the integrity-verified Claude Code ${VERSION} release. See manifest.json for sources, digests, limitations, and probe policy." .work/release/SHA256SUMS output/*.json
+            gh release create "$tag" --repo "$GITHUB_REPOSITORY" --verify-tag --title "$tag" --notes "Start here:
+          - settings.json keys and validation: settings.schema.json
+          - environment-variable names: environment.schema.json
+          - commands, arguments, and options: cli.catalog.json
+
+          catalog.json maps every use case to the appropriate file. The similarly named settings and environment catalogs are supporting evidence for maintainers and auditors.
+
+          Generated from first-party evidence and the integrity-verified Claude Code ${VERSION} release. See manifest.json for sources, digests, limitations, and probe policy." .work/release/SHA256SUMS output/*.json
           fi
       - name: Close the release-review issue
         env:

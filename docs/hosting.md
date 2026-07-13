@@ -35,5 +35,7 @@ Each release includes:
 - GitHub build-provenance attestations for every JSON asset.
 
 No ZIP or tar archive is created. Start with `catalog.json` to discover which file
-matches a configuration location or interface. The tag, release assets, manifest digests,
-checksums, and attestations all refer to the same reviewed `output/` bytes.
+matches a configuration location or interface. Its `startHere.settingsJson` and
+`startHere.environmentVariables` entries point directly to the two most commonly
+needed schemas. The tag, release assets, manifest digests, checksums, and
+attestations all refer to the same reviewed `output/` bytes.

@@ -9,6 +9,10 @@ The output uses JSON Schema only where there is a real JSON instance to validate
 Other surfaces use explicit domain catalogs. `catalog.json` is the consumer entry
 point; `manifest.json` is the provenance and integrity record.
 
+If the goal is ordinary configuration rather than auditing, start with
+[`quick-start.md`](quick-start.md): use `settings.schema.json` for Claude Code
+settings files and `environment.schema.json` for environment-variable names.
+
 ## Files
 
 | File                                   | Kind                 | Represents                                                                       |
@@ -34,6 +38,11 @@ environment variable, a CLI argument, a terminal keybinding, Desktop policy, or
 maintainer evidence?” Domain catalogs combine records that describe the same
 interface while retaining explicit `documented`, `runtime`, and `candidate`
 boundaries.
+
+The catalog's `startHere` object maps common user goals directly to a primary file,
+download URL, usage locations, example, and optional supporting-evidence file. Its
+`audiences` object separates ordinary configuration references from specialized
+tooling and maintainer/audit records.
 
 `manifest.artifacts` carries digests for the 13 non-circular payloads. The manifest
 cannot hash itself, and `validation-report.json` is emitted only after the candidate
@@ -105,6 +114,12 @@ A future strict/audit schema may set `additionalProperties: false`, but it must 
 separate opt-in artifact and is not the default compatibility validator.
 
 ## Environment schema
+
+`settings.schema.json` reuses this schema through its real `env` property instead
+of embedding a second copy of every environment-variable definition. The relative
+reference resolves to the sibling `environment.schema.json` release asset. This is
+a real relationship in Claude Code configuration, unlike the synthetic
+multi-surface envelope.
 
 The schema validates a JSON representation such as:
 

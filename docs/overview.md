@@ -2,7 +2,8 @@
 
 > **Entry type:** Orientation
 > **Status:** Production pipeline implemented and live-tested
-> **Related:** [`sources.md`](sources.md) · [`pipeline.md`](pipeline.md) · [`decisions.md`](decisions.md)
+> **Related:** [`quick-start.md`](quick-start.md) · [`sources.md`](sources.md) ·
+> [`pipeline.md`](pipeline.md) · [`decisions.md`](decisions.md)
 
 ## What this is
 
