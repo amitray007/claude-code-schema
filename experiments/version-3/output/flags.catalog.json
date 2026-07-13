@@ -1,0 +1,2161 @@
+{
+  "schemaVersion": 1,
+  "artifactKind": "cli-option-catalog",
+  "claudeCodeVersion": "2.1.207",
+  "commandPath": [
+    "claude"
+  ],
+  "scope": "documented top-level flags",
+  "options": [
+    {
+      "names": [
+        "--add-dir"
+      ],
+      "documentedSpellings": [
+        "--add-dir"
+      ],
+      "valueArity": "not-specified-by-doc-table",
+      "documentationUrl": "https://code.claude.com/docs/en/cli-reference#cli-flags",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "cliDocs",
+            "sourceSha256": "3cd50cdd2f2a2e38380bed029c21d74cbbc09ad2f50501116c3ebae9b78b0760"
+          }
+        ]
+      },
+      "probeMatches": [
+        {
+          "commandPath": [
+            "claude"
+          ],
+          "names": [
+            "--add-dir"
+          ]
+        },
+        {
+          "commandPath": [
+            "claude",
+            "agents"
+          ],
+          "names": [
+            "--add-dir"
+          ]
+        }
+      ]
+    },
+    {
+      "names": [
+        "--advisor"
+      ],
+      "documentedSpellings": [
+        "--advisor <model>"
+      ],
+      "valueArity": "not-specified-by-doc-table",
+      "documentationUrl": "https://code.claude.com/docs/en/cli-reference#cli-flags",
+      "minVersion": "2.1.98",
+      "versionMarkers": [
+        {
+          "kind": "min",
+          "version": "2.1.98",
+          "characterOffset": 0
+        },
+        {
+          "kind": "min",
+          "version": "2.1.170",
+          "characterOffset": 145
+        }
+      ],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "cliDocs",
+            "sourceSha256": "3cd50cdd2f2a2e38380bed029c21d74cbbc09ad2f50501116c3ebae9b78b0760"
+          }
+        ]
+      },
+      "probeMatches": []
+    },
+    {
+      "names": [
+        "--agent"
+      ],
+      "documentedSpellings": [
+        "--agent"
+      ],
+      "valueArity": "not-specified-by-doc-table",
+      "documentationUrl": "https://code.claude.com/docs/en/cli-reference#cli-flags",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "cliDocs",
+            "sourceSha256": "3cd50cdd2f2a2e38380bed029c21d74cbbc09ad2f50501116c3ebae9b78b0760"
+          }
+        ]
+      },
+      "probeMatches": [
+        {
+          "commandPath": [
+            "claude"
+          ],
+          "names": [
+            "--agent"
+          ]
+        },
+        {
+          "commandPath": [
+            "claude",
+            "agents"
+          ],
+          "names": [
+            "--agent"
+          ]
+        }
+      ]
+    },
+    {
+      "names": [
+        "--agents"
+      ],
+      "documentedSpellings": [
+        "--agents"
+      ],
+      "valueArity": "not-specified-by-doc-table",
+      "documentationUrl": "https://code.claude.com/docs/en/cli-reference#cli-flags",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "cliDocs",
+            "sourceSha256": "3cd50cdd2f2a2e38380bed029c21d74cbbc09ad2f50501116c3ebae9b78b0760"
+          }
+        ]
+      },
+      "probeMatches": [
+        {
+          "commandPath": [
+            "claude"
+          ],
+          "names": [
+            "--agents"
+          ]
+        }
+      ]
+    },
+    {
+      "names": [
+        "--allow-dangerously-skip-permissions"
+      ],
+      "documentedSpellings": [
+        "--allow-dangerously-skip-permissions"
+      ],
+      "valueArity": "not-specified-by-doc-table",
+      "documentationUrl": "https://code.claude.com/docs/en/cli-reference#cli-flags",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "cliDocs",
+            "sourceSha256": "3cd50cdd2f2a2e38380bed029c21d74cbbc09ad2f50501116c3ebae9b78b0760"
+          }
+        ]
+      },
+      "probeMatches": [
+        {
+          "commandPath": [
+            "claude"
+          ],
+          "names": [
+            "--allow-dangerously-skip-permissions"
+          ]
+        },
+        {
+          "commandPath": [
+            "claude",
+            "agents"
+          ],
+          "names": [
+            "--allow-dangerously-skip-permissions"
+          ]
+        }
+      ]
+    },
+    {
+      "names": [
+        "--allowedTools",
+        "--allowed-tools"
+      ],
+      "documentedSpellings": [
+        "--allowedTools",
+        "--allowed-tools"
+      ],
+      "valueArity": "not-specified-by-doc-table",
+      "documentationUrl": "https://code.claude.com/docs/en/cli-reference#cli-flags",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "cliDocs",
+            "sourceSha256": "3cd50cdd2f2a2e38380bed029c21d74cbbc09ad2f50501116c3ebae9b78b0760"
+          }
+        ]
+      },
+      "probeMatches": [
+        {
+          "commandPath": [
+            "claude"
+          ],
+          "names": [
+            "--allowedTools",
+            "--allowed-tools"
+          ]
+        }
+      ]
+    },
+    {
+      "names": [
+        "--append-subagent-system-prompt"
+      ],
+      "documentedSpellings": [
+        "--append-subagent-system-prompt"
+      ],
+      "valueArity": "not-specified-by-doc-table",
+      "documentationUrl": "https://code.claude.com/docs/en/cli-reference#cli-flags",
+      "minVersion": "2.1.205",
+      "versionMarkers": [
+        {
+          "kind": "min",
+          "version": "2.1.205",
+          "characterOffset": 0
+        }
+      ],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "cliDocs",
+            "sourceSha256": "3cd50cdd2f2a2e38380bed029c21d74cbbc09ad2f50501116c3ebae9b78b0760"
+          }
+        ]
+      },
+      "probeMatches": []
+    },
+    {
+      "names": [
+        "--append-system-prompt"
+      ],
+      "documentedSpellings": [
+        "--append-system-prompt"
+      ],
+      "valueArity": "not-specified-by-doc-table",
+      "documentationUrl": "https://code.claude.com/docs/en/cli-reference#cli-flags",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "cliDocs",
+            "sourceSha256": "3cd50cdd2f2a2e38380bed029c21d74cbbc09ad2f50501116c3ebae9b78b0760"
+          }
+        ]
+      },
+      "probeMatches": [
+        {
+          "commandPath": [
+            "claude"
+          ],
+          "names": [
+            "--append-system-prompt"
+          ]
+        }
+      ]
+    },
+    {
+      "names": [
+        "--append-system-prompt-file"
+      ],
+      "documentedSpellings": [
+        "--append-system-prompt-file"
+      ],
+      "valueArity": "not-specified-by-doc-table",
+      "documentationUrl": "https://code.claude.com/docs/en/cli-reference#cli-flags",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "cliDocs",
+            "sourceSha256": "3cd50cdd2f2a2e38380bed029c21d74cbbc09ad2f50501116c3ebae9b78b0760"
+          }
+        ]
+      },
+      "probeMatches": []
+    },
+    {
+      "names": [
+        "--ax-screen-reader"
+      ],
+      "documentedSpellings": [
+        "--ax-screen-reader"
+      ],
+      "valueArity": "not-specified-by-doc-table",
+      "documentationUrl": "https://code.claude.com/docs/en/cli-reference#cli-flags",
+      "minVersion": "2.1.181",
+      "versionMarkers": [
+        {
+          "kind": "min",
+          "version": "2.1.181",
+          "characterOffset": 0
+        }
+      ],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "cliDocs",
+            "sourceSha256": "3cd50cdd2f2a2e38380bed029c21d74cbbc09ad2f50501116c3ebae9b78b0760"
+          }
+        ]
+      },
+      "probeMatches": [
+        {
+          "commandPath": [
+            "claude"
+          ],
+          "names": [
+            "--ax-screen-reader"
+          ]
+        }
+      ]
+    },
+    {
+      "names": [
+        "--bare"
+      ],
+      "documentedSpellings": [
+        "--bare"
+      ],
+      "valueArity": "not-specified-by-doc-table",
+      "documentationUrl": "https://code.claude.com/docs/en/cli-reference#cli-flags",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "cliDocs",
+            "sourceSha256": "3cd50cdd2f2a2e38380bed029c21d74cbbc09ad2f50501116c3ebae9b78b0760"
+          }
+        ]
+      },
+      "probeMatches": [
+        {
+          "commandPath": [
+            "claude"
+          ],
+          "names": [
+            "--bare"
+          ]
+        },
+        {
+          "commandPath": [
+            "claude",
+            "plugin",
+            "eval",
+            "init"
+          ],
+          "names": [
+            "--bare"
+          ]
+        }
+      ]
+    },
+    {
+      "names": [
+        "--betas"
+      ],
+      "documentedSpellings": [
+        "--betas"
+      ],
+      "valueArity": "not-specified-by-doc-table",
+      "documentationUrl": "https://code.claude.com/docs/en/cli-reference#cli-flags",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "cliDocs",
+            "sourceSha256": "3cd50cdd2f2a2e38380bed029c21d74cbbc09ad2f50501116c3ebae9b78b0760"
+          }
+        ]
+      },
+      "probeMatches": [
+        {
+          "commandPath": [
+            "claude"
+          ],
+          "names": [
+            "--betas"
+          ]
+        }
+      ]
+    },
+    {
+      "names": [
+        "--bg",
+        "--background"
+      ],
+      "documentedSpellings": [
+        "--bg",
+        "--background"
+      ],
+      "valueArity": "not-specified-by-doc-table",
+      "documentationUrl": "https://code.claude.com/docs/en/cli-reference#cli-flags",
+      "versionMarkers": [
+        {
+          "kind": "min",
+          "version": "2.1.198",
+          "characterOffset": 269
+        }
+      ],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "cliDocs",
+            "sourceSha256": "3cd50cdd2f2a2e38380bed029c21d74cbbc09ad2f50501116c3ebae9b78b0760"
+          }
+        ]
+      },
+      "probeMatches": [
+        {
+          "commandPath": [
+            "claude"
+          ],
+          "names": [
+            "--bg",
+            "--background"
+          ]
+        }
+      ]
+    },
+    {
+      "names": [
+        "--channels"
+      ],
+      "documentedSpellings": [
+        "--channels"
+      ],
+      "valueArity": "not-specified-by-doc-table",
+      "documentationUrl": "https://code.claude.com/docs/en/cli-reference#cli-flags",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "cliDocs",
+            "sourceSha256": "3cd50cdd2f2a2e38380bed029c21d74cbbc09ad2f50501116c3ebae9b78b0760"
+          }
+        ]
+      },
+      "probeMatches": []
+    },
+    {
+      "names": [
+        "--chrome"
+      ],
+      "documentedSpellings": [
+        "--chrome"
+      ],
+      "valueArity": "not-specified-by-doc-table",
+      "documentationUrl": "https://code.claude.com/docs/en/cli-reference#cli-flags",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "cliDocs",
+            "sourceSha256": "3cd50cdd2f2a2e38380bed029c21d74cbbc09ad2f50501116c3ebae9b78b0760"
+          }
+        ]
+      },
+      "probeMatches": [
+        {
+          "commandPath": [
+            "claude"
+          ],
+          "names": [
+            "--chrome"
+          ]
+        }
+      ]
+    },
+    {
+      "names": [
+        "--cloud"
+      ],
+      "documentedSpellings": [
+        "--cloud"
+      ],
+      "valueArity": "not-specified-by-doc-table",
+      "documentationUrl": "https://code.claude.com/docs/en/cli-reference#cli-flags",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "cliDocs",
+            "sourceSha256": "3cd50cdd2f2a2e38380bed029c21d74cbbc09ad2f50501116c3ebae9b78b0760"
+          }
+        ]
+      },
+      "probeMatches": []
+    },
+    {
+      "names": [
+        "--continue",
+        "-c"
+      ],
+      "documentedSpellings": [
+        "--continue",
+        "-c"
+      ],
+      "valueArity": "not-specified-by-doc-table",
+      "documentationUrl": "https://code.claude.com/docs/en/cli-reference#cli-flags",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "cliDocs",
+            "sourceSha256": "3cd50cdd2f2a2e38380bed029c21d74cbbc09ad2f50501116c3ebae9b78b0760"
+          }
+        ]
+      },
+      "probeMatches": [
+        {
+          "commandPath": [
+            "claude"
+          ],
+          "names": [
+            "-c",
+            "--continue"
+          ]
+        }
+      ]
+    },
+    {
+      "names": [
+        "--dangerously-load-development-channels"
+      ],
+      "documentedSpellings": [
+        "--dangerously-load-development-channels"
+      ],
+      "valueArity": "not-specified-by-doc-table",
+      "documentationUrl": "https://code.claude.com/docs/en/cli-reference#cli-flags",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "cliDocs",
+            "sourceSha256": "3cd50cdd2f2a2e38380bed029c21d74cbbc09ad2f50501116c3ebae9b78b0760"
+          }
+        ]
+      },
+      "probeMatches": []
+    },
+    {
+      "names": [
+        "--dangerously-skip-permissions"
+      ],
+      "documentedSpellings": [
+        "--dangerously-skip-permissions"
+      ],
+      "valueArity": "not-specified-by-doc-table",
+      "documentationUrl": "https://code.claude.com/docs/en/cli-reference#cli-flags",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "cliDocs",
+            "sourceSha256": "3cd50cdd2f2a2e38380bed029c21d74cbbc09ad2f50501116c3ebae9b78b0760"
+          }
+        ]
+      },
+      "probeMatches": [
+        {
+          "commandPath": [
+            "claude"
+          ],
+          "names": [
+            "--dangerously-skip-permissions"
+          ]
+        },
+        {
+          "commandPath": [
+            "claude",
+            "agents"
+          ],
+          "names": [
+            "--dangerously-skip-permissions"
+          ]
+        }
+      ]
+    },
+    {
+      "names": [
+        "--debug"
+      ],
+      "documentedSpellings": [
+        "--debug"
+      ],
+      "valueArity": "not-specified-by-doc-table",
+      "documentationUrl": "https://code.claude.com/docs/en/cli-reference#cli-flags",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "cliDocs",
+            "sourceSha256": "3cd50cdd2f2a2e38380bed029c21d74cbbc09ad2f50501116c3ebae9b78b0760"
+          }
+        ]
+      },
+      "probeMatches": [
+        {
+          "commandPath": [
+            "claude"
+          ],
+          "names": [
+            "--debug"
+          ]
+        }
+      ]
+    },
+    {
+      "names": [
+        "--debug-file"
+      ],
+      "documentedSpellings": [
+        "--debug-file <path>"
+      ],
+      "valueArity": "not-specified-by-doc-table",
+      "documentationUrl": "https://code.claude.com/docs/en/cli-reference#cli-flags",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "cliDocs",
+            "sourceSha256": "3cd50cdd2f2a2e38380bed029c21d74cbbc09ad2f50501116c3ebae9b78b0760"
+          }
+        ]
+      },
+      "probeMatches": [
+        {
+          "commandPath": [
+            "claude"
+          ],
+          "names": [
+            "--debug-file"
+          ]
+        }
+      ]
+    },
+    {
+      "names": [
+        "--disable-slash-commands"
+      ],
+      "documentedSpellings": [
+        "--disable-slash-commands"
+      ],
+      "valueArity": "not-specified-by-doc-table",
+      "documentationUrl": "https://code.claude.com/docs/en/cli-reference#cli-flags",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "cliDocs",
+            "sourceSha256": "3cd50cdd2f2a2e38380bed029c21d74cbbc09ad2f50501116c3ebae9b78b0760"
+          }
+        ]
+      },
+      "probeMatches": [
+        {
+          "commandPath": [
+            "claude"
+          ],
+          "names": [
+            "--disable-slash-commands"
+          ]
+        }
+      ]
+    },
+    {
+      "names": [
+        "--disallowedTools",
+        "--disallowed-tools"
+      ],
+      "documentedSpellings": [
+        "--disallowedTools",
+        "--disallowed-tools"
+      ],
+      "valueArity": "not-specified-by-doc-table",
+      "documentationUrl": "https://code.claude.com/docs/en/cli-reference#cli-flags",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "cliDocs",
+            "sourceSha256": "3cd50cdd2f2a2e38380bed029c21d74cbbc09ad2f50501116c3ebae9b78b0760"
+          }
+        ]
+      },
+      "probeMatches": [
+        {
+          "commandPath": [
+            "claude"
+          ],
+          "names": [
+            "--disallowedTools",
+            "--disallowed-tools"
+          ]
+        }
+      ]
+    },
+    {
+      "names": [
+        "--effort"
+      ],
+      "documentedSpellings": [
+        "--effort"
+      ],
+      "valueArity": "not-specified-by-doc-table",
+      "documentationUrl": "https://code.claude.com/docs/en/cli-reference#cli-flags",
+      "versionMarkers": [
+        {
+          "kind": "min",
+          "version": "2.1.203",
+          "characterOffset": 139
+        }
+      ],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "cliDocs",
+            "sourceSha256": "3cd50cdd2f2a2e38380bed029c21d74cbbc09ad2f50501116c3ebae9b78b0760"
+          }
+        ]
+      },
+      "probeMatches": [
+        {
+          "commandPath": [
+            "claude"
+          ],
+          "names": [
+            "--effort"
+          ]
+        },
+        {
+          "commandPath": [
+            "claude",
+            "agents"
+          ],
+          "names": [
+            "--effort"
+          ]
+        }
+      ]
+    },
+    {
+      "names": [
+        "--exclude-dynamic-system-prompt-sections"
+      ],
+      "documentedSpellings": [
+        "--exclude-dynamic-system-prompt-sections"
+      ],
+      "valueArity": "not-specified-by-doc-table",
+      "documentationUrl": "https://code.claude.com/docs/en/cli-reference#cli-flags",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "cliDocs",
+            "sourceSha256": "3cd50cdd2f2a2e38380bed029c21d74cbbc09ad2f50501116c3ebae9b78b0760"
+          }
+        ]
+      },
+      "probeMatches": [
+        {
+          "commandPath": [
+            "claude"
+          ],
+          "names": [
+            "--exclude-dynamic-system-prompt-sections"
+          ]
+        }
+      ]
+    },
+    {
+      "names": [
+        "--exec"
+      ],
+      "documentedSpellings": [
+        "--exec"
+      ],
+      "valueArity": "not-specified-by-doc-table",
+      "documentationUrl": "https://code.claude.com/docs/en/cli-reference#cli-flags",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "cliDocs",
+            "sourceSha256": "3cd50cdd2f2a2e38380bed029c21d74cbbc09ad2f50501116c3ebae9b78b0760"
+          }
+        ]
+      },
+      "probeMatches": []
+    },
+    {
+      "names": [
+        "--fallback-model"
+      ],
+      "documentedSpellings": [
+        "--fallback-model"
+      ],
+      "valueArity": "not-specified-by-doc-table",
+      "documentationUrl": "https://code.claude.com/docs/en/cli-reference#cli-flags",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "cliDocs",
+            "sourceSha256": "3cd50cdd2f2a2e38380bed029c21d74cbbc09ad2f50501116c3ebae9b78b0760"
+          }
+        ]
+      },
+      "probeMatches": [
+        {
+          "commandPath": [
+            "claude"
+          ],
+          "names": [
+            "--fallback-model"
+          ]
+        }
+      ]
+    },
+    {
+      "names": [
+        "--fork-session"
+      ],
+      "documentedSpellings": [
+        "--fork-session"
+      ],
+      "valueArity": "not-specified-by-doc-table",
+      "documentationUrl": "https://code.claude.com/docs/en/cli-reference#cli-flags",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "cliDocs",
+            "sourceSha256": "3cd50cdd2f2a2e38380bed029c21d74cbbc09ad2f50501116c3ebae9b78b0760"
+          }
+        ]
+      },
+      "probeMatches": [
+        {
+          "commandPath": [
+            "claude"
+          ],
+          "names": [
+            "--fork-session"
+          ]
+        }
+      ]
+    },
+    {
+      "names": [
+        "--from-pr"
+      ],
+      "documentedSpellings": [
+        "--from-pr"
+      ],
+      "valueArity": "not-specified-by-doc-table",
+      "documentationUrl": "https://code.claude.com/docs/en/cli-reference#cli-flags",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "cliDocs",
+            "sourceSha256": "3cd50cdd2f2a2e38380bed029c21d74cbbc09ad2f50501116c3ebae9b78b0760"
+          }
+        ]
+      },
+      "probeMatches": [
+        {
+          "commandPath": [
+            "claude"
+          ],
+          "names": [
+            "--from-pr"
+          ]
+        }
+      ]
+    },
+    {
+      "names": [
+        "--ide"
+      ],
+      "documentedSpellings": [
+        "--ide"
+      ],
+      "valueArity": "not-specified-by-doc-table",
+      "documentationUrl": "https://code.claude.com/docs/en/cli-reference#cli-flags",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "cliDocs",
+            "sourceSha256": "3cd50cdd2f2a2e38380bed029c21d74cbbc09ad2f50501116c3ebae9b78b0760"
+          }
+        ]
+      },
+      "probeMatches": [
+        {
+          "commandPath": [
+            "claude"
+          ],
+          "names": [
+            "--ide"
+          ]
+        }
+      ]
+    },
+    {
+      "names": [
+        "--init"
+      ],
+      "documentedSpellings": [
+        "--init"
+      ],
+      "valueArity": "not-specified-by-doc-table",
+      "documentationUrl": "https://code.claude.com/docs/en/cli-reference#cli-flags",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "cliDocs",
+            "sourceSha256": "3cd50cdd2f2a2e38380bed029c21d74cbbc09ad2f50501116c3ebae9b78b0760"
+          }
+        ]
+      },
+      "probeMatches": []
+    },
+    {
+      "names": [
+        "--init-only"
+      ],
+      "documentedSpellings": [
+        "--init-only"
+      ],
+      "valueArity": "not-specified-by-doc-table",
+      "documentationUrl": "https://code.claude.com/docs/en/cli-reference#cli-flags",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "cliDocs",
+            "sourceSha256": "3cd50cdd2f2a2e38380bed029c21d74cbbc09ad2f50501116c3ebae9b78b0760"
+          }
+        ]
+      },
+      "probeMatches": []
+    },
+    {
+      "names": [
+        "--include-hook-events"
+      ],
+      "documentedSpellings": [
+        "--include-hook-events"
+      ],
+      "valueArity": "not-specified-by-doc-table",
+      "documentationUrl": "https://code.claude.com/docs/en/cli-reference#cli-flags",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "cliDocs",
+            "sourceSha256": "3cd50cdd2f2a2e38380bed029c21d74cbbc09ad2f50501116c3ebae9b78b0760"
+          }
+        ]
+      },
+      "probeMatches": [
+        {
+          "commandPath": [
+            "claude"
+          ],
+          "names": [
+            "--include-hook-events"
+          ]
+        }
+      ]
+    },
+    {
+      "names": [
+        "--include-partial-messages"
+      ],
+      "documentedSpellings": [
+        "--include-partial-messages"
+      ],
+      "valueArity": "not-specified-by-doc-table",
+      "documentationUrl": "https://code.claude.com/docs/en/cli-reference#cli-flags",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "cliDocs",
+            "sourceSha256": "3cd50cdd2f2a2e38380bed029c21d74cbbc09ad2f50501116c3ebae9b78b0760"
+          }
+        ]
+      },
+      "probeMatches": [
+        {
+          "commandPath": [
+            "claude"
+          ],
+          "names": [
+            "--include-partial-messages"
+          ]
+        }
+      ]
+    },
+    {
+      "names": [
+        "--input-format"
+      ],
+      "documentedSpellings": [
+        "--input-format"
+      ],
+      "valueArity": "not-specified-by-doc-table",
+      "documentationUrl": "https://code.claude.com/docs/en/cli-reference#cli-flags",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "cliDocs",
+            "sourceSha256": "3cd50cdd2f2a2e38380bed029c21d74cbbc09ad2f50501116c3ebae9b78b0760"
+          }
+        ]
+      },
+      "probeMatches": [
+        {
+          "commandPath": [
+            "claude"
+          ],
+          "names": [
+            "--input-format"
+          ]
+        }
+      ]
+    },
+    {
+      "names": [
+        "--json-schema"
+      ],
+      "documentedSpellings": [
+        "--json-schema"
+      ],
+      "valueArity": "not-specified-by-doc-table",
+      "documentationUrl": "https://code.claude.com/docs/en/cli-reference#cli-flags",
+      "versionMarkers": [
+        {
+          "kind": "min",
+          "version": "2.1.205",
+          "characterOffset": 167
+        }
+      ],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "cliDocs",
+            "sourceSha256": "3cd50cdd2f2a2e38380bed029c21d74cbbc09ad2f50501116c3ebae9b78b0760"
+          }
+        ]
+      },
+      "probeMatches": [
+        {
+          "commandPath": [
+            "claude"
+          ],
+          "names": [
+            "--json-schema"
+          ]
+        }
+      ]
+    },
+    {
+      "names": [
+        "--maintenance"
+      ],
+      "documentedSpellings": [
+        "--maintenance"
+      ],
+      "valueArity": "not-specified-by-doc-table",
+      "documentationUrl": "https://code.claude.com/docs/en/cli-reference#cli-flags",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "cliDocs",
+            "sourceSha256": "3cd50cdd2f2a2e38380bed029c21d74cbbc09ad2f50501116c3ebae9b78b0760"
+          }
+        ]
+      },
+      "probeMatches": []
+    },
+    {
+      "names": [
+        "--max-budget-usd"
+      ],
+      "documentedSpellings": [
+        "--max-budget-usd"
+      ],
+      "valueArity": "not-specified-by-doc-table",
+      "documentationUrl": "https://code.claude.com/docs/en/cli-reference#cli-flags",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "cliDocs",
+            "sourceSha256": "3cd50cdd2f2a2e38380bed029c21d74cbbc09ad2f50501116c3ebae9b78b0760"
+          }
+        ]
+      },
+      "probeMatches": [
+        {
+          "commandPath": [
+            "claude"
+          ],
+          "names": [
+            "--max-budget-usd"
+          ]
+        }
+      ]
+    },
+    {
+      "names": [
+        "--max-turns"
+      ],
+      "documentedSpellings": [
+        "--max-turns"
+      ],
+      "valueArity": "not-specified-by-doc-table",
+      "documentationUrl": "https://code.claude.com/docs/en/cli-reference#cli-flags",
+      "versionMarkers": [
+        {
+          "kind": "min",
+          "version": "2.1.205",
+          "characterOffset": 121
+        }
+      ],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "cliDocs",
+            "sourceSha256": "3cd50cdd2f2a2e38380bed029c21d74cbbc09ad2f50501116c3ebae9b78b0760"
+          }
+        ]
+      },
+      "probeMatches": []
+    },
+    {
+      "names": [
+        "--mcp-config"
+      ],
+      "documentedSpellings": [
+        "--mcp-config"
+      ],
+      "valueArity": "not-specified-by-doc-table",
+      "documentationUrl": "https://code.claude.com/docs/en/cli-reference#cli-flags",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "cliDocs",
+            "sourceSha256": "3cd50cdd2f2a2e38380bed029c21d74cbbc09ad2f50501116c3ebae9b78b0760"
+          }
+        ]
+      },
+      "probeMatches": [
+        {
+          "commandPath": [
+            "claude"
+          ],
+          "names": [
+            "--mcp-config"
+          ]
+        },
+        {
+          "commandPath": [
+            "claude",
+            "agents"
+          ],
+          "names": [
+            "--mcp-config"
+          ]
+        }
+      ]
+    },
+    {
+      "names": [
+        "--model"
+      ],
+      "documentedSpellings": [
+        "--model"
+      ],
+      "valueArity": "not-specified-by-doc-table",
+      "documentationUrl": "https://code.claude.com/docs/en/cli-reference#cli-flags",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "cliDocs",
+            "sourceSha256": "3cd50cdd2f2a2e38380bed029c21d74cbbc09ad2f50501116c3ebae9b78b0760"
+          }
+        ]
+      },
+      "probeMatches": [
+        {
+          "commandPath": [
+            "claude"
+          ],
+          "names": [
+            "--model"
+          ]
+        },
+        {
+          "commandPath": [
+            "claude",
+            "agents"
+          ],
+          "names": [
+            "--model"
+          ]
+        },
+        {
+          "commandPath": [
+            "claude",
+            "auto-mode",
+            "critique"
+          ],
+          "names": [
+            "--model"
+          ]
+        },
+        {
+          "commandPath": [
+            "claude",
+            "plugin",
+            "eval"
+          ],
+          "names": [
+            "--model"
+          ]
+        }
+      ]
+    },
+    {
+      "names": [
+        "--name",
+        "-n"
+      ],
+      "documentedSpellings": [
+        "--name",
+        "-n"
+      ],
+      "valueArity": "not-specified-by-doc-table",
+      "documentationUrl": "https://code.claude.com/docs/en/cli-reference#cli-flags",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "cliDocs",
+            "sourceSha256": "3cd50cdd2f2a2e38380bed029c21d74cbbc09ad2f50501116c3ebae9b78b0760"
+          }
+        ]
+      },
+      "probeMatches": [
+        {
+          "commandPath": [
+            "claude"
+          ],
+          "names": [
+            "-n",
+            "--name"
+          ]
+        }
+      ]
+    },
+    {
+      "names": [
+        "--no-chrome"
+      ],
+      "documentedSpellings": [
+        "--no-chrome"
+      ],
+      "valueArity": "not-specified-by-doc-table",
+      "documentationUrl": "https://code.claude.com/docs/en/cli-reference#cli-flags",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "cliDocs",
+            "sourceSha256": "3cd50cdd2f2a2e38380bed029c21d74cbbc09ad2f50501116c3ebae9b78b0760"
+          }
+        ]
+      },
+      "probeMatches": [
+        {
+          "commandPath": [
+            "claude"
+          ],
+          "names": [
+            "--no-chrome"
+          ]
+        }
+      ]
+    },
+    {
+      "names": [
+        "--no-session-persistence"
+      ],
+      "documentedSpellings": [
+        "--no-session-persistence"
+      ],
+      "valueArity": "not-specified-by-doc-table",
+      "documentationUrl": "https://code.claude.com/docs/en/cli-reference#cli-flags",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "cliDocs",
+            "sourceSha256": "3cd50cdd2f2a2e38380bed029c21d74cbbc09ad2f50501116c3ebae9b78b0760"
+          }
+        ]
+      },
+      "probeMatches": [
+        {
+          "commandPath": [
+            "claude"
+          ],
+          "names": [
+            "--no-session-persistence"
+          ]
+        }
+      ]
+    },
+    {
+      "names": [
+        "--output-format"
+      ],
+      "documentedSpellings": [
+        "--output-format"
+      ],
+      "valueArity": "not-specified-by-doc-table",
+      "documentationUrl": "https://code.claude.com/docs/en/cli-reference#cli-flags",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "cliDocs",
+            "sourceSha256": "3cd50cdd2f2a2e38380bed029c21d74cbbc09ad2f50501116c3ebae9b78b0760"
+          }
+        ]
+      },
+      "probeMatches": [
+        {
+          "commandPath": [
+            "claude"
+          ],
+          "names": [
+            "--output-format"
+          ]
+        }
+      ]
+    },
+    {
+      "names": [
+        "--permission-mode"
+      ],
+      "documentedSpellings": [
+        "--permission-mode"
+      ],
+      "valueArity": "not-specified-by-doc-table",
+      "documentationUrl": "https://code.claude.com/docs/en/cli-reference#cli-flags",
+      "versionMarkers": [
+        {
+          "kind": "min",
+          "version": "2.1.200",
+          "characterOffset": 147
+        }
+      ],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "cliDocs",
+            "sourceSha256": "3cd50cdd2f2a2e38380bed029c21d74cbbc09ad2f50501116c3ebae9b78b0760"
+          }
+        ]
+      },
+      "probeMatches": [
+        {
+          "commandPath": [
+            "claude"
+          ],
+          "names": [
+            "--permission-mode"
+          ]
+        },
+        {
+          "commandPath": [
+            "claude",
+            "agents"
+          ],
+          "names": [
+            "--permission-mode"
+          ]
+        }
+      ]
+    },
+    {
+      "names": [
+        "--permission-prompt-tool"
+      ],
+      "documentedSpellings": [
+        "--permission-prompt-tool"
+      ],
+      "valueArity": "not-specified-by-doc-table",
+      "documentationUrl": "https://code.claude.com/docs/en/cli-reference#cli-flags",
+      "versionMarkers": [
+        {
+          "kind": "min",
+          "version": "2.1.199",
+          "characterOffset": 74
+        }
+      ],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "cliDocs",
+            "sourceSha256": "3cd50cdd2f2a2e38380bed029c21d74cbbc09ad2f50501116c3ebae9b78b0760"
+          }
+        ]
+      },
+      "probeMatches": []
+    },
+    {
+      "names": [
+        "--plugin-dir"
+      ],
+      "documentedSpellings": [
+        "--plugin-dir"
+      ],
+      "valueArity": "not-specified-by-doc-table",
+      "documentationUrl": "https://code.claude.com/docs/en/cli-reference#cli-flags",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "cliDocs",
+            "sourceSha256": "3cd50cdd2f2a2e38380bed029c21d74cbbc09ad2f50501116c3ebae9b78b0760"
+          }
+        ]
+      },
+      "probeMatches": [
+        {
+          "commandPath": [
+            "claude"
+          ],
+          "names": [
+            "--plugin-dir"
+          ]
+        },
+        {
+          "commandPath": [
+            "claude",
+            "agents"
+          ],
+          "names": [
+            "--plugin-dir"
+          ]
+        }
+      ]
+    },
+    {
+      "names": [
+        "--plugin-url"
+      ],
+      "documentedSpellings": [
+        "--plugin-url"
+      ],
+      "valueArity": "not-specified-by-doc-table",
+      "documentationUrl": "https://code.claude.com/docs/en/cli-reference#cli-flags",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "cliDocs",
+            "sourceSha256": "3cd50cdd2f2a2e38380bed029c21d74cbbc09ad2f50501116c3ebae9b78b0760"
+          }
+        ]
+      },
+      "probeMatches": [
+        {
+          "commandPath": [
+            "claude"
+          ],
+          "names": [
+            "--plugin-url"
+          ]
+        }
+      ]
+    },
+    {
+      "names": [
+        "--print",
+        "-p"
+      ],
+      "documentedSpellings": [
+        "--print",
+        "-p"
+      ],
+      "valueArity": "not-specified-by-doc-table",
+      "documentationUrl": "https://code.claude.com/docs/en/cli-reference#cli-flags",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "cliDocs",
+            "sourceSha256": "3cd50cdd2f2a2e38380bed029c21d74cbbc09ad2f50501116c3ebae9b78b0760"
+          }
+        ]
+      },
+      "probeMatches": [
+        {
+          "commandPath": [
+            "claude"
+          ],
+          "names": [
+            "-p",
+            "--print"
+          ]
+        }
+      ]
+    },
+    {
+      "names": [
+        "--prompt-suggestions"
+      ],
+      "documentedSpellings": [
+        "--prompt-suggestions"
+      ],
+      "valueArity": "not-specified-by-doc-table",
+      "documentationUrl": "https://code.claude.com/docs/en/cli-reference#cli-flags",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "cliDocs",
+            "sourceSha256": "3cd50cdd2f2a2e38380bed029c21d74cbbc09ad2f50501116c3ebae9b78b0760"
+          }
+        ]
+      },
+      "probeMatches": [
+        {
+          "commandPath": [
+            "claude"
+          ],
+          "names": [
+            "--prompt-suggestions"
+          ]
+        }
+      ]
+    },
+    {
+      "names": [
+        "--remote"
+      ],
+      "documentedSpellings": [
+        "--remote"
+      ],
+      "valueArity": "not-specified-by-doc-table",
+      "documentationUrl": "https://code.claude.com/docs/en/cli-reference#cli-flags",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "cliDocs",
+            "sourceSha256": "3cd50cdd2f2a2e38380bed029c21d74cbbc09ad2f50501116c3ebae9b78b0760"
+          }
+        ]
+      },
+      "probeMatches": [
+        {
+          "commandPath": [
+            "claude",
+            "plugin",
+            "tag"
+          ],
+          "names": [
+            "--remote"
+          ]
+        }
+      ]
+    },
+    {
+      "names": [
+        "--remote-control",
+        "--rc"
+      ],
+      "documentedSpellings": [
+        "--remote-control",
+        "--rc"
+      ],
+      "valueArity": "not-specified-by-doc-table",
+      "documentationUrl": "https://code.claude.com/docs/en/cli-reference#cli-flags",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "cliDocs",
+            "sourceSha256": "3cd50cdd2f2a2e38380bed029c21d74cbbc09ad2f50501116c3ebae9b78b0760"
+          }
+        ]
+      },
+      "probeMatches": [
+        {
+          "commandPath": [
+            "claude"
+          ],
+          "names": [
+            "--remote-control"
+          ]
+        }
+      ]
+    },
+    {
+      "names": [
+        "--remote-control-session-name-prefix"
+      ],
+      "documentedSpellings": [
+        "--remote-control-session-name-prefix <prefix>"
+      ],
+      "valueArity": "not-specified-by-doc-table",
+      "documentationUrl": "https://code.claude.com/docs/en/cli-reference#cli-flags",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "cliDocs",
+            "sourceSha256": "3cd50cdd2f2a2e38380bed029c21d74cbbc09ad2f50501116c3ebae9b78b0760"
+          }
+        ]
+      },
+      "probeMatches": [
+        {
+          "commandPath": [
+            "claude"
+          ],
+          "names": [
+            "--remote-control-session-name-prefix"
+          ]
+        }
+      ]
+    },
+    {
+      "names": [
+        "--replay-user-messages"
+      ],
+      "documentedSpellings": [
+        "--replay-user-messages"
+      ],
+      "valueArity": "not-specified-by-doc-table",
+      "documentationUrl": "https://code.claude.com/docs/en/cli-reference#cli-flags",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "cliDocs",
+            "sourceSha256": "3cd50cdd2f2a2e38380bed029c21d74cbbc09ad2f50501116c3ebae9b78b0760"
+          }
+        ]
+      },
+      "probeMatches": [
+        {
+          "commandPath": [
+            "claude"
+          ],
+          "names": [
+            "--replay-user-messages"
+          ]
+        }
+      ]
+    },
+    {
+      "names": [
+        "--resume",
+        "-r"
+      ],
+      "documentedSpellings": [
+        "--resume",
+        "-r"
+      ],
+      "valueArity": "not-specified-by-doc-table",
+      "documentationUrl": "https://code.claude.com/docs/en/cli-reference#cli-flags",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "cliDocs",
+            "sourceSha256": "3cd50cdd2f2a2e38380bed029c21d74cbbc09ad2f50501116c3ebae9b78b0760"
+          }
+        ]
+      },
+      "probeMatches": [
+        {
+          "commandPath": [
+            "claude"
+          ],
+          "names": [
+            "-r",
+            "--resume"
+          ]
+        }
+      ]
+    },
+    {
+      "names": [
+        "--safe-mode"
+      ],
+      "documentedSpellings": [
+        "--safe-mode"
+      ],
+      "valueArity": "not-specified-by-doc-table",
+      "documentationUrl": "https://code.claude.com/docs/en/cli-reference#cli-flags",
+      "minVersion": "2.1.169",
+      "versionMarkers": [
+        {
+          "kind": "min",
+          "version": "2.1.169",
+          "characterOffset": 0
+        }
+      ],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "cliDocs",
+            "sourceSha256": "3cd50cdd2f2a2e38380bed029c21d74cbbc09ad2f50501116c3ebae9b78b0760"
+          }
+        ]
+      },
+      "probeMatches": [
+        {
+          "commandPath": [
+            "claude"
+          ],
+          "names": [
+            "--safe-mode"
+          ]
+        }
+      ]
+    },
+    {
+      "names": [
+        "--session-id"
+      ],
+      "documentedSpellings": [
+        "--session-id"
+      ],
+      "valueArity": "not-specified-by-doc-table",
+      "documentationUrl": "https://code.claude.com/docs/en/cli-reference#cli-flags",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "cliDocs",
+            "sourceSha256": "3cd50cdd2f2a2e38380bed029c21d74cbbc09ad2f50501116c3ebae9b78b0760"
+          }
+        ]
+      },
+      "probeMatches": [
+        {
+          "commandPath": [
+            "claude"
+          ],
+          "names": [
+            "--session-id"
+          ]
+        }
+      ]
+    },
+    {
+      "names": [
+        "--setting-sources"
+      ],
+      "documentedSpellings": [
+        "--setting-sources"
+      ],
+      "valueArity": "not-specified-by-doc-table",
+      "documentationUrl": "https://code.claude.com/docs/en/cli-reference#cli-flags",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "cliDocs",
+            "sourceSha256": "3cd50cdd2f2a2e38380bed029c21d74cbbc09ad2f50501116c3ebae9b78b0760"
+          }
+        ]
+      },
+      "probeMatches": [
+        {
+          "commandPath": [
+            "claude"
+          ],
+          "names": [
+            "--setting-sources"
+          ]
+        },
+        {
+          "commandPath": [
+            "claude",
+            "agents"
+          ],
+          "names": [
+            "--setting-sources"
+          ]
+        }
+      ]
+    },
+    {
+      "names": [
+        "--settings"
+      ],
+      "documentedSpellings": [
+        "--settings"
+      ],
+      "valueArity": "not-specified-by-doc-table",
+      "documentationUrl": "https://code.claude.com/docs/en/cli-reference#cli-flags",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "cliDocs",
+            "sourceSha256": "3cd50cdd2f2a2e38380bed029c21d74cbbc09ad2f50501116c3ebae9b78b0760"
+          }
+        ]
+      },
+      "probeMatches": [
+        {
+          "commandPath": [
+            "claude"
+          ],
+          "names": [
+            "--settings"
+          ]
+        },
+        {
+          "commandPath": [
+            "claude",
+            "agents"
+          ],
+          "names": [
+            "--settings"
+          ]
+        }
+      ]
+    },
+    {
+      "names": [
+        "--strict-mcp-config"
+      ],
+      "documentedSpellings": [
+        "--strict-mcp-config"
+      ],
+      "valueArity": "not-specified-by-doc-table",
+      "documentationUrl": "https://code.claude.com/docs/en/cli-reference#cli-flags",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "cliDocs",
+            "sourceSha256": "3cd50cdd2f2a2e38380bed029c21d74cbbc09ad2f50501116c3ebae9b78b0760"
+          }
+        ]
+      },
+      "probeMatches": [
+        {
+          "commandPath": [
+            "claude"
+          ],
+          "names": [
+            "--strict-mcp-config"
+          ]
+        },
+        {
+          "commandPath": [
+            "claude",
+            "agents"
+          ],
+          "names": [
+            "--strict-mcp-config"
+          ]
+        }
+      ]
+    },
+    {
+      "names": [
+        "--system-prompt"
+      ],
+      "documentedSpellings": [
+        "--system-prompt"
+      ],
+      "valueArity": "not-specified-by-doc-table",
+      "documentationUrl": "https://code.claude.com/docs/en/cli-reference#cli-flags",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "cliDocs",
+            "sourceSha256": "3cd50cdd2f2a2e38380bed029c21d74cbbc09ad2f50501116c3ebae9b78b0760"
+          }
+        ]
+      },
+      "probeMatches": [
+        {
+          "commandPath": [
+            "claude"
+          ],
+          "names": [
+            "--system-prompt"
+          ]
+        }
+      ]
+    },
+    {
+      "names": [
+        "--system-prompt-file"
+      ],
+      "documentedSpellings": [
+        "--system-prompt-file"
+      ],
+      "valueArity": "not-specified-by-doc-table",
+      "documentationUrl": "https://code.claude.com/docs/en/cli-reference#cli-flags",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "cliDocs",
+            "sourceSha256": "3cd50cdd2f2a2e38380bed029c21d74cbbc09ad2f50501116c3ebae9b78b0760"
+          }
+        ]
+      },
+      "probeMatches": []
+    },
+    {
+      "names": [
+        "--teleport"
+      ],
+      "documentedSpellings": [
+        "--teleport"
+      ],
+      "valueArity": "not-specified-by-doc-table",
+      "documentationUrl": "https://code.claude.com/docs/en/cli-reference#cli-flags",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "cliDocs",
+            "sourceSha256": "3cd50cdd2f2a2e38380bed029c21d74cbbc09ad2f50501116c3ebae9b78b0760"
+          }
+        ]
+      },
+      "probeMatches": []
+    },
+    {
+      "names": [
+        "--teammate-mode"
+      ],
+      "documentedSpellings": [
+        "--teammate-mode"
+      ],
+      "valueArity": "not-specified-by-doc-table",
+      "documentationUrl": "https://code.claude.com/docs/en/cli-reference#cli-flags",
+      "versionMarkers": [
+        {
+          "kind": "min",
+          "version": "2.1.186",
+          "characterOffset": 100
+        }
+      ],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "cliDocs",
+            "sourceSha256": "3cd50cdd2f2a2e38380bed029c21d74cbbc09ad2f50501116c3ebae9b78b0760"
+          }
+        ]
+      },
+      "probeMatches": []
+    },
+    {
+      "names": [
+        "--tmux"
+      ],
+      "documentedSpellings": [
+        "--tmux"
+      ],
+      "valueArity": "not-specified-by-doc-table",
+      "documentationUrl": "https://code.claude.com/docs/en/cli-reference#cli-flags",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "cliDocs",
+            "sourceSha256": "3cd50cdd2f2a2e38380bed029c21d74cbbc09ad2f50501116c3ebae9b78b0760"
+          }
+        ]
+      },
+      "probeMatches": [
+        {
+          "commandPath": [
+            "claude"
+          ],
+          "names": [
+            "--tmux"
+          ]
+        }
+      ]
+    },
+    {
+      "names": [
+        "--tools"
+      ],
+      "documentedSpellings": [
+        "--tools"
+      ],
+      "valueArity": "not-specified-by-doc-table",
+      "documentationUrl": "https://code.claude.com/docs/en/cli-reference#cli-flags",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "cliDocs",
+            "sourceSha256": "3cd50cdd2f2a2e38380bed029c21d74cbbc09ad2f50501116c3ebae9b78b0760"
+          }
+        ]
+      },
+      "probeMatches": [
+        {
+          "commandPath": [
+            "claude"
+          ],
+          "names": [
+            "--tools"
+          ]
+        }
+      ]
+    },
+    {
+      "names": [
+        "--verbose"
+      ],
+      "documentedSpellings": [
+        "--verbose"
+      ],
+      "valueArity": "not-specified-by-doc-table",
+      "documentationUrl": "https://code.claude.com/docs/en/cli-reference#cli-flags",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "cliDocs",
+            "sourceSha256": "3cd50cdd2f2a2e38380bed029c21d74cbbc09ad2f50501116c3ebae9b78b0760"
+          }
+        ]
+      },
+      "probeMatches": [
+        {
+          "commandPath": [
+            "claude"
+          ],
+          "names": [
+            "--verbose"
+          ]
+        },
+        {
+          "commandPath": [
+            "claude",
+            "plugin",
+            "eval"
+          ],
+          "names": [
+            "--verbose"
+          ]
+        }
+      ]
+    },
+    {
+      "names": [
+        "--version",
+        "-v"
+      ],
+      "documentedSpellings": [
+        "--version",
+        "-v"
+      ],
+      "valueArity": "not-specified-by-doc-table",
+      "documentationUrl": "https://code.claude.com/docs/en/cli-reference#cli-flags",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "cliDocs",
+            "sourceSha256": "3cd50cdd2f2a2e38380bed029c21d74cbbc09ad2f50501116c3ebae9b78b0760"
+          }
+        ]
+      },
+      "probeMatches": [
+        {
+          "commandPath": [
+            "claude"
+          ],
+          "names": [
+            "-v",
+            "--version"
+          ]
+        }
+      ]
+    },
+    {
+      "names": [
+        "--worktree",
+        "-w"
+      ],
+      "documentedSpellings": [
+        "--worktree",
+        "-w"
+      ],
+      "valueArity": "not-specified-by-doc-table",
+      "documentationUrl": "https://code.claude.com/docs/en/cli-reference#cli-flags",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "cliDocs",
+            "sourceSha256": "3cd50cdd2f2a2e38380bed029c21d74cbbc09ad2f50501116c3ebae9b78b0760"
+          }
+        ]
+      },
+      "probeMatches": [
+        {
+          "commandPath": [
+            "claude"
+          ],
+          "names": [
+            "-w",
+            "--worktree"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,2248 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://example.invalid/claude-code/2.1.207/settings.schema.json",
+  "title": "Claude Code documented settings — independent-source experiment",
+  "description": "Compatibility schema generated only from official docs. Documented property names are enumerated, but their value types are intentionally unverified.",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "x-type-status": "verified-by-json-schema-convention"
+    },
+    "advisorModel": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-min-version": "2.1.98",
+      "x-version-markers": [
+        {
+          "kind": "min",
+          "version": "2.1.98",
+          "characterOffset": 0
+        },
+        {
+          "kind": "min",
+          "version": "2.1.170",
+          "characterOffset": 148
+        }
+      ],
+      "x-binary-corroboration": {
+        "source": "platformBinary",
+        "binarySha256": "1397a062c6889675055e3314dd956376ac51262a7734ad9e819c26975d71547a",
+        "meaning": "identifier appears in static strings; type and public status are not inferred"
+      }
+    },
+    "agent": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-binary-corroboration": {
+        "source": "platformBinary",
+        "binarySha256": "1397a062c6889675055e3314dd956376ac51262a7734ad9e819c26975d71547a",
+        "meaning": "identifier appears in static strings; type and public status are not inferred"
+      }
+    },
+    "agentPushNotifEnabled": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-min-version": "2.1.119",
+      "x-version-markers": [
+        {
+          "kind": "min",
+          "version": "2.1.119",
+          "characterOffset": 0
+        }
+      ],
+      "x-binary-corroboration": {
+        "source": "platformBinary",
+        "binarySha256": "1397a062c6889675055e3314dd956376ac51262a7734ad9e819c26975d71547a",
+        "meaning": "identifier appears in static strings; type and public status are not inferred"
+      }
+    },
+    "allowAllClaudeAiMcps": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-binary-corroboration": {
+        "source": "platformBinary",
+        "binarySha256": "1397a062c6889675055e3314dd956376ac51262a7734ad9e819c26975d71547a",
+        "meaning": "identifier appears in static strings; type and public status are not inferred"
+      }
+    },
+    "allowedChannelPlugins": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-binary-corroboration": {
+        "source": "platformBinary",
+        "binarySha256": "1397a062c6889675055e3314dd956376ac51262a7734ad9e819c26975d71547a",
+        "meaning": "identifier appears in static strings; type and public status are not inferred"
+      }
+    },
+    "allowedHttpHookUrls": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-binary-corroboration": {
+        "source": "platformBinary",
+        "binarySha256": "1397a062c6889675055e3314dd956376ac51262a7734ad9e819c26975d71547a",
+        "meaning": "identifier appears in static strings; type and public status are not inferred"
+      }
+    },
+    "allowedMcpServers": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-binary-corroboration": {
+        "source": "platformBinary",
+        "binarySha256": "1397a062c6889675055e3314dd956376ac51262a7734ad9e819c26975d71547a",
+        "meaning": "identifier appears in static strings; type and public status are not inferred"
+      }
+    },
+    "allowManagedHooksOnly": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-binary-corroboration": {
+        "source": "platformBinary",
+        "binarySha256": "1397a062c6889675055e3314dd956376ac51262a7734ad9e819c26975d71547a",
+        "meaning": "identifier appears in static strings; type and public status are not inferred"
+      }
+    },
+    "allowManagedMcpServersOnly": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-binary-corroboration": {
+        "source": "platformBinary",
+        "binarySha256": "1397a062c6889675055e3314dd956376ac51262a7734ad9e819c26975d71547a",
+        "meaning": "identifier appears in static strings; type and public status are not inferred"
+      }
+    },
+    "allowManagedPermissionRulesOnly": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-binary-corroboration": {
+        "source": "platformBinary",
+        "binarySha256": "1397a062c6889675055e3314dd956376ac51262a7734ad9e819c26975d71547a",
+        "meaning": "identifier appears in static strings; type and public status are not inferred"
+      }
+    },
+    "alwaysThinkingEnabled": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-binary-corroboration": {
+        "source": "platformBinary",
+        "binarySha256": "1397a062c6889675055e3314dd956376ac51262a7734ad9e819c26975d71547a",
+        "meaning": "identifier appears in static strings; type and public status are not inferred"
+      }
+    },
+    "apiKeyHelper": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-binary-corroboration": {
+        "source": "platformBinary",
+        "binarySha256": "1397a062c6889675055e3314dd956376ac51262a7734ad9e819c26975d71547a",
+        "meaning": "identifier appears in static strings; type and public status are not inferred"
+      }
+    },
+    "askUserQuestionTimeout": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-min-version": "2.1.200",
+      "x-version-markers": [
+        {
+          "kind": "min",
+          "version": "2.1.200",
+          "characterOffset": 0
+        }
+      ],
+      "x-binary-corroboration": {
+        "source": "platformBinary",
+        "binarySha256": "1397a062c6889675055e3314dd956376ac51262a7734ad9e819c26975d71547a",
+        "meaning": "identifier appears in static strings; type and public status are not inferred"
+      }
+    },
+    "attribution": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-binary-corroboration": {
+        "source": "platformBinary",
+        "binarySha256": "1397a062c6889675055e3314dd956376ac51262a7734ad9e819c26975d71547a",
+        "meaning": "identifier appears in static strings; type and public status are not inferred"
+      }
+    },
+    "autoCompactEnabled": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-min-version": "2.1.119",
+      "x-version-markers": [
+        {
+          "kind": "min",
+          "version": "2.1.119",
+          "characterOffset": 0
+        }
+      ],
+      "x-binary-corroboration": {
+        "source": "platformBinary",
+        "binarySha256": "1397a062c6889675055e3314dd956376ac51262a7734ad9e819c26975d71547a",
+        "meaning": "identifier appears in static strings; type and public status are not inferred"
+      }
+    },
+    "autoMemoryDirectory": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-binary-corroboration": {
+        "source": "platformBinary",
+        "binarySha256": "1397a062c6889675055e3314dd956376ac51262a7734ad9e819c26975d71547a",
+        "meaning": "identifier appears in static strings; type and public status are not inferred"
+      }
+    },
+    "autoMemoryEnabled": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-binary-corroboration": {
+        "source": "platformBinary",
+        "binarySha256": "1397a062c6889675055e3314dd956376ac51262a7734ad9e819c26975d71547a",
+        "meaning": "identifier appears in static strings; type and public status are not inferred"
+      }
+    },
+    "autoMode": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-binary-corroboration": {
+        "source": "platformBinary",
+        "binarySha256": "1397a062c6889675055e3314dd956376ac51262a7734ad9e819c26975d71547a",
+        "meaning": "identifier appears in static strings; type and public status are not inferred"
+      }
+    },
+    "autoScrollEnabled": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-binary-corroboration": {
+        "source": "platformBinary",
+        "binarySha256": "1397a062c6889675055e3314dd956376ac51262a7734ad9e819c26975d71547a",
+        "meaning": "identifier appears in static strings; type and public status are not inferred"
+      }
+    },
+    "autoUpdatesChannel": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-binary-corroboration": {
+        "source": "platformBinary",
+        "binarySha256": "1397a062c6889675055e3314dd956376ac51262a7734ad9e819c26975d71547a",
+        "meaning": "identifier appears in static strings; type and public status are not inferred"
+      }
+    },
+    "availableModels": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-binary-corroboration": {
+        "source": "platformBinary",
+        "binarySha256": "1397a062c6889675055e3314dd956376ac51262a7734ad9e819c26975d71547a",
+        "meaning": "identifier appears in static strings; type and public status are not inferred"
+      }
+    },
+    "awaySummaryEnabled": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-binary-corroboration": {
+        "source": "platformBinary",
+        "binarySha256": "1397a062c6889675055e3314dd956376ac51262a7734ad9e819c26975d71547a",
+        "meaning": "identifier appears in static strings; type and public status are not inferred"
+      }
+    },
+    "awsAuthRefresh": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-binary-corroboration": {
+        "source": "platformBinary",
+        "binarySha256": "1397a062c6889675055e3314dd956376ac51262a7734ad9e819c26975d71547a",
+        "meaning": "identifier appears in static strings; type and public status are not inferred"
+      }
+    },
+    "awsCredentialExport": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-binary-corroboration": {
+        "source": "platformBinary",
+        "binarySha256": "1397a062c6889675055e3314dd956376ac51262a7734ad9e819c26975d71547a",
+        "meaning": "identifier appears in static strings; type and public status are not inferred"
+      }
+    },
+    "axScreenReader": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-min-version": "2.1.181",
+      "x-version-markers": [
+        {
+          "kind": "min",
+          "version": "2.1.181",
+          "characterOffset": 0
+        }
+      ],
+      "x-binary-corroboration": {
+        "source": "platformBinary",
+        "binarySha256": "1397a062c6889675055e3314dd956376ac51262a7734ad9e819c26975d71547a",
+        "meaning": "identifier appears in static strings; type and public status are not inferred"
+      }
+    },
+    "blockedMarketplaces": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-binary-corroboration": {
+        "source": "platformBinary",
+        "binarySha256": "1397a062c6889675055e3314dd956376ac51262a7734ad9e819c26975d71547a",
+        "meaning": "identifier appears in static strings; type and public status are not inferred"
+      }
+    },
+    "browserExternalPageTools": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      }
+    },
+    "channelsEnabled": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-binary-corroboration": {
+        "source": "platformBinary",
+        "binarySha256": "1397a062c6889675055e3314dd956376ac51262a7734ad9e819c26975d71547a",
+        "meaning": "identifier appears in static strings; type and public status are not inferred"
+      }
+    },
+    "claudeMd": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-binary-corroboration": {
+        "source": "platformBinary",
+        "binarySha256": "1397a062c6889675055e3314dd956376ac51262a7734ad9e819c26975d71547a",
+        "meaning": "identifier appears in static strings; type and public status are not inferred"
+      }
+    },
+    "claudeMdExcludes": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-binary-corroboration": {
+        "source": "platformBinary",
+        "binarySha256": "1397a062c6889675055e3314dd956376ac51262a7734ad9e819c26975d71547a",
+        "meaning": "identifier appears in static strings; type and public status are not inferred"
+      }
+    },
+    "cleanupPeriodDays": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-version-markers": [
+        {
+          "kind": "min",
+          "version": "2.1.203",
+          "characterOffset": 344
+        }
+      ],
+      "x-binary-corroboration": {
+        "source": "platformBinary",
+        "binarySha256": "1397a062c6889675055e3314dd956376ac51262a7734ad9e819c26975d71547a",
+        "meaning": "identifier appears in static strings; type and public status are not inferred"
+      }
+    },
+    "companyAnnouncements": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-binary-corroboration": {
+        "source": "platformBinary",
+        "binarySha256": "1397a062c6889675055e3314dd956376ac51262a7734ad9e819c26975d71547a",
+        "meaning": "identifier appears in static strings; type and public status are not inferred"
+      }
+    },
+    "defaultShell": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-binary-corroboration": {
+        "source": "platformBinary",
+        "binarySha256": "1397a062c6889675055e3314dd956376ac51262a7734ad9e819c26975d71547a",
+        "meaning": "identifier appears in static strings; type and public status are not inferred"
+      }
+    },
+    "deniedMcpServers": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-binary-corroboration": {
+        "source": "platformBinary",
+        "binarySha256": "1397a062c6889675055e3314dd956376ac51262a7734ad9e819c26975d71547a",
+        "meaning": "identifier appears in static strings; type and public status are not inferred"
+      }
+    },
+    "disableAgentView": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-binary-corroboration": {
+        "source": "platformBinary",
+        "binarySha256": "1397a062c6889675055e3314dd956376ac51262a7734ad9e819c26975d71547a",
+        "meaning": "identifier appears in static strings; type and public status are not inferred"
+      }
+    },
+    "disableAllHooks": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-binary-corroboration": {
+        "source": "platformBinary",
+        "binarySha256": "1397a062c6889675055e3314dd956376ac51262a7734ad9e819c26975d71547a",
+        "meaning": "identifier appears in static strings; type and public status are not inferred"
+      }
+    },
+    "disableArtifact": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-binary-corroboration": {
+        "source": "platformBinary",
+        "binarySha256": "1397a062c6889675055e3314dd956376ac51262a7734ad9e819c26975d71547a",
+        "meaning": "identifier appears in static strings; type and public status are not inferred"
+      }
+    },
+    "disableAutoMode": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-binary-corroboration": {
+        "source": "platformBinary",
+        "binarySha256": "1397a062c6889675055e3314dd956376ac51262a7734ad9e819c26975d71547a",
+        "meaning": "identifier appears in static strings; type and public status are not inferred"
+      }
+    },
+    "disableBundledSkills": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-binary-corroboration": {
+        "source": "platformBinary",
+        "binarySha256": "1397a062c6889675055e3314dd956376ac51262a7734ad9e819c26975d71547a",
+        "meaning": "identifier appears in static strings; type and public status are not inferred"
+      }
+    },
+    "disableClaudeAiConnectors": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-min-version": "2.1.182",
+      "x-version-markers": [
+        {
+          "kind": "min",
+          "version": "2.1.182",
+          "characterOffset": 0
+        }
+      ],
+      "x-binary-corroboration": {
+        "source": "platformBinary",
+        "binarySha256": "1397a062c6889675055e3314dd956376ac51262a7734ad9e819c26975d71547a",
+        "meaning": "identifier appears in static strings; type and public status are not inferred"
+      }
+    },
+    "disableDeepLinkRegistration": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-binary-corroboration": {
+        "source": "platformBinary",
+        "binarySha256": "1397a062c6889675055e3314dd956376ac51262a7734ad9e819c26975d71547a",
+        "meaning": "identifier appears in static strings; type and public status are not inferred"
+      }
+    },
+    "disabledMcpjsonServers": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-binary-corroboration": {
+        "source": "platformBinary",
+        "binarySha256": "1397a062c6889675055e3314dd956376ac51262a7734ad9e819c26975d71547a",
+        "meaning": "identifier appears in static strings; type and public status are not inferred"
+      }
+    },
+    "disableRemoteControl": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-min-version": "2.1.128",
+      "x-version-markers": [
+        {
+          "kind": "min",
+          "version": "2.1.128",
+          "characterOffset": 0
+        }
+      ],
+      "x-binary-corroboration": {
+        "source": "platformBinary",
+        "binarySha256": "1397a062c6889675055e3314dd956376ac51262a7734ad9e819c26975d71547a",
+        "meaning": "identifier appears in static strings; type and public status are not inferred"
+      }
+    },
+    "disableSideloadFlags": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-min-version": "2.1.193",
+      "x-version-markers": [
+        {
+          "kind": "min",
+          "version": "2.1.193",
+          "characterOffset": 0
+        }
+      ],
+      "x-binary-corroboration": {
+        "source": "platformBinary",
+        "binarySha256": "1397a062c6889675055e3314dd956376ac51262a7734ad9e819c26975d71547a",
+        "meaning": "identifier appears in static strings; type and public status are not inferred"
+      }
+    },
+    "disableSkillShellExecution": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-binary-corroboration": {
+        "source": "platformBinary",
+        "binarySha256": "1397a062c6889675055e3314dd956376ac51262a7734ad9e819c26975d71547a",
+        "meaning": "identifier appears in static strings; type and public status are not inferred"
+      }
+    },
+    "disableWorkflows": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-binary-corroboration": {
+        "source": "platformBinary",
+        "binarySha256": "1397a062c6889675055e3314dd956376ac51262a7734ad9e819c26975d71547a",
+        "meaning": "identifier appears in static strings; type and public status are not inferred"
+      }
+    },
+    "editorMode": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-binary-corroboration": {
+        "source": "platformBinary",
+        "binarySha256": "1397a062c6889675055e3314dd956376ac51262a7734ad9e819c26975d71547a",
+        "meaning": "identifier appears in static strings; type and public status are not inferred"
+      }
+    },
+    "effortLevel": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-binary-corroboration": {
+        "source": "platformBinary",
+        "binarySha256": "1397a062c6889675055e3314dd956376ac51262a7734ad9e819c26975d71547a",
+        "meaning": "identifier appears in static strings; type and public status are not inferred"
+      }
+    },
+    "enableAllProjectMcpServers": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-version-markers": [
+        {
+          "kind": "min",
+          "version": "2.1.196",
+          "characterOffset": 76
+        }
+      ],
+      "x-binary-corroboration": {
+        "source": "platformBinary",
+        "binarySha256": "1397a062c6889675055e3314dd956376ac51262a7734ad9e819c26975d71547a",
+        "meaning": "identifier appears in static strings; type and public status are not inferred"
+      }
+    },
+    "enableArtifact": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-min-version": "2.1.196",
+      "x-version-markers": [
+        {
+          "kind": "min",
+          "version": "2.1.196",
+          "characterOffset": 0
+        }
+      ],
+      "x-binary-corroboration": {
+        "source": "platformBinary",
+        "binarySha256": "1397a062c6889675055e3314dd956376ac51262a7734ad9e819c26975d71547a",
+        "meaning": "identifier appears in static strings; type and public status are not inferred"
+      }
+    },
+    "enabledMcpjsonServers": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-version-markers": [
+        {
+          "kind": "min",
+          "version": "2.1.196",
+          "characterOffset": 64
+        }
+      ],
+      "x-binary-corroboration": {
+        "source": "platformBinary",
+        "binarySha256": "1397a062c6889675055e3314dd956376ac51262a7734ad9e819c26975d71547a",
+        "meaning": "identifier appears in static strings; type and public status are not inferred"
+      }
+    },
+    "enforceAvailableModels": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-min-version": "2.1.175",
+      "x-version-markers": [
+        {
+          "kind": "min",
+          "version": "2.1.175",
+          "characterOffset": 0
+        }
+      ],
+      "x-binary-corroboration": {
+        "source": "platformBinary",
+        "binarySha256": "1397a062c6889675055e3314dd956376ac51262a7734ad9e819c26975d71547a",
+        "meaning": "identifier appears in static strings; type and public status are not inferred"
+      }
+    },
+    "env": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-version-markers": [
+        {
+          "kind": "min",
+          "version": "2.1.143",
+          "characterOffset": 95
+        },
+        {
+          "kind": "min",
+          "version": "2.1.195",
+          "characterOffset": 336
+        }
+      ],
+      "x-binary-corroboration": {
+        "source": "platformBinary",
+        "binarySha256": "1397a062c6889675055e3314dd956376ac51262a7734ad9e819c26975d71547a",
+        "meaning": "identifier appears in static strings; type and public status are not inferred"
+      }
+    },
+    "fallbackModel": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-binary-corroboration": {
+        "source": "platformBinary",
+        "binarySha256": "1397a062c6889675055e3314dd956376ac51262a7734ad9e819c26975d71547a",
+        "meaning": "identifier appears in static strings; type and public status are not inferred"
+      }
+    },
+    "fastModePerSessionOptIn": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-binary-corroboration": {
+        "source": "platformBinary",
+        "binarySha256": "1397a062c6889675055e3314dd956376ac51262a7734ad9e819c26975d71547a",
+        "meaning": "identifier appears in static strings; type and public status are not inferred"
+      }
+    },
+    "feedbackSurveyRate": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-binary-corroboration": {
+        "source": "platformBinary",
+        "binarySha256": "1397a062c6889675055e3314dd956376ac51262a7734ad9e819c26975d71547a",
+        "meaning": "identifier appears in static strings; type and public status are not inferred"
+      }
+    },
+    "fileCheckpointingEnabled": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-min-version": "2.1.119",
+      "x-version-markers": [
+        {
+          "kind": "min",
+          "version": "2.1.119",
+          "characterOffset": 0
+        }
+      ],
+      "x-binary-corroboration": {
+        "source": "platformBinary",
+        "binarySha256": "1397a062c6889675055e3314dd956376ac51262a7734ad9e819c26975d71547a",
+        "meaning": "identifier appears in static strings; type and public status are not inferred"
+      }
+    },
+    "fileSuggestion": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-binary-corroboration": {
+        "source": "platformBinary",
+        "binarySha256": "1397a062c6889675055e3314dd956376ac51262a7734ad9e819c26975d71547a",
+        "meaning": "identifier appears in static strings; type and public status are not inferred"
+      }
+    },
+    "footerLinksRegexes": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-min-version": "2.1.176",
+      "x-version-markers": [
+        {
+          "kind": "min",
+          "version": "2.1.176",
+          "characterOffset": 0
+        }
+      ],
+      "x-binary-corroboration": {
+        "source": "platformBinary",
+        "binarySha256": "1397a062c6889675055e3314dd956376ac51262a7734ad9e819c26975d71547a",
+        "meaning": "identifier appears in static strings; type and public status are not inferred"
+      }
+    },
+    "forceLoginMethod": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-binary-corroboration": {
+        "source": "platformBinary",
+        "binarySha256": "1397a062c6889675055e3314dd956376ac51262a7734ad9e819c26975d71547a",
+        "meaning": "identifier appears in static strings; type and public status are not inferred"
+      }
+    },
+    "forceLoginGatewayUrl": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-binary-corroboration": {
+        "source": "platformBinary",
+        "binarySha256": "1397a062c6889675055e3314dd956376ac51262a7734ad9e819c26975d71547a",
+        "meaning": "identifier appears in static strings; type and public status are not inferred"
+      }
+    },
+    "forceLoginOrgUUID": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-binary-corroboration": {
+        "source": "platformBinary",
+        "binarySha256": "1397a062c6889675055e3314dd956376ac51262a7734ad9e819c26975d71547a",
+        "meaning": "identifier appears in static strings; type and public status are not inferred"
+      }
+    },
+    "forceRemoteSettingsRefresh": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-binary-corroboration": {
+        "source": "platformBinary",
+        "binarySha256": "1397a062c6889675055e3314dd956376ac51262a7734ad9e819c26975d71547a",
+        "meaning": "identifier appears in static strings; type and public status are not inferred"
+      }
+    },
+    "gcpAuthRefresh": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-binary-corroboration": {
+        "source": "platformBinary",
+        "binarySha256": "1397a062c6889675055e3314dd956376ac51262a7734ad9e819c26975d71547a",
+        "meaning": "identifier appears in static strings; type and public status are not inferred"
+      }
+    },
+    "hooks": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-binary-corroboration": {
+        "source": "platformBinary",
+        "binarySha256": "1397a062c6889675055e3314dd956376ac51262a7734ad9e819c26975d71547a",
+        "meaning": "identifier appears in static strings; type and public status are not inferred"
+      }
+    },
+    "httpHookAllowedEnvVars": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-binary-corroboration": {
+        "source": "platformBinary",
+        "binarySha256": "1397a062c6889675055e3314dd956376ac51262a7734ad9e819c26975d71547a",
+        "meaning": "identifier appears in static strings; type and public status are not inferred"
+      }
+    },
+    "includeGitInstructions": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-binary-corroboration": {
+        "source": "platformBinary",
+        "binarySha256": "1397a062c6889675055e3314dd956376ac51262a7734ad9e819c26975d71547a",
+        "meaning": "identifier appears in static strings; type and public status are not inferred"
+      }
+    },
+    "inputNeededNotifEnabled": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-min-version": "2.1.119",
+      "x-version-markers": [
+        {
+          "kind": "min",
+          "version": "2.1.119",
+          "characterOffset": 0
+        }
+      ],
+      "x-binary-corroboration": {
+        "source": "platformBinary",
+        "binarySha256": "1397a062c6889675055e3314dd956376ac51262a7734ad9e819c26975d71547a",
+        "meaning": "identifier appears in static strings; type and public status are not inferred"
+      }
+    },
+    "language": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-version-markers": [
+        {
+          "kind": "min",
+          "version": "2.1.176",
+          "characterOffset": 274
+        }
+      ],
+      "x-binary-corroboration": {
+        "source": "platformBinary",
+        "binarySha256": "1397a062c6889675055e3314dd956376ac51262a7734ad9e819c26975d71547a",
+        "meaning": "identifier appears in static strings; type and public status are not inferred"
+      }
+    },
+    "minimumVersion": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-binary-corroboration": {
+        "source": "platformBinary",
+        "binarySha256": "1397a062c6889675055e3314dd956376ac51262a7734ad9e819c26975d71547a",
+        "meaning": "identifier appears in static strings; type and public status are not inferred"
+      }
+    },
+    "model": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-binary-corroboration": {
+        "source": "platformBinary",
+        "binarySha256": "1397a062c6889675055e3314dd956376ac51262a7734ad9e819c26975d71547a",
+        "meaning": "identifier appears in static strings; type and public status are not inferred"
+      }
+    },
+    "modelOverrides": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-binary-corroboration": {
+        "source": "platformBinary",
+        "binarySha256": "1397a062c6889675055e3314dd956376ac51262a7734ad9e819c26975d71547a",
+        "meaning": "identifier appears in static strings; type and public status are not inferred"
+      }
+    },
+    "otelHeadersHelper": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-binary-corroboration": {
+        "source": "platformBinary",
+        "binarySha256": "1397a062c6889675055e3314dd956376ac51262a7734ad9e819c26975d71547a",
+        "meaning": "identifier appears in static strings; type and public status are not inferred"
+      }
+    },
+    "outputStyle": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-binary-corroboration": {
+        "source": "platformBinary",
+        "binarySha256": "1397a062c6889675055e3314dd956376ac51262a7734ad9e819c26975d71547a",
+        "meaning": "identifier appears in static strings; type and public status are not inferred"
+      }
+    },
+    "parentSettingsBehavior": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-min-version": "2.1.133",
+      "x-version-markers": [
+        {
+          "kind": "min",
+          "version": "2.1.133",
+          "characterOffset": 0
+        }
+      ],
+      "x-binary-corroboration": {
+        "source": "platformBinary",
+        "binarySha256": "1397a062c6889675055e3314dd956376ac51262a7734ad9e819c26975d71547a",
+        "meaning": "identifier appears in static strings; type and public status are not inferred"
+      }
+    },
+    "permissions": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-binary-corroboration": {
+        "source": "platformBinary",
+        "binarySha256": "1397a062c6889675055e3314dd956376ac51262a7734ad9e819c26975d71547a",
+        "meaning": "identifier appears in static strings; type and public status are not inferred"
+      }
+    },
+    "plansDirectory": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-binary-corroboration": {
+        "source": "platformBinary",
+        "binarySha256": "1397a062c6889675055e3314dd956376ac51262a7734ad9e819c26975d71547a",
+        "meaning": "identifier appears in static strings; type and public status are not inferred"
+      }
+    },
+    "pluginSuggestionMarketplaces": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-binary-corroboration": {
+        "source": "platformBinary",
+        "binarySha256": "1397a062c6889675055e3314dd956376ac51262a7734ad9e819c26975d71547a",
+        "meaning": "identifier appears in static strings; type and public status are not inferred"
+      }
+    },
+    "pluginTrustMessage": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-binary-corroboration": {
+        "source": "platformBinary",
+        "binarySha256": "1397a062c6889675055e3314dd956376ac51262a7734ad9e819c26975d71547a",
+        "meaning": "identifier appears in static strings; type and public status are not inferred"
+      }
+    },
+    "policyHelper": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-min-version": "2.1.136",
+      "x-version-markers": [
+        {
+          "kind": "min",
+          "version": "2.1.136",
+          "characterOffset": 0
+        }
+      ],
+      "x-binary-corroboration": {
+        "source": "platformBinary",
+        "binarySha256": "1397a062c6889675055e3314dd956376ac51262a7734ad9e819c26975d71547a",
+        "meaning": "identifier appears in static strings; type and public status are not inferred"
+      }
+    },
+    "preferredNotifChannel": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-binary-corroboration": {
+        "source": "platformBinary",
+        "binarySha256": "1397a062c6889675055e3314dd956376ac51262a7734ad9e819c26975d71547a",
+        "meaning": "identifier appears in static strings; type and public status are not inferred"
+      }
+    },
+    "prefersReducedMotion": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-binary-corroboration": {
+        "source": "platformBinary",
+        "binarySha256": "1397a062c6889675055e3314dd956376ac51262a7734ad9e819c26975d71547a",
+        "meaning": "identifier appears in static strings; type and public status are not inferred"
+      }
+    },
+    "prUrlTemplate": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-binary-corroboration": {
+        "source": "platformBinary",
+        "binarySha256": "1397a062c6889675055e3314dd956376ac51262a7734ad9e819c26975d71547a",
+        "meaning": "identifier appears in static strings; type and public status are not inferred"
+      }
+    },
+    "remoteControlAtStartup": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-min-version": "2.1.119",
+      "x-version-markers": [
+        {
+          "kind": "min",
+          "version": "2.1.119",
+          "characterOffset": 0
+        }
+      ],
+      "x-binary-corroboration": {
+        "source": "platformBinary",
+        "binarySha256": "1397a062c6889675055e3314dd956376ac51262a7734ad9e819c26975d71547a",
+        "meaning": "identifier appears in static strings; type and public status are not inferred"
+      }
+    },
+    "requiredMaximumVersion": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-binary-corroboration": {
+        "source": "platformBinary",
+        "binarySha256": "1397a062c6889675055e3314dd956376ac51262a7734ad9e819c26975d71547a",
+        "meaning": "identifier appears in static strings; type and public status are not inferred"
+      }
+    },
+    "requiredMinimumVersion": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-binary-corroboration": {
+        "source": "platformBinary",
+        "binarySha256": "1397a062c6889675055e3314dd956376ac51262a7734ad9e819c26975d71547a",
+        "meaning": "identifier appears in static strings; type and public status are not inferred"
+      }
+    },
+    "respectGitignore": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-binary-corroboration": {
+        "source": "platformBinary",
+        "binarySha256": "1397a062c6889675055e3314dd956376ac51262a7734ad9e819c26975d71547a",
+        "meaning": "identifier appears in static strings; type and public status are not inferred"
+      }
+    },
+    "respondToBashCommands": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-min-version": "2.1.186",
+      "x-version-markers": [
+        {
+          "kind": "min",
+          "version": "2.1.186",
+          "characterOffset": 0
+        }
+      ],
+      "x-binary-corroboration": {
+        "source": "platformBinary",
+        "binarySha256": "1397a062c6889675055e3314dd956376ac51262a7734ad9e819c26975d71547a",
+        "meaning": "identifier appears in static strings; type and public status are not inferred"
+      }
+    },
+    "showClearContextOnPlanAccept": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-binary-corroboration": {
+        "source": "platformBinary",
+        "binarySha256": "1397a062c6889675055e3314dd956376ac51262a7734ad9e819c26975d71547a",
+        "meaning": "identifier appears in static strings; type and public status are not inferred"
+      }
+    },
+    "showThinkingSummaries": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-binary-corroboration": {
+        "source": "platformBinary",
+        "binarySha256": "1397a062c6889675055e3314dd956376ac51262a7734ad9e819c26975d71547a",
+        "meaning": "identifier appears in static strings; type and public status are not inferred"
+      }
+    },
+    "showTurnDuration": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-binary-corroboration": {
+        "source": "platformBinary",
+        "binarySha256": "1397a062c6889675055e3314dd956376ac51262a7734ad9e819c26975d71547a",
+        "meaning": "identifier appears in static strings; type and public status are not inferred"
+      }
+    },
+    "skillListingBudgetFraction": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-min-version": "2.1.105",
+      "x-version-markers": [
+        {
+          "kind": "min",
+          "version": "2.1.105",
+          "characterOffset": 0
+        }
+      ],
+      "x-binary-corroboration": {
+        "source": "platformBinary",
+        "binarySha256": "1397a062c6889675055e3314dd956376ac51262a7734ad9e819c26975d71547a",
+        "meaning": "identifier appears in static strings; type and public status are not inferred"
+      }
+    },
+    "skillListingMaxDescChars": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-min-version": "2.1.105",
+      "x-version-markers": [
+        {
+          "kind": "min",
+          "version": "2.1.105",
+          "characterOffset": 0
+        }
+      ],
+      "x-binary-corroboration": {
+        "source": "platformBinary",
+        "binarySha256": "1397a062c6889675055e3314dd956376ac51262a7734ad9e819c26975d71547a",
+        "meaning": "identifier appears in static strings; type and public status are not inferred"
+      }
+    },
+    "skillOverrides": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-min-version": "2.1.129",
+      "x-version-markers": [
+        {
+          "kind": "min",
+          "version": "2.1.129",
+          "characterOffset": 0
+        }
+      ],
+      "x-binary-corroboration": {
+        "source": "platformBinary",
+        "binarySha256": "1397a062c6889675055e3314dd956376ac51262a7734ad9e819c26975d71547a",
+        "meaning": "identifier appears in static strings; type and public status are not inferred"
+      }
+    },
+    "skipWebFetchPreflight": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-binary-corroboration": {
+        "source": "platformBinary",
+        "binarySha256": "1397a062c6889675055e3314dd956376ac51262a7734ad9e819c26975d71547a",
+        "meaning": "identifier appears in static strings; type and public status are not inferred"
+      }
+    },
+    "spinnerTipsEnabled": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-binary-corroboration": {
+        "source": "platformBinary",
+        "binarySha256": "1397a062c6889675055e3314dd956376ac51262a7734ad9e819c26975d71547a",
+        "meaning": "identifier appears in static strings; type and public status are not inferred"
+      }
+    },
+    "spinnerTipsOverride": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-binary-corroboration": {
+        "source": "platformBinary",
+        "binarySha256": "1397a062c6889675055e3314dd956376ac51262a7734ad9e819c26975d71547a",
+        "meaning": "identifier appears in static strings; type and public status are not inferred"
+      }
+    },
+    "spinnerVerbs": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-binary-corroboration": {
+        "source": "platformBinary",
+        "binarySha256": "1397a062c6889675055e3314dd956376ac51262a7734ad9e819c26975d71547a",
+        "meaning": "identifier appears in static strings; type and public status are not inferred"
+      }
+    },
+    "sshConfigs": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-binary-corroboration": {
+        "source": "platformBinary",
+        "binarySha256": "1397a062c6889675055e3314dd956376ac51262a7734ad9e819c26975d71547a",
+        "meaning": "identifier appears in static strings; type and public status are not inferred"
+      }
+    },
+    "statusLine": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-binary-corroboration": {
+        "source": "platformBinary",
+        "binarySha256": "1397a062c6889675055e3314dd956376ac51262a7734ad9e819c26975d71547a",
+        "meaning": "identifier appears in static strings; type and public status are not inferred"
+      }
+    },
+    "strictKnownMarketplaces": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-binary-corroboration": {
+        "source": "platformBinary",
+        "binarySha256": "1397a062c6889675055e3314dd956376ac51262a7734ad9e819c26975d71547a",
+        "meaning": "identifier appears in static strings; type and public status are not inferred"
+      }
+    },
+    "strictPluginOnlyCustomization": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-binary-corroboration": {
+        "source": "platformBinary",
+        "binarySha256": "1397a062c6889675055e3314dd956376ac51262a7734ad9e819c26975d71547a",
+        "meaning": "identifier appears in static strings; type and public status are not inferred"
+      }
+    },
+    "syntaxHighlightingDisabled": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-binary-corroboration": {
+        "source": "platformBinary",
+        "binarySha256": "1397a062c6889675055e3314dd956376ac51262a7734ad9e819c26975d71547a",
+        "meaning": "identifier appears in static strings; type and public status are not inferred"
+      }
+    },
+    "teammateMode": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-version-markers": [
+        {
+          "kind": "min",
+          "version": "2.1.186",
+          "characterOffset": 282
+        }
+      ],
+      "x-binary-corroboration": {
+        "source": "platformBinary",
+        "binarySha256": "1397a062c6889675055e3314dd956376ac51262a7734ad9e819c26975d71547a",
+        "meaning": "identifier appears in static strings; type and public status are not inferred"
+      }
+    },
+    "terminalProgressBarEnabled": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-binary-corroboration": {
+        "source": "platformBinary",
+        "binarySha256": "1397a062c6889675055e3314dd956376ac51262a7734ad9e819c26975d71547a",
+        "meaning": "identifier appears in static strings; type and public status are not inferred"
+      }
+    },
+    "theme": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-min-version": "2.1.119",
+      "x-version-markers": [
+        {
+          "kind": "min",
+          "version": "2.1.119",
+          "characterOffset": 0
+        }
+      ],
+      "x-binary-corroboration": {
+        "source": "platformBinary",
+        "binarySha256": "1397a062c6889675055e3314dd956376ac51262a7734ad9e819c26975d71547a",
+        "meaning": "identifier appears in static strings; type and public status are not inferred"
+      }
+    },
+    "tui": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-binary-corroboration": {
+        "source": "platformBinary",
+        "binarySha256": "1397a062c6889675055e3314dd956376ac51262a7734ad9e819c26975d71547a",
+        "meaning": "identifier appears in static strings; type and public status are not inferred"
+      }
+    },
+    "ultracode": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-version-markers": [
+        {
+          "kind": "min",
+          "version": "2.1.203",
+          "characterOffset": 218
+        }
+      ],
+      "x-binary-corroboration": {
+        "source": "platformBinary",
+        "binarySha256": "1397a062c6889675055e3314dd956376ac51262a7734ad9e819c26975d71547a",
+        "meaning": "identifier appears in static strings; type and public status are not inferred"
+      }
+    },
+    "useAutoModeDuringPlan": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-binary-corroboration": {
+        "source": "platformBinary",
+        "binarySha256": "1397a062c6889675055e3314dd956376ac51262a7734ad9e819c26975d71547a",
+        "meaning": "identifier appears in static strings; type and public status are not inferred"
+      }
+    },
+    "verbose": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-min-version": "2.1.119",
+      "x-version-markers": [
+        {
+          "kind": "min",
+          "version": "2.1.119",
+          "characterOffset": 0
+        }
+      ],
+      "x-binary-corroboration": {
+        "source": "platformBinary",
+        "binarySha256": "1397a062c6889675055e3314dd956376ac51262a7734ad9e819c26975d71547a",
+        "meaning": "identifier appears in static strings; type and public status are not inferred"
+      }
+    },
+    "viewMode": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-binary-corroboration": {
+        "source": "platformBinary",
+        "binarySha256": "1397a062c6889675055e3314dd956376ac51262a7734ad9e819c26975d71547a",
+        "meaning": "identifier appears in static strings; type and public status are not inferred"
+      }
+    },
+    "voice": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-binary-corroboration": {
+        "source": "platformBinary",
+        "binarySha256": "1397a062c6889675055e3314dd956376ac51262a7734ad9e819c26975d71547a",
+        "meaning": "identifier appears in static strings; type and public status are not inferred"
+      }
+    },
+    "voiceEnabled": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-binary-corroboration": {
+        "source": "platformBinary",
+        "binarySha256": "1397a062c6889675055e3314dd956376ac51262a7734ad9e819c26975d71547a",
+        "meaning": "identifier appears in static strings; type and public status are not inferred"
+      }
+    },
+    "wheelScrollAccelerationEnabled": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-min-version": "2.1.174",
+      "x-version-markers": [
+        {
+          "kind": "min",
+          "version": "2.1.174",
+          "characterOffset": 0
+        }
+      ],
+      "x-binary-corroboration": {
+        "source": "platformBinary",
+        "binarySha256": "1397a062c6889675055e3314dd956376ac51262a7734ad9e819c26975d71547a",
+        "meaning": "identifier appears in static strings; type and public status are not inferred"
+      }
+    },
+    "workflowKeywordTriggerEnabled": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-min-version": "2.1.157",
+      "x-version-markers": [
+        {
+          "kind": "min",
+          "version": "2.1.157",
+          "characterOffset": 0
+        }
+      ],
+      "x-binary-corroboration": {
+        "source": "platformBinary",
+        "binarySha256": "1397a062c6889675055e3314dd956376ac51262a7734ad9e819c26975d71547a",
+        "meaning": "identifier appears in static strings; type and public status are not inferred"
+      }
+    },
+    "wslInheritsWindowsSettings": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-binary-corroboration": {
+        "source": "platformBinary",
+        "binarySha256": "1397a062c6889675055e3314dd956376ac51262a7734ad9e819c26975d71547a",
+        "meaning": "identifier appears in static strings; type and public status are not inferred"
+      }
+    }
+  },
+  "additionalProperties": true,
+  "x-claude-code-version": "2.1.207",
+  "x-artifact-kind": "settings-json-schema",
+  "x-experiment": "official-docs-plus-verified-binary-probe",
+  "x-validation-limitations": [
+    "Documented setting value types are not validated.",
+    "Nested structure is not reconstructed from prose or examples.",
+    "Unknown properties remain allowed for compatibility."
+  ],
+  "x-provenance": {
+    "evidence": [
+      {
+        "source": "settingsDocs",
+        "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+      }
+    ]
+  }
+}

@@ -1,0 +1,254 @@
+{
+  "schemaVersion": 1,
+  "experimentVersion": 2,
+  "sourcePolicy": "official-docs-only-no-schemastore",
+  "artifactKind": "claude-code-surface-manifest",
+  "claudeCodeVersion": "2.1.207",
+  "release": {
+    "npmPackage": "@anthropic-ai/claude-code",
+    "npmIntegrity": "sha512-30D3lGMO0iPmWnz6rCSHKd6d6gWtQ8CV2zKHHspEHZFyjDJsNOr2Xg6Kb/XEPsaFFu4BGIJz/7L6FQkcFq5cNA==",
+    "npmTarball": "https://registry.npmjs.org/@anthropic-ai/claude-code/-/claude-code-2.1.207.tgz",
+    "platformPackages": {
+      "@anthropic-ai/claude-code-linux-x64": "2.1.207",
+      "@anthropic-ai/claude-code-win32-x64": "2.1.207",
+      "@anthropic-ai/claude-code-darwin-x64": "2.1.207",
+      "@anthropic-ai/claude-code-linux-arm64": "2.1.207",
+      "@anthropic-ai/claude-code-win32-arm64": "2.1.207",
+      "@anthropic-ai/claude-code-darwin-arm64": "2.1.207",
+      "@anthropic-ai/claude-code-linux-x64-musl": "2.1.207",
+      "@anthropic-ai/claude-code-linux-arm64-musl": "2.1.207"
+    },
+    "expectedGitTag": "v2.1.207"
+  },
+  "sources": [
+    {
+      "id": "npmRelease",
+      "requestedUrl": "https://registry.npmjs.org/@anthropic-ai/claude-code/latest",
+      "resolvedUrl": "https://registry.npmjs.org/@anthropic-ai/claude-code/latest",
+      "role": "release identity and platform matrix",
+      "sha256": "504bee5b1b7b9a877a064101b00efc4daa69b1327761cdcc96b508c0f023f751",
+      "bytes": 3132
+    },
+    {
+      "id": "npmLatest",
+      "requestedUrl": "https://registry.npmjs.org/@anthropic-ai/claude-code/latest",
+      "resolvedUrl": "https://registry.npmjs.org/@anthropic-ai/claude-code/latest",
+      "role": "guard that mutable docs are paired with the current release",
+      "sha256": "504bee5b1b7b9a877a064101b00efc4daa69b1327761cdcc96b508c0f023f751",
+      "bytes": 3132
+    },
+    {
+      "id": "settingsDocs",
+      "requestedUrl": "https://code.claude.com/docs/en/settings.md",
+      "resolvedUrl": "https://code.claude.com/docs/en/settings.md",
+      "role": "public settings existence and prose",
+      "sha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441",
+      "bytes": 253584
+    },
+    {
+      "id": "envDocs",
+      "requestedUrl": "https://code.claude.com/docs/en/env-vars.md",
+      "resolvedUrl": "https://code.claude.com/docs/en/env-vars.md",
+      "role": "public environment-variable existence and prose",
+      "sha256": "b80b978402388ea89359622dae9e6b4257162fae4a1c2dee68a2f6b1c9480c4f",
+      "bytes": 290449
+    },
+    {
+      "id": "cliDocs",
+      "requestedUrl": "https://code.claude.com/docs/en/cli-reference.md",
+      "resolvedUrl": "https://code.claude.com/docs/en/cli-reference.md",
+      "role": "public top-level flags and prose",
+      "sha256": "3cd50cdd2f2a2e38380bed029c21d74cbbc09ad2f50501116c3ebae9b78b0760",
+      "bytes": 102445
+    },
+    {
+      "id": "keybindingsDocs",
+      "requestedUrl": "https://code.claude.com/docs/en/keybindings.md",
+      "resolvedUrl": "https://code.claude.com/docs/en/keybindings.md",
+      "role": "public actions, contexts, and default shortcuts",
+      "sha256": "8c29d7289a65a17c92eb63591d0997244e11299afbc433e4dae82a92b473b3cd",
+      "bytes": 28003
+    },
+    {
+      "id": "docsIndex",
+      "requestedUrl": "https://code.claude.com/docs/llms.txt",
+      "resolvedUrl": "https://code.claude.com/docs/llms.txt",
+      "role": "documentation route discovery",
+      "sha256": "2a57ef3c29ec8372b8774464762f94cec9757e7d01a60389b5079953e4b5e366",
+      "bytes": 36627
+    }
+  ],
+  "artifacts": {
+    "settings.schema.json": {
+      "artifactKind": "settings-json-schema",
+      "sha256": "84bbe96407f773a1a33aebda10a52eb607b8f70abd23a349bf53ced564e137f9"
+    },
+    "env.schema.json": {
+      "artifactKind": "environment-object-json-schema",
+      "sha256": "694505d7751f38d48fd0b3040cfee187a8da4bed0921a8451169e5ed375d460e"
+    },
+    "keybindings.schema.json": {
+      "artifactKind": "keybindings-json-schema",
+      "sha256": "609681c7d83135c7ad3438a830d82586bde9965ca02e7792f01b3fb2af083efb"
+    },
+    "flags.catalog.json": {
+      "artifactKind": "cli-option-catalog",
+      "sha256": "95768b88add082bfd6f4148e857227181d9ab3ef404562e15227767bdf27df1e"
+    },
+    "keybinding-defaults.catalog.json": {
+      "artifactKind": "keybinding-defaults-catalog",
+      "sha256": "11b1359d3766c5b79151cd7f737494123126b7bf6366c9a483f692b5dfc0703a"
+    }
+  },
+  "counts": {
+    "documentedSettingsRows": 117,
+    "settingsSchemaProperties": 117,
+    "untypedSettingsProperties": 116,
+    "documentedEnvironmentVariables": 287,
+    "documentedTopLevelFlags": 70,
+    "documentedKeybindingActions": 109,
+    "documentedKeybindingContexts": 19,
+    "keybindingSchemaActions": 101
+  },
+  "drift": {
+    "untypedTopLevelSettings": [
+      "advisorModel",
+      "agent",
+      "agentPushNotifEnabled",
+      "allowAllClaudeAiMcps",
+      "allowedChannelPlugins",
+      "allowedHttpHookUrls",
+      "allowedMcpServers",
+      "allowManagedHooksOnly",
+      "allowManagedMcpServersOnly",
+      "allowManagedPermissionRulesOnly",
+      "alwaysThinkingEnabled",
+      "apiKeyHelper",
+      "askUserQuestionTimeout",
+      "attribution",
+      "autoCompactEnabled",
+      "autoMemoryDirectory",
+      "autoMemoryEnabled",
+      "autoMode",
+      "autoScrollEnabled",
+      "autoUpdatesChannel",
+      "availableModels",
+      "awaySummaryEnabled",
+      "awsAuthRefresh",
+      "awsCredentialExport",
+      "axScreenReader",
+      "blockedMarketplaces",
+      "browserExternalPageTools",
+      "channelsEnabled",
+      "claudeMd",
+      "claudeMdExcludes",
+      "cleanupPeriodDays",
+      "companyAnnouncements",
+      "defaultShell",
+      "deniedMcpServers",
+      "disableAgentView",
+      "disableAllHooks",
+      "disableArtifact",
+      "disableAutoMode",
+      "disableBundledSkills",
+      "disableClaudeAiConnectors",
+      "disableDeepLinkRegistration",
+      "disabledMcpjsonServers",
+      "disableRemoteControl",
+      "disableSideloadFlags",
+      "disableSkillShellExecution",
+      "disableWorkflows",
+      "editorMode",
+      "effortLevel",
+      "enableAllProjectMcpServers",
+      "enableArtifact",
+      "enabledMcpjsonServers",
+      "enforceAvailableModels",
+      "env",
+      "fallbackModel",
+      "fastModePerSessionOptIn",
+      "feedbackSurveyRate",
+      "fileCheckpointingEnabled",
+      "fileSuggestion",
+      "footerLinksRegexes",
+      "forceLoginMethod",
+      "forceLoginGatewayUrl",
+      "forceLoginOrgUUID",
+      "forceRemoteSettingsRefresh",
+      "gcpAuthRefresh",
+      "hooks",
+      "httpHookAllowedEnvVars",
+      "includeGitInstructions",
+      "inputNeededNotifEnabled",
+      "language",
+      "minimumVersion",
+      "model",
+      "modelOverrides",
+      "otelHeadersHelper",
+      "outputStyle",
+      "parentSettingsBehavior",
+      "permissions",
+      "plansDirectory",
+      "pluginSuggestionMarketplaces",
+      "pluginTrustMessage",
+      "policyHelper",
+      "preferredNotifChannel",
+      "prefersReducedMotion",
+      "prUrlTemplate",
+      "remoteControlAtStartup",
+      "requiredMaximumVersion",
+      "requiredMinimumVersion",
+      "respectGitignore",
+      "respondToBashCommands",
+      "showClearContextOnPlanAccept",
+      "showThinkingSummaries",
+      "showTurnDuration",
+      "skillListingBudgetFraction",
+      "skillListingMaxDescChars",
+      "skillOverrides",
+      "skipWebFetchPreflight",
+      "spinnerTipsEnabled",
+      "spinnerTipsOverride",
+      "spinnerVerbs",
+      "sshConfigs",
+      "statusLine",
+      "strictKnownMarketplaces",
+      "strictPluginOnlyCustomization",
+      "syntaxHighlightingDisabled",
+      "teammateMode",
+      "terminalProgressBarEnabled",
+      "theme",
+      "tui",
+      "ultracode",
+      "useAutoModeDuringPlan",
+      "verbose",
+      "viewMode",
+      "voice",
+      "voiceEnabled",
+      "wheelScrollAccelerationEnabled",
+      "workflowKeywordTriggerEnabled",
+      "wslInheritsWindowsSettings"
+    ],
+    "dottedSettingsRequiringStructuralResolution": [
+      "autoMode.classifyAllShell"
+    ],
+    "validationLimitations": {
+      "settings": [
+        "Documented setting value types are not validated.",
+        "Nested structure is not reconstructed from prose or examples.",
+        "Unknown properties remain allowed for compatibility."
+      ],
+      "keybindings": [
+        "Keystroke property-name syntax is not validated.",
+        "Command-binding object structure remains permissive.",
+        "Only actions and contexts present in the current official docs are accepted."
+      ]
+    },
+    "rowsExcludedByVersion": {
+      "settings": 0,
+      "environment": 3,
+      "flags": 1,
+      "keybindingDefaults": 0
+    }
+  }
+}

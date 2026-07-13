@@ -1,0 +1,525 @@
+{
+  "schemaVersion": 1,
+  "benchmarkKind": "cross-version-evidence-and-capability-benchmark",
+  "claudeCodeVersion": "2.1.207",
+  "winner": "version-4",
+  "ranking": [
+    {
+      "rank": 1,
+      "version": "version-4",
+      "score": 100,
+      "maximum": 100
+    },
+    {
+      "rank": 2,
+      "version": "version-1",
+      "score": 49.3,
+      "maximum": 100
+    },
+    {
+      "rank": 3,
+      "version": "version-3",
+      "score": 46,
+      "maximum": 100
+    },
+    {
+      "rank": 4,
+      "version": "version-2",
+      "score": 26,
+      "maximum": 100
+    }
+  ],
+  "methodology": {
+    "statement": "The score measures coverage of this project's declared objectives, not an empirical probability that every schema fact is correct.",
+    "categories": {
+      "sourceEvidence": 20,
+      "settingsQuality": 40,
+      "interfaceBreadth": 20,
+      "exactReleaseEvidence": 10,
+      "qualityAssurance": 10
+    },
+    "rationale": "Settings quality receives the largest weight because settings validation is the central artifact. Raw enum/required keyword counts are reported but not rewarded independently: repeated or stale constraints are not automatically higher quality.",
+    "allVersionValidatorsExecuted": true,
+    "version4ParityBenchmarkExecuted": true
+  },
+  "versions": [
+    {
+      "version": "version-1",
+      "metrics": {
+        "version": 1,
+        "claudeCodeVersion": "2.1.207",
+        "releaseIdentity": true,
+        "sourceCount": 9,
+        "artifactCount": 5,
+        "outputJsonFiles": 6,
+        "usesSchemaStore": true,
+        "platformIntegrityVerified": false,
+        "hasMatchingTagEvidence": false,
+        "hasExpandedFirstPartyDocs": false,
+        "hasTaggedFirstPartyExamples": false,
+        "documentedSettingsRows": 117,
+        "topLevelSettings": 131,
+        "typedTopLevelSettings": 124,
+        "typedTopLevelRatio": 0.9465648854961832,
+        "untypedTopLevelSettings": 7,
+        "constrainedPropertyPaths": 532,
+        "settingsKeywords": {
+          "type": 775,
+          "pattern": 8,
+          "examples": 33,
+          "anyOf": 12,
+          "required": 48,
+          "if": 5,
+          "const": 33,
+          "enum": 180,
+          "default": 40,
+          "$ref": 34
+        },
+        "environmentProperties": 287,
+        "documentedTopLevelFlags": 70,
+        "probedCommands": 0,
+        "probedOptionsAcrossCommands": 0,
+        "probedArgumentsAcrossCommands": 0,
+        "keybindingActions": 114,
+        "hasCommandBinding": true,
+        "hasRuntimeCompatKeybindings": false,
+        "hasScopedConfigArtifacts": false,
+        "runtimeSettingsDiagnostics": 0,
+        "runtimeKeybindingActionCandidates": 0,
+        "hasStaticCandidateCatalog": false,
+        "hasSettingsFacts": false,
+        "hasLegacyAccounting": false,
+        "hasParityGate": false,
+        "validatorPassed": true
+      },
+      "rubric": {
+        "score": 49.3,
+        "maximum": 100,
+        "categories": {
+          "sourceEvidence": {
+            "maximum": 20,
+            "points": 3,
+            "criteria": {
+              "releaseIdentity": 3,
+              "noSchemaStoreGeneration": 0,
+              "verifiedPlatformPackage": 0,
+              "matchingTagReleaseEvidence": 0,
+              "expandedFirstPartyDocs": 0,
+              "taggedFirstPartyExamples": 0
+            }
+          },
+          "settingsQuality": {
+            "maximum": 40,
+            "points": 31.3,
+            "criteria": {
+              "documentedNameCoverage": 6,
+              "typedTopLevelCoverage": 13.3,
+              "constrainedPathCoverage": 12,
+              "realSurfaceSeparation": 0,
+              "zeroUntypedTopLevel": 0
+            }
+          },
+          "interfaceBreadth": {
+            "maximum": 20,
+            "points": 11,
+            "criteria": {
+              "documentedEnvironment": 4,
+              "expandedEnvironment": 0,
+              "documentedTopLevelFlags": 3,
+              "recursiveCliCatalog": 0,
+              "currentKeybindingActions": 3,
+              "verifiedCommandBinding": 1,
+              "strictAndRuntimeKeybindingViews": 0
+            }
+          },
+          "exactReleaseEvidence": {
+            "maximum": 10,
+            "points": 0,
+            "criteria": {
+              "verifiedBinaryIntegrity": 0,
+              "boundedCliHelpProbe": 0,
+              "doctorValidationOracle": 0,
+              "staticCandidateCatalogs": 0
+            }
+          },
+          "qualityAssurance": {
+            "maximum": 10,
+            "points": 4,
+            "criteria": {
+              "artifactDigests": 2,
+              "validatorPassed": 2,
+              "factLevelSettingsEvidence": 0,
+              "legacyAndRetirementAccounting": 0,
+              "postGenerationParityGate": 0
+            }
+          }
+        }
+      }
+    },
+    {
+      "version": "version-2",
+      "metrics": {
+        "version": 2,
+        "claudeCodeVersion": "2.1.207",
+        "releaseIdentity": true,
+        "sourceCount": 7,
+        "artifactCount": 5,
+        "outputJsonFiles": 6,
+        "usesSchemaStore": false,
+        "platformIntegrityVerified": false,
+        "hasMatchingTagEvidence": false,
+        "hasExpandedFirstPartyDocs": false,
+        "hasTaggedFirstPartyExamples": false,
+        "documentedSettingsRows": 117,
+        "topLevelSettings": 116,
+        "typedTopLevelSettings": 0,
+        "typedTopLevelRatio": 0,
+        "untypedTopLevelSettings": 116,
+        "constrainedPropertyPaths": 2,
+        "settingsKeywords": {
+          "type": 2
+        },
+        "environmentProperties": 287,
+        "documentedTopLevelFlags": 70,
+        "probedCommands": 0,
+        "probedOptionsAcrossCommands": 0,
+        "probedArgumentsAcrossCommands": 0,
+        "keybindingActions": 101,
+        "hasCommandBinding": false,
+        "hasRuntimeCompatKeybindings": false,
+        "hasScopedConfigArtifacts": false,
+        "runtimeSettingsDiagnostics": 0,
+        "runtimeKeybindingActionCandidates": 0,
+        "hasStaticCandidateCatalog": false,
+        "hasSettingsFacts": false,
+        "hasLegacyAccounting": false,
+        "hasParityGate": false,
+        "validatorPassed": true
+      },
+      "rubric": {
+        "score": 26,
+        "maximum": 100,
+        "categories": {
+          "sourceEvidence": {
+            "maximum": 20,
+            "points": 6,
+            "criteria": {
+              "releaseIdentity": 3,
+              "noSchemaStoreGeneration": 3,
+              "verifiedPlatformPackage": 0,
+              "matchingTagReleaseEvidence": 0,
+              "expandedFirstPartyDocs": 0,
+              "taggedFirstPartyExamples": 0
+            }
+          },
+          "settingsQuality": {
+            "maximum": 40,
+            "points": 6,
+            "criteria": {
+              "documentedNameCoverage": 6,
+              "typedTopLevelCoverage": 0,
+              "constrainedPathCoverage": 0,
+              "realSurfaceSeparation": 0,
+              "zeroUntypedTopLevel": 0
+            }
+          },
+          "interfaceBreadth": {
+            "maximum": 20,
+            "points": 10,
+            "criteria": {
+              "documentedEnvironment": 4,
+              "expandedEnvironment": 0,
+              "documentedTopLevelFlags": 3,
+              "recursiveCliCatalog": 0,
+              "currentKeybindingActions": 3,
+              "verifiedCommandBinding": 0,
+              "strictAndRuntimeKeybindingViews": 0
+            }
+          },
+          "exactReleaseEvidence": {
+            "maximum": 10,
+            "points": 0,
+            "criteria": {
+              "verifiedBinaryIntegrity": 0,
+              "boundedCliHelpProbe": 0,
+              "doctorValidationOracle": 0,
+              "staticCandidateCatalogs": 0
+            }
+          },
+          "qualityAssurance": {
+            "maximum": 10,
+            "points": 4,
+            "criteria": {
+              "artifactDigests": 2,
+              "validatorPassed": 2,
+              "factLevelSettingsEvidence": 0,
+              "legacyAndRetirementAccounting": 0,
+              "postGenerationParityGate": 0
+            }
+          }
+        }
+      }
+    },
+    {
+      "version": "version-3",
+      "metrics": {
+        "version": 3,
+        "claudeCodeVersion": "2.1.207",
+        "releaseIdentity": true,
+        "sourceCount": 12,
+        "artifactCount": 9,
+        "outputJsonFiles": 10,
+        "usesSchemaStore": false,
+        "platformIntegrityVerified": true,
+        "hasMatchingTagEvidence": true,
+        "hasExpandedFirstPartyDocs": false,
+        "hasTaggedFirstPartyExamples": false,
+        "documentedSettingsRows": 117,
+        "topLevelSettings": 116,
+        "typedTopLevelSettings": 0,
+        "typedTopLevelRatio": 0,
+        "untypedTopLevelSettings": 116,
+        "constrainedPropertyPaths": 2,
+        "settingsKeywords": {
+          "type": 2
+        },
+        "environmentProperties": 287,
+        "documentedTopLevelFlags": 70,
+        "probedCommands": 39,
+        "probedOptionsAcrossCommands": 178,
+        "probedArgumentsAcrossCommands": 21,
+        "keybindingActions": 101,
+        "hasCommandBinding": false,
+        "hasRuntimeCompatKeybindings": false,
+        "hasScopedConfigArtifacts": false,
+        "runtimeSettingsDiagnostics": 0,
+        "runtimeKeybindingActionCandidates": 0,
+        "hasStaticCandidateCatalog": true,
+        "hasSettingsFacts": false,
+        "hasLegacyAccounting": false,
+        "hasParityGate": false,
+        "validatorPassed": true
+      },
+      "rubric": {
+        "score": 46,
+        "maximum": 100,
+        "categories": {
+          "sourceEvidence": {
+            "maximum": 20,
+            "points": 13,
+            "criteria": {
+              "releaseIdentity": 3,
+              "noSchemaStoreGeneration": 3,
+              "verifiedPlatformPackage": 4,
+              "matchingTagReleaseEvidence": 3,
+              "expandedFirstPartyDocs": 0,
+              "taggedFirstPartyExamples": 0
+            }
+          },
+          "settingsQuality": {
+            "maximum": 40,
+            "points": 6,
+            "criteria": {
+              "documentedNameCoverage": 6,
+              "typedTopLevelCoverage": 0,
+              "constrainedPathCoverage": 0,
+              "realSurfaceSeparation": 0,
+              "zeroUntypedTopLevel": 0
+            }
+          },
+          "interfaceBreadth": {
+            "maximum": 20,
+            "points": 15,
+            "criteria": {
+              "documentedEnvironment": 4,
+              "expandedEnvironment": 0,
+              "documentedTopLevelFlags": 3,
+              "recursiveCliCatalog": 5,
+              "currentKeybindingActions": 3,
+              "verifiedCommandBinding": 0,
+              "strictAndRuntimeKeybindingViews": 0
+            }
+          },
+          "exactReleaseEvidence": {
+            "maximum": 10,
+            "points": 8,
+            "criteria": {
+              "verifiedBinaryIntegrity": 3,
+              "boundedCliHelpProbe": 3,
+              "doctorValidationOracle": 0,
+              "staticCandidateCatalogs": 2
+            }
+          },
+          "qualityAssurance": {
+            "maximum": 10,
+            "points": 4,
+            "criteria": {
+              "artifactDigests": 2,
+              "validatorPassed": 2,
+              "factLevelSettingsEvidence": 0,
+              "legacyAndRetirementAccounting": 0,
+              "postGenerationParityGate": 0
+            }
+          }
+        }
+      }
+    },
+    {
+      "version": "version-4",
+      "metrics": {
+        "version": 4,
+        "claudeCodeVersion": "2.1.207",
+        "releaseIdentity": true,
+        "sourceCount": 30,
+        "artifactCount": 16,
+        "outputJsonFiles": 17,
+        "usesSchemaStore": false,
+        "platformIntegrityVerified": true,
+        "hasMatchingTagEvidence": true,
+        "hasExpandedFirstPartyDocs": true,
+        "hasTaggedFirstPartyExamples": true,
+        "documentedSettingsRows": 117,
+        "topLevelSettings": 124,
+        "typedTopLevelSettings": 124,
+        "typedTopLevelRatio": 1,
+        "untypedTopLevelSettings": 0,
+        "constrainedPropertyPaths": 544,
+        "settingsKeywords": {
+          "type": 665,
+          "examples": 150,
+          "default": 44,
+          "enum": 25,
+          "required": 10,
+          "const": 10,
+          "pattern": 2,
+          "$ref": 31,
+          "anyOf": 1,
+          "oneOf": 1,
+          "if": 5
+        },
+        "environmentProperties": 313,
+        "documentedTopLevelFlags": 70,
+        "probedCommands": 39,
+        "probedOptionsAcrossCommands": 178,
+        "probedArgumentsAcrossCommands": 21,
+        "keybindingActions": 101,
+        "hasCommandBinding": true,
+        "hasRuntimeCompatKeybindings": true,
+        "hasScopedConfigArtifacts": true,
+        "runtimeSettingsDiagnostics": 111,
+        "runtimeKeybindingActionCandidates": 301,
+        "hasStaticCandidateCatalog": true,
+        "hasSettingsFacts": true,
+        "hasLegacyAccounting": true,
+        "hasParityGate": true,
+        "validatorPassed": true
+      },
+      "rubric": {
+        "score": 100,
+        "maximum": 100,
+        "categories": {
+          "sourceEvidence": {
+            "maximum": 20,
+            "points": 20,
+            "criteria": {
+              "releaseIdentity": 3,
+              "noSchemaStoreGeneration": 3,
+              "verifiedPlatformPackage": 4,
+              "matchingTagReleaseEvidence": 3,
+              "expandedFirstPartyDocs": 4,
+              "taggedFirstPartyExamples": 3
+            }
+          },
+          "settingsQuality": {
+            "maximum": 40,
+            "points": 40,
+            "criteria": {
+              "documentedNameCoverage": 6,
+              "typedTopLevelCoverage": 14,
+              "constrainedPathCoverage": 12,
+              "realSurfaceSeparation": 5,
+              "zeroUntypedTopLevel": 3
+            }
+          },
+          "interfaceBreadth": {
+            "maximum": 20,
+            "points": 20,
+            "criteria": {
+              "documentedEnvironment": 4,
+              "expandedEnvironment": 2,
+              "documentedTopLevelFlags": 3,
+              "recursiveCliCatalog": 5,
+              "currentKeybindingActions": 3,
+              "verifiedCommandBinding": 1,
+              "strictAndRuntimeKeybindingViews": 2
+            }
+          },
+          "exactReleaseEvidence": {
+            "maximum": 10,
+            "points": 10,
+            "criteria": {
+              "verifiedBinaryIntegrity": 3,
+              "boundedCliHelpProbe": 3,
+              "doctorValidationOracle": 2,
+              "staticCandidateCatalogs": 2
+            }
+          },
+          "qualityAssurance": {
+            "maximum": 10,
+            "points": 10,
+            "criteria": {
+              "artifactDigests": 2,
+              "validatorPassed": 2,
+              "factLevelSettingsEvidence": 2,
+              "legacyAndRetirementAccounting": 2,
+              "postGenerationParityGate": 2
+            }
+          }
+        }
+      }
+    }
+  ],
+  "version4Parity": {
+    "v1ConstrainedPropertyPaths": 532,
+    "v4ConstrainedPropertyPaths": 544,
+    "v1PathsActiveInV4": 516,
+    "v1PathsExplicitlyScopedRetiredOrLegacy": 16,
+    "unaccounted": [],
+    "v4CurrentPathsNotInV1": 28,
+    "rawKeywordCountsForTransparencyOnly": {
+      "v1": {
+        "type": 775,
+        "pattern": 8,
+        "examples": 33,
+        "anyOf": 12,
+        "required": 48,
+        "if": 5,
+        "const": 33,
+        "enum": 180,
+        "default": 40,
+        "$ref": 34
+      },
+      "v4": {
+        "type": 665,
+        "examples": 150,
+        "default": 44,
+        "enum": 25,
+        "required": 10,
+        "const": 10,
+        "pattern": 2,
+        "$ref": 31,
+        "anyOf": 1,
+        "oneOf": 1,
+        "if": 5
+      }
+    },
+    "interpretation": "Raw keyword totals are not a quality target: V1 repeats many env enums and stale constraints, while V4 uses current scoped artifacts and leaves unsupported closure unknown. Path accounting and current first-party evidence are the gates."
+  },
+  "conclusions": {
+    "overall": "Version 4 is the strongest overall and satisfies every benchmark criterion.",
+    "version1": "Second place: strongest pre-V4 settings constraint density, but SchemaStore-dependent, less current/scoped, and without exact-binary CLI or validation evidence.",
+    "version3": "Third place: strong exact-release CLI and candidate discovery, but its settings schema remains intentionally untyped and structurally partial.",
+    "version2": "Fourth place: clean official-docs-only baseline, but the weakest validation and no exact-release binary evidence.",
+    "caution": "Version 4 winning does not imply perfect accuracy. Mutable documentation, warning-only runtime behavior, and binary candidates still require semantic drift review."
+  }
+}

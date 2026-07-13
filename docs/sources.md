@@ -1,167 +1,172 @@
 # Sources
 
 > **Entry type:** Reference
-> **Status:** Corrected after the pre-spec audit (see [`decisions.md`](decisions.md))
-> **Related:** [`extraction-notes.md`](extraction-notes.md) · [`pipeline.md`](pipeline.md)
+> **Status:** Corrected by the 2026-07-13 audit
+> **Related:** [`extraction-notes.md`](extraction-notes.md) ·
+> [`pipeline.md`](pipeline.md) · [`audit-2026-07-13.md`](audits/audit-2026-07-13.md)
 
-No single source gives the whole surface. Each source below is documented with the
-same four fields: **what data**, **how**, **exact source**, and a **worked example**.
-The reconciliation rules that combine them live in [`pipeline.md`](pipeline.md).
+No source covers every selected interface. Sources are assigned by the fact they
+can actually prove; no source “wins globally.”
 
-> ⚠️ **Corrected extraction target.** An earlier design assumed the Claude Code Bun
-> binary shipped as the main npm package. It does **not** — see Source A. The main
-> `@anthropic-ai/claude-code` npm package is a small JS wrapper; the binary ships as
-> **per-platform optional dependencies**. All extraction targets the tarball of the
-> platform package, pulled hermetically in CI — never a locally-installed binary.
+## Source A — official documentation markdown
 
----
+**Role:** primary authority for the public surface and prose.
 
-## Source A — the per-platform binary tarball (flags, enums, env)
+**Exact endpoints**
 
-**What data**
-- **CLI flags with descriptions** (~146 defs; 48 on the main program) and **literal
-  enum arrays** (e.g. permission modes).
-- **Environment variables** — a *superset* of `CLAUDE_CODE_*` (~402) + `ANTHROPIC_*`
-  (~57), including internal/probe vars that must be filtered against the docs.
-- **NOT** settings.json keys — the binary compiles Zod to closures, so declarative
-  key/type shapes are gone (though key *strings* often survive as object-literal
-  property names, usable as a corroboration set only).
-
-**How** — hermetic, no execution:
-1. Read the wrapper package's `optionalDependencies` map — it **is** the
-   authoritative platform matrix (don't hardcode the 8 platforms).
-2. `npm pack @anthropic-ai/claude-code-<os>-<arch>@<version>` (or `curl` the
-   `dist.tarball`), untar. This is a plain tarball — **no postinstall, no CLI run.**
-3. `strings -n 6` the Mach-O/ELF/PE inside, then:
-   - grep the contiguous Commander.js `.option(...)` line for flags,
-   - `grep -oE 'CLAUDE_CODE_[A-Z0-9_]+'` for env vars,
-   - grep literal enum arrays.
-4. Extract from **one canonical platform** (linux-x64) per run; fan out to all 8
-   only to spot-check per-OS enum variance (quarterly, not every run).
-
-**Exact source**
-- Wrapper (for the platform matrix): `https://registry.npmjs.org/@anthropic-ai/claude-code/latest` → `optionalDependencies`
-- Platform tarball: `https://registry.npmjs.org/@anthropic-ai/claude-code-<os>-<arch>/latest` → `dist.tarball`
-  (e.g. `@anthropic-ai/claude-code-linux-x64`, `-darwin-arm64`, ~230 MB unpacked)
-
-**Worked example** — extract the permission-mode enum:
-```bash
-strings -n 6 ./claude-bin | grep -oE '"acceptEdits","auto",[^]]*'
-# → ["acceptEdits","auto","bypassPermissions","default","dontAsk","plan"]
-```
-That `"auto"` is the auto-mode Orpheus had not wired.
-
-> **Fragility (serious):** `strings`-grep depends on Bun keeping readable JS strings.
-> A minifier change, code-splitting, or (worst) Bun **bytecode** compilation would
-> silently zero the yield. Mitigated by a **flag-count floor assertion** in the
-> validation gate ([`pipeline.md`](pipeline.md)) — a big drop fails loudly, never
-> emits an empty schema.
-
----
-
-## Source B — official docs (raw markdown) — settings.json keys
-
-**What data** — the **only** source for `settings.json` keys (~100), plus documented
-env vars (~120) and flags/commands (~99), each as a GitHub-flavored pipe table with
-inline `{/* min-version: X */}` markers.
-
-**How** — fetch the raw `.md`, parse pipe tables defensively (anchor on the
-backtick-quoted key; capture the version markers; tolerate embedded `|`/links in
-cells). Also fetch `llms.txt` each run as a **structure canary** — if the doc page
-set changes, the parser is about to break; warn early.
-
-**Exact source**
 - `https://code.claude.com/docs/en/settings.md`
 - `https://code.claude.com/docs/en/env-vars.md`
 - `https://code.claude.com/docs/en/cli-reference.md`
-- `https://code.claude.com/docs/llms.txt` (structure canary)
+- `https://code.claude.com/docs/en/keybindings.md`
+- `https://code.claude.com/docs/llms.txt`
 
-**Worked example**
-```
-INPUT  (a real row from env-vars.md):
-  | `ANTHROPIC_BASE_URL` | Override the API endpoint URL … |
-OUTPUT (parsed record):
-  { "key": "ANTHROPIC_BASE_URL", "kind": "env", "purpose": "Override the API endpoint URL" }
-```
+**Provides**
 
-> **Fragility (serious):** a docs re-theme (Mintlify → MDX components) changes the
-> shape and yields near-zero keys. Mitigation: docs-parse failure is a **hard error
-> that blocks emit but never overwrites the last-good committed schema** (fail-closed
-> on output, fail-safe on the artifact).
+- public settings names, descriptions, examples, and documented version bounds;
+- public environment-variable names and descriptions;
+- public top-level CLI flag spellings, descriptions, and examples;
+- keybinding contexts, action names, documented defaults, and validation guidance;
+- the current documentation route index.
 
----
+**Extraction**
 
-## Source C — npm registry — the release trigger
+1. Discover/confirm routes through `llms.txt`; do not hardcode it merely as a
+   canary.
+2. Fetch English markdown, record requested/resolved URL, byte count, and SHA-256.
+3. Bound each intended section by headings, then identify tables by required header
+   names. Do not parse every pipe row on the page.
+4. Split GFM rows while respecting escaped pipes and code spans.
+5. Capture all `{/* min-version */}` and `{/* max-version */}` markers without
+   treating them as complete historical coverage.
+6. Fail on missing/duplicate required sections, malformed tables, empty output, or
+   implausible semantic diffs.
 
-**What data** — the current `latest` version string + a `time` map of all published
-versions with ISO timestamps. Clean, stable public contract.
+**Limitations**
 
-**How** — poll `/latest` on a cron; when `version` changes, kick regeneration for
-that exact version.
+- The pages are mutable and not version-addressed. Exact source bytes/digests must
+  be archived for reproducibility.
+- Settings types are incomplete or embedded in examples/prose.
+- CLI tables do not prove option arity, defaults, hidden state, or subcommand scope.
+- Documentation can lag or lead the binary; that is drift to report, not a reason
+  to publish an unclassified binary token as public.
 
-**Exact source** — `https://registry.npmjs.org/@anthropic-ai/claude-code/latest`
+## Source B — expanded first-party configuration references
 
-**Worked example**
-```json
-{ "name": "@anthropic-ai/claude-code", "version": "2.1.207",
-  "dist": { "tarball": "https://…/claude-code-2.1.207.tgz" } }
-```
+**Role:** nested structure, scope, and specialized configuration semantics that the
+single settings table cannot express completely.
 
----
+Version 4 reads the official settings, keybindings, hooks, status-line, plugin,
+Desktop, sandboxing, auto-mode, voice, managed-MCP, server-managed-settings, and
+monitoring pages. It also reads tag-pinned JSON examples and the hook validator from
+`anthropics/claude-code` at `v<version>`.
 
-## Source D — CHANGELOG — "what changed" (targeting + gate)
+**Provides**
 
-**What data** — per-version bullets naming changed settings/flags/env by exact
-backtick identifier. Used both to *target* which keys to re-verify and, promoted to
-a **gate**: if the changelog says "added `X`" and `X` isn't in the emitted schema,
-fail the run.
+- nested permission, worktree, sandbox, auto-mode, voice, status-line, hook, and
+  policy-helper shapes;
+- separate `~/.claude.json`, Claude Code settings, and Desktop policy surfaces;
+- current hook events and five handler variants;
+- plugin and managed-policy examples tied to the release tag; and
+- standard OpenTelemetry variables documented outside the main env table.
 
-**How** — fetch raw, grep the new `## <version>` section for backtick identifiers.
+Examples prove observed shapes, not exhaustive closed objects. The generator keeps
+compatibility objects open unless first-party evidence establishes a closed set.
+Full source URLs and response digests are recorded in the Version 4 manifest.
 
-**Exact source** — `https://raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md`
+## Source C — npm registry metadata and platform tarballs
 
-**Worked example**
-```
-## 2.1.207
-- … disable via `disableAutoMode` in settings; opt-in via `CLAUDE_CODE_ENABLE_AUTO_MODE`
-```
+**Role:** release identity, platform matrix, immutable package integrity, and
+optional static candidate discovery.
 
----
+**Exact endpoints**
 
-## Source E — SchemaStore — PRIMARY for settings + keybindings
+- `https://registry.npmjs.org/@anthropic-ai/claude-code/latest`
+- `https://registry.npmjs.org/@anthropic-ai/claude-code/<version>`
+- platform package/version and `dist.tarball` URLs derived from
+  `optionalDependencies`
 
-> **Promoted after the landscape survey** ([`decisions.md`](decisions.md) → D-9).
-> SchemaStore is current and per-release; do **not** regenerate settings/keybindings
-> from scratch — adopt these two schemas as the source of truth for those dimensions.
+**Provides**
 
-**What data** — **two** draft-07 JSON Schemas:
-- `claude-code-settings.json` — `settings.json` keys **with types** (the binary can't
-  give types; docs express them poorly). **Primary** for the settings dimension.
-- `claude-code-keybindings.json` — the keybindings schema. **Primary** for the
-  keybindings dimension (nothing else provides it machine-readably).
+- exact npm version and distribution integrity;
+- version-matched optional platform package names;
+- a shipped native binary that can be inspected statically for candidates.
 
-**How** — fetch both (follow the cross-host redirect), JSON-diff against last-good.
-Use directly as the settings + keybindings output basis. For settings *existence*,
-cross-check against docs (Source B) + CHANGELOG (Source D) so a SchemaStore lag on a
-brand-new key is caught and tagged, not silently missing.
+**Acquisition**
 
-**Known gaps this project fills** (why it's not the whole answer): SchemaStore's `env`
-is an **opaque object** (no enumeration) and it has **no CLI-flags schema** — those
-come from Source A.
+1. Resolve the exact wrapper version; reject a response that does not match the
+   requested version.
+2. Derive, never hardcode, the platform package matrix.
+3. Fetch a versioned platform `dist.tarball` directly or use `npm pack` with scripts
+   disabled.
+4. Verify `dist.integrity` before extraction.
+5. Inspect only in an ephemeral directory; never commit or redistribute the binary
+   or raw string dump.
 
-**Exact source**
-- `https://json.schemastore.org/claude-code-settings.json`
-- `https://json.schemastore.org/claude-code-keybindings.json`
-  (both redirect to `www.schemastore.org/...`)
+**Static discovery**
 
----
+- `strings -n 6` plus exact identifier regexes can discover env candidates and
+  literal enum candidates.
+- Commander extraction must reconstruct command paths and option metadata. A flat
+  regex list mixes top-level, subcommand, hidden, test, and dependency options.
+- Binary-only findings go to a separate candidate report. They are not classified
+  as public or internal automatically.
 
-## Source quick-reference
+Version 4 also executes two bounded, non-authenticated validation channels from the
+exact verified binary: recursive `--help` paths discovered from prior help output,
+and `claude doctor` against null sentinels in an isolated config directory. The
+doctor diagnostics independently prove top-level settings types and selected enums.
+No prompt, login, update, install, or operational command is sent. Raw output is not
+redistributed.
 
-| Source | Provides | Extraction | Role |
-| --- | --- | --- | --- |
-| A · platform tarball | **flags, enums, env** | `npm pack` + `strings` (hermetic) | **Primary — the axes nobody else covers** |
-| B · docs `.md` | settings/env/flag prose + version markers | fetch + parse pipe tables | Descriptions + settings-existence cross-check |
-| C · npm registry | latest version + timestamps | poll `/latest` | **Trigger** |
-| D · CHANGELOG | named per-version changes | grep `## version` | Targeting + gate |
-| E · SchemaStore | **settings + keybindings** schemas | fetch + JSON-diff | **Primary — settings & keybindings (adopted)** |
+The v2.1.207 linux-x64 recheck reproduced 402 `CLAUDE_CODE_*` and 59
+`ANTHROPIC_*` candidates and the known permission-mode literal. See
+[`extraction-notes.md`](extraction-notes.md).
+
+## Source D — Anthropic Git tags, releases, and changelog
+
+**Role:** release corroboration and typed change hints.
+
+**Exact sources**
+
+- `https://github.com/anthropics/claude-code/releases`
+- `https://raw.githubusercontent.com/anthropics/claude-code/v<version>/CHANGELOG.md`
+
+Use the matching tag rather than `main` for a release-specific changelog when the
+tag exists. A tag can arrive after npm, so retry/wait without replacing last-good
+output.
+
+Backtick identifiers are not self-typing. A changelog hint is high confidence only
+when both the artifact kind and change verb are explicit. Paths, commands, examples,
+removals, and fixed bugs must not become automatic “must exist” assertions.
+
+## Source policy matrix
+
+| Fact | Primary source | Secondary/corroboration |
+| --- | --- | --- |
+| release version/platform matrix/integrity | npm | GitHub tag/release |
+| public setting existence and prose | settings docs | specialized official pages |
+| settings types and constraints | official examples/tables | exact-binary `doctor` diagnostics |
+| global/Desktop/policy scope | specialized official docs | tagged managed examples |
+| public env existence and prose | docs | binary static candidate match |
+| public top-level flags and prose | docs | scoped Commander extraction |
+| flag arity/default/choices/command path | scoped Commander model | docs examples |
+| keybindings validation | keybindings docs | exact-binary validator strings/candidates |
+| actions and documented defaults | keybindings docs | exact-binary candidate presence |
+| release change hints | tagged changelog | semantic artifact diff |
+
+SchemaStore is deliberately absent from this matrix. Version 1 may be read after
+generation by a development-only parity benchmark, but it cannot contribute a
+Version 4 property, type, enum, action, or artifact.
+
+## Snapshot observations (not permanent thresholds)
+
+For Claude Code v2.1.207 on 2026-07-13, the experiment parsed 117 settings rows,
+290 environment rows, 71 documented top-level flag rows, and 109 keybinding
+action/default rows. Strict leading row-level version bounds reduced the current
+public outputs to 287 env properties and 70 flag records. Inline markers attached
+to later clauses were retained as evidence rather than treated as whole-row bounds.
+Version 4 expands the env schema to 313 properties by adding standard variables from
+the official monitoring reference and provider-standard references, while keeping
+hook-provided and retired names separately scoped. These values seed conservative
+tests; future gates compare structure and semantic diffs rather than treating the
+numbers as contracts.

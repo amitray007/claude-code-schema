@@ -1,0 +1,1648 @@
+{
+  "schemaVersion": 1,
+  "artifactKind": "keybinding-defaults-catalog",
+  "claudeCodeVersion": "2.1.207",
+  "actions": [
+    {
+      "action": "app:interrupt",
+      "section": "App actions",
+      "defaultDisplay": "Ctrl+C",
+      "documentationUrl": "https://code.claude.com/docs/en/keybindings#available-actions",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "keybindingsDocs",
+            "sourceSha256": "8c29d7289a65a17c92eb63591d0997244e11299afbc433e4dae82a92b473b3cd"
+          }
+        ]
+      }
+    },
+    {
+      "action": "app:exit",
+      "section": "App actions",
+      "defaultDisplay": "Ctrl+D",
+      "documentationUrl": "https://code.claude.com/docs/en/keybindings#available-actions",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "keybindingsDocs",
+            "sourceSha256": "8c29d7289a65a17c92eb63591d0997244e11299afbc433e4dae82a92b473b3cd"
+          }
+        ]
+      }
+    },
+    {
+      "action": "app:redraw",
+      "section": "App actions",
+      "defaultDisplay": "(unbound)",
+      "documentationUrl": "https://code.claude.com/docs/en/keybindings#available-actions",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "keybindingsDocs",
+            "sourceSha256": "8c29d7289a65a17c92eb63591d0997244e11299afbc433e4dae82a92b473b3cd"
+          }
+        ]
+      }
+    },
+    {
+      "action": "app:toggleTodos",
+      "section": "App actions",
+      "defaultDisplay": "Ctrl+T",
+      "documentationUrl": "https://code.claude.com/docs/en/keybindings#available-actions",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "keybindingsDocs",
+            "sourceSha256": "8c29d7289a65a17c92eb63591d0997244e11299afbc433e4dae82a92b473b3cd"
+          }
+        ]
+      }
+    },
+    {
+      "action": "app:toggleTranscript",
+      "section": "App actions",
+      "defaultDisplay": "Ctrl+O",
+      "documentationUrl": "https://code.claude.com/docs/en/keybindings#available-actions",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "keybindingsDocs",
+            "sourceSha256": "8c29d7289a65a17c92eb63591d0997244e11299afbc433e4dae82a92b473b3cd"
+          }
+        ]
+      }
+    },
+    {
+      "action": "history:search",
+      "section": "History actions",
+      "defaultDisplay": "Ctrl+R",
+      "documentationUrl": "https://code.claude.com/docs/en/keybindings#available-actions",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "keybindingsDocs",
+            "sourceSha256": "8c29d7289a65a17c92eb63591d0997244e11299afbc433e4dae82a92b473b3cd"
+          }
+        ]
+      }
+    },
+    {
+      "action": "history:previous",
+      "section": "History actions",
+      "defaultDisplay": "Up",
+      "documentationUrl": "https://code.claude.com/docs/en/keybindings#available-actions",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "keybindingsDocs",
+            "sourceSha256": "8c29d7289a65a17c92eb63591d0997244e11299afbc433e4dae82a92b473b3cd"
+          }
+        ]
+      }
+    },
+    {
+      "action": "history:next",
+      "section": "History actions",
+      "defaultDisplay": "Down",
+      "documentationUrl": "https://code.claude.com/docs/en/keybindings#available-actions",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "keybindingsDocs",
+            "sourceSha256": "8c29d7289a65a17c92eb63591d0997244e11299afbc433e4dae82a92b473b3cd"
+          }
+        ]
+      }
+    },
+    {
+      "action": "chat:cancel",
+      "section": "Chat actions",
+      "defaultDisplay": "Escape",
+      "documentationUrl": "https://code.claude.com/docs/en/keybindings#available-actions",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "keybindingsDocs",
+            "sourceSha256": "8c29d7289a65a17c92eb63591d0997244e11299afbc433e4dae82a92b473b3cd"
+          }
+        ]
+      }
+    },
+    {
+      "action": "chat:clearInput",
+      "section": "Chat actions",
+      "defaultDisplay": "Ctrl+L",
+      "documentationUrl": "https://code.claude.com/docs/en/keybindings#available-actions",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "keybindingsDocs",
+            "sourceSha256": "8c29d7289a65a17c92eb63591d0997244e11299afbc433e4dae82a92b473b3cd"
+          }
+        ]
+      }
+    },
+    {
+      "action": "chat:clearScreen",
+      "section": "Chat actions",
+      "defaultDisplay": "Cmd+K",
+      "documentationUrl": "https://code.claude.com/docs/en/keybindings#available-actions",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "keybindingsDocs",
+            "sourceSha256": "8c29d7289a65a17c92eb63591d0997244e11299afbc433e4dae82a92b473b3cd"
+          }
+        ]
+      }
+    },
+    {
+      "action": "chat:killAgents",
+      "section": "Chat actions",
+      "defaultDisplay": "Ctrl+X Ctrl+K",
+      "documentationUrl": "https://code.claude.com/docs/en/keybindings#available-actions",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "keybindingsDocs",
+            "sourceSha256": "8c29d7289a65a17c92eb63591d0997244e11299afbc433e4dae82a92b473b3cd"
+          }
+        ]
+      }
+    },
+    {
+      "action": "chat:cycleMode",
+      "section": "Chat actions",
+      "defaultDisplay": "Shift+Tab\\*",
+      "documentationUrl": "https://code.claude.com/docs/en/keybindings#available-actions",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "keybindingsDocs",
+            "sourceSha256": "8c29d7289a65a17c92eb63591d0997244e11299afbc433e4dae82a92b473b3cd"
+          }
+        ]
+      }
+    },
+    {
+      "action": "chat:modelPicker",
+      "section": "Chat actions",
+      "defaultDisplay": "Meta+P",
+      "documentationUrl": "https://code.claude.com/docs/en/keybindings#available-actions",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "keybindingsDocs",
+            "sourceSha256": "8c29d7289a65a17c92eb63591d0997244e11299afbc433e4dae82a92b473b3cd"
+          }
+        ]
+      }
+    },
+    {
+      "action": "chat:fastMode",
+      "section": "Chat actions",
+      "defaultDisplay": "Meta+O",
+      "documentationUrl": "https://code.claude.com/docs/en/keybindings#available-actions",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "keybindingsDocs",
+            "sourceSha256": "8c29d7289a65a17c92eb63591d0997244e11299afbc433e4dae82a92b473b3cd"
+          }
+        ]
+      }
+    },
+    {
+      "action": "chat:thinkingToggle",
+      "section": "Chat actions",
+      "defaultDisplay": "Meta+T",
+      "documentationUrl": "https://code.claude.com/docs/en/keybindings#available-actions",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "keybindingsDocs",
+            "sourceSha256": "8c29d7289a65a17c92eb63591d0997244e11299afbc433e4dae82a92b473b3cd"
+          }
+        ]
+      }
+    },
+    {
+      "action": "chat:submit",
+      "section": "Chat actions",
+      "defaultDisplay": "Enter",
+      "documentationUrl": "https://code.claude.com/docs/en/keybindings#available-actions",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "keybindingsDocs",
+            "sourceSha256": "8c29d7289a65a17c92eb63591d0997244e11299afbc433e4dae82a92b473b3cd"
+          }
+        ]
+      }
+    },
+    {
+      "action": "chat:newline",
+      "section": "Chat actions",
+      "defaultDisplay": "Ctrl+J",
+      "documentationUrl": "https://code.claude.com/docs/en/keybindings#available-actions",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "keybindingsDocs",
+            "sourceSha256": "8c29d7289a65a17c92eb63591d0997244e11299afbc433e4dae82a92b473b3cd"
+          }
+        ]
+      }
+    },
+    {
+      "action": "chat:undo",
+      "section": "Chat actions",
+      "defaultDisplay": "Ctrl+\\_, Ctrl+Shift+-",
+      "documentationUrl": "https://code.claude.com/docs/en/keybindings#available-actions",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "keybindingsDocs",
+            "sourceSha256": "8c29d7289a65a17c92eb63591d0997244e11299afbc433e4dae82a92b473b3cd"
+          }
+        ]
+      }
+    },
+    {
+      "action": "chat:externalEditor",
+      "section": "Chat actions",
+      "defaultDisplay": "Ctrl+G, Ctrl+X Ctrl+E",
+      "documentationUrl": "https://code.claude.com/docs/en/keybindings#available-actions",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "keybindingsDocs",
+            "sourceSha256": "8c29d7289a65a17c92eb63591d0997244e11299afbc433e4dae82a92b473b3cd"
+          }
+        ]
+      }
+    },
+    {
+      "action": "chat:stash",
+      "section": "Chat actions",
+      "defaultDisplay": "Ctrl+S",
+      "documentationUrl": "https://code.claude.com/docs/en/keybindings#available-actions",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "keybindingsDocs",
+            "sourceSha256": "8c29d7289a65a17c92eb63591d0997244e11299afbc433e4dae82a92b473b3cd"
+          }
+        ]
+      }
+    },
+    {
+      "action": "chat:imagePaste",
+      "section": "Chat actions",
+      "defaultDisplay": "Ctrl+V (Alt+V on Windows and WSL)",
+      "documentationUrl": "https://code.claude.com/docs/en/keybindings#available-actions",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "keybindingsDocs",
+            "sourceSha256": "8c29d7289a65a17c92eb63591d0997244e11299afbc433e4dae82a92b473b3cd"
+          }
+        ]
+      }
+    },
+    {
+      "action": "autocomplete:accept",
+      "section": "Autocomplete actions",
+      "defaultDisplay": "Tab",
+      "documentationUrl": "https://code.claude.com/docs/en/keybindings#available-actions",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "keybindingsDocs",
+            "sourceSha256": "8c29d7289a65a17c92eb63591d0997244e11299afbc433e4dae82a92b473b3cd"
+          }
+        ]
+      }
+    },
+    {
+      "action": "autocomplete:dismiss",
+      "section": "Autocomplete actions",
+      "defaultDisplay": "Escape",
+      "documentationUrl": "https://code.claude.com/docs/en/keybindings#available-actions",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "keybindingsDocs",
+            "sourceSha256": "8c29d7289a65a17c92eb63591d0997244e11299afbc433e4dae82a92b473b3cd"
+          }
+        ]
+      }
+    },
+    {
+      "action": "autocomplete:previous",
+      "section": "Autocomplete actions",
+      "defaultDisplay": "Up",
+      "documentationUrl": "https://code.claude.com/docs/en/keybindings#available-actions",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "keybindingsDocs",
+            "sourceSha256": "8c29d7289a65a17c92eb63591d0997244e11299afbc433e4dae82a92b473b3cd"
+          }
+        ]
+      }
+    },
+    {
+      "action": "autocomplete:next",
+      "section": "Autocomplete actions",
+      "defaultDisplay": "Down",
+      "documentationUrl": "https://code.claude.com/docs/en/keybindings#available-actions",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "keybindingsDocs",
+            "sourceSha256": "8c29d7289a65a17c92eb63591d0997244e11299afbc433e4dae82a92b473b3cd"
+          }
+        ]
+      }
+    },
+    {
+      "action": "confirm:yes",
+      "section": "Confirmation actions",
+      "defaultDisplay": "Y, Enter",
+      "documentationUrl": "https://code.claude.com/docs/en/keybindings#available-actions",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "keybindingsDocs",
+            "sourceSha256": "8c29d7289a65a17c92eb63591d0997244e11299afbc433e4dae82a92b473b3cd"
+          }
+        ]
+      }
+    },
+    {
+      "action": "confirm:no",
+      "section": "Confirmation actions",
+      "defaultDisplay": "N, Escape",
+      "documentationUrl": "https://code.claude.com/docs/en/keybindings#available-actions",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "keybindingsDocs",
+            "sourceSha256": "8c29d7289a65a17c92eb63591d0997244e11299afbc433e4dae82a92b473b3cd"
+          }
+        ]
+      }
+    },
+    {
+      "action": "confirm:previous",
+      "section": "Confirmation actions",
+      "defaultDisplay": "Up",
+      "documentationUrl": "https://code.claude.com/docs/en/keybindings#available-actions",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "keybindingsDocs",
+            "sourceSha256": "8c29d7289a65a17c92eb63591d0997244e11299afbc433e4dae82a92b473b3cd"
+          }
+        ]
+      }
+    },
+    {
+      "action": "confirm:next",
+      "section": "Confirmation actions",
+      "defaultDisplay": "Down",
+      "documentationUrl": "https://code.claude.com/docs/en/keybindings#available-actions",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "keybindingsDocs",
+            "sourceSha256": "8c29d7289a65a17c92eb63591d0997244e11299afbc433e4dae82a92b473b3cd"
+          }
+        ]
+      }
+    },
+    {
+      "action": "confirm:nextField",
+      "section": "Confirmation actions",
+      "defaultDisplay": "Tab",
+      "documentationUrl": "https://code.claude.com/docs/en/keybindings#available-actions",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "keybindingsDocs",
+            "sourceSha256": "8c29d7289a65a17c92eb63591d0997244e11299afbc433e4dae82a92b473b3cd"
+          }
+        ]
+      }
+    },
+    {
+      "action": "confirm:previousField",
+      "section": "Confirmation actions",
+      "defaultDisplay": "(unbound)",
+      "documentationUrl": "https://code.claude.com/docs/en/keybindings#available-actions",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "keybindingsDocs",
+            "sourceSha256": "8c29d7289a65a17c92eb63591d0997244e11299afbc433e4dae82a92b473b3cd"
+          }
+        ]
+      }
+    },
+    {
+      "action": "confirm:toggle",
+      "section": "Confirmation actions",
+      "defaultDisplay": "Space",
+      "documentationUrl": "https://code.claude.com/docs/en/keybindings#available-actions",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "keybindingsDocs",
+            "sourceSha256": "8c29d7289a65a17c92eb63591d0997244e11299afbc433e4dae82a92b473b3cd"
+          }
+        ]
+      }
+    },
+    {
+      "action": "confirm:cycleMode",
+      "section": "Confirmation actions",
+      "defaultDisplay": "Shift+Tab",
+      "documentationUrl": "https://code.claude.com/docs/en/keybindings#available-actions",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "keybindingsDocs",
+            "sourceSha256": "8c29d7289a65a17c92eb63591d0997244e11299afbc433e4dae82a92b473b3cd"
+          }
+        ]
+      }
+    },
+    {
+      "action": "confirm:toggleExplanation",
+      "section": "Confirmation actions",
+      "defaultDisplay": "Ctrl+E",
+      "documentationUrl": "https://code.claude.com/docs/en/keybindings#available-actions",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "keybindingsDocs",
+            "sourceSha256": "8c29d7289a65a17c92eb63591d0997244e11299afbc433e4dae82a92b473b3cd"
+          }
+        ]
+      }
+    },
+    {
+      "action": "permission:toggleDebug",
+      "section": "Permission actions",
+      "defaultDisplay": "(unbound)",
+      "documentationUrl": "https://code.claude.com/docs/en/keybindings#available-actions",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "keybindingsDocs",
+            "sourceSha256": "8c29d7289a65a17c92eb63591d0997244e11299afbc433e4dae82a92b473b3cd"
+          }
+        ]
+      }
+    },
+    {
+      "action": "transcript:toggleShowAll",
+      "section": "Transcript actions",
+      "defaultDisplay": "Ctrl+E",
+      "documentationUrl": "https://code.claude.com/docs/en/keybindings#available-actions",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "keybindingsDocs",
+            "sourceSha256": "8c29d7289a65a17c92eb63591d0997244e11299afbc433e4dae82a92b473b3cd"
+          }
+        ]
+      }
+    },
+    {
+      "action": "transcript:exit",
+      "section": "Transcript actions",
+      "defaultDisplay": "q, Ctrl+C, Escape",
+      "documentationUrl": "https://code.claude.com/docs/en/keybindings#available-actions",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "keybindingsDocs",
+            "sourceSha256": "8c29d7289a65a17c92eb63591d0997244e11299afbc433e4dae82a92b473b3cd"
+          }
+        ]
+      }
+    },
+    {
+      "action": "historySearch:next",
+      "section": "History search actions",
+      "defaultDisplay": "Ctrl+R",
+      "documentationUrl": "https://code.claude.com/docs/en/keybindings#available-actions",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "keybindingsDocs",
+            "sourceSha256": "8c29d7289a65a17c92eb63591d0997244e11299afbc433e4dae82a92b473b3cd"
+          }
+        ]
+      }
+    },
+    {
+      "action": "historySearch:accept",
+      "section": "History search actions",
+      "defaultDisplay": "Escape, Tab",
+      "documentationUrl": "https://code.claude.com/docs/en/keybindings#available-actions",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "keybindingsDocs",
+            "sourceSha256": "8c29d7289a65a17c92eb63591d0997244e11299afbc433e4dae82a92b473b3cd"
+          }
+        ]
+      }
+    },
+    {
+      "action": "historySearch:cancel",
+      "section": "History search actions",
+      "defaultDisplay": "Ctrl+C",
+      "documentationUrl": "https://code.claude.com/docs/en/keybindings#available-actions",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "keybindingsDocs",
+            "sourceSha256": "8c29d7289a65a17c92eb63591d0997244e11299afbc433e4dae82a92b473b3cd"
+          }
+        ]
+      }
+    },
+    {
+      "action": "historySearch:execute",
+      "section": "History search actions",
+      "defaultDisplay": "Enter",
+      "documentationUrl": "https://code.claude.com/docs/en/keybindings#available-actions",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "keybindingsDocs",
+            "sourceSha256": "8c29d7289a65a17c92eb63591d0997244e11299afbc433e4dae82a92b473b3cd"
+          }
+        ]
+      }
+    },
+    {
+      "action": "historySearch:cycleScope",
+      "section": "History search actions",
+      "defaultDisplay": "Ctrl+S",
+      "documentationUrl": "https://code.claude.com/docs/en/keybindings#available-actions",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "keybindingsDocs",
+            "sourceSha256": "8c29d7289a65a17c92eb63591d0997244e11299afbc433e4dae82a92b473b3cd"
+          }
+        ]
+      }
+    },
+    {
+      "action": "task:background",
+      "section": "Task actions",
+      "defaultDisplay": "Ctrl+B, Ctrl+X Ctrl+B",
+      "documentationUrl": "https://code.claude.com/docs/en/keybindings#available-actions",
+      "versionMarkers": [
+        {
+          "kind": "min",
+          "version": "2.1.169",
+          "characterOffset": 25
+        }
+      ],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "keybindingsDocs",
+            "sourceSha256": "8c29d7289a65a17c92eb63591d0997244e11299afbc433e4dae82a92b473b3cd"
+          }
+        ]
+      }
+    },
+    {
+      "action": "theme:toggleSyntaxHighlighting",
+      "section": "Theme actions",
+      "defaultDisplay": "Ctrl+T",
+      "documentationUrl": "https://code.claude.com/docs/en/keybindings#available-actions",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "keybindingsDocs",
+            "sourceSha256": "8c29d7289a65a17c92eb63591d0997244e11299afbc433e4dae82a92b473b3cd"
+          }
+        ]
+      }
+    },
+    {
+      "action": "help:dismiss",
+      "section": "Help actions",
+      "defaultDisplay": "Escape",
+      "documentationUrl": "https://code.claude.com/docs/en/keybindings#available-actions",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "keybindingsDocs",
+            "sourceSha256": "8c29d7289a65a17c92eb63591d0997244e11299afbc433e4dae82a92b473b3cd"
+          }
+        ]
+      }
+    },
+    {
+      "action": "tabs:next",
+      "section": "Tabs actions",
+      "defaultDisplay": "Tab, Right",
+      "documentationUrl": "https://code.claude.com/docs/en/keybindings#available-actions",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "keybindingsDocs",
+            "sourceSha256": "8c29d7289a65a17c92eb63591d0997244e11299afbc433e4dae82a92b473b3cd"
+          }
+        ]
+      }
+    },
+    {
+      "action": "tabs:previous",
+      "section": "Tabs actions",
+      "defaultDisplay": "Shift+Tab, Left",
+      "documentationUrl": "https://code.claude.com/docs/en/keybindings#available-actions",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "keybindingsDocs",
+            "sourceSha256": "8c29d7289a65a17c92eb63591d0997244e11299afbc433e4dae82a92b473b3cd"
+          }
+        ]
+      }
+    },
+    {
+      "action": "attachments:next",
+      "section": "Attachments actions",
+      "defaultDisplay": "Right",
+      "documentationUrl": "https://code.claude.com/docs/en/keybindings#available-actions",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "keybindingsDocs",
+            "sourceSha256": "8c29d7289a65a17c92eb63591d0997244e11299afbc433e4dae82a92b473b3cd"
+          }
+        ]
+      }
+    },
+    {
+      "action": "attachments:previous",
+      "section": "Attachments actions",
+      "defaultDisplay": "Left",
+      "documentationUrl": "https://code.claude.com/docs/en/keybindings#available-actions",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "keybindingsDocs",
+            "sourceSha256": "8c29d7289a65a17c92eb63591d0997244e11299afbc433e4dae82a92b473b3cd"
+          }
+        ]
+      }
+    },
+    {
+      "action": "attachments:remove",
+      "section": "Attachments actions",
+      "defaultDisplay": "Backspace, Delete",
+      "documentationUrl": "https://code.claude.com/docs/en/keybindings#available-actions",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "keybindingsDocs",
+            "sourceSha256": "8c29d7289a65a17c92eb63591d0997244e11299afbc433e4dae82a92b473b3cd"
+          }
+        ]
+      }
+    },
+    {
+      "action": "attachments:exit",
+      "section": "Attachments actions",
+      "defaultDisplay": "Down, Escape",
+      "documentationUrl": "https://code.claude.com/docs/en/keybindings#available-actions",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "keybindingsDocs",
+            "sourceSha256": "8c29d7289a65a17c92eb63591d0997244e11299afbc433e4dae82a92b473b3cd"
+          }
+        ]
+      }
+    },
+    {
+      "action": "footer:next",
+      "section": "Footer actions",
+      "defaultDisplay": "Right",
+      "documentationUrl": "https://code.claude.com/docs/en/keybindings#available-actions",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "keybindingsDocs",
+            "sourceSha256": "8c29d7289a65a17c92eb63591d0997244e11299afbc433e4dae82a92b473b3cd"
+          }
+        ]
+      }
+    },
+    {
+      "action": "footer:previous",
+      "section": "Footer actions",
+      "defaultDisplay": "Left",
+      "documentationUrl": "https://code.claude.com/docs/en/keybindings#available-actions",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "keybindingsDocs",
+            "sourceSha256": "8c29d7289a65a17c92eb63591d0997244e11299afbc433e4dae82a92b473b3cd"
+          }
+        ]
+      }
+    },
+    {
+      "action": "footer:up",
+      "section": "Footer actions",
+      "defaultDisplay": "Up",
+      "documentationUrl": "https://code.claude.com/docs/en/keybindings#available-actions",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "keybindingsDocs",
+            "sourceSha256": "8c29d7289a65a17c92eb63591d0997244e11299afbc433e4dae82a92b473b3cd"
+          }
+        ]
+      }
+    },
+    {
+      "action": "footer:down",
+      "section": "Footer actions",
+      "defaultDisplay": "Down",
+      "documentationUrl": "https://code.claude.com/docs/en/keybindings#available-actions",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "keybindingsDocs",
+            "sourceSha256": "8c29d7289a65a17c92eb63591d0997244e11299afbc433e4dae82a92b473b3cd"
+          }
+        ]
+      }
+    },
+    {
+      "action": "footer:openSelected",
+      "section": "Footer actions",
+      "defaultDisplay": "Enter",
+      "documentationUrl": "https://code.claude.com/docs/en/keybindings#available-actions",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "keybindingsDocs",
+            "sourceSha256": "8c29d7289a65a17c92eb63591d0997244e11299afbc433e4dae82a92b473b3cd"
+          }
+        ]
+      }
+    },
+    {
+      "action": "footer:clearSelection",
+      "section": "Footer actions",
+      "defaultDisplay": "Escape",
+      "documentationUrl": "https://code.claude.com/docs/en/keybindings#available-actions",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "keybindingsDocs",
+            "sourceSha256": "8c29d7289a65a17c92eb63591d0997244e11299afbc433e4dae82a92b473b3cd"
+          }
+        ]
+      }
+    },
+    {
+      "action": "messageSelector:up",
+      "section": "Message selector actions",
+      "defaultDisplay": "Up, K, Ctrl+P",
+      "documentationUrl": "https://code.claude.com/docs/en/keybindings#available-actions",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "keybindingsDocs",
+            "sourceSha256": "8c29d7289a65a17c92eb63591d0997244e11299afbc433e4dae82a92b473b3cd"
+          }
+        ]
+      }
+    },
+    {
+      "action": "messageSelector:down",
+      "section": "Message selector actions",
+      "defaultDisplay": "Down, J, Ctrl+N",
+      "documentationUrl": "https://code.claude.com/docs/en/keybindings#available-actions",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "keybindingsDocs",
+            "sourceSha256": "8c29d7289a65a17c92eb63591d0997244e11299afbc433e4dae82a92b473b3cd"
+          }
+        ]
+      }
+    },
+    {
+      "action": "messageSelector:top",
+      "section": "Message selector actions",
+      "defaultDisplay": "Ctrl+Up, Shift+Up, Meta+Up, Shift+K",
+      "documentationUrl": "https://code.claude.com/docs/en/keybindings#available-actions",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "keybindingsDocs",
+            "sourceSha256": "8c29d7289a65a17c92eb63591d0997244e11299afbc433e4dae82a92b473b3cd"
+          }
+        ]
+      }
+    },
+    {
+      "action": "messageSelector:bottom",
+      "section": "Message selector actions",
+      "defaultDisplay": "Ctrl+Down, Shift+Down, Meta+Down, Shift+J",
+      "documentationUrl": "https://code.claude.com/docs/en/keybindings#available-actions",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "keybindingsDocs",
+            "sourceSha256": "8c29d7289a65a17c92eb63591d0997244e11299afbc433e4dae82a92b473b3cd"
+          }
+        ]
+      }
+    },
+    {
+      "action": "messageSelector:select",
+      "section": "Message selector actions",
+      "defaultDisplay": "Enter",
+      "documentationUrl": "https://code.claude.com/docs/en/keybindings#available-actions",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "keybindingsDocs",
+            "sourceSha256": "8c29d7289a65a17c92eb63591d0997244e11299afbc433e4dae82a92b473b3cd"
+          }
+        ]
+      }
+    },
+    {
+      "action": "diff:dismiss",
+      "section": "Diff actions",
+      "defaultDisplay": "Escape",
+      "documentationUrl": "https://code.claude.com/docs/en/keybindings#available-actions",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "keybindingsDocs",
+            "sourceSha256": "8c29d7289a65a17c92eb63591d0997244e11299afbc433e4dae82a92b473b3cd"
+          }
+        ]
+      }
+    },
+    {
+      "action": "diff:previousSource",
+      "section": "Diff actions",
+      "defaultDisplay": "Left",
+      "documentationUrl": "https://code.claude.com/docs/en/keybindings#available-actions",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "keybindingsDocs",
+            "sourceSha256": "8c29d7289a65a17c92eb63591d0997244e11299afbc433e4dae82a92b473b3cd"
+          }
+        ]
+      }
+    },
+    {
+      "action": "diff:nextSource",
+      "section": "Diff actions",
+      "defaultDisplay": "Right",
+      "documentationUrl": "https://code.claude.com/docs/en/keybindings#available-actions",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "keybindingsDocs",
+            "sourceSha256": "8c29d7289a65a17c92eb63591d0997244e11299afbc433e4dae82a92b473b3cd"
+          }
+        ]
+      }
+    },
+    {
+      "action": "diff:previousFile",
+      "section": "Diff actions",
+      "defaultDisplay": "Up, K",
+      "documentationUrl": "https://code.claude.com/docs/en/keybindings#available-actions",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "keybindingsDocs",
+            "sourceSha256": "8c29d7289a65a17c92eb63591d0997244e11299afbc433e4dae82a92b473b3cd"
+          }
+        ]
+      }
+    },
+    {
+      "action": "diff:nextFile",
+      "section": "Diff actions",
+      "defaultDisplay": "Down, J",
+      "documentationUrl": "https://code.claude.com/docs/en/keybindings#available-actions",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "keybindingsDocs",
+            "sourceSha256": "8c29d7289a65a17c92eb63591d0997244e11299afbc433e4dae82a92b473b3cd"
+          }
+        ]
+      }
+    },
+    {
+      "action": "diff:viewDetails",
+      "section": "Diff actions",
+      "defaultDisplay": "Enter",
+      "documentationUrl": "https://code.claude.com/docs/en/keybindings#available-actions",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "keybindingsDocs",
+            "sourceSha256": "8c29d7289a65a17c92eb63591d0997244e11299afbc433e4dae82a92b473b3cd"
+          }
+        ]
+      }
+    },
+    {
+      "action": "diff:back",
+      "section": "Diff actions",
+      "defaultDisplay": "(context-specific)",
+      "documentationUrl": "https://code.claude.com/docs/en/keybindings#available-actions",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "keybindingsDocs",
+            "sourceSha256": "8c29d7289a65a17c92eb63591d0997244e11299afbc433e4dae82a92b473b3cd"
+          }
+        ]
+      }
+    },
+    {
+      "action": "scroll:pageUp",
+      "section": "Diff actions",
+      "defaultDisplay": "PageUp",
+      "documentationUrl": "https://code.claude.com/docs/en/keybindings#available-actions",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "keybindingsDocs",
+            "sourceSha256": "8c29d7289a65a17c92eb63591d0997244e11299afbc433e4dae82a92b473b3cd"
+          }
+        ]
+      }
+    },
+    {
+      "action": "scroll:pageDown",
+      "section": "Diff actions",
+      "defaultDisplay": "PageDown",
+      "documentationUrl": "https://code.claude.com/docs/en/keybindings#available-actions",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "keybindingsDocs",
+            "sourceSha256": "8c29d7289a65a17c92eb63591d0997244e11299afbc433e4dae82a92b473b3cd"
+          }
+        ]
+      }
+    },
+    {
+      "action": "scroll:fullPageUp",
+      "section": "Diff actions",
+      "defaultDisplay": "Shift+Space, B",
+      "documentationUrl": "https://code.claude.com/docs/en/keybindings#available-actions",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "keybindingsDocs",
+            "sourceSha256": "8c29d7289a65a17c92eb63591d0997244e11299afbc433e4dae82a92b473b3cd"
+          }
+        ]
+      }
+    },
+    {
+      "action": "scroll:fullPageDown",
+      "section": "Diff actions",
+      "defaultDisplay": "Space",
+      "documentationUrl": "https://code.claude.com/docs/en/keybindings#available-actions",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "keybindingsDocs",
+            "sourceSha256": "8c29d7289a65a17c92eb63591d0997244e11299afbc433e4dae82a92b473b3cd"
+          }
+        ]
+      }
+    },
+    {
+      "action": "scroll:top",
+      "section": "Diff actions",
+      "defaultDisplay": "G, Home",
+      "documentationUrl": "https://code.claude.com/docs/en/keybindings#available-actions",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "keybindingsDocs",
+            "sourceSha256": "8c29d7289a65a17c92eb63591d0997244e11299afbc433e4dae82a92b473b3cd"
+          }
+        ]
+      }
+    },
+    {
+      "action": "scroll:bottom",
+      "section": "Diff actions",
+      "defaultDisplay": "Shift+G, End",
+      "documentationUrl": "https://code.claude.com/docs/en/keybindings#available-actions",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "keybindingsDocs",
+            "sourceSha256": "8c29d7289a65a17c92eb63591d0997244e11299afbc433e4dae82a92b473b3cd"
+          }
+        ]
+      }
+    },
+    {
+      "action": "modelPicker:decreaseEffort",
+      "section": "Model picker actions",
+      "defaultDisplay": "Left",
+      "documentationUrl": "https://code.claude.com/docs/en/keybindings#available-actions",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "keybindingsDocs",
+            "sourceSha256": "8c29d7289a65a17c92eb63591d0997244e11299afbc433e4dae82a92b473b3cd"
+          }
+        ]
+      }
+    },
+    {
+      "action": "modelPicker:increaseEffort",
+      "section": "Model picker actions",
+      "defaultDisplay": "Right",
+      "documentationUrl": "https://code.claude.com/docs/en/keybindings#available-actions",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "keybindingsDocs",
+            "sourceSha256": "8c29d7289a65a17c92eb63591d0997244e11299afbc433e4dae82a92b473b3cd"
+          }
+        ]
+      }
+    },
+    {
+      "action": "modelPicker:thisSessionOnly",
+      "section": "Model picker actions",
+      "defaultDisplay": "s",
+      "documentationUrl": "https://code.claude.com/docs/en/keybindings#available-actions",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "keybindingsDocs",
+            "sourceSha256": "8c29d7289a65a17c92eb63591d0997244e11299afbc433e4dae82a92b473b3cd"
+          }
+        ]
+      }
+    },
+    {
+      "action": "select:next",
+      "section": "Select actions",
+      "defaultDisplay": "Down, J, Ctrl+N",
+      "documentationUrl": "https://code.claude.com/docs/en/keybindings#available-actions",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "keybindingsDocs",
+            "sourceSha256": "8c29d7289a65a17c92eb63591d0997244e11299afbc433e4dae82a92b473b3cd"
+          }
+        ]
+      }
+    },
+    {
+      "action": "select:previous",
+      "section": "Select actions",
+      "defaultDisplay": "Up, K, Ctrl+P",
+      "documentationUrl": "https://code.claude.com/docs/en/keybindings#available-actions",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "keybindingsDocs",
+            "sourceSha256": "8c29d7289a65a17c92eb63591d0997244e11299afbc433e4dae82a92b473b3cd"
+          }
+        ]
+      }
+    },
+    {
+      "action": "select:accept",
+      "section": "Select actions",
+      "defaultDisplay": "Enter",
+      "documentationUrl": "https://code.claude.com/docs/en/keybindings#available-actions",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "keybindingsDocs",
+            "sourceSha256": "8c29d7289a65a17c92eb63591d0997244e11299afbc433e4dae82a92b473b3cd"
+          }
+        ]
+      }
+    },
+    {
+      "action": "select:cancel",
+      "section": "Select actions",
+      "defaultDisplay": "Escape",
+      "documentationUrl": "https://code.claude.com/docs/en/keybindings#available-actions",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "keybindingsDocs",
+            "sourceSha256": "8c29d7289a65a17c92eb63591d0997244e11299afbc433e4dae82a92b473b3cd"
+          }
+        ]
+      }
+    },
+    {
+      "action": "plugin:toggle",
+      "section": "Plugin actions",
+      "defaultDisplay": "Space",
+      "documentationUrl": "https://code.claude.com/docs/en/keybindings#available-actions",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "keybindingsDocs",
+            "sourceSha256": "8c29d7289a65a17c92eb63591d0997244e11299afbc433e4dae82a92b473b3cd"
+          }
+        ]
+      }
+    },
+    {
+      "action": "plugin:install",
+      "section": "Plugin actions",
+      "defaultDisplay": "I",
+      "documentationUrl": "https://code.claude.com/docs/en/keybindings#available-actions",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "keybindingsDocs",
+            "sourceSha256": "8c29d7289a65a17c92eb63591d0997244e11299afbc433e4dae82a92b473b3cd"
+          }
+        ]
+      }
+    },
+    {
+      "action": "plugin:favorite",
+      "section": "Plugin actions",
+      "defaultDisplay": "F",
+      "documentationUrl": "https://code.claude.com/docs/en/keybindings#available-actions",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "keybindingsDocs",
+            "sourceSha256": "8c29d7289a65a17c92eb63591d0997244e11299afbc433e4dae82a92b473b3cd"
+          }
+        ]
+      }
+    },
+    {
+      "action": "settings:search",
+      "section": "Settings actions",
+      "defaultDisplay": "/",
+      "documentationUrl": "https://code.claude.com/docs/en/keybindings#available-actions",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "keybindingsDocs",
+            "sourceSha256": "8c29d7289a65a17c92eb63591d0997244e11299afbc433e4dae82a92b473b3cd"
+          }
+        ]
+      }
+    },
+    {
+      "action": "settings:retry",
+      "section": "Settings actions",
+      "defaultDisplay": "R",
+      "documentationUrl": "https://code.claude.com/docs/en/keybindings#available-actions",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "keybindingsDocs",
+            "sourceSha256": "8c29d7289a65a17c92eb63591d0997244e11299afbc433e4dae82a92b473b3cd"
+          }
+        ]
+      }
+    },
+    {
+      "action": "select:accept",
+      "section": "Settings actions",
+      "defaultDisplay": "Enter, Space",
+      "documentationUrl": "https://code.claude.com/docs/en/keybindings#available-actions",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "keybindingsDocs",
+            "sourceSha256": "8c29d7289a65a17c92eb63591d0997244e11299afbc433e4dae82a92b473b3cd"
+          }
+        ]
+      }
+    },
+    {
+      "action": "confirm:no",
+      "section": "Settings actions",
+      "defaultDisplay": "Escape",
+      "documentationUrl": "https://code.claude.com/docs/en/keybindings#available-actions",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "keybindingsDocs",
+            "sourceSha256": "8c29d7289a65a17c92eb63591d0997244e11299afbc433e4dae82a92b473b3cd"
+          }
+        ]
+      }
+    },
+    {
+      "action": "voice:pushToTalk",
+      "section": "Voice actions",
+      "defaultDisplay": "Space",
+      "documentationUrl": "https://code.claude.com/docs/en/keybindings#available-actions",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "keybindingsDocs",
+            "sourceSha256": "8c29d7289a65a17c92eb63591d0997244e11299afbc433e4dae82a92b473b3cd"
+          }
+        ]
+      }
+    },
+    {
+      "action": "scroll:lineUp",
+      "section": "Scroll actions",
+      "defaultDisplay": "(unbound)",
+      "documentationUrl": "https://code.claude.com/docs/en/keybindings#available-actions",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "keybindingsDocs",
+            "sourceSha256": "8c29d7289a65a17c92eb63591d0997244e11299afbc433e4dae82a92b473b3cd"
+          }
+        ]
+      }
+    },
+    {
+      "action": "scroll:lineDown",
+      "section": "Scroll actions",
+      "defaultDisplay": "(unbound)",
+      "documentationUrl": "https://code.claude.com/docs/en/keybindings#available-actions",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "keybindingsDocs",
+            "sourceSha256": "8c29d7289a65a17c92eb63591d0997244e11299afbc433e4dae82a92b473b3cd"
+          }
+        ]
+      }
+    },
+    {
+      "action": "scroll:pageUp",
+      "section": "Scroll actions",
+      "defaultDisplay": "PageUp",
+      "documentationUrl": "https://code.claude.com/docs/en/keybindings#available-actions",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "keybindingsDocs",
+            "sourceSha256": "8c29d7289a65a17c92eb63591d0997244e11299afbc433e4dae82a92b473b3cd"
+          }
+        ]
+      }
+    },
+    {
+      "action": "scroll:pageDown",
+      "section": "Scroll actions",
+      "defaultDisplay": "PageDown",
+      "documentationUrl": "https://code.claude.com/docs/en/keybindings#available-actions",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "keybindingsDocs",
+            "sourceSha256": "8c29d7289a65a17c92eb63591d0997244e11299afbc433e4dae82a92b473b3cd"
+          }
+        ]
+      }
+    },
+    {
+      "action": "scroll:top",
+      "section": "Scroll actions",
+      "defaultDisplay": "Ctrl+Home",
+      "documentationUrl": "https://code.claude.com/docs/en/keybindings#available-actions",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "keybindingsDocs",
+            "sourceSha256": "8c29d7289a65a17c92eb63591d0997244e11299afbc433e4dae82a92b473b3cd"
+          }
+        ]
+      }
+    },
+    {
+      "action": "scroll:bottom",
+      "section": "Scroll actions",
+      "defaultDisplay": "Ctrl+End",
+      "documentationUrl": "https://code.claude.com/docs/en/keybindings#available-actions",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "keybindingsDocs",
+            "sourceSha256": "8c29d7289a65a17c92eb63591d0997244e11299afbc433e4dae82a92b473b3cd"
+          }
+        ]
+      }
+    },
+    {
+      "action": "scroll:halfPageUp",
+      "section": "Scroll actions",
+      "defaultDisplay": "(unbound)",
+      "documentationUrl": "https://code.claude.com/docs/en/keybindings#available-actions",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "keybindingsDocs",
+            "sourceSha256": "8c29d7289a65a17c92eb63591d0997244e11299afbc433e4dae82a92b473b3cd"
+          }
+        ]
+      }
+    },
+    {
+      "action": "scroll:halfPageDown",
+      "section": "Scroll actions",
+      "defaultDisplay": "(unbound)",
+      "documentationUrl": "https://code.claude.com/docs/en/keybindings#available-actions",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "keybindingsDocs",
+            "sourceSha256": "8c29d7289a65a17c92eb63591d0997244e11299afbc433e4dae82a92b473b3cd"
+          }
+        ]
+      }
+    },
+    {
+      "action": "scroll:fullPageUp",
+      "section": "Scroll actions",
+      "defaultDisplay": "(unbound)",
+      "documentationUrl": "https://code.claude.com/docs/en/keybindings#available-actions",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "keybindingsDocs",
+            "sourceSha256": "8c29d7289a65a17c92eb63591d0997244e11299afbc433e4dae82a92b473b3cd"
+          }
+        ]
+      }
+    },
+    {
+      "action": "scroll:fullPageDown",
+      "section": "Scroll actions",
+      "defaultDisplay": "(unbound)",
+      "documentationUrl": "https://code.claude.com/docs/en/keybindings#available-actions",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "keybindingsDocs",
+            "sourceSha256": "8c29d7289a65a17c92eb63591d0997244e11299afbc433e4dae82a92b473b3cd"
+          }
+        ]
+      }
+    },
+    {
+      "action": "selection:copy",
+      "section": "Scroll actions",
+      "defaultDisplay": "Ctrl+Shift+C / Cmd+C",
+      "documentationUrl": "https://code.claude.com/docs/en/keybindings#available-actions",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "keybindingsDocs",
+            "sourceSha256": "8c29d7289a65a17c92eb63591d0997244e11299afbc433e4dae82a92b473b3cd"
+          }
+        ]
+      }
+    },
+    {
+      "action": "selection:clear",
+      "section": "Scroll actions",
+      "defaultDisplay": "(unbound)",
+      "documentationUrl": "https://code.claude.com/docs/en/keybindings#available-actions",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "keybindingsDocs",
+            "sourceSha256": "8c29d7289a65a17c92eb63591d0997244e11299afbc433e4dae82a92b473b3cd"
+          }
+        ]
+      }
+    },
+    {
+      "action": "selection:extendLeft",
+      "section": "Scroll actions",
+      "defaultDisplay": "Shift+Left",
+      "documentationUrl": "https://code.claude.com/docs/en/keybindings#available-actions",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "keybindingsDocs",
+            "sourceSha256": "8c29d7289a65a17c92eb63591d0997244e11299afbc433e4dae82a92b473b3cd"
+          }
+        ]
+      }
+    },
+    {
+      "action": "selection:extendRight",
+      "section": "Scroll actions",
+      "defaultDisplay": "Shift+Right",
+      "documentationUrl": "https://code.claude.com/docs/en/keybindings#available-actions",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "keybindingsDocs",
+            "sourceSha256": "8c29d7289a65a17c92eb63591d0997244e11299afbc433e4dae82a92b473b3cd"
+          }
+        ]
+      }
+    },
+    {
+      "action": "selection:extendUp",
+      "section": "Scroll actions",
+      "defaultDisplay": "Shift+Up",
+      "documentationUrl": "https://code.claude.com/docs/en/keybindings#available-actions",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "keybindingsDocs",
+            "sourceSha256": "8c29d7289a65a17c92eb63591d0997244e11299afbc433e4dae82a92b473b3cd"
+          }
+        ]
+      }
+    },
+    {
+      "action": "selection:extendDown",
+      "section": "Scroll actions",
+      "defaultDisplay": "Shift+Down",
+      "documentationUrl": "https://code.claude.com/docs/en/keybindings#available-actions",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "keybindingsDocs",
+            "sourceSha256": "8c29d7289a65a17c92eb63591d0997244e11299afbc433e4dae82a92b473b3cd"
+          }
+        ]
+      }
+    },
+    {
+      "action": "selection:extendLineStart",
+      "section": "Scroll actions",
+      "defaultDisplay": "Shift+Home",
+      "documentationUrl": "https://code.claude.com/docs/en/keybindings#available-actions",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "keybindingsDocs",
+            "sourceSha256": "8c29d7289a65a17c92eb63591d0997244e11299afbc433e4dae82a92b473b3cd"
+          }
+        ]
+      }
+    },
+    {
+      "action": "selection:extendLineEnd",
+      "section": "Scroll actions",
+      "defaultDisplay": "Shift+End",
+      "documentationUrl": "https://code.claude.com/docs/en/keybindings#available-actions",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "keybindingsDocs",
+            "sourceSha256": "8c29d7289a65a17c92eb63591d0997244e11299afbc433e4dae82a92b473b3cd"
+          }
+        ]
+      }
+    }
+  ]
+}

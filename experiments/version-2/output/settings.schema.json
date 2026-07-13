@@ -1,0 +1,1673 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://example.invalid/claude-code/2.1.207/settings.schema.json",
+  "title": "Claude Code documented settings — docs-only experiment",
+  "description": "Compatibility schema generated only from official docs. Documented property names are enumerated, but their value types are intentionally unverified.",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "x-type-status": "verified-by-json-schema-convention"
+    },
+    "advisorModel": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-min-version": "2.1.98",
+      "x-version-markers": [
+        {
+          "kind": "min",
+          "version": "2.1.98",
+          "characterOffset": 0
+        },
+        {
+          "kind": "min",
+          "version": "2.1.170",
+          "characterOffset": 148
+        }
+      ]
+    },
+    "agent": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      }
+    },
+    "agentPushNotifEnabled": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-min-version": "2.1.119",
+      "x-version-markers": [
+        {
+          "kind": "min",
+          "version": "2.1.119",
+          "characterOffset": 0
+        }
+      ]
+    },
+    "allowAllClaudeAiMcps": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      }
+    },
+    "allowedChannelPlugins": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      }
+    },
+    "allowedHttpHookUrls": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      }
+    },
+    "allowedMcpServers": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      }
+    },
+    "allowManagedHooksOnly": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      }
+    },
+    "allowManagedMcpServersOnly": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      }
+    },
+    "allowManagedPermissionRulesOnly": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      }
+    },
+    "alwaysThinkingEnabled": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      }
+    },
+    "apiKeyHelper": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      }
+    },
+    "askUserQuestionTimeout": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-min-version": "2.1.200",
+      "x-version-markers": [
+        {
+          "kind": "min",
+          "version": "2.1.200",
+          "characterOffset": 0
+        }
+      ]
+    },
+    "attribution": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      }
+    },
+    "autoCompactEnabled": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-min-version": "2.1.119",
+      "x-version-markers": [
+        {
+          "kind": "min",
+          "version": "2.1.119",
+          "characterOffset": 0
+        }
+      ]
+    },
+    "autoMemoryDirectory": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      }
+    },
+    "autoMemoryEnabled": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      }
+    },
+    "autoMode": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      }
+    },
+    "autoScrollEnabled": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      }
+    },
+    "autoUpdatesChannel": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      }
+    },
+    "availableModels": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      }
+    },
+    "awaySummaryEnabled": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      }
+    },
+    "awsAuthRefresh": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      }
+    },
+    "awsCredentialExport": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      }
+    },
+    "axScreenReader": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-min-version": "2.1.181",
+      "x-version-markers": [
+        {
+          "kind": "min",
+          "version": "2.1.181",
+          "characterOffset": 0
+        }
+      ]
+    },
+    "blockedMarketplaces": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      }
+    },
+    "browserExternalPageTools": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      }
+    },
+    "channelsEnabled": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      }
+    },
+    "claudeMd": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      }
+    },
+    "claudeMdExcludes": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      }
+    },
+    "cleanupPeriodDays": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-version-markers": [
+        {
+          "kind": "min",
+          "version": "2.1.203",
+          "characterOffset": 344
+        }
+      ]
+    },
+    "companyAnnouncements": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      }
+    },
+    "defaultShell": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      }
+    },
+    "deniedMcpServers": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      }
+    },
+    "disableAgentView": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      }
+    },
+    "disableAllHooks": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      }
+    },
+    "disableArtifact": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      }
+    },
+    "disableAutoMode": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      }
+    },
+    "disableBundledSkills": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      }
+    },
+    "disableClaudeAiConnectors": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-min-version": "2.1.182",
+      "x-version-markers": [
+        {
+          "kind": "min",
+          "version": "2.1.182",
+          "characterOffset": 0
+        }
+      ]
+    },
+    "disableDeepLinkRegistration": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      }
+    },
+    "disabledMcpjsonServers": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      }
+    },
+    "disableRemoteControl": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-min-version": "2.1.128",
+      "x-version-markers": [
+        {
+          "kind": "min",
+          "version": "2.1.128",
+          "characterOffset": 0
+        }
+      ]
+    },
+    "disableSideloadFlags": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-min-version": "2.1.193",
+      "x-version-markers": [
+        {
+          "kind": "min",
+          "version": "2.1.193",
+          "characterOffset": 0
+        }
+      ]
+    },
+    "disableSkillShellExecution": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      }
+    },
+    "disableWorkflows": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      }
+    },
+    "editorMode": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      }
+    },
+    "effortLevel": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      }
+    },
+    "enableAllProjectMcpServers": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-version-markers": [
+        {
+          "kind": "min",
+          "version": "2.1.196",
+          "characterOffset": 76
+        }
+      ]
+    },
+    "enableArtifact": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-min-version": "2.1.196",
+      "x-version-markers": [
+        {
+          "kind": "min",
+          "version": "2.1.196",
+          "characterOffset": 0
+        }
+      ]
+    },
+    "enabledMcpjsonServers": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-version-markers": [
+        {
+          "kind": "min",
+          "version": "2.1.196",
+          "characterOffset": 64
+        }
+      ]
+    },
+    "enforceAvailableModels": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-min-version": "2.1.175",
+      "x-version-markers": [
+        {
+          "kind": "min",
+          "version": "2.1.175",
+          "characterOffset": 0
+        }
+      ]
+    },
+    "env": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-version-markers": [
+        {
+          "kind": "min",
+          "version": "2.1.143",
+          "characterOffset": 95
+        },
+        {
+          "kind": "min",
+          "version": "2.1.195",
+          "characterOffset": 336
+        }
+      ]
+    },
+    "fallbackModel": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      }
+    },
+    "fastModePerSessionOptIn": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      }
+    },
+    "feedbackSurveyRate": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      }
+    },
+    "fileCheckpointingEnabled": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-min-version": "2.1.119",
+      "x-version-markers": [
+        {
+          "kind": "min",
+          "version": "2.1.119",
+          "characterOffset": 0
+        }
+      ]
+    },
+    "fileSuggestion": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      }
+    },
+    "footerLinksRegexes": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-min-version": "2.1.176",
+      "x-version-markers": [
+        {
+          "kind": "min",
+          "version": "2.1.176",
+          "characterOffset": 0
+        }
+      ]
+    },
+    "forceLoginMethod": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      }
+    },
+    "forceLoginGatewayUrl": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      }
+    },
+    "forceLoginOrgUUID": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      }
+    },
+    "forceRemoteSettingsRefresh": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      }
+    },
+    "gcpAuthRefresh": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      }
+    },
+    "hooks": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      }
+    },
+    "httpHookAllowedEnvVars": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      }
+    },
+    "includeGitInstructions": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      }
+    },
+    "inputNeededNotifEnabled": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-min-version": "2.1.119",
+      "x-version-markers": [
+        {
+          "kind": "min",
+          "version": "2.1.119",
+          "characterOffset": 0
+        }
+      ]
+    },
+    "language": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-version-markers": [
+        {
+          "kind": "min",
+          "version": "2.1.176",
+          "characterOffset": 274
+        }
+      ]
+    },
+    "minimumVersion": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      }
+    },
+    "model": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      }
+    },
+    "modelOverrides": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      }
+    },
+    "otelHeadersHelper": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      }
+    },
+    "outputStyle": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      }
+    },
+    "parentSettingsBehavior": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-min-version": "2.1.133",
+      "x-version-markers": [
+        {
+          "kind": "min",
+          "version": "2.1.133",
+          "characterOffset": 0
+        }
+      ]
+    },
+    "permissions": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      }
+    },
+    "plansDirectory": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      }
+    },
+    "pluginSuggestionMarketplaces": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      }
+    },
+    "pluginTrustMessage": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      }
+    },
+    "policyHelper": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-min-version": "2.1.136",
+      "x-version-markers": [
+        {
+          "kind": "min",
+          "version": "2.1.136",
+          "characterOffset": 0
+        }
+      ]
+    },
+    "preferredNotifChannel": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      }
+    },
+    "prefersReducedMotion": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      }
+    },
+    "prUrlTemplate": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      }
+    },
+    "remoteControlAtStartup": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-min-version": "2.1.119",
+      "x-version-markers": [
+        {
+          "kind": "min",
+          "version": "2.1.119",
+          "characterOffset": 0
+        }
+      ]
+    },
+    "requiredMaximumVersion": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      }
+    },
+    "requiredMinimumVersion": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      }
+    },
+    "respectGitignore": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      }
+    },
+    "respondToBashCommands": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-min-version": "2.1.186",
+      "x-version-markers": [
+        {
+          "kind": "min",
+          "version": "2.1.186",
+          "characterOffset": 0
+        }
+      ]
+    },
+    "showClearContextOnPlanAccept": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      }
+    },
+    "showThinkingSummaries": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      }
+    },
+    "showTurnDuration": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      }
+    },
+    "skillListingBudgetFraction": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-min-version": "2.1.105",
+      "x-version-markers": [
+        {
+          "kind": "min",
+          "version": "2.1.105",
+          "characterOffset": 0
+        }
+      ]
+    },
+    "skillListingMaxDescChars": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-min-version": "2.1.105",
+      "x-version-markers": [
+        {
+          "kind": "min",
+          "version": "2.1.105",
+          "characterOffset": 0
+        }
+      ]
+    },
+    "skillOverrides": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-min-version": "2.1.129",
+      "x-version-markers": [
+        {
+          "kind": "min",
+          "version": "2.1.129",
+          "characterOffset": 0
+        }
+      ]
+    },
+    "skipWebFetchPreflight": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      }
+    },
+    "spinnerTipsEnabled": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      }
+    },
+    "spinnerTipsOverride": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      }
+    },
+    "spinnerVerbs": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      }
+    },
+    "sshConfigs": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      }
+    },
+    "statusLine": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      }
+    },
+    "strictKnownMarketplaces": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      }
+    },
+    "strictPluginOnlyCustomization": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      }
+    },
+    "syntaxHighlightingDisabled": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      }
+    },
+    "teammateMode": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-version-markers": [
+        {
+          "kind": "min",
+          "version": "2.1.186",
+          "characterOffset": 282
+        }
+      ]
+    },
+    "terminalProgressBarEnabled": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      }
+    },
+    "theme": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-min-version": "2.1.119",
+      "x-version-markers": [
+        {
+          "kind": "min",
+          "version": "2.1.119",
+          "characterOffset": 0
+        }
+      ]
+    },
+    "tui": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      }
+    },
+    "ultracode": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-version-markers": [
+        {
+          "kind": "min",
+          "version": "2.1.203",
+          "characterOffset": 218
+        }
+      ]
+    },
+    "useAutoModeDuringPlan": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      }
+    },
+    "verbose": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-min-version": "2.1.119",
+      "x-version-markers": [
+        {
+          "kind": "min",
+          "version": "2.1.119",
+          "characterOffset": 0
+        }
+      ]
+    },
+    "viewMode": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      }
+    },
+    "voice": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      }
+    },
+    "voiceEnabled": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      }
+    },
+    "wheelScrollAccelerationEnabled": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-min-version": "2.1.174",
+      "x-version-markers": [
+        {
+          "kind": "min",
+          "version": "2.1.174",
+          "characterOffset": 0
+        }
+      ]
+    },
+    "workflowKeywordTriggerEnabled": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      },
+      "x-min-version": "2.1.157",
+      "x-version-markers": [
+        {
+          "kind": "min",
+          "version": "2.1.157",
+          "characterOffset": 0
+        }
+      ]
+    },
+    "wslInheritsWindowsSettings": {
+      "x-type-status": "unverified-docs-only",
+      "x-docs-url": "https://code.claude.com/docs/en/settings#available-settings",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocs",
+            "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+          }
+        ]
+      }
+    }
+  },
+  "additionalProperties": true,
+  "x-claude-code-version": "2.1.207",
+  "x-artifact-kind": "settings-json-schema",
+  "x-experiment": "docs-only-no-schemastore",
+  "x-validation-limitations": [
+    "Documented setting value types are not validated.",
+    "Nested structure is not reconstructed from prose or examples.",
+    "Unknown properties remain allowed for compatibility."
+  ],
+  "x-provenance": {
+    "evidence": [
+      {
+        "source": "settingsDocs",
+        "sourceSha256": "626245a9581d2bbfdf3253331ef5a407f2286bf9f1d92d520d29e3c977817441"
+      }
+    ]
+  }
+}

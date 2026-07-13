@@ -1,0 +1,12 @@
+{
+  "autoUpdatesChannel": "stable",
+  "permissions": {
+    "defaultMode": "plan",
+    "allow": [
+      "Bash(git diff *)"
+    ]
+  },
+  "env": {
+    "CLAUDE_CODE_DISABLE_AUTO_MEMORY": "1"
+  }
+}

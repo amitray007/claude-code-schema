@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "artifactKind": "legacy-and-unverified-candidate-catalog",
+  "claudeCodeVersion": "2.1.207",
+  "policy": "These are accounted-for compatibility candidates, not generated public settings. Promotion requires direct current first-party evidence.",
+  "settings": [
+    {
+      "name": "skipDangerousModePermissionPrompt",
+      "status": "documented-at-nested-path",
+      "replacementPath": "permissions.skipDangerousModePermissionPrompt",
+      "source": "settingsDocsExpanded"
+    },
+    {
+      "name": "managedMcpServers",
+      "status": "different-product-surface",
+      "artifact": "desktop-managed-settings.schema.json",
+      "source": "desktopDocs"
+    },
+    {
+      "name": "sshHostAllowlist",
+      "status": "different-product-surface",
+      "artifact": "desktop-managed-settings.schema.json",
+      "source": "desktopDocs"
+    },
+    {
+      "name": "maxSkillDescriptionChars",
+      "status": "unverified-legacy-or-renamed",
+      "possibleReplacement": "skillListingMaxDescChars"
+    },
+    {
+      "name": "skippedMarketplaces",
+      "status": "unverified-legacy"
+    },
+    {
+      "name": "skippedPlugins",
+      "status": "unverified-legacy"
+    },
+    {
+      "name": "leftArrowOpensAgents",
+      "status": "unverified-legacy"
+    }
+  ],
+  "paths": [
+    {
+      "path": "permissions.disableAutoMode",
+      "status": "legacy-nested-alias",
+      "replacementPath": "disableAutoMode"
+    },
+    {
+      "path": "sandbox.ignoreViolations",
+      "status": "unverified-legacy"
+    },
+    {
+      "path": "sandbox.ripgrep",
+      "status": "unverified-legacy"
+    },
+    {
+      "path": "sandbox.ripgrep.command",
+      "status": "unverified-legacy"
+    },
+    {
+      "path": "sandbox.ripgrep.args",
+      "status": "unverified-legacy"
+    },
+    {
+      "path": "sandbox.enabledPlatforms",
+      "status": "unverified-legacy"
+    }
+  ],
+  "keybindingActions": [
+    {
+      "action": "doctor:fix",
+      "status": "retired-for-release",
+      "maxVersion": "2.1.204",
+      "source": "keybindingsDocsExpanded"
+    }
+  ],
+  "commandBinding": {
+    "type": "string",
+    "pattern": "^command:[a-zA-Z0-9:_-]+$",
+    "x-status": "exact-release-binary-validator-corroborated",
+    "x-binary": {
+      "source": "platformBinary",
+      "sha256": "1397a062c6889675055e3314dd956376ac51262a7734ad9e819c26975d71547a",
+      "pathInPackage": "package/claude",
+      "commandBindingPatternCorroborated": true,
+      "commandBindingValidatorMessageCorroborated": true
+    }
+  }
+}
