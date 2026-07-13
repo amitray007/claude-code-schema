@@ -18,16 +18,16 @@ first-party evidence and real configuration scope take precedence.
 
 ## Measured parity
 
-| Dimension | Version 1 | Version 4 result |
-| --- | ---: | --- |
-| top-level settings benchmarked | 131 | 124 active in `settings.json`; 7 moved, different-surface, renamed, or unverified legacy; 0 unaccounted |
-| constrained property paths | 532 | 544 current V4 paths; 516 V1 paths active; 16 explicitly scoped/retired/legacy; 0 unaccounted; 28 current paths V1 lacks |
-| typed top-level V4 settings | n/a | 125 of 125, including current first-party-only fields |
-| independently reported runtime setting diagnostics | n/a | 111 exact-binary doctor diagnostics |
-| environment properties | 287 in the V1 public env artifact | 313 after current env + monitoring/provider supplements; no V1 public env identity missing |
-| documented top-level flags | 70 | no V1 identity missing; V3's 39-command recursive help catalog retained |
-| V1 built-in keybinding actions | 114 | 101 current documented actions; 12 exact-binary candidates; `doctor:fix` officially retired after 2.1.204 |
-| command binding | SchemaStore regex | same grammar independently present in the exact binary, with validator-message corroboration |
+| Dimension                                          |                         Version 1 | Version 4 result                                                                                                         |
+| -------------------------------------------------- | --------------------------------: | ------------------------------------------------------------------------------------------------------------------------ |
+| top-level settings benchmarked                     |                               131 | 124 active in `settings.json`; 7 moved, different-surface, renamed, or unverified legacy; 0 unaccounted                  |
+| constrained property paths                         |                               532 | 544 current V4 paths; 516 V1 paths active; 16 explicitly scoped/retired/legacy; 0 unaccounted; 28 current paths V1 lacks |
+| typed top-level V4 settings                        |                               n/a | 125 of 125, including current first-party-only fields                                                                    |
+| independently reported runtime setting diagnostics |                               n/a | 111 exact-binary doctor diagnostics                                                                                      |
+| environment properties                             | 287 in the V1 public env artifact | 313 after current env + monitoring/provider supplements; no V1 public env identity missing                               |
+| documented top-level flags                         |                                70 | no V1 identity missing; V3's 39-command recursive help catalog retained                                                  |
+| V1 built-in keybinding actions                     |                               114 | 101 current documented actions; 12 exact-binary candidates; `doctor:fix` officially retired after 2.1.204                |
+| command binding                                    |                 SchemaStore regex | same grammar independently present in the exact binary, with validator-message corroboration                             |
 
 The only common top-level type disagreement is `cleanupPeriodDays`: V1 says
 `integer`; the current binary validator reports the broader JSON `number` type, so

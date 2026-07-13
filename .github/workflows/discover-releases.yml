@@ -1,0 +1,88 @@
+name: Discover Claude Code releases
+
+on:
+  schedule:
+    - cron: "17 2 * * *"
+  workflow_dispatch:
+    inputs:
+      after_version:
+        description: Ignore releases at or before this initial baseline
+        required: false
+        default: "2.1.207"
+        type: string
+      analyze_new_versions:
+        description: Dispatch exact-version analysis for newly created issues
+        required: false
+        default: true
+        type: boolean
+
+permissions:
+  contents: read
+  issues: write
+  actions: write
+
+concurrency:
+  group: discover-claude-code-releases
+  cancel-in-progress: false
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6
+      - name: Set up Node.js
+        uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6
+        with:
+          node-version: 24
+          cache: npm
+      - name: Install dependencies without lifecycle scripts
+        run: npm ci --ignore-scripts
+      - name: Discover every release after the baseline
+        env:
+          AFTER_VERSION: ${{ inputs.after_version || '2.1.207' }}
+        run: npm run schema:discover -- --after "$AFTER_VERSION" --output .work/discovery.json
+      - name: Ensure workflow labels exist
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh label create claude-release --repo "$GITHUB_REPOSITORY" --color 1d76db --description "One tracked Claude Code release" --force
+          gh label create analysis-running --repo "$GITHUB_REPOSITORY" --color fbca04 --description "Deterministic evidence collection is running" --force
+          gh label create analysis-failed --repo "$GITHUB_REPOSITORY" --color b60205 --description "Deterministic evidence collection failed" --force
+          gh label create needs-review --repo "$GITHUB_REPOSITORY" --color d93f0b --description "Generated evidence needs human review" --force
+          gh label create approved-for-pr --repo "$GITHUB_REPOSITORY" --color 0e8a16 --description "Reviewed candidate may become a PR" --force
+          gh label create published --repo "$GITHUB_REPOSITORY" --color 5319e7 --description "Schema release is published" --force
+          gh label create superseded --repo "$GITHUB_REPOSITORY" --color c5def5 --description "A newer release existed before deterministic analysis" --force
+      - name: Create one idempotent issue per new release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ANALYZE: ${{ github.event_name == 'schedule' || inputs.analyze_new_versions }}
+        run: |
+          analysis_version=$(jq -r '.analysisVersion // empty' .work/discovery.json)
+          while IFS= read -r version; do
+            marker="claude-code-schema-release:${version}"
+            existing=$(gh issue list --repo "$GITHUB_REPOSITORY" --state all --label claude-release --limit 1000 --json number,body --jq ".[] | select(.body != null and (.body | contains(\"$marker\"))) | .number" | head -n 1)
+            if [[ -n "$existing" ]]; then
+              issue_number=$existing
+              lifecycle_labels=$(gh issue view "$issue_number" --repo "$GITHUB_REPOSITORY" --json labels --jq '.labels[].name')
+              if grep -Eq '^(analysis-running|analysis-failed|needs-review|approved-for-pr|published|superseded)$' <<< "$lifecycle_labels"; then
+                continue
+              fi
+            else
+              body=$(mktemp)
+              printf '<!-- %s -->\n# Claude Code %s schema review\n\n- [x] Release detected\n- [ ] Candidate generated\n- [ ] Automated validation passed\n- [ ] Human review completed\n- [ ] Candidate PR merged\n- [ ] Release published\n\nDiscovery workflow: %s/%s/actions/runs/%s\n' "$marker" "$version" "$GITHUB_SERVER_URL" "$GITHUB_REPOSITORY" "$GITHUB_RUN_ID" > "$body"
+              url=$(gh issue create --repo "$GITHUB_REPOSITORY" --title "Claude Code ${version} — schema release review" --body-file "$body" --label claude-release)
+              issue_number=${url##*/}
+            fi
+            if [[ "$version" != "$analysis_version" ]]; then
+              gh issue comment "$issue_number" --repo "$GITHUB_REPOSITORY" --body "A newer npm latest release was already available when this version was discovered. Mutable documentation cannot be attributed accurately to this historical version, so deterministic analysis was not started. The exact release remains recorded by this issue."
+              if [[ "$(gh issue view "$issue_number" --repo "$GITHUB_REPOSITORY" --json state --jq .state)" != "CLOSED" ]]; then
+                gh issue close "$issue_number" --repo "$GITHUB_REPOSITORY" --reason "not planned"
+              fi
+              gh issue edit "$issue_number" --repo "$GITHUB_REPOSITORY" --add-label superseded
+            elif [[ "$ANALYZE" == "true" ]]; then
+              gh workflow run analyze-version.yml --repo "$GITHUB_REPOSITORY" --ref main -f version="$version" -f issue_number="$issue_number" -f platform_package="@anthropic-ai/claude-code-linux-x64"
+              gh issue edit "$issue_number" --repo "$GITHUB_REPOSITORY" --add-label analysis-running
+            fi
+          done < <(jq -r '.publishedVersions[]' .work/discovery.json)

@@ -1,0 +1,86 @@
+name: Publish schema release
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "output/**"
+  workflow_dispatch:
+
+permissions: {}
+
+concurrency:
+  group: publish-claude-code-schema
+  cancel-in-progress: false
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    environment: production
+    permissions:
+      contents: write
+      issues: write
+      id-token: write
+      attestations: write
+    steps:
+      - name: Check out reviewed publication bytes
+        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6
+        with:
+          fetch-depth: 0
+      - name: Set up Node.js
+        uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6
+        with:
+          node-version: 24
+          cache: npm
+      - name: Install dependencies without lifecycle scripts
+        run: npm ci --ignore-scripts
+      - name: Validate committed release bytes
+        run: npm run schema:validate -- --directory output
+      - name: Resolve release identity
+        id: version
+        run: echo "version=$(jq -r .claudeCodeVersion output/manifest.json)" >> "$GITHUB_OUTPUT"
+      - name: Build checksums for every release asset
+        run: |
+          mkdir -p .work/release
+          (cd output && sha256sum -- *.json) > .work/release/SHA256SUMS
+      - name: Attest every JSON release asset
+        uses: actions/attest-build-provenance@43d14bc2b83dec42d39ecae14e916627a18bb661 # v3
+        with:
+          subject-path: output/*.json
+      - name: Create immutable tag and GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VERSION: ${{ steps.version.outputs.version }}
+        run: |
+          tag="v${VERSION}"
+          if git rev-parse "$tag" >/dev/null 2>&1; then
+            test "$(git rev-parse "${tag}^{commit}")" = "$(git rev-parse HEAD)"
+          else
+            git tag -a "$tag" -m "$tag"
+            git push origin "$tag"
+          fi
+          if gh release view "$tag" --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            mkdir -p .work/existing-release
+            gh release download "$tag" --repo "$GITHUB_REPOSITORY" --dir .work/existing-release
+            test "$(find .work/existing-release -maxdepth 1 -type f | wc -l)" = "$(($(find output -maxdepth 1 -type f -name '*.json' | wc -l) + 1))"
+            cmp .work/release/SHA256SUMS .work/existing-release/SHA256SUMS
+            for file in output/*.json; do
+              cmp "$file" ".work/existing-release/$(basename "$file")"
+            done
+            echo "Release $tag already exists with the exact reviewed assets; leaving it unchanged."
+          else
+            gh release create "$tag" --repo "$GITHUB_REPOSITORY" --verify-tag --title "$tag" --notes "Generated from first-party evidence and the integrity-verified Claude Code ${VERSION} release. See manifest.json for sources, digests, limitations, and probe policy." .work/release/SHA256SUMS output/*.json
+          fi
+      - name: Close the release-review issue
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VERSION: ${{ steps.version.outputs.version }}
+        run: |
+          marker="claude-code-schema-release:${VERSION}"
+          issue_number=$(gh issue list --repo "$GITHUB_REPOSITORY" --state open --label claude-release --limit 1000 --json number,body --jq ".[] | select(.body != null and (.body | contains(\"$marker\"))) | .number" | head -n 1)
+          if [[ -n "$issue_number" ]]; then
+            gh issue comment "$issue_number" --repo "$GITHUB_REPOSITORY" --body "Published immutable release [v${VERSION}](${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/releases/tag/v${VERSION})."
+            gh issue edit "$issue_number" --repo "$GITHUB_REPOSITORY" --remove-label approved-for-pr --add-label published
+            gh issue close "$issue_number" --repo "$GITHUB_REPOSITORY" --reason completed
+          fi

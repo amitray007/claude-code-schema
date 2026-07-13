@@ -1,0 +1,37 @@
+{
+  "settings": {
+    "model": "sonnet",
+    "permissions": {
+      "allow": ["Read(./src/**)"],
+      "deny": ["Read(./.env)"],
+      "defaultMode": "default"
+    },
+    "sandbox": {
+      "enabled": true,
+      "network": {
+        "allowedDomains": ["registry.npmjs.org"]
+      }
+    }
+  },
+  "globalConfig": {
+    "autoConnectIde": false,
+    "workflowSizeGuideline": "small"
+  },
+  "desktopManagedSettings": {
+    "sshHostAllowlist": ["*.corp.example.com"]
+  },
+  "environment": {
+    "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": "1"
+  },
+  "keybindings": {
+    "bindings": [
+      {
+        "context": "Chat",
+        "bindings": {
+          "ctrl+e": "chat:externalEditor",
+          "ctrl+u": null
+        }
+      }
+    ]
+  }
+}

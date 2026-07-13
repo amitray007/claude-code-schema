@@ -1,0 +1,114 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/amitray007/claude-code-schema/releases/download/v2.1.207/global-config.schema.json",
+  "title": "Claude Code global config (~/.claude.json)",
+  "type": "object",
+  "properties": {
+    "autoConnectIde": {
+      "type": "boolean",
+      "examples": [
+        true
+      ],
+      "x-type-status": "independently-derived",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocsExpanded",
+            "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+            "heading": "Global config settings",
+            "fact": "existence-and-example",
+            "method": "official-markdown-table"
+          }
+        ]
+      },
+      "default": false
+    },
+    "autoInstallIdeExtension": {
+      "type": "boolean",
+      "examples": [
+        false
+      ],
+      "x-type-status": "independently-derived",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocsExpanded",
+            "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+            "heading": "Global config settings",
+            "fact": "existence-and-example",
+            "method": "official-markdown-table"
+          }
+        ]
+      },
+      "default": true
+    },
+    "externalEditorContext": {
+      "type": "boolean",
+      "examples": [
+        true
+      ],
+      "x-type-status": "independently-derived",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocsExpanded",
+            "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+            "heading": "Global config settings",
+            "fact": "existence-and-example",
+            "method": "official-markdown-table"
+          }
+        ]
+      },
+      "default": false
+    },
+    "teammateDefaultModel": {
+      "type": "string",
+      "examples": [
+        "sonnet"
+      ],
+      "x-type-status": "independently-derived",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocsExpanded",
+            "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+            "heading": "Global config settings",
+            "fact": "existence-and-example",
+            "method": "official-markdown-table"
+          }
+        ]
+      }
+    },
+    "workflowSizeGuideline": {
+      "type": "string",
+      "x-min-version": "2.1.203",
+      "examples": [
+        "small"
+      ],
+      "x-type-status": "independently-derived",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocsExpanded",
+            "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+            "heading": "Global config settings",
+            "fact": "existence-and-example",
+            "method": "official-markdown-table"
+          }
+        ]
+      },
+      "default": "unrestricted",
+      "enum": [
+        "unrestricted",
+        "small",
+        "medium",
+        "large"
+      ]
+    }
+  },
+  "additionalProperties": true,
+  "x-claude-code-version": "2.1.207",
+  "x-artifact-kind": "global-config-json-schema",
+  "x-surface-path": "~/.claude.json",
+  "x-generator-version": "0.1.0"
+}

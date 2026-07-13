@@ -141,18 +141,18 @@ removals, and fixed bugs must not become automatic “must exist” assertions.
 
 ## Source policy matrix
 
-| Fact | Primary source | Secondary/corroboration |
-| --- | --- | --- |
-| release version/platform matrix/integrity | npm | GitHub tag/release |
-| public setting existence and prose | settings docs | specialized official pages |
-| settings types and constraints | official examples/tables | exact-binary `doctor` diagnostics |
-| global/Desktop/policy scope | specialized official docs | tagged managed examples |
-| public env existence and prose | docs | binary static candidate match |
-| public top-level flags and prose | docs | scoped Commander extraction |
-| flag arity/default/choices/command path | scoped Commander model | docs examples |
-| keybindings validation | keybindings docs | exact-binary validator strings/candidates |
-| actions and documented defaults | keybindings docs | exact-binary candidate presence |
-| release change hints | tagged changelog | semantic artifact diff |
+| Fact                                      | Primary source            | Secondary/corroboration                   |
+| ----------------------------------------- | ------------------------- | ----------------------------------------- |
+| release version/platform matrix/integrity | npm                       | GitHub tag/release                        |
+| public setting existence and prose        | settings docs             | specialized official pages                |
+| settings types and constraints            | official examples/tables  | exact-binary `doctor` diagnostics         |
+| global/Desktop/policy scope               | specialized official docs | tagged managed examples                   |
+| public env existence and prose            | docs                      | binary static candidate match             |
+| public top-level flags and prose          | docs                      | scoped Commander extraction               |
+| flag arity/default/choices/command path   | scoped Commander model    | docs examples                             |
+| keybindings validation                    | keybindings docs          | exact-binary validator strings/candidates |
+| actions and documented defaults           | keybindings docs          | exact-binary candidate presence           |
+| release change hints                      | tagged changelog          | semantic artifact diff                    |
 
 SchemaStore is deliberately absent from this matrix. Version 1 may be read after
 generation by a development-only parity benchmark, but it cannot contribute a

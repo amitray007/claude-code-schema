@@ -5,7 +5,7 @@
 > **Related:** [`sources.md`](sources.md) · [`pipeline.md`](pipeline.md)
 
 Real findings from live probes of the installed Claude Code binary. This is the
-ground-truth record of *what is actually extractable and how* — the design in
+ground-truth record of _what is actually extractable and how_ — the design in
 [`sources.md`](sources.md) is built on these facts.
 
 > **2026-07-13 recheck:** the linux-x64 npm tarball for v2.1.207 was downloaded,
@@ -24,7 +24,7 @@ ground-truth record of *what is actually extractable and how* — the design in
   single-file executable** — the entire minified JS bundle is embedded inside the
   Mach-O (`__cstring` / `__const` sections; contains JavaScriptCore markers
   `__jsc_int` / `__wtf_config`).
-- **No sidecar files:** the `ClaudeCode.app` bundle is the *same* kind of Bun
+- **No sidecar files:** the `ClaudeCode.app` bundle is the _same_ kind of Bun
   binary. There is **no** `Resources/` dir, no asar, no unpacked `cli.js`, no
   `.d.ts`, no `package.json` inside. Everything lives in the Mach-O.
 
@@ -34,28 +34,28 @@ ground-truth record of *what is actually extractable and how* — the design in
 > a plain tarball CI can `npm pack` + `strings` hermetically. Do **not** probe a
 > locally-installed `~/.local` binary in CI. See [`sources.md`](sources.md) → Source C
 > and [`decisions.md`](decisions.md) → D-1. The empirical findings below (from the
-> local v2.1.207 binary) still hold — the *content* is identical; only the *acquisition
-> path* changed.
+> local v2.1.207 binary) still hold — the _content_ is identical; only the _acquisition
+> path_ changed.
 
 ---
 
 ## What was found (artifact by artifact)
 
-| Artifact | Result | How |
-| --- | --- | --- |
-| **CLI flags + descriptions** | ✅ **146** flag defs (48 on main program) | Commander.js `.option(...)` chain on a single contiguous minified line |
-| **Enum arrays** | ✅ clean literal data | e.g. permission modes extracted verbatim (below) |
-| **Env vars** | ✅ **402** `CLAUDE_CODE_*` + **59** `ANTHROPIC_*` on the rechecked linux tarball | `strings \| grep -oE 'CLAUDE_CODE_[A-Z0-9_]+'` — an unclassified **candidate superset** |
-| **Keybinding defaults/capabilities** | ✅ embedded, but public defaults come from docs | the exact binary also exposes action-token candidates and the command-binding validator grammar |
-| **settings.json schema** | ❌ no complete declarative schema | Zod shapes are compiled, but `claude doctor` independently exposes deterministic validation diagnostics for invalid settings |
-| **TypeScript `.d.ts`** | ❌ not found | only stray type-comment fragments |
+| Artifact                             | Result                                                                           | How                                                                                                                          |
+| ------------------------------------ | -------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| **CLI flags + descriptions**         | ✅ **146** flag defs (48 on main program)                                        | Commander.js `.option(...)` chain on a single contiguous minified line                                                       |
+| **Enum arrays**                      | ✅ clean literal data                                                            | e.g. permission modes extracted verbatim (below)                                                                             |
+| **Env vars**                         | ✅ **402** `CLAUDE_CODE_*` + **59** `ANTHROPIC_*` on the rechecked linux tarball | `strings \| grep -oE 'CLAUDE_CODE_[A-Z0-9_]+'` — an unclassified **candidate superset**                                      |
+| **Keybinding defaults/capabilities** | ✅ embedded, but public defaults come from docs                                  | the exact binary also exposes action-token candidates and the command-binding validator grammar                              |
+| **settings.json schema**             | ❌ no complete declarative schema                                                | Zod shapes are compiled, but `claude doctor` independently exposes deterministic validation diagnostics for invalid settings |
+| **TypeScript `.d.ts`**               | ❌ not found                                                                     | only stray type-comment fragments                                                                                            |
 
 ### Real extracted data (verbatim)
 
 **Permission-mode enum** (from the bundle, ~line 324919):
 
 ```json
-["acceptEdits","auto","bypassPermissions","default","dontAsk","plan"]
+["acceptEdits", "auto", "bypassPermissions", "default", "dontAsk", "plan"]
 ```
 
 Note `"auto"` — this is the auto-mode Orpheus had not yet wired.
@@ -84,16 +84,16 @@ CLAUDE_CODE_ACT_DONT_REDERIVE          # internal-looking, still unclassified
 
 Probing `claude` at runtime for a self-describing schema:
 
-| Probe | Result |
-| --- | --- |
-| `claude --help`, `claude <subcmd> --help` | Prose help only. 67 flags + 13 subcommands. Parseable but brittle. |
-| `claude --help --json` | `--json` ignored; identical prose. |
-| `claude --help-all` / `--dump-config` / `--print-config` | `unknown option` (exit 1). |
-| `claude --json-schema` | Exists but is for **structured session output validation**, not self-description. |
-| `claude agents --json` | ✅ JSON — but **runtime session state**, not schema. |
-| `claude auto-mode config` / `defaults` | ✅ ~60 KB JSON — but the **permission classifier ruleset**, not the settings/flags/env schema. |
-| isolated `claude doctor` with invalid `settings.json` | ✅ deterministic path/type/enum diagnostics; Version 4 recovers 111 current top-level diagnostics without authentication |
-| `man claude`, completion scripts | None exist. |
+| Probe                                                    | Result                                                                                                                   |
+| -------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
+| `claude --help`, `claude <subcmd> --help`                | Prose help only. 67 flags + 13 subcommands. Parseable but brittle.                                                       |
+| `claude --help --json`                                   | `--json` ignored; identical prose.                                                                                       |
+| `claude --help-all` / `--dump-config` / `--print-config` | `unknown option` (exit 1).                                                                                               |
+| `claude --json-schema`                                   | Exists but is for **structured session output validation**, not self-description.                                        |
+| `claude agents --json`                                   | ✅ JSON — but **runtime session state**, not schema.                                                                     |
+| `claude auto-mode config` / `defaults`                   | ✅ ~60 KB JSON — but the **permission classifier ruleset**, not the settings/flags/env schema.                           |
+| isolated `claude doctor` with invalid `settings.json`    | ✅ deterministic path/type/enum diagnostics; Version 4 recovers 111 current top-level diagnostics without authentication |
+| `man claude`, completion scripts                         | None exist.                                                                                                              |
 
 **Verdict:** the CLI does not emit a complete self-description, but bounded help
 recovers command/argument/option structure and doctor provides an independent
@@ -107,7 +107,7 @@ candidates.
 1. **Never shell out to guessed `claude` subcommands.** During probing,
    `claude config list` and `claude completion` **started a real interactive agent
    session** — those subcommands no longer exist, so the arguments were parsed as a
-   *prompt*. Any CLI interaction in the pipeline must use only `--version`, command
+   _prompt_. Any CLI interaction in the pipeline must use only `--version`, command
    paths discovered from successful parent `--help`, or `doctor` against generated
    invalid settings in an isolated home. Always use timeouts, closed stdin, traffic
    suppression, and no inherited credentials.
@@ -117,7 +117,7 @@ candidates.
    documented set; keep binary-only names in a separate discovery report.
 
 3. **Never trust a single source for a dimension.** Cross-source reconciliation is
-   what makes parse fragility *detectable* rather than silent. See
+   what makes parse fragility _detectable_ rather than silent. See
    [`pipeline.md`](pipeline.md).
 
 4. **Do not flatten Commander options.** The same option name can occur under

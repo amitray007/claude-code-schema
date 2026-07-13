@@ -18,7 +18,7 @@ knowledge base honest.
 - **Audit found:** the main npm package is a ~157 KB **JS wrapper**; the 230 MB Bun
   binary moved to **per-platform optional dependencies**
   (`@anthropic-ai/claude-code-<os>-<arch>`, 8 of them) around v2.1.113. The
-  `~/.local` binary is the *native-installer* output — a different provenance CI
+  `~/.local` binary is the _native-installer_ output — a different provenance CI
   won't have.
 - **Changed to:** derive the platform matrix from the wrapper's
   `optionalDependencies`, fetch an exact platform `dist.tarball` (or use
@@ -85,15 +85,17 @@ knowledge base honest.
 - **Changed to:** JSON Schemas for settings, keybindings, and the declared env-object
   projection; catalogs for flags and defaults; `manifest.json` as the index.
 
-## D-6 · Versioning: `latest/` + git tags, not directory-per-version
+## D-6 · Versioning: one `output/` set plus immutable GitHub Releases
 
-- **Chosen:** one `latest/` set at HEAD; git tags `v<version>` for pinning; a version
-  index containing tag/ref plus manifest digest. No per-version directories.
+- **Chosen:** one reviewed `output/` set at HEAD and one GitHub Release/tag named
+  `v<version>` per published version. Every JSON file is a separate release asset.
+  There are no per-version directories, `latest/` copy, or `site/` mirror.
 - **Correction:** a file in a commit cannot reliably contain that commit's own SHA;
   doing so changes the SHA. Use the tag and content digest or an external post-commit
   registry.
-- **Why:** ~daily releases → 459+ near-duplicate dirs would be a duplication/noise
-  nightmare. History + tags give reproducible pinning for free.
+- **Why:** ~daily releases would make version directories and a second static-site
+  copy a duplication/noise problem. Release assets already provide immutable URLs,
+  browser downloads, an API, checksums, and provenance.
 
 ## D-7 · Naming & affiliation
 
@@ -129,7 +131,7 @@ knowledge base honest.
   - **Own** the genuinely unserved axes: **env-var enumeration + CLI-flag enumeration**
     as public docs-backed catalogs, with static binary analysis supplying a separate
     candidate-discovery feed.
-  - **Own** the **automation** — auto-generate/diff on every release — which *nobody*
+  - **Own** the **automation** — auto-generate/diff on every release — which _nobody_
     does (all existing schemas are hand-synced).
 - **Optional upstream contribution:** enrich SchemaStore's opaque `env` object into an
   enumerated map. But SchemaStore is JSON-Schema-scoped + hand-synced, so it won't host
@@ -163,7 +165,9 @@ knowledge base honest.
   the fact catalog/drift gate. Any future strict validator is an explicit opt-in
   artifact.
 
-## D-13 · The experiment uses Node without choosing the final implementation
+## D-13 · The experiment uses Node before the final implementation decision
+
+> Superseded by D-18. This records why Node was used for the proofs.
 
 - **Chosen:** the proof uses dependency-light Node ESM plus Ajv because the inputs
   and outputs are JSON-heavy and Node has native fetch.
@@ -211,9 +215,9 @@ knowledge base honest.
   matching-tag changelog and GitHub release metadata into reviewable hints.
 - **Decision:** use help probing as strong evidence for command paths, option names,
   arity, aliases, choices, and displayed defaults. Treat static strings as candidate
-  presence only. Send every release-note bullet through advisory AI or human review,
-  but never let prose classification mutate published artifacts without deterministic
-  evidence and validation gates.
+  presence only. Release-note bullets remain deterministic review hints and require
+  human review; they never mutate published artifacts without stronger structured
+  evidence and validation gates. AI is not required or used by production.
 - **Limitation:** neither static strings nor help output reconstructs complete
   settings types and nested validation rules. The independent settings artifact must
   remain explicitly partial until those constraints are proven from a first-party
@@ -243,3 +247,50 @@ knowledge base honest.
   active merely to match SchemaStore, while current first-party-only fields and
   scopes are represented. Accuracy and conservative compatibility take precedence
   over copying a community schema's format or raw constraint counts.
+
+## D-18 · Production is deterministic TypeScript on Node
+
+- **Decision:** implement the production CLI in TypeScript on Node 24, with Ajv for
+  draft-07 compilation and behavioral validation.
+- **Reason:** the system is JSON- and HTTP-heavy, the four experiments already
+  established the source behavior in Node, and shared types make artifact contracts
+  testable without introducing a second runtime.
+- **AI policy:** no AI participates in extraction, reconciliation, validation,
+  release discovery, issue creation, or publication. Ambiguous changelog prose is a
+  human-review hint and cannot change generated facts.
+
+## D-19 · A combined schema is an explicit tooling envelope
+
+- **Decision:** emit `claude-code.schema.json` with required `settings`,
+  `globalConfig`, `desktopManagedSettings`, `environment`, and `keybindings`
+  properties, each using a relative reference to its standalone schema.
+- **Boundary:** this object is never presented as a file Claude Code consumes. CLI
+  catalogs, behavioral defaults, evidence catalogs, and the manifest are excluded
+  because they are not configuration instances.
+
+## D-20 · Releases are discovered automatically and published only after review
+
+- **Decision:** check npm daily and create one idempotent issue per unseen version.
+  Analyze only the current npm `latest` in a read-only job and retain that candidate
+  as a workflow artifact. If multiple releases arrived between checks, mark older
+  unseen versions as `superseded`: mutable documentation cannot be attributed to
+  them accurately. A maintainer manually selects reviewed bytes for a draft PR.
+- **Publication:** after merge, revalidate the committed `output/` bytes and create
+  a versioned GitHub Release containing separate JSON assets, checksums, and
+  provenance. The protected `production` environment is the final approval gate.
+- **Identity:** the canonical `$id` is the immutable
+  `releases/download/vX.Y.Z/<file>` URL. Git contains only the current `output/` set;
+  GitHub Releases retain history.
+
+## D-21 · Release data is grouped by interface, not extraction method
+
+- **Decision:** publish standalone schemas where editors and validators need stable
+  `$id` URLs, but consolidate evidence catalogs into four domains: settings,
+  environment, CLI, and keybindings.
+- **Entry point:** `catalog.json` identifies the product, consumer, real usage
+  location, role, and grouping of every release asset. `manifest.json` remains the
+  integrity/provenance index rather than the consumer guide.
+- **Boundary:** settings, environment variables, argv, terminal keybindings, and
+  Desktop policy are different interfaces and are never flattened into one bag of
+  “keys.” Binary-only candidates remain explicitly separated inside their domain
+  catalog. Changelog and unresolved legacy records live in `review.catalog.json`.

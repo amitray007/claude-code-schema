@@ -1,0 +1,190 @@
+{
+  "schemaVersion": 1,
+  "artifactKind": "schema-generation-validation-report",
+  "claudeCodeVersion": "2.1.207",
+  "status": "passed",
+  "checks": [
+    {
+      "name": "required artifact: settings.schema.json",
+      "status": "passed"
+    },
+    {
+      "name": "required artifact: global-config.schema.json",
+      "status": "passed"
+    },
+    {
+      "name": "required artifact: desktop-managed-settings.schema.json",
+      "status": "passed"
+    },
+    {
+      "name": "required artifact: environment.schema.json",
+      "status": "passed"
+    },
+    {
+      "name": "required artifact: keybindings.schema.json",
+      "status": "passed"
+    },
+    {
+      "name": "required artifact: keybindings.compat.schema.json",
+      "status": "passed"
+    },
+    {
+      "name": "required artifact: claude-code.schema.json",
+      "status": "passed"
+    },
+    {
+      "name": "required artifact: catalog.json",
+      "status": "passed"
+    },
+    {
+      "name": "fragmented legacy artifacts are not published",
+      "status": "passed"
+    },
+    {
+      "name": "release catalog indexes every JSON artifact",
+      "status": "passed"
+    },
+    {
+      "name": "digest: settings.schema.json",
+      "status": "passed"
+    },
+    {
+      "name": "digest: global-config.schema.json",
+      "status": "passed"
+    },
+    {
+      "name": "digest: desktop-managed-settings.schema.json",
+      "status": "passed"
+    },
+    {
+      "name": "digest: environment.schema.json",
+      "status": "passed"
+    },
+    {
+      "name": "digest: keybindings.schema.json",
+      "status": "passed"
+    },
+    {
+      "name": "digest: keybindings.compat.schema.json",
+      "status": "passed"
+    },
+    {
+      "name": "digest: settings.catalog.json",
+      "status": "passed"
+    },
+    {
+      "name": "digest: environment.catalog.json",
+      "status": "passed"
+    },
+    {
+      "name": "digest: cli.catalog.json",
+      "status": "passed"
+    },
+    {
+      "name": "digest: keybindings.catalog.json",
+      "status": "passed"
+    },
+    {
+      "name": "digest: review.catalog.json",
+      "status": "passed"
+    },
+    {
+      "name": "digest: claude-code.schema.json",
+      "status": "passed"
+    },
+    {
+      "name": "digest: catalog.json",
+      "status": "passed"
+    },
+    {
+      "name": "SchemaStore excluded as generation source",
+      "status": "passed"
+    },
+    {
+      "name": "schema compiles: claude-code.schema.json",
+      "status": "passed"
+    },
+    {
+      "name": "schema ID matches filename: claude-code.schema.json",
+      "status": "passed"
+    },
+    {
+      "name": "schema compiles: desktop-managed-settings.schema.json",
+      "status": "passed"
+    },
+    {
+      "name": "schema ID matches filename: desktop-managed-settings.schema.json",
+      "status": "passed"
+    },
+    {
+      "name": "schema compiles: environment.schema.json",
+      "status": "passed"
+    },
+    {
+      "name": "schema ID matches filename: environment.schema.json",
+      "status": "passed"
+    },
+    {
+      "name": "schema compiles: global-config.schema.json",
+      "status": "passed"
+    },
+    {
+      "name": "schema ID matches filename: global-config.schema.json",
+      "status": "passed"
+    },
+    {
+      "name": "schema compiles: keybindings.compat.schema.json",
+      "status": "passed"
+    },
+    {
+      "name": "schema ID matches filename: keybindings.compat.schema.json",
+      "status": "passed"
+    },
+    {
+      "name": "schema compiles: keybindings.schema.json",
+      "status": "passed"
+    },
+    {
+      "name": "schema ID matches filename: keybindings.schema.json",
+      "status": "passed"
+    },
+    {
+      "name": "schema compiles: settings.schema.json",
+      "status": "passed"
+    },
+    {
+      "name": "schema ID matches filename: settings.schema.json",
+      "status": "passed"
+    },
+    {
+      "name": "combined schema accepts a valid complete envelope",
+      "status": "passed"
+    },
+    {
+      "name": "combined schema rejects an incomplete envelope",
+      "status": "passed"
+    },
+    {
+      "name": "combined schema rejects unknown envelope properties",
+      "status": "passed"
+    },
+    {
+      "name": "combined schema rejects an invalid settings type",
+      "status": "passed"
+    },
+    {
+      "name": "all top-level settings are constrained",
+      "status": "passed",
+      "detail": "124/124"
+    }
+  ],
+  "counts": {
+    "checks": 43,
+    "passed": 43,
+    "failed": 0,
+    "declaredArtifacts": 13,
+    "compiledSchemas": 7,
+    "typedTopLevelSettings": 124,
+    "topLevelSettings": 124
+  }
+}
