@@ -48,7 +48,19 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6
-      - name: Review dependency changes
+      - name: Review dependency changes with GitHub Dependency Graph
+        if: vars.ENABLE_DEPENDENCY_REVIEW == 'true'
         uses: actions/dependency-review-action@a1d282b36b6f3519aa1f3fc636f609c47dddb294 # v5.0.0
         with:
           fail-on-severity: high
+      - name: Set up Node.js for dependency-audit fallback
+        if: vars.ENABLE_DEPENDENCY_REVIEW != 'true'
+        uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6
+        with:
+          node-version: 24
+          cache: npm
+      - name: Audit production dependencies when Dependency Graph is unavailable
+        if: vars.ENABLE_DEPENDENCY_REVIEW != 'true'
+        run: |
+          npm ci --ignore-scripts
+          npm audit --omit=dev --audit-level=high

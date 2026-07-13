@@ -55,6 +55,10 @@ Before enabling publication:
 5. Keep Issues enabled. Discovery creates and updates the required labels.
 6. Optionally set repository variable `SCHEMA_BASE_URL`; otherwise the generator
    uses the repository's GitHub Pages URL.
+7. Enable the repository Dependency Graph and set repository variable
+   `ENABLE_DEPENDENCY_REVIEW=true` to activate GitHub's per-PR dependency diff.
+   Until then CI uses a production `npm audit` fallback instead of failing because
+   the repository feature is unavailable.
 
 ## Local release review
 
