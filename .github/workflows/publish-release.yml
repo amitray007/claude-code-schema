@@ -53,6 +53,8 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           VERSION: ${{ steps.version.outputs.version }}
         run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
           tag="v${VERSION}"
           if git rev-parse "$tag" >/dev/null 2>&1; then
             test "$(git rev-parse "${tag}^{commit}")" = "$(git rev-parse HEAD)"
