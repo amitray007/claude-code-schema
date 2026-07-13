@@ -44,6 +44,11 @@ isolated in `src/pipeline/engine.ts` so that transition does not affect consumer
 
 ## Combined schema
 
+`catalog.json` is the release entry point. It separates configuration schemas,
+domain catalogs, and audit/review artifacts and records the real consumer/location
+of every surface. The four domain catalogs consolidate the fragmented experiment
+outputs without mixing documented facts with binary-only candidates.
+
 `claude-code.schema.json` validates an explicit object with five required members:
 
 - `settings`;

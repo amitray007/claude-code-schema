@@ -10,7 +10,7 @@ const surfaceNames: Record<(typeof surfaceSchemaFiles)[number], string> = {
   "settings.schema.json": "settings",
   "global-config.schema.json": "globalConfig",
   "desktop-managed-settings.schema.json": "desktopManagedSettings",
-  "env.schema.json": "environment",
+  "environment.schema.json": "environment",
   "keybindings.schema.json": "keybindings",
 };
 

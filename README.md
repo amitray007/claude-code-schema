@@ -24,18 +24,20 @@ drift visible.
 
 ## What it produces
 
-Granular artifacts plus a manifest, so consumers can take exactly what they need:
+The release is organized by purpose. Start with `catalog.json`: it states which
+product/interface every artifact describes, where that interface is used, and
+whether the file is a validator, data catalog, or audit record.
 
-- `settings.schema.json` — validates `settings.json`
-- `global-config.schema.json` — validates the distinct `~/.claude.json` surface
-- `desktop-managed-settings.schema.json` — validates Desktop-only policy fields
-- `env.schema.json` — validates a declared JSON projection of an environment map
-- `keybindings.schema.json` — validates `keybindings.json`
-- `claude-code.schema.json` — validates a tooling envelope containing all five JSON
-  surfaces; it is not a file consumed by Claude Code
-- `flags.catalog.json` — scoped CLI option metadata
-- `keybinding-defaults.catalog.json` — documented actions and defaults
-- `manifest.json` — versioned index, source digests, artifact digests, counts, and drift
+- Configuration schemas validate `settings.json`, `~/.claude.json`, Desktop-managed
+  policy, a JSON projection of the process environment, and terminal UI
+  `keybindings.json`. `claude-code.schema.json` composes those five surfaces for
+  tooling; Claude Code does not consume that synthetic object.
+- Domain catalogs combine related facts into `settings.catalog.json`,
+  `environment.catalog.json`, `cli.catalog.json`, and `keybindings.catalog.json`.
+  The CLI catalog contains documented flags, the probed command tree and arguments,
+  and clearly separated static candidates.
+- `review.catalog.json`, `manifest.json`, and `validation-report.json` contain
+  maintainer review evidence, exact source/artifact digests, and validation results.
 
 Each is tagged to the exact Claude Code version it was generated from.
 
@@ -55,7 +57,8 @@ candidate, and atomically replaces the requested output only after every check
 passes. Use `--source experiments/version-4/output` with `schema:generate` for a
 fully offline reproduction of the frozen 2.1.207 reference.
 
-The generated [`output/claude-code.schema.json`](output/claude-code.schema.json)
+The generated [`output/catalog.json`](output/catalog.json) is the machine-readable
+entry point. [`output/claude-code.schema.json`](output/claude-code.schema.json)
 combines settings, global configuration, Desktop policy, environment, and
 keybindings under explicit property names. A validated instance is available at
 [`examples/combined.json`](examples/combined.json).

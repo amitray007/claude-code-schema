@@ -17,7 +17,7 @@
       "status": "passed"
     },
     {
-      "name": "required artifact: env.schema.json",
+      "name": "required artifact: environment.schema.json",
       "status": "passed"
     },
     {
@@ -25,71 +25,23 @@
       "status": "passed"
     },
     {
+      "name": "required artifact: keybindings.compat.schema.json",
+      "status": "passed"
+    },
+    {
       "name": "required artifact: claude-code.schema.json",
       "status": "passed"
     },
     {
-      "name": "digest: binary-candidates.catalog.json",
+      "name": "required artifact: catalog.json",
       "status": "passed"
     },
     {
-      "name": "digest: changelog-hints.catalog.json",
+      "name": "fragmented legacy artifacts are not published",
       "status": "passed"
     },
     {
-      "name": "digest: changelog-review.schema.json",
-      "status": "passed"
-    },
-    {
-      "name": "digest: claude-code.schema.json",
-      "status": "passed"
-    },
-    {
-      "name": "digest: cli.catalog.json",
-      "status": "passed"
-    },
-    {
-      "name": "digest: desktop-managed-settings.schema.json",
-      "status": "passed"
-    },
-    {
-      "name": "digest: env.schema.json",
-      "status": "passed"
-    },
-    {
-      "name": "digest: environment-capabilities.catalog.json",
-      "status": "passed"
-    },
-    {
-      "name": "digest: flags.catalog.json",
-      "status": "passed"
-    },
-    {
-      "name": "digest: global-config.schema.json",
-      "status": "passed"
-    },
-    {
-      "name": "digest: keybinding-capabilities.catalog.json",
-      "status": "passed"
-    },
-    {
-      "name": "digest: keybinding-defaults.catalog.json",
-      "status": "passed"
-    },
-    {
-      "name": "digest: keybindings.runtime-compat.schema.json",
-      "status": "passed"
-    },
-    {
-      "name": "digest: keybindings.schema.json",
-      "status": "passed"
-    },
-    {
-      "name": "digest: legacy-candidates.catalog.json",
-      "status": "passed"
-    },
-    {
-      "name": "digest: settings-facts.catalog.json",
+      "name": "release catalog indexes every JSON artifact",
       "status": "passed"
     },
     {
@@ -97,11 +49,55 @@
       "status": "passed"
     },
     {
-      "name": "SchemaStore excluded as generation source",
+      "name": "digest: global-config.schema.json",
       "status": "passed"
     },
     {
-      "name": "schema compiles: changelog-review.schema.json",
+      "name": "digest: desktop-managed-settings.schema.json",
+      "status": "passed"
+    },
+    {
+      "name": "digest: environment.schema.json",
+      "status": "passed"
+    },
+    {
+      "name": "digest: keybindings.schema.json",
+      "status": "passed"
+    },
+    {
+      "name": "digest: keybindings.compat.schema.json",
+      "status": "passed"
+    },
+    {
+      "name": "digest: settings.catalog.json",
+      "status": "passed"
+    },
+    {
+      "name": "digest: environment.catalog.json",
+      "status": "passed"
+    },
+    {
+      "name": "digest: cli.catalog.json",
+      "status": "passed"
+    },
+    {
+      "name": "digest: keybindings.catalog.json",
+      "status": "passed"
+    },
+    {
+      "name": "digest: review.catalog.json",
+      "status": "passed"
+    },
+    {
+      "name": "digest: claude-code.schema.json",
+      "status": "passed"
+    },
+    {
+      "name": "digest: catalog.json",
+      "status": "passed"
+    },
+    {
+      "name": "SchemaStore excluded as generation source",
       "status": "passed"
     },
     {
@@ -109,11 +105,23 @@
       "status": "passed"
     },
     {
+      "name": "schema ID matches filename: claude-code.schema.json",
+      "status": "passed"
+    },
+    {
       "name": "schema compiles: desktop-managed-settings.schema.json",
       "status": "passed"
     },
     {
-      "name": "schema compiles: env.schema.json",
+      "name": "schema ID matches filename: desktop-managed-settings.schema.json",
+      "status": "passed"
+    },
+    {
+      "name": "schema compiles: environment.schema.json",
+      "status": "passed"
+    },
+    {
+      "name": "schema ID matches filename: environment.schema.json",
       "status": "passed"
     },
     {
@@ -121,7 +129,15 @@
       "status": "passed"
     },
     {
-      "name": "schema compiles: keybindings.runtime-compat.schema.json",
+      "name": "schema ID matches filename: global-config.schema.json",
+      "status": "passed"
+    },
+    {
+      "name": "schema compiles: keybindings.compat.schema.json",
+      "status": "passed"
+    },
+    {
+      "name": "schema ID matches filename: keybindings.compat.schema.json",
       "status": "passed"
     },
     {
@@ -129,7 +145,15 @@
       "status": "passed"
     },
     {
+      "name": "schema ID matches filename: keybindings.schema.json",
+      "status": "passed"
+    },
+    {
       "name": "schema compiles: settings.schema.json",
+      "status": "passed"
+    },
+    {
+      "name": "schema ID matches filename: settings.schema.json",
       "status": "passed"
     },
     {
@@ -155,11 +179,11 @@
     }
   ],
   "counts": {
-    "checks": 37,
-    "passed": 37,
+    "checks": 43,
+    "passed": 43,
     "failed": 0,
-    "declaredArtifacts": 17,
-    "compiledSchemas": 8,
+    "declaredArtifacts": 13,
+    "compiledSchemas": 7,
     "typedTopLevelSettings": 124,
     "topLevelSettings": 124
   }

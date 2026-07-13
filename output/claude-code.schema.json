@@ -25,8 +25,8 @@
       "description": "Instance validated by desktop-managed-settings.schema.json"
     },
     "environment": {
-      "$ref": "env.schema.json",
-      "description": "Instance validated by env.schema.json"
+      "$ref": "environment.schema.json",
+      "description": "Instance validated by environment.schema.json"
     },
     "keybindings": {
       "$ref": "keybindings.schema.json",
@@ -52,7 +52,7 @@
     "settings.schema.json",
     "global-config.schema.json",
     "desktop-managed-settings.schema.json",
-    "env.schema.json",
+    "environment.schema.json",
     "keybindings.schema.json"
   ]
 }

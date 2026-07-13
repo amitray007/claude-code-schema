@@ -270,12 +270,27 @@ knowledge base honest.
 
 ## D-20 · Releases are discovered automatically and published only after review
 
-- **Decision:** check npm daily, create one idempotent issue per unseen version,
-  perform deterministic analysis in a read-only job, and retain the candidate as a
-  workflow artifact. A maintainer manually selects reviewed bytes for a draft PR.
+- **Decision:** check npm daily and create one idempotent issue per unseen version.
+  Analyze only the current npm `latest` in a read-only job and retain that candidate
+  as a workflow artifact. If multiple releases arrived between checks, mark older
+  unseen versions as `superseded`: mutable documentation cannot be attributed to
+  them accurately. A maintainer manually selects reviewed bytes for a draft PR.
 - **Publication:** after merge, revalidate the committed `output/` bytes and create
   a versioned GitHub Release containing separate JSON assets, checksums, and
   provenance. The protected `production` environment is the final approval gate.
 - **Identity:** the canonical `$id` is the immutable
   `releases/download/vX.Y.Z/<file>` URL. Git contains only the current `output/` set;
   GitHub Releases retain history.
+
+## D-21 · Release data is grouped by interface, not extraction method
+
+- **Decision:** publish standalone schemas where editors and validators need stable
+  `$id` URLs, but consolidate evidence catalogs into four domains: settings,
+  environment, CLI, and keybindings.
+- **Entry point:** `catalog.json` identifies the product, consumer, real usage
+  location, role, and grouping of every release asset. `manifest.json` remains the
+  integrity/provenance index rather than the consumer guide.
+- **Boundary:** settings, environment variables, argv, terminal keybindings, and
+  Desktop policy are different interfaces and are never flattened into one bag of
+  “keys.” Binary-only candidates remain explicitly separated inside their domain
+  catalog. Changelog and unresolved legacy records live in `review.catalog.json`.

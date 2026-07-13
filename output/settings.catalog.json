@@ -1,22 +1,37 @@
 {
   "schemaVersion": 1,
-  "artifactKind": "settings-fact-and-scope-catalog",
+  "artifactKind": "settings-surface-catalog",
   "claudeCodeVersion": "2.1.207",
-  "surfaces": {
-    "settings.json": [
-      "user",
-      "project",
-      "local",
-      "managed",
-      "cli-settings"
+  "surface": {
+    "product": "Claude Code CLI",
+    "interface": "configuration",
+    "consumedBy": [
+      "claude-code-cli"
     ],
-    "~/.claude.json": [
-      "global-config"
-    ],
-    "desktop-managed-settings": [
-      "desktop-policy"
+    "locations": [
+      {
+        "scope": "user",
+        "path": "~/.claude/settings.json"
+      },
+      {
+        "scope": "project",
+        "path": ".claude/settings.json"
+      },
+      {
+        "scope": "local",
+        "path": ".claude/settings.local.json"
+      },
+      {
+        "scope": "command-line",
+        "input": "--settings <file-or-json>"
+      },
+      {
+        "scope": "managed",
+        "input": "administrator-managed settings source"
+      }
     ]
   },
+  "x-generator-version": "0.1.0",
   "facts": [
     {
       "path": "advisorModel",
@@ -3609,6 +3624,21 @@
       "runtimeCorroborated": true
     }
   ],
+  "scopes": {
+    "settings.json": [
+      "user",
+      "project",
+      "local",
+      "managed",
+      "cli-settings"
+    ],
+    "~/.claude.json": [
+      "global-config"
+    ],
+    "desktop-managed-settings": [
+      "desktop-policy"
+    ]
+  },
   "runtimeValidation": {
     "binary": {
       "source": "platformBinary",
@@ -3628,5 +3658,163 @@
     "exitCode": 0,
     "diagnosticCount": 111
   },
-  "x-generator-version": "0.1.0"
+  "binaryEvidence": {
+    "platformPackage": "@anthropic-ai/claude-code-darwin-arm64",
+    "binarySha256": "1397a062c6889675055e3314dd956376ac51262a7734ad9e819c26975d71547a",
+    "policy": "Static strings prove token presence only. Binary-only values are candidates, not public API."
+  },
+  "binaryCorroborated": [
+    "advisorModel",
+    "agent",
+    "agentPushNotifEnabled",
+    "allowAllClaudeAiMcps",
+    "allowManagedHooksOnly",
+    "allowManagedMcpServersOnly",
+    "allowManagedPermissionRulesOnly",
+    "allowedChannelPlugins",
+    "allowedHttpHookUrls",
+    "allowedMcpServers",
+    "alwaysThinkingEnabled",
+    "apiKeyHelper",
+    "askUserQuestionTimeout",
+    "attribution",
+    "autoCompactEnabled",
+    "autoMemoryDirectory",
+    "autoMemoryEnabled",
+    "autoMode",
+    "autoScrollEnabled",
+    "autoUpdatesChannel",
+    "availableModels",
+    "awaySummaryEnabled",
+    "awsAuthRefresh",
+    "awsCredentialExport",
+    "axScreenReader",
+    "blockedMarketplaces",
+    "channelsEnabled",
+    "claudeMd",
+    "claudeMdExcludes",
+    "cleanupPeriodDays",
+    "companyAnnouncements",
+    "defaultShell",
+    "deniedMcpServers",
+    "disableAgentView",
+    "disableAllHooks",
+    "disableArtifact",
+    "disableAutoMode",
+    "disableBundledSkills",
+    "disableClaudeAiConnectors",
+    "disableDeepLinkRegistration",
+    "disableRemoteControl",
+    "disableSideloadFlags",
+    "disableSkillShellExecution",
+    "disableWorkflows",
+    "disabledMcpjsonServers",
+    "editorMode",
+    "effortLevel",
+    "enableAllProjectMcpServers",
+    "enableArtifact",
+    "enabledMcpjsonServers",
+    "enforceAvailableModels",
+    "env",
+    "fallbackModel",
+    "fastModePerSessionOptIn",
+    "feedbackSurveyRate",
+    "fileCheckpointingEnabled",
+    "fileSuggestion",
+    "footerLinksRegexes",
+    "forceLoginGatewayUrl",
+    "forceLoginMethod",
+    "forceLoginOrgUUID",
+    "forceRemoteSettingsRefresh",
+    "gcpAuthRefresh",
+    "hooks",
+    "httpHookAllowedEnvVars",
+    "includeGitInstructions",
+    "inputNeededNotifEnabled",
+    "language",
+    "minimumVersion",
+    "model",
+    "modelOverrides",
+    "otelHeadersHelper",
+    "outputStyle",
+    "parentSettingsBehavior",
+    "permissions",
+    "plansDirectory",
+    "pluginSuggestionMarketplaces",
+    "pluginTrustMessage",
+    "policyHelper",
+    "prUrlTemplate",
+    "preferredNotifChannel",
+    "prefersReducedMotion",
+    "remoteControlAtStartup",
+    "requiredMaximumVersion",
+    "requiredMinimumVersion",
+    "respectGitignore",
+    "respondToBashCommands",
+    "showClearContextOnPlanAccept",
+    "showThinkingSummaries",
+    "showTurnDuration",
+    "skillListingBudgetFraction",
+    "skillListingMaxDescChars",
+    "skillOverrides",
+    "skipWebFetchPreflight",
+    "spinnerTipsEnabled",
+    "spinnerTipsOverride",
+    "spinnerVerbs",
+    "sshConfigs",
+    "statusLine",
+    "strictKnownMarketplaces",
+    "strictPluginOnlyCustomization",
+    "syntaxHighlightingDisabled",
+    "teammateMode",
+    "terminalProgressBarEnabled",
+    "theme",
+    "tui",
+    "ultracode",
+    "useAutoModeDuringPlan",
+    "verbose",
+    "viewMode",
+    "voice",
+    "voiceEnabled",
+    "wheelScrollAccelerationEnabled",
+    "workflowKeywordTriggerEnabled",
+    "wslInheritsWindowsSettings"
+  ],
+  "legacyCandidates": [
+    {
+      "name": "skipDangerousModePermissionPrompt",
+      "status": "documented-at-nested-path",
+      "replacementPath": "permissions.skipDangerousModePermissionPrompt",
+      "source": "settingsDocsExpanded"
+    },
+    {
+      "name": "managedMcpServers",
+      "status": "different-product-surface",
+      "artifact": "desktop-managed-settings.schema.json",
+      "source": "desktopDocs"
+    },
+    {
+      "name": "sshHostAllowlist",
+      "status": "different-product-surface",
+      "artifact": "desktop-managed-settings.schema.json",
+      "source": "desktopDocs"
+    },
+    {
+      "name": "maxSkillDescriptionChars",
+      "status": "unverified-legacy-or-renamed",
+      "possibleReplacement": "skillListingMaxDescChars"
+    },
+    {
+      "name": "skippedMarketplaces",
+      "status": "unverified-legacy"
+    },
+    {
+      "name": "skippedPlugins",
+      "status": "unverified-legacy"
+    },
+    {
+      "name": "leftArrowOpensAgents",
+      "status": "unverified-legacy"
+    }
+  ]
 }

@@ -11,6 +11,7 @@ separate asset:
 
 ```text
 https://github.com/amitray007/claude-code-schema/releases/tag/v2.1.207
+https://github.com/amitray007/claude-code-schema/releases/download/v2.1.207/catalog.json
 https://github.com/amitray007/claude-code-schema/releases/download/v2.1.207/manifest.json
 https://github.com/amitray007/claude-code-schema/releases/download/v2.1.207/settings.schema.json
 https://github.com/amitray007/claude-code-schema/releases/download/v2.1.207/claude-code.schema.json
@@ -33,5 +34,6 @@ Each release includes:
 - `SHA256SUMS`, containing a digest for every JSON asset; and
 - GitHub build-provenance attestations for every JSON asset.
 
-No ZIP or tar archive is created. The tag, release assets, manifest digests,
+No ZIP or tar archive is created. Start with `catalog.json` to discover which file
+matches a configuration location or interface. The tag, release assets, manifest digests,
 checksums, and attestations all refer to the same reviewed `output/` bytes.

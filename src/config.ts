@@ -21,7 +21,7 @@ export const surfaceSchemaFiles = [
   "settings.schema.json",
   "global-config.schema.json",
   "desktop-managed-settings.schema.json",
-  "env.schema.json",
+  "environment.schema.json",
   "keybindings.schema.json",
 ] as const;
 

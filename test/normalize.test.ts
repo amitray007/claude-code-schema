@@ -48,6 +48,10 @@ test("artifact normalization rewrites IDs, strips experiment markers, and hashes
     jsonSha256(normalized),
   );
   assert.ok(result.artifacts["claude-code.schema.json"]);
+  assert.equal(
+    result.artifacts["catalog.json"]?.releaseBaseUrl,
+    "https://schemas.test/x/v2.1.207",
+  );
 });
 
 test("normalization rejects an artifact set without a manifest", () => {
@@ -76,7 +80,7 @@ test("production normalization removes historical AI review policy", () => {
     /\bAI\b|artificial intelligence/i,
   );
   assert.match(
-    String(result.artifacts["changelog-review.schema.json"]?.title),
-    /human review/,
+    String(result.artifacts["review.catalog.json"]?.releaseHintPolicy),
+    /human review/i,
   );
 });

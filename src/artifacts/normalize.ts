@@ -11,6 +11,7 @@ import type {
 } from "../domain/types.js";
 import { cloneJson, jsonSha256 } from "../shared/json.js";
 import { combinedSchema } from "./combined.js";
+import { releaseCatalog, structureArtifacts } from "./structured.js";
 
 function rewriteStrings(value: JsonValue, from: string, to: string): JsonValue {
   if (typeof value === "string") return value.replaceAll(from, to);
@@ -48,13 +49,23 @@ export function normalizeArtifacts(
       ? settingsId.slice(0, -"settings.schema.json".length)
       : `https://example.invalid/claude-code/${version}/`;
   const targetPrefix = `${releaseVersionBaseUrl(baseUrl, version)}/`;
-  const artifacts: Record<string, JsonObject> = {};
+  const rewrittenSource: Record<string, JsonObject> = {};
   for (const [file, original] of Object.entries(sourceArtifacts)) {
     if (file === "manifest.json" || file === "validation-report.json") continue;
-    const rewritten = rewriteStrings(
+    let rewritten = rewriteStrings(
       cloneJson(original),
       sourcePrefix,
       targetPrefix,
+    ) as JsonObject;
+    rewritten = rewriteStrings(
+      rewritten,
+      "keybindings.runtime-compat.schema.json",
+      "keybindings.compat.schema.json",
+    ) as JsonObject;
+    rewritten = rewriteStrings(
+      rewritten,
+      "env.schema.json",
+      "environment.schema.json",
     ) as JsonObject;
     delete rewritten["x-experiment"];
     rewritten["x-generator-version"] = generatorVersion;
@@ -68,12 +79,14 @@ export function normalizeArtifacts(
     if (file === "changelog-hints.catalog.json")
       rewritten.policy =
         "Hints never mutate schemas or catalogs automatically. Deterministic evidence and validation are required; ambiguous entries enter human review.";
-    artifacts[file] = rewritten;
+    rewrittenSource[file] = rewritten;
   }
+  const artifacts = structureArtifacts(rewrittenSource, version, targetPrefix);
   artifacts[combinedSchemaFile] = combinedSchema(
     version,
     baseUrl.replace(/\/$/, ""),
   );
+  artifacts["catalog.json"] = releaseCatalog(version, targetPrefix);
 
   const descriptors: Record<string, ArtifactDescriptor> = Object.fromEntries(
     Object.entries(artifacts).map(([file, payload]) => [
@@ -81,7 +94,30 @@ export function normalizeArtifacts(
       { artifactKind: artifactKind(payload), sha256: jsonSha256(payload) },
     ]),
   );
-  const manifest = cloneJson(sourceManifest);
+  const publishedArtifactCount = Array.isArray(
+    artifacts["catalog.json"]?.artifacts,
+  )
+    ? artifacts["catalog.json"].artifacts.length
+    : Object.keys(artifacts).length + 2;
+  const publishedSchemas = Object.keys(artifacts).filter((file) =>
+    file.endsWith(".schema.json"),
+  ).length;
+  const publishedDomainCatalogs = Object.values(descriptors).filter(
+    ({ artifactKind: kind }) => kind.endsWith("-surface-catalog"),
+  ).length;
+  const publishedReviewCatalogs = Object.values(descriptors).filter(
+    ({ artifactKind: kind }) => kind === "release-review-catalog",
+  ).length;
+  let manifest = rewriteStrings(
+    cloneJson(sourceManifest),
+    "keybindings.runtime-compat.schema.json",
+    "keybindings.compat.schema.json",
+  ) as SurfaceManifest;
+  manifest = rewriteStrings(
+    manifest,
+    "env.schema.json",
+    "environment.schema.json",
+  ) as SurfaceManifest;
   delete manifest.experimentVersion;
   manifest.generatorVersion = generatorVersion;
   manifest.sourcePolicy =
@@ -89,7 +125,11 @@ export function normalizeArtifacts(
   manifest.artifacts = descriptors;
   manifest.counts = {
     ...manifest.counts,
-    publishedArtifacts: Object.keys(artifacts).length,
+    publishedArtifacts: publishedArtifactCount,
+    digestedArtifacts: Object.keys(artifacts).length,
+    publishedSchemas,
+    publishedDomainCatalogs,
+    publishedReviewCatalogs,
     combinedEnvelopeSurfaces: 5,
   };
   manifest.safety = {

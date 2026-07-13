@@ -6,24 +6,39 @@
 > [`audit-2026-07-13.md`](audits/audit-2026-07-13.md)
 
 The output uses JSON Schema only where there is a real JSON instance to validate.
-Other surfaces use explicit catalogs, all indexed by a manifest.
+Other surfaces use explicit domain catalogs. `catalog.json` is the consumer entry
+point; `manifest.json` is the provenance and integrity record.
 
 ## Files
 
-| File                                     | Kind                 | Represents                                                                                 |
-| ---------------------------------------- | -------------------- | ------------------------------------------------------------------------------------------ |
-| `settings.schema.json`                   | JSON Schema draft-07 | Claude Code `settings.json`                                                                |
-| `global-config.schema.json`              | JSON Schema draft-07 | global `~/.claude.json` preferences                                                        |
-| `desktop-managed-settings.schema.json`   | JSON Schema draft-07 | Claude Desktop-only managed policy                                                         |
-| `env.schema.json`                        | JSON Schema draft-07 | a declared JSON projection of string-valued environment variables                          |
-| `keybindings.schema.json`                | JSON Schema draft-07 | `~/.claude/keybindings.json`                                                               |
-| `keybindings.runtime-compat.schema.json` | JSON Schema draft-07 | exact parser-compatible keybinding action values, including warning-only strings           |
-| `flags.catalog.json`                     | versioned catalog    | options keyed by command path, spellings, arity, defaults, choices, and status when proven |
-| `keybinding-defaults.catalog.json`       | versioned catalog    | public action names, contexts, and documented default display values                       |
-| `settings-facts.catalog.json`            | versioned catalog    | setting paths, scopes, status, fact evidence, and runtime corroboration                    |
-| `keybinding-capabilities.catalog.json`   | versioned catalog    | documented actions plus exact-binary candidates and command-binding evidence               |
-| `claude-code.schema.json`                | JSON Schema draft-07 | explicit tooling envelope containing all five JSON configuration surfaces                  |
-| `manifest.json`                          | versioned index      | release identity, sources, digests, artifact roles, counts, and drift                      |
+| File                                   | Kind                 | Represents                                                                       |
+| -------------------------------------- | -------------------- | -------------------------------------------------------------------------------- |
+| `catalog.json`                         | release catalog      | product scope, groups, consumer, role, and real usage location for every asset   |
+| `settings.schema.json`                 | JSON Schema draft-07 | Claude Code CLI settings objects                                                 |
+| `global-config.schema.json`            | JSON Schema draft-07 | global `~/.claude.json` preferences                                              |
+| `desktop-managed-settings.schema.json` | JSON Schema draft-07 | explicitly separate Claude Desktop managed policy                                |
+| `environment.schema.json`              | JSON Schema draft-07 | tooling projection of the string-valued environment passed to the Claude process |
+| `keybindings.schema.json`              | JSON Schema draft-07 | documented `~/.claude/keybindings.json` values                                   |
+| `keybindings.compat.schema.json`       | JSON Schema draft-07 | parser-compatible keybindings, including warning-only action strings             |
+| `claude-code.schema.json`              | JSON Schema draft-07 | synthetic tooling envelope containing the five JSON configuration surfaces       |
+| `settings.catalog.json`                | domain catalog       | settings paths, scopes, evidence, runtime corroboration, and legacy candidates   |
+| `environment.catalog.json`             | domain catalog       | documented variables, hook exposure, status, supplements, and binary candidates  |
+| `cli.catalog.json`                     | domain catalog       | documented flags, probed commands/arguments/options, and static candidates       |
+| `keybindings.catalog.json`             | domain catalog       | actions, defaults, command bindings, runtime evidence, and legacy candidates     |
+| `review.catalog.json`                  | review catalog       | changelog hints and unresolved cross-version records; never accepted config      |
+| `manifest.json`                        | integrity index      | release identity, sources, digests, counts, drift, and safety policy             |
+| `validation-report.json`               | validation evidence  | deterministic validation checks and counts                                       |
+
+`catalog.json` answers the first consumer question: “is this data settings, an
+environment variable, a CLI argument, a terminal keybinding, Desktop policy, or
+maintainer evidence?” Domain catalogs combine records that describe the same
+interface while retaining explicit `documented`, `runtime`, and `candidate`
+boundaries.
+
+`manifest.artifacts` carries digests for the 13 non-circular payloads. The manifest
+cannot hash itself, and `validation-report.json` is emitted only after the candidate
+has been validated; both are still listed in `catalog.json` and checksummed as
+separate GitHub Release assets.
 
 `claude-code.schema.json` deliberately composes only the five artifacts that
 validate JSON instances: settings, global configuration, Desktop managed policy,
@@ -105,10 +120,11 @@ variables receive source links and version evidence. Other environment names rem
 allowed with string values; binary-only candidates are not injected as public
 properties.
 
-## Flag catalog
+## CLI catalog
 
-Flags are not a JSON configuration file. Each option record is scoped by
-`commandPath` and can contain:
+Flags are not a JSON configuration file. `cli.catalog.json` combines the official
+top-level flag table with the exact binary's bounded recursive `--help` command
+tree. Each option record is scoped by `commandPath` and can contain:
 
 - canonical name and aliases/spellings;
 - required/optional/no-value arity;
@@ -120,13 +136,14 @@ Flags are not a JSON configuration file. Each option record is scoped by
 Unknown metadata stays unknown. It must not be guessed from an example. Duplicate
 names at different command paths are valid records, not collisions.
 
-## Keybindings schema and defaults catalog
+## Keybindings schema and catalog
 
 The dedicated keybindings schema validates user configuration, including contexts,
-actions, keystroke syntax, command bindings, and null unbinding. The defaults
-catalog is separate because defaults describe application behavior, not the shape
-of a user's override file. Preserve OS-specific or context-specific defaults as
-display text until normalization is proven.
+actions, keystroke syntax, command bindings, and null unbinding. Defaults live in
+`keybindings.catalog.json` because they describe application behavior, not the shape
+of a user's override file. The `.compat` schema is a deliberately more permissive
+alternative for strings accepted with runtime warnings. Preserve OS-specific or
+context-specific defaults as display text until normalization is proven.
 
 ## Manifest example
 
@@ -145,8 +162,8 @@ display text until normalization is proven.
       "artifactKind": "settings-json-schema",
       "sha256": "..."
     },
-    "flags.catalog.json": {
-      "artifactKind": "cli-option-catalog",
+    "cli.catalog.json": {
+      "artifactKind": "cli-surface-catalog",
       "sha256": "..."
     }
   },

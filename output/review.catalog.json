@@ -1,15 +1,17 @@
 {
   "schemaVersion": 1,
-  "artifactKind": "release-change-hint-catalog",
+  "artifactKind": "release-review-catalog",
   "claudeCodeVersion": "2.1.207",
-  "source": {
-    "changelog": "matchingTagChangelog",
-    "githubReleaseNotes": "githubReleaseNotes",
-    "publishedAt": "2026-07-11T00:52:10Z"
+  "surface": {
+    "product": "Claude Code",
+    "interface": "release-review-evidence",
+    "consumedBy": [
+      "schema-maintainers"
+    ],
+    "usage": "Review evidence only. These records are not accepted configuration keys and do not mutate schemas automatically."
   },
-  "policy": "Hints never mutate schemas or catalogs automatically. Deterministic evidence and validation are required; ambiguous entries enter human review.",
-  "rawProseRedistributed": false,
-  "entries": [
+  "x-generator-version": "0.1.0",
+  "releaseHints": [
     {
       "sourceLine": 5,
       "bulletSha256": "421999c07271dcd87744f68f8ee15d9f6eddc94188dfb738b274fc3d90c2239d",
@@ -382,5 +384,51 @@
       "reviewReasons": []
     }
   ],
-  "x-generator-version": "0.1.0"
+  "releaseHintSource": {
+    "changelog": "matchingTagChangelog",
+    "githubReleaseNotes": "githubReleaseNotes",
+    "publishedAt": "2026-07-11T00:52:10Z"
+  },
+  "releaseHintPolicy": "Hints never mutate schemas or catalogs automatically. Deterministic evidence and validation are required; ambiguous entries enter human review.",
+  "rawProseRedistributed": false,
+  "legacyPaths": [
+    {
+      "path": "permissions.disableAutoMode",
+      "status": "legacy-nested-alias",
+      "replacementPath": "disableAutoMode"
+    },
+    {
+      "path": "sandbox.ignoreViolations",
+      "status": "unverified-legacy"
+    },
+    {
+      "path": "sandbox.ripgrep",
+      "status": "unverified-legacy"
+    },
+    {
+      "path": "sandbox.ripgrep.command",
+      "status": "unverified-legacy"
+    },
+    {
+      "path": "sandbox.ripgrep.args",
+      "status": "unverified-legacy"
+    },
+    {
+      "path": "sandbox.enabledPlatforms",
+      "status": "unverified-legacy"
+    }
+  ],
+  "legacyCommandBinding": {
+    "type": "string",
+    "pattern": "^command:[a-zA-Z0-9:_-]+$",
+    "x-status": "exact-release-binary-validator-corroborated",
+    "x-binary": {
+      "source": "platformBinary",
+      "sha256": "1397a062c6889675055e3314dd956376ac51262a7734ad9e819c26975d71547a",
+      "pathInPackage": "package/claude",
+      "commandBindingPatternCorroborated": true,
+      "commandBindingValidatorMessageCorroborated": true
+    }
+  },
+  "legacyPolicy": "These are accounted-for compatibility candidates, not generated public settings. Promotion requires direct current first-party evidence."
 }

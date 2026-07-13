@@ -68,8 +68,9 @@ a rewrite. See [`pipeline.md`](pipeline.md) → “Pivot readiness.”
 - One command or scheduled job regenerates the artifact set for a given Claude Code
   version without depending on a local installation and with only bounded,
   integrity-verified binary operations.
-- Output is granular and indexed by a **manifest**. The optional combined schema is
-  explicitly a tooling envelope and never presented as a document Claude consumes.
+- Output is grouped by interface and indexed by a user-facing **catalog** plus an
+  audit **manifest**. The optional combined schema is explicitly a tooling envelope
+  and never presented as a document Claude consumes.
 - Green candidates become reviewed PRs; publication occurs after protected-environment
   approval, while failures leave the last-good artifact untouched.
 - Every fact can retain evidence for existence, type, description, defaults, enums,

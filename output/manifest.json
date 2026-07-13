@@ -273,73 +273,57 @@
     }
   ],
   "artifacts": {
-    "binary-candidates.catalog.json": {
-      "artifactKind": "static-binary-candidate-catalog",
-      "sha256": "f4d03323d5e2d5a4973fec5397fb9f2f49e06882f688bc9ace4b1338ff13804f"
-    },
-    "changelog-hints.catalog.json": {
-      "artifactKind": "release-change-hint-catalog",
-      "sha256": "f9220bc1f6d97d95b5ef16bf09ee33aec6857b018b7edf8341baadb7ff4df965"
-    },
-    "changelog-review.schema.json": {
-      "artifactKind": "json-artifact",
-      "sha256": "0bcb75a49b93afe91baf9c2529c11a29bc12840daad5305f381f8c132d252504"
-    },
-    "claude-code.schema.json": {
-      "artifactKind": "combined-configuration-envelope-json-schema",
-      "sha256": "6d33c16ad875a2c3b95df17bb2316c6e10db73a0133173a8689db9b7adba801e"
-    },
-    "cli.catalog.json": {
-      "artifactKind": "cli-command-option-catalog",
-      "sha256": "96642f8fae969baae3665d6e3d84facd5a4fa98d5207c527d533f8e22a16b49f"
-    },
-    "desktop-managed-settings.schema.json": {
-      "artifactKind": "desktop-managed-settings-json-schema",
-      "sha256": "44dd0c3d08043623436c8b7a4a2b767c8e9fec881985e361ce3cda8b9bf3436c"
-    },
-    "env.schema.json": {
-      "artifactKind": "environment-object-json-schema",
-      "sha256": "ff961422adf357a4deecf579e65609ce3513889320c332faaa475aed8a3d5532"
-    },
-    "environment-capabilities.catalog.json": {
-      "artifactKind": "environment-capability-and-scope-catalog",
-      "sha256": "e99257d51076c4292717f1fcbb84b348d95936cc244b637b87d8f445964c19a0"
-    },
-    "flags.catalog.json": {
-      "artifactKind": "cli-option-catalog",
-      "sha256": "69f0e1810bd8cf7d2c5865ae12242c2c623e17a633d05abb06c12bb2f5be6258"
+    "settings.schema.json": {
+      "artifactKind": "settings-json-schema",
+      "sha256": "b17e65c2e79a9a54bda534dace679d577122bb0bf4cd26688866854800bf9581"
     },
     "global-config.schema.json": {
       "artifactKind": "global-config-json-schema",
       "sha256": "90fba334176e5ee920e324caab7badbf1b0e363b473048e57895499b49df03f0"
     },
-    "keybinding-capabilities.catalog.json": {
-      "artifactKind": "keybinding-runtime-capability-catalog",
-      "sha256": "3ed1213badf7f57b5af4b14f82e939bffc6a4d0252faec24428e1163860b5aa8"
+    "desktop-managed-settings.schema.json": {
+      "artifactKind": "desktop-managed-settings-json-schema",
+      "sha256": "44dd0c3d08043623436c8b7a4a2b767c8e9fec881985e361ce3cda8b9bf3436c"
     },
-    "keybinding-defaults.catalog.json": {
-      "artifactKind": "keybinding-defaults-catalog",
-      "sha256": "72af2a966e1470b9aa41d1f87bd4d74af11e61a489a68b8e21ff1294930e4062"
-    },
-    "keybindings.runtime-compat.schema.json": {
-      "artifactKind": "keybindings-runtime-compat-json-schema",
-      "sha256": "86a7fc487720e6ad1650efb1591ea9c2ab0aa11ec9ff7aef06c5361d25044a1f"
+    "environment.schema.json": {
+      "artifactKind": "environment-object-json-schema",
+      "sha256": "99e4ff63b5805c5c908860d2382f4fce3357993667ac6f29a5e8a8d206212ce7"
     },
     "keybindings.schema.json": {
       "artifactKind": "keybindings-json-schema",
       "sha256": "a31908121700d510801660ff9b57dcc8381ee48e6730bc69b8c346f6490416ae"
     },
-    "legacy-candidates.catalog.json": {
-      "artifactKind": "legacy-and-unverified-candidate-catalog",
-      "sha256": "56d6c79853a3299ad1ed4fd618f7b5ce0c30918b794b0123c217cb67ba9cceb0"
+    "keybindings.compat.schema.json": {
+      "artifactKind": "keybindings-runtime-compat-json-schema",
+      "sha256": "d438be79597a8e8eb9da05ac8dd03152d94d10f898648eaaa06f9b5a86f16ea0"
     },
-    "settings-facts.catalog.json": {
-      "artifactKind": "settings-fact-and-scope-catalog",
-      "sha256": "617227ade72346d325fe6cf57c94362ca717680723a86e20c03dbc2e8a9fc59a"
+    "settings.catalog.json": {
+      "artifactKind": "settings-surface-catalog",
+      "sha256": "83f77394e58466c29396f3768da486a63a37703d9819e683e97319e2d8e4e82f"
     },
-    "settings.schema.json": {
-      "artifactKind": "settings-json-schema",
-      "sha256": "b17e65c2e79a9a54bda534dace679d577122bb0bf4cd26688866854800bf9581"
+    "environment.catalog.json": {
+      "artifactKind": "environment-surface-catalog",
+      "sha256": "ac64ad4fd881955ea5572f9d40b5165743bd6ae6659cb23ea6105768e993380a"
+    },
+    "cli.catalog.json": {
+      "artifactKind": "cli-surface-catalog",
+      "sha256": "1ca0e77eaaee1aa747272c602ffaf48c55b5ec6fe717142a968559444020964b"
+    },
+    "keybindings.catalog.json": {
+      "artifactKind": "keybindings-surface-catalog",
+      "sha256": "510e8edd7e23c321c229d9dd72513260440fb51e4fa4bfbfe00775860ca11abb"
+    },
+    "review.catalog.json": {
+      "artifactKind": "release-review-catalog",
+      "sha256": "54aa33a9eb3b7ed95bd78403ceb9025ca4a6f1d0b15f59531bd36adabb524523"
+    },
+    "claude-code.schema.json": {
+      "artifactKind": "combined-configuration-envelope-json-schema",
+      "sha256": "1562591e0f6a7f69e811444fef5d495258c55f7982e1edd416c0096f87e58ea3"
+    },
+    "catalog.json": {
+      "artifactKind": "claude-code-release-catalog",
+      "sha256": "52058258d3a211bb7841347c20d435a3b0be141f48058c2cc60d837140e24b37"
     }
   },
   "counts": {
@@ -371,8 +355,12 @@
     "legacyCandidatesAccounted": 7,
     "retiredKeybindingActions": 1,
     "runtimeKeybindingActionCandidates": 301,
-    "publishedArtifacts": 17,
-    "combinedEnvelopeSurfaces": 5
+    "publishedArtifacts": 15,
+    "combinedEnvelopeSurfaces": 5,
+    "digestedArtifacts": 13,
+    "publishedSchemas": 7,
+    "publishedDomainCatalogs": 4,
+    "publishedReviewCatalogs": 1
   },
   "drift": {
     "untypedTopLevelSettings": [],
@@ -385,7 +373,7 @@
       ],
       "keybindings": [
         "keybindings.schema.json validates current documented actions; exact-binary-only actions remain candidates.",
-        "keybindings.runtime-compat.schema.json models the parser's warning-tolerant string action behavior.",
+        "keybindings.compat.schema.json models the parser's warning-tolerant string action behavior.",
         "Keystroke validation checks documented structural syntax without claiming an exhaustive terminal key vocabulary."
       ]
     },

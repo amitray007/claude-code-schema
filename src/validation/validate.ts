@@ -10,6 +10,20 @@ import type {
 } from "../domain/types.js";
 import { jsonSha256, readJson } from "../shared/json.js";
 
+const retiredFragmentFiles = [
+  "binary-candidates.catalog.json",
+  "changelog-hints.catalog.json",
+  "changelog-review.schema.json",
+  "env.schema.json",
+  "environment-capabilities.catalog.json",
+  "flags.catalog.json",
+  "keybinding-capabilities.catalog.json",
+  "keybinding-defaults.catalog.json",
+  "keybindings.runtime-compat.schema.json",
+  "legacy-candidates.catalog.json",
+  "settings-facts.catalog.json",
+];
+
 function describeErrors(errors: ErrorObject[] | null | undefined): string {
   return JSON.stringify(errors ?? [], null, 2);
 }
@@ -70,9 +84,63 @@ export async function validateDirectory(
   );
   const files = new Set(await readdir(directory));
 
-  for (const file of [...surfaceSchemaFiles, combinedSchemaFile]) {
+  for (const file of [
+    ...surfaceSchemaFiles,
+    "keybindings.compat.schema.json",
+    combinedSchemaFile,
+    "catalog.json",
+  ]) {
     if (files.has(file)) pass(`required artifact: ${file}`);
     else fail(`required artifact: ${file}`, "file is missing");
+  }
+
+  const retainedFragments = retiredFragmentFiles.filter((file) =>
+    files.has(file),
+  );
+  if (retainedFragments.length === 0)
+    pass("fragmented legacy artifacts are not published");
+  else
+    fail(
+      "fragmented legacy artifacts are not published",
+      retainedFragments.join(", "),
+    );
+
+  try {
+    const catalog = await readJson<JsonObject>(
+      resolve(directory, "catalog.json"),
+    );
+    const records = Array.isArray(catalog.artifacts) ? catalog.artifacts : [];
+    const declaredFiles = records
+      .map((record) =>
+        record && typeof record === "object" && !Array.isArray(record)
+          ? (record as JsonObject).file
+          : undefined,
+      )
+      .filter((file): file is string => typeof file === "string");
+    const missing = declaredFiles.filter(
+      (file) => file !== "validation-report.json" && !files.has(file),
+    );
+    const undeclared = [...files].filter(
+      (file) => file.endsWith(".json") && !declaredFiles.includes(file),
+    );
+    if (
+      catalog.claudeCodeVersion === manifest.claudeCodeVersion &&
+      declaredFiles.length === records.length &&
+      new Set(declaredFiles).size === declaredFiles.length &&
+      missing.length === 0 &&
+      undeclared.length === 0
+    )
+      pass("release catalog indexes every JSON artifact");
+    else
+      fail(
+        "release catalog indexes every JSON artifact",
+        `records=${records.length}, files=${declaredFiles.length}, missing=${missing.join(", ")}, undeclared=${undeclared.join(", ")}`,
+      );
+  } catch (error) {
+    fail(
+      "release catalog indexes every JSON artifact",
+      (error as Error).message,
+    );
   }
 
   for (const [file, descriptor] of Object.entries(manifest.artifacts)) {
@@ -113,6 +181,13 @@ export async function validateDirectory(
       schemas.set(file, schema);
       ajv.addSchema(schema as object);
       pass(`schema compiles: ${file}`);
+      if (typeof schema.$id === "string" && schema.$id.endsWith(`/${file}`))
+        pass(`schema ID matches filename: ${file}`);
+      else
+        fail(
+          `schema ID matches filename: ${file}`,
+          `received ${String(schema.$id)}`,
+        );
     } catch (error) {
       fail(`schema compiles: ${file}`, (error as Error).message);
     }

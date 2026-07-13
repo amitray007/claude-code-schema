@@ -1,0 +1,148 @@
+{
+  "schemaVersion": 1,
+  "artifactKind": "claude-code-release-catalog",
+  "claudeCodeVersion": "2.1.207",
+  "releaseBaseUrl": "https://github.com/amitray007/claude-code-schema/releases/download/v2.1.207",
+  "productScope": {
+    "primary": "Claude Code CLI",
+    "includes": [
+      "Claude Code CLI configuration files",
+      "Claude Code process environment variables",
+      "claude executable commands and options",
+      "Claude Code terminal UI keybindings",
+      "Claude Desktop administrator-managed policy as an explicitly separate surface"
+    ],
+    "excludes": [
+      "Anthropic API request and response schemas",
+      "Claude web application settings",
+      "arbitrary Claude Desktop preferences"
+    ]
+  },
+  "groups": {
+    "configurationSchemas": [
+      "settings.schema.json",
+      "global-config.schema.json",
+      "desktop-managed-settings.schema.json",
+      "environment.schema.json",
+      "keybindings.schema.json",
+      "keybindings.compat.schema.json",
+      "claude-code.schema.json"
+    ],
+    "domainCatalogs": [
+      "settings.catalog.json",
+      "environment.catalog.json",
+      "cli.catalog.json",
+      "keybindings.catalog.json"
+    ],
+    "auditAndReview": [
+      "review.catalog.json",
+      "manifest.json",
+      "validation-report.json"
+    ]
+  },
+  "artifacts": [
+    {
+      "file": "catalog.json",
+      "role": "release-entry-point",
+      "describes": "product scope, artifact groups, consumers, and usage locations"
+    },
+    {
+      "file": "settings.schema.json",
+      "role": "validator",
+      "validates": "Claude Code settings object",
+      "usedAt": [
+        "~/.claude/settings.json",
+        ".claude/settings.json",
+        ".claude/settings.local.json",
+        "--settings <file-or-json>",
+        "managed settings sources"
+      ]
+    },
+    {
+      "file": "global-config.schema.json",
+      "role": "validator",
+      "validates": "Claude Code global preferences",
+      "usedAt": [
+        "~/.claude.json"
+      ]
+    },
+    {
+      "file": "desktop-managed-settings.schema.json",
+      "role": "validator",
+      "validates": "Claude Desktop administrator-managed policy",
+      "usedAt": [
+        "enterprise-managed Claude Desktop policy source"
+      ]
+    },
+    {
+      "file": "environment.schema.json",
+      "role": "validator",
+      "validates": "JSON projection of a Claude Code process environment",
+      "usedAt": [
+        "environment passed to the claude process"
+      ],
+      "note": "Claude Code does not read this JSON file; tooling uses it to validate an environment map."
+    },
+    {
+      "file": "keybindings.schema.json",
+      "role": "validator",
+      "validates": "documented Claude Code terminal UI keybindings",
+      "usedAt": [
+        "~/.claude/keybindings.json"
+      ]
+    },
+    {
+      "file": "keybindings.compat.schema.json",
+      "role": "compatibility-validator",
+      "validates": "parser-compatible keybindings including warning-only action strings",
+      "usedAt": [
+        "~/.claude/keybindings.json"
+      ]
+    },
+    {
+      "file": "claude-code.schema.json",
+      "role": "tooling-envelope-validator",
+      "validates": "one synthetic object containing all five configuration surfaces",
+      "usedAt": [
+        "schema tooling and integration tests only"
+      ],
+      "note": "Claude Code does not consume this aggregate object."
+    },
+    {
+      "file": "settings.catalog.json",
+      "role": "domain-catalog",
+      "describes": "settings paths, scopes, evidence, and runtime corroboration"
+    },
+    {
+      "file": "environment.catalog.json",
+      "role": "domain-catalog",
+      "describes": "documented environment capabilities and separated binary candidates"
+    },
+    {
+      "file": "cli.catalog.json",
+      "role": "domain-catalog",
+      "describes": "documented flags, probed command tree, arguments, and separated binary candidates"
+    },
+    {
+      "file": "keybindings.catalog.json",
+      "role": "domain-catalog",
+      "describes": "actions, defaults, runtime capabilities, and evidence"
+    },
+    {
+      "file": "review.catalog.json",
+      "role": "maintainer-review",
+      "describes": "changelog hints and unresolved legacy candidates"
+    },
+    {
+      "file": "manifest.json",
+      "role": "release-index",
+      "describes": "source URLs, source digests, artifact digests, counts, drift, and safety policy"
+    },
+    {
+      "file": "validation-report.json",
+      "role": "validation-evidence",
+      "describes": "deterministic checks run against this artifact set"
+    }
+  ],
+  "x-generator-version": "0.1.0"
+}
