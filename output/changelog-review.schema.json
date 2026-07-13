@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://amitray007.github.io/claude-code-schema/claude-code/2.1.207/changelog-review.schema.json",
-  "title": "Claude Code changelog AI or human review",
+  "$id": "https://github.com/amitray007/claude-code-schema/releases/download/v2.1.207/changelog-review.schema.json",
+  "title": "Claude Code changelog human review",
   "type": "object",
   "required": [
     "claudeCodeVersion",
@@ -83,6 +83,6 @@
     }
   },
   "additionalProperties": false,
-  "x-review-policy": "AI output is advisory and must never mutate published artifacts without deterministic source evidence and validation gates.",
+  "x-review-policy": "Human review is required; changelog hints never mutate published artifacts without deterministic source evidence and validation gates.",
   "x-generator-version": "0.1.0"
 }

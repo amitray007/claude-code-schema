@@ -37,7 +37,7 @@ isolated in `src/pipeline/engine.ts` so that transition does not affect consumer
 | `src/domain/`      | Shared manifest, artifact, and report contracts                   |
 | `src/extract/`     | Tested source parsers being promoted from V4                      |
 | `src/pipeline/`    | Run the verified engine and atomically emit a candidate           |
-| `src/publication/` | Stage reviewed bytes for GitHub Releases and Pages                |
+| `src/publication/` | Atomically stage reviewed bytes into repository `output/`         |
 | `src/reports/`     | Render deterministic release-review issue bodies                  |
 | `src/schema/`      | Infer and merge JSON Schema fragments                             |
 | `src/validation/`  | Compile schemas, verify digests, and run positive/negative checks |
@@ -62,5 +62,6 @@ Generation writes into a staging directory, validates the complete candidate, an
 only then swaps it into the requested destination. A failed candidate never
 replaces the last successful directory. JSON is always emitted with two-space
 indentation and a final newline, and every declared artifact is content-hashed in
-the manifest. Publication stages every manifest-declared artifact and validates
-both the immutable version directory and the hosted `latest` copy.
+the manifest. Publication atomically replaces one tracked `output/` directory.
+Immutable versions exist only as separate GitHub Release assets; no site or
+per-version directory is generated.

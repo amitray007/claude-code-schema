@@ -67,7 +67,7 @@ jobs:
           git config user.name github-actions[bot]
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
           git switch -c "$branch"
-          git add latest site
+          git add output
           git commit -m "publish Claude Code ${VERSION} schemas"
           git push -u origin "$branch"
           pr_url=$(gh pr create --repo "$GITHUB_REPOSITORY" --draft --base main --head "$branch" --title "Publish Claude Code ${VERSION} schemas" --body "Tracks #${ISSUE_NUMBER}.\n\nPublishes the exact reviewed candidate from analysis run ${ANALYSIS_RUN_ID}. No live source was refetched during PR preparation.")

@@ -63,13 +63,13 @@ jobs:
           --version "$VERSION"
           --platform-package "$PLATFORM_PACKAGE"
           --output .work/candidate
-          --base-url "${SCHEMA_BASE_URL:-https://amitray007.github.io/claude-code-schema/claude-code}"
+          --base-url "${SCHEMA_BASE_URL:-https://github.com/amitray007/claude-code-schema/releases/download}"
       - name: Validate candidate again as a separate gate
         run: npm run schema:validate -- --directory .work/candidate --report .work/validation-report.json
       - name: Compare with the currently published release
         run: |
-          if [[ -f latest/manifest.json ]]; then
-            npm run schema:diff -- --from latest --to .work/candidate --output .work/semantic-diff.json
+          if [[ -f output/manifest.json ]]; then
+            npm run schema:diff -- --from output --to .work/candidate --output .work/semantic-diff.json
           fi
       - name: Build issue report and review artifact
         env:

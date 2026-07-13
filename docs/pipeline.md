@@ -85,18 +85,18 @@ part of a record.
 
 ## Reconciliation
 
-| Fact | Rule |
-| --- | --- |
-| public setting/env/flag/action existence | official docs establish public status |
-| settings type constraints | infer from official examples/tables, then corroborate top-level types/enums with exact-binary doctor diagnostics |
-| specialized nested structure | use the owning official page; never infer a closed object from one example |
-| global/Desktop fields | emit separate scoped artifacts instead of flattening them into `settings.json` |
-| keybindings | current docs define public contexts/actions; binary evidence may preserve undocumented candidates without promoting them |
-| descriptions/default display/version bounds | docs supply the public value |
-| flag arity/default/choices/path | accept only a scoped Commander/static fact or explicit docs fact |
-| binary-only identifier | retain as `undocumented-candidate`; do not publish into the public artifact |
-| old benchmark vs current evidence mismatch | classify as active, moved, different-surface, retired, or unverified legacy; current first-party truth wins |
-| changelog identifier | hint only unless artifact kind + change verb are unambiguous |
+| Fact                                        | Rule                                                                                                                     |
+| ------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
+| public setting/env/flag/action existence    | official docs establish public status                                                                                    |
+| settings type constraints                   | infer from official examples/tables, then corroborate top-level types/enums with exact-binary doctor diagnostics         |
+| specialized nested structure                | use the owning official page; never infer a closed object from one example                                               |
+| global/Desktop fields                       | emit separate scoped artifacts instead of flattening them into `settings.json`                                           |
+| keybindings                                 | current docs define public contexts/actions; binary evidence may preserve undocumented candidates without promoting them |
+| descriptions/default display/version bounds | docs supply the public value                                                                                             |
+| flag arity/default/choices/path             | accept only a scoped Commander/static fact or explicit docs fact                                                         |
+| binary-only identifier                      | retain as `undocumented-candidate`; do not publish into the public artifact                                              |
+| old benchmark vs current evidence mismatch  | classify as active, moved, different-surface, retired, or unverified legacy; current first-party truth wins              |
+| changelog identifier                        | hint only unless artifact kind + change verb are unambiguous                                                             |
 
 Do not label a binary-only env var `internal`: that is a classification not proven by
 absence from docs. Do not flatten subcommand options by name.
@@ -131,11 +131,12 @@ handling can make it pass even when the catalog is incomplete.
 
 ## Publication and versioning
 
-- Generate into a staging directory and atomically replace `latest/` only after all
+- Generate into a staging directory and atomically replace `output/` only after all
   gates pass.
-- Tag the publishing repository with the Claude Code version.
-- Index versions by tag/ref and manifest digest. Do not attempt to place a commit's
-  own SHA inside that same commit.
+- Tag the publishing repository with `vX.Y.Z` and upload every JSON file as a
+  separate, checksummed and attested GitHub Release asset.
+- Use immutable `releases/download/vX.Y.Z/<file>` URLs as schema identities. Do not
+  maintain duplicate version directories or a static-site copy.
 - If the exact same Claude Code version is observed with different mutable-doc
   digests, retain it as a new observation and require review before replacing the
   published artifact.
@@ -143,14 +144,14 @@ handling can make it pass even when the catalog is incomplete.
 
 ## Failure modes
 
-| Failure | Behavior |
-| --- | --- |
-| docs structure changed | block publication; keep last-good; save bounded diagnostics |
-| specialized official page unavailable | retry; do not silently erase nested constraints |
-| Git tag temporarily absent | wait/retry; do not substitute `main` |
-| binary extraction collapsed | public docs-backed artifacts may continue; mark discovery unavailable |
-| unexplained source drift | emit candidate PR/issue, not auto-merge |
-| validation regression | keep last-good and attach semantic diff |
+| Failure                               | Behavior                                                              |
+| ------------------------------------- | --------------------------------------------------------------------- |
+| docs structure changed                | block publication; keep last-good; save bounded diagnostics           |
+| specialized official page unavailable | retry; do not silently erase nested constraints                       |
+| Git tag temporarily absent            | wait/retry; do not substitute `main`                                  |
+| binary extraction collapsed           | public docs-backed artifacts may continue; mark discovery unavailable |
+| unexplained source drift              | emit candidate PR/issue, not auto-merge                               |
+| validation regression                 | keep last-good and attach semantic diff                               |
 
 ## Pivot readiness
 

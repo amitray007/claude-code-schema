@@ -38,8 +38,8 @@ jobs:
           --output .work/weekly
       - name: Compare with the currently published release
         run: |
-          if [[ -f latest/manifest.json ]]; then
-            npm run schema:diff -- --from latest --to .work/weekly --output .work/weekly-diff.json
+          if [[ -f output/manifest.json ]]; then
+            npm run schema:diff -- --from output --to .work/weekly --output .work/weekly-diff.json
           fi
       - name: Upload audit evidence
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4

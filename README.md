@@ -45,7 +45,7 @@ Each is tagged to the exact Claude Code version it was generated from.
 npm ci --ignore-scripts
 npm run schema:generate -- --version 2.1.207 --output .work/candidate
 npm run schema:validate -- --directory .work/candidate
-npm run schema:diff -- --from latest --to .work/candidate
+npm run schema:diff -- --from output --to .work/candidate
 npm run test:coverage
 ```
 
@@ -55,10 +55,19 @@ candidate, and atomically replaces the requested output only after every check
 passes. Use `--source experiments/version-4/output` with `schema:generate` for a
 fully offline reproduction of the frozen 2.1.207 reference.
 
-The generated [`latest/claude-code.schema.json`](latest/claude-code.schema.json)
+The generated [`output/claude-code.schema.json`](output/claude-code.schema.json)
 combines settings, global configuration, Desktop policy, environment, and
 keybindings under explicit property names. A validated instance is available at
 [`examples/combined.json`](examples/combined.json).
+
+Immutable versions are separate assets on GitHub Releases. For example:
+
+```text
+https://github.com/amitray007/claude-code-schema/releases/download/v2.1.207/settings.schema.json
+```
+
+The repository does not duplicate release history in version directories or a
+static website.
 
 ## Historical experiments
 
@@ -88,7 +97,7 @@ overview, then jump to whatever you need.
 | [`docs/schema-format.md`](docs/schema-format.md)                                                       | The output contract: validators, catalogs, and manifest                              |
 | [`docs/production-architecture.md`](docs/production-architecture.md)                                   | Implemented modules, combined schema, and atomic output                              |
 | [`docs/ci-release-operations.md`](docs/ci-release-operations.md)                                       | CI, release issues, manual approval, and publication runbook                         |
-| [`docs/hosting.md`](docs/hosting.md)                                                                   | GitHub Pages URL contract and custom-domain migration                                |
+| [`docs/hosting.md`](docs/hosting.md)                                                                   | GitHub Release asset URLs and download contract                                      |
 | [`docs/extraction-notes.md`](docs/extraction-notes.md)                                                 | Real probe findings (v2.1.207) + hard safety constraints                             |
 | [`docs/audits/audit-2026-07-13.md`](docs/audits/audit-2026-07-13.md)                                   | Live-source accuracy audit, corrections, and experiment results                      |
 | [`docs/audits/version-4-parity-audit-2026-07-13.md`](docs/audits/version-4-parity-audit-2026-07-13.md) | First-party V4 parity result, deep path accounting, and deliberate legacy exclusions |

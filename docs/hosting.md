@@ -1,38 +1,37 @@
-# Schema hosting
+# Release distribution
+
+GitHub Releases are the only public distribution host. The repository keeps the
+current reviewed artifact set in [`output/`](../output/); it does not maintain a
+`latest/` alias, per-version directories, or a `site/` mirror.
 
 ## Published URL layout
 
-The initial host is GitHub Pages:
+Tags and GitHub Release titles use `vX.Y.Z`. Every JSON artifact is uploaded as a
+separate asset:
 
 ```text
-https://amitray007.github.io/claude-code-schema/index.json
-https://amitray007.github.io/claude-code-schema/claude-code/index.json
-https://amitray007.github.io/claude-code-schema/claude-code/latest/settings.schema.json
-https://amitray007.github.io/claude-code-schema/claude-code/2.1.207/settings.schema.json
-https://amitray007.github.io/claude-code-schema/claude-code/2.1.207/claude-code.schema.json
+https://github.com/amitray007/claude-code-schema/releases/tag/v2.1.207
+https://github.com/amitray007/claude-code-schema/releases/download/v2.1.207/manifest.json
+https://github.com/amitray007/claude-code-schema/releases/download/v2.1.207/settings.schema.json
+https://github.com/amitray007/claude-code-schema/releases/download/v2.1.207/claude-code.schema.json
 ```
 
-Versioned URLs are canonical. `latest/` is a convenience copy whose schemas retain
-their immutable versioned `$id` values.
+These versioned download URLs are also the schemas' canonical `$id` values. Relative
+references in `claude-code.schema.json` therefore resolve to sibling assets in the
+same release.
 
-Each version directory contains every artifact declared by its manifest, including
-schemas and catalogs, so the hosted release is independently digest-verifiable.
-Validation reports, the compressed bundle, checksums, and attestations are also
-distributed through the GitHub Release. The current complete artifact set is about
-one megabyte, comfortably small enough for Pages.
+Consumers can discover assets through GitHub's public Releases API or download them
+directly. Public release metadata and assets do not require authentication. See the
+[GitHub Releases API](https://docs.github.com/en/rest/releases/releases) and
+[release-assets API](https://docs.github.com/en/rest/releases/assets).
 
-## Custom domain migration
+## Integrity
 
-When a domain is selected:
+Each release includes:
 
-1. choose a subdomain such as `schemas.example.com`;
-2. verify it in GitHub and configure it under repository Pages settings;
-3. add a DNS CNAME to `amitray007.github.io`;
-4. enforce HTTPS;
-5. set repository variable `SCHEMA_BASE_URL` to
-   `https://schemas.example.com/claude-code`;
-6. change `defaultBaseUrl` in `src/config.ts`; and
-7. regenerate the hosted history so every `$id` moves in one reviewed migration.
+- all generated JSON files as individual assets;
+- `SHA256SUMS`, containing a digest for every JSON asset; and
+- GitHub build-provenance attestations for every JSON asset.
 
-Do not place a mutable `latest` URL in `$id`. Schema identity must remain tied to
-the exact Claude Code version.
+No ZIP or tar archive is created. The tag, release assets, manifest digests,
+checksums, and attestations all refer to the same reviewed `output/` bytes.

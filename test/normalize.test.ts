@@ -37,7 +37,7 @@ test("artifact normalization rewrites IDs, strips experiment markers, and hashes
   const normalized = result.artifacts["settings.schema.json"]!;
   assert.equal(
     normalized.$id,
-    "https://schemas.test/x/2.1.207/settings.schema.json",
+    "https://schemas.test/x/v2.1.207/settings.schema.json",
   );
   assert.equal(normalized.title, "Settings");
   assert.equal(normalized["x-experiment"], undefined);
@@ -54,5 +54,29 @@ test("normalization rejects an artifact set without a manifest", () => {
   assert.throws(
     () => normalizeArtifacts({}, "https://schemas.test"),
     /valid manifest/,
+  );
+});
+
+test("production normalization removes historical AI review policy", () => {
+  const result = normalizeArtifacts(
+    {
+      "manifest.json": manifest(),
+      "changelog-review.schema.json": {
+        title: "Claude Code changelog AI or human review",
+        "x-review-policy": "AI output is advisory",
+      },
+      "changelog-hints.catalog.json": {
+        policy: "Ambiguous entries enter AI or human review.",
+      },
+    },
+    "https://schemas.test",
+  );
+  assert.doesNotMatch(
+    JSON.stringify(result.artifacts),
+    /\bAI\b|artificial intelligence/i,
+  );
+  assert.match(
+    String(result.artifacts["changelog-review.schema.json"]?.title),
+    /human review/,
   );
 });

@@ -74,7 +74,7 @@ test("offline production generation is complete, formatted, validated, and deter
   assert.equal(validation.counts.failed, 0);
   assert.match(
     String(combined.$id),
-    /^https:\/\/schemas\.test\.example\/claude-code\/2\.1\.207\//,
+    /^https:\/\/schemas\.test\.example\/claude-code\/v2\.1\.207\//,
   );
 
   const ajv = new Ajv({ strict: false, validateFormats: false });
@@ -134,7 +134,7 @@ test("validation detects artifact tampering", async () => {
   );
 });
 
-test("publication staging preserves and validates complete latest and versioned outputs", async () => {
+test("publication staging keeps one validated output directory without site copies", async () => {
   const root = await mkdtemp(resolve(tmpdir(), "schema-publication-test-"));
   const candidate = resolve(root, "candidate");
   const publication = resolve(root, "publication");
@@ -146,33 +146,26 @@ test("publication staging preserves and validates complete latest and versioned 
   });
   const report = await stagePublication(candidate, publication);
   assert.equal(report.version, "2.1.207");
-  const index = await readJson<JsonObject>(
-    resolve(publication, "site/claude-code/index.json"),
+  assert.equal(report.tag, "v2.1.207");
+  const publishedOutput = resolve(publication, "output");
+  assert.deepEqual(
+    await digestDirectory(publishedOutput),
+    await digestDirectory(candidate),
   );
-  assert.equal(index.latest, "2.1.207");
-  assert.equal((index.versions as JsonObject[]).length, 1);
   await stagePublication(candidate, publication);
-  const repeatedIndex = await readJson<JsonObject>(
-    resolve(publication, "site/claude-code/index.json"),
-  );
-  assert.equal(
-    (repeatedIndex.versions as JsonObject[]).length,
-    1,
+  assert.deepEqual(
+    await digestDirectory(publishedOutput),
+    await digestDirectory(candidate),
     "staging the same version twice must be idempotent",
   );
-  assert.ok(await readJson(resolve(publication, "latest/cli.catalog.json")));
-  assert.ok(
-    await readJson(
-      resolve(publication, "site/claude-code/2.1.207/claude-code.schema.json"),
-    ),
+  assert.ok(await readJson(resolve(publishedOutput, "cli.catalog.json")));
+  assert.equal((await validateDirectory(publishedOutput)).status, "passed");
+  await assert.rejects(
+    readFile(resolve(publication, "latest/manifest.json")),
+    /ENOENT/,
   );
-  assert.ok(
-    await readJson(
-      resolve(publication, "site/claude-code/2.1.207/cli.catalog.json"),
-    ),
+  await assert.rejects(
+    readFile(resolve(publication, "site/index.json")),
+    /ENOENT/,
   );
-  const hostedValidation = await validateDirectory(
-    resolve(publication, "site/claude-code/2.1.207"),
-  );
-  assert.equal(hostedValidation.status, "passed");
 });

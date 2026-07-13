@@ -11,7 +11,7 @@ test("combined schema is an explicit five-surface tooling envelope", () => {
   );
   assert.equal(
     schema.$id,
-    `https://schemas.example.test/claude-code/2.1.207/${combinedSchemaFile}`,
+    `https://schemas.example.test/claude-code/v2.1.207/${combinedSchemaFile}`,
   );
   assert.equal((schema.required as string[]).length, 5);
   assert.equal(schema.additionalProperties, false);

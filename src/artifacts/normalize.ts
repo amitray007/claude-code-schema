@@ -1,4 +1,8 @@
-import { combinedSchemaFile, generatorVersion } from "../config.js";
+import {
+  combinedSchemaFile,
+  generatorVersion,
+  releaseVersionBaseUrl,
+} from "../config.js";
 import type {
   ArtifactDescriptor,
   JsonObject,
@@ -43,7 +47,7 @@ export function normalizeArtifacts(
     settingsId.endsWith("settings.schema.json")
       ? settingsId.slice(0, -"settings.schema.json".length)
       : `https://example.invalid/claude-code/${version}/`;
-  const targetPrefix = `${baseUrl.replace(/\/$/, "")}/${version}/`;
+  const targetPrefix = `${releaseVersionBaseUrl(baseUrl, version)}/`;
   const artifacts: Record<string, JsonObject> = {};
   for (const [file, original] of Object.entries(sourceArtifacts)) {
     if (file === "manifest.json" || file === "validation-report.json") continue;
@@ -56,6 +60,14 @@ export function normalizeArtifacts(
     rewritten["x-generator-version"] = generatorVersion;
     if (typeof rewritten.title === "string")
       rewritten.title = rewritten.title.replace(/\s+[—-].*experiment$/i, "");
+    if (file === "changelog-review.schema.json") {
+      rewritten.title = "Claude Code changelog human review";
+      rewritten["x-review-policy"] =
+        "Human review is required; changelog hints never mutate published artifacts without deterministic source evidence and validation gates.";
+    }
+    if (file === "changelog-hints.catalog.json")
+      rewritten.policy =
+        "Hints never mutate schemas or catalogs automatically. Deterministic evidence and validation are required; ambiguous entries enter human review.";
     artifacts[file] = rewritten;
   }
   artifacts[combinedSchemaFile] = combinedSchema(

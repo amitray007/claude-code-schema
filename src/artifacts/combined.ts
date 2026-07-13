@@ -1,6 +1,7 @@
 import {
   combinedSchemaFile,
   generatorVersion,
+  releaseVersionBaseUrl,
   surfaceSchemaFiles,
 } from "../config.js";
 import type { JsonObject } from "../domain/types.js";
@@ -14,6 +15,7 @@ const surfaceNames: Record<(typeof surfaceSchemaFiles)[number], string> = {
 };
 
 export function combinedSchema(version: string, baseUrl: string): JsonObject {
+  const versionBaseUrl = releaseVersionBaseUrl(baseUrl, version);
   const properties = Object.fromEntries(
     surfaceSchemaFiles.map((file) => [
       surfaceNames[file],
@@ -25,7 +27,7 @@ export function combinedSchema(version: string, baseUrl: string): JsonObject {
   );
   return {
     $schema: "http://json-schema.org/draft-07/schema#",
-    $id: `${baseUrl}/${version}/${combinedSchemaFile}`,
+    $id: `${versionBaseUrl}/${combinedSchemaFile}`,
     title: `Claude Code ${version} configuration-surface envelope`,
     description:
       "A tooling envelope that validates all supported Claude Code configuration surfaces together. This object is not itself a file consumed by Claude Code.",

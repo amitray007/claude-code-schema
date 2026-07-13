@@ -5,10 +5,17 @@ const compiledSourceDirectory = dirname(fileURLToPath(import.meta.url));
 
 export const repositoryRoot = resolve(compiledSourceDirectory, "../..");
 export const generatorVersion = "0.1.0";
-export const defaultBaseUrl =
-  "https://amitray007.github.io/claude-code-schema/claude-code";
+export const repositorySlug = "amitray007/claude-code-schema";
+export const defaultBaseUrl = `https://github.com/${repositorySlug}/releases/download`;
 export const defaultOutputRoot = resolve(repositoryRoot, "generated");
 export const releasePackageName = "@anthropic-ai/claude-code";
+
+export function releaseVersionBaseUrl(
+  baseUrl: string,
+  version: string,
+): string {
+  return `${baseUrl.replace(/\/$/, "")}/v${version}`;
+}
 
 export const surfaceSchemaFiles = [
   "settings.schema.json",

@@ -85,15 +85,17 @@ knowledge base honest.
 - **Changed to:** JSON Schemas for settings, keybindings, and the declared env-object
   projection; catalogs for flags and defaults; `manifest.json` as the index.
 
-## D-6 · Versioning: `latest/` + git tags, not directory-per-version
+## D-6 · Versioning: one `output/` set plus immutable GitHub Releases
 
-- **Chosen:** one `latest/` set at HEAD; git tags `v<version>` for pinning; a version
-  index containing tag/ref plus manifest digest. No per-version directories.
+- **Chosen:** one reviewed `output/` set at HEAD and one GitHub Release/tag named
+  `v<version>` per published version. Every JSON file is a separate release asset.
+  There are no per-version directories, `latest/` copy, or `site/` mirror.
 - **Correction:** a file in a commit cannot reliably contain that commit's own SHA;
   doing so changes the SHA. Use the tag and content digest or an external post-commit
   registry.
-- **Why:** ~daily releases → 459+ near-duplicate dirs would be a duplication/noise
-  nightmare. History + tags give reproducible pinning for free.
+- **Why:** ~daily releases would make version directories and a second static-site
+  copy a duplication/noise problem. Release assets already provide immutable URLs,
+  browser downloads, an API, checksums, and provenance.
 
 ## D-7 · Naming & affiliation
 
@@ -271,8 +273,9 @@ knowledge base honest.
 - **Decision:** check npm daily, create one idempotent issue per unseen version,
   perform deterministic analysis in a read-only job, and retain the candidate as a
   workflow artifact. A maintainer manually selects reviewed bytes for a draft PR.
-- **Publication:** after merge, revalidate the committed bytes, create a versioned
-  GitHub Release with checksums and provenance, and deploy consumer schemas to
-  GitHub Pages. The protected `production` environment is the final approval gate.
-- **Identity:** versioned URLs are canonical. Mutable `latest` copies retain their
-  immutable versioned `$id` values.
+- **Publication:** after merge, revalidate the committed `output/` bytes and create
+  a versioned GitHub Release containing separate JSON assets, checksums, and
+  provenance. The protected `production` environment is the final approval gate.
+- **Identity:** the canonical `$id` is the immutable
+  `releases/download/vX.Y.Z/<file>` URL. Git contains only the current `output/` set;
+  GitHub Releases retain history.

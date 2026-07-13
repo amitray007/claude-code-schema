@@ -10,7 +10,7 @@
 
 The repository contains the production TypeScript CLI under [`../src/`](../src/),
 the CI and release workflows under [`../.github/workflows/`](../.github/workflows/),
-published 2.1.207 artifacts under [`../latest/`](../latest/), and the corrected
+reviewed 2.1.207 artifacts under [`../output/`](../output/), and the corrected
 design and versioned Node/Ajv experiments in
 [`../experiments/`](../experiments/). Version 1 combines official docs with
 SchemaStore; version 2 deliberately excludes it to expose lost constraints; version
@@ -26,12 +26,12 @@ Run the production path with:
 npm ci --ignore-scripts
 npm run schema:generate -- --version 2.1.207 --output .work/candidate
 npm run schema:validate -- --directory .work/candidate
-npm run schema:diff -- --from latest --to .work/candidate
+npm run schema:diff -- --from output --to .work/candidate
 npm run test:coverage
 ```
 
 Daily discovery, exact-version analysis, issue reporting, reviewed PR preparation,
-GitHub Release creation, attestations, and Pages deployment are implemented as
+GitHub Release creation and per-file attestations are implemented as
 workflows. Repository settings and the protected production environment still need
 to be enabled by a maintainer as described in
 [`ci-release-operations.md`](ci-release-operations.md).
@@ -60,16 +60,16 @@ to be enabled by a maintainer as described in
 
 ## Implemented production units
 
-| #   | Unit                                                                     | Acceptance check                                     |
-| --- | ------------------------------------------------------------------------ | ---------------------------------------------------- |
-| 1   | Tested Markdown extraction and schema inference modules                  | parser and merge unit tests                          |
-| 2   | Exact source/run evidence inherited from V4 and normalized manifests     | source URLs, byte counts, and digests preserved      |
-| 3   | Scoped settings, global, Desktop, environment, and keybinding schemas    | all schemas compile and behavioral checks pass       |
-| 4   | Bounded CLI and doctor extraction                                        | exact 2.1.207 live run completed without credentials |
-| 5   | Binary candidate and changelog-hint catalogs                             | candidates remain outside public schemas             |
-| 6   | Semantic settings-path diff and deterministic issue report               | integration and CLI tests                            |
-| 7   | Atomic candidate generation and publication staging                      | tamper and determinism tests                         |
-| 8   | Scheduled discovery, review issue, release PR, GitHub Release, and Pages | actionlint-clean workflow definitions                |
+| #   | Unit                                                                  | Acceptance check                                     |
+| --- | --------------------------------------------------------------------- | ---------------------------------------------------- |
+| 1   | Tested Markdown extraction and schema inference modules               | parser and merge unit tests                          |
+| 2   | Exact source/run evidence inherited from V4 and normalized manifests  | source URLs, byte counts, and digests preserved      |
+| 3   | Scoped settings, global, Desktop, environment, and keybinding schemas | all schemas compile and behavioral checks pass       |
+| 4   | Bounded CLI and doctor extraction                                     | exact 2.1.207 live run completed without credentials |
+| 5   | Binary candidate and changelog-hint catalogs                          | candidates remain outside public schemas             |
+| 6   | Semantic settings-path diff and deterministic issue report            | integration and CLI tests                            |
+| 7   | Atomic candidate generation and publication staging                   | tamper and determinism tests                         |
+| 8   | Scheduled discovery, review issue, release PR, and GitHub Release     | actionlint-clean workflow definitions                |
 
 ## Recommended layout
 
@@ -78,7 +78,7 @@ to be enabled by a maintainer as described in
 /test/fixtures/sources/  pinned upstream response fixtures
 /test/fixtures/valid/    official/tagged/curated positive cases
 /test/fixtures/invalid/  negative and mutation cases
-/latest/                 published artifact set
+/output/                 current reviewed artifact set
 /runs/ or external CAS   exact source/run evidence if repository size permits
 /experiments/version-N/  retained, isolated proofs and examples
 /docs/audits/            dated accuracy and source audits
@@ -87,10 +87,9 @@ to be enabled by a maintainer as described in
 
 ## Maintainer setup still needed
 
-- enable the required branch checks and GitHub Pages;
+- enable the required branch checks;
 - create the protected `production` environment and reviewer rule;
-- allow the preparation workflow to open pull requests; and
-- optionally select and configure a custom schema domain.
+- allow the preparation workflow to open pull requests.
 
 ## Definition of done for v1
 

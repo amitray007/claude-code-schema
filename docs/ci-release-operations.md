@@ -2,14 +2,14 @@
 
 ## Workflows
 
-| Workflow                 | Trigger                             | Purpose                                                                                    |
-| ------------------------ | ----------------------------------- | ------------------------------------------------------------------------------------------ |
-| `ci.yml`                 | PR, `main`, merge queue             | Offline tests, coverage, formatting, types, dependency review, experiment parity           |
-| `discover-releases.yml`  | Daily and manual                    | Find every npm version after the initial baseline and create one issue per version         |
-| `analyze-version.yml`    | Reusable and manual                 | Generate an exact-version candidate, validate it, upload review evidence, update its issue |
-| `weekly-deep-audit.yml`  | Weekly and manual                   | Re-run live sources, exact binary probes, offline tests, and drift comparison              |
-| `prepare-release-pr.yml` | Manual                              | Download previously reviewed bytes, revalidate, stage publication files, open a draft PR   |
-| `publish-release.yml`    | Merged publication files and manual | Validate committed bytes, tag, attest, create a GitHub Release, deploy Pages               |
+| Workflow                 | Trigger                           | Purpose                                                                                    |
+| ------------------------ | --------------------------------- | ------------------------------------------------------------------------------------------ |
+| `ci.yml`                 | PR, `main`, merge queue           | Offline tests, coverage, formatting, types, dependency review, experiment parity           |
+| `discover-releases.yml`  | Daily and manual                  | Find every npm version after the initial baseline and create one issue per version         |
+| `analyze-version.yml`    | Reusable and manual               | Generate an exact-version candidate, validate it, upload review evidence, update its issue |
+| `weekly-deep-audit.yml`  | Weekly and manual                 | Re-run live sources, exact binary probes, offline tests, and drift comparison              |
+| `prepare-release-pr.yml` | Manual                            | Download previously reviewed bytes, revalidate, stage publication files, open a draft PR   |
+| `publish-release.yml`    | Merged `output/` files and manual | Validate committed bytes, checksum and attest each JSON file, create a GitHub Release      |
 
 All external actions are pinned to full commit SHAs. The analysis job has read-only
 repository permission. The job that edits an issue does not execute the downloaded
@@ -54,11 +54,10 @@ Before enabling publication:
    to create pull requests for `prepare-release-pr.yml`.
 3. Create a `production` environment with a required reviewer, prevent
    self-review, and disable administrator bypass.
-4. Enable GitHub Pages with **GitHub Actions** as its source.
-5. Keep Issues enabled. Discovery creates and updates the required labels.
-6. Optionally set repository variable `SCHEMA_BASE_URL`; otherwise the generator
-   uses the repository's GitHub Pages URL.
-7. Enable the repository Dependency Graph and set repository variable
+4. Keep Issues enabled. Discovery creates and updates the required labels.
+5. Keep `SCHEMA_BASE_URL` unset to use this repository's immutable GitHub Release
+   download URL. Set it only when deliberately migrating every schema `$id`.
+6. Enable the repository Dependency Graph and set repository variable
    `ENABLE_DEPENDENCY_REVIEW=true` to activate GitHub's per-PR dependency diff.
    Until then CI uses a production `npm audit` fallback instead of failing because
    the repository feature is unavailable.
@@ -70,13 +69,14 @@ npm ci --ignore-scripts
 npm run schema:discover -- --after 2.1.207
 npm run schema:generate -- --version 2.1.207 --output .work/candidate
 npm run schema:validate -- --directory .work/candidate
-npm run schema:diff -- --from latest --to .work/candidate
+npm run schema:diff -- --from output --to .work/candidate
 npm run schema:stage -- --candidate .work/candidate --publication-root .
 ```
 
-Only `schema:stage` changes tracked publication directories, and it must be run
-after reviewing the candidate and diff. Release publication packages the committed
-bytes; it never refetches mutable documentation.
+Only `schema:stage` changes tracked `output/`, and it must be run after reviewing
+the candidate and diff. Release publication uploads each committed JSON file plus a
+`SHA256SUMS` file; it never refetches mutable documentation or builds a duplicate
+archive/site tree.
 
 ## Probe limitation
 
