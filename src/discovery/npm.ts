@@ -36,10 +36,18 @@ export async function discoverReleases(
       `Baseline version ${afterVersion} is absent from npm release history`,
     );
   const selected = afterVersion ? ordered.slice(afterIndex + 1) : ordered;
+  const publishedVersions = selected.map(([version]) => version);
+  const analysisVersion = publishedVersions.includes(latestVersion)
+    ? latestVersion
+    : undefined;
   return {
     packageName: releasePackageName,
     latestVersion,
-    publishedVersions: selected.map(([version]) => version),
+    publishedVersions,
+    ...(analysisVersion ? { analysisVersion } : {}),
+    supersededVersions: publishedVersions.filter(
+      (version) => version !== latestVersion,
+    ),
     checkedAt: new Date().toISOString(),
   };
 }

@@ -5,7 +5,7 @@
 | Workflow                 | Trigger                           | Purpose                                                                                    |
 | ------------------------ | --------------------------------- | ------------------------------------------------------------------------------------------ |
 | `ci.yml`                 | PR, `main`, merge queue           | Offline tests, coverage, formatting, types, dependency review, experiment parity           |
-| `discover-releases.yml`  | Daily and manual                  | Find every npm version after the initial baseline and create one issue per version         |
+| `discover-releases.yml`  | Daily and manual                  | Record every npm version after the baseline and analyze only the current npm `latest`      |
 | `analyze-version.yml`    | Reusable and manual               | Generate an exact-version candidate, validate it, upload review evidence, update its issue |
 | `weekly-deep-audit.yml`  | Weekly and manual                 | Re-run live sources, exact binary probes, offline tests, and drift comparison              |
 | `prepare-release-pr.yml` | Manual                            | Download previously reviewed bytes, revalidate, stage publication files, open a draft PR   |
@@ -21,6 +21,12 @@ prevents an accidental issue flood. Publication is immutable: if a version tag
 already exists it must resolve to the reviewed `main` commit, and existing release
 assets are never overwritten.
 
+If several releases appear between discovery runs, each still receives an issue.
+Only the version identified by npm's `latest` dist-tag is analyzed because the
+documentation sources are mutable and cannot be attributed safely to an older
+version. Intervening versions are labeled `superseded` and closed without generating
+a schema; their issue remains the durable discovery record.
+
 Repository tags and GitHub Release titles use only the schema version in the form
 `vX.Y.Z` (for example, `v2.1.207`). Product or repository prefixes are not added.
 
@@ -34,6 +40,10 @@ state:
 2. `needs-review` after successful deterministic analysis;
 3. `approved-for-pr` after a maintainer starts PR preparation; and
 4. `published` after release completion.
+
+An intervening release that was already older than npm `latest` when discovered is
+labeled `superseded` and closed as not planned. It never enters the analysis or
+publication states.
 
 Failed analysis is labeled `analysis-failed`, linked to its workflow log, and leaves
 the issue open. A successful publication adds the immutable release link, marks the

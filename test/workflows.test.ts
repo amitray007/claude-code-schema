@@ -25,3 +25,14 @@ test("GitHub releases use the unprefixed vX.Y.Z name", async () => {
   assert.doesNotMatch(workflow, /site\//);
   assert.doesNotMatch(workflow, /Pages/);
 });
+
+test("release discovery analyzes only npm latest and records superseded versions", async () => {
+  const workflow = await readFile(
+    resolve(repositoryRoot, ".github/workflows/discover-releases.yml"),
+    "utf8",
+  );
+  assert.match(workflow, /analysisVersion \/\/ empty/);
+  assert.match(workflow, /"\$version" != "\$analysis_version"/);
+  assert.match(workflow, /--add-label superseded/);
+  assert.match(workflow, /--reason "not planned"/);
+});

@@ -53,11 +53,13 @@ jobs:
           gh label create needs-review --repo "$GITHUB_REPOSITORY" --color d93f0b --description "Generated evidence needs human review" --force
           gh label create approved-for-pr --repo "$GITHUB_REPOSITORY" --color 0e8a16 --description "Reviewed candidate may become a PR" --force
           gh label create published --repo "$GITHUB_REPOSITORY" --color 5319e7 --description "Schema release is published" --force
+          gh label create superseded --repo "$GITHUB_REPOSITORY" --color c5def5 --description "A newer release existed before deterministic analysis" --force
       - name: Create one idempotent issue per new release
         env:
           GH_TOKEN: ${{ github.token }}
           ANALYZE: ${{ github.event_name == 'schedule' || inputs.analyze_new_versions }}
         run: |
+          analysis_version=$(jq -r '.analysisVersion // empty' .work/discovery.json)
           while IFS= read -r version; do
             marker="claude-code-schema-release:${version}"
             existing=$(gh issue list --repo "$GITHUB_REPOSITORY" --state all --label claude-release --limit 1000 --json number,body --jq ".[] | select(.body != null and (.body | contains(\"$marker\"))) | .number" | head -n 1)
@@ -68,7 +70,11 @@ jobs:
             printf '<!-- %s -->\n# Claude Code %s schema review\n\n- [x] Release detected\n- [ ] Candidate generated\n- [ ] Automated validation passed\n- [ ] Human review completed\n- [ ] Candidate PR merged\n- [ ] Release published\n\nDiscovery workflow: %s/%s/actions/runs/%s\n' "$marker" "$version" "$GITHUB_SERVER_URL" "$GITHUB_REPOSITORY" "$GITHUB_RUN_ID" > "$body"
             url=$(gh issue create --repo "$GITHUB_REPOSITORY" --title "Claude Code ${version} — schema release review" --body-file "$body" --label claude-release)
             issue_number=${url##*/}
-            if [[ "$ANALYZE" == "true" ]]; then
+            if [[ "$version" != "$analysis_version" ]]; then
+              gh issue edit "$issue_number" --repo "$GITHUB_REPOSITORY" --add-label superseded
+              gh issue comment "$issue_number" --repo "$GITHUB_REPOSITORY" --body "A newer npm latest release was already available when this version was discovered. Mutable documentation cannot be attributed accurately to this historical version, so deterministic analysis was not started. The exact release remains recorded by this issue."
+              gh issue close "$issue_number" --repo "$GITHUB_REPOSITORY" --reason "not planned"
+            elif [[ "$ANALYZE" == "true" ]]; then
               gh issue edit "$issue_number" --repo "$GITHUB_REPOSITORY" --add-label analysis-running
               gh workflow run analyze-version.yml --repo "$GITHUB_REPOSITORY" --ref main -f version="$version" -f issue_number="$issue_number" -f platform_package="@anthropic-ai/claude-code-linux-x64"
             fi

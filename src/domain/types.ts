@@ -66,5 +66,7 @@ export interface DiscoveryResult extends JsonObject {
   packageName: string;
   latestVersion: string;
   publishedVersions: string[];
+  analysisVersion?: string;
+  supersededVersions: string[];
   checkedAt: string;
 }
