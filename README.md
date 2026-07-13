@@ -13,6 +13,20 @@ dependency.
 > workflow, and publication staging are implemented. [`experiments/`](experiments/)
 > retains the four source-strategy proofs that established the production design.
 
+## Which file should I use?
+
+For ordinary Claude Code configuration, there are two primary references:
+
+| You want                                          | Use                       |
+| ------------------------------------------------- | ------------------------- |
+| `settings.json` keys, types, and nested structure | `settings.schema.json`    |
+| Claude Code environment-variable names            | `environment.schema.json` |
+
+The similarly named `*.catalog.json` files preserve source and runtime evidence;
+they are not the primary configuration references. See the
+[`consumer quick start`](docs/quick-start.md) for direct release URLs, actual usage
+locations, and validated examples.
+
 ## Why this exists
 
 The existing community schema ([SchemaStore's `claude-code-settings.json`](https://json.schemastore.org/claude-code-settings.json))
@@ -94,6 +108,7 @@ overview, then jump to whatever you need.
 
 | Entry                                                                                                  | What it covers                                                                       |
 | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
+| [`docs/quick-start.md`](docs/quick-start.md)                                                           | Which file to use for settings and environment variables                             |
 | [`docs/overview.md`](docs/overview.md)                                                                 | What this is, the problem it solves, goals & non-goals                               |
 | [`docs/sources.md`](docs/sources.md)                                                                   | Every source: what data, how extracted, exact URL/command, worked example            |
 | [`docs/pipeline.md`](docs/pipeline.md)                                                                 | How sources combine: trigger → extract → reconcile → emit                            |

@@ -178,11 +178,71 @@ export function releaseCatalog(
   version: string,
   targetPrefix: string,
 ): JsonObject {
+  const releaseBaseUrl = targetPrefix.replace(/\/$/, "");
+  const downloadUrl = (file: string): string => `${releaseBaseUrl}/${file}`;
   return {
     schemaVersion: 1,
     artifactKind: "claude-code-release-catalog",
     claudeCodeVersion: version,
-    releaseBaseUrl: targetPrefix.replace(/\/$/, ""),
+    releaseBaseUrl,
+    startHere: {
+      settingsJson: {
+        file: "settings.schema.json",
+        downloadUrl: downloadUrl("settings.schema.json"),
+        purpose:
+          "Reference and validate keys that Claude Code accepts in settings.json.",
+        usedAt: [
+          "~/.claude/settings.json",
+          ".claude/settings.json",
+          ".claude/settings.local.json",
+          "--settings <file-or-json>",
+          "managed settings sources",
+        ],
+        example: {
+          $schema: downloadUrl("settings.schema.json"),
+          includeCoAuthoredBy: false,
+          env: { CLAUDE_CODE_DISABLE_AUTO_MEMORY: "1" },
+        },
+        supportingEvidence: "settings.catalog.json",
+      },
+      environmentVariables: {
+        file: "environment.schema.json",
+        downloadUrl: downloadUrl("environment.schema.json"),
+        purpose:
+          "Reference Claude Code environment-variable names and validate a JSON environment map.",
+        actualUsage:
+          "Set variables in the shell, process runner, container, or CI environment that launches claude.",
+        jsonRepresentation:
+          "A tooling-only object whose keys and values represent process environment strings; Claude Code does not read environment.schema.json or an environment JSON file.",
+        example: {
+          ANTHROPIC_BASE_URL: "https://api.example.test",
+          CLAUDE_CODE_DISABLE_AUTO_MEMORY: "1",
+        },
+        supportingEvidence: "environment.catalog.json",
+      },
+    },
+    audiences: {
+      configurationUsers: [
+        "settings.schema.json",
+        "environment.schema.json",
+        "global-config.schema.json",
+        "keybindings.schema.json",
+      ],
+      cliReferenceUsers: ["cli.catalog.json"],
+      specializedTooling: [
+        "desktop-managed-settings.schema.json",
+        "keybindings.compat.schema.json",
+        "claude-code.schema.json",
+      ],
+      maintainersAndAuditors: [
+        "settings.catalog.json",
+        "environment.catalog.json",
+        "keybindings.catalog.json",
+        "review.catalog.json",
+        "manifest.json",
+        "validation-report.json",
+      ],
+    },
     productScope: {
       primary: "Claude Code CLI",
       includes: [

@@ -14,7 +14,7 @@ import type {
 import { generate } from "../src/pipeline/generate.js";
 import { stagePublication } from "../src/publication/stage.js";
 import { releaseIssueMarkdown } from "../src/reports/issue.js";
-import { readJson, sha256, writeJson } from "../src/shared/json.js";
+import { jsonSha256, readJson, sha256, writeJson } from "../src/shared/json.js";
 import { validateDirectory } from "../src/validation/validate.js";
 
 const repositoryRoot = resolve(
@@ -92,6 +92,26 @@ test("offline production generation is complete, formatted, validated, and deter
     catalog.releaseBaseUrl,
     "https://schemas.test.example/claude-code/v2.1.207",
   );
+  const startHere = catalog.startHere as JsonObject;
+  const settingsStart = startHere.settingsJson as JsonObject;
+  const environmentStart = startHere.environmentVariables as JsonObject;
+  assert.equal(settingsStart.file, "settings.schema.json");
+  assert.equal(
+    settingsStart.downloadUrl,
+    "https://schemas.test.example/claude-code/v2.1.207/settings.schema.json",
+  );
+  assert.equal(environmentStart.file, "environment.schema.json");
+  assert.equal(
+    environmentStart.downloadUrl,
+    "https://schemas.test.example/claude-code/v2.1.207/environment.schema.json",
+  );
+  const audiences = catalog.audiences as JsonObject;
+  assert.deepEqual(audiences.configurationUsers, [
+    "settings.schema.json",
+    "environment.schema.json",
+    "global-config.schema.json",
+    "keybindings.schema.json",
+  ]);
   assert.equal((settingsCatalog.facts as unknown[]).length, 163);
   assert.equal(
     (environmentCatalog.configurableVariables as unknown[]).length,
@@ -144,6 +164,34 @@ test("offline production generation is complete, formatted, validated, and deter
     JSON.stringify(validateCombined.errors, null, 2),
   );
 
+  const settingsSchema = await readJson<JsonObject>(
+    resolve(first, "settings.schema.json"),
+  );
+  const environmentSchema = await readJson<JsonObject>(
+    resolve(first, "environment.schema.json"),
+  );
+  const validateSettings = ajv.getSchema(String(settingsSchema.$id));
+  const validateEnvironment = ajv.getSchema(String(environmentSchema.$id));
+  assert.ok(validateSettings, "settings schema must be registered by $id");
+  assert.ok(
+    validateEnvironment,
+    "environment schema must be registered by $id",
+  );
+  assert.equal(
+    validateSettings(
+      await readJson(resolve(repositoryRoot, "examples/settings.json")),
+    ),
+    true,
+    JSON.stringify(validateSettings.errors, null, 2),
+  );
+  assert.equal(
+    validateEnvironment(
+      await readJson(resolve(repositoryRoot, "examples/environment.json")),
+    ),
+    true,
+    JSON.stringify(validateEnvironment.errors, null, 2),
+  );
+
   for (const file of await readdir(first)) {
     if (!file.endsWith(".json")) continue;
     const text = await readFile(resolve(first, file), "utf8");
@@ -181,6 +229,57 @@ test("validation detects artifact tampering", async () => {
   await assert.rejects(
     validateDirectory(output),
     /digest: settings\.schema\.json/,
+  );
+});
+
+test("validation rejects an ambiguous consumer entry point", async () => {
+  const root = await mkdtemp(resolve(tmpdir(), "schema-entry-point-test-"));
+  const output = resolve(root, "candidate");
+  await generate({
+    version: "2.1.207",
+    outputDirectory: output,
+    baseUrl: "https://schemas.test.example/claude-code",
+    sourceDirectory: reference,
+  });
+  const catalogFile = resolve(output, "catalog.json");
+  const manifestFile = resolve(output, "manifest.json");
+  const catalog = await readJson<JsonObject>(catalogFile);
+  const startHere = catalog.startHere as JsonObject;
+  (startHere.settingsJson as JsonObject).file = "settings.catalog.json";
+  await writeJson(catalogFile, catalog);
+  const manifest = await readJson<SurfaceManifest>(manifestFile);
+  manifest.artifacts["catalog.json"]!.sha256 = jsonSha256(catalog);
+  await writeJson(manifestFile, manifest as unknown as JsonObject);
+  await assert.rejects(
+    validateDirectory(output),
+    /unambiguous settings and environment entry points/,
+  );
+});
+
+test("validation requires one audience for every non-index artifact", async () => {
+  const root = await mkdtemp(resolve(tmpdir(), "schema-audience-test-"));
+  const output = resolve(root, "candidate");
+  await generate({
+    version: "2.1.207",
+    outputDirectory: output,
+    baseUrl: "https://schemas.test.example/claude-code",
+    sourceDirectory: reference,
+  });
+  const catalogFile = resolve(output, "catalog.json");
+  const manifestFile = resolve(output, "manifest.json");
+  const catalog = await readJson<JsonObject>(catalogFile);
+  const audiences = catalog.audiences as JsonObject;
+  assert.ok(Array.isArray(audiences.configurationUsers));
+  audiences.configurationUsers = audiences.configurationUsers.filter(
+    (file) => file !== "environment.schema.json",
+  );
+  await writeJson(catalogFile, catalog);
+  const manifest = await readJson<SurfaceManifest>(manifestFile);
+  manifest.artifacts["catalog.json"]!.sha256 = jsonSha256(catalog);
+  await writeJson(manifestFile, manifest as unknown as JsonObject);
+  await assert.rejects(
+    validateDirectory(output),
+    /assigns every non-index artifact to one audience/,
   );
 });
 
