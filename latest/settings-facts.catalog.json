@@ -1,0 +1,3632 @@
+{
+  "schemaVersion": 1,
+  "artifactKind": "settings-fact-and-scope-catalog",
+  "claudeCodeVersion": "2.1.207",
+  "surfaces": {
+    "settings.json": [
+      "user",
+      "project",
+      "local",
+      "managed",
+      "cli-settings"
+    ],
+    "~/.claude.json": [
+      "global-config"
+    ],
+    "desktop-managed-settings": [
+      "desktop-policy"
+    ]
+  },
+  "facts": [
+    {
+      "path": "advisorModel",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Available settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ],
+      "runtimeCorroborated": true
+    },
+    {
+      "path": "agent",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Available settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ],
+      "runtimeCorroborated": true
+    },
+    {
+      "path": "agentPushNotifEnabled",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Available settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ],
+      "runtimeCorroborated": true
+    },
+    {
+      "path": "allowAllClaudeAiMcps",
+      "surface": "settings.json",
+      "scopes": [
+        "managed"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Available settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ],
+      "runtimeCorroborated": true
+    },
+    {
+      "path": "allowedChannelPlugins",
+      "surface": "settings.json",
+      "scopes": [
+        "managed"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Available settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ],
+      "runtimeCorroborated": true
+    },
+    {
+      "path": "allowedHttpHookUrls",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Available settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ],
+      "runtimeCorroborated": true
+    },
+    {
+      "path": "allowedMcpServers",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Available settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ],
+      "runtimeCorroborated": true
+    },
+    {
+      "path": "allowManagedHooksOnly",
+      "surface": "settings.json",
+      "scopes": [
+        "managed"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Available settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ],
+      "runtimeCorroborated": true
+    },
+    {
+      "path": "allowManagedMcpServersOnly",
+      "surface": "settings.json",
+      "scopes": [
+        "managed"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Available settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ],
+      "runtimeCorroborated": true
+    },
+    {
+      "path": "allowManagedPermissionRulesOnly",
+      "surface": "settings.json",
+      "scopes": [
+        "managed"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Available settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ],
+      "runtimeCorroborated": true
+    },
+    {
+      "path": "alwaysThinkingEnabled",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Available settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ],
+      "runtimeCorroborated": true
+    },
+    {
+      "path": "apiKeyHelper",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Available settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ],
+      "runtimeCorroborated": true
+    },
+    {
+      "path": "askUserQuestionTimeout",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Available settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ]
+    },
+    {
+      "path": "attribution",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Available settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ],
+      "runtimeCorroborated": true
+    },
+    {
+      "path": "autoCompactEnabled",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Available settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ],
+      "runtimeCorroborated": true
+    },
+    {
+      "path": "autoMemoryDirectory",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Available settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ],
+      "runtimeCorroborated": true
+    },
+    {
+      "path": "autoMemoryEnabled",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Available settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ],
+      "runtimeCorroborated": true
+    },
+    {
+      "path": "autoMode",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Available settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ],
+      "runtimeCorroborated": true
+    },
+    {
+      "path": "autoMode.classifyAllShell",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Available settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ]
+    },
+    {
+      "path": "autoScrollEnabled",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Available settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ],
+      "runtimeCorroborated": true
+    },
+    {
+      "path": "autoUpdatesChannel",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Available settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ],
+      "runtimeCorroborated": true
+    },
+    {
+      "path": "availableModels",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Available settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ],
+      "runtimeCorroborated": true
+    },
+    {
+      "path": "awaySummaryEnabled",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Available settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ],
+      "runtimeCorroborated": true
+    },
+    {
+      "path": "awsAuthRefresh",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "pending-runtime-or-structural-evidence",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Available settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ],
+      "runtimeCorroborated": true
+    },
+    {
+      "path": "awsCredentialExport",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Available settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ],
+      "runtimeCorroborated": true
+    },
+    {
+      "path": "axScreenReader",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Available settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ],
+      "runtimeCorroborated": true
+    },
+    {
+      "path": "blockedMarketplaces",
+      "surface": "settings.json",
+      "scopes": [
+        "managed"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Available settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ],
+      "runtimeCorroborated": true
+    },
+    {
+      "path": "browserExternalPageTools",
+      "surface": "settings.json",
+      "scopes": [
+        "managed"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Available settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ]
+    },
+    {
+      "path": "channelsEnabled",
+      "surface": "settings.json",
+      "scopes": [
+        "managed"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Available settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ],
+      "runtimeCorroborated": true
+    },
+    {
+      "path": "claudeMd",
+      "surface": "settings.json",
+      "scopes": [
+        "managed"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Available settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ],
+      "runtimeCorroborated": true
+    },
+    {
+      "path": "claudeMdExcludes",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Available settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ],
+      "runtimeCorroborated": true
+    },
+    {
+      "path": "cleanupPeriodDays",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Available settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ],
+      "runtimeCorroborated": true
+    },
+    {
+      "path": "companyAnnouncements",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Available settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ],
+      "runtimeCorroborated": true
+    },
+    {
+      "path": "defaultShell",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Available settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ],
+      "runtimeCorroborated": true
+    },
+    {
+      "path": "deniedMcpServers",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Available settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ],
+      "runtimeCorroborated": true
+    },
+    {
+      "path": "disableAgentView",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Available settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ],
+      "runtimeCorroborated": true
+    },
+    {
+      "path": "disableAllHooks",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Available settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ],
+      "runtimeCorroborated": true
+    },
+    {
+      "path": "disableArtifact",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Available settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ],
+      "runtimeCorroborated": true
+    },
+    {
+      "path": "disableAutoMode",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Available settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ],
+      "runtimeCorroborated": true
+    },
+    {
+      "path": "disableBundledSkills",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Available settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ],
+      "runtimeCorroborated": true
+    },
+    {
+      "path": "disableClaudeAiConnectors",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Available settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ],
+      "runtimeCorroborated": true
+    },
+    {
+      "path": "disableDeepLinkRegistration",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Available settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ],
+      "runtimeCorroborated": true
+    },
+    {
+      "path": "disabledMcpjsonServers",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Available settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ],
+      "runtimeCorroborated": true
+    },
+    {
+      "path": "disableRemoteControl",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Available settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ],
+      "runtimeCorroborated": true
+    },
+    {
+      "path": "disableSideloadFlags",
+      "surface": "settings.json",
+      "scopes": [
+        "managed"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Available settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ],
+      "runtimeCorroborated": true
+    },
+    {
+      "path": "disableSkillShellExecution",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Available settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ],
+      "runtimeCorroborated": true
+    },
+    {
+      "path": "disableWorkflows",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Available settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ],
+      "runtimeCorroborated": true
+    },
+    {
+      "path": "editorMode",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Available settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ]
+    },
+    {
+      "path": "effortLevel",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Available settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ]
+    },
+    {
+      "path": "enableAllProjectMcpServers",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Available settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ],
+      "runtimeCorroborated": true
+    },
+    {
+      "path": "enableArtifact",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Available settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ],
+      "runtimeCorroborated": true
+    },
+    {
+      "path": "enabledMcpjsonServers",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Available settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ],
+      "runtimeCorroborated": true
+    },
+    {
+      "path": "enabledPlugins",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-prose-and-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "enabledPlugins",
+          "fact": "existence-and-structure",
+          "method": "official-prose-and-example"
+        }
+      ],
+      "runtimeCorroborated": true
+    },
+    {
+      "path": "enforceAvailableModels",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Available settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ],
+      "runtimeCorroborated": true
+    },
+    {
+      "path": "env",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Available settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ],
+      "runtimeCorroborated": true
+    },
+    {
+      "path": "extraKnownMarketplaces",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-prose-and-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "extraKnownMarketplaces",
+          "fact": "existence-and-structure",
+          "method": "official-prose-and-example"
+        }
+      ],
+      "runtimeCorroborated": true
+    },
+    {
+      "path": "fallbackModel",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Available settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ],
+      "runtimeCorroborated": true
+    },
+    {
+      "path": "fastMode",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "runtime-recognized-undocumented",
+      "typeEvidence": "exact-binary-doctor",
+      "runtimeCorroborated": true
+    },
+    {
+      "path": "fastModePerSessionOptIn",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Available settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ],
+      "runtimeCorroborated": true
+    },
+    {
+      "path": "feedbackSurveyRate",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Available settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ],
+      "runtimeCorroborated": true
+    },
+    {
+      "path": "fileCheckpointingEnabled",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Available settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ],
+      "runtimeCorroborated": true
+    },
+    {
+      "path": "fileSuggestion",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Available settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ],
+      "runtimeCorroborated": true
+    },
+    {
+      "path": "footerLinksRegexes",
+      "surface": "settings.json",
+      "scopes": [
+        "managed"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Available settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ]
+    },
+    {
+      "path": "forceLoginGatewayUrl",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Available settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ]
+    },
+    {
+      "path": "forceLoginMethod",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "pending-runtime-or-structural-evidence",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Available settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ]
+    },
+    {
+      "path": "forceLoginOrgUUID",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "pending-runtime-or-structural-evidence",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Available settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ],
+      "runtimeCorroborated": true
+    },
+    {
+      "path": "forceRemoteSettingsRefresh",
+      "surface": "settings.json",
+      "scopes": [
+        "managed"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Available settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ],
+      "runtimeCorroborated": true
+    },
+    {
+      "path": "gcpAuthRefresh",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "pending-runtime-or-structural-evidence",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Available settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ],
+      "runtimeCorroborated": true
+    },
+    {
+      "path": "hooks",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "pending-runtime-or-structural-evidence",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Available settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ],
+      "runtimeCorroborated": true
+    },
+    {
+      "path": "httpHookAllowedEnvVars",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Available settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ],
+      "runtimeCorroborated": true
+    },
+    {
+      "path": "includeCoAuthoredBy",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-deprecated",
+      "typeEvidence": "official-prose-and-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "includeCoAuthoredBy",
+          "fact": "existence-and-structure",
+          "method": "official-prose-and-example"
+        }
+      ],
+      "runtimeCorroborated": true
+    },
+    {
+      "path": "includeGitInstructions",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Available settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ],
+      "runtimeCorroborated": true
+    },
+    {
+      "path": "inputNeededNotifEnabled",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Available settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ],
+      "runtimeCorroborated": true
+    },
+    {
+      "path": "language",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Available settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ],
+      "runtimeCorroborated": true
+    },
+    {
+      "path": "minimumVersion",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Available settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ],
+      "runtimeCorroborated": true
+    },
+    {
+      "path": "model",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Available settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ],
+      "runtimeCorroborated": true
+    },
+    {
+      "path": "modelOverrides",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Available settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ],
+      "runtimeCorroborated": true
+    },
+    {
+      "path": "otelHeadersHelper",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Available settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ],
+      "runtimeCorroborated": true
+    },
+    {
+      "path": "outputStyle",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Available settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ],
+      "runtimeCorroborated": true
+    },
+    {
+      "path": "parentSettingsBehavior",
+      "surface": "settings.json",
+      "scopes": [
+        "managed"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Available settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ],
+      "runtimeCorroborated": true
+    },
+    {
+      "path": "permissions",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "pending-runtime-or-structural-evidence",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Available settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ],
+      "runtimeCorroborated": true
+    },
+    {
+      "path": "permissions.additionalDirectories",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Permission settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ]
+    },
+    {
+      "path": "permissions.allow",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Permission settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ]
+    },
+    {
+      "path": "permissions.ask",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Permission settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ]
+    },
+    {
+      "path": "permissions.defaultMode",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Permission settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ]
+    },
+    {
+      "path": "permissions.deny",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Permission settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ]
+    },
+    {
+      "path": "permissions.disableBypassPermissionsMode",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Permission settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ]
+    },
+    {
+      "path": "permissions.skipDangerousModePermissionPrompt",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Permission settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ]
+    },
+    {
+      "path": "plansDirectory",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Available settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ],
+      "runtimeCorroborated": true
+    },
+    {
+      "path": "pluginConfigs",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-prose-and-example",
+      "provenance": [
+        {
+          "source": "pluginReferenceDocs",
+          "sourceSha256": "d04be32e4f9f525c610985f5bd026b4451d1ea37edcda1638ae943a83235b5a1",
+          "heading": "pluginConfigs",
+          "fact": "existence-and-structure",
+          "method": "official-prose-and-example"
+        }
+      ],
+      "runtimeCorroborated": true
+    },
+    {
+      "path": "pluginSuggestionMarketplaces",
+      "surface": "settings.json",
+      "scopes": [
+        "managed"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Available settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ],
+      "runtimeCorroborated": true
+    },
+    {
+      "path": "pluginTrustMessage",
+      "surface": "settings.json",
+      "scopes": [
+        "managed"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Available settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ],
+      "runtimeCorroborated": true
+    },
+    {
+      "path": "policyHelper",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Available settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ],
+      "runtimeCorroborated": true
+    },
+    {
+      "path": "preferredNotifChannel",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Available settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ]
+    },
+    {
+      "path": "prefersReducedMotion",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Available settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ],
+      "runtimeCorroborated": true
+    },
+    {
+      "path": "prUrlTemplate",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Available settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ],
+      "runtimeCorroborated": true
+    },
+    {
+      "path": "remoteControlAtStartup",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Available settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ],
+      "runtimeCorroborated": true
+    },
+    {
+      "path": "requiredMaximumVersion",
+      "surface": "settings.json",
+      "scopes": [
+        "managed"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Available settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ],
+      "runtimeCorroborated": true
+    },
+    {
+      "path": "requiredMinimumVersion",
+      "surface": "settings.json",
+      "scopes": [
+        "managed"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Available settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ],
+      "runtimeCorroborated": true
+    },
+    {
+      "path": "respectGitignore",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Available settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ],
+      "runtimeCorroborated": true
+    },
+    {
+      "path": "respondToBashCommands",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Available settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ],
+      "runtimeCorroborated": true
+    },
+    {
+      "path": "sandbox.allowAppleEvents",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Sandbox settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ]
+    },
+    {
+      "path": "sandbox.allowUnsandboxedCommands",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Sandbox settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ]
+    },
+    {
+      "path": "sandbox.autoAllowBashIfSandboxed",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Sandbox settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ]
+    },
+    {
+      "path": "sandbox.bwrapPath",
+      "surface": "settings.json",
+      "scopes": [
+        "managed"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Sandbox settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ]
+    },
+    {
+      "path": "sandbox.credentials.allowPlaintextInject",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Sandbox settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ]
+    },
+    {
+      "path": "sandbox.credentials.envVars",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Sandbox settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ]
+    },
+    {
+      "path": "sandbox.credentials.envVars[].injectHosts",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Sandbox settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ]
+    },
+    {
+      "path": "sandbox.credentials.files",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Sandbox settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ]
+    },
+    {
+      "path": "sandbox.enabled",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Sandbox settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ]
+    },
+    {
+      "path": "sandbox.enableWeakerNestedSandbox",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Sandbox settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ]
+    },
+    {
+      "path": "sandbox.enableWeakerNetworkIsolation",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Sandbox settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ]
+    },
+    {
+      "path": "sandbox.excludedCommands",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Sandbox settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ]
+    },
+    {
+      "path": "sandbox.failIfUnavailable",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Sandbox settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ]
+    },
+    {
+      "path": "sandbox.filesystem.allowManagedReadPathsOnly",
+      "surface": "settings.json",
+      "scopes": [
+        "managed"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Sandbox settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ]
+    },
+    {
+      "path": "sandbox.filesystem.allowRead",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Sandbox settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ]
+    },
+    {
+      "path": "sandbox.filesystem.allowWrite",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Sandbox settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ]
+    },
+    {
+      "path": "sandbox.filesystem.denyRead",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Sandbox settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ]
+    },
+    {
+      "path": "sandbox.filesystem.denyWrite",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Sandbox settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ]
+    },
+    {
+      "path": "sandbox.network.allowAllUnixSockets",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Sandbox settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ]
+    },
+    {
+      "path": "sandbox.network.allowedDomains",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Sandbox settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ]
+    },
+    {
+      "path": "sandbox.network.allowLocalBinding",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Sandbox settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ]
+    },
+    {
+      "path": "sandbox.network.allowMachLookup",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Sandbox settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ]
+    },
+    {
+      "path": "sandbox.network.allowManagedDomainsOnly",
+      "surface": "settings.json",
+      "scopes": [
+        "managed"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Sandbox settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ]
+    },
+    {
+      "path": "sandbox.network.allowUnixSockets",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Sandbox settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ]
+    },
+    {
+      "path": "sandbox.network.deniedDomains",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Sandbox settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ]
+    },
+    {
+      "path": "sandbox.network.httpProxyPort",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Sandbox settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ]
+    },
+    {
+      "path": "sandbox.network.socksProxyPort",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Sandbox settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ]
+    },
+    {
+      "path": "sandbox.network.tlsTerminate",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Sandbox settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ]
+    },
+    {
+      "path": "sandbox.socatPath",
+      "surface": "settings.json",
+      "scopes": [
+        "managed"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Sandbox settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ]
+    },
+    {
+      "path": "showClearContextOnPlanAccept",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Available settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ],
+      "runtimeCorroborated": true
+    },
+    {
+      "path": "showThinkingSummaries",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Available settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ],
+      "runtimeCorroborated": true
+    },
+    {
+      "path": "showTurnDuration",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Available settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ],
+      "runtimeCorroborated": true
+    },
+    {
+      "path": "skillListingBudgetFraction",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Available settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ],
+      "runtimeCorroborated": true
+    },
+    {
+      "path": "skillListingMaxDescChars",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Available settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ],
+      "runtimeCorroborated": true
+    },
+    {
+      "path": "skillOverrides",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Available settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ],
+      "runtimeCorroborated": true
+    },
+    {
+      "path": "skipWebFetchPreflight",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Available settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ],
+      "runtimeCorroborated": true
+    },
+    {
+      "path": "spinnerTipsEnabled",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Available settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ],
+      "runtimeCorroborated": true
+    },
+    {
+      "path": "spinnerTipsOverride",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Available settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ],
+      "runtimeCorroborated": true
+    },
+    {
+      "path": "spinnerVerbs",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Available settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ],
+      "runtimeCorroborated": true
+    },
+    {
+      "path": "sshConfigs",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Available settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ],
+      "runtimeCorroborated": true
+    },
+    {
+      "path": "statusLine",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Available settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ],
+      "runtimeCorroborated": true
+    },
+    {
+      "path": "strictKnownMarketplaces",
+      "surface": "settings.json",
+      "scopes": [
+        "managed"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Available settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ],
+      "runtimeCorroborated": true
+    },
+    {
+      "path": "strictPluginOnlyCustomization",
+      "surface": "settings.json",
+      "scopes": [
+        "managed"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Available settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ]
+    },
+    {
+      "path": "subagentStatusLine",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-prose-and-example",
+      "provenance": [
+        {
+          "source": "statuslineDocs",
+          "sourceSha256": "10061659b2cc22b5c088406fce210747959764e75ee5162f9c997169a558b07d",
+          "heading": "subagentStatusLine",
+          "fact": "existence-and-structure",
+          "method": "official-prose-and-example"
+        }
+      ],
+      "runtimeCorroborated": true
+    },
+    {
+      "path": "syntaxHighlightingDisabled",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Available settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ],
+      "runtimeCorroborated": true
+    },
+    {
+      "path": "teammateMode",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Available settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ]
+    },
+    {
+      "path": "terminalProgressBarEnabled",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Available settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ],
+      "runtimeCorroborated": true
+    },
+    {
+      "path": "theme",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Available settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ]
+    },
+    {
+      "path": "tui",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Available settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ],
+      "runtimeCorroborated": true
+    },
+    {
+      "path": "ultracode",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Available settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ]
+    },
+    {
+      "path": "useAutoModeDuringPlan",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Available settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ],
+      "runtimeCorroborated": true
+    },
+    {
+      "path": "verbose",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Available settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ],
+      "runtimeCorroborated": true
+    },
+    {
+      "path": "viewMode",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Available settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ]
+    },
+    {
+      "path": "voice",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Available settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ],
+      "runtimeCorroborated": true
+    },
+    {
+      "path": "voiceEnabled",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Available settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ],
+      "runtimeCorroborated": true
+    },
+    {
+      "path": "wheelScrollAccelerationEnabled",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Available settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ],
+      "runtimeCorroborated": true
+    },
+    {
+      "path": "workflowKeywordTriggerEnabled",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Available settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ],
+      "runtimeCorroborated": true
+    },
+    {
+      "path": "worktree.baseRef",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Worktree settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ]
+    },
+    {
+      "path": "worktree.bgIsolation",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Worktree settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ]
+    },
+    {
+      "path": "worktree.sparsePaths",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Worktree settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ]
+    },
+    {
+      "path": "worktree.symlinkDirectories",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "project",
+        "local",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Worktree settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ]
+    },
+    {
+      "path": "wslInheritsWindowsSettings",
+      "surface": "settings.json",
+      "scopes": [
+        "managed"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "b995159cd2a64c03a12233c782d762d6dfa01cb711075f016464fb85d4403591",
+          "heading": "Available settings",
+          "fact": "existence-and-example",
+          "method": "official-markdown-table"
+        }
+      ],
+      "runtimeCorroborated": true
+    }
+  ],
+  "runtimeValidation": {
+    "binary": {
+      "source": "platformBinary",
+      "sha256": "1397a062c6889675055e3314dd956376ac51262a7734ad9e819c26975d71547a",
+      "pathInPackage": "package/claude",
+      "commandBindingPatternCorroborated": true,
+      "commandBindingValidatorMessageCorroborated": true
+    },
+    "operation": "claude doctor with null sentinels in isolated settings.json",
+    "stdin": "closed",
+    "networkSuppressionRequested": true,
+    "credentialsInherited": false,
+    "rawOutputRedistributed": false,
+    "configSha256": "4a6936951fd235ffe9fb6940005e26e6bfe9e1c516a86a0b75960f387922b994",
+    "diagnosticsSha256": "034fe2066c261ec54d838b67f7374c6dfde72245b33034f1db40261e3fa0e208",
+    "rawOutputExcludedFromDeterministicArtifacts": true,
+    "exitCode": 0,
+    "diagnosticCount": 111
+  },
+  "x-generator-version": "0.1.0"
+}

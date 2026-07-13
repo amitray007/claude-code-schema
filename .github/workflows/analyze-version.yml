@@ -1,0 +1,135 @@
+name: Analyze Claude Code version
+
+on:
+  workflow_call:
+    inputs:
+      version:
+        required: true
+        type: string
+      issue_number:
+        required: false
+        type: string
+        default: "0"
+      platform_package:
+        required: false
+        type: string
+        default: "@anthropic-ai/claude-code-linux-x64"
+  workflow_dispatch:
+    inputs:
+      version:
+        description: Exact Claude Code version
+        required: true
+        type: string
+      issue_number:
+        description: Release-review issue number, or 0
+        required: false
+        default: "0"
+        type: string
+      platform_package:
+        description: Exact platform package used for bounded probes
+        required: false
+        default: "@anthropic-ai/claude-code-linux-x64"
+        type: string
+
+permissions: {}
+
+concurrency:
+  group: analyze-${{ inputs.version }}
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    name: Generate and validate candidate
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: read
+    steps:
+      - name: Check out trusted generator
+        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6
+      - name: Set up Node.js
+        uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6
+        with:
+          node-version: 24
+          cache: npm
+      - name: Install dependencies without lifecycle scripts
+        run: npm ci --ignore-scripts
+      - name: Generate exact-version candidate
+        env:
+          VERSION: ${{ inputs.version }}
+          PLATFORM_PACKAGE: ${{ inputs.platform_package }}
+        run: >-
+          npm run schema:generate --
+          --version "$VERSION"
+          --platform-package "$PLATFORM_PACKAGE"
+          --output .work/candidate
+          --base-url "${SCHEMA_BASE_URL:-https://amitray007.github.io/claude-code-schema/claude-code}"
+      - name: Validate candidate again as a separate gate
+        run: npm run schema:validate -- --directory .work/candidate --report .work/validation-report.json
+      - name: Compare with the currently published release
+        run: |
+          if [[ -f latest/manifest.json ]]; then
+            npm run schema:diff -- --from latest --to .work/candidate --output .work/semantic-diff.json
+          fi
+      - name: Build issue report and review artifact
+        env:
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          mkdir -p .work/artifact/candidate .work/artifact/review
+          cp -R .work/candidate/. .work/artifact/candidate/
+          if [[ -f .work/semantic-diff.json ]]; then
+            cp .work/semantic-diff.json .work/artifact/review/
+            npm run build --silent
+            node dist/src/cli.js issue --directory .work/candidate --diff .work/semantic-diff.json --workflow-url "$RUN_URL" --output .work/artifact/review/issue.md
+          else
+            npm run build --silent
+            node dist/src/cli.js issue --directory .work/candidate --workflow-url "$RUN_URL" --output .work/artifact/review/issue.md
+          fi
+          cp .work/validation-report.json .work/artifact/review/
+      - name: Upload candidate and review evidence
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: candidate-${{ inputs.version }}
+          path: .work/artifact
+          if-no-files-found: error
+          retention-days: 30
+          compression-level: 9
+
+  update-issue:
+    name: Update release-review issue
+    if: inputs.issue_number != '0'
+    needs: generate
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: write
+    steps:
+      - name: Download sanitized review artifact
+        uses: actions/download-artifact@634f93cb2916e3fdff6788551b99b062d0335ce0 # v5
+        with:
+          name: candidate-${{ inputs.version }}
+          path: .work/artifact
+      - name: Replace issue report and mark it ready for review
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ISSUE_NUMBER: ${{ inputs.issue_number }}
+        run: |
+          gh issue edit "$ISSUE_NUMBER" --repo "$GITHUB_REPOSITORY" --body-file .work/artifact/review/issue.md
+          gh issue edit "$ISSUE_NUMBER" --repo "$GITHUB_REPOSITORY" --remove-label analysis-running --add-label needs-review
+
+  report-failure:
+    name: Report analysis failure
+    if: always() && inputs.issue_number != '0' && needs.generate.result == 'failure'
+    needs: generate
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - name: Keep the release issue actionable
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ISSUE_NUMBER: ${{ inputs.issue_number }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          gh issue comment "$ISSUE_NUMBER" --repo "$GITHUB_REPOSITORY" --body "Deterministic analysis failed. Last-good publication was left untouched. Inspect: ${RUN_URL}"
+          gh issue edit "$ISSUE_NUMBER" --repo "$GITHUB_REPOSITORY" --remove-label analysis-running --add-label analysis-failed

@@ -1,10 +1,26 @@
 {
-  "name": "claude-schema-store-experiment",
-  "version": "0.0.0",
+  "name": "claude-code-schema",
+  "version": "0.1.0",
   "private": true,
   "type": "module",
-  "description": "Real-source experiment for the Claude Schema Store design",
+  "description": "Generate and publish versioned Claude Code configuration schemas from first-party evidence",
+  "engines": {
+    "node": ">=24"
+  },
+  "bin": {
+    "claude-code-schema": "dist/src/cli.js"
+  },
   "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "format:check": "prettier --check src test package.json tsconfig.json '.github/workflows/*.yml'",
+    "test": "npm run build && node --test dist/test/*.test.js",
+    "test:coverage": "npm run build && c8 --check-coverage --lines 85 --functions 85 --branches 75 --statements 85 node --test dist/test/*.test.js",
+    "schema:generate": "npm run build --silent && node dist/src/cli.js generate",
+    "schema:validate": "npm run build --silent && node dist/src/cli.js validate",
+    "schema:diff": "npm run build --silent && node dist/src/cli.js diff",
+    "schema:discover": "npm run build --silent && node dist/src/cli.js discover",
+    "schema:stage": "npm run build --silent && node dist/src/cli.js stage",
     "experiment:1": "node experiments/version-1/generate.mjs",
     "experiment:1:check": "node experiments/version-1/validate.mjs",
     "experiment:2": "node experiments/version-2/generate.mjs",
@@ -18,5 +34,11 @@
   },
   "dependencies": {
     "ajv": "8.20.0"
+  },
+  "devDependencies": {
+    "@types/node": "24.13.3",
+    "c8": "11.0.0",
+    "prettier": "3.9.5",
+    "typescript": "7.0.2"
   }
 }

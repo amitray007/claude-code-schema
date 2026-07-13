@@ -1,12 +1,12 @@
 # Overview
 
 > **Entry type:** Orientation
-> **Status:** Audited design + working experiment
+> **Status:** Production pipeline implemented and live-tested
 > **Related:** [`sources.md`](sources.md) · [`pipeline.md`](pipeline.md) · [`decisions.md`](decisions.md)
 
 ## What this is
 
-**Claude Schema Store** is a proposed self-hosted generator for a machine-readable,
+**claude-code-schema** is a self-hosted generator for a machine-readable,
 versioned description of selected Claude Code configuration interfaces:
 `settings.json`, environment variables, CLI flags, and keybindings. It does not
 claim to cover every Claude Code product interface, but it does cover hooks and
@@ -68,10 +68,10 @@ a rewrite. See [`pipeline.md`](pipeline.md) → “Pivot readiness.”
 - One command or scheduled job regenerates the artifact set for a given Claude Code
   version without depending on a local installation and with only bounded,
   integrity-verified binary operations.
-- Output is granular and indexed by a **manifest**, not falsely composed into a JSON
-  Schema for a document Claude Code never consumes.
-- Routine green releases can publish automatically, while failed or unexplained runs
-  leave the last-good artifact untouched.
+- Output is granular and indexed by a **manifest**. The optional combined schema is
+  explicitly a tooling envelope and never presented as a document Claude consumes.
+- Green candidates become reviewed PRs; publication occurs after protected-environment
+  approval, while failures leave the last-good artifact untouched.
 - Every fact can retain evidence for existence, type, description, defaults, enums,
   and version bounds.
 

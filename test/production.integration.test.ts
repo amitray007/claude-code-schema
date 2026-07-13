@@ -1,0 +1,178 @@
+import assert from "node:assert/strict";
+import { cp, mkdtemp, readFile, readdir } from "node:fs/promises";
+import { tmpdir } from "node:os";
+import { dirname, resolve } from "node:path";
+import { fileURLToPath } from "node:url";
+import test from "node:test";
+import { Ajv } from "ajv";
+import { compareDirectories } from "../src/diff/compare.js";
+import type {
+  JsonObject,
+  SurfaceManifest,
+  ValidationReport,
+} from "../src/domain/types.js";
+import { generate } from "../src/pipeline/generate.js";
+import { stagePublication } from "../src/publication/stage.js";
+import { releaseIssueMarkdown } from "../src/reports/issue.js";
+import { readJson, sha256, writeJson } from "../src/shared/json.js";
+import { validateDirectory } from "../src/validation/validate.js";
+
+const repositoryRoot = resolve(
+  dirname(fileURLToPath(import.meta.url)),
+  "../..",
+);
+const reference = resolve(repositoryRoot, "experiments/version-4/output");
+
+async function digestDirectory(
+  directory: string,
+): Promise<Record<string, string>> {
+  const files = (await readdir(directory))
+    .filter((file) => file.endsWith(".json"))
+    .sort();
+  return Object.fromEntries(
+    await Promise.all(
+      files.map(
+        async (file) =>
+          [file, sha256(await readFile(resolve(directory, file)))] as const,
+      ),
+    ),
+  );
+}
+
+test("offline production generation is complete, formatted, validated, and deterministic", async () => {
+  const root = await mkdtemp(resolve(tmpdir(), "schema-production-test-"));
+  const first = resolve(root, "first");
+  const second = resolve(root, "second");
+  for (const outputDirectory of [first, second]) {
+    await generate({
+      version: "2.1.207",
+      outputDirectory,
+      baseUrl: "https://schemas.test.example/claude-code",
+      sourceDirectory: reference,
+    });
+  }
+  assert.deepEqual(await digestDirectory(first), await digestDirectory(second));
+
+  const manifest = await readJson<SurfaceManifest>(
+    resolve(first, "manifest.json"),
+  );
+  const validation = await readJson<ValidationReport>(
+    resolve(first, "validation-report.json"),
+  );
+  const combined = await readJson<JsonObject>(
+    resolve(first, "claude-code.schema.json"),
+  );
+  assert.equal(manifest.claudeCodeVersion, "2.1.207");
+  assert.equal(manifest.counts.environmentSchemaProperties, 313);
+  assert.equal(manifest.counts.probedCommands, 39);
+  assert.equal(manifest.counts.runtimeSettingsDiagnostics, 111);
+  assert.equal(
+    manifest.artifacts["claude-code.schema.json"]?.artifactKind,
+    "combined-configuration-envelope-json-schema",
+  );
+  assert.equal(validation.status, "passed");
+  assert.equal(validation.counts.failed, 0);
+  assert.match(
+    String(combined.$id),
+    /^https:\/\/schemas\.test\.example\/claude-code\/2\.1\.207\//,
+  );
+
+  const ajv = new Ajv({ strict: false, validateFormats: false });
+  for (const file of (await readdir(first))
+    .filter((name) => name.endsWith(".schema.json"))
+    .sort()) {
+    ajv.addSchema(await readJson(resolve(first, file)));
+  }
+  const validateCombined = ajv.getSchema(String(combined.$id));
+  assert.ok(validateCombined, "combined schema must be registered by $id");
+  const example = await readJson<JsonObject>(
+    resolve(repositoryRoot, "examples/combined.json"),
+  );
+  assert.equal(
+    validateCombined(example),
+    true,
+    JSON.stringify(validateCombined.errors, null, 2),
+  );
+
+  for (const file of await readdir(first)) {
+    if (!file.endsWith(".json")) continue;
+    const text = await readFile(resolve(first, file), "utf8");
+    assert.ok(text.endsWith("\n"), `${file} must end in a newline`);
+    assert.equal(
+      text,
+      `${JSON.stringify(JSON.parse(text), null, 2)}\n`,
+      `${file} must use canonical pretty formatting`,
+    );
+  }
+
+  const diff = await compareDirectories(first, second);
+  assert.deepEqual((diff.settingsPaths as JsonObject).added, []);
+  assert.deepEqual((diff.settingsPaths as JsonObject).removed, []);
+
+  const issue = releaseIssueMarkdown(
+    manifest,
+    validation,
+    diff,
+    "https://github.example/run/1",
+  );
+  assert.match(issue, /claude-code-schema-release:2\.1\.207/);
+  assert.match(issue, /Automated validation passed/);
+  assert.match(issue, /npm run schema:generate/);
+});
+
+test("validation detects artifact tampering", async () => {
+  const root = await mkdtemp(resolve(tmpdir(), "schema-tamper-test-"));
+  const output = resolve(root, "candidate");
+  await cp(reference, output, { recursive: true });
+  const settingsFile = resolve(output, "settings.schema.json");
+  const settings = await readJson<JsonObject>(settingsFile);
+  settings.title = "tampered";
+  await writeJson(settingsFile, settings);
+  await assert.rejects(
+    validateDirectory(output),
+    /digest: settings\.schema\.json/,
+  );
+});
+
+test("publication staging preserves and validates complete latest and versioned outputs", async () => {
+  const root = await mkdtemp(resolve(tmpdir(), "schema-publication-test-"));
+  const candidate = resolve(root, "candidate");
+  const publication = resolve(root, "publication");
+  await generate({
+    version: "2.1.207",
+    outputDirectory: candidate,
+    baseUrl: "https://schemas.test.example/claude-code",
+    sourceDirectory: reference,
+  });
+  const report = await stagePublication(candidate, publication);
+  assert.equal(report.version, "2.1.207");
+  const index = await readJson<JsonObject>(
+    resolve(publication, "site/claude-code/index.json"),
+  );
+  assert.equal(index.latest, "2.1.207");
+  assert.equal((index.versions as JsonObject[]).length, 1);
+  await stagePublication(candidate, publication);
+  const repeatedIndex = await readJson<JsonObject>(
+    resolve(publication, "site/claude-code/index.json"),
+  );
+  assert.equal(
+    (repeatedIndex.versions as JsonObject[]).length,
+    1,
+    "staging the same version twice must be idempotent",
+  );
+  assert.ok(await readJson(resolve(publication, "latest/cli.catalog.json")));
+  assert.ok(
+    await readJson(
+      resolve(publication, "site/claude-code/2.1.207/claude-code.schema.json"),
+    ),
+  );
+  assert.ok(
+    await readJson(
+      resolve(publication, "site/claude-code/2.1.207/cli.catalog.json"),
+    ),
+  );
+  const hostedValidation = await validateDirectory(
+    resolve(publication, "site/claude-code/2.1.207"),
+  );
+  assert.equal(hostedValidation.status, "passed");
+});

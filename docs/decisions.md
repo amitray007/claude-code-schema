@@ -18,7 +18,7 @@ knowledge base honest.
 - **Audit found:** the main npm package is a ~157 KB **JS wrapper**; the 230 MB Bun
   binary moved to **per-platform optional dependencies**
   (`@anthropic-ai/claude-code-<os>-<arch>`, 8 of them) around v2.1.113. The
-  `~/.local` binary is the *native-installer* output — a different provenance CI
+  `~/.local` binary is the _native-installer_ output — a different provenance CI
   won't have.
 - **Changed to:** derive the platform matrix from the wrapper's
   `optionalDependencies`, fetch an exact platform `dist.tarball` (or use
@@ -129,7 +129,7 @@ knowledge base honest.
   - **Own** the genuinely unserved axes: **env-var enumeration + CLI-flag enumeration**
     as public docs-backed catalogs, with static binary analysis supplying a separate
     candidate-discovery feed.
-  - **Own** the **automation** — auto-generate/diff on every release — which *nobody*
+  - **Own** the **automation** — auto-generate/diff on every release — which _nobody_
     does (all existing schemas are hand-synced).
 - **Optional upstream contribution:** enrich SchemaStore's opaque `env` object into an
   enumerated map. But SchemaStore is JSON-Schema-scoped + hand-synced, so it won't host
@@ -163,7 +163,9 @@ knowledge base honest.
   the fact catalog/drift gate. Any future strict validator is an explicit opt-in
   artifact.
 
-## D-13 · The experiment uses Node without choosing the final implementation
+## D-13 · The experiment uses Node before the final implementation decision
+
+> Superseded by D-18. This records why Node was used for the proofs.
 
 - **Chosen:** the proof uses dependency-light Node ESM plus Ajv because the inputs
   and outputs are JSON-heavy and Node has native fetch.
@@ -211,9 +213,9 @@ knowledge base honest.
   matching-tag changelog and GitHub release metadata into reviewable hints.
 - **Decision:** use help probing as strong evidence for command paths, option names,
   arity, aliases, choices, and displayed defaults. Treat static strings as candidate
-  presence only. Send every release-note bullet through advisory AI or human review,
-  but never let prose classification mutate published artifacts without deterministic
-  evidence and validation gates.
+  presence only. Release-note bullets remain deterministic review hints and require
+  human review; they never mutate published artifacts without stronger structured
+  evidence and validation gates. AI is not required or used by production.
 - **Limitation:** neither static strings nor help output reconstructs complete
   settings types and nested validation rules. The independent settings artifact must
   remain explicitly partial until those constraints are proven from a first-party
@@ -243,3 +245,34 @@ knowledge base honest.
   active merely to match SchemaStore, while current first-party-only fields and
   scopes are represented. Accuracy and conservative compatibility take precedence
   over copying a community schema's format or raw constraint counts.
+
+## D-18 · Production is deterministic TypeScript on Node
+
+- **Decision:** implement the production CLI in TypeScript on Node 24, with Ajv for
+  draft-07 compilation and behavioral validation.
+- **Reason:** the system is JSON- and HTTP-heavy, the four experiments already
+  established the source behavior in Node, and shared types make artifact contracts
+  testable without introducing a second runtime.
+- **AI policy:** no AI participates in extraction, reconciliation, validation,
+  release discovery, issue creation, or publication. Ambiguous changelog prose is a
+  human-review hint and cannot change generated facts.
+
+## D-19 · A combined schema is an explicit tooling envelope
+
+- **Decision:** emit `claude-code.schema.json` with required `settings`,
+  `globalConfig`, `desktopManagedSettings`, `environment`, and `keybindings`
+  properties, each using a relative reference to its standalone schema.
+- **Boundary:** this object is never presented as a file Claude Code consumes. CLI
+  catalogs, behavioral defaults, evidence catalogs, and the manifest are excluded
+  because they are not configuration instances.
+
+## D-20 · Releases are discovered automatically and published only after review
+
+- **Decision:** check npm daily, create one idempotent issue per unseen version,
+  perform deterministic analysis in a read-only job, and retain the candidate as a
+  workflow artifact. A maintainer manually selects reviewed bytes for a draft PR.
+- **Publication:** after merge, revalidate the committed bytes, create a versioned
+  GitHub Release with checksums and provenance, and deploy consumer schemas to
+  GitHub Pages. The protected `production` environment is the final approval gate.
+- **Identity:** versioned URLs are canonical. Mutable `latest` copies retain their
+  immutable versioned `$id` values.

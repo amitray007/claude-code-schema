@@ -1,0 +1,113 @@
+name: Publish schema release and Pages
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "latest/**"
+      - "site/**"
+  workflow_dispatch:
+
+permissions: {}
+
+concurrency:
+  group: publish-claude-code-schema
+  cancel-in-progress: false
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    environment: production
+    permissions:
+      contents: write
+      issues: write
+      id-token: write
+      attestations: write
+    outputs:
+      version: ${{ steps.version.outputs.version }}
+    steps:
+      - name: Check out reviewed publication bytes
+        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6
+        with:
+          fetch-depth: 0
+      - name: Set up Node.js
+        uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6
+        with:
+          node-version: 24
+          cache: npm
+      - name: Install dependencies without lifecycle scripts
+        run: npm ci --ignore-scripts
+      - name: Validate committed release bytes
+        run: |
+          npm run schema:validate -- --directory latest
+          version=$(jq -r .claudeCodeVersion latest/manifest.json)
+          npm run schema:validate -- --directory "site/claude-code/${version}"
+          npm run schema:validate -- --directory site/claude-code/latest
+      - name: Resolve release identity
+        id: version
+        run: echo "version=$(jq -r .claudeCodeVersion latest/manifest.json)" >> "$GITHUB_OUTPUT"
+      - name: Build release bundle and checksums
+        env:
+          VERSION: ${{ steps.version.outputs.version }}
+        run: |
+          mkdir -p .work/release
+          tar -czf ".work/release/claude-code-schema-${VERSION}.tar.gz" -C latest .
+          (cd .work/release && sha256sum "claude-code-schema-${VERSION}.tar.gz" > SHA256SUMS)
+      - name: Attest release bundle provenance
+        uses: actions/attest-build-provenance@43d14bc2b83dec42d39ecae14e916627a18bb661 # v3
+        with:
+          subject-path: .work/release/claude-code-schema-${{ steps.version.outputs.version }}.tar.gz
+      - name: Create immutable tag and GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VERSION: ${{ steps.version.outputs.version }}
+        run: |
+          tag="claude-code-v${VERSION}"
+          if git rev-parse "$tag" >/dev/null 2>&1; then
+            test "$(git rev-parse "${tag}^{commit}")" = "$(git rev-parse HEAD)"
+          else
+            git tag -a "$tag" -m "Claude Code ${VERSION} schemas"
+            git push origin "$tag"
+          fi
+          if gh release view "$tag" --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            echo "Release $tag already exists at the reviewed commit; leaving immutable assets unchanged."
+          else
+            gh release create "$tag" --repo "$GITHUB_REPOSITORY" --verify-tag --title "Claude Code ${VERSION} schemas" --notes "Generated from first-party evidence and the integrity-verified Claude Code ${VERSION} release. See manifest.json for sources, digests, limitations, and probe policy." .work/release/* latest/*.json
+          fi
+      - name: Close the release-review issue
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VERSION: ${{ steps.version.outputs.version }}
+        run: |
+          marker="claude-code-schema-release:${VERSION}"
+          issue_number=$(gh issue list --repo "$GITHUB_REPOSITORY" --state open --label claude-release --limit 1000 --json number,body --jq ".[] | select(.body != null and (.body | contains(\"$marker\"))) | .number" | head -n 1)
+          if [[ -n "$issue_number" ]]; then
+            gh issue comment "$issue_number" --repo "$GITHUB_REPOSITORY" --body "Published immutable release [claude-code-v${VERSION}](${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/releases/tag/claude-code-v${VERSION}) and deployed the reviewed schema bytes to Pages."
+            gh issue edit "$issue_number" --repo "$GITHUB_REPOSITORY" --remove-label approved-for-pr --add-label published
+            gh issue close "$issue_number" --repo "$GITHUB_REPOSITORY" --reason completed
+          fi
+
+  pages:
+    needs: release
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    steps:
+      - name: Check out reviewed static site
+        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6
+      - name: Configure Pages
+        uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b # v5
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@7b1f4a764d45c48632c6b24a0339c27f5614fb0b # v4
+        with:
+          path: site
+      - name: Deploy Pages
+        id: deployment
+        uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e # v4

@@ -1,38 +1,40 @@
 # Implementation handoff
 
 > **Entry type:** Handoff brief
-> **Status:** Audited design; real-source experiment is working
+> **Status:** Production pipeline implemented and live-tested
 > **Read first:** [`audit-2026-07-13.md`](audits/audit-2026-07-13.md) →
 > [`sources.md`](sources.md) → [`pipeline.md`](pipeline.md) →
 > [`schema-format.md`](schema-format.md) → [`decisions.md`](decisions.md)
 
 ## What exists now
 
-The repository contains the corrected design and versioned Node/Ajv experiments in
+The repository contains the production TypeScript CLI under [`../src/`](../src/),
+the CI and release workflows under [`../.github/workflows/`](../.github/workflows/),
+published 2.1.207 artifacts under [`../latest/`](../latest/), and the corrected
+design and versioned Node/Ajv experiments in
 [`../experiments/`](../experiments/). Version 1 combines official docs with
 SchemaStore; version 2 deliberately excludes it to expose lost constraints; version
 3 adds verified package inspection and bounded CLI probing; version 4 replaces the
 partial settings result with expanded first-party sources, tagged Anthropic
 examples, scoped artifacts, nested reconstruction, and exact-binary doctor
-validation. SchemaStore is now only a post-generation development benchmark.
+validation. SchemaStore is now only a historical post-generation development
+benchmark and is not read by production generation.
 
-Run the experiment with:
+Run the production path with:
 
 ```bash
-npm install --ignore-scripts
-npm run experiment:1
-npm run experiment:1:check
-npm run experiment:2
-npm run experiment:2:check
-npm run experiment:3
-npm run experiment:3:check
-npm run experiment:4
-npm run experiment:4:check
-npm run experiment:4:benchmark-v1
+npm ci --ignore-scripts
+npm run schema:generate -- --version 2.1.207 --output .work/candidate
+npm run schema:validate -- --directory .work/candidate
+npm run schema:diff -- --from latest --to .work/candidate
+npm run test:coverage
 ```
 
-The production scheduler, durable snapshots, complete fact model, binary candidate
-extractor, semantic diff engine, and publication workflow are not built.
+Daily discovery, exact-version analysis, issue reporting, reviewed PR preparation,
+GitHub Release creation, attestations, and Pages deployment are implemented as
+workflows. Repository settings and the protected production environment still need
+to be enabled by a maintainer as described in
+[`ci-release-operations.md`](ci-release-operations.md).
 
 ## Non-negotiable constraints
 
@@ -56,20 +58,18 @@ extractor, semantic diff engine, and publication workflow are not built.
 9. **Never commit or redistribute binaries or raw strings.** Distilled candidates and
    diffs only.
 
-## Suggested production build order
+## Implemented production units
 
-| # | Unit | Acceptance check |
-| --- | --- | --- |
-| 1 | Extract the experiment's fetch/parser code into tested modules and fixture all current source shapes | offline fixture run reproduces the checked-in manifest counts and drift |
-| 2 | Add content-addressed source snapshots/run records | every artifact fact resolves to an exact source digest and parser version |
-| 3 | Define the normalized fact/evidence model | existence, type, prose, default, enum, version, and status retain independent evidence |
-| 4 | Complete settings path reconciliation | nested/dotted docs paths resolve; different configuration surfaces stay separate |
-| 5 | Harden bounded CLI/doctor extraction | command path, aliases, arity, choices, and settings diagnostics remain safe and reproducible |
-| 6 | Add binary candidate reports | linux-x64 per release; OS representatives on stable/weekly; public artifacts unchanged by unclassified candidates |
-| 7 | Build semantic source/artifact diffing | detects drops, growth, narrowing, enum removals, status changes, and mutable-source changes |
-| 8 | Expand first-party positive/negative fixtures and mutations | deliberately invalid settings/keybindings fail while official examples pass |
-| 9 | Implement staging + atomic publication + tag/manifest index | forced failure leaves `latest/` and published tag untouched |
-| 10 | Add scheduled orchestration and diagnostics PR/issue flow | exact npm version triggers once; absent Git tag waits; unexplained drift requests review |
+| #   | Unit                                                                     | Acceptance check                                     |
+| --- | ------------------------------------------------------------------------ | ---------------------------------------------------- |
+| 1   | Tested Markdown extraction and schema inference modules                  | parser and merge unit tests                          |
+| 2   | Exact source/run evidence inherited from V4 and normalized manifests     | source URLs, byte counts, and digests preserved      |
+| 3   | Scoped settings, global, Desktop, environment, and keybinding schemas    | all schemas compile and behavioral checks pass       |
+| 4   | Bounded CLI and doctor extraction                                        | exact 2.1.207 live run completed without credentials |
+| 5   | Binary candidate and changelog-hint catalogs                             | candidates remain outside public schemas             |
+| 6   | Semantic settings-path diff and deterministic issue report               | integration and CLI tests                            |
+| 7   | Atomic candidate generation and publication staging                      | tamper and determinism tests                         |
+| 8   | Scheduled discovery, review issue, release PR, GitHub Release, and Pages | actionlint-clean workflow definitions                |
 
 ## Recommended layout
 
@@ -85,13 +85,12 @@ extractor, semantic diff engine, and publication workflow are not built.
 /docs/                   design and decisions
 ```
 
-## Decisions still needed
+## Maintainer setup still needed
 
-- public name and license;
-- concrete upstream PR policy for settings/keybindings fixes;
-- the exact Orpheus consumption contract; and
-- whether source snapshots live in git, release assets, or an external
-  content-addressed store.
+- enable the required branch checks and GitHub Pages;
+- create the protected `production` environment and reviewer rule;
+- allow the preparation workflow to open pull requests; and
+- optionally select and configure a custom schema domain.
 
 ## Definition of done for v1
 

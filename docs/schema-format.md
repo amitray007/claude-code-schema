@@ -10,22 +10,27 @@ Other surfaces use explicit catalogs, all indexed by a manifest.
 
 ## Files
 
-| File | Kind | Represents |
-| --- | --- | --- |
-| `settings.schema.json` | JSON Schema draft-07 | Claude Code `settings.json` |
-| `global-config.schema.json` | JSON Schema draft-07 | global `~/.claude.json` preferences |
-| `desktop-managed-settings.schema.json` | JSON Schema draft-07 | Claude Desktop-only managed policy |
-| `env.schema.json` | JSON Schema draft-07 | a declared JSON projection of string-valued environment variables |
-| `keybindings.schema.json` | JSON Schema draft-07 | `~/.claude/keybindings.json` |
-| `keybindings.runtime-compat.schema.json` | JSON Schema draft-07 | exact parser-compatible keybinding action values, including warning-only strings |
-| `flags.catalog.json` | versioned catalog | options keyed by command path, spellings, arity, defaults, choices, and status when proven |
-| `keybinding-defaults.catalog.json` | versioned catalog | public action names, contexts, and documented default display values |
-| `settings-facts.catalog.json` | versioned catalog | setting paths, scopes, status, fact evidence, and runtime corroboration |
-| `keybinding-capabilities.catalog.json` | versioned catalog | documented actions plus exact-binary candidates and command-binding evidence |
-| `manifest.json` | versioned index | release identity, sources, digests, artifact roles, counts, and drift |
+| File                                     | Kind                 | Represents                                                                                 |
+| ---------------------------------------- | -------------------- | ------------------------------------------------------------------------------------------ |
+| `settings.schema.json`                   | JSON Schema draft-07 | Claude Code `settings.json`                                                                |
+| `global-config.schema.json`              | JSON Schema draft-07 | global `~/.claude.json` preferences                                                        |
+| `desktop-managed-settings.schema.json`   | JSON Schema draft-07 | Claude Desktop-only managed policy                                                         |
+| `env.schema.json`                        | JSON Schema draft-07 | a declared JSON projection of string-valued environment variables                          |
+| `keybindings.schema.json`                | JSON Schema draft-07 | `~/.claude/keybindings.json`                                                               |
+| `keybindings.runtime-compat.schema.json` | JSON Schema draft-07 | exact parser-compatible keybinding action values, including warning-only strings           |
+| `flags.catalog.json`                     | versioned catalog    | options keyed by command path, spellings, arity, defaults, choices, and status when proven |
+| `keybinding-defaults.catalog.json`       | versioned catalog    | public action names, contexts, and documented default display values                       |
+| `settings-facts.catalog.json`            | versioned catalog    | setting paths, scopes, status, fact evidence, and runtime corroboration                    |
+| `keybinding-capabilities.catalog.json`   | versioned catalog    | documented actions plus exact-binary candidates and command-binding evidence               |
+| `claude-code.schema.json`                | JSON Schema draft-07 | explicit tooling envelope containing all five JSON configuration surfaces                  |
+| `manifest.json`                          | versioned index      | release identity, sources, digests, artifact roles, counts, and drift                      |
 
-There is no `claude-code.schema.json` that `$ref`-composes every artifact. Such a
-schema would describe an artificial aggregate object that Claude Code never reads.
+`claude-code.schema.json` deliberately composes only the five artifacts that
+validate JSON instances: settings, global configuration, Desktop managed policy,
+environment, and keybindings. It does not attempt to compose catalogs or the
+manifest, and Claude Code never reads this aggregate object. The envelope exists
+for tooling that needs one validated snapshot of all configuration surfaces. See
+[`examples/combined.json`](../examples/combined.json).
 
 ## Common metadata
 

@@ -1,7 +1,7 @@
 # Open Questions
 
 > **Entry type:** Unresolved decisions
-> **Status:** Living — resolve before or during implementation
+> **Status:** Living — remaining integration and upstream-policy decisions
 > **Related:** [`decisions.md`](decisions.md) · [`handoff.md`](handoff.md)
 
 Calls that are not yet made. Each notes who/what it blocks.
@@ -45,7 +45,7 @@ Calls that are not yet made. Each notes who/what it blocks.
 
 ### Q-4 · Per-OS binary cadence
 
-- Flags/enums *should* be identical across the 8 platform binaries, but platform-gated
+- Flags/enums _should_ be identical across the 8 platform binaries, but platform-gated
   flags exist.
 - **Decision:** public artifacts come from official docs, so platform binaries are
   not required for publication. Scan linux-x64 as the per-release discovery canary;

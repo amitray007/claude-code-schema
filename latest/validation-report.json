@@ -1,0 +1,166 @@
+{
+  "schemaVersion": 1,
+  "artifactKind": "schema-generation-validation-report",
+  "claudeCodeVersion": "2.1.207",
+  "status": "passed",
+  "checks": [
+    {
+      "name": "required artifact: settings.schema.json",
+      "status": "passed"
+    },
+    {
+      "name": "required artifact: global-config.schema.json",
+      "status": "passed"
+    },
+    {
+      "name": "required artifact: desktop-managed-settings.schema.json",
+      "status": "passed"
+    },
+    {
+      "name": "required artifact: env.schema.json",
+      "status": "passed"
+    },
+    {
+      "name": "required artifact: keybindings.schema.json",
+      "status": "passed"
+    },
+    {
+      "name": "required artifact: claude-code.schema.json",
+      "status": "passed"
+    },
+    {
+      "name": "digest: binary-candidates.catalog.json",
+      "status": "passed"
+    },
+    {
+      "name": "digest: changelog-hints.catalog.json",
+      "status": "passed"
+    },
+    {
+      "name": "digest: changelog-review.schema.json",
+      "status": "passed"
+    },
+    {
+      "name": "digest: claude-code.schema.json",
+      "status": "passed"
+    },
+    {
+      "name": "digest: cli.catalog.json",
+      "status": "passed"
+    },
+    {
+      "name": "digest: desktop-managed-settings.schema.json",
+      "status": "passed"
+    },
+    {
+      "name": "digest: env.schema.json",
+      "status": "passed"
+    },
+    {
+      "name": "digest: environment-capabilities.catalog.json",
+      "status": "passed"
+    },
+    {
+      "name": "digest: flags.catalog.json",
+      "status": "passed"
+    },
+    {
+      "name": "digest: global-config.schema.json",
+      "status": "passed"
+    },
+    {
+      "name": "digest: keybinding-capabilities.catalog.json",
+      "status": "passed"
+    },
+    {
+      "name": "digest: keybinding-defaults.catalog.json",
+      "status": "passed"
+    },
+    {
+      "name": "digest: keybindings.runtime-compat.schema.json",
+      "status": "passed"
+    },
+    {
+      "name": "digest: keybindings.schema.json",
+      "status": "passed"
+    },
+    {
+      "name": "digest: legacy-candidates.catalog.json",
+      "status": "passed"
+    },
+    {
+      "name": "digest: settings-facts.catalog.json",
+      "status": "passed"
+    },
+    {
+      "name": "digest: settings.schema.json",
+      "status": "passed"
+    },
+    {
+      "name": "SchemaStore excluded as generation source",
+      "status": "passed"
+    },
+    {
+      "name": "schema compiles: changelog-review.schema.json",
+      "status": "passed"
+    },
+    {
+      "name": "schema compiles: claude-code.schema.json",
+      "status": "passed"
+    },
+    {
+      "name": "schema compiles: desktop-managed-settings.schema.json",
+      "status": "passed"
+    },
+    {
+      "name": "schema compiles: env.schema.json",
+      "status": "passed"
+    },
+    {
+      "name": "schema compiles: global-config.schema.json",
+      "status": "passed"
+    },
+    {
+      "name": "schema compiles: keybindings.runtime-compat.schema.json",
+      "status": "passed"
+    },
+    {
+      "name": "schema compiles: keybindings.schema.json",
+      "status": "passed"
+    },
+    {
+      "name": "schema compiles: settings.schema.json",
+      "status": "passed"
+    },
+    {
+      "name": "combined schema accepts a valid complete envelope",
+      "status": "passed"
+    },
+    {
+      "name": "combined schema rejects an incomplete envelope",
+      "status": "passed"
+    },
+    {
+      "name": "combined schema rejects unknown envelope properties",
+      "status": "passed"
+    },
+    {
+      "name": "combined schema rejects an invalid settings type",
+      "status": "passed"
+    },
+    {
+      "name": "all top-level settings are constrained",
+      "status": "passed",
+      "detail": "124/124"
+    }
+  ],
+  "counts": {
+    "checks": 37,
+    "passed": 37,
+    "failed": 0,
+    "declaredArtifacts": 17,
+    "compiledSchemas": 8,
+    "typedTopLevelSettings": 124,
+    "topLevelSettings": 124
+  }
+}

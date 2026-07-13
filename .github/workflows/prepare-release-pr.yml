@@ -1,0 +1,75 @@
+name: Prepare schema release PR
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: Reviewed Claude Code version
+        required: true
+        type: string
+      analysis_run_id:
+        description: Successful analyze-version workflow run ID
+        required: true
+        type: string
+      issue_number:
+        description: Release-review issue number
+        required: true
+        type: string
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+concurrency:
+  group: prepare-release-${{ inputs.version }}
+  cancel-in-progress: false
+
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Check out main
+        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6
+        with:
+          ref: main
+          fetch-depth: 0
+      - name: Set up Node.js
+        uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6
+        with:
+          node-version: 24
+          cache: npm
+      - name: Install dependencies without lifecycle scripts
+        run: npm ci --ignore-scripts
+      - name: Download the reviewed candidate bytes
+        uses: actions/download-artifact@634f93cb2916e3fdff6788551b99b062d0335ce0 # v5
+        with:
+          name: candidate-${{ inputs.version }}
+          path: .work/artifact
+          run-id: ${{ inputs.analysis_run_id }}
+          github-token: ${{ github.token }}
+      - name: Revalidate and stage publication files
+        env:
+          VERSION: ${{ inputs.version }}
+        run: |
+          test "$(jq -r .claudeCodeVersion .work/artifact/candidate/manifest.json)" = "$VERSION"
+          npm run schema:validate -- --directory .work/artifact/candidate
+          npm run schema:stage -- --candidate .work/artifact/candidate --publication-root .
+      - name: Commit reviewed bytes and open a draft PR
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VERSION: ${{ inputs.version }}
+          ISSUE_NUMBER: ${{ inputs.issue_number }}
+          ANALYSIS_RUN_ID: ${{ inputs.analysis_run_id }}
+        run: |
+          branch="automation/claude-code-${VERSION}"
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git switch -c "$branch"
+          git add latest site
+          git commit -m "publish Claude Code ${VERSION} schemas"
+          git push -u origin "$branch"
+          pr_url=$(gh pr create --repo "$GITHUB_REPOSITORY" --draft --base main --head "$branch" --title "Publish Claude Code ${VERSION} schemas" --body "Tracks #${ISSUE_NUMBER}.\n\nPublishes the exact reviewed candidate from analysis run ${ANALYSIS_RUN_ID}. No live source was refetched during PR preparation.")
+          gh issue comment "$ISSUE_NUMBER" --repo "$GITHUB_REPOSITORY" --body "Candidate PR: ${pr_url}"
+          gh issue edit "$ISSUE_NUMBER" --repo "$GITHUB_REPOSITORY" --remove-label needs-review --add-label approved-for-pr

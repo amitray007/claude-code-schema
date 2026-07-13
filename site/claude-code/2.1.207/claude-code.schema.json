@@ -1,0 +1,58 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://amitray007.github.io/claude-code-schema/claude-code/2.1.207/claude-code.schema.json",
+  "title": "Claude Code 2.1.207 configuration-surface envelope",
+  "description": "A tooling envelope that validates all supported Claude Code configuration surfaces together. This object is not itself a file consumed by Claude Code.",
+  "type": "object",
+  "required": [
+    "settings",
+    "globalConfig",
+    "desktopManagedSettings",
+    "environment",
+    "keybindings"
+  ],
+  "properties": {
+    "settings": {
+      "$ref": "settings.schema.json",
+      "description": "Instance validated by settings.schema.json"
+    },
+    "globalConfig": {
+      "$ref": "global-config.schema.json",
+      "description": "Instance validated by global-config.schema.json"
+    },
+    "desktopManagedSettings": {
+      "$ref": "desktop-managed-settings.schema.json",
+      "description": "Instance validated by desktop-managed-settings.schema.json"
+    },
+    "environment": {
+      "$ref": "env.schema.json",
+      "description": "Instance validated by env.schema.json"
+    },
+    "keybindings": {
+      "$ref": "keybindings.schema.json",
+      "description": "Instance validated by keybindings.schema.json"
+    }
+  },
+  "additionalProperties": false,
+  "examples": [
+    {
+      "settings": {},
+      "globalConfig": {},
+      "desktopManagedSettings": {},
+      "environment": {},
+      "keybindings": {
+        "bindings": []
+      }
+    }
+  ],
+  "x-claude-code-version": "2.1.207",
+  "x-artifact-kind": "combined-configuration-envelope-json-schema",
+  "x-generator-version": "0.1.0",
+  "x-surface-files": [
+    "settings.schema.json",
+    "global-config.schema.json",
+    "desktop-managed-settings.schema.json",
+    "env.schema.json",
+    "keybindings.schema.json"
+  ]
+}

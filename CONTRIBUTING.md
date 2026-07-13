@@ -3,9 +3,9 @@
 Thanks for your interest in improving **claude-code-schema** — a machine-readable,
 versioned schema of Claude Code's configuration surface.
 
-> **Status:** design / pre-implementation. The knowledge base in [`docs/`](docs/)
-> is the source of truth today; the generator is not built yet. Contributions
-> that sharpen the design are as valuable as code.
+> **Status:** the deterministic production generator and CI/release workflows are
+> implemented. The knowledge base in [`docs/`](docs/) and the executable contracts
+> in [`src/`](src/) must stay consistent.
 
 ## Ways to contribute
 
@@ -18,8 +18,8 @@ versioned schema of Claude Code's configuration surface.
   version and how you verified it.
 - **Real-config corpus** — the validation gate needs real-world `settings.json`
   files (see open question Q-3). Scrubbed, permissively-shareable examples help.
-- **Generator implementation** — once interfaces are frozen, pick up a unit from
-  the plan and open a PR.
+- **Generator improvements** — add a focused parser, validation rule, fixture, or
+  release-safety improvement with tests that fail before the change.
 
 ## Ground rules
 
@@ -28,8 +28,10 @@ versioned schema of Claude Code's configuration surface.
 2. **Keep the knowledge base coherent.** `docs/` is a cross-linked knowledge
    base, not a linear spec. If you change a decision, update
    [`docs/decisions.md`](docs/decisions.md) and any entries that reference it.
-3. **Cite your sources.** Schema facts must trace to a concrete source — the
-   shipped binary, official docs, or SchemaStore — per [`docs/sources.md`](docs/sources.md).
+3. **Cite your sources.** Published schema facts must trace to a first-party source
+   or the integrity-verified release package per [`docs/sources.md`](docs/sources.md).
+   SchemaStore may be used only by the historical parity benchmark and must never
+   inject production facts.
 4. **Respect the safety constraints.** Binary extraction has hard rules; see
    [`docs/extraction-notes.md`](docs/extraction-notes.md) before touching that path.
 
@@ -38,7 +40,8 @@ versioned schema of Claude Code's configuration surface.
 1. Fork the repo and create a branch: `feat/short-description` or `fix/short-description`.
 2. Make focused, self-contained changes with clear commit messages.
 3. Update relevant docs in the same PR.
-4. Open the PR against `main` with a description of **what** changed and **why**,
+4. Run `npm run format:check`, `npm run typecheck`, and `npm run test:coverage`.
+5. Open the PR against `main` with a description of **what** changed and **why**,
    linking any related issue.
 
 ## Code of Conduct
