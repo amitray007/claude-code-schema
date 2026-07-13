@@ -13,21 +13,32 @@ dependency.
 > workflow, and publication staging are implemented. [`experiments/`](experiments/)
 > retains the four source-strategy proofs that established the production design.
 
-## Which file should I use?
+## Release files
 
-For ordinary Claude Code configuration, there are two primary references:
+Start with `settings.schema.json` for `settings.json`, or
+`environment.schema.json` for environment variables. The settings schema reuses
+the environment schema for its `env` field.
 
-| You want                                          | Use                       |
-| ------------------------------------------------- | ------------------------- |
-| `settings.json` keys, types, and nested structure | `settings.schema.json`    |
-| Claude Code environment-variable names            | `environment.schema.json` |
+| File                                   | Contains                                      |
+| -------------------------------------- | --------------------------------------------- |
+| `catalog.json`                         | Entry point and file guide                    |
+| `settings.schema.json`                 | `settings.json` keys and validation           |
+| `settings.catalog.json`                | Settings source and runtime evidence          |
+| `environment.schema.json`              | Environment-variable names and validation     |
+| `environment.catalog.json`             | Environment source and binary evidence        |
+| `cli.catalog.json`                     | CLI commands, arguments, and options          |
+| `global-config.schema.json`            | `~/.claude.json` validation                   |
+| `keybindings.schema.json`              | `~/.claude/keybindings.json` validation       |
+| `keybindings.compat.schema.json`       | More permissive keybinding validation         |
+| `keybindings.catalog.json`             | Keybinding actions, defaults, and evidence    |
+| `desktop-managed-settings.schema.json` | Claude Desktop managed-policy validation      |
+| `claude-code.schema.json`              | Combined tooling schema; not read by Claude   |
+| `review.catalog.json`                  | Maintainer-only release and legacy evidence   |
+| `manifest.json`                        | Sources, versions, hashes, counts, and policy |
+| `validation-report.json`               | Checks run against the release                |
+| `SHA256SUMS`                           | SHA-256 checksum for every JSON file          |
 
-The similarly named `*.catalog.json` files preserve source and runtime evidence;
-they are not the primary configuration references. See the
-[`consumer quick start`](docs/quick-start.md) for direct release URLs, actual usage
-locations, and validated examples. `settings.schema.json` also references
-`environment.schema.json` from its real `env` property, avoiding duplicate variable
-definitions.
+See the [`consumer quick start`](docs/quick-start.md) for direct URLs and examples.
 
 ## Why this exists
 
@@ -37,25 +48,6 @@ keybindings schema). Claude Code changes rapidly, and its environment variables,
 CLI flags, and documented keybinding defaults need different representations and
 source policies. This project automates that broader collection while making source
 drift visible.
-
-## What it produces
-
-The release is organized by purpose. Start with `catalog.json`: it states which
-product/interface every artifact describes, where that interface is used, and
-whether the file is a validator, data catalog, or audit record.
-
-- Configuration schemas validate `settings.json`, `~/.claude.json`, Desktop-managed
-  policy, a JSON projection of the process environment, and terminal UI
-  `keybindings.json`. `claude-code.schema.json` composes those five surfaces for
-  tooling; Claude Code does not consume that synthetic object.
-- Domain catalogs combine related facts into `settings.catalog.json`,
-  `environment.catalog.json`, `cli.catalog.json`, and `keybindings.catalog.json`.
-  The CLI catalog contains documented flags, the probed command tree and arguments,
-  and clearly separated static candidates.
-- `review.catalog.json`, `manifest.json`, and `validation-report.json` contain
-  maintainer review evidence, exact source/artifact digests, and validation results.
-
-Each is tagged to the exact Claude Code version it was generated from.
 
 ## Generate and verify
 
