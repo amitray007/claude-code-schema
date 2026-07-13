@@ -44,6 +44,27 @@ jobs:
         run: |
           mkdir -p .work/release
           (cd output && sha256sum -- *.json) > .work/release/SHA256SUMS
+      - name: Build release changelog from the catalog
+        run: |
+          jq -r '
+            [
+              "Generated from first-party evidence and the integrity-verified Claude Code \(.claudeCodeVersion) release.",
+              "",
+              "## Start here",
+              "",
+              "- `settings.schema.json`: `settings.json` keys and validation, including the `env` field.",
+              "- `environment.schema.json`: standalone environment-variable names and validation.",
+              "- `cli.catalog.json`: CLI commands, arguments, and options.",
+              "",
+              "## Files",
+              "",
+              "| File | Contains |",
+              "| --- | --- |"
+            ]
+            + [.artifacts[] | "| `\(.file)` | \(.validates // .describes) |"]
+            + ["| `SHA256SUMS` | SHA-256 checksum for every JSON file |", "", "See `manifest.json` for sources, digests, limitations, and probe policy."]
+            | .[]
+          ' output/catalog.json > .work/release/RELEASE_NOTES.md
       - name: Attest every JSON release asset
         uses: actions/attest-build-provenance@43d14bc2b83dec42d39ecae14e916627a18bb661 # v3
         with:
@@ -72,14 +93,7 @@ jobs:
             done
             echo "Release $tag already exists with the exact reviewed assets; leaving it unchanged."
           else
-            gh release create "$tag" --repo "$GITHUB_REPOSITORY" --verify-tag --title "$tag" --notes "Start here:
-          - settings.json keys and validation: settings.schema.json
-          - environment-variable names: environment.schema.json
-          - commands, arguments, and options: cli.catalog.json
-
-          catalog.json maps every use case to the appropriate file. The similarly named settings and environment catalogs are supporting evidence for maintainers and auditors.
-
-          Generated from first-party evidence and the integrity-verified Claude Code ${VERSION} release. See manifest.json for sources, digests, limitations, and probe policy." .work/release/SHA256SUMS output/*.json
+            gh release create "$tag" --repo "$GITHUB_REPOSITORY" --verify-tag --title "$tag" --notes-file .work/release/RELEASE_NOTES.md .work/release/SHA256SUMS output/*.json
           fi
       - name: Close the release-review issue
         env:
