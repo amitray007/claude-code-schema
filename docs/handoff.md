@@ -1,106 +1,105 @@
-# Implementation Handoff
+# Implementation handoff
 
-> **Entry type:** Handoff brief for the implementing agent
-> **Status:** Ready to pick up
-> **Read first:** [`overview.md`](overview.md) → [`sources.md`](sources.md) → [`pipeline.md`](pipeline.md) → [`schema-format.md`](schema-format.md) → [`decisions.md`](decisions.md) → [`open-questions.md`](open-questions.md)
+> **Entry type:** Handoff brief
+> **Status:** Audited design; real-source experiment is working
+> **Read first:** [`audit-2026-07-13.md`](audits/audit-2026-07-13.md) →
+> [`sources.md`](sources.md) → [`pipeline.md`](pipeline.md) →
+> [`schema-format.md`](schema-format.md) → [`decisions.md`](decisions.md)
 
-You are picking up **Claude Schema Store** at the pre-implementation stage. The
-design is done, audited, and corrected. Your job is to **build the generator**. This
-brief is self-contained: everything you need is in this repo's `docs/`. Do not assume
-access to any prior conversation.
+## What exists now
 
----
+The repository contains the corrected design and versioned Node/Ajv experiments in
+[`../experiments/`](../experiments/). Version 1 combines official docs with
+SchemaStore; version 2 deliberately excludes it to expose lost constraints; version
+3 adds verified package inspection and bounded CLI probing; version 4 replaces the
+partial settings result with expanded first-party sources, tagged Anthropic
+examples, scoped artifacts, nested reconstruction, and exact-binary doctor
+validation. SchemaStore is now only a post-generation development benchmark.
 
-## 1. What you are building (in one paragraph)
+Run the experiment with:
 
-A self-hosted, open-source tool + GitHub Action that, on every
-`@anthropic-ai/claude-code` npm release, produces a **machine-readable, versioned
-schema of Claude Code's config surface** — settings.json keys, env vars, CLI flags,
-keybindings — reconciling with per-field provenance, validating against real configs,
-and auto-merging only if all gates pass. Output: per-category schema files + one
-combined index. Full rationale in [`overview.md`](overview.md).
-
-**The scope split you must internalize (D-9, from the landscape survey):**
-- **EXTRACT & OWN** — **env vars + CLI flags**. No project or schema covers these; this
-  is the differentiated value. Source: the per-platform binary tarball ([`sources.md`](sources.md) A).
-- **ADOPT, don't regenerate** — **settings + keybindings**. SchemaStore already
-  publishes current, per-release JSON Schemas for both; consume them as the source of
-  truth ([`sources.md`](sources.md) E). Cross-check settings existence against docs +
-  CHANGELOG so a SchemaStore lag on a brand-new key is caught, not silently missing.
-- **OWN the automation** — nobody auto-generates or release-diffs; that's the other half
-  of the value.
-
-## 2. Non-negotiable constraints (read before writing code)
-
-1. **Hermetic extraction, no CLI execution.** Pull
-   `@anthropic-ai/claude-code-<os>-<arch>` via `npm pack` / `dist.tarball`, untar,
-   `strings` the binary. **Never run the `claude` CLI** — guessed subcommands parse
-   as prompts and start real agent sessions ([`extraction-notes.md`](extraction-notes.md)).
-   If you ever must, only `--help`/`--version`, with timeout + stdin closed.
-2. **Never overwrite the last-good artifact with a failed/partial parse.** Emit is
-   fail-closed; the committed schema is fail-safe ([`pipeline.md`](pipeline.md)).
-3. **Per-field provenance, not "docs win."** Binary wins for flag/env existence +
-   enums; docs win for settings-key existence + prose; SchemaStore for types. Tag
-   every field ([`decisions.md`](decisions.md) → D-2).
-4. **Never redistribute the binary or large verbatim strings.** Distilled facts only
-   ([`decisions.md`](decisions.md) → D-8).
-5. **Count-floor assertions are mandatory.** A silent extraction break (minifier/
-   bytecode change) must fail loudly, never emit empty.
-
-## 3. Suggested build order (independent, testable units)
-
-Each unit is independently verifiable. Build and test in this order; earlier units
-have no dependency on later ones.
-
-| # | Unit | Deliverable | Acceptance check |
-| --- | --- | --- | --- |
-| 1 | **Platform-matrix + tarball fetch** | Read wrapper `optionalDependencies`; `npm pack` the canonical platform (linux-x64) for a given version; untar to a temp dir. | For `2.1.207`, downloads + unpacks the binary hermetically; no CLI run; platform list derived, not hardcoded. |
-| 2 | **Binary extractor** | From the unpacked binary: flags (Commander `.option`), enum arrays, `CLAUDE_CODE_*`/`ANTHROPIC_*` env superset. | Reproduces the known v2.1.207 numbers (~146 flags, ~402 env) and the permission-mode enum exactly ([`extraction-notes.md`](extraction-notes.md)). |
-| 3 | **Docs parser** | Fetch + parse `settings.md` / `env-vars.md` / `cli-reference.md` pipe tables (capture `{/* min-version */}`); fetch `llms.txt` as a structure canary. | Parses current docs into records; a malformed/empty table is a hard error, not silent zero. |
-| 4 | **CHANGELOG + SchemaStore adopters** | Parse `## <version>` bullets for identifiers; fetch SchemaStore's `settings` **and** `keybindings` schemas (follow redirect) — these are the **adopted source of truth** for those two dimensions, not regenerated (D-9). | Identifiers extracted; both SchemaStore schemas fetched despite cross-host redirect and diffed vs last-good. |
-| 5 | **Reconciler** | Merge all sources into one model with per-field `x-source`/`x-undocumented`/`x-corroborated`/`x-internal` tags per D-2. | Given fixtures, a binary-only flag is included + tagged `x-undocumented`; an internal env var is tagged `x-internal`, not published as public. |
-| 6 | **Emitter** | Write `settings/env/flags/keybindings.schema.json` + combined `claude-code.schema.json` (`$ref`), each with `x-claude-code-version`. Format in [`schema-format.md`](schema-format.md). | Emitted files are valid draft-07; combined index `$ref`s resolve. |
-| 7 | **Validation gate** | (a) ajv-compile, (b) real-config corpus zero-false-negatives, (c) CHANGELOG-delta satisfied, (d) count floors. | A deliberately broken extraction (e.g. 0 flags) fails the gate; a good run passes all four. |
-| 8 | **Orchestrator + GitHub Action** | Cron polls npm `/latest`; on new version runs 1–7; green → open/merge PR + git-tag `v<version>`; red → open an issue, keep last-good. | Dry-run against `2.1.207` produces the full 5-file set + a `v2.1.207` tag; a forced-failure run opens an issue and leaves `latest/` untouched. |
-
-## 4. Repo layout (proposed)
-
-```
-/                      generator source (language TBD — see below)
-/latest/               the 5 emitted schema files at HEAD
-/corpus/               real settings.json files for the validation gate (Q-3)
-/.github/workflows/    the release-triggered regeneration action
-/versions.json         { "<version>": "<git-sha>" } pin index
-/docs/                 this knowledge base
+```bash
+npm install --ignore-scripts
+npm run experiment:1
+npm run experiment:1:check
+npm run experiment:2
+npm run experiment:2:check
+npm run experiment:3
+npm run experiment:3:check
+npm run experiment:4
+npm run experiment:4:check
+npm run experiment:4:benchmark-v1
 ```
 
-## 5. Language / tooling note
+The production scheduler, durable snapshots, complete fact model, binary candidate
+extractor, semantic diff engine, and publication workflow are not built.
 
-Not yet decided. The extraction is shell-heavy (`strings`, `grep`, `tar`), the
-reconciliation/validation is JSON-heavy (ajv). A Node/TypeScript generator with
-`ajv` for validation is the natural default (matches the JSON-Schema domain and the
-Orpheus consumer), but this is your call — record it in [`decisions.md`](decisions.md).
+## Non-negotiable constraints
 
-## 6. Resolve these before/while building (see [`open-questions.md`](open-questions.md))
+1. **Bound every binary operation.** Only use `--version`, help paths parsed from
+   prior help output, and isolated `doctor` validation fixtures. Never prompt,
+   authenticate, update, install, or probe guessed operational commands.
+2. **Verify package integrity.** Derive platform packages from the wrapper and check
+   `dist.integrity` before inspection.
+3. **Docs define public status.** Binary-only identifiers are candidates, not public
+   facts and not automatically internal.
+4. **Do not use SchemaStore as a generation source.** Use it only after generation
+   as a capability benchmark; resolve gaps through current first-party evidence.
+5. **Preserve scope.** CLI options are keyed by command path; dotted setting paths
+   are structurally resolved rather than emitted as literal top-level names.
+6. **Use the correct artifact kind.** JSON Schema for real JSON instances; catalogs
+   for CLI/default behavior; manifest for the combined index.
+7. **Record fact-level evidence and content digests.** One `x-source` string is not
+   enough when existence, type, and prose come from different sources.
+8. **Never replace last-good after a failed or unexplained run.** Generate in staging
+   and publish atomically only after every gate passes.
+9. **Never commit or redistribute binaries or raw strings.** Distilled candidates and
+   diffs only.
 
-- **Q-1** final name · **Q-2** license · **Q-3** where the validation corpus comes
-  from (blocks Unit 7) · **Q-4** canonical platform + variance cadence · **Q-7** the
-  bytecode-break fallback · **Q-8** how the official-schema pivot is detected.
+## Suggested production build order
 
-Q-3 is the one that actually blocks a unit — resolve it before Unit 7.
+| # | Unit | Acceptance check |
+| --- | --- | --- |
+| 1 | Extract the experiment's fetch/parser code into tested modules and fixture all current source shapes | offline fixture run reproduces the checked-in manifest counts and drift |
+| 2 | Add content-addressed source snapshots/run records | every artifact fact resolves to an exact source digest and parser version |
+| 3 | Define the normalized fact/evidence model | existence, type, prose, default, enum, version, and status retain independent evidence |
+| 4 | Complete settings path reconciliation | nested/dotted docs paths resolve; different configuration surfaces stay separate |
+| 5 | Harden bounded CLI/doctor extraction | command path, aliases, arity, choices, and settings diagnostics remain safe and reproducible |
+| 6 | Add binary candidate reports | linux-x64 per release; OS representatives on stable/weekly; public artifacts unchanged by unclassified candidates |
+| 7 | Build semantic source/artifact diffing | detects drops, growth, narrowing, enum removals, status changes, and mutable-source changes |
+| 8 | Expand first-party positive/negative fixtures and mutations | deliberately invalid settings/keybindings fail while official examples pass |
+| 9 | Implement staging + atomic publication + tag/manifest index | forced failure leaves `latest/` and published tag untouched |
+| 10 | Add scheduled orchestration and diagnostics PR/issue flow | exact npm version triggers once; absent Git tag waits; unexplained drift requests review |
 
-## 7. Definition of done (v1)
+## Recommended layout
 
-- A scheduled run detects a new Claude Code release and regenerates all five schema
-  files, tagged to that version, **fully unattended**, with the validation gate
-  green — and a forced-failure run proves the fail-safe (issue opened, artifact
-  untouched).
-- The emitted schemas validate a corpus of real `settings.json` files with zero
-  false negatives.
-- README + docs updated to reflect the built reality; license + name finalized.
+```text
+/src/                    production fetch, parse, facts, reconcile, emit, validate
+/test/fixtures/sources/  pinned upstream response fixtures
+/test/fixtures/valid/    official/tagged/curated positive cases
+/test/fixtures/invalid/  negative and mutation cases
+/latest/                 published artifact set
+/runs/ or external CAS   exact source/run evidence if repository size permits
+/experiments/version-N/  retained, isolated proofs and examples
+/docs/audits/            dated accuracy and source audits
+/docs/                   design and decisions
+```
 
-## 8. What is explicitly OUT of scope for v1
+## Decisions still needed
 
-- The Orpheus-side consumer (manifest → generated UI). Separate project ([`open-questions.md`](open-questions.md) → Q-6).
-- The full official-schema pivot implementation (design for it; don't build it yet).
-- Per-version directories (use `latest/` + tags — [`decisions.md`](decisions.md) → D-6).
+- public name and license;
+- concrete upstream PR policy for settings/keybindings fixes;
+- the exact Orpheus consumption contract; and
+- whether source snapshots live in git, release assets, or an external
+  content-addressed store.
+
+## Definition of done for v1
+
+- An exact npm release produces the full corrected artifact set from staged,
+  digest-recorded first-party sources using only the documented bounded probes.
+- Positive and negative fixtures, mutations, semantic diffs, and manifest checks are
+  green.
+- A forced parse, integrity, or drift failure proves last-good is untouched.
+- Published version lookup uses tag/ref plus manifest digest.
+- Binary-only discoveries appear only in a candidate report.
+- Documentation describes built behavior rather than planned behavior.

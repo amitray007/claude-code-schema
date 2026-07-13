@@ -1,0 +1,46 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://example.invalid/claude-code/2.1.207/desktop-managed-settings.schema.json",
+  "title": "Claude Desktop managed settings",
+  "type": "object",
+  "properties": {
+    "managedMcpServers": {
+      "type": "object",
+      "additionalProperties": true,
+      "x-type-status": "independently-derived",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "desktopDocs",
+            "sourceSha256": "b4b1ddb0d5c73bf7db4af3b045828dae4189939f5aa82baa4cc64a9bf48e0d4c",
+            "heading": "Managed settings",
+            "fact": "existence-and-type",
+            "method": "official-prose"
+          }
+        ]
+      }
+    },
+    "sshHostAllowlist": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "x-type-status": "independently-derived",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "desktopDocs",
+            "sourceSha256": "b4b1ddb0d5c73bf7db4af3b045828dae4189939f5aa82baa4cc64a9bf48e0d4c",
+            "heading": "Managed settings",
+            "fact": "existence-and-type",
+            "method": "official-prose"
+          }
+        ]
+      }
+    }
+  },
+  "additionalProperties": true,
+  "x-claude-code-version": "2.1.207",
+  "x-artifact-kind": "desktop-managed-settings-json-schema",
+  "x-surface": "Claude Desktop policy, not Claude Code settings.json"
+}

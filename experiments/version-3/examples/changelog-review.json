@@ -1,0 +1,22 @@
+{
+  "claudeCodeVersion": "2.1.207",
+  "reviewer": "example-ai-review",
+  "reviews": [
+    {
+      "bulletSha256": "421999c07271dcd87744f68f8ee15d9f6eddc94188dfb738b274fc3d90c2239d",
+      "classification": "schema-change",
+      "confidence": "high",
+      "identifiers": [
+        {
+          "kind": "environment-variable",
+          "identifier": "CLAUDE_CODE_ENABLE_AUTO_MODE"
+        },
+        {
+          "kind": "setting",
+          "identifier": "disableAutoMode"
+        }
+      ],
+      "rationale": "The release note changes an environment opt-in and points to a documented setting that controls the behavior."
+    }
+  ]
+}

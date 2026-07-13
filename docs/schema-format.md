@@ -1,91 +1,163 @@
-# Schema Format
+# Artifact format
 
 > **Entry type:** Contract
-> **Status:** Design
-> **Related:** [`pipeline.md`](pipeline.md) · [`sources.md`](sources.md)
+> **Status:** Corrected by the 2026-07-13 audit
+> **Related:** [`pipeline.md`](pipeline.md) · [`sources.md`](sources.md) ·
+> [`audit-2026-07-13.md`](audits/audit-2026-07-13.md)
 
-The output contract: what the generator emits and how consumers use it.
+The output uses JSON Schema only where there is a real JSON instance to validate.
+Other surfaces use explicit catalogs, all indexed by a manifest.
 
-## Files — per-category **and** combined
+## Files
 
-Both granular and unified, so a consumer takes exactly what it needs:
-
-| File | Covers | Source authority |
+| File | Kind | Represents |
 | --- | --- | --- |
-| `settings.schema.json` | `settings.json` keys + types | docs + SchemaStore |
-| `env.schema.json` | environment variables | binary (filtered) + docs |
-| `flags.schema.json` | CLI flags + enum values | binary + docs |
-| `keybindings.schema.json` | default keybindings | binary |
-| `claude-code.schema.json` | **combined index**, `$ref`-ing the four above | — |
+| `settings.schema.json` | JSON Schema draft-07 | Claude Code `settings.json` |
+| `global-config.schema.json` | JSON Schema draft-07 | global `~/.claude.json` preferences |
+| `desktop-managed-settings.schema.json` | JSON Schema draft-07 | Claude Desktop-only managed policy |
+| `env.schema.json` | JSON Schema draft-07 | a declared JSON projection of string-valued environment variables |
+| `keybindings.schema.json` | JSON Schema draft-07 | `~/.claude/keybindings.json` |
+| `keybindings.runtime-compat.schema.json` | JSON Schema draft-07 | exact parser-compatible keybinding action values, including warning-only strings |
+| `flags.catalog.json` | versioned catalog | options keyed by command path, spellings, arity, defaults, choices, and status when proven |
+| `keybinding-defaults.catalog.json` | versioned catalog | public action names, contexts, and documented default display values |
+| `settings-facts.catalog.json` | versioned catalog | setting paths, scopes, status, fact evidence, and runtime corroboration |
+| `keybinding-capabilities.catalog.json` | versioned catalog | documented actions plus exact-binary candidates and command-binding evidence |
+| `manifest.json` | versioned index | release identity, sources, digests, artifact roles, counts, and drift |
 
-The combined index composes the per-category schemas via `$ref`, so there is one
-source of truth per category and no duplication between granular and combined forms.
+There is no `claude-code.schema.json` that `$ref`-composes every artifact. Such a
+schema would describe an artificial aggregate object that Claude Code never reads.
 
-## Base format
+## Common metadata
 
-- **JSON Schema draft-07** (matches SchemaStore; broadly supported by validators/IDEs).
-- Every file carries `"x-claude-code-version": "<version>"` so a consumer can assert
-  exactly which release it received.
-- The combined index carries a `"x-generated-at"` marker and a `"x-sources"` summary.
+Every artifact records:
 
-## Provenance — every field is tagged
+- `claudeCodeVersion` or `x-claude-code-version`;
+- an artifact kind and format version;
+- source evidence and documentation links at the artifact or fact level; and
+- a digest in `manifest.json`.
 
-The reconciliation policy ([`pipeline.md`](pipeline.md)) attaches provenance so
-every fact is auditable. Custom `x-` keywords (ignored by standard validators, read
-by aware consumers):
+The manifest records for each source:
 
-| Keyword | Meaning |
-| --- | --- |
-| `x-source` | `"binary"` \| `"docs"` \| `"schemastore"` \| `"changelog"` — where the fact came from |
-| `x-undocumented` | `true` = present in the binary but not the docs (freshest signal) |
-| `x-corroborated` | `false` = single-source, no cross-check |
-| `x-internal` | `true` = env var that failed the user-facing filter; retained but not "public" |
-| `x-min-version` | from the docs' `{/* min-version */}` markers, when present |
+- stable source ID and role;
+- requested and resolved URL;
+- SHA-256 of the exact response bytes; and
+- byte count.
 
-## Example — a flag entry (`flags.schema.json`)
+Production snapshots should also record retrieval time outside deterministic
+artifact payloads, or derive it from the release-run record, to avoid noisy rebuilds.
+
+## Fact-level provenance
+
+Do not use a single `x-source` when facts came from different places. A property may
+have separate evidence for existence, type, description, enum/default, and version
+bounds. The target model is conceptually:
 
 ```json
 {
-  "permission-mode": {
-    "type": "string",
-    "description": "Set the permission mode for the session.",
-    "enum": ["acceptEdits", "auto", "bypassPermissions", "default", "dontAsk", "plan"],
-    "x-source": "binary",
-    "x-corroborated": true
-  },
-  "some-new-flag": {
-    "type": "boolean",
-    "x-source": "binary",
-    "x-undocumented": true,
-    "x-corroborated": false
+  "x-provenance": {
+    "existence": [{ "source": "settingsDocs", "sourceSha256": "..." }],
+    "type": [{ "source": "platformBinaryDoctor", "sourceSha256": "..." }],
+    "description": [{ "source": "settingsDocs", "sourceSha256": "..." }]
   }
 }
 ```
 
-## Example — an env entry (`env.schema.json`)
+The experiment uses a smaller evidence array while the internal intermediate model
+is still being designed. Confidence, corroboration, documentation status, and drift
+are derived from evidence. A binary-only token is `undocumented-candidate`, not
+automatically `internal` or public. Full official-doc prose is not redistributed by
+the experiment; it records links and digests pending a licensing decision.
+
+## Settings schema
+
+Use official examples and tables as the structured base, specialized first-party
+pages for nested semantics, and the exact release's isolated `doctor` diagnostics
+as independent top-level type/enum corroboration. Preserve
+`additionalProperties: true` in compatibility objects unless first-party evidence
+establishes a closed set. Do not turn a dotted docs path into a literal top-level
+property, and do not flatten global or Desktop-only fields into `settings.json`.
+
+SchemaStore is not a generation source. A development-only parity report may use
+Version 1 after generation to find lost capabilities, but discrepancies must be
+resolved through current first-party evidence rather than copied constraints.
+
+A future strict/audit schema may set `additionalProperties: false`, but it must be a
+separate opt-in artifact and is not the default compatibility validator.
+
+## Environment schema
+
+The schema validates a JSON representation such as:
 
 ```json
 {
-  "ANTHROPIC_BASE_URL": {
-    "type": "string",
-    "description": "Override the API endpoint URL.",
-    "x-source": "docs",
-    "x-corroborated": true
+  "ANTHROPIC_BASE_URL": "https://api.example.test",
+  "CLAUDE_CODE_DISABLE_AUTO_MEMORY": "1"
+}
+```
+
+All values are strings because process environments are string-valued. Documented
+variables receive source links and version evidence. Other environment names remain
+allowed with string values; binary-only candidates are not injected as public
+properties.
+
+## Flag catalog
+
+Flags are not a JSON configuration file. Each option record is scoped by
+`commandPath` and can contain:
+
+- canonical name and aliases/spellings;
+- required/optional/no-value arity;
+- repeatability and variadic state;
+- choices, default, conflicts, implications, hidden/deprecated state;
+- documentation prose and examples; and
+- fact-level provenance.
+
+Unknown metadata stays unknown. It must not be guessed from an example. Duplicate
+names at different command paths are valid records, not collisions.
+
+## Keybindings schema and defaults catalog
+
+The dedicated keybindings schema validates user configuration, including contexts,
+actions, keystroke syntax, command bindings, and null unbinding. The defaults
+catalog is separate because defaults describe application behavior, not the shape
+of a user's override file. Preserve OS-specific or context-specific defaults as
+display text until normalization is proven.
+
+## Manifest example
+
+```json
+{
+  "schemaVersion": 1,
+  "artifactKind": "claude-code-surface-manifest",
+  "claudeCodeVersion": "2.1.207",
+  "release": {
+    "npmPackage": "@anthropic-ai/claude-code",
+    "npmIntegrity": "sha512-...",
+    "expectedGitTag": "v2.1.207"
   },
-  "CLAUDE_CODE_ACT_DONT_REDERIVE": {
-    "type": "string",
-    "x-source": "binary",
-    "x-internal": true,
-    "x-corroborated": false
+  "artifacts": {
+    "settings.schema.json": {
+      "artifactKind": "settings-json-schema",
+      "sha256": "..."
+    },
+    "flags.catalog.json": {
+      "artifactKind": "cli-option-catalog",
+      "sha256": "..."
+    }
+  },
+  "drift": {
+    "docsOnlyUntypedTopLevelSettings": [],
+    "documentedActionsMissingFromSchema": []
   }
 }
 ```
 
-## Consumer contract (stability promises)
+## Stability promises
 
-- **Additive by default.** New keys/flags appear; existing entries keep their shape.
-- **Removals are explicit** — a removed key is retained one release with
-  `"deprecated": true` before dropping, so consumers get a signal, not a surprise.
-- **Pin by git tag** (`v<version>`) for reproducibility; track `latest/` for freshness.
-- Standard validators ignore all `x-` keywords, so the schemas validate real
-  `settings.json` files out of the box.
+- Pin a release tag plus manifest digest for reproducibility.
+- Catalog additions are normally additive; removals and classification changes are
+  explicit diffs, not silently retained for an invented grace period.
+- JSON Schema custom `x-` keywords remain annotations.
+- Catalog and manifest `schemaVersion` changes on a breaking format change.
+- A mutable upstream response with the same Claude Code version but a new digest is
+  recorded as a new observation and reviewed before replacing a published artifact.

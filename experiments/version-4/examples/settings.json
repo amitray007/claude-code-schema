@@ -1,0 +1,52 @@
+{
+  "$schema": "https://example.invalid/claude-code/2.1.207/settings.schema.json",
+  "model": "sonnet",
+  "env": {
+    "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": "1"
+  },
+  "permissions": {
+    "allow": ["Bash(npm test *)", "Read(./src/**)"],
+    "deny": ["Read(./.env)"],
+    "defaultMode": "default",
+    "skipDangerousModePermissionPrompt": false
+  },
+  "sandbox": {
+    "enabled": true,
+    "filesystem": {
+      "allowWrite": ["./dist"],
+      "denyRead": ["~/.aws/credentials"]
+    },
+    "network": {
+      "allowedDomains": ["registry.npmjs.org"]
+    }
+  },
+  "worktree": {
+    "baseRef": "fresh",
+    "symlinkDirectories": ["node_modules"]
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "npm run format",
+            "timeout": 30
+          }
+        ]
+      }
+    ]
+  },
+  "enabledPlugins": {
+    "example-plugin@example-marketplace": true
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "~/.claude/statusline.sh"
+  },
+  "subagentStatusLine": {
+    "type": "command",
+    "command": "~/.claude/subagent-statusline.sh"
+  }
+}

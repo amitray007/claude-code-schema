@@ -8,6 +8,12 @@ Real findings from live probes of the installed Claude Code binary. This is the
 ground-truth record of *what is actually extractable and how* — the design in
 [`sources.md`](sources.md) is built on these facts.
 
+> **2026-07-13 recheck:** the linux-x64 npm tarball for v2.1.207 was downloaded,
+> its npm SHA-512 integrity was verified, and static extraction reproduced **402**
+> unique `CLAUDE_CODE_*` names and **59** unique `ANTHROPIC_*` names. This confirms
+> extractability, not public support. The binary is now classified as a discovery
+> source; official docs are the authority for public env vars and flags.
+
 ---
 
 ## The binary
@@ -26,7 +32,7 @@ ground-truth record of *what is actually extractable and how* — the design in
 > The pre-spec audit resolved the load-bearing question: the Bun binary ships on npm
 > as **per-platform optional dependencies** (`@anthropic-ai/claude-code-<os>-<arch>`),
 > a plain tarball CI can `npm pack` + `strings` hermetically. Do **not** probe a
-> locally-installed `~/.local` binary in CI. See [`sources.md`](sources.md) → Source A
+> locally-installed `~/.local` binary in CI. See [`sources.md`](sources.md) → Source C
 > and [`decisions.md`](decisions.md) → D-1. The empirical findings below (from the
 > local v2.1.207 binary) still hold — the *content* is identical; only the *acquisition
 > path* changed.
@@ -39,9 +45,9 @@ ground-truth record of *what is actually extractable and how* — the design in
 | --- | --- | --- |
 | **CLI flags + descriptions** | ✅ **146** flag defs (48 on main program) | Commander.js `.option(...)` chain on a single contiguous minified line |
 | **Enum arrays** | ✅ clean literal data | e.g. permission modes extracted verbatim (below) |
-| **Env vars** | ✅ **402** `CLAUDE_CODE_*` + ~57 `ANTHROPIC_*` | `strings \| grep -oE 'CLAUDE_CODE_[A-Z0-9_]+'` — a **superset** (mixes user-facing + internal) |
-| **Keybinding defaults** | ✅ clean JSON | embedded declaratively with `$schema` / `$docs` |
-| **settings.json schema** | ❌ **not extractable** | no embedded JSON Schema; Zod v4 is bundled but compiled to minified `.run()` closures — declarative `z.object({...})` shapes are gone; keys survive only as scattered code constants and error strings |
+| **Env vars** | ✅ **402** `CLAUDE_CODE_*` + **59** `ANTHROPIC_*` on the rechecked linux tarball | `strings \| grep -oE 'CLAUDE_CODE_[A-Z0-9_]+'` — an unclassified **candidate superset** |
+| **Keybinding defaults/capabilities** | ✅ embedded, but public defaults come from docs | the exact binary also exposes action-token candidates and the command-binding validator grammar |
+| **settings.json schema** | ❌ no complete declarative schema | Zod shapes are compiled, but `claude doctor` independently exposes deterministic validation diagnostics for invalid settings |
 | **TypeScript `.d.ts`** | ❌ not found | only stray type-comment fragments |
 
 ### Real extracted data (verbatim)
@@ -60,8 +66,8 @@ Note `"auto"` — this is the auto-mode Orpheus had not yet wired.
 CLAUDE_CODE_DISABLE_AUTO_MEMORY        # user-facing
 CLAUDE_CODE_DISABLE_1M_CONTEXT         # user-facing
 CLAUDE_CODE_SUBAGENT_MODEL             # user-facing
-CLAUDE_CODE_3P_PROBE_WROTE_OPUS_...    # internal noise
-CLAUDE_CODE_ACT_DONT_REDERIVE          # internal noise
+CLAUDE_CODE_3P_PROBE_WROTE_OPUS_...    # internal-looking, still unclassified
+CLAUDE_CODE_ACT_DONT_REDERIVE          # internal-looking, still unclassified
 ```
 
 **Flags** — real sample (main program, v2.1.207):
@@ -74,7 +80,7 @@ CLAUDE_CODE_ACT_DONT_REDERIVE          # internal noise
 
 ---
 
-## Runtime CLI introspection — mostly a dead end
+## Runtime CLI introspection — useful only inside a strict boundary
 
 Probing `claude` at runtime for a self-describing schema:
 
@@ -86,11 +92,13 @@ Probing `claude` at runtime for a self-describing schema:
 | `claude --json-schema` | Exists but is for **structured session output validation**, not self-description. |
 | `claude agents --json` | ✅ JSON — but **runtime session state**, not schema. |
 | `claude auto-mode config` / `defaults` | ✅ ~60 KB JSON — but the **permission classifier ruleset**, not the settings/flags/env schema. |
+| isolated `claude doctor` with invalid `settings.json` | ✅ deterministic path/type/enum diagnostics; Version 4 recovers 111 current top-level diagnostics without authentication |
 | `man claude`, completion scripts | None exist. |
 
-**Verdict:** the CLI cannot self-describe its settings/env surface. `--help` yields
-the flag list (as prose) only. Settings.json keys and env vars never appear in any
-runtime output.
+**Verdict:** the CLI does not emit a complete self-description, but bounded help
+recovers command/argument/option structure and doctor provides an independent
+settings validation oracle. Environment discovery remains docs plus static
+candidates.
 
 ---
 
@@ -99,13 +107,19 @@ runtime output.
 1. **Never shell out to guessed `claude` subcommands.** During probing,
    `claude config list` and `claude completion` **started a real interactive agent
    session** — those subcommands no longer exist, so the arguments were parsed as a
-   *prompt*. Any CLI interaction in the pipeline must use **only** known-safe flags
-   (`--help`, `--version`), always with a **timeout** and **stdin closed**.
+   *prompt*. Any CLI interaction in the pipeline must use only `--version`, command
+   paths discovered from successful parent `--help`, or `doctor` against generated
+   invalid settings in an isolated home. Always use timeouts, closed stdin, traffic
+   suppression, and no inherited credentials.
 
-2. **The env-var grep is a superset.** The 402 `CLAUDE_CODE_*` names include
-   internal/probe/debug vars. They must be **intersected with the official docs**
-   (`env-vars.md`) to isolate the user-facing set worth exposing.
+2. **The env-var grep is a candidate superset.** Absence from docs does not prove a
+   name is internal, and a prefix allowlist does not prove it is public. Publish the
+   documented set; keep binary-only names in a separate discovery report.
 
 3. **Never trust a single source for a dimension.** Cross-source reconciliation is
    what makes parse fragility *detectable* rather than silent. See
    [`pipeline.md`](pipeline.md).
+
+4. **Do not flatten Commander options.** The same option name can occur under
+   different subcommands. Static extraction must reconstruct command paths and
+   hidden/deprecated state before binary options can be compared to public docs.

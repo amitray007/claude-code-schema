@@ -1,0 +1,87 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://example.invalid/claude-code/2.1.207/changelog-review.schema.json",
+  "title": "Claude Code changelog AI or human review",
+  "type": "object",
+  "required": [
+    "claudeCodeVersion",
+    "reviews"
+  ],
+  "properties": {
+    "claudeCodeVersion": {
+      "const": "2.1.207"
+    },
+    "reviewer": {
+      "type": "string"
+    },
+    "reviews": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "bulletSha256",
+          "classification",
+          "confidence"
+        ],
+        "properties": {
+          "bulletSha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "classification": {
+            "enum": [
+              "schema-change",
+              "catalog-change",
+              "behavior-change",
+              "bug-fix-only",
+              "documentation-only",
+              "irrelevant",
+              "uncertain"
+            ]
+          },
+          "confidence": {
+            "enum": [
+              "low",
+              "medium",
+              "high"
+            ]
+          },
+          "identifiers": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "kind",
+                "identifier"
+              ],
+              "properties": {
+                "kind": {
+                  "enum": [
+                    "setting",
+                    "environment-variable",
+                    "cli-option",
+                    "keybinding-action",
+                    "slash-command",
+                    "path-or-config-key",
+                    "other"
+                  ]
+                },
+                "identifier": {
+                  "type": "string"
+                }
+              },
+              "additionalProperties": false
+            }
+          },
+          "rationale": {
+            "type": "string",
+            "maxLength": 500
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false,
+  "x-review-policy": "AI output is advisory and must never mutate published artifacts without deterministic source evidence and validation gates."
+}

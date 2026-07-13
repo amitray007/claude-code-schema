@@ -1,0 +1,22 @@
+{
+  "name": "claude-schema-store-experiment",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Real-source experiment for the Claude Schema Store design",
+  "scripts": {
+    "experiment:1": "node experiments/version-1/generate.mjs",
+    "experiment:1:check": "node experiments/version-1/validate.mjs",
+    "experiment:2": "node experiments/version-2/generate.mjs",
+    "experiment:2:check": "node experiments/version-2/validate.mjs",
+    "experiment:3": "node experiments/version-3/generate.mjs",
+    "experiment:3:check": "node experiments/version-3/validate.mjs",
+    "experiment:4": "node experiments/version-4/generate.mjs",
+    "experiment:4:check": "node experiments/version-4/validate.mjs",
+    "experiment:4:benchmark-v1": "node experiments/version-4/benchmark-v1.mjs",
+    "experiment:benchmark": "node experiments/benchmark/run.mjs"
+  },
+  "dependencies": {
+    "ajv": "8.20.0"
+  }
+}

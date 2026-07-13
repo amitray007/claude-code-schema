@@ -1,100 +1,161 @@
 # Pipeline
 
 > **Entry type:** Design
-> **Status:** Corrected after the pre-spec audit (see [`decisions.md`](decisions.md))
-> **Related:** [`sources.md`](sources.md) · [`schema-format.md`](schema-format.md)
+> **Status:** Corrected by the 2026-07-13 audit
+> **Related:** [`sources.md`](sources.md) · [`schema-format.md`](schema-format.md) ·
+> [`audit-2026-07-13.md`](audits/audit-2026-07-13.md)
 
-How the sources in [`sources.md`](sources.md) combine into a versioned schema,
-unattended, without ever shipping a bad artifact.
+The pipeline publishes public, versioned artifacts while keeping static binary
+discoveries separate and making source drift explicit.
 
 ## Flow
 
+```text
+npm exact version changes
+        |
+        v
+resolve wrapper metadata + verify matching Git tag when available
+        |
+        v
+fetch expanded official docs + tagged examples + tagged changelog
+record requested/resolved URLs, bytes, and source digests
+        |
+        +--------------------------------------+
+        | verify exact platform integrity      |
+        | static candidates + bounded --help   |
+        | isolated doctor validation oracle    |
+        | never prompt, authenticate, or update|
+        +--------------------------------------+
+        |
+        v
+parse bounded sections -> normalized fact model -> reconcile per fact
+        |
+        v
+emit schemas + catalogs + manifest into a staging directory
+        |
+        v
+meta-schema / fixtures / mutations / semantic diff / digest gates
+        |
+   green|                         |red or unexplained drift
+        v                         v
+publish atomically          keep last-good; retain diagnostics;
+tag release + digest        open review issue/PR
 ```
-  ┌─ TRIGGER ────────────────────────────────────────────────┐
-  │  npm /latest version changes  →  run for that version     │
-  └───────────────────────────────────────────────────────────┘
-                              │
-  ┌─ EXTRACT (parallel, hermetic) ───────────────────────────┐
-  │  A  platform tarball  → flags, enums, env superset        │
-  │  B  docs .md          → settings.json keys + prose        │
-  │  D  CHANGELOG         → "what changed" identifiers        │
-  │  E  SchemaStore       → settings key types                │
-  └───────────────────────────────────────────────────────────┘
-                              │
-  ┌─ RECONCILE (per-field provenance — NOT "docs win") ──────┐
-  │  merge by field; tag every field with x-source /          │
-  │  x-corroborated / x-undocumented / x-internal             │
-  └───────────────────────────────────────────────────────────┘
-                              │
-  ┌─ VALIDATION GATE (all must pass) ────────────────────────┐
-  │  1 draft-07 compiles   2 real-config corpus: 0 false-neg  │
-  │  3 CHANGELOG delta ok  4 count floors hold                │
-  └───────────────────────────────────────────────────────────┘
-                    │ green                    │ any red
-                    ▼                          ▼
-        emit + auto-merge PR        open an issue, KEEP last-good
-        (tag git with version)      (never overwrite the artifact)
-```
 
-## Reconciliation — per-field provenance, not a global winner
+## Trigger and release identity
 
-The earlier "docs win on conflict" rule was **backwards** for the freshest data and
-is replaced by a **per-field** policy (see [`decisions.md`](decisions.md), D-2):
+Poll npm for `latest` or react to a package event, but resolve and store the exact
+version endpoint before work begins. Verify wrapper/platform version agreement and
+package integrity. The matching Anthropic Git tag/release is corroboration and pins
+the changelog; if it is temporarily absent, wait/retry rather than reading `main` as
+if it were versioned.
 
-| Field | Authority | Why |
-| --- | --- | --- |
-| Flag / env **existence** & **enum literals** | **Binary wins** | The binary is the shipped truth; docs lag by days. Suppressing a real new flag defeats the project. |
-| `settings.json` **key existence** | **Docs win** | Only source; binary can't yield them declaratively. |
-| **Types** of settings keys | **SchemaStore**, then docs | Docs express types poorly; binary can't. |
-| **Descriptions / deprecation / min-version** | **Docs win** | Binary has no prose. |
+## Extract
 
-**Provenance tags on every field** (the single highest-value design decision):
-- `x-source`: `"binary"` | `"docs"` | `"schemastore"` | `"changelog"`
-- `x-undocumented`: `true` for a flag/env present in the binary but absent from docs
-  — **included, not dropped** (it's the freshest signal the project exists to surface).
-- `x-corroborated`: `false` for a docs key with no binary/SchemaStore backing.
-- `x-internal`: `true` for env vars in the 402 superset that fail the user-facing
-  filter (docs OR SchemaStore OR prefix-allowlist) — retained but marked, not published as user-facing.
+Fetch independent sources concurrently. Every source fetch returns a record with
+source ID, role, requested URL, resolved URL, byte count, SHA-256, and raw bytes.
+Production must archive the exact mutable docs bytes or a content-addressed snapshot
+if historical reproducibility is promised.
 
-## Validation gate — what makes auto-merge safe
+The docs parser selects the expected heading range and required table headers.
+`llms.txt` provides route discovery. Parse failures, ambiguous duplicate sections,
+and zero/implausible counts are hard failures.
 
-Auto-merge is only defensible because emit is gated on **semantics, not a human**.
-All four must pass before a PR is opened/merged:
+Static binary discovery emits only candidate/diff facts. Bounded execution is
+limited to `--version`, recursively discovered `--help` paths, and isolated
+`doctor` validation against generated invalid settings. Every operation has closed
+stdin, a temporary home, traffic/update/telemetry suppression, timeouts, and no
+inherited credential variables.
 
-1. **Schema compiles** — the emitted JSON Schema is itself valid draft-07 (`ajv compile`).
-2. **Corpus validation** — a committed corpus of real-world `settings.json` files
-   (harvested from public dotfiles + this project's own) validates with **zero false
-   negatives**. A known-good config must never be rejected.
-3. **CHANGELOG delta** — every identifier the CHANGELOG names as added/changed for
-   this version is present in the emitted schema.
-4. **Count floors** — flag/env/key counts may not collapse (e.g. `>20%` drop vs
-   last release fails the run). This is the tripwire for a silent binary-extraction
-   break (minifier/bytecode change).
+## Normalize before reconciling
 
-**On any red:** open an issue with the diff, and **leave the last-good committed
-schema untouched.** Fail-closed on output; fail-safe on the artifact. An empty or
-half-parsed schema can never overwrite a good one.
+Use an internal fact model rather than merging source JSON directly. At minimum a
+fact records:
 
-## Safety constraints (carried from extraction)
+- artifact kind and identity (`setting path`, `env name`, `command path + option`,
+  or `context + action`);
+- fact kind (`existence`, `type`, `description`, `default`, `enum`, `version bound`,
+  `status`);
+- normalized value and raw evidence pointer;
+- source ID/digest and parser version; and
+- confidence/status based on source policy.
 
-- **Never shell out to guessed `claude` subcommands** — they parse as prompts and
-  start a real session (see [`extraction-notes.md`](extraction-notes.md)). The
-  pipeline does **not** execute the CLI at all; it reads the tarball.
-- **Never redistribute the binary** or large verbatim strings — emit distilled facts
-  only; filter out any binary-sourced description prose over a length threshold.
+This prevents one scalar `x-source` from erasing which source established which
+part of a record.
 
-## Versioning model
+## Reconciliation
 
-- **`latest/`** holds the current 5-file set at HEAD.
-- **git tags** (`v<claude-code-version>`) let consumers pin:
-  `raw.githubusercontent.com/<repo>/v2.1.207/latest/settings.schema.json`.
-- A small `versions.json` maps `<version> → git sha`.
-- **No** directory-per-version (459+ near-duplicate dirs → a duplication/noise
-  nightmare). History + tags are the version store.
+| Fact | Rule |
+| --- | --- |
+| public setting/env/flag/action existence | official docs establish public status |
+| settings type constraints | infer from official examples/tables, then corroborate top-level types/enums with exact-binary doctor diagnostics |
+| specialized nested structure | use the owning official page; never infer a closed object from one example |
+| global/Desktop fields | emit separate scoped artifacts instead of flattening them into `settings.json` |
+| keybindings | current docs define public contexts/actions; binary evidence may preserve undocumented candidates without promoting them |
+| descriptions/default display/version bounds | docs supply the public value |
+| flag arity/default/choices/path | accept only a scoped Commander/static fact or explicit docs fact |
+| binary-only identifier | retain as `undocumented-candidate`; do not publish into the public artifact |
+| old benchmark vs current evidence mismatch | classify as active, moved, different-surface, retired, or unverified legacy; current first-party truth wins |
+| changelog identifier | hint only unless artifact kind + change verb are unambiguous |
+
+Do not label a binary-only env var `internal`: that is a classification not proven by
+absence from docs. Do not flatten subcommand options by name.
+
+## Validation gate
+
+All required checks pass before atomic publication:
+
+1. **Source integrity:** exact versions match; npm integrity verifies; required
+   sources have recorded digests.
+2. **Parser structure:** expected sections/tables exist once; routes still appear in
+   `llms.txt`; fields and counts are plausible.
+3. **Schema correctness:** draft-07 meta-schema compilation and local `$ref`
+   resolution succeed.
+4. **Positive and negative fixtures:** official/tagged examples and curated
+   invalid/mutation cases behave as expected.
+5. **Catalog invariants:** unique identities within scope, aliases normalized,
+   command paths retained, and required provenance present.
+6. **Semantic diff:** both unexpected drops and growth, type narrowing, enum removal,
+   status changes, and source-digest changes are evaluated against the last-good run.
+7. **Cross-source assertions:** every documented setting/action appears in the
+   compatible validator or an explicit unresolved-drift list.
+8. **Manifest verification:** source and artifact digests, counts, format versions,
+   and release identity agree with emitted bytes.
+9. **Development parity:** after generation, compare against Version 1 so every old
+   capability is active, redirected, explicitly retired, or retained as a candidate.
+   The benchmark never feeds the generator.
+
+Count floors remain a useful tripwire but are not an acceptance proof. A
+positive-only real-config corpus is supplemental because permissive unknown-property
+handling can make it pass even when the catalog is incomplete.
+
+## Publication and versioning
+
+- Generate into a staging directory and atomically replace `latest/` only after all
+  gates pass.
+- Tag the publishing repository with the Claude Code version.
+- Index versions by tag/ref and manifest digest. Do not attempt to place a commit's
+  own SHA inside that same commit.
+- If the exact same Claude Code version is observed with different mutable-doc
+  digests, retain it as a new observation and require review before replacing the
+  published artifact.
+- Never commit tarballs, binaries, or raw string dumps.
+
+## Failure modes
+
+| Failure | Behavior |
+| --- | --- |
+| docs structure changed | block publication; keep last-good; save bounded diagnostics |
+| specialized official page unavailable | retry; do not silently erase nested constraints |
+| Git tag temporarily absent | wait/retry; do not substitute `main` |
+| binary extraction collapsed | public docs-backed artifacts may continue; mark discovery unavailable |
+| unexplained source drift | emit candidate PR/issue, not auto-merge |
+| validation regression | keep last-good and attach semantic diff |
 
 ## Pivot readiness
 
-If Anthropic ships an official full schema or `--dump-schema`, the reconcile step
-gains one authoritative source and the project **degrades to a thin validator/differ**
-over it. Because reconciliation is already source-tagged and per-field, adding
-"official" as the top-authority source is a config change, not a rewrite.
+Monitor official docs index, settings/keybindings pages, and tagged release notes for
+an explicitly linked official machine-readable schema. Do not execute guessed CLI
+switches. An announced artifact is added to the fact-source policy and compared
+before it becomes authoritative; the manifest and fact model make that a source
+change rather than a complete rewrite.
