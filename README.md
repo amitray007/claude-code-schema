@@ -1,4 +1,4 @@
-# Claude Schema Store
+# claude-code-schema
 
 A machine-readable, versioned schema of **Claude Code's configuration surface** —
 its settings.json keys, environment variables, CLI flags, and keybindings —
@@ -56,9 +56,15 @@ keybindings only; env unenumerated; no flags) or *broad but not machine-readable
 vars + CLI flags. This project owns those axes + the automation, and **adopts**
 SchemaStore for settings + keybindings rather than duplicating them.
 
+## Contributing
+
+Contributions are welcome — design feedback counts as much as code while the
+generator is still pre-implementation. See [`CONTRIBUTING.md`](CONTRIBUTING.md)
+and the [`docs/`](docs/) knowledge base to get oriented.
+
 ## License
 
-Intended to be open-source. License TBD (see [`docs/open-questions.md`](docs/open-questions.md)).
+[MIT](LICENSE) © 2026 Amit Ray.
 
 ## Related
 

@@ -6,19 +6,17 @@
 
 Calls that are not yet made. Each notes who/what it blocks.
 
-## Q-1 · Final repo / package name
+## Q-1 · Final repo / package name — RESOLVED
 
-- Working name: `claudeschema` (dir), "Claude Schema Store" (title).
-- Alternatives considered: `claude-code-schema`, `claudeschemastore`, `claudestore`.
-- **Decision needed before:** first public push / package publish.
-- Leaning: descriptive `claude-code-schema` for any published package name (clearest,
-  trademark-safe); keep `claudeschema` as the short repo dir.
+- **Decision:** public project name is `claude-code-schema` (clearest,
+  trademark-safe); the local repo dir stays `claudeschema` as a short alias.
+- Alternatives considered: `claudeschemastore`, `claudestore`.
 
-## Q-2 · License
+## Q-2 · License — RESOLVED
 
-- Intent: open-source. Specific license unchosen (MIT vs Apache-2.0).
-- Apache-2.0 gives an explicit patent grant + is friendlier for a
-  facts/interoperability project; MIT is simpler. **Decide before first public commit.**
+- **Decision:** MIT (see [`LICENSE`](../LICENSE)). Chosen for simplicity;
+  Apache-2.0's patent grant was considered but MIT's minimalism won for a
+  facts/interoperability project of this size.
 
 ## Q-3 · Real-config corpus for the validation gate
 
