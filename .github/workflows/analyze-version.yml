@@ -58,6 +58,7 @@ jobs:
         env:
           VERSION: ${{ inputs.version }}
           PLATFORM_PACKAGE: ${{ inputs.platform_package }}
+          SCHEMA_BASE_URL: ${{ vars.SCHEMA_BASE_URL }}
         run: >-
           npm run schema:generate --
           --version "$VERSION"

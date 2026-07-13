@@ -19,9 +19,11 @@ Claude binary. Publication receives write permission only after entering the
 Discovery fails closed if its configured baseline is absent from npm history, which
 prevents an accidental issue flood. Publication is immutable: if a version tag
 already exists it must resolve to the reviewed `main` commit, and existing release
-assets are never overwritten. Release-PR automation branches include the workflow
-run ID and attempt number, so a retry cannot collide with a partially pushed branch
-from an earlier attempt.
+assets are never overwritten. On a retry, every existing asset is downloaded and
+compared byte-for-byte with the reviewed files; a partial or divergent release
+fails closed. Release-PR automation branches include the workflow run ID and attempt
+number, so a retry cannot collide with a partially pushed branch from an earlier
+attempt.
 
 If several releases appear between discovery runs, each still receives an issue.
 Only the version identified by npm's `latest` dist-tag is analyzed because the

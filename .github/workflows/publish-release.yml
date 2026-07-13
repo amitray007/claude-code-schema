@@ -61,7 +61,14 @@ jobs:
             git push origin "$tag"
           fi
           if gh release view "$tag" --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
-            echo "Release $tag already exists at the reviewed commit; leaving immutable assets unchanged."
+            mkdir -p .work/existing-release
+            gh release download "$tag" --repo "$GITHUB_REPOSITORY" --dir .work/existing-release
+            test "$(find .work/existing-release -maxdepth 1 -type f | wc -l)" = "$(($(find output -maxdepth 1 -type f -name '*.json' | wc -l) + 1))"
+            cmp .work/release/SHA256SUMS .work/existing-release/SHA256SUMS
+            for file in output/*.json; do
+              cmp "$file" ".work/existing-release/$(basename "$file")"
+            done
+            echo "Release $tag already exists with the exact reviewed assets; leaving it unchanged."
           else
             gh release create "$tag" --repo "$GITHUB_REPOSITORY" --verify-tag --title "$tag" --notes "Generated from first-party evidence and the integrity-verified Claude Code ${VERSION} release. See manifest.json for sources, digests, limitations, and probe policy." .work/release/SHA256SUMS output/*.json
           fi

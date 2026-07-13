@@ -20,6 +20,9 @@ test("GitHub releases use the unprefixed vX.Y.Z name", async () => {
   assert.match(workflow, /sha256sum -- \*\.json/);
   assert.match(workflow, /subject-path: output\/\*\.json/);
   assert.match(workflow, /SHA256SUMS output\/\*\.json/);
+  assert.match(workflow, /gh release download "\$tag"/);
+  assert.match(workflow, /cmp \.work\/release\/SHA256SUMS/);
+  assert.match(workflow, /cmp "\$file"/);
   assert.doesNotMatch(workflow, /tar -/);
   assert.doesNotMatch(workflow, /latest\//);
   assert.doesNotMatch(workflow, /site\//);
