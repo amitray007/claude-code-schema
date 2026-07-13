@@ -63,17 +63,17 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           VERSION: ${{ steps.version.outputs.version }}
         run: |
-          tag="claude-code-v${VERSION}"
+          tag="v${VERSION}"
           if git rev-parse "$tag" >/dev/null 2>&1; then
             test "$(git rev-parse "${tag}^{commit}")" = "$(git rev-parse HEAD)"
           else
-            git tag -a "$tag" -m "Claude Code ${VERSION} schemas"
+            git tag -a "$tag" -m "$tag"
             git push origin "$tag"
           fi
           if gh release view "$tag" --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
             echo "Release $tag already exists at the reviewed commit; leaving immutable assets unchanged."
           else
-            gh release create "$tag" --repo "$GITHUB_REPOSITORY" --verify-tag --title "Claude Code ${VERSION} schemas" --notes "Generated from first-party evidence and the integrity-verified Claude Code ${VERSION} release. See manifest.json for sources, digests, limitations, and probe policy." .work/release/* latest/*.json
+            gh release create "$tag" --repo "$GITHUB_REPOSITORY" --verify-tag --title "$tag" --notes "Generated from first-party evidence and the integrity-verified Claude Code ${VERSION} release. See manifest.json for sources, digests, limitations, and probe policy." .work/release/* latest/*.json
           fi
       - name: Close the release-review issue
         env:
@@ -83,7 +83,7 @@ jobs:
           marker="claude-code-schema-release:${VERSION}"
           issue_number=$(gh issue list --repo "$GITHUB_REPOSITORY" --state open --label claude-release --limit 1000 --json number,body --jq ".[] | select(.body != null and (.body | contains(\"$marker\"))) | .number" | head -n 1)
           if [[ -n "$issue_number" ]]; then
-            gh issue comment "$issue_number" --repo "$GITHUB_REPOSITORY" --body "Published immutable release [claude-code-v${VERSION}](${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/releases/tag/claude-code-v${VERSION}) and deployed the reviewed schema bytes to Pages."
+            gh issue comment "$issue_number" --repo "$GITHUB_REPOSITORY" --body "Published immutable release [v${VERSION}](${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/releases/tag/v${VERSION}) and deployed the reviewed schema bytes to Pages."
             gh issue edit "$issue_number" --repo "$GITHUB_REPOSITORY" --remove-label approved-for-pr --add-label published
             gh issue close "$issue_number" --repo "$GITHUB_REPOSITORY" --reason completed
           fi

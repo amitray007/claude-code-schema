@@ -21,6 +21,9 @@ prevents an accidental issue flood. Publication is immutable: if a version tag
 already exists it must resolve to the reviewed `main` commit, and existing release
 assets are never overwritten.
 
+Repository tags and GitHub Release titles use only the schema version in the form
+`vX.Y.Z` (for example, `v2.1.207`). Product or repository prefixes are not added.
+
 ## Version issue lifecycle
 
 The discovery workflow uses the hidden marker
