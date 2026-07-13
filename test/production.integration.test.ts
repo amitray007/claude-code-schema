@@ -170,6 +170,16 @@ test("offline production generation is complete, formatted, validated, and deter
   const environmentSchema = await readJson<JsonObject>(
     resolve(first, "environment.schema.json"),
   );
+  const settingsProperties = settingsSchema.properties as JsonObject;
+  const settingsEnvironment = settingsProperties.env as JsonObject;
+  assert.deepEqual(settingsEnvironment.allOf, [
+    { $ref: "environment.schema.json" },
+  ]);
+  assert.equal(
+    settingsEnvironment["x-shared-schema"],
+    "environment.schema.json",
+  );
+  assert.equal(settingsEnvironment.properties, undefined);
   const validateSettings = ajv.getSchema(String(settingsSchema.$id));
   const validateEnvironment = ajv.getSchema(String(environmentSchema.$id));
   assert.ok(validateSettings, "settings schema must be registered by $id");
@@ -190,6 +200,11 @@ test("offline production generation is complete, formatted, validated, and deter
     ),
     true,
     JSON.stringify(validateEnvironment.errors, null, 2),
+  );
+  assert.equal(
+    validateSettings({ env: { ANTHROPIC_API_KEY: 42 } }),
+    false,
+    "settings.env must retain the string-valued environment contract",
   );
 
   for (const file of await readdir(first)) {

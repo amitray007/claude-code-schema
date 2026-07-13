@@ -39,6 +39,28 @@ function binaryEvidence(binary: JsonObject): JsonObject {
   };
 }
 
+function linkSettingsEnvironment(artifacts: Record<string, JsonObject>): void {
+  const settings = artifacts["settings.schema.json"];
+  const environment = artifacts["environment.schema.json"];
+  if (!settings || !environment) return;
+  const properties = settings.properties;
+  if (
+    !properties ||
+    typeof properties !== "object" ||
+    Array.isArray(properties)
+  )
+    return;
+  const current = properties.env;
+  if (!current || typeof current !== "object" || Array.isArray(current)) return;
+  const linked = cloneJson(current);
+  delete linked.type;
+  delete linked.properties;
+  delete linked.additionalProperties;
+  linked.allOf = [{ $ref: "environment.schema.json" }];
+  linked["x-shared-schema"] = "environment.schema.json";
+  properties.env = linked;
+}
+
 export function structureArtifacts(
   source: Record<string, JsonObject>,
   version: string,
@@ -74,6 +96,7 @@ export function structureArtifacts(
     renamed.$id = `${targetPrefix}${targetFile}`;
     artifacts[targetFile] = renamed;
   }
+  linkSettingsEnvironment(artifacts);
 
   artifacts["settings.catalog.json"] = {
     ...metadata("settings-surface-catalog", version, {
@@ -204,6 +227,8 @@ export function releaseCatalog(
           env: { CLAUDE_CODE_DISABLE_AUTO_MEMORY: "1" },
         },
         supportingEvidence: "settings.catalog.json",
+        environmentVariables:
+          "The settings schema's env property references environment.schema.json.",
       },
       environmentVariables: {
         file: "environment.schema.json",

@@ -23,6 +23,11 @@ https://github.com/amitray007/claude-code-schema/releases/download/v2.1.207/sett
 Add the release URL as `$schema` to receive editor completion and validation. See
 [`examples/settings.json`](../examples/settings.json).
 
+The schema's `env` property references the sibling `environment.schema.json`, so
+recognized environment-variable names are also available while editing
+`settings.json`. Networked schema resolvers fetch that sibling release asset
+automatically; offline validators should load both schema files.
+
 `settings.catalog.json` is supporting evidence. Most users do not need it. Use it
 only when auditing source provenance, scope classification, or runtime
 corroboration for a setting.

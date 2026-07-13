@@ -115,6 +115,12 @@ separate opt-in artifact and is not the default compatibility validator.
 
 ## Environment schema
 
+`settings.schema.json` reuses this schema through its real `env` property instead
+of embedding a second copy of every environment-variable definition. The relative
+reference resolves to the sibling `environment.schema.json` release asset. This is
+a real relationship in Claude Code configuration, unlike the synthetic
+multi-surface envelope.
+
 The schema validates a JSON representation such as:
 
 ```json

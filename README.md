@@ -25,7 +25,9 @@ For ordinary Claude Code configuration, there are two primary references:
 The similarly named `*.catalog.json` files preserve source and runtime evidence;
 they are not the primary configuration references. See the
 [`consumer quick start`](docs/quick-start.md) for direct release URLs, actual usage
-locations, and validated examples.
+locations, and validated examples. `settings.schema.json` also references
+`environment.schema.json` from its real `env` property, avoiding duplicate variable
+definitions.
 
 ## Why this exists
 

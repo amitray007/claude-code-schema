@@ -56,6 +56,7 @@ function topLevelTypedCount(schema: JsonObject): {
       record.enum ??
       record.oneOf ??
       record.anyOf ??
+      record.allOf ??
       record.$ref ??
       record.const,
     );
@@ -285,6 +286,29 @@ export async function validateDirectory(
   }
 
   const settings = schemas.get("settings.schema.json");
+  const settingsProperties = settings?.properties as JsonObject | undefined;
+  const settingsEnvironment = settingsProperties?.env as JsonObject | undefined;
+  const environmentRefs = Array.isArray(settingsEnvironment?.allOf)
+    ? settingsEnvironment.allOf
+        .map((entry) =>
+          entry && typeof entry === "object" && !Array.isArray(entry)
+            ? (entry as JsonObject).$ref
+            : undefined,
+        )
+        .filter(
+          (reference): reference is string => typeof reference === "string",
+        )
+    : [];
+  if (
+    environmentRefs.includes("environment.schema.json") &&
+    settingsEnvironment?.["x-shared-schema"] === "environment.schema.json"
+  )
+    pass("settings env reuses the standalone environment schema");
+  else
+    fail(
+      "settings env reuses the standalone environment schema",
+      "settings.properties.env must reference environment.schema.json",
+    );
   const typed = settings
     ? topLevelTypedCount(settings)
     : { typed: 0, total: 0, untyped: ["settings schema missing"] };

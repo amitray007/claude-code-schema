@@ -45,6 +45,14 @@
       "status": "passed"
     },
     {
+      "name": "release catalog has unambiguous settings and environment entry points",
+      "status": "passed"
+    },
+    {
+      "name": "release catalog assigns every non-index artifact to one audience",
+      "status": "passed"
+    },
+    {
       "name": "digest: settings.schema.json",
       "status": "passed"
     },
@@ -173,14 +181,18 @@
       "status": "passed"
     },
     {
+      "name": "settings env reuses the standalone environment schema",
+      "status": "passed"
+    },
+    {
       "name": "all top-level settings are constrained",
       "status": "passed",
       "detail": "124/124"
     }
   ],
   "counts": {
-    "checks": 43,
-    "passed": 43,
+    "checks": 46,
+    "passed": 46,
     "failed": 0,
     "declaredArtifacts": 13,
     "compiledSchemas": 7,
