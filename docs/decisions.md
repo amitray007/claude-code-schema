@@ -97,3 +97,37 @@ knowledge base honest.
   Never redistribute the binary or large verbatim string dumps; filter binary-sourced
   prose over a length threshold.
 - **Why:** factual/interoperability data is defensible; wholesale binary content is not.
+
+## D-9 · Landscape check: build, but adopt SchemaStore for settings + keybindings
+
+- **Question:** is anyone already maintaining such a schema? (build vs adopt vs contribute)
+- **Research verdict (with citations):** the ecosystem splits into two camps that
+  never overlap, leaving a real gap:
+  - **Machine-readable but narrow:** SchemaStore maintains **two** real, per-release
+    JSON Schemas — `claude-code-settings.json` **and** `claude-code-keybindings.json`
+    (synced ~weekly by @miteshashar; less laggy than first assumed). But `env` is an
+    **opaque object** (0 of ~200 env vars enumerated) and **CLI flags are absent**.
+  - **Broad but not machine-readable:** `FlorianBruniaux/claude-code-ultimate-guide`
+    (5.4k★, very active) enumerates ~190 env vars + flags — but as **prose + an LLM
+    line-index**, not a validatable schema.
+  - Everything else is **dead or adjacent**: `spences10/claude-code-settings-schema`
+    self-deprecated *pointing to SchemaStore*; `hesreallyhim/claude-code-json-schema`
+    archived (plugin manifests). No `@types/claude-code`. Anthropic closed both
+    official-schema requests (#2783, #11795) **"not planned."**
+- **Verdict: BUILD is still justified — nobody does auto-generated, broad-coverage,
+  versioned. But SCOPE SHIFTS to adopt + own-the-gap:**
+  - **Adopt** SchemaStore's `settings` + `keybindings` schemas as the source of truth
+    for those two dimensions — they're current and per-release. Do **not** regenerate
+    them from scratch. (This revises D-2/D-5: for settings + keybindings, SchemaStore
+    is now the *primary* source, not a lagging corroboration.)
+  - **Own** the genuinely unserved axes: **env-var enumeration + CLI-flag enumeration**
+    (from the binary, per [`sources.md`](sources.md) Source A) — no schema anywhere
+    covers these.
+  - **Own** the **automation** — auto-generate/diff on every release — which *nobody*
+    does (all existing schemas are hand-synced).
+- **Optional upstream contribution:** enrich SchemaStore's opaque `env` object into an
+  enumerated map. But SchemaStore is JSON-Schema-scoped + hand-synced, so it won't host
+  CLI flags or an auto-pipeline — the niche is durable.
+- **Note:** this is exactly what Orpheus's `audit-claude-env-vars` + `env-vars.json`
+  snapshot already prototypes internally — we are productizing the one artifact no
+  public project maintains.

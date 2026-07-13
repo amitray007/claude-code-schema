@@ -46,8 +46,15 @@ overview, then jump to whatever you need.
 | [`docs/pipeline.md`](docs/pipeline.md) | How sources combine: trigger → extract → reconcile → emit |
 | [`docs/schema-format.md`](docs/schema-format.md) | The output contract: per-category files + combined index |
 | [`docs/extraction-notes.md`](docs/extraction-notes.md) | Real probe findings (v2.1.207) + hard safety constraints |
-| [`docs/decisions.md`](docs/decisions.md) | Decision log — what was chosen and why |
+| [`docs/decisions.md`](docs/decisions.md) | Decision log — what was chosen and why (incl. the landscape survey, D-9) |
 | [`docs/open-questions.md`](docs/open-questions.md) | Unresolved items still needing a call |
+
+**The gap this fills** (from the landscape survey, [`docs/decisions.md`](docs/decisions.md) → D-9):
+existing schemas are either *machine-readable but narrow* (SchemaStore: settings +
+keybindings only; env unenumerated; no flags) or *broad but not machine-readable*
+(prose guides). **Nobody** provides an auto-generated, versioned schema covering env
+vars + CLI flags. This project owns those axes + the automation, and **adopts**
+SchemaStore for settings + keybindings rather than duplicating them.
 
 ## License
 

@@ -14,12 +14,21 @@ access to any prior conversation.
 ## 1. What you are building (in one paragraph)
 
 A self-hosted, open-source tool + GitHub Action that, on every
-`@anthropic-ai/claude-code` npm release, regenerates a **machine-readable, versioned
+`@anthropic-ai/claude-code` npm release, produces a **machine-readable, versioned
 schema of Claude Code's config surface** — settings.json keys, env vars, CLI flags,
-keybindings — by extracting from the shipped per-platform binary tarball and the
-official docs, reconciling with per-field provenance, validating against real
-configs, and auto-merging only if all gates pass. Output: per-category schema files +
-one combined index. Full rationale in [`overview.md`](overview.md).
+keybindings — reconciling with per-field provenance, validating against real configs,
+and auto-merging only if all gates pass. Output: per-category schema files + one
+combined index. Full rationale in [`overview.md`](overview.md).
+
+**The scope split you must internalize (D-9, from the landscape survey):**
+- **EXTRACT & OWN** — **env vars + CLI flags**. No project or schema covers these; this
+  is the differentiated value. Source: the per-platform binary tarball ([`sources.md`](sources.md) A).
+- **ADOPT, don't regenerate** — **settings + keybindings**. SchemaStore already
+  publishes current, per-release JSON Schemas for both; consume them as the source of
+  truth ([`sources.md`](sources.md) E). Cross-check settings existence against docs +
+  CHANGELOG so a SchemaStore lag on a brand-new key is caught, not silently missing.
+- **OWN the automation** — nobody auto-generates or release-diffs; that's the other half
+  of the value.
 
 ## 2. Non-negotiable constraints (read before writing code)
 
@@ -48,7 +57,7 @@ have no dependency on later ones.
 | 1 | **Platform-matrix + tarball fetch** | Read wrapper `optionalDependencies`; `npm pack` the canonical platform (linux-x64) for a given version; untar to a temp dir. | For `2.1.207`, downloads + unpacks the binary hermetically; no CLI run; platform list derived, not hardcoded. |
 | 2 | **Binary extractor** | From the unpacked binary: flags (Commander `.option`), enum arrays, `CLAUDE_CODE_*`/`ANTHROPIC_*` env superset. | Reproduces the known v2.1.207 numbers (~146 flags, ~402 env) and the permission-mode enum exactly ([`extraction-notes.md`](extraction-notes.md)). |
 | 3 | **Docs parser** | Fetch + parse `settings.md` / `env-vars.md` / `cli-reference.md` pipe tables (capture `{/* min-version */}`); fetch `llms.txt` as a structure canary. | Parses current docs into records; a malformed/empty table is a hard error, not silent zero. |
-| 4 | **CHANGELOG + SchemaStore fetchers** | Parse `## <version>` bullets for identifiers; fetch + JSON-diff SchemaStore (follow redirect). | Extracts the named identifiers for a version; SchemaStore fetched despite cross-host redirect. |
+| 4 | **CHANGELOG + SchemaStore adopters** | Parse `## <version>` bullets for identifiers; fetch SchemaStore's `settings` **and** `keybindings` schemas (follow redirect) — these are the **adopted source of truth** for those two dimensions, not regenerated (D-9). | Identifiers extracted; both SchemaStore schemas fetched despite cross-host redirect and diffed vs last-good. |
 | 5 | **Reconciler** | Merge all sources into one model with per-field `x-source`/`x-undocumented`/`x-corroborated`/`x-internal` tags per D-2. | Given fixtures, a binary-only flag is included + tagged `x-undocumented`; an internal env var is tagged `x-internal`, not published as public. |
 | 6 | **Emitter** | Write `settings/env/flags/keybindings.schema.json` + combined `claude-code.schema.json` (`$ref`), each with `x-claude-code-version`. Format in [`schema-format.md`](schema-format.md). | Emitted files are valid draft-07; combined index `$ref`s resolve. |
 | 7 | **Validation gate** | (a) ajv-compile, (b) real-config corpus zero-false-negatives, (c) CHANGELOG-delta satisfied, (d) count floors. | A deliberately broken extraction (e.g. 0 flags) fails the gate; a good run passes all four. |

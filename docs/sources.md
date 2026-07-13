@@ -128,18 +128,31 @@ fail the run.
 
 ---
 
-## Source E — SchemaStore — types + corroboration
+## Source E — SchemaStore — PRIMARY for settings + keybindings
 
-**What data** — a draft-07 JSON Schema of `settings.json` keys **with types**, which
-the docs tables express poorly and the binary can't give at all. Community-hosted,
-Anthropic-endorsed, **not release-synced** (it lags). See [`decisions.md`](decisions.md).
+> **Promoted after the landscape survey** ([`decisions.md`](decisions.md) → D-9).
+> SchemaStore is current and per-release; do **not** regenerate settings/keybindings
+> from scratch — adopt these two schemas as the source of truth for those dimensions.
 
-**How** — fetch, follow the cross-host redirect, JSON-diff. Authoritative for
-*types*; a lagging corroboration for *existence*. Never overrides fresher binary/docs
-signal for newly-shipped items.
+**What data** — **two** draft-07 JSON Schemas:
+- `claude-code-settings.json` — `settings.json` keys **with types** (the binary can't
+  give types; docs express them poorly). **Primary** for the settings dimension.
+- `claude-code-keybindings.json` — the keybindings schema. **Primary** for the
+  keybindings dimension (nothing else provides it machine-readably).
 
-**Exact source** — `https://json.schemastore.org/claude-code-settings.json`
-(redirects to `www.schemastore.org/...`)
+**How** — fetch both (follow the cross-host redirect), JSON-diff against last-good.
+Use directly as the settings + keybindings output basis. For settings *existence*,
+cross-check against docs (Source B) + CHANGELOG (Source D) so a SchemaStore lag on a
+brand-new key is caught and tagged, not silently missing.
+
+**Known gaps this project fills** (why it's not the whole answer): SchemaStore's `env`
+is an **opaque object** (no enumeration) and it has **no CLI-flags schema** — those
+come from Source A.
+
+**Exact source**
+- `https://json.schemastore.org/claude-code-settings.json`
+- `https://json.schemastore.org/claude-code-keybindings.json`
+  (both redirect to `www.schemastore.org/...`)
 
 ---
 
@@ -147,8 +160,8 @@ signal for newly-shipped items.
 
 | Source | Provides | Extraction | Role |
 | --- | --- | --- | --- |
-| A · platform tarball | flags, enums, env superset | `npm pack` + `strings` (hermetic) | **Primary** — flags/enums/env existence |
-| B · docs `.md` | settings.json keys, prose | fetch + parse pipe tables | **Primary** — settings keys + descriptions |
+| A · platform tarball | **flags, enums, env** | `npm pack` + `strings` (hermetic) | **Primary — the axes nobody else covers** |
+| B · docs `.md` | settings/env/flag prose + version markers | fetch + parse pipe tables | Descriptions + settings-existence cross-check |
 | C · npm registry | latest version + timestamps | poll `/latest` | **Trigger** |
-| D · CHANGELOG | named per-version changes | grep `## version` | **Targeting + gate** |
-| E · SchemaStore | settings key *types* | JSON-diff | **Types + corroboration** |
+| D · CHANGELOG | named per-version changes | grep `## version` | Targeting + gate |
+| E · SchemaStore | **settings + keybindings** schemas | fetch + JSON-diff | **Primary — settings & keybindings (adopted)** |

@@ -17,29 +17,36 @@ official docs, and stays current without a human noticing each release.
 
 ## The problem it solves
 
-There is already a community schema — [SchemaStore's
-`claude-code-settings.json`](https://json.schemastore.org/claude-code-settings.json).
-It is useful but limited, and the limits are what justify this project:
+A landscape survey (see [`decisions.md`](decisions.md) → D-9) found the ecosystem
+splits into two camps that **never overlap** — that gap is what justifies this project:
 
-1. **It lags.** Anthropic's own docs warn it *"may not include settings added in
-   the most recent CLI releases."* Routine version-sync is done by **one outside
-   volunteer** — bus-factor-1 on freshness. (See [`decisions.md`](decisions.md)
-   for the full ownership investigation.)
-2. **It's settings-only.** It models `settings.json` keys. It does **not** cover
-   environment variables, CLI flags, or keybindings — dimensions that Claude Code
-   exposes richly and that consumers (like [Orpheus](https://github.com/amitray007/orpheus))
-   genuinely need.
-3. **Claude Code releases ~daily.** Keeping up by hand does not scale.
+- **Machine-readable but narrow.** [SchemaStore](https://www.schemastore.org/) maintains
+  **two** real, per-release JSON Schemas —
+  [`claude-code-settings.json`](https://json.schemastore.org/claude-code-settings.json)
+  **and** `claude-code-keybindings.json`. But `env` is modeled as an **opaque object**
+  (0 of ~200 env vars enumerated), and **CLI flags are entirely absent**. Hand-synced
+  by one volunteer (~weekly).
+- **Broad but not machine-readable.** [`claude-code-ultimate-guide`](https://github.com/FlorianBruniaux/claude-code-ultimate-guide)
+  (5.4k★) enumerates ~190 env vars + flags — but as **prose + an LLM line-index**, not
+  a validatable schema.
+- **No auto-generation anywhere.** Every existing schema is **hand-synced**. Claude Code
+  releases ~daily; keeping up by hand does not scale. Anthropic publishes no official
+  schema and closed both requests for one (#2783, #11795) **"not planned."**
 
 ## Why it exists (the honest justification)
 
-SchemaStore is **community-hosted, Anthropic-endorsed, but not Anthropic-maintained
-or release-synced.** So this project is:
+Nobody provides an **auto-generated, versioned, broad-coverage** schema. So this
+project's differentiated value is precise:
 
-- **Fresher** — auto-regenerated on every release, not on a volunteer's manual cadence.
-- **Broader** — a *superset*: settings **+ env vars + flags + keybindings**. The
-  non-settings dimensions have **no upstream home** today.
-- **More resilient** — no single-volunteer dependency; the pipeline is the maintainer.
+- **Owns the unserved axes** — **env-var + CLI-flag enumeration** as real machine-readable
+  schemas. No project covers these today.
+- **Owns the automation** — auto-generated and release-diffed on every release, which
+  *nobody* does (all existing schemas are hand-synced).
+- **Adopts, doesn't duplicate** — consumes SchemaStore's `settings` + `keybindings`
+  schemas as the source of truth for those two dimensions (they're current + per-release),
+  rather than regenerating them. See [`sources.md`](sources.md) and D-9.
+- **More resilient** — no single-volunteer dependency for the axes it owns; the pipeline
+  is the maintainer.
 
 ### Relationship to upstream
 
