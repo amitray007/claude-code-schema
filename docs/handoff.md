@@ -97,6 +97,11 @@ to be enabled by a maintainer as described in
   discovered Claude Code version. Preserve exact per-version source evidence, make
   retries idempotent, and fail closed when mutable documentation cannot be
   attributed safely to the discovered version.
+- [ ] Add a supported local backfill command that follows the production release
+  layout: build and validate each requested version, publish the same 15 JSON assets
+  plus `SHA256SUMS`, and generate release notes with the semantic diff from the
+  immediately preceding release, count changes, source limitations, and the exact
+  upstream changelog link.
 
 ## Definition of done for v1
 
