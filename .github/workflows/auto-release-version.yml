@@ -1,14 +1,14 @@
-name: Automatically publish Claude Code version
+name: Automatically publish latest Claude Code version
 
 on:
   workflow_dispatch:
     inputs:
       version:
-        description: Exact Claude Code version to publish
+        description: Exact npm latest Claude Code version to publish
         required: true
         type: string
       previous_version:
-        description: Immediately preceding Claude Code schema release
+        description: Most recent immutable Claude Code schema release
         required: true
         type: string
       issue_number:
@@ -30,7 +30,7 @@ concurrency:
 
 jobs:
   generate:
-    name: Generate candidate with read-only permissions
+    name: Generate latest candidate with read-only permissions
     runs-on: ubuntu-latest
     timeout-minutes: 30
     permissions:
@@ -50,16 +50,6 @@ jobs:
           cache: npm
       - name: Install dependencies without lifecycle scripts
         run: npm ci --ignore-scripts
-      - name: Download and validate the immediately preceding release
-        env:
-          GH_TOKEN: ${{ github.token }}
-          PREVIOUS_VERSION: ${{ inputs.previous_version }}
-        run: |
-          gh release view "v${PREVIOUS_VERSION}" --repo "$GITHUB_REPOSITORY"
-          mkdir -p .work/previous
-          gh release download "v${PREVIOUS_VERSION}" --repo "$GITHUB_REPOSITORY" --pattern '*.json' --dir .work/previous
-          test "$(jq -r .claudeCodeVersion .work/previous/manifest.json)" = "$PREVIOUS_VERSION"
-          npm run schema:validate -- --directory .work/previous
       - name: Detect an immutable retry
         id: existing
         env:
@@ -71,40 +61,57 @@ jobs:
           else
             echo "release=false" >> "$GITHUB_OUTPUT"
           fi
-      - name: Rebuild an existing bundle from its immutable tag
+      - name: Require a new version to remain npm latest
+        if: steps.existing.outputs.release != 'true'
+        env:
+          VERSION: ${{ inputs.version }}
+        run: test "$(npm view @anthropic-ai/claude-code version)" = "$VERSION"
+      - name: Download and validate the most recent immutable release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PREVIOUS_VERSION: ${{ inputs.previous_version }}
+        run: |
+          gh release view "v${PREVIOUS_VERSION}" --repo "$GITHUB_REPOSITORY"
+          mkdir -p .work/previous
+          gh release download "v${PREVIOUS_VERSION}" --repo "$GITHUB_REPOSITORY" --pattern '*.json' --dir .work/previous
+          test "$(jq -r .claudeCodeVersion .work/previous/manifest.json)" = "$PREVIOUS_VERSION"
+          npm run schema:validate -- --directory .work/previous
+      - name: Load an existing candidate from its immutable tag
         if: steps.existing.outputs.release == 'true'
         env:
           VERSION: ${{ inputs.version }}
         run: |
           git switch --detach "v${VERSION}"
           test "$(jq -r .claudeCodeVersion output/manifest.json)" = "$VERSION"
-          npm run schema:backfill -- --versions "$VERSION" --previous .work/previous --candidate output --work-directory .work/backfill
-      - name: Build a new fail-closed candidate and release bundle
+          npm run schema:validate -- --directory output
+          cp -R output .work/candidate
+      - name: Generate a new latest-only candidate
         if: steps.existing.outputs.release != 'true'
         env:
           VERSION: ${{ inputs.version }}
           PLATFORM_PACKAGE: ${{ inputs.platform_package }}
           SCHEMA_BASE_URL: ${{ vars.SCHEMA_BASE_URL }}
         run: >-
-          npm run schema:backfill --
-          --versions "$VERSION"
-          --previous .work/previous
-          --work-directory .work/backfill
+          npm run schema:generate --
+          --version "$VERSION"
           --platform-package "$PLATFORM_PACKAGE"
+          --output .work/candidate
           --base-url "${SCHEMA_BASE_URL:-https://github.com/amitray007/claude-code-schema/releases/download}"
-      - name: Package sanitized publication bytes
+      - name: Build semantic release notes and checksums
         env:
           VERSION: ${{ inputs.version }}
-          EXISTING_RELEASE: ${{ steps.existing.outputs.release }}
         run: |
+          npm run schema:validate -- --directory .work/candidate
+          npm run schema:diff -- --from .work/previous --to .work/candidate --output .work/semantic-diff.json
+          npm run schema:release-notes -- --directory .work/candidate --diff .work/semantic-diff.json --output .work/RELEASE_NOTES.md
           mkdir -p .work/artifact/candidate .work/artifact/release
-          if [[ "$EXISTING_RELEASE" == "true" ]]; then
-            cp -R output/. .work/artifact/candidate/
-          else
-            cp -R ".work/backfill/candidates/${VERSION}/." .work/artifact/candidate/
-          fi
-          cp -R ".work/backfill/releases/${VERSION}/." .work/artifact/release/
-      - name: Upload candidate and release bundle
+          cp .work/candidate/*.json .work/artifact/candidate/
+          cp .work/candidate/*.json .work/artifact/release/
+          cp .work/RELEASE_NOTES.md .work/artifact/release/
+          test "$(find .work/artifact/release -maxdepth 1 -type f -name '*.json' | wc -l)" -eq 15
+          (cd .work/artifact/release && sha256sum -- *.json) > .work/artifact/release/SHA256SUMS
+          test "$(jq -r .claudeCodeVersion .work/artifact/release/manifest.json)" = "$VERSION"
+      - name: Upload sanitized candidate and release bundle
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         with:
           name: automatic-release-${{ inputs.version }}
@@ -154,14 +161,18 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
           VERSION: ${{ inputs.version }}
-        run: >-
-          npm run schema:backfill --
-          --publish-only .work/artifact/release
-          --target "v${VERSION}"
-      - name: Stage a new current output set
+        run: |
+          tag="v${VERSION}"
+          git rev-parse "${tag}^{commit}"
+          mkdir -p .work/existing-release
+          gh release download "$tag" --repo "$GITHUB_REPOSITORY" --dir .work/existing-release
+          test "$(find .work/existing-release -maxdepth 1 -type f | wc -l)" -eq 16
+          cmp .work/artifact/release/SHA256SUMS .work/existing-release/SHA256SUMS
+          for file in .work/artifact/release/*.json; do
+            cmp "$file" ".work/existing-release/$(basename "$file")"
+          done
+      - name: Stage the new current output set
         if: needs.generate.outputs.existing_release != 'true'
-        env:
-          VERSION: ${{ inputs.version }}
         run: npm run schema:stage -- --candidate .work/artifact/candidate --publication-root .
       - name: Commit the exact candidate on an idempotent release branch
         if: needs.generate.outputs.existing_release != 'true'
@@ -190,16 +201,32 @@ jobs:
         uses: actions/attest-build-provenance@43d14bc2b83dec42d39ecae14e916627a18bb661 # v3
         with:
           subject-path: .work/artifact/release/*.json
-      - name: Publish or byte-for-byte verify the immutable release
+      - name: Publish the immutable latest release
         if: needs.generate.outputs.existing_release != 'true'
         env:
           GH_TOKEN: ${{ github.token }}
+          VERSION: ${{ inputs.version }}
           TARGET: ${{ steps.branch.outputs.target }}
-        run: >-
-          npm run schema:backfill --
-          --publish-only .work/artifact/release
-          --target "$TARGET"
-          --latest
+        run: |
+          tag="v${VERSION}"
+          target_commit=$(git rev-parse "${TARGET}^{commit}")
+          if git rev-parse "$tag" >/dev/null 2>&1; then
+            test "$(git rev-parse "${tag}^{commit}")" = "$target_commit"
+          else
+            git tag -a "$tag" "$target_commit" -m "$tag"
+            git push origin "$tag"
+          fi
+          if gh release view "$tag" --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            mkdir -p .work/existing-release
+            gh release download "$tag" --repo "$GITHUB_REPOSITORY" --dir .work/existing-release
+            test "$(find .work/existing-release -maxdepth 1 -type f | wc -l)" -eq 16
+            cmp .work/artifact/release/SHA256SUMS .work/existing-release/SHA256SUMS
+            for file in .work/artifact/release/*.json; do
+              cmp "$file" ".work/existing-release/$(basename "$file")"
+            done
+          else
+            gh release create "$tag" --repo "$GITHUB_REPOSITORY" --verify-tag --title "$tag" --notes-file .work/artifact/release/RELEASE_NOTES.md --latest .work/artifact/release/SHA256SUMS .work/artifact/release/*.json
+          fi
       - name: Open the output synchronization PR
         env:
           GH_TOKEN: ${{ github.token }}
@@ -261,7 +288,7 @@ jobs:
           ISSUE_NUMBER: ${{ inputs.issue_number }}
           RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: |
-          gh issue comment "$ISSUE_NUMBER" --repo "$GITHUB_REPOSITORY" --body "Automatic publication failed closed. No existing release was changed. This commonly means the previous release is missing or mutable documentation no longer matches the requested version. Inspect: ${RUN_URL}"
+          gh issue comment "$ISSUE_NUMBER" --repo "$GITHUB_REPOSITORY" --body "Automatic publication failed closed. No existing release was changed. The requested version may no longer be npm latest, its predecessor may be missing, or generated bytes may have diverged. Inspect: ${RUN_URL}"
           if gh issue view "$ISSUE_NUMBER" --repo "$GITHUB_REPOSITORY" --json labels --jq '.labels[].name' | grep -Fxq analysis-running; then
             gh issue edit "$ISSUE_NUMBER" --repo "$GITHUB_REPOSITORY" --remove-label analysis-running
           fi

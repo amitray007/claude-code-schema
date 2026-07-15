@@ -66,7 +66,6 @@ function usage(): string {
 Commands:
   generate  [--version VERSION] [--output DIR] [--base-url URL]
             [--platform-package PACKAGE] [--source DIR]
-            [--allow-historical-docs]
   validate  --directory DIR [--report FILE]
   diff      --from DIR --to DIR [--output FILE]
   discover  [--after VERSION] [--output FILE]
@@ -90,7 +89,6 @@ async function main(): Promise<void> {
       "--base-url",
       "--platform-package",
       "--source",
-      "--allow-historical-docs",
     ]);
     const version = option(args, "--version", "latest")!;
     const outputDirectory = resolve(
@@ -104,9 +102,6 @@ async function main(): Promise<void> {
       baseUrl: option(args, "--base-url", defaultBaseUrl)!,
       ...(sourceDirectory ? { sourceDirectory: resolve(sourceDirectory) } : {}),
       ...(platformPackage ? { platformPackage } : {}),
-      ...(args.options.has("--allow-historical-docs")
-        ? { allowHistoricalDocs: true }
-        : {}),
     });
     process.stdout.write(jsonText(result));
     return;

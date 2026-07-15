@@ -41,7 +41,6 @@ export async function loadReferenceArtifacts(
 export async function runVerifiedExperimentEngine(
   version: string,
   platformPackage?: string,
-  allowHistoricalDocs = false,
 ): Promise<EngineResult> {
   const workspace = await mkdtemp(
     resolve(tmpdir(), "claude-code-schema-engine-"),
@@ -63,10 +62,6 @@ export async function runVerifiedExperimentEngine(
     if (platformPackage) args.push("--platform-package", platformPackage);
     const result = await runProcess(process.execPath, args, {
       cwd: workspace,
-      env: {
-        ...process.env,
-        ...(allowHistoricalDocs ? { ALLOW_HISTORICAL_DOCS: "1" } : {}),
-      },
       timeoutMs: 10 * 60_000,
       maxOutputBytes: 64 * 1024 * 1024,
     });

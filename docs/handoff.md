@@ -89,19 +89,14 @@ to be enabled by a maintainer as described in
 
 - enable the required branch checks;
 - create the protected `production` environment and reviewer rule;
-- allow the preparation workflow to open pull requests.
+- allow the preparation and automatic latest-release workflows to open pull requests.
 
 ## Task list
 
-- [x] Add CI that automatically creates one immutable GitHub Release for every
-      discovered Claude Code version. Preserve exact per-version source evidence, make
-      retries idempotent, and fail closed when mutable documentation cannot be
-      attributed safely to the discovered version.
-- [x] Add a supported local backfill command that follows the production release
-      layout: build and validate each requested version, publish the same 15 JSON assets
-      plus `SHA256SUMS`, and generate release notes with the semantic diff from the
-      immediately preceding release, count changes, source limitations, and the exact
-      upstream changelog link.
+- [x] Add CI that automatically creates an immutable GitHub Release for a newly
+      discovered npm `latest` version. Preserve exact source evidence, make retries
+      idempotent, and fail closed rather than regenerating historical versions from
+      mutable documentation.
 
 ## Definition of done for v1
 

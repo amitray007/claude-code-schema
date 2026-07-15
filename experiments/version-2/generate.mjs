@@ -14,7 +14,6 @@ if (versionArgument !== -1 && !args[versionArgument + 1]) {
 
 const requestedVersion =
   versionArgument === -1 ? "latest" : args[versionArgument + 1];
-const allowHistoricalDocs = process.env.ALLOW_HISTORICAL_DOCS === "1";
 
 const sourceDefinitions = {
   npmRelease: {
@@ -233,19 +232,11 @@ if (requestedVersion !== "latest" && version !== requestedVersion) {
 if (!npmMetadata.optionalDependencies || !npmMetadata.dist?.integrity) {
   throw new Error("npm metadata is missing platform packages or dist integrity");
 }
-if (version !== latestNpmMetadata.version && !allowHistoricalDocs) {
+if (version !== latestNpmMetadata.version) {
   throw new Error(
     `Official docs are mutable and currently describe latest=${latestNpmMetadata.version}; refusing to label them as historical ${version}. Use archived source bytes for historical regeneration.`
   );
 }
-const historicalDocumentationSnapshot = version !== latestNpmMetadata.version
-  ? {
-      requestedVersion: version,
-      documentationVersionContext: latestNpmMetadata.version,
-      policy: "best-effort-discovery-snapshot",
-      limitation: "Official documentation is mutable and was captured after this version stopped being npm latest. Version markers are applied, but unmarked documentation drift may remain."
-    }
-  : null;
 for (const route of ["settings.md", "env-vars.md", "cli-reference.md", "keybindings.md"]) {
   if (!sources.docsIndex.text.includes(route)) {
     throw new Error(`Documentation index no longer advertises ${route}`);
@@ -533,8 +524,7 @@ const manifest = {
       environment: allEnvRecords.length - envRecords.length,
       flags: allFlagRecords.length - flagRecords.length,
       keybindingDefaults: allKeybindingDefaults.length - keybindingDefaults.length
-    },
-    ...(historicalDocumentationSnapshot ? { historicalDocumentationSnapshot } : {})
+    }
   }
 };
 

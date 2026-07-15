@@ -23,7 +23,6 @@ test("CLI exposes the production commands", async () => {
   assert.match(result.stdout, /validate/);
   assert.match(result.stdout, /discover/);
   assert.match(result.stdout, /release-notes/);
-  assert.match(result.stdout, /--allow-historical-docs/);
 });
 
 test("CLI rejects unknown commands", async () => {
@@ -127,6 +126,9 @@ test("CLI rejects missing values and unknown options", async () => {
   const unknown = await runCli(["generate", "--unknown", "value"]);
   assert.equal(unknown.code, 1);
   assert.match(unknown.stderr, /Unknown option/);
+  const historical = await runCli(["generate", "--allow-historical-docs"]);
+  assert.equal(historical.code, 1);
+  assert.match(historical.stderr, /Unknown option: --allow-historical-docs/);
   const positional = await runCli(["generate", "unexpected"]);
   assert.equal(positional.code, 1);
   assert.match(positional.stderr, /Unexpected positional argument/);

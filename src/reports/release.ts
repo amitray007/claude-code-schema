@@ -60,19 +60,7 @@ function countChanges(semanticDiff: JsonObject): string {
     : "No numeric manifest counts changed.";
 }
 
-function sourceLimitations(manifest: SurfaceManifest): string {
-  const historical = object(
-    object(manifest.drift).historicalDocumentationSnapshot,
-  );
-  if (typeof historical.limitation === "string") {
-    return [
-      `- **Historical documentation warning:** ${historical.limitation}`,
-      `- Requested version: \`${historical.requestedVersion ?? manifest.claudeCodeVersion}\``,
-      `- Documentation version context: \`${historical.documentationVersionContext ?? "unknown"}\``,
-      `- Policy: \`${historical.policy ?? "unknown"}\``,
-      "- Exact source URLs and digests are recorded in `manifest.json`.",
-    ].join("\n");
-  }
+function sourceLimitations(): string {
   return [
     "- Mutable documentation matched the requested npm `latest` version when the candidate was generated.",
     "- Exact source URLs, digests, validation limitations, and probe policy are recorded in `manifest.json`.",
@@ -147,7 +135,7 @@ ${countChanges(semanticDiff)}
 
 ## Source limitations
 
-${sourceLimitations(manifest)}
+${sourceLimitations()}
 
 ## Files
 

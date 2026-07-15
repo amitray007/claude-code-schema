@@ -5,8 +5,8 @@
 | Workflow                   | Trigger                           | Purpose                                                                                    |
 | -------------------------- | --------------------------------- | ------------------------------------------------------------------------------------------ |
 | `ci.yml`                   | PR, `main`, merge queue           | Offline tests, coverage, formatting, types, dependency review, experiment parity           |
-| `discover-releases.yml`    | Daily and manual                  | Record every npm version after the baseline and dispatch exact-version publication         |
-| `auto-release-version.yml` | Dispatched by discovery           | Build, validate, diff, attest, and immutably publish one safely attributable exact version |
+| `discover-releases.yml`    | Daily and manual                  | Record every npm version after the baseline and dispatch publication only for npm `latest` |
+| `auto-release-version.yml` | Dispatched by discovery           | Build, validate, diff, attest, and immutably publish the current npm `latest` version      |
 | `analyze-version.yml`      | Reusable and manual               | Generate an exact-version candidate, validate it, upload review evidence, update its issue |
 | `weekly-deep-audit.yml`    | Weekly and manual                 | Re-run live sources, exact binary probes, offline tests, and drift comparison              |
 | `prepare-release-pr.yml`   | Manual                            | Download previously reviewed bytes, revalidate, stage publication files, open a draft PR   |
@@ -28,15 +28,14 @@ fails closed. Automatic release branches use one stable name per Claude Code ver
 while manual review branches include the workflow run ID and attempt number. Both
 strategies make retries collision-safe without mutating a published tag.
 
-If several releases appear between discovery runs, each receives an issue and an
-independent publication run with its immediate npm predecessor. Generation still
-requires the requested version to equal npm's current `latest` because the public
-documentation is mutable. A queued version that has already become historical fails
-closed, leaves all existing releases untouched, and is labeled `analysis-failed` for
-maintainer action. This is deliberate: scheduled automation never opts into
-best-effort historical documentation.
+If several releases appear between discovery runs, each receives an issue, but only
+the version identified by npm's current `latest` dist-tag enters generation and
+publication. Older intervening versions are labeled `superseded` and closed without
+regeneration because the public documentation is mutable and cannot be attributed to
+them safely. There is no historical override or local backfill path.
 
-For a safe new version, CI downloads and validates the immediately preceding release,
+For a safe new version, CI downloads and validates the most recent immutable schema
+release,
 generates the exact candidate, produces the semantic diff and release notes, stages
 the candidate into `output/` on a fixed per-version automation branch, and tags that
 exact commit. It uploads the same 15 JSON files plus `SHA256SUMS`, attests every JSON
@@ -58,11 +57,10 @@ state:
 3. `approved-for-pr` after a maintainer starts PR preparation; and
 4. `published` after release completion.
 
-An automatically dispatched release that is no longer npm `latest`, lacks its
-immediately preceding immutable release, or produces divergent bytes fails closed
-and moves from `analysis-running` to `analysis-failed`. A maintainer can rerun the
-same workflow after correcting the release chain; immutable retries rebuild from the
-tagged `output/` bytes and compare every remote asset byte-for-byte.
+An automatically dispatched release that is no longer npm `latest`, lacks a previous
+immutable schema release, or produces divergent bytes fails closed and moves from
+`analysis-running` to `analysis-failed`. Immutable retries rebuild from the tagged
+`output/` bytes and compare every remote asset byte-for-byte.
 
 If a run stops after issue creation but before assigning a lifecycle label, the next
 run resumes that issue. Issues already running, failed, awaiting review, approved,
@@ -84,7 +82,8 @@ Before enabling publication:
 1. Protect `main` and require `Test and validate`, `Dependency review`, one review,
    and conversation resolution.
 2. Set Actions workflow permissions to read by default, then allow GitHub Actions
-   to create pull requests for `prepare-release-pr.yml`.
+   to create pull requests for `prepare-release-pr.yml` and
+   `auto-release-version.yml`.
 3. Create a `production` environment with a required reviewer. In a
    single-maintainer repository, allow self-review so that maintainer can approve a
    deployment they initiated; with multiple maintainers, prevent self-review.
@@ -116,43 +115,10 @@ the candidate and diff. Release publication uploads each committed JSON file plu
 `SHA256SUMS` file; it never refetches mutable documentation or builds a duplicate
 archive/site tree.
 
-Historical versions remain fail-closed by default because the public documentation
-is mutable. The supported backfill command builds each version in the supplied order,
-compares it with the immediately preceding candidate, creates the production asset
-layout, and stages only the final candidate after every version succeeds:
-
-```bash
-npm run schema:backfill -- \
-  --versions 2.1.208,2.1.209,2.1.210 \
-  --previous /tmp/claude-code-schema-v2.1.207 \
-  --work-directory .work/backfill \
-  --platform-package @anthropic-ai/claude-code-darwin-arm64 \
-  --allow-historical-docs \
-  --publication-root .
-```
-
-Each `.work/backfill/releases/<version>/` directory contains the 15 JSON assets,
-`SHA256SUMS`, and local `RELEASE_NOTES.md`. The notes contain exact added and removed
-settings paths, numeric count changes, source limitations, and the tag-pinned upstream
-changelog URL. `RELEASE_NOTES.md` is passed to GitHub as the release body and is not
-uploaded as a seventeenth asset.
-
-After review, `--publish` creates or byte-for-byte verifies the annotated tag and
-GitHub Release. A split build/publish flow can tag a commit containing the final
-`output/` bytes:
-
-```bash
-npm run schema:backfill -- \
-  --publish-only .work/backfill/releases/2.1.210 \
-  --target HEAD \
-  --latest
-```
-
-The explicit `--allow-historical-docs` option is never passed by scheduled CI. When
-a maintainer uses it locally, the manifest and release notes record the npm version
-that contextualized the documentation snapshot and warn that unmarked documentation
-drift may remain. The npm package, platform binary, tagged examples, and changelog
-remain pinned to the requested historical version.
+Historical versions remain fail-closed because the public documentation is mutable.
+The repository does not provide a historical-generation override or local backfill
+command. Git contains only the latest validated `output/` set, while immutable GitHub
+Release assets retain versions that were published while safely attributable.
 
 ## Probe limitation
 

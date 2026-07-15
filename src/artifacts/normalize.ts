@@ -121,9 +121,8 @@ export function normalizeArtifacts(
   ) as SurfaceManifest;
   delete manifest.experimentVersion;
   manifest.generatorVersion = generatorVersion;
-  manifest.sourcePolicy = manifest.drift.historicalDocumentationSnapshot
-    ? "best-effort historical documentation snapshot with version filtering, release-tagged first-party examples, integrity-verified platform package, bounded CLI probes, and isolated runtime validation; mutable documentation may contain unmarked drift; SchemaStore is not a generation source"
-    : "current official documentation, release-tagged first-party examples, integrity-verified platform package, bounded CLI probes, and isolated runtime validation; SchemaStore is not a generation source";
+  manifest.sourcePolicy =
+    "current official documentation, release-tagged first-party examples, integrity-verified platform package, bounded CLI probes, and isolated runtime validation; SchemaStore is not a generation source";
   manifest.artifacts = descriptors;
   manifest.counts = {
     ...manifest.counts,

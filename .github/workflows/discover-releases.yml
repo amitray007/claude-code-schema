@@ -11,7 +11,7 @@ on:
         default: "2.1.207"
         type: string
       publish_new_versions:
-        description: Dispatch fail-closed publication for newly created issues
+        description: Dispatch fail-closed publication for a newly discovered npm latest
         required: false
         default: true
         type: boolean
@@ -60,10 +60,13 @@ jobs:
           AUTO_PUBLISH: ${{ github.event_name == 'schedule' || inputs.publish_new_versions }}
           AFTER_VERSION: ${{ inputs.after_version || '2.1.207' }}
         run: |
-          previous_version="$AFTER_VERSION"
+          analysis_version=$(jq -r '.analysisVersion // empty' .work/discovery.json)
+          previous_release="$AFTER_VERSION"
           while IFS= read -r version; do
-            predecessor="$previous_version"
-            previous_version="$version"
+            predecessor="$previous_release"
+            if gh release view "v${version}" --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+              previous_release="$version"
+            fi
             marker="claude-code-schema-release:${version}"
             existing=$(gh issue list --repo "$GITHUB_REPOSITORY" --state all --label claude-release --limit 1000 --json number,body --jq ".[] | select(.body != null and (.body | contains(\"$marker\"))) | .number" | head -n 1)
             if [[ -n "$existing" ]]; then
@@ -78,7 +81,13 @@ jobs:
               url=$(gh issue create --repo "$GITHUB_REPOSITORY" --title "Claude Code ${version} — schema release review" --body-file "$body" --label claude-release)
               issue_number=${url##*/}
             fi
-            if [[ "$AUTO_PUBLISH" == "true" ]]; then
+            if [[ "$version" != "$analysis_version" ]]; then
+              gh issue comment "$issue_number" --repo "$GITHUB_REPOSITORY" --body "A newer npm latest release was already available when this version was discovered. Mutable documentation cannot be attributed accurately to this historical version, so it was not generated or published."
+              if [[ "$(gh issue view "$issue_number" --repo "$GITHUB_REPOSITORY" --json state --jq .state)" != "CLOSED" ]]; then
+                gh issue close "$issue_number" --repo "$GITHUB_REPOSITORY" --reason "not planned"
+              fi
+              gh issue edit "$issue_number" --repo "$GITHUB_REPOSITORY" --add-label superseded
+            elif [[ "$AUTO_PUBLISH" == "true" ]]; then
               if [[ "$(gh issue view "$issue_number" --repo "$GITHUB_REPOSITORY" --json state --jq .state)" == "CLOSED" ]]; then
                 gh issue reopen "$issue_number" --repo "$GITHUB_REPOSITORY"
               fi
