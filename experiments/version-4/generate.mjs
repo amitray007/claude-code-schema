@@ -97,12 +97,20 @@ function settingRecord(record, heading, source, version) {
   const bounds = versionBounds(`${record.description ?? ""} ${record.example ?? ""}`);
   if (!activeForVersion(bounds, version)) return null;
   const parsed = parseJsonExample(record.example);
+  const description = (record.description ?? "")
+    .replace(/\{\/\*\s*(?:min|max)-version:\s*[^*]+\*\/\}/g, "")
+    .trim();
+  const scopes = /^\(Managed settings only\)/i.test(description)
+    ? ["managed"]
+    : /Read from user(?: settings)?, (?:the )?`--settings` flag, and managed settings only/i.test(description)
+      ? ["user", "managed", "cli-settings"]
+      : ["user", "project", "local", "managed", "cli-settings"];
   return {
     key,
     heading,
     bounds,
     example: parsed,
-    managedOnly: /managed settings only/i.test(record.description ?? ""),
+    scopes,
     evidence: evidence(source, heading, "existence-and-example")
   };
 }
@@ -114,7 +122,7 @@ function schemaForRecord(record) {
     ...(record.bounds.minVersion ? { "x-min-version": record.bounds.minVersion } : {}),
     ...(record.bounds.maxVersion ? { "x-max-version": record.bounds.maxVersion } : {}),
     ...(record.example.parsed ? { examples: [record.example.value] } : {}),
-    ...(record.managedOnly ? { "x-scopes": ["managed"] } : {})
+    ...(record.scopes.length < 5 ? { "x-scopes": record.scopes } : {})
   }, record.evidence);
 }
 
@@ -314,7 +322,7 @@ for (const { raw, parsed } of availableRecords) {
   facts.push({
     path: parsed.key,
     surface: "settings.json",
-    scopes: parsed.managedOnly ? ["managed"] : ["user", "project", "local", "managed", "cli-settings"],
+    scopes: parsed.scopes,
     status: "documented-active",
     typeEvidence: parsed.example.parsed ? "official-example" : "pending-runtime-or-structural-evidence",
     provenance: parsed.evidence
@@ -332,7 +340,7 @@ for (const [heading, parent] of sectionMappings) {
     if (!parsed) continue;
     const path = parsed.key.startsWith(`${parent}.`) ? parsed.key : `${parent}.${parsed.key}`;
     setDottedProperty(settingsProperties, path, enrichFromDescription(schemaForRecord(parsed), raw.description ?? ""));
-    facts.push({ path, surface: "settings.json", scopes: parsed.managedOnly ? ["managed"] : ["user", "project", "local", "managed", "cli-settings"], status: "documented-active", typeEvidence: parsed.example.parsed ? "official-example" : "official-prose", provenance: parsed.evidence });
+    facts.push({ path, surface: "settings.json", scopes: parsed.scopes, status: "documented-active", typeEvidence: parsed.example.parsed ? "official-example" : "official-prose", provenance: parsed.evidence });
   }
 }
 
@@ -356,6 +364,11 @@ const manualFirstPartyOverlays = {
   includeCoAuthoredBy: { type: "boolean", deprecated: true },
   forceLoginMethod: { type: "string", enum: ["claudeai", "console", "gateway"] },
   forceLoginOrgUUID: { type: "string", minLength: 1 },
+  vimInsertModeRemaps: {
+    type: "object",
+    propertyNames: { pattern: "^[ -~]{2}$" },
+    additionalProperties: { const: "<Esc>" }
+  },
   fastMode: { type: "boolean", "x-public-status": "runtime-recognized-undocumented" }
 };
 const overlaySources = {
@@ -370,6 +383,7 @@ const overlaySources = {
   includeCoAuthoredBy: settingsSource,
   forceLoginMethod: settingsSource,
   forceLoginOrgUUID: settingsSource,
+  vimInsertModeRemaps: settingsSource,
   fastMode: null
 };
 for (const [name, overlay] of Object.entries(manualFirstPartyOverlays)) {

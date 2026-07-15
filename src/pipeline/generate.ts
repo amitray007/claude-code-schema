@@ -17,6 +17,7 @@ export async function generate(
     : await runVerifiedExperimentEngine(
         options.version,
         options.platformPackage,
+        options.allowHistoricalDocs,
       );
   const parent = dirname(options.outputDirectory);
   await mkdir(parent, { recursive: true });

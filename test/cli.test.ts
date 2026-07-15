@@ -22,6 +22,7 @@ test("CLI exposes the production commands", async () => {
   assert.match(result.stdout, /generate/);
   assert.match(result.stdout, /validate/);
   assert.match(result.stdout, /discover/);
+  assert.match(result.stdout, /--allow-historical-docs/);
 });
 
 test("CLI rejects unknown commands", async () => {

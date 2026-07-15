@@ -38,6 +38,7 @@ export interface GenerationOptions {
   baseUrl: string;
   platformPackage?: string;
   sourceDirectory?: string;
+  allowHistoricalDocs?: boolean;
 }
 
 export interface GenerationResult {

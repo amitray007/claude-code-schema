@@ -91,6 +91,13 @@ to be enabled by a maintainer as described in
 - create the protected `production` environment and reviewer rule;
 - allow the preparation workflow to open pull requests.
 
+## Task list
+
+- [ ] Add CI that automatically creates one immutable GitHub Release for every
+  discovered Claude Code version. Preserve exact per-version source evidence, make
+  retries idempotent, and fail closed when mutable documentation cannot be
+  attributed safely to the discovered version.
+
 ## Definition of done for v1
 
 - An exact npm release produces the full corrected artifact set from staged,

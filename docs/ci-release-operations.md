@@ -100,6 +100,13 @@ the candidate and diff. Release publication uploads each committed JSON file plu
 `SHA256SUMS` file; it never refetches mutable documentation or builds a duplicate
 archive/site tree.
 
+Historical versions remain fail-closed by default because the public documentation
+is mutable. When a maintainer deliberately needs a best-effort historical release,
+pass `--allow-historical-docs` to `schema:generate`. The manifest records the npm
+version that contextualized the documentation snapshot and warns that unmarked
+documentation drift may remain. The npm package, platform binary, tagged examples,
+and changelog are still pinned to the requested historical version.
+
 ## Probe limitation
 
 The current verified engine supplies an isolated HOME, closes stdin, removes
