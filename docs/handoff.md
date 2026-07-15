@@ -10,7 +10,7 @@
 
 The repository contains the production TypeScript CLI under [`../src/`](../src/),
 the CI and release workflows under [`../.github/workflows/`](../.github/workflows/),
-reviewed 2.1.207 artifacts under [`../output/`](../output/), and the corrected
+reviewed 2.1.210 artifacts under [`../output/`](../output/), and the corrected
 design and versioned Node/Ajv experiments in
 [`../experiments/`](../experiments/). Version 1 combines official docs with
 SchemaStore; version 2 deliberately excludes it to expose lost constraints; version
@@ -89,7 +89,14 @@ to be enabled by a maintainer as described in
 
 - enable the required branch checks;
 - create the protected `production` environment and reviewer rule;
-- allow the preparation workflow to open pull requests.
+- allow the preparation and automatic latest-release workflows to open pull requests.
+
+## Task list
+
+- [x] Add CI that automatically creates an immutable GitHub Release for a newly
+      discovered npm `latest` version. Preserve exact source evidence, make retries
+      idempotent, and fail closed rather than regenerating historical versions from
+      mutable documentation.
 
 ## Definition of done for v1
 

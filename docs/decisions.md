@@ -270,16 +270,20 @@ knowledge base honest.
   catalogs, behavioral defaults, evidence catalogs, and the manifest are excluded
   because they are not configuration instances.
 
-## D-20 · Releases are discovered automatically and published only after review
+## D-20 · Releases are discovered and safely published automatically
 
-- **Decision:** check npm daily and create one idempotent issue per unseen version.
-  Analyze only the current npm `latest` in a read-only job and retain that candidate
-  as a workflow artifact. If multiple releases arrived between checks, mark older
-  unseen versions as `superseded`: mutable documentation cannot be attributed to
-  them accurately. A maintainer manually selects reviewed bytes for a draft PR.
-- **Publication:** after merge, revalidate the committed `output/` bytes and create
-  a versioned GitHub Release containing separate JSON assets, checksums, and
-  provenance. The protected `production` environment is the final approval gate.
+- **Decision:** check npm daily, create one idempotent issue per unseen version, and
+  dispatch publication only for the version still identified by npm as `latest`.
+  Older intervening versions are recorded as `superseded` and are not regenerated
+  from mutable documentation. There is no historical override or local backfill
+  command.
+- **Publication:** for the safely attributable latest version, validate the most
+  recent immutable schema release, generate and validate the candidate, create a
+  semantic diff and release notes, then commit `output/` on a fixed per-version
+  automation branch. Tag that exact commit and publish the 15 JSON assets, checksums,
+  attestations, and provenance. A draft PR synchronizes the one current `output/` set
+  back to `main`; the protected `production` environment is the final publication
+  gate.
 - **Identity:** the canonical `$id` is the immutable
   `releases/download/vX.Y.Z/<file>` URL. Git contains only the current `output/` set;
   GitHub Releases retain history.
