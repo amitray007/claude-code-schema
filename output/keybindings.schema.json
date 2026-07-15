@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://github.com/amitray007/claude-code-schema/releases/download/v2.1.207/keybindings.schema.json",
+  "$id": "https://github.com/amitray007/claude-code-schema/releases/download/v2.1.210/keybindings.schema.json",
   "title": "Claude Code keybindings",
   "description": "Conservative validator generated only from the official keybindings documentation.",
   "type": "object",
@@ -160,7 +160,7 @@
                   "x-status": "exact-release-binary-validator-corroborated",
                   "x-binary": {
                     "source": "platformBinary",
-                    "sha256": "1397a062c6889675055e3314dd956376ac51262a7734ad9e819c26975d71547a",
+                    "sha256": "1b471d62d1117482689d75447f5e050c640da717a5a3c91e6c13792450f8c662",
                     "pathInPackage": "package/claude",
                     "commandBindingPatternCorroborated": true,
                     "commandBindingValidatorMessageCorroborated": true
@@ -185,7 +185,7 @@
     "bindings"
   ],
   "additionalProperties": false,
-  "x-claude-code-version": "2.1.207",
+  "x-claude-code-version": "2.1.210",
   "x-artifact-kind": "keybindings-json-schema",
   "x-validation-limitations": [
     "The current official docs do not document command: bindings; the narrowly patterned compatibility form is accepted but annotated as unverified for this release.",
@@ -195,7 +195,7 @@
     "evidence": [
       {
         "source": "keybindingsDocs",
-        "sourceSha256": "f291201061401f51f8b5d9f9ee075573fe88a489b7ae65d4e62bc9519c60c620"
+        "sourceSha256": "43f414fa5495f6f165f6b15391b0ccc8a8def095865fab97d084e6ec8a7bb878"
       }
     ]
   },

@@ -22,6 +22,7 @@ test("CLI exposes the production commands", async () => {
   assert.match(result.stdout, /generate/);
   assert.match(result.stdout, /validate/);
   assert.match(result.stdout, /discover/);
+  assert.match(result.stdout, /release-notes/);
   assert.match(result.stdout, /--allow-historical-docs/);
 });
 
@@ -94,6 +95,19 @@ test("CLI runs the offline generate, validate, diff, issue, and stage lifecycle"
     await readFile(issueFile, "utf8"),
     /Source and semantic drift reviewed/,
   );
+
+  const releaseNotesFile = resolve(root, "release-notes.md");
+  const releaseNotes = await runCli([
+    "release-notes",
+    "--directory",
+    candidate,
+    "--diff",
+    diffFile,
+    "--output",
+    releaseNotesFile,
+  ]);
+  assert.equal(releaseNotes.code, 0, releaseNotes.stderr);
+  assert.match(await readFile(releaseNotesFile, "utf8"), /Count changes/);
 
   const staged = await runCli([
     "stage",

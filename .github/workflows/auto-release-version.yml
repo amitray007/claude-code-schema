@@ -1,0 +1,268 @@
+name: Automatically publish Claude Code version
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: Exact Claude Code version to publish
+        required: true
+        type: string
+      previous_version:
+        description: Immediately preceding Claude Code schema release
+        required: true
+        type: string
+      issue_number:
+        description: Release-review issue number, or 0
+        required: false
+        default: "0"
+        type: string
+      platform_package:
+        description: Exact platform package used for bounded probes
+        required: false
+        default: "@anthropic-ai/claude-code-linux-x64"
+        type: string
+
+permissions: {}
+
+concurrency:
+  group: auto-release-${{ inputs.version }}
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    name: Generate candidate with read-only permissions
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: read
+    outputs:
+      existing_release: ${{ steps.existing.outputs.release }}
+    steps:
+      - name: Check out trusted generator
+        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6
+        with:
+          ref: main
+          fetch-depth: 0
+      - name: Set up Node.js
+        uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6
+        with:
+          node-version: 24
+          cache: npm
+      - name: Install dependencies without lifecycle scripts
+        run: npm ci --ignore-scripts
+      - name: Download and validate the immediately preceding release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PREVIOUS_VERSION: ${{ inputs.previous_version }}
+        run: |
+          gh release view "v${PREVIOUS_VERSION}" --repo "$GITHUB_REPOSITORY"
+          mkdir -p .work/previous
+          gh release download "v${PREVIOUS_VERSION}" --repo "$GITHUB_REPOSITORY" --pattern '*.json' --dir .work/previous
+          test "$(jq -r .claudeCodeVersion .work/previous/manifest.json)" = "$PREVIOUS_VERSION"
+          npm run schema:validate -- --directory .work/previous
+      - name: Detect an immutable retry
+        id: existing
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VERSION: ${{ inputs.version }}
+        run: |
+          if gh release view "v${VERSION}" --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            echo "release=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "release=false" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Rebuild an existing bundle from its immutable tag
+        if: steps.existing.outputs.release == 'true'
+        env:
+          VERSION: ${{ inputs.version }}
+        run: |
+          git switch --detach "v${VERSION}"
+          test "$(jq -r .claudeCodeVersion output/manifest.json)" = "$VERSION"
+          npm run schema:backfill -- --versions "$VERSION" --previous .work/previous --candidate output --work-directory .work/backfill
+      - name: Build a new fail-closed candidate and release bundle
+        if: steps.existing.outputs.release != 'true'
+        env:
+          VERSION: ${{ inputs.version }}
+          PLATFORM_PACKAGE: ${{ inputs.platform_package }}
+          SCHEMA_BASE_URL: ${{ vars.SCHEMA_BASE_URL }}
+        run: >-
+          npm run schema:backfill --
+          --versions "$VERSION"
+          --previous .work/previous
+          --work-directory .work/backfill
+          --platform-package "$PLATFORM_PACKAGE"
+          --base-url "${SCHEMA_BASE_URL:-https://github.com/amitray007/claude-code-schema/releases/download}"
+      - name: Package sanitized publication bytes
+        env:
+          VERSION: ${{ inputs.version }}
+          EXISTING_RELEASE: ${{ steps.existing.outputs.release }}
+        run: |
+          mkdir -p .work/artifact/candidate .work/artifact/release
+          if [[ "$EXISTING_RELEASE" == "true" ]]; then
+            cp -R output/. .work/artifact/candidate/
+          else
+            cp -R ".work/backfill/candidates/${VERSION}/." .work/artifact/candidate/
+          fi
+          cp -R ".work/backfill/releases/${VERSION}/." .work/artifact/release/
+      - name: Upload candidate and release bundle
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: automatic-release-${{ inputs.version }}
+          path: .work/artifact
+          if-no-files-found: error
+          retention-days: 30
+          compression-level: 9
+
+  release:
+    name: Publish sanitized immutable bytes
+    needs: generate
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    environment: production
+    permissions:
+      contents: write
+      pull-requests: write
+      id-token: write
+      attestations: write
+    steps:
+      - name: Check out the publication target
+        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6
+        with:
+          ref: main
+          fetch-depth: 0
+      - name: Set up Node.js
+        uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6
+        with:
+          node-version: 24
+          cache: npm
+      - name: Install dependencies without lifecycle scripts
+        run: npm ci --ignore-scripts
+      - name: Download sanitized publication bytes
+        uses: actions/download-artifact@634f93cb2916e3fdff6788551b99b062d0335ce0 # v5
+        with:
+          name: automatic-release-${{ inputs.version }}
+          path: .work/artifact
+      - name: Revalidate without executing the downloaded Claude binary
+        env:
+          VERSION: ${{ inputs.version }}
+        run: |
+          test "$(jq -r .claudeCodeVersion .work/artifact/candidate/manifest.json)" = "$VERSION"
+          test "$(jq -r .claudeCodeVersion .work/artifact/release/manifest.json)" = "$VERSION"
+          npm run schema:validate -- --directory .work/artifact/candidate
+      - name: Verify an existing release byte-for-byte
+        if: needs.generate.outputs.existing_release == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VERSION: ${{ inputs.version }}
+        run: >-
+          npm run schema:backfill --
+          --publish-only .work/artifact/release
+          --target "v${VERSION}"
+      - name: Stage a new current output set
+        if: needs.generate.outputs.existing_release != 'true'
+        env:
+          VERSION: ${{ inputs.version }}
+        run: npm run schema:stage -- --candidate .work/artifact/candidate --publication-root .
+      - name: Commit the exact candidate on an idempotent release branch
+        if: needs.generate.outputs.existing_release != 'true'
+        id: branch
+        env:
+          VERSION: ${{ inputs.version }}
+        run: |
+          branch="automation/claude-code-${VERSION}"
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          if git ls-remote --exit-code --heads origin "$branch" >/dev/null 2>&1; then
+            git fetch origin "$branch:refs/remotes/origin/$branch"
+            git worktree add --detach .work/existing "origin/$branch"
+            diff -qr .work/artifact/candidate .work/existing/output
+            git worktree remove .work/existing
+            echo "target=origin/$branch" >> "$GITHUB_OUTPUT"
+          else
+            git switch -c "$branch"
+            git add output
+            git commit -m "publish Claude Code ${VERSION} schemas"
+            git push -u origin "$branch"
+            echo "target=HEAD" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Attest every generated JSON release asset
+        if: needs.generate.outputs.existing_release != 'true'
+        uses: actions/attest-build-provenance@43d14bc2b83dec42d39ecae14e916627a18bb661 # v3
+        with:
+          subject-path: .work/artifact/release/*.json
+      - name: Publish or byte-for-byte verify the immutable release
+        if: needs.generate.outputs.existing_release != 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TARGET: ${{ steps.branch.outputs.target }}
+        run: >-
+          npm run schema:backfill --
+          --publish-only .work/artifact/release
+          --target "$TARGET"
+          --latest
+      - name: Open the output synchronization PR
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VERSION: ${{ inputs.version }}
+          ISSUE_NUMBER: ${{ inputs.issue_number }}
+        run: |
+          if [[ "$(git show origin/main:output/manifest.json | jq -r .claudeCodeVersion)" == "$VERSION" ]]; then
+            echo "main already contains v${VERSION} output."
+            exit 0
+          fi
+          branch="automation/claude-code-${VERSION}"
+          if ! git ls-remote --exit-code --heads origin "$branch" >/dev/null 2>&1; then
+            git branch "$branch" "v${VERSION}^{commit}"
+            git push origin "$branch"
+          fi
+          pr_url=$(gh pr list --repo "$GITHUB_REPOSITORY" --state open --head "$branch" --json url --jq '.[0].url // empty')
+          if [[ -z "$pr_url" ]]; then
+            pr_url=$(gh pr create --repo "$GITHUB_REPOSITORY" --draft --base main --head "$branch" --title "Publish Claude Code ${VERSION} schemas" --body "Synchronizes the repository's current output with immutable release v${VERSION}. Tracks #${ISSUE_NUMBER}.")
+          fi
+          echo "$pr_url"
+
+  update-issue:
+    name: Mark the release issue published
+    if: inputs.issue_number != '0'
+    needs: release
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - name: Close the successfully published issue
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VERSION: ${{ inputs.version }}
+          ISSUE_NUMBER: ${{ inputs.issue_number }}
+        run: |
+          labels=$(gh issue view "$ISSUE_NUMBER" --repo "$GITHUB_REPOSITORY" --json labels --jq '.labels[].name')
+          for label in analysis-running analysis-failed needs-review approved-for-pr superseded; do
+            if grep -Fxq "$label" <<< "$labels"; then
+              gh issue edit "$ISSUE_NUMBER" --repo "$GITHUB_REPOSITORY" --remove-label "$label"
+            fi
+          done
+          gh issue comment "$ISSUE_NUMBER" --repo "$GITHUB_REPOSITORY" --body "Published immutable release [v${VERSION}](${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/releases/tag/v${VERSION})."
+          gh issue edit "$ISSUE_NUMBER" --repo "$GITHUB_REPOSITORY" --add-label published
+          if [[ "$(gh issue view "$ISSUE_NUMBER" --repo "$GITHUB_REPOSITORY" --json state --jq .state)" != "CLOSED" ]]; then
+            gh issue close "$ISSUE_NUMBER" --repo "$GITHUB_REPOSITORY" --reason completed
+          fi
+
+  report-failure:
+    name: Report fail-closed publication
+    if: always() && inputs.issue_number != '0' && (needs.generate.result == 'failure' || needs.release.result == 'failure')
+    needs: [generate, release]
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - name: Keep the release issue actionable
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ISSUE_NUMBER: ${{ inputs.issue_number }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          gh issue comment "$ISSUE_NUMBER" --repo "$GITHUB_REPOSITORY" --body "Automatic publication failed closed. No existing release was changed. This commonly means the previous release is missing or mutable documentation no longer matches the requested version. Inspect: ${RUN_URL}"
+          if gh issue view "$ISSUE_NUMBER" --repo "$GITHUB_REPOSITORY" --json labels --jq '.labels[].name' | grep -Fxq analysis-running; then
+            gh issue edit "$ISSUE_NUMBER" --repo "$GITHUB_REPOSITORY" --remove-label analysis-running
+          fi
+          gh issue edit "$ISSUE_NUMBER" --repo "$GITHUB_REPOSITORY" --add-label analysis-failed

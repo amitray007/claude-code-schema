@@ -10,7 +10,7 @@
 
 The repository contains the production TypeScript CLI under [`../src/`](../src/),
 the CI and release workflows under [`../.github/workflows/`](../.github/workflows/),
-reviewed 2.1.207 artifacts under [`../output/`](../output/), and the corrected
+reviewed 2.1.210 artifacts under [`../output/`](../output/), and the corrected
 design and versioned Node/Ajv experiments in
 [`../experiments/`](../experiments/). Version 1 combines official docs with
 SchemaStore; version 2 deliberately excludes it to expose lost constraints; version
@@ -93,15 +93,15 @@ to be enabled by a maintainer as described in
 
 ## Task list
 
-- [ ] Add CI that automatically creates one immutable GitHub Release for every
-  discovered Claude Code version. Preserve exact per-version source evidence, make
-  retries idempotent, and fail closed when mutable documentation cannot be
-  attributed safely to the discovered version.
-- [ ] Add a supported local backfill command that follows the production release
-  layout: build and validate each requested version, publish the same 15 JSON assets
-  plus `SHA256SUMS`, and generate release notes with the semantic diff from the
-  immediately preceding release, count changes, source limitations, and the exact
-  upstream changelog link.
+- [x] Add CI that automatically creates one immutable GitHub Release for every
+      discovered Claude Code version. Preserve exact per-version source evidence, make
+      retries idempotent, and fail closed when mutable documentation cannot be
+      attributed safely to the discovered version.
+- [x] Add a supported local backfill command that follows the production release
+      layout: build and validate each requested version, publish the same 15 JSON assets
+      plus `SHA256SUMS`, and generate release notes with the semantic diff from the
+      immediately preceding release, count changes, source limitations, and the exact
+      upstream changelog link.
 
 ## Definition of done for v1
 

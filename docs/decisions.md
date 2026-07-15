@@ -270,16 +270,23 @@ knowledge base honest.
   catalogs, behavioral defaults, evidence catalogs, and the manifest are excluded
   because they are not configuration instances.
 
-## D-20 · Releases are discovered automatically and published only after review
+## D-20 · Releases are discovered and safely published automatically
 
-- **Decision:** check npm daily and create one idempotent issue per unseen version.
-  Analyze only the current npm `latest` in a read-only job and retain that candidate
-  as a workflow artifact. If multiple releases arrived between checks, mark older
-  unseen versions as `superseded`: mutable documentation cannot be attributed to
-  them accurately. A maintainer manually selects reviewed bytes for a draft PR.
-- **Publication:** after merge, revalidate the committed `output/` bytes and create
-  a versioned GitHub Release containing separate JSON assets, checksums, and
-  provenance. The protected `production` environment is the final approval gate.
+- **Decision:** check npm daily, create one idempotent issue per unseen version, and
+  dispatch an exact-version publication run for each. Automation never enables the
+  historical-documentation override: if the requested version is no longer npm
+  `latest`, or its immediate predecessor is not already immutable, publication fails
+  closed and leaves the last-good releases untouched.
+- **Publication:** for a safely attributable version, validate the predecessor,
+  generate and validate the candidate, create a semantic diff and release notes,
+  then commit `output/` on a fixed per-version automation branch. Tag that exact
+  commit and publish the 15 JSON assets, checksums, attestations, and provenance. A
+  draft PR synchronizes the one current `output/` set back to `main`; the protected
+  `production` environment is the final publication gate.
+- **Historical backfill:** a maintainer may explicitly use
+  `schema:backfill --allow-historical-docs`. The generated manifest and release notes
+  disclose the mutable documentation context, while exact npm, platform package,
+  tagged example, and changelog evidence stays pinned to the requested version.
 - **Identity:** the canonical `$id` is the immutable
   `releases/download/vX.Y.Z/<file>` URL. Git contains only the current `output/` set;
   GitHub Releases retain history.

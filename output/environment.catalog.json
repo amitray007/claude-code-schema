@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "artifactKind": "environment-surface-catalog",
-  "claudeCodeVersion": "2.1.207",
+  "claudeCodeVersion": "2.1.210",
   "surface": {
     "product": "Claude Code CLI",
     "interface": "process-environment",
@@ -82,6 +82,7 @@
     "CLAUDE_CODE_ATTRIBUTION_HEADER",
     "CLAUDE_CODE_AUTO_COMPACT_WINDOW",
     "CLAUDE_CODE_AUTO_CONNECT_IDE",
+    "CLAUDE_CODE_AWS_CHAIN_RESOLVE_TIMEOUT_MS",
     "CLAUDE_CODE_BRIDGE_SESSION_ID",
     "CLAUDE_CODE_CERT_STORE",
     "CLAUDE_CODE_CHILD_SESSION",
@@ -99,6 +100,7 @@
     "CLAUDE_CODE_DISABLE_ATTACHMENTS",
     "CLAUDE_CODE_DISABLE_AUTO_MEMORY",
     "CLAUDE_CODE_DISABLE_BACKGROUND_TASKS",
+    "CLAUDE_CODE_DISABLE_BEDROCK_CONTENT_TYPE_GUARD",
     "CLAUDE_CODE_DISABLE_BG_EXIT_HANDOFF",
     "CLAUDE_CODE_DISABLE_BG_SHELL_PRESSURE_REAP",
     "CLAUDE_CODE_DISABLE_BUNDLED_SKILLS",
@@ -176,6 +178,7 @@
     "CLAUDE_CODE_PLUGIN_SEED_DIR",
     "CLAUDE_CODE_POWERSHELL_RESPECT_EXECUTION_POLICY",
     "CLAUDE_CODE_PRINT_BG_WAIT_CEILING_MS",
+    "CLAUDE_CODE_PROCESS_WRAPPER",
     "CLAUDE_CODE_PROPAGATE_TRACEPARENT",
     "CLAUDE_CODE_PROVIDER_MANAGED_BY_HOST",
     "CLAUDE_CODE_PROXY_RESOLVES_HOSTS",
@@ -194,6 +197,7 @@
     "CLAUDE_CODE_SIMPLE",
     "CLAUDE_CODE_SIMPLE_SYSTEM_PROMPT",
     "CLAUDE_CODE_SKIP_ANTHROPIC_AWS_AUTH",
+    "CLAUDE_CODE_SKIP_AWS_CRED_CACHE",
     "CLAUDE_CODE_SKIP_BEDROCK_AUTH",
     "CLAUDE_CODE_SKIP_FOUNDRY_AUTH",
     "CLAUDE_CODE_SKIP_MANTLE_AUTH",
@@ -210,6 +214,7 @@
     "CLAUDE_CODE_SYNTAX_HIGHLIGHT",
     "CLAUDE_CODE_TASK_LIST_ID",
     "CLAUDE_CODE_TEAM_NAME",
+    "CLAUDE_CODE_TEAM_TEARDOWN_PARK_TIMEOUT_MS",
     "CLAUDE_CODE_TMPDIR",
     "CLAUDE_CODE_TMUX_TRUECOLOR",
     "CLAUDE_CODE_USE_ANTHROPIC_AWS",
@@ -259,6 +264,7 @@
     "ENABLE_TOOL_SEARCH",
     "FALLBACK_FOR_ALL_PRIMARY_MODELS",
     "FORCE_AUTOUPDATE_PLUGINS",
+    "FORCE_HYPERLINK",
     "FORCE_PROMPT_CACHING_5M",
     "GOOGLE_APPLICATION_CREDENTIALS",
     "HTTPS_PROXY",
@@ -395,7 +401,7 @@
   ],
   "binaryEvidence": {
     "platformPackage": "@anthropic-ai/claude-code-darwin-arm64",
-    "binarySha256": "1397a062c6889675055e3314dd956376ac51262a7734ad9e819c26975d71547a",
+    "binarySha256": "1b471d62d1117482689d75447f5e050c640da717a5a3c91e6c13792450f8c662",
     "policy": "Static strings prove token presence only. Binary-only values are candidates, not public API."
   },
   "staticBinaryCandidates": [
@@ -426,10 +432,6 @@
     {
       "name": "ANTHROPIC_BEDROCK_BASE_URL",
       "documented": true
-    },
-    {
-      "name": "ANTHROPIC_BEDROCK_MANTLE_API_KEY",
-      "documented": false
     },
     {
       "name": "ANTHROPIC_BEDROCK_MANTLE_BASE_URL",
@@ -716,6 +718,10 @@
       "documented": false
     },
     {
+      "name": "CLAUDE_CODE_ARTIFACT_MCP",
+      "documented": false
+    },
+    {
       "name": "CLAUDE_CODE_ATTRIBUTION_HEADER",
       "documented": true
     },
@@ -789,7 +795,7 @@
     },
     {
       "name": "CLAUDE_CODE_AWS_CHAIN_RESOLVE_TIMEOUT_MS",
-      "documented": false
+      "documented": true
     },
     {
       "name": "CLAUDE_CODE_BASALT_COVE",
@@ -976,6 +982,10 @@
       "documented": true
     },
     {
+      "name": "CLAUDE_CODE_DISABLE_BEDROCK_CONTENT_TYPE_GUARD",
+      "documented": true
+    },
+    {
       "name": "CLAUDE_CODE_DISABLE_BG_EXIT_HANDOFF",
       "documented": true
     },
@@ -1044,6 +1054,10 @@
       "documented": false
     },
     {
+      "name": "CLAUDE_CODE_DISABLE_MEMORY_STREAM_LIST",
+      "documented": false
+    },
+    {
       "name": "CLAUDE_CODE_DISABLE_MOUSE",
       "documented": true
     },
@@ -1070,6 +1084,10 @@
     {
       "name": "CLAUDE_CODE_DISABLE_OFFICIAL_MARKETPLACE_AUTOINSTALL",
       "documented": true
+    },
+    {
+      "name": "CLAUDE_CODE_DISABLE_ORG_MEMORY",
+      "documented": false
     },
     {
       "name": "CLAUDE_CODE_DISABLE_POLICY_SKILLS",
@@ -1296,6 +1314,10 @@
       "documented": false
     },
     {
+      "name": "CLAUDE_CODE_FORCE_RC_LONG_TURN_NUDGE",
+      "documented": false
+    },
+    {
       "name": "CLAUDE_CODE_FORCE_SANDBOX",
       "documented": false
     },
@@ -1313,6 +1335,10 @@
     },
     {
       "name": "CLAUDE_CODE_FORCE_TIP_ID",
+      "documented": false
+    },
+    {
+      "name": "CLAUDE_CODE_FORCE_WINDOWS_CREDMAN",
       "documented": false
     },
     {
@@ -1676,6 +1702,10 @@
       "documented": false
     },
     {
+      "name": "CLAUDE_CODE_PROCESS_WRAPPER",
+      "documented": true
+    },
+    {
       "name": "CLAUDE_CODE_PROFILE_QUERY",
       "documented": false
     },
@@ -1721,6 +1751,10 @@
     },
     {
       "name": "CLAUDE_CODE_RATE_LIMIT_TIER",
+      "documented": false
+    },
+    {
+      "name": "CLAUDE_CODE_RC_PERMISSION_NUDGE",
       "documented": false
     },
     {
@@ -1889,7 +1923,7 @@
     },
     {
       "name": "CLAUDE_CODE_SKIP_AWS_CRED_CACHE",
-      "documented": false
+      "documented": true
     },
     {
       "name": "CLAUDE_CODE_SKIP_BEDROCK_AUTH",
@@ -2012,6 +2046,10 @@
       "documented": true
     },
     {
+      "name": "CLAUDE_CODE_SYNC_SESSION_REFS",
+      "documented": false
+    },
+    {
       "name": "CLAUDE_CODE_SYNC_SKILLS",
       "documented": true
     },
@@ -2049,7 +2087,7 @@
     },
     {
       "name": "CLAUDE_CODE_TEAM_TEARDOWN_PARK_TIMEOUT_MS",
-      "documented": false
+      "documented": true
     },
     {
       "name": "CLAUDE_CODE_TEE_SDK_STDOUT",

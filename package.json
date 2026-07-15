@@ -20,6 +20,8 @@
     "schema:validate": "npm run build --silent && node dist/src/cli.js validate",
     "schema:diff": "npm run build --silent && node dist/src/cli.js diff",
     "schema:discover": "npm run build --silent && node dist/src/cli.js discover",
+    "schema:release-notes": "npm run build --silent && node dist/src/cli.js release-notes",
+    "schema:backfill": "npm run build --silent && bash scripts/backfill-releases.sh",
     "schema:stage": "npm run build --silent && node dist/src/cli.js stage",
     "experiment:1": "node experiments/version-1/generate.mjs",
     "experiment:1:check": "node experiments/version-1/validate.mjs",

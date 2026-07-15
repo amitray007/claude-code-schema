@@ -6,6 +6,7 @@ import { discoverReleases } from "./discovery/npm.js";
 import { generate } from "./pipeline/generate.js";
 import { stagePublication } from "./publication/stage.js";
 import { releaseIssueMarkdown } from "./reports/issue.js";
+import { releaseNotesMarkdown } from "./reports/release.js";
 import { jsonText, readJson, writeJson } from "./shared/json.js";
 import type {
   JsonObject,
@@ -70,6 +71,7 @@ Commands:
   diff      --from DIR --to DIR [--output FILE]
   discover  [--after VERSION] [--output FILE]
   issue     --directory DIR [--diff FILE] [--workflow-url URL] [--output FILE]
+  release-notes --directory DIR --diff FILE [--output FILE]
   stage     --candidate DIR --publication-root DIR
 `;
 }
@@ -164,6 +166,25 @@ async function main(): Promise<void> {
       diff,
       option(args, "--workflow-url"),
     );
+    const outputFile = option(args, "--output");
+    if (outputFile)
+      await import("node:fs/promises").then(({ writeFile }) =>
+        writeFile(resolve(outputFile), markdown),
+      );
+    process.stdout.write(markdown);
+    return;
+  }
+
+  if (args.command === "release-notes") {
+    rejectUnknown(args, ["--directory", "--diff", "--output"]);
+    const directory = resolve(requireOption(args, "--directory"));
+    const [manifest, validation, catalog, diff] = await Promise.all([
+      readJson<SurfaceManifest>(resolve(directory, "manifest.json")),
+      readJson<ValidationReport>(resolve(directory, "validation-report.json")),
+      readJson<JsonObject>(resolve(directory, "catalog.json")),
+      readJson<JsonObject>(resolve(requireOption(args, "--diff"))),
+    ]);
+    const markdown = releaseNotesMarkdown(manifest, validation, catalog, diff);
     const outputFile = option(args, "--output");
     if (outputFile)
       await import("node:fs/promises").then(({ writeFile }) =>
