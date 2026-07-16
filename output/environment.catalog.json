@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "artifactKind": "environment-surface-catalog",
-  "claudeCodeVersion": "2.1.210",
+  "claudeCodeVersion": "2.1.211",
   "surface": {
     "product": "Claude Code CLI",
     "interface": "process-environment",
@@ -400,8 +400,8 @@
     }
   ],
   "binaryEvidence": {
-    "platformPackage": "@anthropic-ai/claude-code-darwin-arm64",
-    "binarySha256": "1b471d62d1117482689d75447f5e050c640da717a5a3c91e6c13792450f8c662",
+    "platformPackage": "@anthropic-ai/claude-code-linux-x64",
+    "binarySha256": "8272c8a474ac9ea1bc35f19b9f7c7e7dc4dc4eb6d5ad3e484b19335ac72446b2",
     "policy": "Static strings prove token presence only. Binary-only values are candidates, not public API."
   },
   "staticBinaryCandidates": [
@@ -1210,6 +1210,10 @@
       "documented": false
     },
     {
+      "name": "CLAUDE_CODE_ENABLE_REFRESH_MCP_TOOLS",
+      "documented": false
+    },
+    {
       "name": "CLAUDE_CODE_ENABLE_REMOTE_RECAP",
       "documented": false
     },
@@ -1346,6 +1350,10 @@
       "documented": true
     },
     {
+      "name": "CLAUDE_CODE_FORWARD_SUBAGENT_TEXT",
+      "documented": false
+    },
+    {
       "name": "CLAUDE_CODE_FRAME_TIMING_LOG",
       "documented": false
     },
@@ -1355,6 +1363,10 @@
     },
     {
       "name": "CLAUDE_CODE_GB_BASE_URL",
+      "documented": false
+    },
+    {
+      "name": "CLAUDE_CODE_GB_DISK_CACHE_WHEN_TELEMETRY_OFF",
       "documented": false
     },
     {
@@ -1820,6 +1832,10 @@
     {
       "name": "CLAUDE_CODE_RESUME_INTERRUPTED_TURN",
       "documented": true
+    },
+    {
+      "name": "CLAUDE_CODE_RESUME_INTERRUPTED_TURN_MAX_AGE_MS",
+      "documented": false
     },
     {
       "name": "CLAUDE_CODE_RESUME_PROMPT",
