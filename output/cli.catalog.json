@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
   "artifactKind": "cli-surface-catalog",
-  "claudeCodeVersion": "2.1.210",
-  "platformPackage": "@anthropic-ai/claude-code-darwin-arm64",
-  "binarySha256": "1b471d62d1117482689d75447f5e050c640da717a5a3c91e6c13792450f8c662",
+  "claudeCodeVersion": "2.1.211",
+  "platformPackage": "@anthropic-ai/claude-code-linux-x64",
+  "binarySha256": "8272c8a474ac9ea1bc35f19b9f7c7e7dc4dc4eb6d5ad3e484b19335ac72446b2",
   "probePolicy": {
     "allowedOperations": [
       "--version",
@@ -19,7 +19,7 @@
     "maximumCommands": 80,
     "rawHelpRedistributed": false
   },
-  "versionOutput": "2.1.210 (Claude Code)",
+  "versionOutput": "2.1.211 (Claude Code)",
   "commands": [
     {
       "commandPath": [
@@ -33,8 +33,8 @@
       "signal": null,
       "timedOut": false,
       "outputExceeded": false,
-      "helpSha256": "b65cf501e5c1448c6a4850eac786377a74b3d50c2a919105ccad1d0595c46e3d",
-      "helpBytes": 15711,
+      "helpSha256": "c1e928c82bae211b6ae8fc0442144a998bd848861b484bdf903014e47d558997",
+      "helpBytes": 16026,
       "usage": "claude [options] [command] [prompt]",
       "arguments": [
         {
@@ -274,6 +274,16 @@
         {
           "names": [
             "--fork-session"
+          ],
+          "valueNotation": null,
+          "valueArity": "none",
+          "variadic": false,
+          "negated": false,
+          "repeatable": false
+        },
+        {
+          "names": [
+            "--forward-subagent-text"
           ],
           "valueNotation": null,
           "valueArity": "none",
@@ -5783,6 +5793,11 @@
       "exposedByHelpProbe": true
     },
     {
+      "name": "--forward-subagent-text",
+      "documentedTopLevel": false,
+      "exposedByHelpProbe": true
+    },
+    {
       "name": "--from-pr",
       "documentedTopLevel": true,
       "exposedByHelpProbe": true
@@ -6223,5 +6238,5 @@
       "exposedByHelpProbe": true
     }
   ],
-  "unclassifiedStaticCandidateCount": 3005
+  "unclassifiedStaticCandidateCount": 3141
 }
