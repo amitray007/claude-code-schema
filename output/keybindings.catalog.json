@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "artifactKind": "keybindings-surface-catalog",
-  "claudeCodeVersion": "2.1.212",
+  "claudeCodeVersion": "2.1.214",
   "surface": {
     "product": "Claude Code CLI terminal UI",
     "interface": "keybindings",
@@ -82,11 +82,15 @@
       "status": "documented-active"
     },
     {
-      "action": "attachments:A",
+      "action": "attachments:E",
       "status": "exact-binary-token-candidate"
     },
     {
       "action": "attachments:L",
+      "status": "exact-binary-token-candidate"
+    },
+    {
+      "action": "attachments:LOo",
       "status": "exact-binary-token-candidate"
     },
     {
@@ -134,16 +138,16 @@
       "status": "exact-binary-token-candidate"
     },
     {
-      "action": "attachments:xDo",
-      "status": "exact-binary-token-candidate"
-    },
-    {
       "action": "autocomplete:String",
       "status": "exact-binary-token-candidate"
     },
     {
       "action": "autocomplete:accept",
       "status": "documented-active"
+    },
+    {
+      "action": "autocomplete:acceptQ",
+      "status": "exact-binary-token-candidate"
     },
     {
       "action": "autocomplete:dismiss",
@@ -230,10 +234,6 @@
       "status": "documented-active"
     },
     {
-      "action": "confirm:ge",
-      "status": "exact-binary-token-candidate"
-    },
-    {
       "action": "confirm:next",
       "status": "documented-active"
     },
@@ -242,8 +242,16 @@
       "status": "documented-active"
     },
     {
+      "action": "confirm:nn",
+      "status": "exact-binary-token-candidate"
+    },
+    {
       "action": "confirm:no",
       "status": "documented-active"
+    },
+    {
+      "action": "confirm:pe",
+      "status": "exact-binary-token-candidate"
     },
     {
       "action": "confirm:previous",
@@ -266,23 +274,19 @@
       "status": "documented-active"
     },
     {
-      "action": "confirm:xn",
-      "status": "exact-binary-token-candidate"
-    },
-    {
       "action": "confirm:yes",
       "status": "documented-active"
     },
     {
-      "action": "diff:A",
+      "action": "diff:S",
       "status": "exact-binary-token-candidate"
     },
     {
-      "action": "diff:F1h",
+      "action": "diff:WH",
       "status": "exact-binary-token-candidate"
     },
     {
-      "action": "diff:YH",
+      "action": "diff:aZh",
       "status": "exact-binary-token-candidate"
     },
     {
@@ -292,10 +296,6 @@
     {
       "action": "diff:dismiss",
       "status": "documented-active"
-    },
-    {
-      "action": "diff:i9h",
-      "status": "exact-binary-token-candidate"
     },
     {
       "action": "diff:m",
@@ -318,6 +318,10 @@
       "status": "exact-binary-token-candidate"
     },
     {
+      "action": "diff:oGh",
+      "status": "exact-binary-token-candidate"
+    },
+    {
       "action": "diff:previousFile",
       "status": "documented-active"
     },
@@ -334,11 +338,7 @@
       "status": "exact-binary-token-candidate"
     },
     {
-      "action": "footer:Opa",
-      "status": "exact-binary-token-candidate"
-    },
-    {
-      "action": "footer:UNt",
+      "action": "footer:Rga",
       "status": "exact-binary-token-candidate"
     },
     {
@@ -366,6 +366,10 @@
       "status": "documented-active"
     },
     {
+      "action": "footer:oBt",
+      "status": "exact-binary-token-candidate"
+    },
+    {
       "action": "footer:openSelected",
       "status": "documented-active"
     },
@@ -386,11 +390,11 @@
       "status": "exact-binary-token-candidate"
     },
     {
-      "action": "help:Ohe",
+      "action": "help:Q",
       "status": "exact-binary-token-candidate"
     },
     {
-      "action": "help:Q",
+      "action": "help:Sge",
       "status": "exact-binary-token-candidate"
     },
     {
@@ -406,7 +410,7 @@
       "status": "exact-binary-token-candidate"
     },
     {
-      "action": "history:a",
+      "action": "history:c",
       "status": "exact-binary-token-candidate"
     },
     {
@@ -498,15 +502,7 @@
       "status": "documented-active"
     },
     {
-      "action": "plugin:A",
-      "status": "exact-binary-token-candidate"
-    },
-    {
       "action": "plugin:D",
-      "status": "exact-binary-token-candidate"
-    },
-    {
-      "action": "plugin:EG",
       "status": "exact-binary-token-candidate"
     },
     {
@@ -514,19 +510,31 @@
       "status": "exact-binary-token-candidate"
     },
     {
-      "action": "plugin:Mt",
+      "action": "plugin:IG",
       "status": "exact-binary-token-candidate"
     },
     {
-      "action": "plugin:Oe",
+      "action": "plugin:Lt",
       "status": "exact-binary-token-candidate"
     },
     {
-      "action": "plugin:TL",
+      "action": "plugin:S",
+      "status": "exact-binary-token-candidate"
+    },
+    {
+      "action": "plugin:Si",
       "status": "exact-binary-token-candidate"
     },
     {
       "action": "plugin:W",
+      "status": "exact-binary-token-candidate"
+    },
+    {
+      "action": "plugin:Yi",
+      "status": "exact-binary-token-candidate"
+    },
+    {
+      "action": "plugin:Z2e",
       "status": "exact-binary-token-candidate"
     },
     {
@@ -538,6 +546,14 @@
       "status": "exact-binary-token-candidate"
     },
     {
+      "action": "plugin:ae",
+      "status": "exact-binary-token-candidate"
+    },
+    {
+      "action": "plugin:bG",
+      "status": "exact-binary-token-candidate"
+    },
+    {
       "action": "plugin:c",
       "status": "exact-binary-token-candidate"
     },
@@ -546,11 +562,15 @@
       "status": "exact-binary-token-candidate"
     },
     {
-      "action": "plugin:dSr",
+      "action": "plugin:e",
       "status": "exact-binary-token-candidate"
     },
     {
-      "action": "plugin:e",
+      "action": "plugin:ee",
+      "status": "exact-binary-token-candidate"
+    },
+    {
+      "action": "plugin:evr",
       "status": "exact-binary-token-candidate"
     },
     {
@@ -562,10 +582,6 @@
       "status": "documented-active"
     },
     {
-      "action": "plugin:hi",
-      "status": "exact-binary-token-candidate"
-    },
-    {
       "action": "plugin:install",
       "status": "documented-active"
     },
@@ -575,6 +591,10 @@
     },
     {
       "action": "plugin:k",
+      "status": "exact-binary-token-candidate"
+    },
+    {
+      "action": "plugin:kn",
       "status": "exact-binary-token-candidate"
     },
     {
@@ -594,6 +614,10 @@
       "status": "exact-binary-token-candidate"
     },
     {
+      "action": "plugin:oKp",
+      "status": "exact-binary-token-candidate"
+    },
+    {
       "action": "plugin:org",
       "status": "exact-binary-token-candidate"
     },
@@ -610,15 +634,11 @@
       "status": "exact-binary-token-candidate"
     },
     {
-      "action": "plugin:r2e",
-      "status": "exact-binary-token-candidate"
-    },
-    {
-      "action": "plugin:ri",
-      "status": "exact-binary-token-candidate"
-    },
-    {
       "action": "plugin:s",
+      "status": "exact-binary-token-candidate"
+    },
+    {
+      "action": "plugin:si",
       "status": "exact-binary-token-candidate"
     },
     {
@@ -626,15 +646,11 @@
       "status": "exact-binary-token-candidate"
     },
     {
+      "action": "plugin:svr",
+      "status": "exact-binary-token-candidate"
+    },
+    {
       "action": "plugin:t",
-      "status": "exact-binary-token-candidate"
-    },
-    {
-      "action": "plugin:tVp",
-      "status": "exact-binary-token-candidate"
-    },
-    {
-      "action": "plugin:te",
       "status": "exact-binary-token-candidate"
     },
     {
@@ -646,23 +662,11 @@
       "status": "exact-binary-token-candidate"
     },
     {
-      "action": "plugin:uG",
-      "status": "exact-binary-token-candidate"
-    },
-    {
       "action": "plugin:void",
       "status": "exact-binary-token-candidate"
     },
     {
-      "action": "plugin:wn",
-      "status": "exact-binary-token-candidate"
-    },
-    {
-      "action": "plugin:ySr",
-      "status": "exact-binary-token-candidate"
-    },
-    {
-      "action": "plugin:zi",
+      "action": "plugin:zva",
       "status": "exact-binary-token-candidate"
     },
     {
@@ -758,15 +762,19 @@
       "status": "documented-active"
     },
     {
-      "action": "selection:A",
-      "status": "exact-binary-token-candidate"
-    },
-    {
-      "action": "selection:Kdk",
+      "action": "selection:A4r",
       "status": "exact-binary-token-candidate"
     },
     {
       "action": "selection:PR",
+      "status": "exact-binary-token-candidate"
+    },
+    {
+      "action": "selection:S",
+      "status": "exact-binary-token-candidate"
+    },
+    {
+      "action": "selection:a",
       "status": "exact-binary-token-candidate"
     },
     {
@@ -780,6 +788,10 @@
     {
       "action": "selection:copy",
       "status": "documented-active"
+    },
+    {
+      "action": "selection:e",
+      "status": "exact-binary-token-candidate"
     },
     {
       "action": "selection:extendDown",
@@ -806,6 +818,18 @@
       "status": "documented-active"
     },
     {
+      "action": "selection:null",
+      "status": "exact-binary-token-candidate"
+    },
+    {
+      "action": "selection:o",
+      "status": "exact-binary-token-candidate"
+    },
+    {
+      "action": "selection:s",
+      "status": "exact-binary-token-candidate"
+    },
+    {
       "action": "selection:tBe",
       "status": "exact-binary-token-candidate"
     },
@@ -818,7 +842,7 @@
       "status": "exact-binary-token-candidate"
     },
     {
-      "action": "settings:A",
+      "action": "selection:xwk",
       "status": "exact-binary-token-candidate"
     },
     {
@@ -826,7 +850,11 @@
       "status": "exact-binary-token-candidate"
     },
     {
-      "action": "settings:Kn",
+      "action": "settings:Ft",
+      "status": "exact-binary-token-candidate"
+    },
+    {
+      "action": "settings:IEH",
       "status": "exact-binary-token-candidate"
     },
     {
@@ -838,7 +866,7 @@
       "status": "exact-binary-token-candidate"
     },
     {
-      "action": "settings:SlH",
+      "action": "settings:S",
       "status": "exact-binary-token-candidate"
     },
     {
@@ -846,11 +874,11 @@
       "status": "exact-binary-token-candidate"
     },
     {
-      "action": "settings:a",
+      "action": "settings:Vn",
       "status": "exact-binary-token-candidate"
     },
     {
-      "action": "settings:aMx",
+      "action": "settings:a",
       "status": "exact-binary-token-candidate"
     },
     {
@@ -863,6 +891,10 @@
     },
     {
       "action": "settings:e",
+      "status": "exact-binary-token-candidate"
+    },
+    {
+      "action": "settings:ge",
       "status": "exact-binary-token-candidate"
     },
     {
@@ -906,7 +938,7 @@
       "status": "exact-binary-token-candidate"
     },
     {
-      "action": "settings:rQe",
+      "action": "settings:rZe",
       "status": "exact-binary-token-candidate"
     },
     {
@@ -942,11 +974,7 @@
       "status": "exact-binary-token-candidate"
     },
     {
-      "action": "settings:ye",
-      "status": "exact-binary-token-candidate"
-    },
-    {
-      "action": "settings:yt",
+      "action": "settings:y3x",
       "status": "exact-binary-token-candidate"
     },
     {
@@ -958,15 +986,11 @@
       "status": "documented-active"
     },
     {
-      "action": "task:A",
+      "action": "task:Auf",
       "status": "exact-binary-token-candidate"
     },
     {
-      "action": "task:Dyt",
-      "status": "exact-binary-token-candidate"
-    },
-    {
-      "action": "task:EIH",
+      "action": "task:Fm",
       "status": "exact-binary-token-candidate"
     },
     {
@@ -974,15 +998,35 @@
       "status": "exact-binary-token-candidate"
     },
     {
-      "action": "task:K6",
+      "action": "task:MNm",
       "status": "exact-binary-token-candidate"
     },
     {
-      "action": "task:VRr",
+      "action": "task:OQ",
+      "status": "exact-binary-token-candidate"
+    },
+    {
+      "action": "task:PDr",
+      "status": "exact-binary-token-candidate"
+    },
+    {
+      "action": "task:S",
+      "status": "exact-binary-token-candidate"
+    },
+    {
+      "action": "task:UUH",
+      "status": "exact-binary-token-candidate"
+    },
+    {
+      "action": "task:WE",
       "status": "exact-binary-token-candidate"
     },
     {
       "action": "task:a",
+      "status": "exact-binary-token-candidate"
+    },
+    {
+      "action": "task:aa",
       "status": "exact-binary-token-candidate"
     },
     {
@@ -994,11 +1038,11 @@
       "status": "documented-active"
     },
     {
-      "action": "task:bif",
+      "action": "task:c",
       "status": "exact-binary-token-candidate"
     },
     {
-      "action": "task:c",
+      "action": "task:cz",
       "status": "exact-binary-token-candidate"
     },
     {
@@ -1007,10 +1051,6 @@
     },
     {
       "action": "task:i",
-      "status": "exact-binary-token-candidate"
-    },
-    {
-      "action": "task:jE",
       "status": "exact-binary-token-candidate"
     },
     {
@@ -1026,7 +1066,7 @@
       "status": "exact-binary-token-candidate"
     },
     {
-      "action": "task:ng",
+      "action": "task:ne",
       "status": "exact-binary-token-candidate"
     },
     {
@@ -1038,10 +1078,6 @@
       "status": "exact-binary-token-candidate"
     },
     {
-      "action": "task:qm",
-      "status": "exact-binary-token-candidate"
-    },
-    {
       "action": "task:r",
       "status": "exact-binary-token-candidate"
     },
@@ -1050,19 +1086,11 @@
       "status": "exact-binary-token-candidate"
     },
     {
-      "action": "task:sa",
-      "status": "exact-binary-token-candidate"
-    },
-    {
       "action": "task:t",
       "status": "exact-binary-token-candidate"
     },
     {
-      "action": "task:te",
-      "status": "exact-binary-token-candidate"
-    },
-    {
-      "action": "task:uQ",
+      "action": "task:tg",
       "status": "exact-binary-token-candidate"
     },
     {
@@ -1070,39 +1098,31 @@
       "status": "exact-binary-token-candidate"
     },
     {
-      "action": "task:vyn",
-      "status": "exact-binary-token-candidate"
-    },
-    {
       "action": "task:w",
       "status": "exact-binary-token-candidate"
     },
     {
-      "action": "task:xe",
+      "action": "task:wbn",
       "status": "exact-binary-token-candidate"
     },
     {
-      "action": "task:yLm",
+      "action": "task:we",
       "status": "exact-binary-token-candidate"
     },
     {
-      "action": "theme:A",
+      "action": "theme:AV",
       "status": "exact-binary-token-candidate"
     },
     {
-      "action": "theme:AcS",
+      "action": "theme:E",
       "status": "exact-binary-token-candidate"
     },
     {
-      "action": "theme:KY",
+      "action": "theme:GWs",
       "status": "exact-binary-token-candidate"
     },
     {
-      "action": "theme:Ngp",
-      "status": "exact-binary-token-candidate"
-    },
-    {
-      "action": "theme:Rc",
+      "action": "theme:J8s",
       "status": "exact-binary-token-candidate"
     },
     {
@@ -1110,11 +1130,11 @@
       "status": "exact-binary-token-candidate"
     },
     {
-      "action": "theme:Vgp",
+      "action": "theme:S7",
       "status": "exact-binary-token-candidate"
     },
     {
-      "action": "theme:Yjs",
+      "action": "theme:SOo",
       "status": "exact-binary-token-candidate"
     },
     {
@@ -1122,15 +1142,35 @@
       "status": "exact-binary-token-candidate"
     },
     {
+      "action": "theme:adn",
+      "status": "exact-binary-token-candidate"
+    },
+    {
+      "action": "theme:bc",
+      "status": "exact-binary-token-candidate"
+    },
+    {
+      "action": "theme:c7",
+      "status": "exact-binary-token-candidate"
+    },
+    {
+      "action": "theme:cEp",
+      "status": "exact-binary-token-candidate"
+    },
+    {
+      "action": "theme:ci0",
+      "status": "exact-binary-token-candidate"
+    },
+    {
       "action": "theme:d",
       "status": "exact-binary-token-candidate"
     },
     {
-      "action": "theme:e",
+      "action": "theme:dTS",
       "status": "exact-binary-token-candidate"
     },
     {
-      "action": "theme:e9C",
+      "action": "theme:e",
       "status": "exact-binary-token-candidate"
     },
     {
@@ -1142,11 +1182,11 @@
       "status": "exact-binary-token-candidate"
     },
     {
-      "action": "theme:h",
+      "action": "theme:g2s",
       "status": "exact-binary-token-candidate"
     },
     {
-      "action": "theme:hDo",
+      "action": "theme:h",
       "status": "exact-binary-token-candidate"
     },
     {
@@ -1154,15 +1194,11 @@
       "status": "exact-binary-token-candidate"
     },
     {
+      "action": "theme:kHf",
+      "status": "exact-binary-token-candidate"
+    },
+    {
       "action": "theme:l",
-      "status": "exact-binary-token-candidate"
-    },
-    {
-      "action": "theme:lcn",
-      "status": "exact-binary-token-candidate"
-    },
-    {
-      "action": "theme:m0p",
       "status": "exact-binary-token-candidate"
     },
     {
@@ -1170,15 +1206,7 @@
       "status": "exact-binary-token-candidate"
     },
     {
-      "action": "theme:n6s",
-      "status": "exact-binary-token-candidate"
-    },
-    {
       "action": "theme:o",
-      "status": "exact-binary-token-candidate"
-    },
-    {
-      "action": "theme:oTf",
       "status": "exact-binary-token-candidate"
     },
     {
@@ -1190,15 +1218,7 @@
       "status": "exact-binary-token-candidate"
     },
     {
-      "action": "theme:r1s",
-      "status": "exact-binary-token-candidate"
-    },
-    {
       "action": "theme:s",
-      "status": "exact-binary-token-candidate"
-    },
-    {
-      "action": "theme:sV",
       "status": "exact-binary-token-candidate"
     },
     {
@@ -1214,7 +1234,7 @@
       "status": "exact-binary-token-candidate"
     },
     {
-      "action": "theme:vpt",
+      "action": "theme:xft",
       "status": "exact-binary-token-candidate"
     },
     {
@@ -1222,7 +1242,11 @@
       "status": "exact-binary-token-candidate"
     },
     {
-      "action": "transcript:QEH",
+      "action": "theme:yEp",
+      "status": "exact-binary-token-candidate"
+    },
+    {
+      "action": "theme:zIp",
       "status": "exact-binary-token-candidate"
     },
     {
@@ -1246,7 +1270,15 @@
       "status": "exact-binary-token-candidate"
     },
     {
+      "action": "transcript:mPH",
+      "status": "exact-binary-token-candidate"
+    },
+    {
       "action": "transcript:o",
+      "status": "exact-binary-token-candidate"
+    },
+    {
+      "action": "transcript:ot",
       "status": "exact-binary-token-candidate"
     },
     {
@@ -1258,15 +1290,11 @@
       "status": "exact-binary-token-candidate"
     },
     {
-      "action": "transcript:rt",
-      "status": "exact-binary-token-candidate"
-    },
-    {
       "action": "transcript:toggleShowAll",
       "status": "documented-active"
     },
     {
-      "action": "voice:A",
+      "action": "voice:S",
       "status": "exact-binary-token-candidate"
     },
     {
@@ -2923,7 +2951,7 @@
     "x-status": "exact-release-binary-validator-corroborated",
     "x-binary": {
       "source": "platformBinary",
-      "sha256": "044a88cf3a5180776617fd3da1238dcbf9141ddec449a39cf7d2af1ac78e684e",
+      "sha256": "3c029136f7c81f54ed4a38e9d52e655aad536433dbbde50519c8c31bb646ad14",
       "pathInPackage": "package/claude",
       "commandBindingPatternCorroborated": true,
       "commandBindingValidatorMessageCorroborated": true
@@ -2931,7 +2959,7 @@
   },
   "binary": {
     "source": "platformBinary",
-    "sha256": "044a88cf3a5180776617fd3da1238dcbf9141ddec449a39cf7d2af1ac78e684e",
+    "sha256": "3c029136f7c81f54ed4a38e9d52e655aad536433dbbde50519c8c31bb646ad14",
     "pathInPackage": "package/claude",
     "commandBindingPatternCorroborated": true,
     "commandBindingValidatorMessageCorroborated": true
