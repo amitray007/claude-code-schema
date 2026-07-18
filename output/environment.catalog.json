@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "artifactKind": "environment-surface-catalog",
-  "claudeCodeVersion": "2.1.211",
+  "claudeCodeVersion": "2.1.212",
   "surface": {
     "product": "Claude Code CLI",
     "interface": "process-environment",
@@ -144,6 +144,7 @@
     "CLAUDE_CODE_FORCE_STRIKETHROUGH",
     "CLAUDE_CODE_FORCE_SYNC_OUTPUT",
     "CLAUDE_CODE_FORK_SUBAGENT",
+    "CLAUDE_CODE_FORWARD_SUBAGENT_TEXT",
     "CLAUDE_CODE_GIT_BASH_PATH",
     "CLAUDE_CODE_GLOB_HIDDEN",
     "CLAUDE_CODE_GLOB_NO_IGNORE",
@@ -185,6 +186,7 @@
     "CLAUDE_CODE_REMOTE",
     "CLAUDE_CODE_REMOTE_SESSION_ID",
     "CLAUDE_CODE_RESUME_INTERRUPTED_TURN",
+    "CLAUDE_CODE_RESUME_INTERRUPTED_TURN_MAX_AGE_MS",
     "CLAUDE_CODE_RESUME_PROMPT",
     "CLAUDE_CODE_RETRY_WATCHDOG",
     "CLAUDE_CODE_SAFE_MODE",
@@ -213,7 +215,6 @@
     "CLAUDE_CODE_SYNC_SKILLS_WAIT_TIMEOUT_MS",
     "CLAUDE_CODE_SYNTAX_HIGHLIGHT",
     "CLAUDE_CODE_TASK_LIST_ID",
-    "CLAUDE_CODE_TEAM_NAME",
     "CLAUDE_CODE_TEAM_TEARDOWN_PARK_TIMEOUT_MS",
     "CLAUDE_CODE_TMPDIR",
     "CLAUDE_CODE_TMUX_TRUECOLOR",
@@ -401,7 +402,7 @@
   ],
   "binaryEvidence": {
     "platformPackage": "@anthropic-ai/claude-code-linux-x64",
-    "binarySha256": "8272c8a474ac9ea1bc35f19b9f7c7e7dc4dc4eb6d5ad3e484b19335ac72446b2",
+    "binarySha256": "044a88cf3a5180776617fd3da1238dcbf9141ddec449a39cf7d2af1ac78e684e",
     "policy": "Static strings prove token presence only. Binary-only values are candidates, not public API."
   },
   "staticBinaryCandidates": [
@@ -1198,10 +1199,6 @@
       "documented": false
     },
     {
-      "name": "CLAUDE_CODE_ENABLE_OPUS_4_7_FAST_MODE",
-      "documented": false
-    },
-    {
       "name": "CLAUDE_CODE_ENABLE_PROMPT_SUGGESTION",
       "documented": true
     },
@@ -1351,7 +1348,7 @@
     },
     {
       "name": "CLAUDE_CODE_FORWARD_SUBAGENT_TEXT",
-      "documented": false
+      "documented": true
     },
     {
       "name": "CLAUDE_CODE_FRAME_TIMING_LOG",
@@ -1510,12 +1507,20 @@
       "documented": true
     },
     {
+      "name": "CLAUDE_CODE_MAX_SUBAGENTS_PER_SESSION",
+      "documented": false
+    },
+    {
       "name": "CLAUDE_CODE_MAX_TOOL_USE_CONCURRENCY",
       "documented": true
     },
     {
       "name": "CLAUDE_CODE_MAX_TURNS",
       "documented": true
+    },
+    {
+      "name": "CLAUDE_CODE_MAX_WEB_SEARCHES_PER_SESSION",
+      "documented": false
     },
     {
       "name": "CLAUDE_CODE_MCP_ALLOWLIST_ENV",
@@ -1538,7 +1543,7 @@
       "documented": true
     },
     {
-      "name": "CLAUDE_CODE_MID_CONVERSATION_SYSTEM",
+      "name": "CLAUDE_CODE_MEMORY_PUSH_DELETE_MODE",
       "documented": false
     },
     {
@@ -1551,6 +1556,10 @@
     },
     {
       "name": "CLAUDE_CODE_MORNING_BRIEF_PROMPT",
+      "documented": false
+    },
+    {
+      "name": "CLAUDE_CODE_NANKEEN_KESTREL",
       "documented": false
     },
     {
@@ -1587,10 +1596,6 @@
     },
     {
       "name": "CLAUDE_CODE_OAUTH_TOKEN_FILE_DESCRIPTOR",
-      "documented": false
-    },
-    {
-      "name": "CLAUDE_CODE_OPUS_4_6_FAST_MODE_OVERRIDE",
       "documented": false
     },
     {
@@ -1647,10 +1652,6 @@
     },
     {
       "name": "CLAUDE_CODE_PEWTER_OWL_TOOL",
-      "documented": false
-    },
-    {
-      "name": "CLAUDE_CODE_PLAN_MODE_INTERVIEW_PHASE",
       "documented": false
     },
     {
@@ -1835,11 +1836,15 @@
     },
     {
       "name": "CLAUDE_CODE_RESUME_INTERRUPTED_TURN_MAX_AGE_MS",
-      "documented": false
+      "documented": true
     },
     {
       "name": "CLAUDE_CODE_RESUME_PROMPT",
       "documented": true
+    },
+    {
+      "name": "CLAUDE_CODE_RESUME_SOURCE_ALIVE",
+      "documented": false
     },
     {
       "name": "CLAUDE_CODE_RESUME_THRESHOLD_MINUTES",
@@ -1875,6 +1880,10 @@
     },
     {
       "name": "CLAUDE_CODE_SDK_HAS_OAUTH_REFRESH",
+      "documented": false
+    },
+    {
+      "name": "CLAUDE_CODE_SEND_FEEDBACK",
       "documented": false
     },
     {
