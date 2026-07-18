@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://github.com/amitray007/claude-code-schema/releases/download/v2.1.212/keybindings.compat.schema.json",
+  "$id": "https://github.com/amitray007/claude-code-schema/releases/download/v2.1.214/keybindings.compat.schema.json",
   "title": "Claude Code keybindings — exact parser compatibility",
   "description": "Conservative validator generated only from the official keybindings documentation.",
   "type": "object",
@@ -70,7 +70,7 @@
     "bindings"
   ],
   "additionalProperties": false,
-  "x-claude-code-version": "2.1.212",
+  "x-claude-code-version": "2.1.214",
   "x-artifact-kind": "keybindings-runtime-compat-json-schema",
   "x-validation-limitations": [
     "The current official docs do not document command: bindings; the narrowly patterned compatibility form is accepted but annotated as unverified for this release.",
