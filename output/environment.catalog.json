@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "artifactKind": "environment-surface-catalog",
-  "claudeCodeVersion": "2.1.214",
+  "claudeCodeVersion": "2.1.215",
   "surface": {
     "product": "Claude Code CLI",
     "interface": "process-environment",
@@ -407,7 +407,7 @@
   ],
   "binaryEvidence": {
     "platformPackage": "@anthropic-ai/claude-code-linux-x64",
-    "binarySha256": "3c029136f7c81f54ed4a38e9d52e655aad536433dbbde50519c8c31bb646ad14",
+    "binarySha256": "c1efffaaf370aa187cb6a09dd93d4e511c646899b0078476f83791b664bde7fe",
     "policy": "Static strings prove token presence only. Binary-only values are candidates, not public API."
   },
   "staticBinaryCandidates": [
@@ -466,10 +466,6 @@
     {
       "name": "ANTHROPIC_CUSTOM_MODEL_OPTION_DESCRIPTION",
       "documented": true
-    },
-    {
-      "name": "ANTHROPIC_CUSTOM_MODEL_OPTION_DESCRIPTIONM",
-      "documented": false
     },
     {
       "name": "ANTHROPIC_CUSTOM_MODEL_OPTION_NAME",
@@ -908,10 +904,6 @@
       "documented": false
     },
     {
-      "name": "CLAUDE_CODE_COLD_COMPACTI",
-      "documented": false
-    },
-    {
       "name": "CLAUDE_CODE_COMMIT_LOG",
       "documented": false
     },
@@ -1108,10 +1100,6 @@
       "documented": true
     },
     {
-      "name": "CLAUDE_CODE_DISABLE_NONSTREAMING_FALLBACKY",
-      "documented": false
-    },
-    {
       "name": "CLAUDE_CODE_DISABLE_NOTIFICATION_PRESENCE_CHECK",
       "documented": true
     },
@@ -1126,6 +1114,10 @@
     {
       "name": "CLAUDE_CODE_DISABLE_POLICY_SKILLS",
       "documented": true
+    },
+    {
+      "name": "CLAUDE_CODE_DISABLE_POLICY_SKILLS7",
+      "documented": false
     },
     {
       "name": "CLAUDE_CODE_DISABLE_PRECOMPACT_SKIP",
@@ -1184,10 +1176,6 @@
       "documented": true
     },
     {
-      "name": "CLAUDE_CODE_ENABLE_APPEND_SUBAGENT_PROMPTS",
-      "documented": false
-    },
-    {
       "name": "CLAUDE_CODE_ENABLE_AUTO_MODE",
       "documented": true
     },
@@ -1228,6 +1216,10 @@
       "documented": false
     },
     {
+      "name": "CLAUDE_CODE_ENABLE_LAUNCH_COMPOSERM",
+      "documented": false
+    },
+    {
       "name": "CLAUDE_CODE_ENABLE_MENU_KIND_LANES",
       "documented": false
     },
@@ -1249,10 +1241,6 @@
     },
     {
       "name": "CLAUDE_CODE_ENABLE_SDK_FILE_CHECKPOINTING",
-      "documented": false
-    },
-    {
-      "name": "CLAUDE_CODE_ENABLE_SDK_FILE_CHECKPOINTINGD",
       "documented": false
     },
     {
@@ -1332,10 +1320,6 @@
       "documented": false
     },
     {
-      "name": "CLAUDE_CODE_FORCE_BRIDGEI",
-      "documented": false
-    },
-    {
       "name": "CLAUDE_CODE_FORCE_EVALUATE_MEMORY",
       "documented": false
     },
@@ -1397,6 +1381,10 @@
     },
     {
       "name": "CLAUDE_CODE_FRAME_TIMING_SAMPLE_EVERY",
+      "documented": false
+    },
+    {
+      "name": "CLAUDE_CODE_GAULT_KESTREL",
       "documented": false
     },
     {
@@ -1524,10 +1512,6 @@
       "documented": false
     },
     {
-      "name": "CLAUDE_CODE_LANTERN_PRISM3",
-      "documented": false
-    },
-    {
       "name": "CLAUDE_CODE_LOOP_KEEPALIVE",
       "documented": false
     },
@@ -1537,6 +1521,10 @@
     },
     {
       "name": "CLAUDE_CODE_MANAGED_SETTINGS_PATH",
+      "documented": false
+    },
+    {
+      "name": "CLAUDE_CODE_MARL_CORMORANT",
       "documented": false
     },
     {
@@ -1608,10 +1596,6 @@
       "documented": true
     },
     {
-      "name": "CLAUDE_CODE_NATIVE_CURSORL",
-      "documented": false
-    },
-    {
       "name": "CLAUDE_CODE_NEW_INIT",
       "documented": true
     },
@@ -1638,6 +1622,10 @@
     {
       "name": "CLAUDE_CODE_OAUTH_SCOPES",
       "documented": true
+    },
+    {
+      "name": "CLAUDE_CODE_OAUTH_SCOPESP",
+      "documented": false
     },
     {
       "name": "CLAUDE_CODE_OAUTH_TOKEN",
@@ -1896,10 +1884,6 @@
       "documented": true
     },
     {
-      "name": "CLAUDE_CODE_RESUME_PROMPT7",
-      "documented": false
-    },
-    {
       "name": "CLAUDE_CODE_RESUME_SOURCE_ALIVE",
       "documented": false
     },
@@ -1970,6 +1954,10 @@
     {
       "name": "CLAUDE_CODE_SHELL",
       "documented": true
+    },
+    {
+      "name": "CLAUDE_CODE_SHELLN",
+      "documented": false
     },
     {
       "name": "CLAUDE_CODE_SHELL_PREFIX",
@@ -2100,10 +2088,6 @@
       "documented": false
     },
     {
-      "name": "CLAUDE_CODE_SUPPRESS_SESSION_ATTRIBUTIONI",
-      "documented": false
-    },
-    {
       "name": "CLAUDE_CODE_SYNC_PLUGINS",
       "documented": false
     },
@@ -2201,6 +2185,10 @@
     },
     {
       "name": "CLAUDE_CODE_TEST_NO_PWSH",
+      "documented": false
+    },
+    {
+      "name": "CLAUDE_CODE_THISTLE_GREBE",
       "documented": false
     },
     {
@@ -2312,6 +2300,10 @@
       "documented": false
     },
     {
+      "name": "CLAUDE_CODE_VOICE_FORWARD_INTERIMS_TYPEDP",
+      "documented": false
+    },
+    {
       "name": "CLAUDE_CODE_WALNUT_SPIRE",
       "documented": false
     },
@@ -2340,7 +2332,15 @@
       "documented": false
     },
     {
+      "name": "CLAUDE_CODE_WORKFLOW_SIZE_WARNING_AGENTS0",
+      "documented": false
+    },
+    {
       "name": "CLAUDE_CODE_WORKFLOW_SIZE_WARNING_TOKENS",
+      "documented": false
+    },
+    {
+      "name": "CLAUDE_CODE_WORKFLOW_SIZE_WARNING_TOKENSP",
       "documented": false
     },
     {
