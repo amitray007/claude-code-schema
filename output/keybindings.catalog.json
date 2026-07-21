@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "artifactKind": "keybindings-surface-catalog",
-  "claudeCodeVersion": "2.1.215",
+  "claudeCodeVersion": "2.1.216",
   "surface": {
     "product": "Claude Code CLI terminal UI",
     "interface": "keybindings",
@@ -82,15 +82,11 @@
       "status": "documented-active"
     },
     {
+      "action": "attachments:D",
+      "status": "exact-binary-token-candidate"
+    },
+    {
       "action": "attachments:E",
-      "status": "exact-binary-token-candidate"
-    },
-    {
-      "action": "attachments:L",
-      "status": "exact-binary-token-candidate"
-    },
-    {
-      "action": "attachments:MOo",
       "status": "exact-binary-token-candidate"
     },
     {
@@ -98,7 +94,7 @@
       "status": "exact-binary-token-candidate"
     },
     {
-      "action": "attachments:S",
+      "action": "attachments:RFo",
       "status": "exact-binary-token-candidate"
     },
     {
@@ -131,6 +127,10 @@
     },
     {
       "action": "attachments:t",
+      "status": "exact-binary-token-candidate"
+    },
+    {
+      "action": "attachments:v",
       "status": "exact-binary-token-candidate"
     },
     {
@@ -230,16 +230,16 @@
       "status": "documented-active"
     },
     {
+      "action": "confirm:ln",
+      "status": "exact-binary-token-candidate"
+    },
+    {
       "action": "confirm:next",
       "status": "documented-active"
     },
     {
       "action": "confirm:nextField",
       "status": "documented-active"
-    },
-    {
-      "action": "confirm:nn",
-      "status": "exact-binary-token-candidate"
     },
     {
       "action": "confirm:no",
@@ -274,19 +274,19 @@
       "status": "documented-active"
     },
     {
-      "action": "diff:AGh",
+      "action": "diff:Ccg",
       "status": "exact-binary-token-candidate"
     },
     {
-      "action": "diff:HZh",
+      "action": "diff:E",
       "status": "exact-binary-token-candidate"
     },
     {
-      "action": "diff:S",
+      "action": "diff:Jk",
       "status": "exact-binary-token-candidate"
     },
     {
-      "action": "diff:WH",
+      "action": "diff:SKh",
       "status": "exact-binary-token-candidate"
     },
     {
@@ -330,7 +330,7 @@
       "status": "documented-active"
     },
     {
-      "action": "footer:Fga",
+      "action": "footer:F2t",
       "status": "exact-binary-token-candidate"
     },
     {
@@ -370,10 +370,6 @@
       "status": "documented-active"
     },
     {
-      "action": "footer:sBt",
-      "status": "exact-binary-token-candidate"
-    },
-    {
       "action": "footer:t",
       "status": "exact-binary-token-candidate"
     },
@@ -382,11 +378,15 @@
       "status": "documented-active"
     },
     {
-      "action": "help:Boolean",
+      "action": "footer:upQ",
       "status": "exact-binary-token-candidate"
     },
     {
-      "action": "help:Ege",
+      "action": "footer:xAa",
+      "status": "exact-binary-token-candidate"
+    },
+    {
+      "action": "help:Boolean",
       "status": "exact-binary-token-candidate"
     },
     {
@@ -403,6 +403,10 @@
     },
     {
       "action": "help:l",
+      "status": "exact-binary-token-candidate"
+    },
+    {
+      "action": "help:yye",
       "status": "exact-binary-token-candidate"
     },
     {
@@ -498,7 +502,11 @@
       "status": "documented-active"
     },
     {
-      "action": "plugin:D",
+      "action": "plugin:E",
+      "status": "exact-binary-token-candidate"
+    },
+    {
+      "action": "plugin:Et",
       "status": "exact-binary-token-candidate"
     },
     {
@@ -506,27 +514,35 @@
       "status": "exact-binary-token-candidate"
     },
     {
-      "action": "plugin:IG",
+      "action": "plugin:Jr",
       "status": "exact-binary-token-candidate"
     },
     {
-      "action": "plugin:Lt",
+      "action": "plugin:L",
       "status": "exact-binary-token-candidate"
     },
     {
-      "action": "plugin:S",
+      "action": "plugin:NL",
       "status": "exact-binary-token-candidate"
     },
     {
-      "action": "plugin:Si",
+      "action": "plugin:Twr",
       "status": "exact-binary-token-candidate"
     },
     {
-      "action": "plugin:W",
+      "action": "plugin:U",
       "status": "exact-binary-token-candidate"
     },
     {
-      "action": "plugin:Yi",
+      "action": "plugin:UUe",
+      "status": "exact-binary-token-candidate"
+    },
+    {
+      "action": "plugin:Ui",
+      "status": "exact-binary-token-candidate"
+    },
+    {
+      "action": "plugin:Wka",
       "status": "exact-binary-token-candidate"
     },
     {
@@ -538,15 +554,19 @@
       "status": "exact-binary-token-candidate"
     },
     {
-      "action": "plugin:ae",
+      "action": "plugin:br",
       "status": "exact-binary-token-candidate"
     },
     {
-      "action": "plugin:bG",
+      "action": "plugin:bwr",
       "status": "exact-binary-token-candidate"
     },
     {
       "action": "plugin:c",
+      "status": "exact-binary-token-candidate"
+    },
+    {
+      "action": "plugin:co",
       "status": "exact-binary-token-candidate"
     },
     {
@@ -555,6 +575,10 @@
     },
     {
       "action": "plugin:e",
+      "status": "exact-binary-token-candidate"
+    },
+    {
+      "action": "plugin:e3",
       "status": "exact-binary-token-candidate"
     },
     {
@@ -578,19 +602,23 @@
       "status": "exact-binary-token-candidate"
     },
     {
+      "action": "plugin:jme",
+      "status": "exact-binary-token-candidate"
+    },
+    {
       "action": "plugin:k",
       "status": "exact-binary-token-candidate"
     },
     {
-      "action": "plugin:kn",
-      "status": "exact-binary-token-candidate"
-    },
-    {
-      "action": "plugin:lvr",
+      "action": "plugin:ki",
       "status": "exact-binary-token-candidate"
     },
     {
       "action": "plugin:m",
+      "status": "exact-binary-token-candidate"
+    },
+    {
+      "action": "plugin:my",
       "status": "exact-binary-token-candidate"
     },
     {
@@ -614,15 +642,7 @@
       "status": "exact-binary-token-candidate"
     },
     {
-      "action": "plugin:pi",
-      "status": "exact-binary-token-candidate"
-    },
-    {
       "action": "plugin:r",
-      "status": "exact-binary-token-candidate"
-    },
-    {
-      "action": "plugin:rvr",
       "status": "exact-binary-token-candidate"
     },
     {
@@ -630,7 +650,7 @@
       "status": "exact-binary-token-candidate"
     },
     {
-      "action": "plugin:si",
+      "action": "plugin:se",
       "status": "exact-binary-token-candidate"
     },
     {
@@ -639,14 +659,6 @@
     },
     {
       "action": "plugin:t",
-      "status": "exact-binary-token-candidate"
-    },
-    {
-      "action": "plugin:tAa",
-      "status": "exact-binary-token-candidate"
-    },
-    {
-      "action": "plugin:tUe",
       "status": "exact-binary-token-candidate"
     },
     {
@@ -659,6 +671,10 @@
     },
     {
       "action": "plugin:void",
+      "status": "exact-binary-token-candidate"
+    },
+    {
+      "action": "plugin:zrf",
       "status": "exact-binary-token-candidate"
     },
     {
@@ -754,11 +770,15 @@
       "status": "documented-active"
     },
     {
+      "action": "selection:E",
+      "status": "exact-binary-token-candidate"
+    },
+    {
       "action": "selection:PR",
       "status": "exact-binary-token-candidate"
     },
     {
-      "action": "selection:S",
+      "action": "selection:ZGr",
       "status": "exact-binary-token-candidate"
     },
     {
@@ -806,11 +826,15 @@
       "status": "documented-active"
     },
     {
+      "action": "selection:n",
+      "status": "exact-binary-token-candidate"
+    },
+    {
       "action": "selection:null",
       "status": "exact-binary-token-candidate"
     },
     {
-      "action": "selection:o",
+      "action": "selection:q4H",
       "status": "exact-binary-token-candidate"
     },
     {
@@ -830,19 +854,7 @@
       "status": "exact-binary-token-candidate"
     },
     {
-      "action": "selection:uCk",
-      "status": "exact-binary-token-candidate"
-    },
-    {
-      "action": "selection:w4r",
-      "status": "exact-binary-token-candidate"
-    },
-    {
-      "action": "settings:Ce",
-      "status": "exact-binary-token-candidate"
-    },
-    {
-      "action": "settings:Ft",
+      "action": "settings:E",
       "status": "exact-binary-token-candidate"
     },
     {
@@ -850,23 +862,23 @@
       "status": "exact-binary-token-candidate"
     },
     {
+      "action": "settings:NFk",
+      "status": "exact-binary-token-candidate"
+    },
+    {
       "action": "settings:Object",
       "status": "exact-binary-token-candidate"
     },
     {
-      "action": "settings:S",
-      "status": "exact-binary-token-candidate"
-    },
-    {
-      "action": "settings:U",
-      "status": "exact-binary-token-candidate"
-    },
-    {
-      "action": "settings:Vn",
+      "action": "settings:Qi",
       "status": "exact-binary-token-candidate"
     },
     {
       "action": "settings:a",
+      "status": "exact-binary-token-candidate"
+    },
+    {
+      "action": "settings:be",
       "status": "exact-binary-token-candidate"
     },
     {
@@ -882,15 +894,7 @@
       "status": "exact-binary-token-candidate"
     },
     {
-      "action": "settings:e5x",
-      "status": "exact-binary-token-candidate"
-    },
-    {
-      "action": "settings:fvH",
-      "status": "exact-binary-token-candidate"
-    },
-    {
-      "action": "settings:ge",
+      "action": "settings:he",
       "status": "exact-binary-token-candidate"
     },
     {
@@ -914,10 +918,6 @@
       "status": "exact-binary-token-candidate"
     },
     {
-      "action": "settings:oZe",
-      "status": "exact-binary-token-candidate"
-    },
-    {
       "action": "settings:p",
       "status": "exact-binary-token-candidate"
     },
@@ -930,7 +930,7 @@
       "status": "exact-binary-token-candidate"
     },
     {
-      "action": "settings:qi",
+      "action": "settings:q",
       "status": "exact-binary-token-candidate"
     },
     {
@@ -950,6 +950,10 @@
       "status": "documented-active"
     },
     {
+      "action": "settings:sok",
+      "status": "exact-binary-token-candidate"
+    },
+    {
       "action": "settings:sortByTokens",
       "status": "exact-binary-token-candidate"
     },
@@ -966,7 +970,19 @@
       "status": "exact-binary-token-candidate"
     },
     {
+      "action": "settings:wt",
+      "status": "exact-binary-token-candidate"
+    },
+    {
       "action": "settings:y",
+      "status": "exact-binary-token-candidate"
+    },
+    {
+      "action": "settings:zZe",
+      "status": "exact-binary-token-candidate"
+    },
+    {
+      "action": "settings:zn",
       "status": "exact-binary-token-candidate"
     },
     {
@@ -978,7 +994,11 @@
       "status": "documented-active"
     },
     {
-      "action": "task:Fm",
+      "action": "task:Dvn",
+      "status": "exact-binary-token-candidate"
+    },
+    {
+      "action": "task:E",
       "status": "exact-binary-token-candidate"
     },
     {
@@ -986,27 +1006,23 @@
       "status": "exact-binary-token-candidate"
     },
     {
-      "action": "task:Hbn",
+      "action": "task:NZ",
       "status": "exact-binary-token-candidate"
     },
     {
-      "action": "task:ODr",
+      "action": "task:QMr",
       "status": "exact-binary-token-candidate"
     },
     {
-      "action": "task:QNm",
+      "action": "task:T",
       "status": "exact-binary-token-candidate"
     },
     {
-      "action": "task:S",
+      "action": "task:Vbt",
       "status": "exact-binary-token-candidate"
     },
     {
-      "action": "task:T4H",
-      "status": "exact-binary-token-candidate"
-    },
-    {
-      "action": "task:WE",
+      "action": "task:XeH",
       "status": "exact-binary-token-candidate"
     },
     {
@@ -1014,7 +1030,7 @@
       "status": "exact-binary-token-candidate"
     },
     {
-      "action": "task:aa",
+      "action": "task:ag",
       "status": "exact-binary-token-candidate"
     },
     {
@@ -1030,6 +1046,10 @@
       "status": "exact-binary-token-candidate"
     },
     {
+      "action": "task:cSf",
+      "status": "exact-binary-token-candidate"
+    },
+    {
       "action": "task:e",
       "status": "exact-binary-token-candidate"
     },
@@ -1038,7 +1058,19 @@
       "status": "exact-binary-token-candidate"
     },
     {
+      "action": "task:i9",
+      "status": "exact-binary-token-candidate"
+    },
+    {
+      "action": "task:jm",
+      "status": "exact-binary-token-candidate"
+    },
+    {
       "action": "task:k",
+      "status": "exact-binary-token-candidate"
+    },
+    {
+      "action": "task:ke",
       "status": "exact-binary-token-candidate"
     },
     {
@@ -1046,11 +1078,11 @@
       "status": "exact-binary-token-candidate"
     },
     {
-      "action": "task:n",
+      "action": "task:ma",
       "status": "exact-binary-token-candidate"
     },
     {
-      "action": "task:ne",
+      "action": "task:n",
       "status": "exact-binary-token-candidate"
     },
     {
@@ -1059,6 +1091,10 @@
     },
     {
       "action": "task:o",
+      "status": "exact-binary-token-candidate"
+    },
+    {
+      "action": "task:qWm",
       "status": "exact-binary-token-candidate"
     },
     {
@@ -1074,11 +1110,11 @@
       "status": "exact-binary-token-candidate"
     },
     {
-      "action": "task:tg",
+      "action": "task:te",
       "status": "exact-binary-token-candidate"
     },
     {
-      "action": "task:uz",
+      "action": "task:tv",
       "status": "exact-binary-token-candidate"
     },
     {
@@ -1086,59 +1122,31 @@
       "status": "exact-binary-token-candidate"
     },
     {
-      "action": "task:w",
-      "status": "exact-binary-token-candidate"
-    },
-    {
-      "action": "task:we",
-      "status": "exact-binary-token-candidate"
-    },
-    {
-      "action": "theme:AEp",
-      "status": "exact-binary-token-candidate"
-    },
-    {
-      "action": "theme:AOo",
-      "status": "exact-binary-token-candidate"
-    },
-    {
-      "action": "theme:DTS",
-      "status": "exact-binary-token-candidate"
-    },
-    {
       "action": "theme:E",
       "status": "exact-binary-token-candidate"
     },
     {
-      "action": "theme:E7",
+      "action": "theme:H5s",
       "status": "exact-binary-token-candidate"
     },
     {
-      "action": "theme:GHf",
+      "action": "theme:I",
       "status": "exact-binary-token-candidate"
     },
     {
-      "action": "theme:JWs",
+      "action": "theme:I6",
       "status": "exact-binary-token-candidate"
     },
     {
-      "action": "theme:REp",
+      "action": "theme:OHp",
       "status": "exact-binary-token-candidate"
     },
     {
-      "action": "theme:S",
+      "action": "theme:PA0",
       "status": "exact-binary-token-candidate"
     },
     {
-      "action": "theme:T2s",
-      "status": "exact-binary-token-candidate"
-    },
-    {
-      "action": "theme:TV",
-      "status": "exact-binary-token-candidate"
-    },
-    {
-      "action": "theme:Vi0",
+      "action": "theme:Zae",
       "status": "exact-binary-token-candidate"
     },
     {
@@ -1146,7 +1154,7 @@
       "status": "exact-binary-token-candidate"
     },
     {
-      "action": "theme:aRp",
+      "action": "theme:bFo",
       "status": "exact-binary-token-candidate"
     },
     {
@@ -1178,15 +1186,23 @@
       "status": "exact-binary-token-candidate"
     },
     {
-      "action": "theme:iKs",
+      "action": "theme:kHp",
       "status": "exact-binary-token-candidate"
     },
     {
-      "action": "theme:kft",
+      "action": "theme:kmt",
       "status": "exact-binary-token-candidate"
     },
     {
       "action": "theme:l",
+      "status": "exact-binary-token-candidate"
+    },
+    {
+      "action": "theme:lmn",
+      "status": "exact-binary-token-candidate"
+    },
+    {
+      "action": "theme:mX",
       "status": "exact-binary-token-candidate"
     },
     {
@@ -1206,6 +1222,10 @@
       "status": "exact-binary-token-candidate"
     },
     {
+      "action": "theme:rKs",
+      "status": "exact-binary-token-candidate"
+    },
+    {
       "action": "theme:s",
       "status": "exact-binary-token-candidate"
     },
@@ -1222,11 +1242,15 @@
       "status": "exact-binary-token-candidate"
     },
     {
-      "action": "theme:u7",
+      "action": "theme:v",
       "status": "exact-binary-token-candidate"
     },
     {
-      "action": "theme:udn",
+      "action": "theme:vFp",
+      "status": "exact-binary-token-candidate"
+    },
+    {
+      "action": "theme:xZs",
       "status": "exact-binary-token-candidate"
     },
     {
@@ -1234,7 +1258,15 @@
       "status": "exact-binary-token-candidate"
     },
     {
-      "action": "transcript:JPH",
+      "action": "theme:y1f",
+      "status": "exact-binary-token-candidate"
+    },
+    {
+      "action": "transcript:A9k",
+      "status": "exact-binary-token-candidate"
+    },
+    {
+      "action": "transcript:Qe",
       "status": "exact-binary-token-candidate"
     },
     {
@@ -1262,10 +1294,6 @@
       "status": "exact-binary-token-candidate"
     },
     {
-      "action": "transcript:ot",
-      "status": "exact-binary-token-candidate"
-    },
-    {
       "action": "transcript:p",
       "status": "exact-binary-token-candidate"
     },
@@ -1278,7 +1306,7 @@
       "status": "documented-active"
     },
     {
-      "action": "voice:S",
+      "action": "voice:E",
       "status": "exact-binary-token-candidate"
     },
     {
@@ -1297,7 +1325,7 @@
         "evidence": [
           {
             "source": "keybindingsDocs",
-            "sourceSha256": "d450c6c3b1f253d4acdb42c833bc3ef0aceee7e46fd1437a8c7f7b7fe455085e"
+            "sourceSha256": "21e693e3bb174f0e56af8b16f9d707424584cb3a2ca1e186e0e20b513470d134"
           }
         ]
       }
@@ -1312,7 +1340,7 @@
         "evidence": [
           {
             "source": "keybindingsDocs",
-            "sourceSha256": "d450c6c3b1f253d4acdb42c833bc3ef0aceee7e46fd1437a8c7f7b7fe455085e"
+            "sourceSha256": "21e693e3bb174f0e56af8b16f9d707424584cb3a2ca1e186e0e20b513470d134"
           }
         ]
       }
@@ -1327,7 +1355,7 @@
         "evidence": [
           {
             "source": "keybindingsDocs",
-            "sourceSha256": "d450c6c3b1f253d4acdb42c833bc3ef0aceee7e46fd1437a8c7f7b7fe455085e"
+            "sourceSha256": "21e693e3bb174f0e56af8b16f9d707424584cb3a2ca1e186e0e20b513470d134"
           }
         ]
       }
@@ -1342,7 +1370,7 @@
         "evidence": [
           {
             "source": "keybindingsDocs",
-            "sourceSha256": "d450c6c3b1f253d4acdb42c833bc3ef0aceee7e46fd1437a8c7f7b7fe455085e"
+            "sourceSha256": "21e693e3bb174f0e56af8b16f9d707424584cb3a2ca1e186e0e20b513470d134"
           }
         ]
       }
@@ -1357,7 +1385,7 @@
         "evidence": [
           {
             "source": "keybindingsDocs",
-            "sourceSha256": "d450c6c3b1f253d4acdb42c833bc3ef0aceee7e46fd1437a8c7f7b7fe455085e"
+            "sourceSha256": "21e693e3bb174f0e56af8b16f9d707424584cb3a2ca1e186e0e20b513470d134"
           }
         ]
       }
@@ -1372,7 +1400,7 @@
         "evidence": [
           {
             "source": "keybindingsDocs",
-            "sourceSha256": "d450c6c3b1f253d4acdb42c833bc3ef0aceee7e46fd1437a8c7f7b7fe455085e"
+            "sourceSha256": "21e693e3bb174f0e56af8b16f9d707424584cb3a2ca1e186e0e20b513470d134"
           }
         ]
       }
@@ -1387,7 +1415,7 @@
         "evidence": [
           {
             "source": "keybindingsDocs",
-            "sourceSha256": "d450c6c3b1f253d4acdb42c833bc3ef0aceee7e46fd1437a8c7f7b7fe455085e"
+            "sourceSha256": "21e693e3bb174f0e56af8b16f9d707424584cb3a2ca1e186e0e20b513470d134"
           }
         ]
       }
@@ -1402,7 +1430,7 @@
         "evidence": [
           {
             "source": "keybindingsDocs",
-            "sourceSha256": "d450c6c3b1f253d4acdb42c833bc3ef0aceee7e46fd1437a8c7f7b7fe455085e"
+            "sourceSha256": "21e693e3bb174f0e56af8b16f9d707424584cb3a2ca1e186e0e20b513470d134"
           }
         ]
       }
@@ -1417,7 +1445,7 @@
         "evidence": [
           {
             "source": "keybindingsDocs",
-            "sourceSha256": "d450c6c3b1f253d4acdb42c833bc3ef0aceee7e46fd1437a8c7f7b7fe455085e"
+            "sourceSha256": "21e693e3bb174f0e56af8b16f9d707424584cb3a2ca1e186e0e20b513470d134"
           }
         ]
       }
@@ -1432,7 +1460,7 @@
         "evidence": [
           {
             "source": "keybindingsDocs",
-            "sourceSha256": "d450c6c3b1f253d4acdb42c833bc3ef0aceee7e46fd1437a8c7f7b7fe455085e"
+            "sourceSha256": "21e693e3bb174f0e56af8b16f9d707424584cb3a2ca1e186e0e20b513470d134"
           }
         ]
       }
@@ -1447,7 +1475,7 @@
         "evidence": [
           {
             "source": "keybindingsDocs",
-            "sourceSha256": "d450c6c3b1f253d4acdb42c833bc3ef0aceee7e46fd1437a8c7f7b7fe455085e"
+            "sourceSha256": "21e693e3bb174f0e56af8b16f9d707424584cb3a2ca1e186e0e20b513470d134"
           }
         ]
       }
@@ -1462,7 +1490,7 @@
         "evidence": [
           {
             "source": "keybindingsDocs",
-            "sourceSha256": "d450c6c3b1f253d4acdb42c833bc3ef0aceee7e46fd1437a8c7f7b7fe455085e"
+            "sourceSha256": "21e693e3bb174f0e56af8b16f9d707424584cb3a2ca1e186e0e20b513470d134"
           }
         ]
       }
@@ -1477,7 +1505,7 @@
         "evidence": [
           {
             "source": "keybindingsDocs",
-            "sourceSha256": "d450c6c3b1f253d4acdb42c833bc3ef0aceee7e46fd1437a8c7f7b7fe455085e"
+            "sourceSha256": "21e693e3bb174f0e56af8b16f9d707424584cb3a2ca1e186e0e20b513470d134"
           }
         ]
       }
@@ -1492,7 +1520,7 @@
         "evidence": [
           {
             "source": "keybindingsDocs",
-            "sourceSha256": "d450c6c3b1f253d4acdb42c833bc3ef0aceee7e46fd1437a8c7f7b7fe455085e"
+            "sourceSha256": "21e693e3bb174f0e56af8b16f9d707424584cb3a2ca1e186e0e20b513470d134"
           }
         ]
       }
@@ -1507,7 +1535,7 @@
         "evidence": [
           {
             "source": "keybindingsDocs",
-            "sourceSha256": "d450c6c3b1f253d4acdb42c833bc3ef0aceee7e46fd1437a8c7f7b7fe455085e"
+            "sourceSha256": "21e693e3bb174f0e56af8b16f9d707424584cb3a2ca1e186e0e20b513470d134"
           }
         ]
       }
@@ -1522,7 +1550,7 @@
         "evidence": [
           {
             "source": "keybindingsDocs",
-            "sourceSha256": "d450c6c3b1f253d4acdb42c833bc3ef0aceee7e46fd1437a8c7f7b7fe455085e"
+            "sourceSha256": "21e693e3bb174f0e56af8b16f9d707424584cb3a2ca1e186e0e20b513470d134"
           }
         ]
       }
@@ -1537,7 +1565,7 @@
         "evidence": [
           {
             "source": "keybindingsDocs",
-            "sourceSha256": "d450c6c3b1f253d4acdb42c833bc3ef0aceee7e46fd1437a8c7f7b7fe455085e"
+            "sourceSha256": "21e693e3bb174f0e56af8b16f9d707424584cb3a2ca1e186e0e20b513470d134"
           }
         ]
       }
@@ -1552,7 +1580,7 @@
         "evidence": [
           {
             "source": "keybindingsDocs",
-            "sourceSha256": "d450c6c3b1f253d4acdb42c833bc3ef0aceee7e46fd1437a8c7f7b7fe455085e"
+            "sourceSha256": "21e693e3bb174f0e56af8b16f9d707424584cb3a2ca1e186e0e20b513470d134"
           }
         ]
       }
@@ -1567,7 +1595,7 @@
         "evidence": [
           {
             "source": "keybindingsDocs",
-            "sourceSha256": "d450c6c3b1f253d4acdb42c833bc3ef0aceee7e46fd1437a8c7f7b7fe455085e"
+            "sourceSha256": "21e693e3bb174f0e56af8b16f9d707424584cb3a2ca1e186e0e20b513470d134"
           }
         ]
       }
@@ -1582,7 +1610,7 @@
         "evidence": [
           {
             "source": "keybindingsDocs",
-            "sourceSha256": "d450c6c3b1f253d4acdb42c833bc3ef0aceee7e46fd1437a8c7f7b7fe455085e"
+            "sourceSha256": "21e693e3bb174f0e56af8b16f9d707424584cb3a2ca1e186e0e20b513470d134"
           }
         ]
       }
@@ -1597,7 +1625,7 @@
         "evidence": [
           {
             "source": "keybindingsDocs",
-            "sourceSha256": "d450c6c3b1f253d4acdb42c833bc3ef0aceee7e46fd1437a8c7f7b7fe455085e"
+            "sourceSha256": "21e693e3bb174f0e56af8b16f9d707424584cb3a2ca1e186e0e20b513470d134"
           }
         ]
       }
@@ -1612,7 +1640,7 @@
         "evidence": [
           {
             "source": "keybindingsDocs",
-            "sourceSha256": "d450c6c3b1f253d4acdb42c833bc3ef0aceee7e46fd1437a8c7f7b7fe455085e"
+            "sourceSha256": "21e693e3bb174f0e56af8b16f9d707424584cb3a2ca1e186e0e20b513470d134"
           }
         ]
       }
@@ -1627,7 +1655,7 @@
         "evidence": [
           {
             "source": "keybindingsDocs",
-            "sourceSha256": "d450c6c3b1f253d4acdb42c833bc3ef0aceee7e46fd1437a8c7f7b7fe455085e"
+            "sourceSha256": "21e693e3bb174f0e56af8b16f9d707424584cb3a2ca1e186e0e20b513470d134"
           }
         ]
       }
@@ -1642,7 +1670,7 @@
         "evidence": [
           {
             "source": "keybindingsDocs",
-            "sourceSha256": "d450c6c3b1f253d4acdb42c833bc3ef0aceee7e46fd1437a8c7f7b7fe455085e"
+            "sourceSha256": "21e693e3bb174f0e56af8b16f9d707424584cb3a2ca1e186e0e20b513470d134"
           }
         ]
       }
@@ -1657,7 +1685,7 @@
         "evidence": [
           {
             "source": "keybindingsDocs",
-            "sourceSha256": "d450c6c3b1f253d4acdb42c833bc3ef0aceee7e46fd1437a8c7f7b7fe455085e"
+            "sourceSha256": "21e693e3bb174f0e56af8b16f9d707424584cb3a2ca1e186e0e20b513470d134"
           }
         ]
       }
@@ -1672,7 +1700,7 @@
         "evidence": [
           {
             "source": "keybindingsDocs",
-            "sourceSha256": "d450c6c3b1f253d4acdb42c833bc3ef0aceee7e46fd1437a8c7f7b7fe455085e"
+            "sourceSha256": "21e693e3bb174f0e56af8b16f9d707424584cb3a2ca1e186e0e20b513470d134"
           }
         ]
       }
@@ -1687,7 +1715,7 @@
         "evidence": [
           {
             "source": "keybindingsDocs",
-            "sourceSha256": "d450c6c3b1f253d4acdb42c833bc3ef0aceee7e46fd1437a8c7f7b7fe455085e"
+            "sourceSha256": "21e693e3bb174f0e56af8b16f9d707424584cb3a2ca1e186e0e20b513470d134"
           }
         ]
       }
@@ -1702,7 +1730,7 @@
         "evidence": [
           {
             "source": "keybindingsDocs",
-            "sourceSha256": "d450c6c3b1f253d4acdb42c833bc3ef0aceee7e46fd1437a8c7f7b7fe455085e"
+            "sourceSha256": "21e693e3bb174f0e56af8b16f9d707424584cb3a2ca1e186e0e20b513470d134"
           }
         ]
       }
@@ -1717,7 +1745,7 @@
         "evidence": [
           {
             "source": "keybindingsDocs",
-            "sourceSha256": "d450c6c3b1f253d4acdb42c833bc3ef0aceee7e46fd1437a8c7f7b7fe455085e"
+            "sourceSha256": "21e693e3bb174f0e56af8b16f9d707424584cb3a2ca1e186e0e20b513470d134"
           }
         ]
       }
@@ -1732,7 +1760,7 @@
         "evidence": [
           {
             "source": "keybindingsDocs",
-            "sourceSha256": "d450c6c3b1f253d4acdb42c833bc3ef0aceee7e46fd1437a8c7f7b7fe455085e"
+            "sourceSha256": "21e693e3bb174f0e56af8b16f9d707424584cb3a2ca1e186e0e20b513470d134"
           }
         ]
       }
@@ -1747,7 +1775,7 @@
         "evidence": [
           {
             "source": "keybindingsDocs",
-            "sourceSha256": "d450c6c3b1f253d4acdb42c833bc3ef0aceee7e46fd1437a8c7f7b7fe455085e"
+            "sourceSha256": "21e693e3bb174f0e56af8b16f9d707424584cb3a2ca1e186e0e20b513470d134"
           }
         ]
       }
@@ -1762,7 +1790,7 @@
         "evidence": [
           {
             "source": "keybindingsDocs",
-            "sourceSha256": "d450c6c3b1f253d4acdb42c833bc3ef0aceee7e46fd1437a8c7f7b7fe455085e"
+            "sourceSha256": "21e693e3bb174f0e56af8b16f9d707424584cb3a2ca1e186e0e20b513470d134"
           }
         ]
       }
@@ -1777,7 +1805,7 @@
         "evidence": [
           {
             "source": "keybindingsDocs",
-            "sourceSha256": "d450c6c3b1f253d4acdb42c833bc3ef0aceee7e46fd1437a8c7f7b7fe455085e"
+            "sourceSha256": "21e693e3bb174f0e56af8b16f9d707424584cb3a2ca1e186e0e20b513470d134"
           }
         ]
       }
@@ -1792,7 +1820,7 @@
         "evidence": [
           {
             "source": "keybindingsDocs",
-            "sourceSha256": "d450c6c3b1f253d4acdb42c833bc3ef0aceee7e46fd1437a8c7f7b7fe455085e"
+            "sourceSha256": "21e693e3bb174f0e56af8b16f9d707424584cb3a2ca1e186e0e20b513470d134"
           }
         ]
       }
@@ -1807,7 +1835,7 @@
         "evidence": [
           {
             "source": "keybindingsDocs",
-            "sourceSha256": "d450c6c3b1f253d4acdb42c833bc3ef0aceee7e46fd1437a8c7f7b7fe455085e"
+            "sourceSha256": "21e693e3bb174f0e56af8b16f9d707424584cb3a2ca1e186e0e20b513470d134"
           }
         ]
       }
@@ -1822,7 +1850,7 @@
         "evidence": [
           {
             "source": "keybindingsDocs",
-            "sourceSha256": "d450c6c3b1f253d4acdb42c833bc3ef0aceee7e46fd1437a8c7f7b7fe455085e"
+            "sourceSha256": "21e693e3bb174f0e56af8b16f9d707424584cb3a2ca1e186e0e20b513470d134"
           }
         ]
       }
@@ -1837,7 +1865,7 @@
         "evidence": [
           {
             "source": "keybindingsDocs",
-            "sourceSha256": "d450c6c3b1f253d4acdb42c833bc3ef0aceee7e46fd1437a8c7f7b7fe455085e"
+            "sourceSha256": "21e693e3bb174f0e56af8b16f9d707424584cb3a2ca1e186e0e20b513470d134"
           }
         ]
       }
@@ -1852,7 +1880,7 @@
         "evidence": [
           {
             "source": "keybindingsDocs",
-            "sourceSha256": "d450c6c3b1f253d4acdb42c833bc3ef0aceee7e46fd1437a8c7f7b7fe455085e"
+            "sourceSha256": "21e693e3bb174f0e56af8b16f9d707424584cb3a2ca1e186e0e20b513470d134"
           }
         ]
       }
@@ -1867,7 +1895,7 @@
         "evidence": [
           {
             "source": "keybindingsDocs",
-            "sourceSha256": "d450c6c3b1f253d4acdb42c833bc3ef0aceee7e46fd1437a8c7f7b7fe455085e"
+            "sourceSha256": "21e693e3bb174f0e56af8b16f9d707424584cb3a2ca1e186e0e20b513470d134"
           }
         ]
       }
@@ -1882,7 +1910,7 @@
         "evidence": [
           {
             "source": "keybindingsDocs",
-            "sourceSha256": "d450c6c3b1f253d4acdb42c833bc3ef0aceee7e46fd1437a8c7f7b7fe455085e"
+            "sourceSha256": "21e693e3bb174f0e56af8b16f9d707424584cb3a2ca1e186e0e20b513470d134"
           }
         ]
       }
@@ -1897,7 +1925,7 @@
         "evidence": [
           {
             "source": "keybindingsDocs",
-            "sourceSha256": "d450c6c3b1f253d4acdb42c833bc3ef0aceee7e46fd1437a8c7f7b7fe455085e"
+            "sourceSha256": "21e693e3bb174f0e56af8b16f9d707424584cb3a2ca1e186e0e20b513470d134"
           }
         ]
       }
@@ -1912,7 +1940,7 @@
         "evidence": [
           {
             "source": "keybindingsDocs",
-            "sourceSha256": "d450c6c3b1f253d4acdb42c833bc3ef0aceee7e46fd1437a8c7f7b7fe455085e"
+            "sourceSha256": "21e693e3bb174f0e56af8b16f9d707424584cb3a2ca1e186e0e20b513470d134"
           }
         ]
       }
@@ -1927,7 +1955,7 @@
         "evidence": [
           {
             "source": "keybindingsDocs",
-            "sourceSha256": "d450c6c3b1f253d4acdb42c833bc3ef0aceee7e46fd1437a8c7f7b7fe455085e"
+            "sourceSha256": "21e693e3bb174f0e56af8b16f9d707424584cb3a2ca1e186e0e20b513470d134"
           }
         ]
       }
@@ -1948,7 +1976,7 @@
         "evidence": [
           {
             "source": "keybindingsDocs",
-            "sourceSha256": "d450c6c3b1f253d4acdb42c833bc3ef0aceee7e46fd1437a8c7f7b7fe455085e"
+            "sourceSha256": "21e693e3bb174f0e56af8b16f9d707424584cb3a2ca1e186e0e20b513470d134"
           }
         ]
       }
@@ -1963,7 +1991,7 @@
         "evidence": [
           {
             "source": "keybindingsDocs",
-            "sourceSha256": "d450c6c3b1f253d4acdb42c833bc3ef0aceee7e46fd1437a8c7f7b7fe455085e"
+            "sourceSha256": "21e693e3bb174f0e56af8b16f9d707424584cb3a2ca1e186e0e20b513470d134"
           }
         ]
       }
@@ -1978,7 +2006,7 @@
         "evidence": [
           {
             "source": "keybindingsDocs",
-            "sourceSha256": "d450c6c3b1f253d4acdb42c833bc3ef0aceee7e46fd1437a8c7f7b7fe455085e"
+            "sourceSha256": "21e693e3bb174f0e56af8b16f9d707424584cb3a2ca1e186e0e20b513470d134"
           }
         ]
       }
@@ -1993,7 +2021,7 @@
         "evidence": [
           {
             "source": "keybindingsDocs",
-            "sourceSha256": "d450c6c3b1f253d4acdb42c833bc3ef0aceee7e46fd1437a8c7f7b7fe455085e"
+            "sourceSha256": "21e693e3bb174f0e56af8b16f9d707424584cb3a2ca1e186e0e20b513470d134"
           }
         ]
       }
@@ -2008,7 +2036,7 @@
         "evidence": [
           {
             "source": "keybindingsDocs",
-            "sourceSha256": "d450c6c3b1f253d4acdb42c833bc3ef0aceee7e46fd1437a8c7f7b7fe455085e"
+            "sourceSha256": "21e693e3bb174f0e56af8b16f9d707424584cb3a2ca1e186e0e20b513470d134"
           }
         ]
       }
@@ -2023,7 +2051,7 @@
         "evidence": [
           {
             "source": "keybindingsDocs",
-            "sourceSha256": "d450c6c3b1f253d4acdb42c833bc3ef0aceee7e46fd1437a8c7f7b7fe455085e"
+            "sourceSha256": "21e693e3bb174f0e56af8b16f9d707424584cb3a2ca1e186e0e20b513470d134"
           }
         ]
       }
@@ -2038,7 +2066,7 @@
         "evidence": [
           {
             "source": "keybindingsDocs",
-            "sourceSha256": "d450c6c3b1f253d4acdb42c833bc3ef0aceee7e46fd1437a8c7f7b7fe455085e"
+            "sourceSha256": "21e693e3bb174f0e56af8b16f9d707424584cb3a2ca1e186e0e20b513470d134"
           }
         ]
       }
@@ -2053,7 +2081,7 @@
         "evidence": [
           {
             "source": "keybindingsDocs",
-            "sourceSha256": "d450c6c3b1f253d4acdb42c833bc3ef0aceee7e46fd1437a8c7f7b7fe455085e"
+            "sourceSha256": "21e693e3bb174f0e56af8b16f9d707424584cb3a2ca1e186e0e20b513470d134"
           }
         ]
       }
@@ -2068,7 +2096,7 @@
         "evidence": [
           {
             "source": "keybindingsDocs",
-            "sourceSha256": "d450c6c3b1f253d4acdb42c833bc3ef0aceee7e46fd1437a8c7f7b7fe455085e"
+            "sourceSha256": "21e693e3bb174f0e56af8b16f9d707424584cb3a2ca1e186e0e20b513470d134"
           }
         ]
       }
@@ -2083,7 +2111,7 @@
         "evidence": [
           {
             "source": "keybindingsDocs",
-            "sourceSha256": "d450c6c3b1f253d4acdb42c833bc3ef0aceee7e46fd1437a8c7f7b7fe455085e"
+            "sourceSha256": "21e693e3bb174f0e56af8b16f9d707424584cb3a2ca1e186e0e20b513470d134"
           }
         ]
       }
@@ -2098,7 +2126,7 @@
         "evidence": [
           {
             "source": "keybindingsDocs",
-            "sourceSha256": "d450c6c3b1f253d4acdb42c833bc3ef0aceee7e46fd1437a8c7f7b7fe455085e"
+            "sourceSha256": "21e693e3bb174f0e56af8b16f9d707424584cb3a2ca1e186e0e20b513470d134"
           }
         ]
       }
@@ -2113,7 +2141,7 @@
         "evidence": [
           {
             "source": "keybindingsDocs",
-            "sourceSha256": "d450c6c3b1f253d4acdb42c833bc3ef0aceee7e46fd1437a8c7f7b7fe455085e"
+            "sourceSha256": "21e693e3bb174f0e56af8b16f9d707424584cb3a2ca1e186e0e20b513470d134"
           }
         ]
       }
@@ -2128,7 +2156,7 @@
         "evidence": [
           {
             "source": "keybindingsDocs",
-            "sourceSha256": "d450c6c3b1f253d4acdb42c833bc3ef0aceee7e46fd1437a8c7f7b7fe455085e"
+            "sourceSha256": "21e693e3bb174f0e56af8b16f9d707424584cb3a2ca1e186e0e20b513470d134"
           }
         ]
       }
@@ -2143,7 +2171,7 @@
         "evidence": [
           {
             "source": "keybindingsDocs",
-            "sourceSha256": "d450c6c3b1f253d4acdb42c833bc3ef0aceee7e46fd1437a8c7f7b7fe455085e"
+            "sourceSha256": "21e693e3bb174f0e56af8b16f9d707424584cb3a2ca1e186e0e20b513470d134"
           }
         ]
       }
@@ -2158,7 +2186,7 @@
         "evidence": [
           {
             "source": "keybindingsDocs",
-            "sourceSha256": "d450c6c3b1f253d4acdb42c833bc3ef0aceee7e46fd1437a8c7f7b7fe455085e"
+            "sourceSha256": "21e693e3bb174f0e56af8b16f9d707424584cb3a2ca1e186e0e20b513470d134"
           }
         ]
       }
@@ -2173,7 +2201,7 @@
         "evidence": [
           {
             "source": "keybindingsDocs",
-            "sourceSha256": "d450c6c3b1f253d4acdb42c833bc3ef0aceee7e46fd1437a8c7f7b7fe455085e"
+            "sourceSha256": "21e693e3bb174f0e56af8b16f9d707424584cb3a2ca1e186e0e20b513470d134"
           }
         ]
       }
@@ -2188,7 +2216,7 @@
         "evidence": [
           {
             "source": "keybindingsDocs",
-            "sourceSha256": "d450c6c3b1f253d4acdb42c833bc3ef0aceee7e46fd1437a8c7f7b7fe455085e"
+            "sourceSha256": "21e693e3bb174f0e56af8b16f9d707424584cb3a2ca1e186e0e20b513470d134"
           }
         ]
       }
@@ -2203,7 +2231,7 @@
         "evidence": [
           {
             "source": "keybindingsDocs",
-            "sourceSha256": "d450c6c3b1f253d4acdb42c833bc3ef0aceee7e46fd1437a8c7f7b7fe455085e"
+            "sourceSha256": "21e693e3bb174f0e56af8b16f9d707424584cb3a2ca1e186e0e20b513470d134"
           }
         ]
       }
@@ -2218,7 +2246,7 @@
         "evidence": [
           {
             "source": "keybindingsDocs",
-            "sourceSha256": "d450c6c3b1f253d4acdb42c833bc3ef0aceee7e46fd1437a8c7f7b7fe455085e"
+            "sourceSha256": "21e693e3bb174f0e56af8b16f9d707424584cb3a2ca1e186e0e20b513470d134"
           }
         ]
       }
@@ -2233,7 +2261,7 @@
         "evidence": [
           {
             "source": "keybindingsDocs",
-            "sourceSha256": "d450c6c3b1f253d4acdb42c833bc3ef0aceee7e46fd1437a8c7f7b7fe455085e"
+            "sourceSha256": "21e693e3bb174f0e56af8b16f9d707424584cb3a2ca1e186e0e20b513470d134"
           }
         ]
       }
@@ -2248,7 +2276,7 @@
         "evidence": [
           {
             "source": "keybindingsDocs",
-            "sourceSha256": "d450c6c3b1f253d4acdb42c833bc3ef0aceee7e46fd1437a8c7f7b7fe455085e"
+            "sourceSha256": "21e693e3bb174f0e56af8b16f9d707424584cb3a2ca1e186e0e20b513470d134"
           }
         ]
       }
@@ -2263,7 +2291,7 @@
         "evidence": [
           {
             "source": "keybindingsDocs",
-            "sourceSha256": "d450c6c3b1f253d4acdb42c833bc3ef0aceee7e46fd1437a8c7f7b7fe455085e"
+            "sourceSha256": "21e693e3bb174f0e56af8b16f9d707424584cb3a2ca1e186e0e20b513470d134"
           }
         ]
       }
@@ -2278,7 +2306,7 @@
         "evidence": [
           {
             "source": "keybindingsDocs",
-            "sourceSha256": "d450c6c3b1f253d4acdb42c833bc3ef0aceee7e46fd1437a8c7f7b7fe455085e"
+            "sourceSha256": "21e693e3bb174f0e56af8b16f9d707424584cb3a2ca1e186e0e20b513470d134"
           }
         ]
       }
@@ -2293,7 +2321,7 @@
         "evidence": [
           {
             "source": "keybindingsDocs",
-            "sourceSha256": "d450c6c3b1f253d4acdb42c833bc3ef0aceee7e46fd1437a8c7f7b7fe455085e"
+            "sourceSha256": "21e693e3bb174f0e56af8b16f9d707424584cb3a2ca1e186e0e20b513470d134"
           }
         ]
       }
@@ -2308,7 +2336,7 @@
         "evidence": [
           {
             "source": "keybindingsDocs",
-            "sourceSha256": "d450c6c3b1f253d4acdb42c833bc3ef0aceee7e46fd1437a8c7f7b7fe455085e"
+            "sourceSha256": "21e693e3bb174f0e56af8b16f9d707424584cb3a2ca1e186e0e20b513470d134"
           }
         ]
       }
@@ -2323,7 +2351,7 @@
         "evidence": [
           {
             "source": "keybindingsDocs",
-            "sourceSha256": "d450c6c3b1f253d4acdb42c833bc3ef0aceee7e46fd1437a8c7f7b7fe455085e"
+            "sourceSha256": "21e693e3bb174f0e56af8b16f9d707424584cb3a2ca1e186e0e20b513470d134"
           }
         ]
       }
@@ -2338,7 +2366,7 @@
         "evidence": [
           {
             "source": "keybindingsDocs",
-            "sourceSha256": "d450c6c3b1f253d4acdb42c833bc3ef0aceee7e46fd1437a8c7f7b7fe455085e"
+            "sourceSha256": "21e693e3bb174f0e56af8b16f9d707424584cb3a2ca1e186e0e20b513470d134"
           }
         ]
       }
@@ -2353,7 +2381,7 @@
         "evidence": [
           {
             "source": "keybindingsDocs",
-            "sourceSha256": "d450c6c3b1f253d4acdb42c833bc3ef0aceee7e46fd1437a8c7f7b7fe455085e"
+            "sourceSha256": "21e693e3bb174f0e56af8b16f9d707424584cb3a2ca1e186e0e20b513470d134"
           }
         ]
       }
@@ -2368,7 +2396,7 @@
         "evidence": [
           {
             "source": "keybindingsDocs",
-            "sourceSha256": "d450c6c3b1f253d4acdb42c833bc3ef0aceee7e46fd1437a8c7f7b7fe455085e"
+            "sourceSha256": "21e693e3bb174f0e56af8b16f9d707424584cb3a2ca1e186e0e20b513470d134"
           }
         ]
       }
@@ -2383,7 +2411,7 @@
         "evidence": [
           {
             "source": "keybindingsDocs",
-            "sourceSha256": "d450c6c3b1f253d4acdb42c833bc3ef0aceee7e46fd1437a8c7f7b7fe455085e"
+            "sourceSha256": "21e693e3bb174f0e56af8b16f9d707424584cb3a2ca1e186e0e20b513470d134"
           }
         ]
       }
@@ -2398,7 +2426,7 @@
         "evidence": [
           {
             "source": "keybindingsDocs",
-            "sourceSha256": "d450c6c3b1f253d4acdb42c833bc3ef0aceee7e46fd1437a8c7f7b7fe455085e"
+            "sourceSha256": "21e693e3bb174f0e56af8b16f9d707424584cb3a2ca1e186e0e20b513470d134"
           }
         ]
       }
@@ -2413,7 +2441,7 @@
         "evidence": [
           {
             "source": "keybindingsDocs",
-            "sourceSha256": "d450c6c3b1f253d4acdb42c833bc3ef0aceee7e46fd1437a8c7f7b7fe455085e"
+            "sourceSha256": "21e693e3bb174f0e56af8b16f9d707424584cb3a2ca1e186e0e20b513470d134"
           }
         ]
       }
@@ -2428,7 +2456,7 @@
         "evidence": [
           {
             "source": "keybindingsDocs",
-            "sourceSha256": "d450c6c3b1f253d4acdb42c833bc3ef0aceee7e46fd1437a8c7f7b7fe455085e"
+            "sourceSha256": "21e693e3bb174f0e56af8b16f9d707424584cb3a2ca1e186e0e20b513470d134"
           }
         ]
       }
@@ -2443,7 +2471,7 @@
         "evidence": [
           {
             "source": "keybindingsDocs",
-            "sourceSha256": "d450c6c3b1f253d4acdb42c833bc3ef0aceee7e46fd1437a8c7f7b7fe455085e"
+            "sourceSha256": "21e693e3bb174f0e56af8b16f9d707424584cb3a2ca1e186e0e20b513470d134"
           }
         ]
       }
@@ -2458,7 +2486,7 @@
         "evidence": [
           {
             "source": "keybindingsDocs",
-            "sourceSha256": "d450c6c3b1f253d4acdb42c833bc3ef0aceee7e46fd1437a8c7f7b7fe455085e"
+            "sourceSha256": "21e693e3bb174f0e56af8b16f9d707424584cb3a2ca1e186e0e20b513470d134"
           }
         ]
       }
@@ -2473,7 +2501,7 @@
         "evidence": [
           {
             "source": "keybindingsDocs",
-            "sourceSha256": "d450c6c3b1f253d4acdb42c833bc3ef0aceee7e46fd1437a8c7f7b7fe455085e"
+            "sourceSha256": "21e693e3bb174f0e56af8b16f9d707424584cb3a2ca1e186e0e20b513470d134"
           }
         ]
       }
@@ -2488,7 +2516,7 @@
         "evidence": [
           {
             "source": "keybindingsDocs",
-            "sourceSha256": "d450c6c3b1f253d4acdb42c833bc3ef0aceee7e46fd1437a8c7f7b7fe455085e"
+            "sourceSha256": "21e693e3bb174f0e56af8b16f9d707424584cb3a2ca1e186e0e20b513470d134"
           }
         ]
       }
@@ -2503,7 +2531,7 @@
         "evidence": [
           {
             "source": "keybindingsDocs",
-            "sourceSha256": "d450c6c3b1f253d4acdb42c833bc3ef0aceee7e46fd1437a8c7f7b7fe455085e"
+            "sourceSha256": "21e693e3bb174f0e56af8b16f9d707424584cb3a2ca1e186e0e20b513470d134"
           }
         ]
       }
@@ -2518,7 +2546,7 @@
         "evidence": [
           {
             "source": "keybindingsDocs",
-            "sourceSha256": "d450c6c3b1f253d4acdb42c833bc3ef0aceee7e46fd1437a8c7f7b7fe455085e"
+            "sourceSha256": "21e693e3bb174f0e56af8b16f9d707424584cb3a2ca1e186e0e20b513470d134"
           }
         ]
       }
@@ -2533,7 +2561,7 @@
         "evidence": [
           {
             "source": "keybindingsDocs",
-            "sourceSha256": "d450c6c3b1f253d4acdb42c833bc3ef0aceee7e46fd1437a8c7f7b7fe455085e"
+            "sourceSha256": "21e693e3bb174f0e56af8b16f9d707424584cb3a2ca1e186e0e20b513470d134"
           }
         ]
       }
@@ -2548,7 +2576,7 @@
         "evidence": [
           {
             "source": "keybindingsDocs",
-            "sourceSha256": "d450c6c3b1f253d4acdb42c833bc3ef0aceee7e46fd1437a8c7f7b7fe455085e"
+            "sourceSha256": "21e693e3bb174f0e56af8b16f9d707424584cb3a2ca1e186e0e20b513470d134"
           }
         ]
       }
@@ -2563,7 +2591,7 @@
         "evidence": [
           {
             "source": "keybindingsDocs",
-            "sourceSha256": "d450c6c3b1f253d4acdb42c833bc3ef0aceee7e46fd1437a8c7f7b7fe455085e"
+            "sourceSha256": "21e693e3bb174f0e56af8b16f9d707424584cb3a2ca1e186e0e20b513470d134"
           }
         ]
       }
@@ -2578,7 +2606,7 @@
         "evidence": [
           {
             "source": "keybindingsDocs",
-            "sourceSha256": "d450c6c3b1f253d4acdb42c833bc3ef0aceee7e46fd1437a8c7f7b7fe455085e"
+            "sourceSha256": "21e693e3bb174f0e56af8b16f9d707424584cb3a2ca1e186e0e20b513470d134"
           }
         ]
       }
@@ -2593,7 +2621,7 @@
         "evidence": [
           {
             "source": "keybindingsDocs",
-            "sourceSha256": "d450c6c3b1f253d4acdb42c833bc3ef0aceee7e46fd1437a8c7f7b7fe455085e"
+            "sourceSha256": "21e693e3bb174f0e56af8b16f9d707424584cb3a2ca1e186e0e20b513470d134"
           }
         ]
       }
@@ -2608,7 +2636,7 @@
         "evidence": [
           {
             "source": "keybindingsDocs",
-            "sourceSha256": "d450c6c3b1f253d4acdb42c833bc3ef0aceee7e46fd1437a8c7f7b7fe455085e"
+            "sourceSha256": "21e693e3bb174f0e56af8b16f9d707424584cb3a2ca1e186e0e20b513470d134"
           }
         ]
       }
@@ -2623,7 +2651,7 @@
         "evidence": [
           {
             "source": "keybindingsDocs",
-            "sourceSha256": "d450c6c3b1f253d4acdb42c833bc3ef0aceee7e46fd1437a8c7f7b7fe455085e"
+            "sourceSha256": "21e693e3bb174f0e56af8b16f9d707424584cb3a2ca1e186e0e20b513470d134"
           }
         ]
       }
@@ -2638,7 +2666,7 @@
         "evidence": [
           {
             "source": "keybindingsDocs",
-            "sourceSha256": "d450c6c3b1f253d4acdb42c833bc3ef0aceee7e46fd1437a8c7f7b7fe455085e"
+            "sourceSha256": "21e693e3bb174f0e56af8b16f9d707424584cb3a2ca1e186e0e20b513470d134"
           }
         ]
       }
@@ -2653,7 +2681,7 @@
         "evidence": [
           {
             "source": "keybindingsDocs",
-            "sourceSha256": "d450c6c3b1f253d4acdb42c833bc3ef0aceee7e46fd1437a8c7f7b7fe455085e"
+            "sourceSha256": "21e693e3bb174f0e56af8b16f9d707424584cb3a2ca1e186e0e20b513470d134"
           }
         ]
       }
@@ -2668,7 +2696,7 @@
         "evidence": [
           {
             "source": "keybindingsDocs",
-            "sourceSha256": "d450c6c3b1f253d4acdb42c833bc3ef0aceee7e46fd1437a8c7f7b7fe455085e"
+            "sourceSha256": "21e693e3bb174f0e56af8b16f9d707424584cb3a2ca1e186e0e20b513470d134"
           }
         ]
       }
@@ -2683,7 +2711,7 @@
         "evidence": [
           {
             "source": "keybindingsDocs",
-            "sourceSha256": "d450c6c3b1f253d4acdb42c833bc3ef0aceee7e46fd1437a8c7f7b7fe455085e"
+            "sourceSha256": "21e693e3bb174f0e56af8b16f9d707424584cb3a2ca1e186e0e20b513470d134"
           }
         ]
       }
@@ -2698,7 +2726,7 @@
         "evidence": [
           {
             "source": "keybindingsDocs",
-            "sourceSha256": "d450c6c3b1f253d4acdb42c833bc3ef0aceee7e46fd1437a8c7f7b7fe455085e"
+            "sourceSha256": "21e693e3bb174f0e56af8b16f9d707424584cb3a2ca1e186e0e20b513470d134"
           }
         ]
       }
@@ -2713,7 +2741,7 @@
         "evidence": [
           {
             "source": "keybindingsDocs",
-            "sourceSha256": "d450c6c3b1f253d4acdb42c833bc3ef0aceee7e46fd1437a8c7f7b7fe455085e"
+            "sourceSha256": "21e693e3bb174f0e56af8b16f9d707424584cb3a2ca1e186e0e20b513470d134"
           }
         ]
       }
@@ -2728,7 +2756,7 @@
         "evidence": [
           {
             "source": "keybindingsDocs",
-            "sourceSha256": "d450c6c3b1f253d4acdb42c833bc3ef0aceee7e46fd1437a8c7f7b7fe455085e"
+            "sourceSha256": "21e693e3bb174f0e56af8b16f9d707424584cb3a2ca1e186e0e20b513470d134"
           }
         ]
       }
@@ -2743,7 +2771,7 @@
         "evidence": [
           {
             "source": "keybindingsDocs",
-            "sourceSha256": "d450c6c3b1f253d4acdb42c833bc3ef0aceee7e46fd1437a8c7f7b7fe455085e"
+            "sourceSha256": "21e693e3bb174f0e56af8b16f9d707424584cb3a2ca1e186e0e20b513470d134"
           }
         ]
       }
@@ -2758,7 +2786,7 @@
         "evidence": [
           {
             "source": "keybindingsDocs",
-            "sourceSha256": "d450c6c3b1f253d4acdb42c833bc3ef0aceee7e46fd1437a8c7f7b7fe455085e"
+            "sourceSha256": "21e693e3bb174f0e56af8b16f9d707424584cb3a2ca1e186e0e20b513470d134"
           }
         ]
       }
@@ -2773,7 +2801,7 @@
         "evidence": [
           {
             "source": "keybindingsDocs",
-            "sourceSha256": "d450c6c3b1f253d4acdb42c833bc3ef0aceee7e46fd1437a8c7f7b7fe455085e"
+            "sourceSha256": "21e693e3bb174f0e56af8b16f9d707424584cb3a2ca1e186e0e20b513470d134"
           }
         ]
       }
@@ -2788,7 +2816,7 @@
         "evidence": [
           {
             "source": "keybindingsDocs",
-            "sourceSha256": "d450c6c3b1f253d4acdb42c833bc3ef0aceee7e46fd1437a8c7f7b7fe455085e"
+            "sourceSha256": "21e693e3bb174f0e56af8b16f9d707424584cb3a2ca1e186e0e20b513470d134"
           }
         ]
       }
@@ -2803,7 +2831,7 @@
         "evidence": [
           {
             "source": "keybindingsDocs",
-            "sourceSha256": "d450c6c3b1f253d4acdb42c833bc3ef0aceee7e46fd1437a8c7f7b7fe455085e"
+            "sourceSha256": "21e693e3bb174f0e56af8b16f9d707424584cb3a2ca1e186e0e20b513470d134"
           }
         ]
       }
@@ -2818,7 +2846,7 @@
         "evidence": [
           {
             "source": "keybindingsDocs",
-            "sourceSha256": "d450c6c3b1f253d4acdb42c833bc3ef0aceee7e46fd1437a8c7f7b7fe455085e"
+            "sourceSha256": "21e693e3bb174f0e56af8b16f9d707424584cb3a2ca1e186e0e20b513470d134"
           }
         ]
       }
@@ -2833,7 +2861,7 @@
         "evidence": [
           {
             "source": "keybindingsDocs",
-            "sourceSha256": "d450c6c3b1f253d4acdb42c833bc3ef0aceee7e46fd1437a8c7f7b7fe455085e"
+            "sourceSha256": "21e693e3bb174f0e56af8b16f9d707424584cb3a2ca1e186e0e20b513470d134"
           }
         ]
       }
@@ -2848,7 +2876,7 @@
         "evidence": [
           {
             "source": "keybindingsDocs",
-            "sourceSha256": "d450c6c3b1f253d4acdb42c833bc3ef0aceee7e46fd1437a8c7f7b7fe455085e"
+            "sourceSha256": "21e693e3bb174f0e56af8b16f9d707424584cb3a2ca1e186e0e20b513470d134"
           }
         ]
       }
@@ -2863,7 +2891,7 @@
         "evidence": [
           {
             "source": "keybindingsDocs",
-            "sourceSha256": "d450c6c3b1f253d4acdb42c833bc3ef0aceee7e46fd1437a8c7f7b7fe455085e"
+            "sourceSha256": "21e693e3bb174f0e56af8b16f9d707424584cb3a2ca1e186e0e20b513470d134"
           }
         ]
       }
@@ -2878,7 +2906,7 @@
         "evidence": [
           {
             "source": "keybindingsDocs",
-            "sourceSha256": "d450c6c3b1f253d4acdb42c833bc3ef0aceee7e46fd1437a8c7f7b7fe455085e"
+            "sourceSha256": "21e693e3bb174f0e56af8b16f9d707424584cb3a2ca1e186e0e20b513470d134"
           }
         ]
       }
@@ -2893,7 +2921,7 @@
         "evidence": [
           {
             "source": "keybindingsDocs",
-            "sourceSha256": "d450c6c3b1f253d4acdb42c833bc3ef0aceee7e46fd1437a8c7f7b7fe455085e"
+            "sourceSha256": "21e693e3bb174f0e56af8b16f9d707424584cb3a2ca1e186e0e20b513470d134"
           }
         ]
       }
@@ -2908,7 +2936,7 @@
         "evidence": [
           {
             "source": "keybindingsDocs",
-            "sourceSha256": "d450c6c3b1f253d4acdb42c833bc3ef0aceee7e46fd1437a8c7f7b7fe455085e"
+            "sourceSha256": "21e693e3bb174f0e56af8b16f9d707424584cb3a2ca1e186e0e20b513470d134"
           }
         ]
       }
@@ -2923,7 +2951,7 @@
         "evidence": [
           {
             "source": "keybindingsDocs",
-            "sourceSha256": "d450c6c3b1f253d4acdb42c833bc3ef0aceee7e46fd1437a8c7f7b7fe455085e"
+            "sourceSha256": "21e693e3bb174f0e56af8b16f9d707424584cb3a2ca1e186e0e20b513470d134"
           }
         ]
       }
@@ -2935,7 +2963,7 @@
     "x-status": "exact-release-binary-validator-corroborated",
     "x-binary": {
       "source": "platformBinary",
-      "sha256": "c1efffaaf370aa187cb6a09dd93d4e511c646899b0078476f83791b664bde7fe",
+      "sha256": "74deca45220b8080ec75ab099bd5a5980e41a2b5879846a008fb115d436de085",
       "pathInPackage": "package/claude",
       "commandBindingPatternCorroborated": true,
       "commandBindingValidatorMessageCorroborated": true
@@ -2943,7 +2971,7 @@
   },
   "binary": {
     "source": "platformBinary",
-    "sha256": "c1efffaaf370aa187cb6a09dd93d4e511c646899b0078476f83791b664bde7fe",
+    "sha256": "74deca45220b8080ec75ab099bd5a5980e41a2b5879846a008fb115d436de085",
     "pathInPackage": "package/claude",
     "commandBindingPatternCorroborated": true,
     "commandBindingValidatorMessageCorroborated": true

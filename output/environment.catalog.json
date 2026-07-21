@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "artifactKind": "environment-surface-catalog",
-  "claudeCodeVersion": "2.1.215",
+  "claudeCodeVersion": "2.1.216",
   "surface": {
     "product": "Claude Code CLI",
     "interface": "process-environment",
@@ -169,6 +169,7 @@
     "CLAUDE_CODE_OAUTH_REFRESH_TOKEN",
     "CLAUDE_CODE_OAUTH_SCOPES",
     "CLAUDE_CODE_OAUTH_TOKEN",
+    "CLAUDE_CODE_OTEL_CONTENT_MAX_LENGTH",
     "CLAUDE_CODE_OTEL_DIAG_STDERR",
     "CLAUDE_CODE_OTEL_FLUSH_TIMEOUT_MS",
     "CLAUDE_CODE_OTEL_HEADERS_HELPER_DEBOUNCE_MS",
@@ -237,6 +238,7 @@
     "CLAUDE_ENABLE_BYTE_WATCHDOG_BEDROCK",
     "CLAUDE_ENABLE_STREAM_WATCHDOG",
     "CLAUDE_ENV_FILE",
+    "CLAUDE_PID",
     "CLAUDE_REMOTE_CONTROL_SESSION_NAME_PREFIX",
     "CLAUDE_STREAM_IDLE_TIMEOUT_MS",
     "DEBUG",
@@ -289,6 +291,7 @@
     "MCP_TOOL_TIMEOUT",
     "NODE_EXTRA_CA_CERTS",
     "NO_PROXY",
+    "OTEL_ATTRIBUTE_VALUE_LENGTH_LIMIT",
     "OTEL_EXPORTER_OTLP_CERTIFICATE",
     "OTEL_EXPORTER_OTLP_CLIENT_CERTIFICATE",
     "OTEL_EXPORTER_OTLP_CLIENT_KEY",
@@ -407,7 +410,7 @@
   ],
   "binaryEvidence": {
     "platformPackage": "@anthropic-ai/claude-code-linux-x64",
-    "binarySha256": "c1efffaaf370aa187cb6a09dd93d4e511c646899b0078476f83791b664bde7fe",
+    "binarySha256": "74deca45220b8080ec75ab099bd5a5980e41a2b5879846a008fb115d436de085",
     "policy": "Static strings prove token presence only. Binary-only values are candidates, not public API."
   },
   "staticBinaryCandidates": [
@@ -1116,10 +1119,6 @@
       "documented": true
     },
     {
-      "name": "CLAUDE_CODE_DISABLE_POLICY_SKILLS7",
-      "documented": false
-    },
-    {
       "name": "CLAUDE_CODE_DISABLE_PRECOMPACT_SKIP",
       "documented": false
     },
@@ -1216,10 +1215,6 @@
       "documented": false
     },
     {
-      "name": "CLAUDE_CODE_ENABLE_LAUNCH_COMPOSERM",
-      "documented": false
-    },
-    {
       "name": "CLAUDE_CODE_ENABLE_MENU_KIND_LANES",
       "documented": false
     },
@@ -1310,6 +1305,10 @@
     {
       "name": "CLAUDE_CODE_FILE_READ_MAX_OUTPUT_TOKENS",
       "documented": true
+    },
+    {
+      "name": "CLAUDE_CODE_FLEETVIEW_SIMPLE",
+      "documented": false
     },
     {
       "name": "CLAUDE_CODE_FLEET_PAST_SESSIONS",
@@ -1624,10 +1623,6 @@
       "documented": true
     },
     {
-      "name": "CLAUDE_CODE_OAUTH_SCOPESP",
-      "documented": false
-    },
-    {
       "name": "CLAUDE_CODE_OAUTH_TOKEN",
       "documented": true
     },
@@ -1641,7 +1636,7 @@
     },
     {
       "name": "CLAUDE_CODE_OTEL_CONTENT_MAX_LENGTH",
-      "documented": false
+      "documented": true
     },
     {
       "name": "CLAUDE_CODE_OTEL_DIAG_STDERR",
@@ -1661,10 +1656,6 @@
     },
     {
       "name": "CLAUDE_CODE_OVERRIDE_DATE",
-      "documented": false
-    },
-    {
-      "name": "CLAUDE_CODE_OWNERSHIP_FRAME",
       "documented": false
     },
     {
@@ -1956,10 +1947,6 @@
       "documented": true
     },
     {
-      "name": "CLAUDE_CODE_SHELLN",
-      "documented": false
-    },
-    {
       "name": "CLAUDE_CODE_SHELL_PREFIX",
       "documented": true
     },
@@ -1973,10 +1960,6 @@
     },
     {
       "name": "CLAUDE_CODE_SIMULATE_PROXY_USAGE",
-      "documented": false
-    },
-    {
-      "name": "CLAUDE_CODE_SKILL_DESC_REFRAME",
       "documented": false
     },
     {
@@ -2300,10 +2283,6 @@
       "documented": false
     },
     {
-      "name": "CLAUDE_CODE_VOICE_FORWARD_INTERIMS_TYPEDP",
-      "documented": false
-    },
-    {
       "name": "CLAUDE_CODE_WALNUT_SPIRE",
       "documented": false
     },
@@ -2332,15 +2311,7 @@
       "documented": false
     },
     {
-      "name": "CLAUDE_CODE_WORKFLOW_SIZE_WARNING_AGENTS0",
-      "documented": false
-    },
-    {
       "name": "CLAUDE_CODE_WORKFLOW_SIZE_WARNING_TOKENS",
-      "documented": false
-    },
-    {
-      "name": "CLAUDE_CODE_WORKFLOW_SIZE_WARNING_TOKENSP",
       "documented": false
     },
     {
