@@ -81,6 +81,10 @@ test("automatic latest publication is immutable, retry-safe, and has no backfill
   assert.match(workflow, /gh release create/);
   assert.match(workflow, /subject-path: \.work\/artifact\/release\/\*\.json/);
   assert.match(workflow, /automation\/claude-code-\$\{VERSION\}/);
+  assert.match(workflow, /Open and auto-merge the output synchronization PR/);
+  assert.match(workflow, /gh pr ready "\$pr_url"/);
+  assert.match(workflow, /gh pr merge "\$pr_url" --auto --squash/);
+  assert.doesNotMatch(workflow, /gh pr create .*--draft/);
   assert.match(workflow, /update-issue:[\s\S]*issues: write/);
   assert.match(workflow, /--add-label published/);
   assert.match(workflow, /Automatic publication failed closed/);
@@ -95,4 +99,6 @@ test("release PR preparation uses a collision-free workflow-attempt branch", asy
     workflow,
     /automation\/claude-code-\$\{VERSION\}-\$\{GITHUB_RUN_ID\}-\$\{GITHUB_RUN_ATTEMPT\}/,
   );
+  assert.match(workflow, /gh pr merge "\$pr_url" --auto --squash/);
+  assert.doesNotMatch(workflow, /gh pr create .*--draft/);
 });

@@ -40,5 +40,6 @@ matches a configuration location or interface. Its `startHere.settingsJson` and
 `startHere.environmentVariables` entries point directly to the two most commonly
 needed schemas. The tag, release assets, manifest digests, checksums, and
 attestations all refer to the same validated `output/` bytes. Automatic publication
-tags the fixed per-version automation-branch commit, then opens a draft PR that
-synchronizes those bytes into `main`'s single current `output/` set.
+tags the fixed per-version automation-branch commit, then opens a ready PR that
+auto-merges after the required branch checks and synchronizes those bytes into
+`main`'s single current `output/` set.

@@ -9,7 +9,7 @@
 | `auto-release-version.yml` | Dispatched by discovery           | Build, validate, diff, attest, and immutably publish the current npm `latest` version      |
 | `analyze-version.yml`      | Reusable and manual               | Generate an exact-version candidate, validate it, upload review evidence, update its issue |
 | `weekly-deep-audit.yml`    | Weekly and manual                 | Re-run live sources, exact binary probes, offline tests, and drift comparison              |
-| `prepare-release-pr.yml`   | Manual                            | Download previously reviewed bytes, revalidate, stage publication files, open a draft PR   |
+| `prepare-release-pr.yml`   | Manual                            | Download previously reviewed bytes, revalidate, stage publication files, open an auto-merge PR |
 | `publish-release.yml`      | Merged `output/` files and manual | Validate committed bytes, checksum and attest each JSON file, create a GitHub Release      |
 
 All external actions are pinned to full commit SHAs. Analysis and automatic
@@ -39,9 +39,10 @@ release,
 generates the exact candidate, produces the semantic diff and release notes, stages
 the candidate into `output/` on a fixed per-version automation branch, and tags that
 exact commit. It uploads the same 15 JSON files plus `SHA256SUMS`, attests every JSON
-asset, marks the new release latest, and opens a draft PR that synchronizes `main`'s
-single current `output/` set. The protected `production` environment remains the
-publication gate.
+asset, marks the new release latest, and opens a ready PR that synchronizes `main`'s
+single current `output/` set. Native auto-merge waits for the protected branch's
+required CI checks and conversation resolution. The protected `production`
+environment remains the publication gate.
 
 Repository tags and GitHub Release titles use only the schema version in the form
 `vX.Y.Z` (for example, `v2.1.207`). Product or repository prefixes are not added.
@@ -79,11 +80,14 @@ GitHub Release are the durable record.
 
 Before enabling publication:
 
-1. Protect `main` and require `Test and validate`, `Dependency review`, one review,
-   and conversation resolution.
-2. Set Actions workflow permissions to read by default, then allow GitHub Actions
-   to create pull requests for `prepare-release-pr.yml` and
-   `auto-release-version.yml`.
+1. Protect `main` and strictly require `Test and validate`, `Dependency review`, and
+   conversation resolution. Keep pull requests required, but set required approving
+   reviews to zero so green automation PRs do not need a maintainer click.
+2. Enable repository auto-merge. Set Actions workflow permissions to read by
+   default, then allow GitHub Actions to create pull requests for
+   `prepare-release-pr.yml` and `auto-release-version.yml`. Both workflows request
+   squash auto-merge immediately; GitHub merges only after every branch requirement
+   is satisfied.
 3. Create a `production` environment with a required reviewer. In a
    single-maintainer repository, allow self-review so that maintainer can approve a
    deployment they initiated; with multiple maintainers, prevent self-review.

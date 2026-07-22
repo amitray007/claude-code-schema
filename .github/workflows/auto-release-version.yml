@@ -227,7 +227,7 @@ jobs:
           else
             gh release create "$tag" --repo "$GITHUB_REPOSITORY" --verify-tag --title "$tag" --notes-file .work/artifact/release/RELEASE_NOTES.md --latest .work/artifact/release/SHA256SUMS .work/artifact/release/*.json
           fi
-      - name: Open the output synchronization PR
+      - name: Open and auto-merge the output synchronization PR
         env:
           GH_TOKEN: ${{ github.token }}
           VERSION: ${{ inputs.version }}
@@ -244,8 +244,11 @@ jobs:
           fi
           pr_url=$(gh pr list --repo "$GITHUB_REPOSITORY" --state open --head "$branch" --json url --jq '.[0].url // empty')
           if [[ -z "$pr_url" ]]; then
-            pr_url=$(gh pr create --repo "$GITHUB_REPOSITORY" --draft --base main --head "$branch" --title "Publish Claude Code ${VERSION} schemas" --body "Synchronizes the repository's current output with immutable release v${VERSION}. Tracks #${ISSUE_NUMBER}.")
+            pr_url=$(gh pr create --repo "$GITHUB_REPOSITORY" --base main --head "$branch" --title "Publish Claude Code ${VERSION} schemas" --body "Synchronizes the repository's current output with immutable release v${VERSION}. Tracks #${ISSUE_NUMBER}.")
+          elif [[ "$(gh pr view "$pr_url" --json isDraft --jq .isDraft)" == "true" ]]; then
+            gh pr ready "$pr_url"
           fi
+          gh pr merge "$pr_url" --auto --squash
           echo "$pr_url"
 
   update-issue:
