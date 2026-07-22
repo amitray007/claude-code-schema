@@ -56,7 +56,7 @@ jobs:
           test "$(jq -r .claudeCodeVersion .work/artifact/candidate/manifest.json)" = "$VERSION"
           npm run schema:validate -- --directory .work/artifact/candidate
           npm run schema:stage -- --candidate .work/artifact/candidate --publication-root .
-      - name: Commit reviewed bytes and open a draft PR
+      - name: Commit reviewed bytes and enable CI-gated auto-merge
         env:
           GH_TOKEN: ${{ github.token }}
           VERSION: ${{ inputs.version }}
@@ -70,6 +70,7 @@ jobs:
           git add output
           git commit -m "publish Claude Code ${VERSION} schemas"
           git push -u origin "$branch"
-          pr_url=$(gh pr create --repo "$GITHUB_REPOSITORY" --draft --base main --head "$branch" --title "Publish Claude Code ${VERSION} schemas" --body "Tracks #${ISSUE_NUMBER}.\n\nPublishes the exact reviewed candidate from analysis run ${ANALYSIS_RUN_ID}. No live source was refetched during PR preparation.")
-          gh issue comment "$ISSUE_NUMBER" --repo "$GITHUB_REPOSITORY" --body "Candidate PR: ${pr_url}"
+          pr_url=$(gh pr create --repo "$GITHUB_REPOSITORY" --base main --head "$branch" --title "Publish Claude Code ${VERSION} schemas" --body "Tracks #${ISSUE_NUMBER}.\n\nPublishes the exact reviewed candidate from analysis run ${ANALYSIS_RUN_ID}. No live source was refetched during PR preparation.")
+          gh pr merge "$pr_url" --auto --squash
+          gh issue comment "$ISSUE_NUMBER" --repo "$GITHUB_REPOSITORY" --body "CI-gated auto-merge PR: ${pr_url}"
           gh issue edit "$ISSUE_NUMBER" --repo "$GITHUB_REPOSITORY" --remove-label needs-review --add-label approved-for-pr

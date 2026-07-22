@@ -281,9 +281,10 @@ knowledge base honest.
   recent immutable schema release, generate and validate the candidate, create a
   semantic diff and release notes, then commit `output/` on a fixed per-version
   automation branch. Tag that exact commit and publish the 15 JSON assets, checksums,
-  attestations, and provenance. A draft PR synchronizes the one current `output/` set
-  back to `main`; the protected `production` environment is the final publication
-  gate.
+  attestations, and provenance. A ready PR synchronizes the one current `output/`
+  set back to `main` and requests native auto-merge; required CI and conversation
+  resolution remain the merge gate. The protected `production` environment is the
+  final publication gate.
 - **Identity:** the canonical `$id` is the immutable
   `releases/download/vX.Y.Z/<file>` URL. Git contains only the current `output/` set;
   GitHub Releases retain history.

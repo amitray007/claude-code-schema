@@ -89,7 +89,9 @@ to be enabled by a maintainer as described in
 
 - enable the required branch checks;
 - create the protected `production` environment and reviewer rule;
-- allow the preparation and automatic latest-release workflows to open pull requests.
+- enable repository auto-merge with zero required approving reviews; and
+- allow the preparation and automatic latest-release workflows to open pull requests
+  and request squash auto-merge.
 
 ## Task list
 
