@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "artifactKind": "environment-surface-catalog",
-  "claudeCodeVersion": "2.1.217",
+  "claudeCodeVersion": "2.1.218",
   "surface": {
     "product": "Claude Code CLI",
     "interface": "process-environment",
@@ -410,7 +410,7 @@
   ],
   "binaryEvidence": {
     "platformPackage": "@anthropic-ai/claude-code-linux-x64",
-    "binarySha256": "2630fc5dc6db61bc03f86b95daf47766e5ed5b61873f7bb7cfea764c5ac5a9ba",
+    "binarySha256": "e12071751a9336b8af1012c103358ff04ac18f9aaff4a738cff7ba5cdfaf63f2",
     "policy": "Static strings prove token presence only. Binary-only values are candidates, not public API."
   },
   "staticBinaryCandidates": [
@@ -703,10 +703,6 @@
       "documented": false
     },
     {
-      "name": "CLAUDE_CODE_ALDER_WICKET",
-      "documented": false
-    },
-    {
       "name": "CLAUDE_CODE_ALTGR_AS_TEXT",
       "documented": false
     },
@@ -773,6 +769,10 @@
     {
       "name": "CLAUDE_CODE_AUTO_CONNECT_IDE",
       "documented": true
+    },
+    {
+      "name": "CLAUDE_CODE_AUTO_MODE_CLASSIFIER_QUEUE",
+      "documented": false
     },
     {
       "name": "CLAUDE_CODE_AUTO_MODE_CLASSIFY_EDITS",
@@ -1088,6 +1088,10 @@
     },
     {
       "name": "CLAUDE_CODE_DISABLE_MEMORY_BULK_INFLATE",
+      "documented": false
+    },
+    {
+      "name": "CLAUDE_CODE_DISABLE_MEMORY_MASS_DELETE_HOLD",
       "documented": false
     },
     {
@@ -1431,6 +1435,10 @@
       "documented": true
     },
     {
+      "name": "CLAUDE_CODE_GORSE_PLOVER",
+      "documented": false
+    },
+    {
       "name": "CLAUDE_CODE_GZIP_REQUEST_BODIES",
       "documented": false
     },
@@ -1520,6 +1528,10 @@
     },
     {
       "name": "CLAUDE_CODE_JSONL_TRANSCRIPT",
+      "documented": false
+    },
+    {
+      "name": "CLAUDE_CODE_JUNIPER_SUNDIAL",
       "documented": false
     },
     {
