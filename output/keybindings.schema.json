@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://github.com/amitray007/claude-code-schema/releases/download/v2.1.217/keybindings.schema.json",
+  "$id": "https://github.com/amitray007/claude-code-schema/releases/download/v2.1.218/keybindings.schema.json",
   "title": "Claude Code keybindings",
   "description": "Conservative validator generated only from the official keybindings documentation.",
   "type": "object",
@@ -95,6 +95,7 @@
                     "diff:previousSource",
                     "diff:viewDetails",
                     "footer:clearSelection",
+                    "footer:dismiss",
                     "footer:down",
                     "footer:next",
                     "footer:openSelected",
@@ -160,7 +161,7 @@
                   "x-status": "exact-release-binary-validator-corroborated",
                   "x-binary": {
                     "source": "platformBinary",
-                    "sha256": "2630fc5dc6db61bc03f86b95daf47766e5ed5b61873f7bb7cfea764c5ac5a9ba",
+                    "sha256": "e12071751a9336b8af1012c103358ff04ac18f9aaff4a738cff7ba5cdfaf63f2",
                     "pathInPackage": "package/claude",
                     "commandBindingPatternCorroborated": true,
                     "commandBindingValidatorMessageCorroborated": true
@@ -185,7 +186,7 @@
     "bindings"
   ],
   "additionalProperties": false,
-  "x-claude-code-version": "2.1.217",
+  "x-claude-code-version": "2.1.218",
   "x-artifact-kind": "keybindings-json-schema",
   "x-validation-limitations": [
     "The current official docs do not document command: bindings; the narrowly patterned compatibility form is accepted but annotated as unverified for this release.",
@@ -195,7 +196,7 @@
     "evidence": [
       {
         "source": "keybindingsDocs",
-        "sourceSha256": "21e693e3bb174f0e56af8b16f9d707424584cb3a2ca1e186e0e20b513470d134"
+        "sourceSha256": "f601200bb8f7f85713714734668e166b80572887abaa39cc9705aa9fb67f275b"
       }
     ]
   },
@@ -244,6 +245,7 @@
     "diff:previousSource",
     "diff:viewDetails",
     "footer:clearSelection",
+    "footer:dismiss",
     "footer:down",
     "footer:next",
     "footer:openSelected",

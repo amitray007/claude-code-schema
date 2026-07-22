@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
   "artifactKind": "claude-code-release-catalog",
-  "claudeCodeVersion": "2.1.217",
-  "releaseBaseUrl": "https://github.com/amitray007/claude-code-schema/releases/download/v2.1.217",
+  "claudeCodeVersion": "2.1.218",
+  "releaseBaseUrl": "https://github.com/amitray007/claude-code-schema/releases/download/v2.1.218",
   "startHere": {
     "settingsJson": {
       "file": "settings.schema.json",
-      "downloadUrl": "https://github.com/amitray007/claude-code-schema/releases/download/v2.1.217/settings.schema.json",
+      "downloadUrl": "https://github.com/amitray007/claude-code-schema/releases/download/v2.1.218/settings.schema.json",
       "purpose": "Reference and validate keys that Claude Code accepts in settings.json.",
       "usedAt": [
         "~/.claude/settings.json",
@@ -16,7 +16,7 @@
         "managed settings sources"
       ],
       "example": {
-        "$schema": "https://github.com/amitray007/claude-code-schema/releases/download/v2.1.217/settings.schema.json",
+        "$schema": "https://github.com/amitray007/claude-code-schema/releases/download/v2.1.218/settings.schema.json",
         "includeCoAuthoredBy": false,
         "env": {
           "CLAUDE_CODE_DISABLE_AUTO_MEMORY": "1"
@@ -27,7 +27,7 @@
     },
     "environmentVariables": {
       "file": "environment.schema.json",
-      "downloadUrl": "https://github.com/amitray007/claude-code-schema/releases/download/v2.1.217/environment.schema.json",
+      "downloadUrl": "https://github.com/amitray007/claude-code-schema/releases/download/v2.1.218/environment.schema.json",
       "purpose": "Reference Claude Code environment-variable names and validate a JSON environment map.",
       "actualUsage": "Set variables in the shell, process runner, container, or CI environment that launches claude.",
       "jsonRepresentation": "A tooling-only object whose keys and values represent process environment strings; Claude Code does not read environment.schema.json or an environment JSON file.",
