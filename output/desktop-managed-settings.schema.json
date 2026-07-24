@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://github.com/amitray007/claude-code-schema/releases/download/v2.1.218/desktop-managed-settings.schema.json",
+  "$id": "https://github.com/amitray007/claude-code-schema/releases/download/v2.1.219/desktop-managed-settings.schema.json",
   "title": "Claude Desktop managed settings",
   "type": "object",
   "properties": {
@@ -12,7 +12,7 @@
         "evidence": [
           {
             "source": "desktopDocs",
-            "sourceSha256": "15c72c14e5fa7d5789e184baa9d2487363101adae9adbfbec0fb31e09a5451bb",
+            "sourceSha256": "5192e5314a779efc48329fb1547001b33fec821203ca5cf1e1bd33c2cfc931f0",
             "heading": "Managed settings",
             "fact": "existence-and-type",
             "method": "official-prose"
@@ -30,7 +30,7 @@
         "evidence": [
           {
             "source": "desktopDocs",
-            "sourceSha256": "15c72c14e5fa7d5789e184baa9d2487363101adae9adbfbec0fb31e09a5451bb",
+            "sourceSha256": "5192e5314a779efc48329fb1547001b33fec821203ca5cf1e1bd33c2cfc931f0",
             "heading": "Managed settings",
             "fact": "existence-and-type",
             "method": "official-prose"
@@ -40,7 +40,7 @@
     }
   },
   "additionalProperties": true,
-  "x-claude-code-version": "2.1.218",
+  "x-claude-code-version": "2.1.219",
   "x-artifact-kind": "desktop-managed-settings-json-schema",
   "x-surface": "Claude Desktop policy, not Claude Code settings.json",
   "x-generator-version": "0.1.0"

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "artifactKind": "environment-surface-catalog",
-  "claudeCodeVersion": "2.1.218",
+  "claudeCodeVersion": "2.1.219",
   "surface": {
     "product": "Claude Code CLI",
     "interface": "process-environment",
@@ -153,10 +153,12 @@
     "CLAUDE_CODE_IDE_HOST_OVERRIDE",
     "CLAUDE_CODE_IDE_SKIP_AUTO_INSTALL",
     "CLAUDE_CODE_IDE_SKIP_VALID_CHECK",
+    "CLAUDE_CODE_MAX_CONCURRENT_SUBAGENTS",
     "CLAUDE_CODE_MAX_CONTEXT_TOKENS",
     "CLAUDE_CODE_MAX_OUTPUT_TOKENS",
     "CLAUDE_CODE_MAX_RETRIES",
     "CLAUDE_CODE_MAX_SUBAGENTS_PER_SESSION",
+    "CLAUDE_CODE_MAX_SUBAGENT_SPAWN_DEPTH",
     "CLAUDE_CODE_MAX_TOOL_USE_CONCURRENCY",
     "CLAUDE_CODE_MAX_TURNS",
     "CLAUDE_CODE_MAX_WEB_SEARCHES_PER_SESSION",
@@ -337,6 +339,7 @@
     "VERTEX_REGION_CLAUDE_4_6_SONNET",
     "VERTEX_REGION_CLAUDE_4_7_OPUS",
     "VERTEX_REGION_CLAUDE_4_8_OPUS",
+    "VERTEX_REGION_CLAUDE_5_OPUS",
     "VERTEX_REGION_CLAUDE_5_SONNET",
     "VERTEX_REGION_CLAUDE_FABLE_5",
     "VERTEX_REGION_CLAUDE_HAIKU_4_5"
@@ -410,7 +413,7 @@
   ],
   "binaryEvidence": {
     "platformPackage": "@anthropic-ai/claude-code-linux-x64",
-    "binarySha256": "e12071751a9336b8af1012c103358ff04ac18f9aaff4a738cff7ba5cdfaf63f2",
+    "binarySha256": "22cfd6f5b3061c0391ba84e9cf8c9deaa37783aac18b004d42ec061e98f00691",
     "policy": "Static strings prove token presence only. Binary-only values are candidates, not public API."
   },
   "staticBinaryCandidates": [
@@ -1167,6 +1170,10 @@
       "documented": false
     },
     {
+      "name": "CLAUDE_CODE_DISPATCH_V2S",
+      "documented": false
+    },
+    {
       "name": "CLAUDE_CODE_DONT_INHERIT_ENV",
       "documented": false
     },
@@ -1564,7 +1571,7 @@
     },
     {
       "name": "CLAUDE_CODE_MAX_CONCURRENT_SUBAGENTS",
-      "documented": false
+      "documented": true
     },
     {
       "name": "CLAUDE_CODE_MAX_CONTEXT_TOKENS",
@@ -1584,7 +1591,7 @@
     },
     {
       "name": "CLAUDE_CODE_MAX_SUBAGENT_SPAWN_DEPTH",
-      "documented": false
+      "documented": true
     },
     {
       "name": "CLAUDE_CODE_MAX_TOOL_USE_CONCURRENCY",
