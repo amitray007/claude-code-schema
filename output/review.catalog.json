@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "artifactKind": "release-review-catalog",
-  "claudeCodeVersion": "2.1.220",
+  "claudeCodeVersion": "2.1.221",
   "surface": {
     "product": "Claude Code",
     "interface": "release-review-evidence",
@@ -14,8 +14,537 @@
   "releaseHints": [
     {
       "sourceLine": 5,
-      "bulletSha256": "2433a5290518aeee89fc67e15b7c5583f414705b38300bfe19206f34a9ee30e1",
+      "bulletSha256": "06feacd613e9ecfbc8b2dd24d1d251718640ec6be2b12d5e9fcd260ede2b06a9",
       "changeKind": "changed",
+      "facts": [],
+      "ambiguousCodeTokens": [
+        "Ctrl+Alt+F"
+      ],
+      "needsReview": true,
+      "reviewReasons": [
+        "ambiguous-code-token",
+        "no-typed-identifier-extracted"
+      ]
+    },
+    {
+      "sourceLine": 6,
+      "bulletSha256": "e650cfbafc55a1935ba71430de1a6b72401102178a9ac13cc929a471ba451c23",
+      "changeKind": "added",
+      "facts": [],
+      "ambiguousCodeTokens": [
+        "mode: \"mask\"",
+        "extract",
+        "deny"
+      ],
+      "needsReview": true,
+      "reviewReasons": [
+        "ambiguous-code-token",
+        "no-typed-identifier-extracted"
+      ]
+    },
+    {
+      "sourceLine": 7,
+      "bulletSha256": "1c5079d6eaf84a08acd398b17fa972e1ea938c3a1afbcf59402baacf0fa9fbd6",
+      "changeKind": "added",
+      "facts": [],
+      "ambiguousCodeTokens": [
+        "claude plugin validate"
+      ],
+      "needsReview": true,
+      "reviewReasons": [
+        "ambiguous-code-token",
+        "no-typed-identifier-extracted"
+      ]
+    },
+    {
+      "sourceLine": 8,
+      "bulletSha256": "0efc201592a4a8cdafc1aeff2cbfb19de7a764e746419b0bbfc0a9e112b88df1",
+      "changeKind": "added",
+      "facts": [],
+      "ambiguousCodeTokens": [
+        "prompt-audit",
+        "claude-api"
+      ],
+      "needsReview": true,
+      "reviewReasons": [
+        "ambiguous-code-token",
+        "no-typed-identifier-extracted"
+      ]
+    },
+    {
+      "sourceLine": 9,
+      "bulletSha256": "32800345827d488aa8ee43e2df40305ddd3d4ed6544d3ce08dd8b655759ce0e6",
+      "changeKind": "fixed",
+      "facts": [],
+      "ambiguousCodeTokens": [
+        "[[ ]]"
+      ],
+      "needsReview": true,
+      "reviewReasons": [
+        "ambiguous-code-token",
+        "no-typed-identifier-extracted"
+      ]
+    },
+    {
+      "sourceLine": 10,
+      "bulletSha256": "c5ee5696444447384e8e83e9ec863dd28a7cf7148be229fb7de778ec2fe549c5",
+      "changeKind": "fixed",
+      "facts": [],
+      "ambiguousCodeTokens": [],
+      "needsReview": true,
+      "reviewReasons": [
+        "no-typed-identifier-extracted"
+      ]
+    },
+    {
+      "sourceLine": 11,
+      "bulletSha256": "37566a6c57c2bfcf0e460adf0ee0ae705ed22f6f58e9eeaeead1c08827988c17",
+      "changeKind": "fixed",
+      "facts": [],
+      "ambiguousCodeTokens": [],
+      "needsReview": true,
+      "reviewReasons": [
+        "no-typed-identifier-extracted"
+      ]
+    },
+    {
+      "sourceLine": 12,
+      "bulletSha256": "5829599d77dbc604e44fa20194e741cd7c3fac79c6098f9d69c1fd59160d7f67",
+      "changeKind": "fixed",
+      "facts": [
+        {
+          "kind": "cli-option",
+          "identifier": "--mcp-config",
+          "confidence": "high"
+        },
+        {
+          "kind": "cli-option",
+          "identifier": "-p",
+          "confidence": "high"
+        }
+      ],
+      "ambiguousCodeTokens": [],
+      "needsReview": true,
+      "reviewReasons": [
+        "possible-schema-or-catalog-impact"
+      ]
+    },
+    {
+      "sourceLine": 13,
+      "bulletSha256": "87608c0ff9e1f869594c494a1288d94c1271d3227ec13af7010dd8f2545f85bf",
+      "changeKind": "fixed",
+      "facts": [],
+      "ambiguousCodeTokens": [],
+      "needsReview": true,
+      "reviewReasons": [
+        "no-typed-identifier-extracted"
+      ]
+    },
+    {
+      "sourceLine": 14,
+      "bulletSha256": "aab8c9fe0564cb7b44fa343186221e57c123b5c421316047460d3310067ea308",
+      "changeKind": "fixed",
+      "facts": [],
+      "ambiguousCodeTokens": [
+        "constructor"
+      ],
+      "needsReview": true,
+      "reviewReasons": [
+        "ambiguous-code-token",
+        "no-typed-identifier-extracted"
+      ]
+    },
+    {
+      "sourceLine": 15,
+      "bulletSha256": "89e2fc5d6cac9fa13072a649476e500a8550bdccc214145ddd607e17458b7aed",
+      "changeKind": "fixed",
+      "facts": [],
+      "ambiguousCodeTokens": [
+        "xhigh",
+        "max"
+      ],
+      "needsReview": true,
+      "reviewReasons": [
+        "ambiguous-code-token",
+        "no-typed-identifier-extracted"
+      ]
+    },
+    {
+      "sourceLine": 16,
+      "bulletSha256": "9fde6647909fed653c308888c91ac828c4f307eaba9aa4c6fea265c88e018663",
+      "changeKind": "fixed",
+      "facts": [],
+      "ambiguousCodeTokens": [],
+      "needsReview": true,
+      "reviewReasons": [
+        "no-typed-identifier-extracted"
+      ]
+    },
+    {
+      "sourceLine": 17,
+      "bulletSha256": "dd8d3d4dd214fbf66ac7ffaf75aabb47605c41671969ad7a7aa9fc10e61d3c9e",
+      "changeKind": "fixed",
+      "facts": [],
+      "ambiguousCodeTokens": [],
+      "needsReview": true,
+      "reviewReasons": [
+        "no-typed-identifier-extracted"
+      ]
+    },
+    {
+      "sourceLine": 18,
+      "bulletSha256": "ee4cbba343b611468097c17e4bd7090bce2081a250feeb5226345ec556c8a8ae",
+      "changeKind": "fixed",
+      "facts": [],
+      "ambiguousCodeTokens": [
+        "HOME"
+      ],
+      "needsReview": true,
+      "reviewReasons": [
+        "ambiguous-code-token",
+        "no-typed-identifier-extracted"
+      ]
+    },
+    {
+      "sourceLine": 19,
+      "bulletSha256": "4edd27ad3f60afe84c61a1c0fc6482d90e978ad8e06c88f459b3ac34b719546f",
+      "changeKind": "fixed",
+      "facts": [
+        {
+          "kind": "environment-variable",
+          "identifier": "CLAUDE_CODE_RESUME_INTERRUPTED_TURN",
+          "confidence": "high"
+        }
+      ],
+      "ambiguousCodeTokens": [],
+      "needsReview": true,
+      "reviewReasons": [
+        "possible-schema-or-catalog-impact"
+      ]
+    },
+    {
+      "sourceLine": 20,
+      "bulletSha256": "44d54a4cb8b86fc13f3546af5a2a4dafb6a374136c09731dd9f3c07e2424d5fb",
+      "changeKind": "fixed",
+      "facts": [],
+      "ambiguousCodeTokens": [],
+      "needsReview": true,
+      "reviewReasons": [
+        "no-typed-identifier-extracted"
+      ]
+    },
+    {
+      "sourceLine": 21,
+      "bulletSha256": "28c6127841fb74739029bf77600789a6ac797215c90078faec6ef9dfc24828f0",
+      "changeKind": "fixed",
+      "facts": [],
+      "ambiguousCodeTokens": [],
+      "needsReview": true,
+      "reviewReasons": [
+        "no-typed-identifier-extracted"
+      ]
+    },
+    {
+      "sourceLine": 22,
+      "bulletSha256": "2c79607ab8676075f3914eb7b10d85034bcb6db6fbde8f2c9068231d585c80a9",
+      "changeKind": "fixed",
+      "facts": [
+        {
+          "kind": "slash-command",
+          "identifier": "/help",
+          "confidence": "medium"
+        },
+        {
+          "kind": "slash-command",
+          "identifier": "/feedback",
+          "confidence": "medium"
+        }
+      ],
+      "ambiguousCodeTokens": [],
+      "needsReview": true,
+      "reviewReasons": []
+    },
+    {
+      "sourceLine": 23,
+      "bulletSha256": "a3907111c0ac4edf35f32b9bd9e6fe666f71bcff0c4c417dbf1961ddaf445a87",
+      "changeKind": "fixed",
+      "facts": [],
+      "ambiguousCodeTokens": [],
+      "needsReview": true,
+      "reviewReasons": [
+        "no-typed-identifier-extracted"
+      ]
+    },
+    {
+      "sourceLine": 24,
+      "bulletSha256": "4e6d91cd40401e3696ac3464ec40234631d426fbcbf750fffbceb0f7a473b0dc",
+      "changeKind": "fixed",
+      "facts": [],
+      "ambiguousCodeTokens": [],
+      "needsReview": true,
+      "reviewReasons": [
+        "no-typed-identifier-extracted"
+      ]
+    },
+    {
+      "sourceLine": 25,
+      "bulletSha256": "927e56332039bf5dfd1d04ab058ae86892ccdeb7adc1f720dcb418db4ebd73c4",
+      "changeKind": "fixed",
+      "facts": [],
+      "ambiguousCodeTokens": [],
+      "needsReview": true,
+      "reviewReasons": [
+        "no-typed-identifier-extracted"
+      ]
+    },
+    {
+      "sourceLine": 26,
+      "bulletSha256": "c21e688fe61b27947c7289f2a8b629bd5b63871b97fe133de0d93f7342a9552f",
+      "changeKind": "changed",
+      "facts": [],
+      "ambiguousCodeTokens": [],
+      "needsReview": true,
+      "reviewReasons": [
+        "no-typed-identifier-extracted"
+      ]
+    },
+    {
+      "sourceLine": 27,
+      "bulletSha256": "1bf86ebd13f4168ec3128222376a7234115e9134afc3da859f5ba227b2da0ece",
+      "changeKind": "changed",
+      "facts": [],
+      "ambiguousCodeTokens": [],
+      "needsReview": true,
+      "reviewReasons": [
+        "no-typed-identifier-extracted"
+      ]
+    },
+    {
+      "sourceLine": 28,
+      "bulletSha256": "0d907a611a3f53a04153c09b9ea2784c9608c917c4bddd24c46446b952e8051c",
+      "changeKind": "changed",
+      "facts": [],
+      "ambiguousCodeTokens": [],
+      "needsReview": true,
+      "reviewReasons": [
+        "no-typed-identifier-extracted"
+      ]
+    },
+    {
+      "sourceLine": 29,
+      "bulletSha256": "19feb26469b8e6320d7518a596c54f59b6fce3ee6f5e6ee3deb77a62aab95133",
+      "changeKind": "changed",
+      "facts": [],
+      "ambiguousCodeTokens": [],
+      "needsReview": true,
+      "reviewReasons": [
+        "no-typed-identifier-extracted"
+      ]
+    },
+    {
+      "sourceLine": 30,
+      "bulletSha256": "dbb3d0fd13e8f3f87e57484d99d2acddd48b70b58b1971570f3a358eef281014",
+      "changeKind": "changed",
+      "facts": [
+        {
+          "kind": "slash-command",
+          "identifier": "/ultrareview",
+          "confidence": "medium"
+        },
+        {
+          "kind": "cli-option",
+          "identifier": "--unshallow",
+          "confidence": "medium"
+        }
+      ],
+      "ambiguousCodeTokens": [],
+      "needsReview": true,
+      "reviewReasons": [
+        "possible-schema-or-catalog-impact"
+      ]
+    },
+    {
+      "sourceLine": 31,
+      "bulletSha256": "31f838eb63570bbd41197df66e9bededb34aafad65a5c8fe0544c2431baa619b",
+      "changeKind": "changed",
+      "facts": [],
+      "ambiguousCodeTokens": [
+        "powershell.exe"
+      ],
+      "needsReview": true,
+      "reviewReasons": [
+        "ambiguous-code-token",
+        "no-typed-identifier-extracted"
+      ]
+    },
+    {
+      "sourceLine": 32,
+      "bulletSha256": "093c0d441da11f73251fe13635aa72a7b715cda5e5299a0b9e6eeecbcd832894",
+      "changeKind": "changed",
+      "facts": [],
+      "ambiguousCodeTokens": [],
+      "needsReview": true,
+      "reviewReasons": [
+        "no-typed-identifier-extracted"
+      ]
+    },
+    {
+      "sourceLine": 33,
+      "bulletSha256": "dbc45a238dec621f7c4c12e3528149af6cf522d81578d994a2b80a421959551a",
+      "changeKind": "changed",
+      "facts": [
+        {
+          "kind": "path-or-config-key",
+          "identifier": "/plugin install",
+          "confidence": "medium"
+        }
+      ],
+      "ambiguousCodeTokens": [],
+      "needsReview": true,
+      "reviewReasons": []
+    },
+    {
+      "sourceLine": 34,
+      "bulletSha256": "c18c60db6e90fed2b58142c6d7247b685d1c2a0a97362b13bf7f2609ce3a625b",
+      "changeKind": "changed",
+      "facts": [
+        {
+          "kind": "slash-command",
+          "identifier": "/plugin",
+          "confidence": "medium"
+        },
+        {
+          "kind": "slash-command",
+          "identifier": "/reload-plugins",
+          "confidence": "medium"
+        }
+      ],
+      "ambiguousCodeTokens": [],
+      "needsReview": true,
+      "reviewReasons": []
+    },
+    {
+      "sourceLine": 35,
+      "bulletSha256": "56d4970eecce92c486fedba33abe1627620ae901427f749283fd843ded159e9a",
+      "changeKind": "changed",
+      "facts": [],
+      "ambiguousCodeTokens": [
+        "\".\"",
+        "skills",
+        "SKILL.md"
+      ],
+      "needsReview": true,
+      "reviewReasons": [
+        "ambiguous-code-token",
+        "no-typed-identifier-extracted"
+      ]
+    },
+    {
+      "sourceLine": 36,
+      "bulletSha256": "c34c09a6b03d8de251eb8f0d347a4128de8392956211850156c4d99fa3633797",
+      "changeKind": "changed",
+      "facts": [
+        {
+          "kind": "slash-command",
+          "identifier": "/status",
+          "confidence": "medium"
+        }
+      ],
+      "ambiguousCodeTokens": [
+        "interactive",
+        "attached",
+        "unattended"
+      ],
+      "needsReview": true,
+      "reviewReasons": [
+        "ambiguous-code-token"
+      ]
+    },
+    {
+      "sourceLine": 37,
+      "bulletSha256": "54f3a3bcfa079b7b80a8af14f9c141fc5cc696aa5128c08b97b322c243e3746b",
+      "changeKind": "changed",
+      "facts": [],
+      "ambiguousCodeTokens": [
+        ":thumbsup:",
+        ":thumbsdown:",
+        ":love:"
+      ],
+      "needsReview": true,
+      "reviewReasons": [
+        "ambiguous-code-token",
+        "no-typed-identifier-extracted"
+      ]
+    },
+    {
+      "sourceLine": 38,
+      "bulletSha256": "841f3dc46bea642c4a719bbf8e1df7b8b1fffddd7bc7b4a7cce8773070e3fe30",
+      "changeKind": "changed",
+      "facts": [
+        {
+          "kind": "slash-command",
+          "identifier": "/fork",
+          "confidence": "medium"
+        }
+      ],
+      "ambiguousCodeTokens": [],
+      "needsReview": true,
+      "reviewReasons": []
+    },
+    {
+      "sourceLine": 39,
+      "bulletSha256": "71b949a10f43cb59acd855068e2f6060a9c96914bce4df6eb6ce47cd3d5a32e9",
+      "changeKind": "changed",
+      "facts": [],
+      "ambiguousCodeTokens": [],
+      "needsReview": true,
+      "reviewReasons": [
+        "no-typed-identifier-extracted"
+      ]
+    },
+    {
+      "sourceLine": 40,
+      "bulletSha256": "0a1b457c245018cbff51ee66bff136306a3da9c1834e5e248449392db8b9dd06",
+      "changeKind": "changed",
+      "facts": [],
+      "ambiguousCodeTokens": [],
+      "needsReview": true,
+      "reviewReasons": [
+        "no-typed-identifier-extracted"
+      ]
+    },
+    {
+      "sourceLine": 41,
+      "bulletSha256": "900bcdf93e504f1eca2fa06f186d5a42c0be78bc5b06194833f46253385716fe",
+      "changeKind": "changed",
+      "facts": [],
+      "ambiguousCodeTokens": [],
+      "needsReview": true,
+      "reviewReasons": [
+        "no-typed-identifier-extracted"
+      ]
+    },
+    {
+      "sourceLine": 42,
+      "bulletSha256": "4841e010ab5a8c64e6ef83c4d800d730ebff5ef979f0ccdf691da3af4403c510",
+      "changeKind": "changed",
+      "facts": [
+        {
+          "kind": "setting",
+          "identifier": "model",
+          "confidence": "high"
+        }
+      ],
+      "ambiguousCodeTokens": [],
+      "needsReview": true,
+      "reviewReasons": [
+        "possible-schema-or-catalog-impact"
+      ]
+    },
+    {
+      "sourceLine": 43,
+      "bulletSha256": "95b2737f56886f8aa08b99c51fb88560abdb83beffda7eeba48bf476892d366a",
+      "changeKind": "removed",
       "facts": [],
       "ambiguousCodeTokens": [],
       "needsReview": true,
@@ -27,7 +556,7 @@
   "releaseHintSource": {
     "changelog": "matchingTagChangelog",
     "githubReleaseNotes": "githubReleaseNotes",
-    "publishedAt": "2026-07-25T01:35:55Z"
+    "publishedAt": "2026-08-04T00:14:23Z"
   },
   "releaseHintPolicy": "Hints never mutate schemas or catalogs automatically. Deterministic evidence and validation are required; ambiguous entries enter human review.",
   "rawProseRedistributed": false,
@@ -64,7 +593,7 @@
     "x-status": "exact-release-binary-validator-corroborated",
     "x-binary": {
       "source": "platformBinary",
-      "sha256": "674f61f20ff306f3100cf9200e4c36c4b70278b5bef2884549819b942a89c863",
+      "sha256": "60db8e88d42c24b5199c92cfd56ec88370c510c3789c6f364af748354f087ada",
       "pathInPackage": "package/claude",
       "commandBindingPatternCorroborated": true,
       "commandBindingValidatorMessageCorroborated": true

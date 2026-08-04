@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "artifactKind": "environment-surface-catalog",
-  "claudeCodeVersion": "2.1.220",
+  "claudeCodeVersion": "2.1.221",
   "surface": {
     "product": "Claude Code CLI",
     "interface": "process-environment",
@@ -89,6 +89,7 @@
     "CLAUDE_CODE_CLIENT_CERT",
     "CLAUDE_CODE_CLIENT_KEY",
     "CLAUDE_CODE_CLIENT_KEY_PASSPHRASE",
+    "CLAUDE_CODE_CONNECT_TIMEOUT_MS",
     "CLAUDE_CODE_DEBUG_LOGS_DIR",
     "CLAUDE_CODE_DEBUG_LOG_LEVEL",
     "CLAUDE_CODE_DISABLE_1M_CONTEXT",
@@ -132,6 +133,7 @@
     "CLAUDE_CODE_ENABLE_FEEDBACK_SURVEY_FOR_OTEL",
     "CLAUDE_CODE_ENABLE_FINE_GRAINED_TOOL_STREAMING",
     "CLAUDE_CODE_ENABLE_GATEWAY_MODEL_DISCOVERY",
+    "CLAUDE_CODE_ENABLE_OPUS_4_7_FAST_MODE",
     "CLAUDE_CODE_ENABLE_PROMPT_SUGGESTION",
     "CLAUDE_CODE_ENABLE_TASKS",
     "CLAUDE_CODE_ENABLE_TELEMETRY",
@@ -171,6 +173,7 @@
     "CLAUDE_CODE_OAUTH_REFRESH_TOKEN",
     "CLAUDE_CODE_OAUTH_SCOPES",
     "CLAUDE_CODE_OAUTH_TOKEN",
+    "CLAUDE_CODE_OPUS_4_6_FAST_MODE_OVERRIDE",
     "CLAUDE_CODE_OTEL_CONTENT_MAX_LENGTH",
     "CLAUDE_CODE_OTEL_DIAG_STDERR",
     "CLAUDE_CODE_OTEL_FLUSH_TIMEOUT_MS",
@@ -413,7 +416,7 @@
   ],
   "binaryEvidence": {
     "platformPackage": "@anthropic-ai/claude-code-linux-x64",
-    "binarySha256": "674f61f20ff306f3100cf9200e4c36c4b70278b5bef2884549819b942a89c863",
+    "binarySha256": "60db8e88d42c24b5199c92cfd56ec88370c510c3789c6f364af748354f087ada",
     "policy": "Static strings prove token presence only. Binary-only values are candidates, not public API."
   },
   "staticBinaryCandidates": [
@@ -466,6 +469,10 @@
       "documented": true
     },
     {
+      "name": "ANTHROPIC_CUSTOM_HEADERSI2",
+      "documented": false
+    },
+    {
       "name": "ANTHROPIC_CUSTOM_MODEL_OPTION",
       "documented": true
     },
@@ -504,6 +511,10 @@
     {
       "name": "ANTHROPIC_DEFAULT_HAIKU_MODEL_DESCRIPTION",
       "documented": true
+    },
+    {
+      "name": "ANTHROPIC_DEFAULT_HAIKU_MODEL_DESCRIPTIONU",
+      "documented": false
     },
     {
       "name": "ANTHROPIC_DEFAULT_HAIKU_MODEL_NAME",
@@ -642,6 +653,10 @@
       "documented": true
     },
     {
+      "name": "ANTHROPIC_VERTEX_BASE_URLC",
+      "documented": false
+    },
+    {
       "name": "ANTHROPIC_VERTEX_PROJECT_ID",
       "documented": true
     },
@@ -742,11 +757,31 @@
       "documented": false
     },
     {
+      "name": "CLAUDE_CODE_ARTIFACTS_API_TOKEN",
+      "documented": false
+    },
+    {
+      "name": "CLAUDE_CODE_ARTIFACT_ASSET_BASE_URL",
+      "documented": false
+    },
+    {
       "name": "CLAUDE_CODE_ARTIFACT_AUTO_OPEN",
       "documented": true
     },
     {
+      "name": "CLAUDE_CODE_ARTIFACT_COMMENTS",
+      "documented": false
+    },
+    {
+      "name": "CLAUDE_CODE_ARTIFACT_COMMENTS_AUTOREACT",
+      "documented": false
+    },
+    {
       "name": "CLAUDE_CODE_ARTIFACT_DIRECT_UPLOAD",
+      "documented": false
+    },
+    {
+      "name": "CLAUDE_CODE_ARTIFACT_LIVE_BASE_URL",
       "documented": false
     },
     {
@@ -772,10 +807,6 @@
     {
       "name": "CLAUDE_CODE_AUTO_CONNECT_IDE",
       "documented": true
-    },
-    {
-      "name": "CLAUDE_CODE_AUTO_MODE_CLASSIFIER_QUEUE",
-      "documented": false
     },
     {
       "name": "CLAUDE_CODE_AUTO_MODE_CLASSIFY_EDITS",
@@ -822,16 +853,16 @@
       "documented": false
     },
     {
-      "name": "CLAUDE_CODE_AUTO_MODE_SIBLING_CONTEXT",
-      "documented": false
-    },
-    {
       "name": "CLAUDE_CODE_AUTO_MODE_TEMPERATURE",
       "documented": false
     },
     {
       "name": "CLAUDE_CODE_AWS_CHAIN_RESOLVE_TIMEOUT_MS",
       "documented": true
+    },
+    {
+      "name": "CLAUDE_CODE_AWS_CHAIN_RESOLVE_TIMEOUT_MSIZ",
+      "documented": false
     },
     {
       "name": "CLAUDE_CODE_BASALT_COVE",
@@ -900,6 +931,10 @@
     {
       "name": "CLAUDE_CODE_CHILD_SESSION",
       "documented": true
+    },
+    {
+      "name": "CLAUDE_CODE_CHILD_SESSIONH",
+      "documented": false
     },
     {
       "name": "CLAUDE_CODE_CLASSIFIER_SUMMARY",
@@ -1110,6 +1145,10 @@
       "documented": true
     },
     {
+      "name": "CLAUDE_CODE_DISABLE_MOUSEW",
+      "documented": false
+    },
+    {
       "name": "CLAUDE_CODE_DISABLE_MOUSE_CLICKS",
       "documented": true
     },
@@ -1266,6 +1305,10 @@
       "documented": false
     },
     {
+      "name": "CLAUDE_CODE_ENABLE_SDK_FILE_CHECKPOINTINGH",
+      "documented": false
+    },
+    {
       "name": "CLAUDE_CODE_ENABLE_TASKS",
       "documented": true
     },
@@ -1275,6 +1318,10 @@
     },
     {
       "name": "CLAUDE_CODE_ENABLE_TOKEN_USAGE_ATTACHMENT",
+      "documented": false
+    },
+    {
+      "name": "CLAUDE_CODE_ENABLE_TOKEN_USAGE_ATTACHMENTG",
       "documented": false
     },
     {
@@ -1346,6 +1393,10 @@
       "documented": false
     },
     {
+      "name": "CLAUDE_CODE_FORCE_BRIDGEI",
+      "documented": false
+    },
+    {
       "name": "CLAUDE_CODE_FORCE_EVALUATE_MEMORY",
       "documented": false
     },
@@ -1363,6 +1414,10 @@
     },
     {
       "name": "CLAUDE_CODE_FORCE_MID_CONVERSATION_SYSTEM",
+      "documented": false
+    },
+    {
+      "name": "CLAUDE_CODE_FORCE_MID_CONVERSATION_SYSTEMC",
       "documented": false
     },
     {
@@ -1396,6 +1451,10 @@
     {
       "name": "CLAUDE_CODE_FORK_SUBAGENT",
       "documented": true
+    },
+    {
+      "name": "CLAUDE_CODE_FORK_SUBAGENTB",
+      "documented": false
     },
     {
       "name": "CLAUDE_CODE_FORWARD_SUBAGENT_TEXT",
@@ -1674,6 +1733,10 @@
       "documented": true
     },
     {
+      "name": "CLAUDE_CODE_OAUTH_SCOPESI",
+      "documented": false
+    },
+    {
       "name": "CLAUDE_CODE_OAUTH_TOKEN",
       "documented": true
     },
@@ -1775,10 +1838,6 @@
     },
     {
       "name": "CLAUDE_CODE_PLUGIN_USE_ZIP_CACHE",
-      "documented": false
-    },
-    {
-      "name": "CLAUDE_CODE_POST_FOR_SESSION_INGRESS_V2",
       "documented": false
     },
     {
@@ -1974,6 +2033,10 @@
       "documented": false
     },
     {
+      "name": "CLAUDE_CODE_SEND_FEEDBACK1",
+      "documented": false
+    },
+    {
       "name": "CLAUDE_CODE_SESSIONEND_HOOKS_TIMEOUT_MS",
       "documented": true
     },
@@ -1987,6 +2050,10 @@
     },
     {
       "name": "CLAUDE_CODE_SESSION_KIND",
+      "documented": false
+    },
+    {
+      "name": "CLAUDE_CODE_SESSION_KINDI",
       "documented": false
     },
     {
@@ -2230,6 +2297,10 @@
       "documented": false
     },
     {
+      "name": "CLAUDE_CODE_THRIFTY_SONIC",
+      "documented": false
+    },
+    {
       "name": "CLAUDE_CODE_TMPDIR",
       "documented": true
     },
@@ -2371,6 +2442,10 @@
     },
     {
       "name": "CLAUDE_CODE_WORKFLOW_SIZE_WARNING_TOKENS",
+      "documented": false
+    },
+    {
+      "name": "CLAUDE_CODE_WORKFLOW_SIZE_WARNING_TOKENSI",
       "documented": false
     },
     {
