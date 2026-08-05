@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "artifactKind": "environment-surface-catalog",
-  "claudeCodeVersion": "2.1.220",
+  "claudeCodeVersion": "2.1.222",
   "surface": {
     "product": "Claude Code CLI",
     "interface": "process-environment",
@@ -89,6 +89,7 @@
     "CLAUDE_CODE_CLIENT_CERT",
     "CLAUDE_CODE_CLIENT_KEY",
     "CLAUDE_CODE_CLIENT_KEY_PASSPHRASE",
+    "CLAUDE_CODE_CONNECT_TIMEOUT_MS",
     "CLAUDE_CODE_DEBUG_LOGS_DIR",
     "CLAUDE_CODE_DEBUG_LOG_LEVEL",
     "CLAUDE_CODE_DISABLE_1M_CONTEXT",
@@ -132,6 +133,7 @@
     "CLAUDE_CODE_ENABLE_FEEDBACK_SURVEY_FOR_OTEL",
     "CLAUDE_CODE_ENABLE_FINE_GRAINED_TOOL_STREAMING",
     "CLAUDE_CODE_ENABLE_GATEWAY_MODEL_DISCOVERY",
+    "CLAUDE_CODE_ENABLE_OPUS_4_7_FAST_MODE",
     "CLAUDE_CODE_ENABLE_PROMPT_SUGGESTION",
     "CLAUDE_CODE_ENABLE_TASKS",
     "CLAUDE_CODE_ENABLE_TELEMETRY",
@@ -171,6 +173,7 @@
     "CLAUDE_CODE_OAUTH_REFRESH_TOKEN",
     "CLAUDE_CODE_OAUTH_SCOPES",
     "CLAUDE_CODE_OAUTH_TOKEN",
+    "CLAUDE_CODE_OPUS_4_6_FAST_MODE_OVERRIDE",
     "CLAUDE_CODE_OTEL_CONTENT_MAX_LENGTH",
     "CLAUDE_CODE_OTEL_DIAG_STDERR",
     "CLAUDE_CODE_OTEL_FLUSH_TIMEOUT_MS",
@@ -413,7 +416,7 @@
   ],
   "binaryEvidence": {
     "platformPackage": "@anthropic-ai/claude-code-linux-x64",
-    "binarySha256": "674f61f20ff306f3100cf9200e4c36c4b70278b5bef2884549819b942a89c863",
+    "binarySha256": "10caae8f22b915c26bfff0e013a4d45608c4f1ae287583626569156f447730e5",
     "policy": "Static strings prove token presence only. Binary-only values are candidates, not public API."
   },
   "staticBinaryCandidates": [
@@ -726,6 +729,10 @@
       "documented": false
     },
     {
+      "name": "CLAUDE_CODE_API_BASE_URLI",
+      "documented": false
+    },
+    {
       "name": "CLAUDE_CODE_API_KEY_FILE_DESCRIPTOR",
       "documented": false
     },
@@ -742,11 +749,31 @@
       "documented": false
     },
     {
+      "name": "CLAUDE_CODE_ARTIFACTS_API_TOKEN",
+      "documented": false
+    },
+    {
+      "name": "CLAUDE_CODE_ARTIFACT_ASSET_BASE_URL",
+      "documented": false
+    },
+    {
       "name": "CLAUDE_CODE_ARTIFACT_AUTO_OPEN",
       "documented": true
     },
     {
+      "name": "CLAUDE_CODE_ARTIFACT_COMMENTS",
+      "documented": false
+    },
+    {
+      "name": "CLAUDE_CODE_ARTIFACT_COMMENTS_AUTOREACT",
+      "documented": false
+    },
+    {
       "name": "CLAUDE_CODE_ARTIFACT_DIRECT_UPLOAD",
+      "documented": false
+    },
+    {
+      "name": "CLAUDE_CODE_ARTIFACT_LIVE_BASE_URL",
       "documented": false
     },
     {
@@ -772,10 +799,6 @@
     {
       "name": "CLAUDE_CODE_AUTO_CONNECT_IDE",
       "documented": true
-    },
-    {
-      "name": "CLAUDE_CODE_AUTO_MODE_CLASSIFIER_QUEUE",
-      "documented": false
     },
     {
       "name": "CLAUDE_CODE_AUTO_MODE_CLASSIFY_EDITS",
@@ -822,16 +845,16 @@
       "documented": false
     },
     {
-      "name": "CLAUDE_CODE_AUTO_MODE_SIBLING_CONTEXT",
-      "documented": false
-    },
-    {
       "name": "CLAUDE_CODE_AUTO_MODE_TEMPERATURE",
       "documented": false
     },
     {
       "name": "CLAUDE_CODE_AWS_CHAIN_RESOLVE_TIMEOUT_MS",
       "documented": true
+    },
+    {
+      "name": "CLAUDE_CODE_AWS_CHAIN_RESOLVE_TIMEOUT_MSIF",
+      "documented": false
     },
     {
       "name": "CLAUDE_CODE_BASALT_COVE",
@@ -882,6 +905,10 @@
       "documented": false
     },
     {
+      "name": "CLAUDE_CODE_BRIEF_UPLOADI1",
+      "documented": false
+    },
+    {
       "name": "CLAUDE_CODE_BS_AS_CTRL_BACKSPACE",
       "documented": false
     },
@@ -927,6 +954,10 @@
     },
     {
       "name": "CLAUDE_CODE_CONTAINER_ID",
+      "documented": false
+    },
+    {
+      "name": "CLAUDE_CODE_CONTAINER_IDI",
       "documented": false
     },
     {
@@ -1202,6 +1233,10 @@
       "documented": true
     },
     {
+      "name": "CLAUDE_CODE_ENABLE_APPEND_SUBAGENT_PROMPTH",
+      "documented": false
+    },
+    {
       "name": "CLAUDE_CODE_ENABLE_AUTO_MODE",
       "documented": true
     },
@@ -1318,6 +1353,10 @@
       "documented": false
     },
     {
+      "name": "CLAUDE_CODE_EXPERIMENTAL_OBSERVER_AGENTSI",
+      "documented": false
+    },
+    {
       "name": "CLAUDE_CODE_EXTRA_BODY",
       "documented": true
     },
@@ -1390,6 +1429,10 @@
       "documented": false
     },
     {
+      "name": "CLAUDE_CODE_FORCE_TIP_IDI",
+      "documented": false
+    },
+    {
       "name": "CLAUDE_CODE_FORCE_WINDOWS_CREDMAN",
       "documented": false
     },
@@ -1411,6 +1454,10 @@
     },
     {
       "name": "CLAUDE_CODE_GAULT_KESTREL",
+      "documented": false
+    },
+    {
+      "name": "CLAUDE_CODE_GAULT_KESTRELD",
       "documented": false
     },
     {
@@ -1451,6 +1498,10 @@
     },
     {
       "name": "CLAUDE_CODE_HERON_TALLOW",
+      "documented": false
+    },
+    {
+      "name": "CLAUDE_CODE_HERON_TALLOWIY",
       "documented": false
     },
     {
@@ -1550,7 +1601,15 @@
       "documented": false
     },
     {
+      "name": "CLAUDE_CODE_LANTERN_PRISMU",
+      "documented": false
+    },
+    {
       "name": "CLAUDE_CODE_LARCH_CISTERN",
+      "documented": false
+    },
+    {
+      "name": "CLAUDE_CODE_LARCH_CISTERNU",
       "documented": false
     },
     {
@@ -1730,6 +1789,10 @@
       "documented": true
     },
     {
+      "name": "CLAUDE_CODE_PERFORCE_MODER",
+      "documented": false
+    },
+    {
       "name": "CLAUDE_CODE_PEWTER_OWL",
       "documented": false
     },
@@ -1775,10 +1838,6 @@
     },
     {
       "name": "CLAUDE_CODE_PLUGIN_USE_ZIP_CACHE",
-      "documented": false
-    },
-    {
-      "name": "CLAUDE_CODE_POST_FOR_SESSION_INGRESS_V2",
       "documented": false
     },
     {
@@ -1962,6 +2021,14 @@
       "documented": true
     },
     {
+      "name": "CLAUDE_CODE_SCROLL_SPEEDI",
+      "documented": false
+    },
+    {
+      "name": "CLAUDE_CODE_SCROLL_SPEEDIA",
+      "documented": false
+    },
+    {
       "name": "CLAUDE_CODE_SDK_HAS_HOST_AUTH_REFRESH",
       "documented": false
     },
@@ -1995,6 +2062,10 @@
     },
     {
       "name": "CLAUDE_CODE_SESSION_NAME",
+      "documented": false
+    },
+    {
+      "name": "CLAUDE_CODE_SESSION_NAMEI",
       "documented": false
     },
     {
@@ -2040,6 +2111,10 @@
     {
       "name": "CLAUDE_CODE_SKIP_FAST_MODE_NETWORK_ERRORS",
       "documented": true
+    },
+    {
+      "name": "CLAUDE_CODE_SKIP_FAST_MODE_NETWORK_ERRORSI",
+      "documented": false
     },
     {
       "name": "CLAUDE_CODE_SKIP_FAST_MODE_ORG_CHECK",
@@ -2230,6 +2305,14 @@
       "documented": false
     },
     {
+      "name": "CLAUDE_CODE_THRIFTY_SONIC",
+      "documented": false
+    },
+    {
+      "name": "CLAUDE_CODE_THRIFTY_SONICG",
+      "documented": false
+    },
+    {
       "name": "CLAUDE_CODE_TMPDIR",
       "documented": true
     },
@@ -2371,6 +2454,10 @@
     },
     {
       "name": "CLAUDE_CODE_WORKFLOW_SIZE_WARNING_TOKENS",
+      "documented": false
+    },
+    {
+      "name": "CLAUDE_CODE_WORKFLOW_SIZE_WARNING_TOKENSI",
       "documented": false
     },
     {

@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
   "artifactKind": "cli-surface-catalog",
-  "claudeCodeVersion": "2.1.220",
+  "claudeCodeVersion": "2.1.222",
   "platformPackage": "@anthropic-ai/claude-code-linux-x64",
-  "binarySha256": "674f61f20ff306f3100cf9200e4c36c4b70278b5bef2884549819b942a89c863",
+  "binarySha256": "10caae8f22b915c26bfff0e013a4d45608c4f1ae287583626569156f447730e5",
   "probePolicy": {
     "allowedOperations": [
       "--version",
@@ -19,7 +19,7 @@
     "maximumCommands": 80,
     "rawHelpRedistributed": false
   },
-  "versionOutput": "2.1.220 (Claude Code)",
+  "versionOutput": "2.1.222 (Claude Code)",
   "commands": [
     {
       "commandPath": [
@@ -33,8 +33,8 @@
       "signal": null,
       "timedOut": false,
       "outputExceeded": false,
-      "helpSha256": "42a3af30bfe2b7ccc8004c37887cc7407f9dc47448aa65044c0719da875901f5",
-      "helpBytes": 16035,
+      "helpSha256": "96830970116cef5e8e5670a34ce1808891d37657c48ece7b37065528953ec855",
+      "helpBytes": 16308,
       "usage": "claude [options] [command] [prompt]",
       "arguments": [
         {
@@ -101,6 +101,16 @@
             "--append-system-prompt"
           ],
           "valueNotation": "<prompt>",
+          "valueArity": "required",
+          "variadic": false,
+          "negated": false,
+          "repeatable": false
+        },
+        {
+          "names": [
+            "--autocompact"
+          ],
+          "valueNotation": "<auto|tokens>",
           "valueArity": "required",
           "variadic": false,
           "negated": false,
@@ -711,6 +721,14 @@
           "argumentNotation": "[options]"
         },
         {
+          "name": "import",
+          "aliases": [],
+          "commandPath": [
+            "import"
+          ],
+          "argumentNotation": "[options] [source]"
+        },
+        {
           "name": "install",
           "aliases": [],
           "commandPath": [
@@ -1152,6 +1170,66 @@
           "names": [
             "-h",
             "--help"
+          ],
+          "valueNotation": null,
+          "valueArity": "none",
+          "variadic": false,
+          "negated": false,
+          "repeatable": false
+        }
+      ],
+      "childCommands": []
+    },
+    {
+      "commandPath": [
+        "claude",
+        "import"
+      ],
+      "invocation": [
+        "claude",
+        "import",
+        "--help"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "timedOut": false,
+      "outputExceeded": false,
+      "helpSha256": "cf7e55be51f0d8c83ed1883b2b091f93498a25e32d017fd80bde155b55f4d953",
+      "helpBytes": 412,
+      "usage": "claude import [options] [source]",
+      "arguments": [
+        {
+          "name": "source",
+          "notation": "[source]",
+          "valueArity": "optional",
+          "variadic": false
+        }
+      ],
+      "options": [
+        {
+          "names": [
+            "--dry-run"
+          ],
+          "valueNotation": null,
+          "valueArity": "none",
+          "variadic": false,
+          "negated": false,
+          "repeatable": false
+        },
+        {
+          "names": [
+            "-h",
+            "--help"
+          ],
+          "valueNotation": null,
+          "valueArity": "none",
+          "variadic": false,
+          "negated": false,
+          "repeatable": false
+        },
+        {
+          "names": [
+            "--yes"
           ],
           "valueNotation": null,
           "valueArity": "none",
@@ -3459,7 +3537,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "3a67f5a580b20bd31d0d2dfe728d1966d7d22111e3fb92b64cd83627ba6feffc"
+            "sourceSha256": "c28afc39d971bd2be1a23a6c777f461eca3c0fc53cb9cb95c13c1790671af027"
           }
         ]
       },
@@ -3492,18 +3570,12 @@
       ],
       "valueArity": "not-specified-by-doc-table",
       "documentationUrl": "https://code.claude.com/docs/en/cli-reference#cli-flags",
-      "versionMarkers": [
-        {
-          "kind": "min",
-          "version": "2.1.210",
-          "characterOffset": 199
-        }
-      ],
+      "versionMarkers": [],
       "provenance": {
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "3a67f5a580b20bd31d0d2dfe728d1966d7d22111e3fb92b64cd83627ba6feffc"
+            "sourceSha256": "c28afc39d971bd2be1a23a6c777f461eca3c0fc53cb9cb95c13c1790671af027"
           }
         ]
       },
@@ -3523,7 +3595,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "3a67f5a580b20bd31d0d2dfe728d1966d7d22111e3fb92b64cd83627ba6feffc"
+            "sourceSha256": "c28afc39d971bd2be1a23a6c777f461eca3c0fc53cb9cb95c13c1790671af027"
           }
         ]
       },
@@ -3561,7 +3633,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "3a67f5a580b20bd31d0d2dfe728d1966d7d22111e3fb92b64cd83627ba6feffc"
+            "sourceSha256": "c28afc39d971bd2be1a23a6c777f461eca3c0fc53cb9cb95c13c1790671af027"
           }
         ]
       },
@@ -3590,7 +3662,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "3a67f5a580b20bd31d0d2dfe728d1966d7d22111e3fb92b64cd83627ba6feffc"
+            "sourceSha256": "c28afc39d971bd2be1a23a6c777f461eca3c0fc53cb9cb95c13c1790671af027"
           }
         ]
       },
@@ -3630,7 +3702,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "3a67f5a580b20bd31d0d2dfe728d1966d7d22111e3fb92b64cd83627ba6feffc"
+            "sourceSha256": "c28afc39d971bd2be1a23a6c777f461eca3c0fc53cb9cb95c13c1790671af027"
           }
         ]
       },
@@ -3655,19 +3727,12 @@
       ],
       "valueArity": "not-specified-by-doc-table",
       "documentationUrl": "https://code.claude.com/docs/en/cli-reference#cli-flags",
-      "minVersion": "2.1.205",
-      "versionMarkers": [
-        {
-          "kind": "min",
-          "version": "2.1.205",
-          "characterOffset": 0
-        }
-      ],
+      "versionMarkers": [],
       "provenance": {
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "3a67f5a580b20bd31d0d2dfe728d1966d7d22111e3fb92b64cd83627ba6feffc"
+            "sourceSha256": "c28afc39d971bd2be1a23a6c777f461eca3c0fc53cb9cb95c13c1790671af027"
           }
         ]
       },
@@ -3687,7 +3752,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "3a67f5a580b20bd31d0d2dfe728d1966d7d22111e3fb92b64cd83627ba6feffc"
+            "sourceSha256": "c28afc39d971bd2be1a23a6c777f461eca3c0fc53cb9cb95c13c1790671af027"
           }
         ]
       },
@@ -3716,11 +3781,40 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "3a67f5a580b20bd31d0d2dfe728d1966d7d22111e3fb92b64cd83627ba6feffc"
+            "sourceSha256": "c28afc39d971bd2be1a23a6c777f461eca3c0fc53cb9cb95c13c1790671af027"
           }
         ]
       },
       "probeMatches": []
+    },
+    {
+      "names": [
+        "--autocompact"
+      ],
+      "documentedSpellings": [
+        "--autocompact <auto\\|tokens>"
+      ],
+      "valueArity": "not-specified-by-doc-table",
+      "documentationUrl": "https://code.claude.com/docs/en/cli-reference#cli-flags",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "cliDocs",
+            "sourceSha256": "c28afc39d971bd2be1a23a6c777f461eca3c0fc53cb9cb95c13c1790671af027"
+          }
+        ]
+      },
+      "probeMatches": [
+        {
+          "commandPath": [
+            "claude"
+          ],
+          "names": [
+            "--autocompact"
+          ]
+        }
+      ]
     },
     {
       "names": [
@@ -3731,19 +3825,12 @@
       ],
       "valueArity": "not-specified-by-doc-table",
       "documentationUrl": "https://code.claude.com/docs/en/cli-reference#cli-flags",
-      "minVersion": "2.1.181",
-      "versionMarkers": [
-        {
-          "kind": "min",
-          "version": "2.1.181",
-          "characterOffset": 0
-        }
-      ],
+      "versionMarkers": [],
       "provenance": {
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "3a67f5a580b20bd31d0d2dfe728d1966d7d22111e3fb92b64cd83627ba6feffc"
+            "sourceSha256": "c28afc39d971bd2be1a23a6c777f461eca3c0fc53cb9cb95c13c1790671af027"
           }
         ]
       },
@@ -3772,7 +3859,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "3a67f5a580b20bd31d0d2dfe728d1966d7d22111e3fb92b64cd83627ba6feffc"
+            "sourceSha256": "c28afc39d971bd2be1a23a6c777f461eca3c0fc53cb9cb95c13c1790671af027"
           }
         ]
       },
@@ -3812,7 +3899,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "3a67f5a580b20bd31d0d2dfe728d1966d7d22111e3fb92b64cd83627ba6feffc"
+            "sourceSha256": "c28afc39d971bd2be1a23a6c777f461eca3c0fc53cb9cb95c13c1790671af027"
           }
         ]
       },
@@ -3838,18 +3925,12 @@
       ],
       "valueArity": "not-specified-by-doc-table",
       "documentationUrl": "https://code.claude.com/docs/en/cli-reference#cli-flags",
-      "versionMarkers": [
-        {
-          "kind": "min",
-          "version": "2.1.198",
-          "characterOffset": 274
-        }
-      ],
+      "versionMarkers": [],
       "provenance": {
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "3a67f5a580b20bd31d0d2dfe728d1966d7d22111e3fb92b64cd83627ba6feffc"
+            "sourceSha256": "c28afc39d971bd2be1a23a6c777f461eca3c0fc53cb9cb95c13c1790671af027"
           }
         ]
       },
@@ -3879,7 +3960,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "3a67f5a580b20bd31d0d2dfe728d1966d7d22111e3fb92b64cd83627ba6feffc"
+            "sourceSha256": "c28afc39d971bd2be1a23a6c777f461eca3c0fc53cb9cb95c13c1790671af027"
           }
         ]
       },
@@ -3899,7 +3980,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "3a67f5a580b20bd31d0d2dfe728d1966d7d22111e3fb92b64cd83627ba6feffc"
+            "sourceSha256": "c28afc39d971bd2be1a23a6c777f461eca3c0fc53cb9cb95c13c1790671af027"
           }
         ]
       },
@@ -3928,7 +4009,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "3a67f5a580b20bd31d0d2dfe728d1966d7d22111e3fb92b64cd83627ba6feffc"
+            "sourceSha256": "c28afc39d971bd2be1a23a6c777f461eca3c0fc53cb9cb95c13c1790671af027"
           }
         ]
       },
@@ -3950,7 +4031,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "3a67f5a580b20bd31d0d2dfe728d1966d7d22111e3fb92b64cd83627ba6feffc"
+            "sourceSha256": "c28afc39d971bd2be1a23a6c777f461eca3c0fc53cb9cb95c13c1790671af027"
           }
         ]
       },
@@ -3980,7 +4061,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "3a67f5a580b20bd31d0d2dfe728d1966d7d22111e3fb92b64cd83627ba6feffc"
+            "sourceSha256": "c28afc39d971bd2be1a23a6c777f461eca3c0fc53cb9cb95c13c1790671af027"
           }
         ]
       },
@@ -4000,7 +4081,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "3a67f5a580b20bd31d0d2dfe728d1966d7d22111e3fb92b64cd83627ba6feffc"
+            "sourceSha256": "c28afc39d971bd2be1a23a6c777f461eca3c0fc53cb9cb95c13c1790671af027"
           }
         ]
       },
@@ -4038,7 +4119,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "3a67f5a580b20bd31d0d2dfe728d1966d7d22111e3fb92b64cd83627ba6feffc"
+            "sourceSha256": "c28afc39d971bd2be1a23a6c777f461eca3c0fc53cb9cb95c13c1790671af027"
           }
         ]
       },
@@ -4067,7 +4148,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "3a67f5a580b20bd31d0d2dfe728d1966d7d22111e3fb92b64cd83627ba6feffc"
+            "sourceSha256": "c28afc39d971bd2be1a23a6c777f461eca3c0fc53cb9cb95c13c1790671af027"
           }
         ]
       },
@@ -4096,7 +4177,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "3a67f5a580b20bd31d0d2dfe728d1966d7d22111e3fb92b64cd83627ba6feffc"
+            "sourceSha256": "c28afc39d971bd2be1a23a6c777f461eca3c0fc53cb9cb95c13c1790671af027"
           }
         ]
       },
@@ -4127,7 +4208,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "3a67f5a580b20bd31d0d2dfe728d1966d7d22111e3fb92b64cd83627ba6feffc"
+            "sourceSha256": "c28afc39d971bd2be1a23a6c777f461eca3c0fc53cb9cb95c13c1790671af027"
           }
         ]
       },
@@ -4152,18 +4233,12 @@
       ],
       "valueArity": "not-specified-by-doc-table",
       "documentationUrl": "https://code.claude.com/docs/en/cli-reference#cli-flags",
-      "versionMarkers": [
-        {
-          "kind": "min",
-          "version": "2.1.203",
-          "characterOffset": 144
-        }
-      ],
+      "versionMarkers": [],
       "provenance": {
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "3a67f5a580b20bd31d0d2dfe728d1966d7d22111e3fb92b64cd83627ba6feffc"
+            "sourceSha256": "c28afc39d971bd2be1a23a6c777f461eca3c0fc53cb9cb95c13c1790671af027"
           }
         ]
       },
@@ -4189,6 +4264,26 @@
     },
     {
       "names": [
+        "--enable-auto-mode"
+      ],
+      "documentedSpellings": [
+        "--enable-auto-mode"
+      ],
+      "valueArity": "not-specified-by-doc-table",
+      "documentationUrl": "https://code.claude.com/docs/en/cli-reference#cli-flags",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "cliDocs",
+            "sourceSha256": "c28afc39d971bd2be1a23a6c777f461eca3c0fc53cb9cb95c13c1790671af027"
+          }
+        ]
+      },
+      "probeMatches": []
+    },
+    {
+      "names": [
         "--exclude-dynamic-system-prompt-sections"
       ],
       "documentedSpellings": [
@@ -4201,7 +4296,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "3a67f5a580b20bd31d0d2dfe728d1966d7d22111e3fb92b64cd83627ba6feffc"
+            "sourceSha256": "c28afc39d971bd2be1a23a6c777f461eca3c0fc53cb9cb95c13c1790671af027"
           }
         ]
       },
@@ -4230,7 +4325,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "3a67f5a580b20bd31d0d2dfe728d1966d7d22111e3fb92b64cd83627ba6feffc"
+            "sourceSha256": "c28afc39d971bd2be1a23a6c777f461eca3c0fc53cb9cb95c13c1790671af027"
           }
         ]
       },
@@ -4250,7 +4345,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "3a67f5a580b20bd31d0d2dfe728d1966d7d22111e3fb92b64cd83627ba6feffc"
+            "sourceSha256": "c28afc39d971bd2be1a23a6c777f461eca3c0fc53cb9cb95c13c1790671af027"
           }
         ]
       },
@@ -4279,7 +4374,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "3a67f5a580b20bd31d0d2dfe728d1966d7d22111e3fb92b64cd83627ba6feffc"
+            "sourceSha256": "c28afc39d971bd2be1a23a6c777f461eca3c0fc53cb9cb95c13c1790671af027"
           }
         ]
       },
@@ -4303,19 +4398,12 @@
       ],
       "valueArity": "not-specified-by-doc-table",
       "documentationUrl": "https://code.claude.com/docs/en/cli-reference#cli-flags",
-      "minVersion": "2.1.211",
-      "versionMarkers": [
-        {
-          "kind": "min",
-          "version": "2.1.211",
-          "characterOffset": 0
-        }
-      ],
+      "versionMarkers": [],
       "provenance": {
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "3a67f5a580b20bd31d0d2dfe728d1966d7d22111e3fb92b64cd83627ba6feffc"
+            "sourceSha256": "c28afc39d971bd2be1a23a6c777f461eca3c0fc53cb9cb95c13c1790671af027"
           }
         ]
       },
@@ -4344,7 +4432,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "3a67f5a580b20bd31d0d2dfe728d1966d7d22111e3fb92b64cd83627ba6feffc"
+            "sourceSha256": "c28afc39d971bd2be1a23a6c777f461eca3c0fc53cb9cb95c13c1790671af027"
           }
         ]
       },
@@ -4373,7 +4461,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "3a67f5a580b20bd31d0d2dfe728d1966d7d22111e3fb92b64cd83627ba6feffc"
+            "sourceSha256": "c28afc39d971bd2be1a23a6c777f461eca3c0fc53cb9cb95c13c1790671af027"
           }
         ]
       },
@@ -4402,7 +4490,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "3a67f5a580b20bd31d0d2dfe728d1966d7d22111e3fb92b64cd83627ba6feffc"
+            "sourceSha256": "c28afc39d971bd2be1a23a6c777f461eca3c0fc53cb9cb95c13c1790671af027"
           }
         ]
       },
@@ -4422,7 +4510,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "3a67f5a580b20bd31d0d2dfe728d1966d7d22111e3fb92b64cd83627ba6feffc"
+            "sourceSha256": "c28afc39d971bd2be1a23a6c777f461eca3c0fc53cb9cb95c13c1790671af027"
           }
         ]
       },
@@ -4442,7 +4530,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "3a67f5a580b20bd31d0d2dfe728d1966d7d22111e3fb92b64cd83627ba6feffc"
+            "sourceSha256": "c28afc39d971bd2be1a23a6c777f461eca3c0fc53cb9cb95c13c1790671af027"
           }
         ]
       },
@@ -4471,7 +4559,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "3a67f5a580b20bd31d0d2dfe728d1966d7d22111e3fb92b64cd83627ba6feffc"
+            "sourceSha256": "c28afc39d971bd2be1a23a6c777f461eca3c0fc53cb9cb95c13c1790671af027"
           }
         ]
       },
@@ -4500,7 +4588,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "3a67f5a580b20bd31d0d2dfe728d1966d7d22111e3fb92b64cd83627ba6feffc"
+            "sourceSha256": "c28afc39d971bd2be1a23a6c777f461eca3c0fc53cb9cb95c13c1790671af027"
           }
         ]
       },
@@ -4524,18 +4612,12 @@
       ],
       "valueArity": "not-specified-by-doc-table",
       "documentationUrl": "https://code.claude.com/docs/en/cli-reference#cli-flags",
-      "versionMarkers": [
-        {
-          "kind": "min",
-          "version": "2.1.205",
-          "characterOffset": 172
-        }
-      ],
+      "versionMarkers": [],
       "provenance": {
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "3a67f5a580b20bd31d0d2dfe728d1966d7d22111e3fb92b64cd83627ba6feffc"
+            "sourceSha256": "c28afc39d971bd2be1a23a6c777f461eca3c0fc53cb9cb95c13c1790671af027"
           }
         ]
       },
@@ -4564,7 +4646,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "3a67f5a580b20bd31d0d2dfe728d1966d7d22111e3fb92b64cd83627ba6feffc"
+            "sourceSha256": "c28afc39d971bd2be1a23a6c777f461eca3c0fc53cb9cb95c13c1790671af027"
           }
         ]
       },
@@ -4579,18 +4661,12 @@
       ],
       "valueArity": "not-specified-by-doc-table",
       "documentationUrl": "https://code.claude.com/docs/en/cli-reference#cli-flags",
-      "versionMarkers": [
-        {
-          "kind": "min",
-          "version": "2.1.217",
-          "characterOffset": 146
-        }
-      ],
+      "versionMarkers": [],
       "provenance": {
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "3a67f5a580b20bd31d0d2dfe728d1966d7d22111e3fb92b64cd83627ba6feffc"
+            "sourceSha256": "c28afc39d971bd2be1a23a6c777f461eca3c0fc53cb9cb95c13c1790671af027"
           }
         ]
       },
@@ -4614,18 +4690,12 @@
       ],
       "valueArity": "not-specified-by-doc-table",
       "documentationUrl": "https://code.claude.com/docs/en/cli-reference#cli-flags",
-      "versionMarkers": [
-        {
-          "kind": "min",
-          "version": "2.1.205",
-          "characterOffset": 121
-        }
-      ],
+      "versionMarkers": [],
       "provenance": {
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "3a67f5a580b20bd31d0d2dfe728d1966d7d22111e3fb92b64cd83627ba6feffc"
+            "sourceSha256": "c28afc39d971bd2be1a23a6c777f461eca3c0fc53cb9cb95c13c1790671af027"
           }
         ]
       },
@@ -4645,7 +4715,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "3a67f5a580b20bd31d0d2dfe728d1966d7d22111e3fb92b64cd83627ba6feffc"
+            "sourceSha256": "c28afc39d971bd2be1a23a6c777f461eca3c0fc53cb9cb95c13c1790671af027"
           }
         ]
       },
@@ -4683,7 +4753,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "3a67f5a580b20bd31d0d2dfe728d1966d7d22111e3fb92b64cd83627ba6feffc"
+            "sourceSha256": "c28afc39d971bd2be1a23a6c777f461eca3c0fc53cb9cb95c13c1790671af027"
           }
         ]
       },
@@ -4743,7 +4813,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "3a67f5a580b20bd31d0d2dfe728d1966d7d22111e3fb92b64cd83627ba6feffc"
+            "sourceSha256": "c28afc39d971bd2be1a23a6c777f461eca3c0fc53cb9cb95c13c1790671af027"
           }
         ]
       },
@@ -4773,7 +4843,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "3a67f5a580b20bd31d0d2dfe728d1966d7d22111e3fb92b64cd83627ba6feffc"
+            "sourceSha256": "c28afc39d971bd2be1a23a6c777f461eca3c0fc53cb9cb95c13c1790671af027"
           }
         ]
       },
@@ -4802,7 +4872,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "3a67f5a580b20bd31d0d2dfe728d1966d7d22111e3fb92b64cd83627ba6feffc"
+            "sourceSha256": "c28afc39d971bd2be1a23a6c777f461eca3c0fc53cb9cb95c13c1790671af027"
           }
         ]
       },
@@ -4831,7 +4901,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "3a67f5a580b20bd31d0d2dfe728d1966d7d22111e3fb92b64cd83627ba6feffc"
+            "sourceSha256": "c28afc39d971bd2be1a23a6c777f461eca3c0fc53cb9cb95c13c1790671af027"
           }
         ]
       },
@@ -4855,18 +4925,12 @@
       ],
       "valueArity": "not-specified-by-doc-table",
       "documentationUrl": "https://code.claude.com/docs/en/cli-reference#cli-flags",
-      "versionMarkers": [
-        {
-          "kind": "min",
-          "version": "2.1.200",
-          "characterOffset": 152
-        }
-      ],
+      "versionMarkers": [],
       "provenance": {
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "3a67f5a580b20bd31d0d2dfe728d1966d7d22111e3fb92b64cd83627ba6feffc"
+            "sourceSha256": "c28afc39d971bd2be1a23a6c777f461eca3c0fc53cb9cb95c13c1790671af027"
           }
         ]
       },
@@ -4899,23 +4963,12 @@
       ],
       "valueArity": "not-specified-by-doc-table",
       "documentationUrl": "https://code.claude.com/docs/en/cli-reference#cli-flags",
-      "versionMarkers": [
-        {
-          "kind": "min",
-          "version": "2.1.206",
-          "characterOffset": 74
-        },
-        {
-          "kind": "min",
-          "version": "2.1.199",
-          "characterOffset": 444
-        }
-      ],
+      "versionMarkers": [],
       "provenance": {
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "3a67f5a580b20bd31d0d2dfe728d1966d7d22111e3fb92b64cd83627ba6feffc"
+            "sourceSha256": "c28afc39d971bd2be1a23a6c777f461eca3c0fc53cb9cb95c13c1790671af027"
           }
         ]
       },
@@ -4935,7 +4988,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "3a67f5a580b20bd31d0d2dfe728d1966d7d22111e3fb92b64cd83627ba6feffc"
+            "sourceSha256": "c28afc39d971bd2be1a23a6c777f461eca3c0fc53cb9cb95c13c1790671af027"
           }
         ]
       },
@@ -4973,7 +5026,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "3a67f5a580b20bd31d0d2dfe728d1966d7d22111e3fb92b64cd83627ba6feffc"
+            "sourceSha256": "c28afc39d971bd2be1a23a6c777f461eca3c0fc53cb9cb95c13c1790671af027"
           }
         ]
       },
@@ -5004,7 +5057,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "3a67f5a580b20bd31d0d2dfe728d1966d7d22111e3fb92b64cd83627ba6feffc"
+            "sourceSha256": "c28afc39d971bd2be1a23a6c777f461eca3c0fc53cb9cb95c13c1790671af027"
           }
         ]
       },
@@ -5034,7 +5087,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "3a67f5a580b20bd31d0d2dfe728d1966d7d22111e3fb92b64cd83627ba6feffc"
+            "sourceSha256": "c28afc39d971bd2be1a23a6c777f461eca3c0fc53cb9cb95c13c1790671af027"
           }
         ]
       },
@@ -5063,7 +5116,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "3a67f5a580b20bd31d0d2dfe728d1966d7d22111e3fb92b64cd83627ba6feffc"
+            "sourceSha256": "c28afc39d971bd2be1a23a6c777f461eca3c0fc53cb9cb95c13c1790671af027"
           }
         ]
       },
@@ -5096,7 +5149,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "3a67f5a580b20bd31d0d2dfe728d1966d7d22111e3fb92b64cd83627ba6feffc"
+            "sourceSha256": "c28afc39d971bd2be1a23a6c777f461eca3c0fc53cb9cb95c13c1790671af027"
           }
         ]
       },
@@ -5125,7 +5178,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "3a67f5a580b20bd31d0d2dfe728d1966d7d22111e3fb92b64cd83627ba6feffc"
+            "sourceSha256": "c28afc39d971bd2be1a23a6c777f461eca3c0fc53cb9cb95c13c1790671af027"
           }
         ]
       },
@@ -5154,7 +5207,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "3a67f5a580b20bd31d0d2dfe728d1966d7d22111e3fb92b64cd83627ba6feffc"
+            "sourceSha256": "c28afc39d971bd2be1a23a6c777f461eca3c0fc53cb9cb95c13c1790671af027"
           }
         ]
       },
@@ -5185,7 +5238,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "3a67f5a580b20bd31d0d2dfe728d1966d7d22111e3fb92b64cd83627ba6feffc"
+            "sourceSha256": "c28afc39d971bd2be1a23a6c777f461eca3c0fc53cb9cb95c13c1790671af027"
           }
         ]
       },
@@ -5210,19 +5263,12 @@
       ],
       "valueArity": "not-specified-by-doc-table",
       "documentationUrl": "https://code.claude.com/docs/en/cli-reference#cli-flags",
-      "minVersion": "2.1.169",
-      "versionMarkers": [
-        {
-          "kind": "min",
-          "version": "2.1.169",
-          "characterOffset": 0
-        }
-      ],
+      "versionMarkers": [],
       "provenance": {
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "3a67f5a580b20bd31d0d2dfe728d1966d7d22111e3fb92b64cd83627ba6feffc"
+            "sourceSha256": "c28afc39d971bd2be1a23a6c777f461eca3c0fc53cb9cb95c13c1790671af027"
           }
         ]
       },
@@ -5251,7 +5297,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "3a67f5a580b20bd31d0d2dfe728d1966d7d22111e3fb92b64cd83627ba6feffc"
+            "sourceSha256": "c28afc39d971bd2be1a23a6c777f461eca3c0fc53cb9cb95c13c1790671af027"
           }
         ]
       },
@@ -5280,7 +5326,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "3a67f5a580b20bd31d0d2dfe728d1966d7d22111e3fb92b64cd83627ba6feffc"
+            "sourceSha256": "c28afc39d971bd2be1a23a6c777f461eca3c0fc53cb9cb95c13c1790671af027"
           }
         ]
       },
@@ -5318,7 +5364,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "3a67f5a580b20bd31d0d2dfe728d1966d7d22111e3fb92b64cd83627ba6feffc"
+            "sourceSha256": "c28afc39d971bd2be1a23a6c777f461eca3c0fc53cb9cb95c13c1790671af027"
           }
         ]
       },
@@ -5356,7 +5402,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "3a67f5a580b20bd31d0d2dfe728d1966d7d22111e3fb92b64cd83627ba6feffc"
+            "sourceSha256": "c28afc39d971bd2be1a23a6c777f461eca3c0fc53cb9cb95c13c1790671af027"
           }
         ]
       },
@@ -5394,7 +5440,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "3a67f5a580b20bd31d0d2dfe728d1966d7d22111e3fb92b64cd83627ba6feffc"
+            "sourceSha256": "c28afc39d971bd2be1a23a6c777f461eca3c0fc53cb9cb95c13c1790671af027"
           }
         ]
       },
@@ -5423,7 +5469,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "3a67f5a580b20bd31d0d2dfe728d1966d7d22111e3fb92b64cd83627ba6feffc"
+            "sourceSha256": "c28afc39d971bd2be1a23a6c777f461eca3c0fc53cb9cb95c13c1790671af027"
           }
         ]
       },
@@ -5443,7 +5489,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "3a67f5a580b20bd31d0d2dfe728d1966d7d22111e3fb92b64cd83627ba6feffc"
+            "sourceSha256": "c28afc39d971bd2be1a23a6c777f461eca3c0fc53cb9cb95c13c1790671af027"
           }
         ]
       },
@@ -5458,18 +5504,12 @@
       ],
       "valueArity": "not-specified-by-doc-table",
       "documentationUrl": "https://code.claude.com/docs/en/cli-reference#cli-flags",
-      "versionMarkers": [
-        {
-          "kind": "min",
-          "version": "2.1.186",
-          "characterOffset": 105
-        }
-      ],
+      "versionMarkers": [],
       "provenance": {
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "3a67f5a580b20bd31d0d2dfe728d1966d7d22111e3fb92b64cd83627ba6feffc"
+            "sourceSha256": "c28afc39d971bd2be1a23a6c777f461eca3c0fc53cb9cb95c13c1790671af027"
           }
         ]
       },
@@ -5489,7 +5529,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "3a67f5a580b20bd31d0d2dfe728d1966d7d22111e3fb92b64cd83627ba6feffc"
+            "sourceSha256": "c28afc39d971bd2be1a23a6c777f461eca3c0fc53cb9cb95c13c1790671af027"
           }
         ]
       },
@@ -5518,7 +5558,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "3a67f5a580b20bd31d0d2dfe728d1966d7d22111e3fb92b64cd83627ba6feffc"
+            "sourceSha256": "c28afc39d971bd2be1a23a6c777f461eca3c0fc53cb9cb95c13c1790671af027"
           }
         ]
       },
@@ -5547,7 +5587,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "3a67f5a580b20bd31d0d2dfe728d1966d7d22111e3fb92b64cd83627ba6feffc"
+            "sourceSha256": "c28afc39d971bd2be1a23a6c777f461eca3c0fc53cb9cb95c13c1790671af027"
           }
         ]
       },
@@ -5588,7 +5628,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "3a67f5a580b20bd31d0d2dfe728d1966d7d22111e3fb92b64cd83627ba6feffc"
+            "sourceSha256": "c28afc39d971bd2be1a23a6c777f461eca3c0fc53cb9cb95c13c1790671af027"
           }
         ]
       },
@@ -5620,7 +5660,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "3a67f5a580b20bd31d0d2dfe728d1966d7d22111e3fb92b64cd83627ba6feffc"
+            "sourceSha256": "c28afc39d971bd2be1a23a6c777f461eca3c0fc53cb9cb95c13c1790671af027"
           }
         ]
       },
@@ -5707,6 +5747,11 @@
     {
       "name": "--author-email",
       "documentedTopLevel": false,
+      "exposedByHelpProbe": true
+    },
+    {
+      "name": "--autocompact",
+      "documentedTopLevel": true,
       "exposedByHelpProbe": true
     },
     {
@@ -5853,6 +5898,11 @@
       "name": "--email",
       "documentedTopLevel": false,
       "exposedByHelpProbe": true
+    },
+    {
+      "name": "--enable-auto-mode",
+      "documentedTopLevel": true,
+      "exposedByHelpProbe": false
     },
     {
       "name": "--env",
@@ -6335,5 +6385,5 @@
       "exposedByHelpProbe": true
     }
   ],
-  "unclassifiedStaticCandidateCount": 3196
+  "unclassifiedStaticCandidateCount": 3193
 }
