@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "artifactKind": "release-review-catalog",
-  "claudeCodeVersion": "2.1.220",
+  "claudeCodeVersion": "2.1.224",
   "surface": {
     "product": "Claude Code",
     "interface": "release-review-evidence",
@@ -14,7 +14,268 @@
   "releaseHints": [
     {
       "sourceLine": 5,
-      "bulletSha256": "2433a5290518aeee89fc67e15b7c5583f414705b38300bfe19206f34a9ee30e1",
+      "bulletSha256": "24edf267605fb81710ec7e3ce5a72b8a8f9834b3bfa6ea1f57c39a086b3c3f34",
+      "changeKind": "added",
+      "facts": [],
+      "ambiguousCodeTokens": [
+        "claude self-hosted-runner"
+      ],
+      "needsReview": true,
+      "reviewReasons": [
+        "ambiguous-code-token",
+        "no-typed-identifier-extracted"
+      ]
+    },
+    {
+      "sourceLine": 6,
+      "bulletSha256": "e4c7005e19e57e9876afe8cf85bacb4b2fc4e84ec70cea3cebb9da5eeb31a968",
+      "changeKind": "added",
+      "facts": [],
+      "ambiguousCodeTokens": [
+        "archive"
+      ],
+      "needsReview": true,
+      "reviewReasons": [
+        "ambiguous-code-token",
+        "no-typed-identifier-extracted"
+      ]
+    },
+    {
+      "sourceLine": 7,
+      "bulletSha256": "3d0afec53fb70785895e1d7028d9b7792217e579e05dcb992e3d2fe0efa9372a",
+      "changeKind": "added",
+      "facts": [],
+      "ambiguousCodeTokens": [],
+      "needsReview": true,
+      "reviewReasons": [
+        "no-typed-identifier-extracted"
+      ]
+    },
+    {
+      "sourceLine": 8,
+      "bulletSha256": "b98b7fd249c51317c78976b8cd3ad62ee7693bb85fe38ef55b20223b5c740dc2",
+      "changeKind": "added",
+      "facts": [
+        {
+          "kind": "environment-variable",
+          "identifier": "ANTHROPIC_BEDROCK_REGION_PREFIX",
+          "confidence": "high"
+        }
+      ],
+      "ambiguousCodeTokens": [
+        "AWS_REGION"
+      ],
+      "needsReview": true,
+      "reviewReasons": [
+        "possible-schema-or-catalog-impact",
+        "ambiguous-code-token"
+      ]
+    },
+    {
+      "sourceLine": 9,
+      "bulletSha256": "aa80d1a62bd3c469c91e5625c76c330823ce301428b0762c5a983bd33e3e6cd1",
+      "changeKind": "added",
+      "facts": [],
+      "ambiguousCodeTokens": [
+        "crossSessionInbound",
+        "dialogExpiry"
+      ],
+      "needsReview": true,
+      "reviewReasons": [
+        "ambiguous-code-token",
+        "no-typed-identifier-extracted"
+      ]
+    },
+    {
+      "sourceLine": 10,
+      "bulletSha256": "2ab589fef22cb1bbdb849404aed0a9164adb97343a197d2c5ffa707a7f4c5c16",
+      "changeKind": "added",
+      "facts": [
+        {
+          "kind": "cli-option",
+          "identifier": "--settings",
+          "confidence": "high"
+        }
+      ],
+      "ambiguousCodeTokens": [
+        "extract",
+        "onExtractNoMatch",
+        "decode: \"jwt\"",
+        "maskClaims",
+        "awsPairs",
+        "sigv4",
+        "network.tlsTerminate"
+      ],
+      "needsReview": true,
+      "reviewReasons": [
+        "possible-schema-or-catalog-impact",
+        "ambiguous-code-token"
+      ]
+    },
+    {
+      "sourceLine": 11,
+      "bulletSha256": "81aaa275848dd5d84d13a68186f3abc05f53e88679e9b5b16df96de88fe776ba",
+      "changeKind": "added",
+      "facts": [],
+      "ambiguousCodeTokens": [
+        "SendMessage",
+        "ListAgents"
+      ],
+      "needsReview": true,
+      "reviewReasons": [
+        "ambiguous-code-token",
+        "no-typed-identifier-extracted"
+      ]
+    },
+    {
+      "sourceLine": 12,
+      "bulletSha256": "9f92309e8e0fc6dcbbde08ea7bf79ec050545505aa76957939de92757aaa3408",
+      "changeKind": "fixed",
+      "facts": [
+        {
+          "kind": "slash-command",
+          "identifier": "/resume",
+          "confidence": "medium"
+        }
+      ],
+      "ambiguousCodeTokens": [],
+      "needsReview": true,
+      "reviewReasons": []
+    },
+    {
+      "sourceLine": 13,
+      "bulletSha256": "6411f9f32732067f1155dd9bd0a4a5cb997278c18d19ed2d429eb17bfe50eee2",
+      "changeKind": "fixed",
+      "facts": [],
+      "ambiguousCodeTokens": [
+        "SendMessage"
+      ],
+      "needsReview": true,
+      "reviewReasons": [
+        "ambiguous-code-token",
+        "no-typed-identifier-extracted"
+      ]
+    },
+    {
+      "sourceLine": 14,
+      "bulletSha256": "ba1c01addedcd06d34b86960802480b89ca12b79f56d4c3758b0c4bb33c159e6",
+      "changeKind": "fixed",
+      "facts": [],
+      "ambiguousCodeTokens": [
+        "denyRead: \"~/.aws/\""
+      ],
+      "needsReview": true,
+      "reviewReasons": [
+        "ambiguous-code-token",
+        "no-typed-identifier-extracted"
+      ]
+    },
+    {
+      "sourceLine": 15,
+      "bulletSha256": "5a8c9598acab70693a5912222a2ebb02b9eea6f95ed662ce41f43793ab1589f4",
+      "changeKind": "fixed",
+      "facts": [],
+      "ambiguousCodeTokens": [],
+      "needsReview": true,
+      "reviewReasons": [
+        "no-typed-identifier-extracted"
+      ]
+    },
+    {
+      "sourceLine": 16,
+      "bulletSha256": "809957bd8955cef653fd29aa57e01372e8151830ccc795f046ce944c6e0fa0eb",
+      "changeKind": "fixed",
+      "facts": [],
+      "ambiguousCodeTokens": [],
+      "needsReview": true,
+      "reviewReasons": [
+        "no-typed-identifier-extracted"
+      ]
+    },
+    {
+      "sourceLine": 17,
+      "bulletSha256": "f81a259796feb4570d67862ad1ddaa2c9d0a962f5dbe36f62a4dd8846479c7e9",
+      "changeKind": "fixed",
+      "facts": [],
+      "ambiguousCodeTokens": [],
+      "needsReview": true,
+      "reviewReasons": [
+        "no-typed-identifier-extracted"
+      ]
+    },
+    {
+      "sourceLine": 18,
+      "bulletSha256": "c0726e2f5413ae7fe35f5149119d3338b462d7fa445fd54223bd47838ddd8137",
+      "changeKind": "fixed",
+      "facts": [],
+      "ambiguousCodeTokens": [],
+      "needsReview": true,
+      "reviewReasons": [
+        "no-typed-identifier-extracted"
+      ]
+    },
+    {
+      "sourceLine": 19,
+      "bulletSha256": "3db0fe99637d788bb5f9cd11a720ff06348fd280769edfb8df2f36d04762f1b1",
+      "changeKind": "fixed",
+      "facts": [],
+      "ambiguousCodeTokens": [],
+      "needsReview": true,
+      "reviewReasons": [
+        "no-typed-identifier-extracted"
+      ]
+    },
+    {
+      "sourceLine": 20,
+      "bulletSha256": "78ec5adc2bafa413a5aa3870df8a233940c62eb6078a010b31cdff9a70c9cb68",
+      "changeKind": "fixed",
+      "facts": [],
+      "ambiguousCodeTokens": [],
+      "needsReview": true,
+      "reviewReasons": [
+        "no-typed-identifier-extracted"
+      ]
+    },
+    {
+      "sourceLine": 21,
+      "bulletSha256": "ab0b747a4fc66925854ada06eeadc9081d7e5aaf82c2e75956488e5574a24e28",
+      "changeKind": "fixed",
+      "facts": [],
+      "ambiguousCodeTokens": [],
+      "needsReview": true,
+      "reviewReasons": [
+        "no-typed-identifier-extracted"
+      ]
+    },
+    {
+      "sourceLine": 22,
+      "bulletSha256": "caf0a7347e6a7913a72358cc1b25f4850477dd1636a6938e05f15e8b4839fd63",
+      "changeKind": "fixed",
+      "facts": [
+        {
+          "kind": "slash-command",
+          "identifier": "/clear",
+          "confidence": "medium"
+        }
+      ],
+      "ambiguousCodeTokens": [],
+      "needsReview": true,
+      "reviewReasons": []
+    },
+    {
+      "sourceLine": 23,
+      "bulletSha256": "bf4c3c8f214bc665af02c5aa5c9b8630c0f5cfbc3087be263fedf2d736c51869",
+      "changeKind": "fixed",
+      "facts": [],
+      "ambiguousCodeTokens": [],
+      "needsReview": true,
+      "reviewReasons": [
+        "no-typed-identifier-extracted"
+      ]
+    },
+    {
+      "sourceLine": 24,
+      "bulletSha256": "8864249608cfe2d33ece7f5fabfbe7ae8c9213dca638fa3e41fd053fdb75043a",
       "changeKind": "changed",
       "facts": [],
       "ambiguousCodeTokens": [],
@@ -22,12 +283,156 @@
       "reviewReasons": [
         "no-typed-identifier-extracted"
       ]
+    },
+    {
+      "sourceLine": 25,
+      "bulletSha256": "8a21c091b69b2aa61ceacdfdf907df26535e8c1eb49ed840d548a6262b53e798",
+      "changeKind": "changed",
+      "facts": [
+        {
+          "kind": "slash-command",
+          "identifier": "/clear",
+          "confidence": "medium"
+        }
+      ],
+      "ambiguousCodeTokens": [],
+      "needsReview": true,
+      "reviewReasons": []
+    },
+    {
+      "sourceLine": 26,
+      "bulletSha256": "c482e5c56b95a043d32bea9f9fead5036172a49a321da4a0b295489519c33ea1",
+      "changeKind": "changed",
+      "facts": [],
+      "ambiguousCodeTokens": [],
+      "needsReview": true,
+      "reviewReasons": [
+        "no-typed-identifier-extracted"
+      ]
+    },
+    {
+      "sourceLine": 27,
+      "bulletSha256": "576f309943e38a1db2f890b74ce0dc307d6612e2021a668ca4dc3c52835c7c78",
+      "changeKind": "removed",
+      "facts": [],
+      "ambiguousCodeTokens": [],
+      "needsReview": true,
+      "reviewReasons": [
+        "no-typed-identifier-extracted"
+      ]
+    },
+    {
+      "sourceLine": 28,
+      "bulletSha256": "b9d18961a49722b59b4a0c469affc1b1d3a7a44de4d5d9b77df0b1d735bb7837",
+      "changeKind": "changed",
+      "facts": [],
+      "ambiguousCodeTokens": [],
+      "needsReview": true,
+      "reviewReasons": [
+        "no-typed-identifier-extracted"
+      ]
+    },
+    {
+      "sourceLine": 29,
+      "bulletSha256": "1201d70c856940cce3511ba51ad45969223c5c316b741afab41f58e45e665cfb",
+      "changeKind": "changed",
+      "facts": [],
+      "ambiguousCodeTokens": [
+        "CLAUDE.md"
+      ],
+      "needsReview": true,
+      "reviewReasons": [
+        "ambiguous-code-token",
+        "no-typed-identifier-extracted"
+      ]
+    },
+    {
+      "sourceLine": 30,
+      "bulletSha256": "02eb73d5afc446440b83830d024a1fad4e3896c9acdf6481e26ad26ab53c3321",
+      "changeKind": "changed",
+      "facts": [],
+      "ambiguousCodeTokens": [],
+      "needsReview": true,
+      "reviewReasons": [
+        "no-typed-identifier-extracted"
+      ]
+    },
+    {
+      "sourceLine": 31,
+      "bulletSha256": "77d2595a7d0be9082353ced537d037ac14c7a8d52958874942ccca6703c9fb08",
+      "changeKind": "changed",
+      "facts": [],
+      "ambiguousCodeTokens": [],
+      "needsReview": true,
+      "reviewReasons": [
+        "no-typed-identifier-extracted"
+      ]
+    },
+    {
+      "sourceLine": 32,
+      "bulletSha256": "e9ffdef5a7d32951bd9c56d4a1eaf8a193cacc028bf90246fcd6b1bc439a201a",
+      "changeKind": "changed",
+      "facts": [
+        {
+          "kind": "slash-command",
+          "identifier": "/resume",
+          "confidence": "medium"
+        }
+      ],
+      "ambiguousCodeTokens": [],
+      "needsReview": true,
+      "reviewReasons": []
+    },
+    {
+      "sourceLine": 33,
+      "bulletSha256": "bc25abc607b781eea62e9413f035717789ef827605567e64c4b40e603c600fc5",
+      "changeKind": "changed",
+      "facts": [],
+      "ambiguousCodeTokens": [],
+      "needsReview": true,
+      "reviewReasons": [
+        "no-typed-identifier-extracted"
+      ]
+    },
+    {
+      "sourceLine": 34,
+      "bulletSha256": "c5552d58455813216f650fd490fc0282746396e5ff122b7432ada36656fff4ad",
+      "changeKind": "fixed",
+      "facts": [
+        {
+          "kind": "cli-option",
+          "identifier": "--resume",
+          "confidence": "high"
+        }
+      ],
+      "ambiguousCodeTokens": [],
+      "needsReview": true,
+      "reviewReasons": [
+        "possible-schema-or-catalog-impact"
+      ]
+    },
+    {
+      "sourceLine": 35,
+      "bulletSha256": "8de40081851d81defd14a1ffc9999283732be2b351b3cd58392ef0acf1df3afd",
+      "changeKind": "changed",
+      "facts": [
+        {
+          "kind": "setting",
+          "identifier": "remoteControlAtStartup",
+          "confidence": "high"
+        }
+      ],
+      "ambiguousCodeTokens": [],
+      "needsReview": true,
+      "reviewReasons": [
+        "possible-schema-or-catalog-impact"
+      ]
     }
   ],
   "releaseHintSource": {
     "changelog": "matchingTagChangelog",
     "githubReleaseNotes": "githubReleaseNotes",
-    "publishedAt": "2026-07-25T01:35:55Z"
+    "publishedAt": "2026-08-07T04:00:59Z"
   },
   "releaseHintPolicy": "Hints never mutate schemas or catalogs automatically. Deterministic evidence and validation are required; ambiguous entries enter human review.",
   "rawProseRedistributed": false,
@@ -64,7 +469,7 @@
     "x-status": "exact-release-binary-validator-corroborated",
     "x-binary": {
       "source": "platformBinary",
-      "sha256": "674f61f20ff306f3100cf9200e4c36c4b70278b5bef2884549819b942a89c863",
+      "sha256": "a2b5add7dc4bcd8eaa029f4e8bdac4df7769b4073698db7989d206baf9419c2d",
       "pathInPackage": "package/claude",
       "commandBindingPatternCorroborated": true,
       "commandBindingValidatorMessageCorroborated": true

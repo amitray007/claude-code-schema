@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://github.com/amitray007/claude-code-schema/releases/download/v2.1.220/global-config.schema.json",
+  "$id": "https://github.com/amitray007/claude-code-schema/releases/download/v2.1.224/global-config.schema.json",
   "title": "Claude Code global config (~/.claude.json)",
   "type": "object",
   "properties": {
@@ -14,7 +14,7 @@
         "evidence": [
           {
             "source": "settingsDocsExpanded",
-            "sourceSha256": "72bd5d4c01128ec6e558eee97ed9bea813b2bd5af43a83ac0afb4c8a61939d81",
+            "sourceSha256": "f939ca61a9d770fd11e1f39a1043ce9e94539bc2f9cec5acba57b93aa3e7b1a0",
             "heading": "Global config settings",
             "fact": "existence-and-example",
             "method": "official-markdown-table"
@@ -33,7 +33,7 @@
         "evidence": [
           {
             "source": "settingsDocsExpanded",
-            "sourceSha256": "72bd5d4c01128ec6e558eee97ed9bea813b2bd5af43a83ac0afb4c8a61939d81",
+            "sourceSha256": "f939ca61a9d770fd11e1f39a1043ce9e94539bc2f9cec5acba57b93aa3e7b1a0",
             "heading": "Global config settings",
             "fact": "existence-and-example",
             "method": "official-markdown-table"
@@ -52,7 +52,7 @@
         "evidence": [
           {
             "source": "settingsDocsExpanded",
-            "sourceSha256": "72bd5d4c01128ec6e558eee97ed9bea813b2bd5af43a83ac0afb4c8a61939d81",
+            "sourceSha256": "f939ca61a9d770fd11e1f39a1043ce9e94539bc2f9cec5acba57b93aa3e7b1a0",
             "heading": "Global config settings",
             "fact": "existence-and-example",
             "method": "official-markdown-table"
@@ -71,7 +71,7 @@
         "evidence": [
           {
             "source": "settingsDocsExpanded",
-            "sourceSha256": "72bd5d4c01128ec6e558eee97ed9bea813b2bd5af43a83ac0afb4c8a61939d81",
+            "sourceSha256": "f939ca61a9d770fd11e1f39a1043ce9e94539bc2f9cec5acba57b93aa3e7b1a0",
             "heading": "Global config settings",
             "fact": "existence-and-example",
             "method": "official-markdown-table"
@@ -90,7 +90,7 @@
         "evidence": [
           {
             "source": "settingsDocsExpanded",
-            "sourceSha256": "72bd5d4c01128ec6e558eee97ed9bea813b2bd5af43a83ac0afb4c8a61939d81",
+            "sourceSha256": "f939ca61a9d770fd11e1f39a1043ce9e94539bc2f9cec5acba57b93aa3e7b1a0",
             "heading": "Global config settings",
             "fact": "existence-and-example",
             "method": "official-markdown-table"
@@ -109,43 +109,17 @@
         "evidence": [
           {
             "source": "settingsDocsExpanded",
-            "sourceSha256": "72bd5d4c01128ec6e558eee97ed9bea813b2bd5af43a83ac0afb4c8a61939d81",
+            "sourceSha256": "f939ca61a9d770fd11e1f39a1043ce9e94539bc2f9cec5acba57b93aa3e7b1a0",
             "heading": "Global config settings",
             "fact": "existence-and-example",
             "method": "official-markdown-table"
           }
         ]
       }
-    },
-    "workflowSizeGuideline": {
-      "type": "string",
-      "x-min-version": "2.1.203",
-      "examples": [
-        "small"
-      ],
-      "x-type-status": "independently-derived",
-      "x-provenance": {
-        "evidence": [
-          {
-            "source": "settingsDocsExpanded",
-            "sourceSha256": "72bd5d4c01128ec6e558eee97ed9bea813b2bd5af43a83ac0afb4c8a61939d81",
-            "heading": "Global config settings",
-            "fact": "existence-and-example",
-            "method": "official-markdown-table"
-          }
-        ]
-      },
-      "default": "unrestricted",
-      "enum": [
-        "unrestricted",
-        "small",
-        "medium",
-        "large"
-      ]
     }
   },
   "additionalProperties": true,
-  "x-claude-code-version": "2.1.220",
+  "x-claude-code-version": "2.1.224",
   "x-artifact-kind": "global-config-json-schema",
   "x-surface-path": "~/.claude.json",
   "x-generator-version": "0.1.0"
