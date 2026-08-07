@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "artifactKind": "environment-surface-catalog",
-  "claudeCodeVersion": "2.1.220",
+  "claudeCodeVersion": "2.1.224",
   "surface": {
     "product": "Claude Code CLI",
     "interface": "process-environment",
@@ -72,6 +72,7 @@
     "CLAUDE_AUTO_BACKGROUND_TASKS",
     "CLAUDE_AX_SCREEN_READER",
     "CLAUDE_BASH_MAINTAIN_PROJECT_WORKING_DIR",
+    "CLAUDE_BYTE_STREAM_IDLE_TIMEOUT_MS",
     "CLAUDE_CLIENT_PRESENCE_FILE",
     "CLAUDE_CODE_ACCESSIBILITY",
     "CLAUDE_CODE_ADDITIONAL_DIRECTORIES_CLAUDE_MD",
@@ -89,10 +90,12 @@
     "CLAUDE_CODE_CLIENT_CERT",
     "CLAUDE_CODE_CLIENT_KEY",
     "CLAUDE_CODE_CLIENT_KEY_PASSPHRASE",
+    "CLAUDE_CODE_CONNECT_TIMEOUT_MS",
     "CLAUDE_CODE_DEBUG_LOGS_DIR",
     "CLAUDE_CODE_DEBUG_LOG_LEVEL",
     "CLAUDE_CODE_DISABLE_1M_CONTEXT",
     "CLAUDE_CODE_DISABLE_ADAPTIVE_THINKING",
+    "CLAUDE_CODE_DISABLE_ADMIN_ENV_UNION",
     "CLAUDE_CODE_DISABLE_ADVISOR_TOOL",
     "CLAUDE_CODE_DISABLE_AGENT_VIEW",
     "CLAUDE_CODE_DISABLE_ALTERNATE_SCREEN",
@@ -132,6 +135,7 @@
     "CLAUDE_CODE_ENABLE_FEEDBACK_SURVEY_FOR_OTEL",
     "CLAUDE_CODE_ENABLE_FINE_GRAINED_TOOL_STREAMING",
     "CLAUDE_CODE_ENABLE_GATEWAY_MODEL_DISCOVERY",
+    "CLAUDE_CODE_ENABLE_OPUS_4_7_FAST_MODE",
     "CLAUDE_CODE_ENABLE_PROMPT_SUGGESTION",
     "CLAUDE_CODE_ENABLE_TASKS",
     "CLAUDE_CODE_ENABLE_TELEMETRY",
@@ -171,6 +175,7 @@
     "CLAUDE_CODE_OAUTH_REFRESH_TOKEN",
     "CLAUDE_CODE_OAUTH_SCOPES",
     "CLAUDE_CODE_OAUTH_TOKEN",
+    "CLAUDE_CODE_OPUS_4_6_FAST_MODE_OVERRIDE",
     "CLAUDE_CODE_OTEL_CONTENT_MAX_LENGTH",
     "CLAUDE_CODE_OTEL_DIAG_STDERR",
     "CLAUDE_CODE_OTEL_FLUSH_TIMEOUT_MS",
@@ -286,6 +291,7 @@
     "MCP_CLIENT_SECRET",
     "MCP_CONNECTION_NONBLOCKING",
     "MCP_CONNECT_TIMEOUT_MS",
+    "MCP_DISCOVERY_CACHE",
     "MCP_OAUTH_CALLBACK_PORT",
     "MCP_REMOTE_SERVER_CONNECTION_BATCH_SIZE",
     "MCP_SERVER_CONNECTION_BATCH_SIZE",
@@ -413,7 +419,7 @@
   ],
   "binaryEvidence": {
     "platformPackage": "@anthropic-ai/claude-code-linux-x64",
-    "binarySha256": "674f61f20ff306f3100cf9200e4c36c4b70278b5bef2884549819b942a89c863",
+    "binarySha256": "a2b5add7dc4bcd8eaa029f4e8bdac4df7769b4073698db7989d206baf9419c2d",
     "policy": "Static strings prove token presence only. Binary-only values are candidates, not public API."
   },
   "staticBinaryCandidates": [
@@ -448,6 +454,10 @@
     {
       "name": "ANTHROPIC_BEDROCK_MANTLE_BASE_URL",
       "documented": true
+    },
+    {
+      "name": "ANTHROPIC_BEDROCK_REGION_PREFIX",
+      "documented": false
     },
     {
       "name": "ANTHROPIC_BEDROCK_SERVICE_TIER",
@@ -742,11 +752,35 @@
       "documented": false
     },
     {
+      "name": "CLAUDE_CODE_ARTIFACTS_API_TOKEN",
+      "documented": false
+    },
+    {
+      "name": "CLAUDE_CODE_ARTIFACT_ASSET_BASE_URL",
+      "documented": false
+    },
+    {
       "name": "CLAUDE_CODE_ARTIFACT_AUTO_OPEN",
       "documented": true
     },
     {
+      "name": "CLAUDE_CODE_ARTIFACT_COMMENTS",
+      "documented": false
+    },
+    {
+      "name": "CLAUDE_CODE_ARTIFACT_COMMENTS_AUTOREACT",
+      "documented": false
+    },
+    {
+      "name": "CLAUDE_CODE_ARTIFACT_DB",
+      "documented": false
+    },
+    {
       "name": "CLAUDE_CODE_ARTIFACT_DIRECT_UPLOAD",
+      "documented": false
+    },
+    {
+      "name": "CLAUDE_CODE_ARTIFACT_LIVE_BASE_URL",
       "documented": false
     },
     {
@@ -774,7 +808,7 @@
       "documented": true
     },
     {
-      "name": "CLAUDE_CODE_AUTO_MODE_CLASSIFIER_QUEUE",
+      "name": "CLAUDE_CODE_AUTO_MODE_CLASSIFY_ASK_USER_QUESTION",
       "documented": false
     },
     {
@@ -819,10 +853,6 @@
     },
     {
       "name": "CLAUDE_CODE_AUTO_MODE_REPO_VISIBILITY",
-      "documented": false
-    },
-    {
-      "name": "CLAUDE_CODE_AUTO_MODE_SIBLING_CONTEXT",
       "documented": false
     },
     {
@@ -994,6 +1024,10 @@
       "documented": true
     },
     {
+      "name": "CLAUDE_CODE_DISABLE_ADMIN_ENV_UNION",
+      "documented": true
+    },
+    {
       "name": "CLAUDE_CODE_DISABLE_ADVISOR_TOOL",
       "documented": true
     },
@@ -1156,6 +1190,10 @@
     {
       "name": "CLAUDE_CODE_DISABLE_THINKING",
       "documented": true
+    },
+    {
+      "name": "CLAUDE_CODE_DISABLE_UNKNOWN_MODEL_WINDOW_ENFORCEMENT",
+      "documented": false
     },
     {
       "name": "CLAUDE_CODE_DISABLE_VIRTUAL_SCROLL",
@@ -1450,6 +1488,10 @@
       "documented": false
     },
     {
+      "name": "CLAUDE_CODE_HARBOR_KITE",
+      "documented": false
+    },
+    {
       "name": "CLAUDE_CODE_HERON_TALLOW",
       "documented": false
     },
@@ -1522,10 +1564,6 @@
       "documented": false
     },
     {
-      "name": "CLAUDE_CODE_INVESTIGATE_FIRST",
-      "documented": false
-    },
-    {
       "name": "CLAUDE_CODE_INVOKED_SKILLS",
       "documented": false
     },
@@ -1563,10 +1601,6 @@
     },
     {
       "name": "CLAUDE_CODE_MANAGED_SETTINGS_PATH",
-      "documented": false
-    },
-    {
-      "name": "CLAUDE_CODE_MARL_CORMORANT",
       "documented": false
     },
     {
@@ -1627,6 +1661,10 @@
     },
     {
       "name": "CLAUDE_CODE_MEMORY_PUSH_DELETE_MODE",
+      "documented": false
+    },
+    {
+      "name": "CLAUDE_CODE_MESSAGING_SOCKET",
       "documented": false
     },
     {
@@ -1714,6 +1752,10 @@
       "documented": true
     },
     {
+      "name": "CLAUDE_CODE_PARCHMENT_FERN",
+      "documented": false
+    },
+    {
       "name": "CLAUDE_CODE_PARKED_PERMISSION_WAIT_MS",
       "documented": false
     },
@@ -1735,6 +1777,10 @@
     },
     {
       "name": "CLAUDE_CODE_PEWTER_OWL_TOOL",
+      "documented": false
+    },
+    {
+      "name": "CLAUDE_CODE_PLAN_ARTIFACTS",
       "documented": false
     },
     {
@@ -1775,10 +1821,6 @@
     },
     {
       "name": "CLAUDE_CODE_PLUGIN_USE_ZIP_CACHE",
-      "documented": false
-    },
-    {
-      "name": "CLAUDE_CODE_POST_FOR_SESSION_INGRESS_V2",
       "documented": false
     },
     {
@@ -1891,6 +1933,10 @@
     },
     {
       "name": "CLAUDE_CODE_REMOTE_SESSION_ORIGIN",
+      "documented": false
+    },
+    {
+      "name": "CLAUDE_CODE_REMOTE_SESSION_UUID",
       "documented": false
     },
     {
@@ -2230,6 +2276,10 @@
       "documented": false
     },
     {
+      "name": "CLAUDE_CODE_THRIFTY_SONIC",
+      "documented": false
+    },
+    {
       "name": "CLAUDE_CODE_TMPDIR",
       "documented": true
     },
@@ -2286,6 +2336,10 @@
       "documented": false
     },
     {
+      "name": "CLAUDE_CODE_ULTRAREVIEW_QUOTA_FIXTURE",
+      "documented": false
+    },
+    {
       "name": "CLAUDE_CODE_USER_DIALOG_TIMEOUT_MS",
       "documented": false
     },
@@ -2304,6 +2358,10 @@
     {
       "name": "CLAUDE_CODE_USE_BEDROCK",
       "documented": true
+    },
+    {
+      "name": "CLAUDE_CODE_USE_CCR_V2",
+      "documented": false
     },
     {
       "name": "CLAUDE_CODE_USE_COWORK_PLUGINS",
