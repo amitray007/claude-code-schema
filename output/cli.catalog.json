@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
   "artifactKind": "cli-surface-catalog",
-  "claudeCodeVersion": "2.1.226",
+  "claudeCodeVersion": "2.1.227",
   "platformPackage": "@anthropic-ai/claude-code-linux-x64",
-  "binarySha256": "4e9bec1177ce9690e8bd988b710ac24105e70da428dd094c5adcbbe786a55555",
+  "binarySha256": "6832dc3f1797b890b71116e5f2dbbf9a83fd3d0498c235b4b0f9cd0e6e499ad6",
   "probePolicy": {
     "allowedOperations": [
       "--version",
@@ -19,7 +19,7 @@
     "maximumCommands": 80,
     "rawHelpRedistributed": false
   },
-  "versionOutput": "2.1.226 (Claude Code)",
+  "versionOutput": "2.1.227 (Claude Code)",
   "commands": [
     {
       "commandPath": [
@@ -1612,8 +1612,8 @@
       "signal": null,
       "timedOut": false,
       "outputExceeded": false,
-      "helpSha256": "03d9abc4389ddd36f6f7d7cb93a114e7e7b55cf47c07708216c4d381bea65d0f",
-      "helpBytes": 439,
+      "helpSha256": "364346d7fb174a9cf857a1c98ca8f6111427998434b796e1337f26101a0dba3e",
+      "helpBytes": 779,
       "usage": "claude ultrareview [options] [target]",
       "arguments": [
         {
@@ -1638,6 +1638,26 @@
         {
           "names": [
             "--json"
+          ],
+          "valueNotation": null,
+          "valueArity": "none",
+          "variadic": false,
+          "negated": false,
+          "repeatable": false
+        },
+        {
+          "names": [
+            "--no-post"
+          ],
+          "valueNotation": null,
+          "valueArity": "none",
+          "variadic": false,
+          "negated": true,
+          "repeatable": false
+        },
+        {
+          "names": [
+            "--post"
           ],
           "valueNotation": null,
           "valueArity": "none",
@@ -6194,6 +6214,11 @@
       "exposedByHelpProbe": true
     },
     {
+      "name": "--no-post",
+      "documentedTopLevel": false,
+      "exposedByHelpProbe": true
+    },
+    {
       "name": "--no-publish",
       "documentedTopLevel": false,
       "exposedByHelpProbe": true
@@ -6236,6 +6261,11 @@
     {
       "name": "--plugin-url",
       "documentedTopLevel": true,
+      "exposedByHelpProbe": true
+    },
+    {
+      "name": "--post",
+      "documentedTopLevel": false,
       "exposedByHelpProbe": true
     },
     {
@@ -6519,5 +6549,5 @@
       "exposedByHelpProbe": true
     }
   ],
-  "unclassifiedStaticCandidateCount": 3274
+  "unclassifiedStaticCandidateCount": 3276
 }

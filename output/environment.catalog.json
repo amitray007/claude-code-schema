@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "artifactKind": "environment-surface-catalog",
-  "claudeCodeVersion": "2.1.226",
+  "claudeCodeVersion": "2.1.227",
   "surface": {
     "product": "Claude Code CLI",
     "interface": "process-environment",
@@ -423,7 +423,7 @@
   ],
   "binaryEvidence": {
     "platformPackage": "@anthropic-ai/claude-code-linux-x64",
-    "binarySha256": "4e9bec1177ce9690e8bd988b710ac24105e70da428dd094c5adcbbe786a55555",
+    "binarySha256": "6832dc3f1797b890b71116e5f2dbbf9a83fd3d0498c235b4b0f9cd0e6e499ad6",
     "policy": "Static strings prove token presence only. Binary-only values are candidates, not public API."
   },
   "staticBinaryCandidates": [
@@ -608,10 +608,6 @@
       "documented": false
     },
     {
-      "name": "ANTHROPIC_IDENTITY_TOKENP",
-      "documented": false
-    },
-    {
       "name": "ANTHROPIC_IDENTITY_TOKEN_FILE",
       "documented": false
     },
@@ -625,10 +621,6 @@
     },
     {
       "name": "ANTHROPIC_ORGANIZATION_ID",
-      "documented": false
-    },
-    {
-      "name": "ANTHROPIC_ORGANIZATION_IDW",
       "documented": false
     },
     {
@@ -781,6 +773,10 @@
     },
     {
       "name": "CLAUDE_CODE_ARTIFACT_COMMENTS_AUTOREACT",
+      "documented": false
+    },
+    {
+      "name": "CLAUDE_CODE_ARTIFACT_COMMENT_RESPONDER",
       "documented": false
     },
     {
@@ -961,10 +957,6 @@
     },
     {
       "name": "CLAUDE_CODE_COLD_COMPACT",
-      "documented": false
-    },
-    {
-      "name": "CLAUDE_CODE_COMMIT_LOG",
       "documented": false
     },
     {
@@ -1168,10 +1160,6 @@
       "documented": true
     },
     {
-      "name": "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFICI",
-      "documented": false
-    },
-    {
       "name": "CLAUDE_CODE_DISABLE_NONSTREAMING_FALLBACK",
       "documented": true
     },
@@ -1242,10 +1230,6 @@
     {
       "name": "CLAUDE_CODE_EFFORT_LEVEL",
       "documented": true
-    },
-    {
-      "name": "CLAUDE_CODE_EFFORT_LEVELI",
-      "documented": false
     },
     {
       "name": "CLAUDE_CODE_EMIT_SESSION_STATE_EVENTS",
@@ -1504,10 +1488,6 @@
       "documented": false
     },
     {
-      "name": "CLAUDE_CODE_GORSE_PLOVERI",
-      "documented": false
-    },
-    {
       "name": "CLAUDE_CODE_GZIP_REQUEST_BODIES",
       "documented": false
     },
@@ -1537,10 +1517,6 @@
     },
     {
       "name": "CLAUDE_CODE_HOST_AUTH_REFRESH_TIMEOUT_MS",
-      "documented": false
-    },
-    {
-      "name": "CLAUDE_CODE_HOST_AUTH_REFRESH_TIMEOUT_MSI",
       "documented": false
     },
     {
@@ -1688,6 +1664,14 @@
       "documented": true
     },
     {
+      "name": "CLAUDE_CODE_MEMORY_API_BASE_URL",
+      "documented": false
+    },
+    {
+      "name": "CLAUDE_CODE_MEMORY_API_TOKEN",
+      "documented": false
+    },
+    {
       "name": "CLAUDE_CODE_MEMORY_PUSH_DELETE_MODE",
       "documented": false
     },
@@ -1773,10 +1757,6 @@
     },
     {
       "name": "CLAUDE_CODE_OVERRIDE_DATE",
-      "documented": false
-    },
-    {
-      "name": "CLAUDE_CODE_OVERRIDE_DATEW",
       "documented": false
     },
     {
@@ -2008,10 +1988,6 @@
       "documented": true
     },
     {
-      "name": "CLAUDE_CODE_RESUME_PROMPTJ",
-      "documented": false
-    },
-    {
       "name": "CLAUDE_CODE_RESUME_SOURCE_ALIVE",
       "documented": false
     },
@@ -2042,10 +2018,6 @@
     {
       "name": "CLAUDE_CODE_SCROLL_SPEED",
       "documented": true
-    },
-    {
-      "name": "CLAUDE_CODE_SCROLL_SPEEDI",
-      "documented": false
     },
     {
       "name": "CLAUDE_CODE_SDK_HAS_HOST_AUTH_REFRESH",
@@ -2081,10 +2053,6 @@
     },
     {
       "name": "CLAUDE_CODE_SESSION_NAME",
-      "documented": false
-    },
-    {
-      "name": "CLAUDE_CODE_SESSION_NAMEI8",
       "documented": false
     },
     {
@@ -2316,10 +2284,6 @@
       "documented": false
     },
     {
-      "name": "CLAUDE_CODE_TEST_NO_PWSHI",
-      "documented": false
-    },
-    {
       "name": "CLAUDE_CODE_THISTLE_GREBE",
       "documented": false
     },
@@ -2364,10 +2328,6 @@
       "documented": false
     },
     {
-      "name": "CLAUDE_CODE_TOTAL_TOKENS_REMINDER_BUDGETI",
-      "documented": false
-    },
-    {
       "name": "CLAUDE_CODE_TRANSCRIPT_LOCAL_GC",
       "documented": false
     },
@@ -2385,10 +2345,6 @@
     },
     {
       "name": "CLAUDE_CODE_ULTRAREVIEW_PREFLIGHT_FIXTURE",
-      "documented": false
-    },
-    {
-      "name": "CLAUDE_CODE_ULTRAREVIEW_PREFLIGHT_FIXTUREV",
       "documented": false
     },
     {
