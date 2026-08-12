@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "artifactKind": "environment-surface-catalog",
-  "claudeCodeVersion": "2.1.227",
+  "claudeCodeVersion": "2.1.228",
   "surface": {
     "product": "Claude Code CLI",
     "interface": "process-environment",
@@ -44,11 +44,14 @@
     "ANTHROPIC_DEFAULT_SONNET_MODEL_DESCRIPTION",
     "ANTHROPIC_DEFAULT_SONNET_MODEL_NAME",
     "ANTHROPIC_DEFAULT_SONNET_MODEL_SUPPORTED_CAPABILITIES",
+    "ANTHROPIC_FEDERATION_RULE_ID",
     "ANTHROPIC_FOUNDRY_API_KEY",
     "ANTHROPIC_FOUNDRY_AUTH_TOKEN",
     "ANTHROPIC_FOUNDRY_BASE_URL",
     "ANTHROPIC_FOUNDRY_RESOURCE",
     "ANTHROPIC_MODEL",
+    "ANTHROPIC_ORGANIZATION_ID",
+    "ANTHROPIC_PROFILE",
     "ANTHROPIC_SMALL_FAST_MODEL",
     "ANTHROPIC_SMALL_FAST_MODEL_AWS_REGION",
     "ANTHROPIC_VERTEX_BASE_URL",
@@ -72,6 +75,7 @@
     "CLAUDE_AUTOCOMPACT_PCT_OVERRIDE",
     "CLAUDE_AUTO_BACKGROUND_TASKS",
     "CLAUDE_AX_SCREEN_READER",
+    "CLAUDE_AX_STARTUP_QUIET_MS",
     "CLAUDE_BASH_MAINTAIN_PROJECT_WORKING_DIR",
     "CLAUDE_BYTE_STREAM_IDLE_TIMEOUT_MS",
     "CLAUDE_CLIENT_PRESENCE_FILE",
@@ -126,6 +130,7 @@
     "CLAUDE_CODE_DISABLE_POLICY_SKILLS",
     "CLAUDE_CODE_DISABLE_TERMINAL_TITLE",
     "CLAUDE_CODE_DISABLE_THINKING",
+    "CLAUDE_CODE_DISABLE_UNKNOWN_MODEL_WINDOW_ENFORCEMENT",
     "CLAUDE_CODE_DISABLE_VIRTUAL_SCROLL",
     "CLAUDE_CODE_DISABLE_WORKFLOWS",
     "CLAUDE_CODE_EFFORT_LEVEL",
@@ -298,6 +303,7 @@
     "MCP_DISCOVERY_CACHE",
     "MCP_OAUTH_CALLBACK_PORT",
     "MCP_REMOTE_SERVER_CONNECTION_BATCH_SIZE",
+    "MCP_SDK_GENERATION",
     "MCP_SERVER_CONNECTION_BATCH_SIZE",
     "MCP_TIMEOUT",
     "MCP_TOOL_TIMEOUT",
@@ -423,7 +429,7 @@
   ],
   "binaryEvidence": {
     "platformPackage": "@anthropic-ai/claude-code-linux-x64",
-    "binarySha256": "6832dc3f1797b890b71116e5f2dbbf9a83fd3d0498c235b4b0f9cd0e6e499ad6",
+    "binarySha256": "d535985e6941a3eb00179ccd7f52ceb0c6623a0305a518ebc4e6514f84a94c99",
     "policy": "Static strings prove token presence only. Binary-only values are candidates, not public API."
   },
   "staticBinaryCandidates": [
@@ -454,6 +460,10 @@
     {
       "name": "ANTHROPIC_BEDROCK_BASE_URL",
       "documented": true
+    },
+    {
+      "name": "ANTHROPIC_BEDROCK_BASE_URL0",
+      "documented": false
     },
     {
       "name": "ANTHROPIC_BEDROCK_MANTLE_BASE_URL",
@@ -569,7 +579,7 @@
     },
     {
       "name": "ANTHROPIC_FEDERATION_RULE_ID",
-      "documented": false
+      "documented": true
     },
     {
       "name": "ANTHROPIC_FOUNDRY_API_KEY",
@@ -584,8 +594,16 @@
       "documented": true
     },
     {
+      "name": "ANTHROPIC_FOUNDRY_BASE_URL0",
+      "documented": false
+    },
+    {
       "name": "ANTHROPIC_FOUNDRY_RESOURCE",
       "documented": true
+    },
+    {
+      "name": "ANTHROPIC_FOUNDRY_RESOURCE0",
+      "documented": false
     },
     {
       "name": "ANTHROPIC_GOOGLE_CLOUD_BASE_URL",
@@ -621,11 +639,11 @@
     },
     {
       "name": "ANTHROPIC_ORGANIZATION_ID",
-      "documented": false
+      "documented": true
     },
     {
       "name": "ANTHROPIC_PROFILE",
-      "documented": false
+      "documented": true
     },
     {
       "name": "ANTHROPIC_SCOPE",
@@ -642,6 +660,10 @@
     {
       "name": "ANTHROPIC_SMALL_FAST_MODEL",
       "documented": true
+    },
+    {
+      "name": "ANTHROPIC_SMALL_FAST_MODEL0",
+      "documented": false
     },
     {
       "name": "ANTHROPIC_SMALL_FAST_MODEL_AWS_REGION",
@@ -976,6 +998,10 @@
       "documented": false
     },
     {
+      "name": "CLAUDE_CODE_COWORK_FRAME_ARTIFACTS",
+      "documented": false
+    },
+    {
       "name": "CLAUDE_CODE_CUSTOM_OAUTH_URL",
       "documented": false
     },
@@ -1197,7 +1223,7 @@
     },
     {
       "name": "CLAUDE_CODE_DISABLE_UNKNOWN_MODEL_WINDOW_ENFORCEMENT",
-      "documented": false
+      "documented": true
     },
     {
       "name": "CLAUDE_CODE_DISABLE_VIRTUAL_SCROLL",
@@ -1230,6 +1256,10 @@
     {
       "name": "CLAUDE_CODE_EFFORT_LEVEL",
       "documented": true
+    },
+    {
+      "name": "CLAUDE_CODE_EFFORT_LEVELI",
+      "documented": false
     },
     {
       "name": "CLAUDE_CODE_EMIT_SESSION_STATE_EVENTS",
@@ -1280,6 +1310,10 @@
       "documented": true
     },
     {
+      "name": "CLAUDE_CODE_ENABLE_GATEWAY_MODEL_DISCOVERY0",
+      "documented": false
+    },
+    {
       "name": "CLAUDE_CODE_ENABLE_LAUNCH_COMPOSER",
       "documented": false
     },
@@ -1310,6 +1344,10 @@
     {
       "name": "CLAUDE_CODE_ENABLE_TASKS",
       "documented": true
+    },
+    {
+      "name": "CLAUDE_CODE_ENABLE_TASKSI",
+      "documented": false
     },
     {
       "name": "CLAUDE_CODE_ENABLE_TELEMETRY",
@@ -1368,7 +1406,15 @@
       "documented": false
     },
     {
+      "name": "CLAUDE_CODE_EXTRA_METADATA0",
+      "documented": false
+    },
+    {
       "name": "CLAUDE_CODE_FABLE_BRIDGE_DIALOG_TIMEOUT_MS",
+      "documented": false
+    },
+    {
+      "name": "CLAUDE_CODE_FABLE_BRIDGE_DIALOG_TIMEOUT_MS0",
       "documented": false
     },
     {
@@ -1429,6 +1475,10 @@
     },
     {
       "name": "CLAUDE_CODE_FORCE_TIP_ID",
+      "documented": false
+    },
+    {
+      "name": "CLAUDE_CODE_FORCE_TIP_IDI",
       "documented": false
     },
     {
@@ -1497,6 +1547,10 @@
     },
     {
       "name": "CLAUDE_CODE_HERON_TALLOW",
+      "documented": false
+    },
+    {
+      "name": "CLAUDE_CODE_HERON_TALLOWI",
       "documented": false
     },
     {
@@ -1644,6 +1698,10 @@
       "documented": true
     },
     {
+      "name": "CLAUDE_CODE_MAX_WEB_SEARCHES_PER_SESSIONI",
+      "documented": false
+    },
+    {
       "name": "CLAUDE_CODE_MCP_ALLOWLIST_ENV",
       "documented": true
     },
@@ -1678,6 +1736,10 @@
     {
       "name": "CLAUDE_CODE_MESSAGING_SOCKET",
       "documented": true
+    },
+    {
+      "name": "CLAUDE_CODE_MESSAGING_TOKEN",
+      "documented": false
     },
     {
       "name": "CLAUDE_CODE_MOCK_REMOTE_SETTINGS",
@@ -1784,6 +1846,10 @@
       "documented": true
     },
     {
+      "name": "CLAUDE_CODE_PERFORCE_MODEG",
+      "documented": false
+    },
+    {
       "name": "CLAUDE_CODE_PEWTER_OWL",
       "documented": false
     },
@@ -1793,6 +1859,10 @@
     },
     {
       "name": "CLAUDE_CODE_PLAN_ARTIFACTS",
+      "documented": false
+    },
+    {
+      "name": "CLAUDE_CODE_PLAN_ARTIFACTS0",
       "documented": false
     },
     {
@@ -1972,6 +2042,10 @@
       "documented": false
     },
     {
+      "name": "CLAUDE_CODE_REPO_CHECKOUTS0",
+      "documented": false
+    },
+    {
       "name": "CLAUDE_CODE_RESUME_FROM_SESSION",
       "documented": false
     },
@@ -2018,6 +2092,10 @@
     {
       "name": "CLAUDE_CODE_SCROLL_SPEED",
       "documented": true
+    },
+    {
+      "name": "CLAUDE_CODE_SCROLL_SPEEDIZ0",
+      "documented": false
     },
     {
       "name": "CLAUDE_CODE_SDK_HAS_HOST_AUTH_REFRESH",
@@ -2168,6 +2246,10 @@
       "documented": true
     },
     {
+      "name": "CLAUDE_CODE_SUBAGENT_MODEL0",
+      "documented": false
+    },
+    {
       "name": "CLAUDE_CODE_SUBPROCESS_ENV_SCRUB",
       "documented": true
     },
@@ -2184,11 +2266,23 @@
       "documented": false
     },
     {
+      "name": "CLAUDE_CODE_SUPPRESS_SESSION_ATTRIBUTIONI",
+      "documented": false
+    },
+    {
       "name": "CLAUDE_CODE_SYNC_PLUGINS",
       "documented": false
     },
     {
+      "name": "CLAUDE_CODE_SYNC_PLUGINSID",
+      "documented": false
+    },
+    {
       "name": "CLAUDE_CODE_SYNC_PLUGINS_BUFFERED_DOWNLOAD",
+      "documented": false
+    },
+    {
+      "name": "CLAUDE_CODE_SYNC_PLUGINS_BUFFERED_DOWNLOAD0",
       "documented": false
     },
     {
@@ -2256,6 +2350,10 @@
       "documented": true
     },
     {
+      "name": "CLAUDE_CODE_TEAM_TEARDOWN_PARK_TIMEOUT_MSM0",
+      "documented": false
+    },
+    {
       "name": "CLAUDE_CODE_TEE_SDK_STDOUT",
       "documented": false
     },
@@ -2308,8 +2406,16 @@
       "documented": false
     },
     {
+      "name": "CLAUDE_CODE_TMUX_SESSIONI",
+      "documented": false
+    },
+    {
       "name": "CLAUDE_CODE_TMUX_TRUECOLOR",
       "documented": true
+    },
+    {
+      "name": "CLAUDE_CODE_TMUX_TRUECOLOR0",
+      "documented": false
     },
     {
       "name": "CLAUDE_CODE_TODO_REMINDER_MODE",
@@ -2345,6 +2451,10 @@
     },
     {
       "name": "CLAUDE_CODE_ULTRAREVIEW_PREFLIGHT_FIXTURE",
+      "documented": false
+    },
+    {
+      "name": "CLAUDE_CODE_ULTRAREVIEW_PREFLIGHT_FIXTUREH0",
       "documented": false
     },
     {
@@ -2437,6 +2547,10 @@
     },
     {
       "name": "CLAUDE_CODE_WORKFLOW_SIZE_WARNING_AGENTS",
+      "documented": false
+    },
+    {
+      "name": "CLAUDE_CODE_WORKFLOW_SIZE_WARNING_AGENTSI",
       "documented": false
     },
     {
