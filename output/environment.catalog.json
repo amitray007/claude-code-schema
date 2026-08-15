@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "artifactKind": "environment-surface-catalog",
-  "claudeCodeVersion": "2.1.232",
+  "claudeCodeVersion": "2.1.233",
   "surface": {
     "product": "Claude Code CLI",
     "interface": "process-environment",
@@ -123,6 +123,7 @@
     "CLAUDE_CODE_DISABLE_LEGACY_MODEL_REMAP",
     "CLAUDE_CODE_DISABLE_MOUSE",
     "CLAUDE_CODE_DISABLE_MOUSE_CLICKS",
+    "CLAUDE_CODE_DISABLE_MTLS_RELOAD_ON_STALE_CONNECTION",
     "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC",
     "CLAUDE_CODE_DISABLE_NONSTREAMING_FALLBACK",
     "CLAUDE_CODE_DISABLE_NOTIFICATION_PRESENCE_CHECK",
@@ -434,7 +435,7 @@
   ],
   "binaryEvidence": {
     "platformPackage": "@anthropic-ai/claude-code-linux-x64",
-    "binarySha256": "61d23f8749136907d586d5b11831ea8a5234d4c1dea40a5e55c33b52e204c6d1",
+    "binarySha256": "55d281096f57d411ebbdd94dbf5e9ff3accb7c05713e37348c2c11d4b83bf9d9",
     "policy": "Static strings prove token presence only. Binary-only values are candidates, not public API."
   },
   "staticBinaryCandidates": [
@@ -663,10 +664,6 @@
       "documented": true
     },
     {
-      "name": "ANTHROPIC_SMALL_FAST_MODEL3",
-      "documented": false
-    },
-    {
       "name": "ANTHROPIC_SMALL_FAST_MODEL_AWS_REGION",
       "documented": true
     },
@@ -685,10 +682,6 @@
     {
       "name": "ANTHROPIC_VERTEX_BASE_URL",
       "documented": true
-    },
-    {
-      "name": "ANTHROPIC_VERTEX_BASE_URLZ",
-      "documented": false
     },
     {
       "name": "ANTHROPIC_VERTEX_PROJECT_ID",
@@ -876,10 +869,6 @@
     },
     {
       "name": "CLAUDE_CODE_AUTO_MODE_EXTERNAL_PERMISSIONS",
-      "documented": false
-    },
-    {
-      "name": "CLAUDE_CODE_AUTO_MODE_EXTERNAL_PERMISSIONS5",
       "documented": false
     },
     {
@@ -1123,10 +1112,6 @@
       "documented": true
     },
     {
-      "name": "CLAUDE_CODE_DISABLE_BG_SHELL_PRESSURE_REAP3",
-      "documented": false
-    },
-    {
       "name": "CLAUDE_CODE_DISABLE_BUNDLED_SKILLS",
       "documented": true
     },
@@ -1212,7 +1197,7 @@
     },
     {
       "name": "CLAUDE_CODE_DISABLE_MTLS_RELOAD_ON_STALE_CONNECTION",
-      "documented": false
+      "documented": true
     },
     {
       "name": "CLAUDE_CODE_DISABLE_NESTED_CHAIN_IDLE",
@@ -1236,6 +1221,10 @@
     },
     {
       "name": "CLAUDE_CODE_DISABLE_ORG_MEMORY",
+      "documented": false
+    },
+    {
+      "name": "CLAUDE_CODE_DISABLE_PERMISSION_PROMPT_NOTIFY_HOOKS",
       "documented": false
     },
     {
@@ -1379,6 +1368,10 @@
       "documented": true
     },
     {
+      "name": "CLAUDE_CODE_ENABLE_TODO_TOOLS",
+      "documented": false
+    },
+    {
       "name": "CLAUDE_CODE_ENABLE_TOKEN_USAGE_ATTACHMENT",
       "documented": false
     },
@@ -1400,6 +1393,14 @@
     },
     {
       "name": "CLAUDE_CODE_ENVIRONMENT_RUNNER_VERSION",
+      "documented": false
+    },
+    {
+      "name": "CLAUDE_CODE_EVAL_",
+      "documented": false
+    },
+    {
+      "name": "CLAUDE_CODE_EVAL_INTERVIEW_SESSION",
       "documented": false
     },
     {
@@ -1533,10 +1534,6 @@
     {
       "name": "CLAUDE_CODE_GIT_BASH_PATH",
       "documented": true
-    },
-    {
-      "name": "CLAUDE_CODE_GIT_BASH_PATHQ3",
-      "documented": false
     },
     {
       "name": "CLAUDE_CODE_GLOB_HIDDEN",
@@ -1855,10 +1852,6 @@
       "documented": true
     },
     {
-      "name": "CLAUDE_CODE_PERFORCE_MODEA",
-      "documented": false
-    },
-    {
       "name": "CLAUDE_CODE_PEWTER_OWL",
       "documented": false
     },
@@ -2075,6 +2068,10 @@
       "documented": false
     },
     {
+      "name": "CLAUDE_CODE_RETIRE_UNANSWERED_PARKED_PERMISSION",
+      "documented": false
+    },
+    {
       "name": "CLAUDE_CODE_RETRY_WATCHDOG",
       "documented": true
     },
@@ -2152,6 +2149,10 @@
     },
     {
       "name": "CLAUDE_CODE_SKILL_NAME",
+      "documented": false
+    },
+    {
+      "name": "CLAUDE_CODE_SKILL_PROPOSALS",
       "documented": false
     },
     {
@@ -2391,6 +2392,10 @@
       "documented": false
     },
     {
+      "name": "CLAUDE_CODE_TOOL_MEMORY_LIMIT",
+      "documented": false
+    },
+    {
       "name": "CLAUDE_CODE_TOTAL_TOKENS_REMINDER",
       "documented": false
     },
@@ -2492,6 +2497,10 @@
     },
     {
       "name": "CLAUDE_CODE_WALNUT_SPIRE",
+      "documented": false
+    },
+    {
+      "name": "CLAUDE_CODE_WEBFETCH_CACHE_TTL_MS",
       "documented": false
     },
     {
