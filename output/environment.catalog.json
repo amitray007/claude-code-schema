@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "artifactKind": "environment-surface-catalog",
-  "claudeCodeVersion": "2.1.234",
+  "claudeCodeVersion": "2.1.235",
   "surface": {
     "product": "Claude Code CLI",
     "interface": "process-environment",
@@ -163,6 +163,7 @@
     "CLAUDE_CODE_GLOB_HIDDEN",
     "CLAUDE_CODE_GLOB_NO_IGNORE",
     "CLAUDE_CODE_GLOB_TIMEOUT_SECONDS",
+    "CLAUDE_CODE_GOAL_CHECKIN_MINUTES",
     "CLAUDE_CODE_HIDE_CWD",
     "CLAUDE_CODE_IDE_HOST_OVERRIDE",
     "CLAUDE_CODE_IDE_SKIP_AUTO_INSTALL",
@@ -440,7 +441,7 @@
   ],
   "binaryEvidence": {
     "platformPackage": "@anthropic-ai/claude-code-linux-x64",
-    "binarySha256": "3473601ea695d5bf769c5b202844d4cb4fbf723ae995450fcb6973204775c84a",
+    "binarySha256": "bfcf0ae2dbf94b2b6a106074aabf3938b9a10889c3b678e4cb5a00c03274d5d5",
     "policy": "Static strings prove token presence only. Binary-only values are candidates, not public API."
   },
   "staticBinaryCandidates": [
@@ -613,6 +614,10 @@
       "documented": true
     },
     {
+      "name": "ANTHROPIC_FOUNDRY_RESOURCE4",
+      "documented": false
+    },
+    {
       "name": "ANTHROPIC_GOOGLE_CLOUD_BASE_URL",
       "documented": false
     },
@@ -707,6 +712,10 @@
     {
       "name": "CLAUDE_CODE_ACCESSIBILITY",
       "documented": true
+    },
+    {
+      "name": "CLAUDE_CODE_ACCESSIBILITYZ0",
+      "documented": false
     },
     {
       "name": "CLAUDE_CODE_ACCOUNT_TAGGED_ID",
@@ -817,6 +826,10 @@
       "documented": false
     },
     {
+      "name": "CLAUDE_CODE_ARTIFACT_COMMENT_FAST_ACK_FIXED",
+      "documented": false
+    },
+    {
       "name": "CLAUDE_CODE_ARTIFACT_COMMENT_RESPONDER",
       "documented": false
     },
@@ -881,6 +894,10 @@
       "documented": false
     },
     {
+      "name": "CLAUDE_CODE_AUTO_MODE_EXTERNAL_PERMISSIONS1",
+      "documented": false
+    },
+    {
       "name": "CLAUDE_CODE_AUTO_MODE_GIT_STATUS",
       "documented": false
     },
@@ -926,6 +943,10 @@
     },
     {
       "name": "CLAUDE_CODE_BASE_REFS",
+      "documented": false
+    },
+    {
+      "name": "CLAUDE_CODE_BASH_OUTPUT_AUDIENCE_NOTE",
       "documented": false
     },
     {
@@ -1461,6 +1482,10 @@
       "documented": false
     },
     {
+      "name": "CLAUDE_CODE_FABLE_BRIDGE_DIALOG_TIMEOUT_MS1",
+      "documented": false
+    },
+    {
       "name": "CLAUDE_CODE_FILE_READ_MAX_OUTPUT_TOKENS",
       "documented": true
     },
@@ -1574,7 +1599,7 @@
     },
     {
       "name": "CLAUDE_CODE_GOAL_CHECKIN_MINUTES",
-      "documented": false
+      "documented": true
     },
     {
       "name": "CLAUDE_CODE_GORSE_PLOVER",
@@ -1605,6 +1630,10 @@
       "documented": false
     },
     {
+      "name": "CLAUDE_CODE_HOLD_UNANSWERED_PARKED_PERMISSION",
+      "documented": false
+    },
+    {
       "name": "CLAUDE_CODE_HOST_AUTH_ENV_VAR",
       "documented": false
     },
@@ -1622,6 +1651,10 @@
     },
     {
       "name": "CLAUDE_CODE_HOST_PLATFORM",
+      "documented": false
+    },
+    {
+      "name": "CLAUDE_CODE_HOST_PLATFORME",
       "documented": false
     },
     {
@@ -2317,6 +2350,10 @@
       "documented": false
     },
     {
+      "name": "CLAUDE_CODE_SYNC_PLUGINS_DOWNLOAD_STALL_MS0",
+      "documented": false
+    },
+    {
       "name": "CLAUDE_CODE_SYNC_PLUGINS_INSTALL_TIMEOUT_MS",
       "documented": false
     },
@@ -2558,6 +2595,10 @@
     },
     {
       "name": "CLAUDE_CODE_WEBSOCKET_AUTH_FILE_DESCRIPTOR",
+      "documented": false
+    },
+    {
+      "name": "CLAUDE_CODE_WEBSOCKET_AUTH_FILE_DESCRIPTOR0",
       "documented": false
     },
     {
