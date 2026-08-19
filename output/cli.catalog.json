@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
   "artifactKind": "cli-surface-catalog",
-  "claudeCodeVersion": "2.1.234",
+  "claudeCodeVersion": "2.1.235",
   "platformPackage": "@anthropic-ai/claude-code-linux-x64",
-  "binarySha256": "3473601ea695d5bf769c5b202844d4cb4fbf723ae995450fcb6973204775c84a",
+  "binarySha256": "bfcf0ae2dbf94b2b6a106074aabf3938b9a10889c3b678e4cb5a00c03274d5d5",
   "probePolicy": {
     "allowedOperations": [
       "--version",
@@ -19,7 +19,7 @@
     "maximumCommands": 80,
     "rawHelpRedistributed": false
   },
-  "versionOutput": "2.1.234 (Claude Code)",
+  "versionOutput": "2.1.235 (Claude Code)",
   "commands": [
     {
       "commandPath": [
@@ -1377,8 +1377,8 @@
       "signal": null,
       "timedOut": false,
       "outputExceeded": false,
-      "helpSha256": "d0200c3e28b735517aa00866ead8293987ab1f714832a5b2914baf119152369d",
-      "helpBytes": 2436,
+      "helpSha256": "e029f512fdc5b49493360137780910ee18a42427b9fd25d1c23cb116b144d139",
+      "helpBytes": 2583,
       "usage": "claude plugin|plugins [options] [command]",
       "arguments": [],
       "options": [
@@ -2354,8 +2354,8 @@
       "signal": null,
       "timedOut": false,
       "outputExceeded": false,
-      "helpSha256": "e29575c4b50c2af6481f5d97028e78909e2f0c78fa773d3820d38b03d91d458f",
-      "helpBytes": 3582,
+      "helpSha256": "c39efa34f374d86f5f597af3b63fb2951ac327eff7efa1c7610ccfc62669333b",
+      "helpBytes": 4202,
       "usage": "claude plugin eval [options] [command] [target]",
       "arguments": [
         {
@@ -2391,6 +2391,16 @@
             "--case"
           ],
           "valueNotation": "<glob>",
+          "valueArity": "required",
+          "variadic": false,
+          "negated": false,
+          "repeatable": false
+        },
+        {
+          "names": [
+            "--eval-dir"
+          ],
+          "valueNotation": "<dir>",
           "valueArity": "required",
           "variadic": false,
           "negated": false,
@@ -2487,7 +2497,7 @@
           "variadic": false,
           "negated": false,
           "repeatable": false,
-          "defaultDisplay": "./evals/results/<timestamp>/"
+          "defaultDisplay": "./<eval dir>/results/<timestamp>/"
         },
         {
           "names": [
@@ -3345,8 +3355,8 @@
       "signal": null,
       "timedOut": false,
       "outputExceeded": false,
-      "helpSha256": "5280ad7441c977e8d12a63417e79f7e1421ef7e29db462c96c82a29f5553ce6f",
-      "helpBytes": 520,
+      "helpSha256": "be302057435a856c95fef3356049090fcf8110b6102bc088a2f92fecc2ce135b",
+      "helpBytes": 796,
       "usage": "claude plugin eval init [options] [name]",
       "arguments": [
         {
@@ -3366,6 +3376,17 @@
           "variadic": false,
           "negated": false,
           "repeatable": false
+        },
+        {
+          "names": [
+            "--eval-dir"
+          ],
+          "valueNotation": "<dir>",
+          "valueArity": "required",
+          "variadic": false,
+          "negated": false,
+          "repeatable": false,
+          "defaultDisplay": "experimental.evals from the plugin.json in the current directory, else evals/"
         },
         {
           "names": [
@@ -6076,6 +6097,11 @@
       "exposedByHelpProbe": true
     },
     {
+      "name": "--eval-dir",
+      "documentedTopLevel": false,
+      "exposedByHelpProbe": true
+    },
+    {
       "name": "--exclude-dynamic-system-prompt-sections",
       "documentedTopLevel": true,
       "exposedByHelpProbe": true
@@ -6571,5 +6597,5 @@
       "exposedByHelpProbe": true
     }
   ],
-  "unclassifiedStaticCandidateCount": 4414
+  "unclassifiedStaticCandidateCount": 4415
 }
