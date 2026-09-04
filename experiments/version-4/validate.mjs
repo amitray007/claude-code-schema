@@ -58,7 +58,7 @@ accept("command binding compatibility form", keybindings, { bindings: [{ context
 reject("bad nested permission mode", settings, { permissions: { defaultMode: "unsafe" } });
 reject("bad sandbox boolean", settings, { sandbox: { enabled: "yes" } });
 reject("bad hook handler", settings, { hooks: { PostToolUse: [{ hooks: [{ type: "command" }] }] } });
-reject("bad global workflow size", globalConfig, { workflowSizeGuideline: "huge" });
+reject("bad workflow size", settings, { workflowSizeGuideline: "huge" });
 reject("bad desktop allowlist", desktopManaged, { sshHostAllowlist: "example.com" });
 reject("unknown keybinding action", keybindings, { bindings: [{ context: "Chat", bindings: { "ctrl+e": "unknown:action" } }] });
 accept("runtime-compatible unknown action string", keybindingsRuntimeCompat, { bindings: [{ context: "Chat", bindings: { "ctrl+e": "app:openArtifact" } }] });
@@ -71,7 +71,7 @@ const properties = Object.entries(settings.properties).filter(([name]) => name !
 if (properties.some(([name]) => name.includes("."))) throw new Error("Dotted settings must be structurally nested, not literal top-level keys");
 const untyped = properties.filter(([, schema]) => !schema.type && !schema.enum && schema.const === undefined && !schema.anyOf && !schema.oneOf);
 if (untyped.length) throw new Error(`Untyped settings remain: ${untyped.map(([name]) => name).join(", ")}`);
-for (const path of ["permissions.skipDangerousModePermissionPrompt", "worktree.baseRef", "sandbox.network.allowedDomains"]) {
+for (const path of ["skipDangerousModePermissionPrompt", "worktree.baseRef", "sandbox.network.allowedDomains"]) {
   let current = settings;
   for (const part of path.split(".")) current = current.properties?.[part];
   if (!current?.type && !current?.enum && !current?.const) throw new Error(`Missing nested constraint ${path}`);
@@ -80,8 +80,8 @@ if (Object.keys(settings.definitions ?? {}).length < 2) throw new Error("Hook st
 if (Object.keys(settings.properties.hooks.properties ?? {}).length < 25) throw new Error("Hook event coverage is unexpectedly low");
 if (facts.runtimeValidation.diagnosticCount < 100) throw new Error("Runtime settings oracle coverage is unexpectedly low");
 if (facts.facts.length < 150) throw new Error("Fact-level settings/path coverage is unexpectedly low");
-if (Object.keys(globalConfig.properties).length < 5 || Object.keys(desktopManaged.properties).length < 2) throw new Error("Scoped config artifacts are incomplete");
-if (!legacy.settings.some(({ replacementPath }) => replacementPath === "permissions.skipDangerousModePermissionPrompt")) throw new Error("Moved nested setting is not accounted for");
+if (Object.keys(globalConfig.properties).length < 4 || Object.keys(desktopManaged.properties).length < 2) throw new Error("Scoped config artifacts are incomplete");
+if (!legacy.settings.some(({ possibleReplacement }) => possibleReplacement === "skipDangerousModePermissionPrompt")) throw new Error("Moved nested setting is not accounted for");
 if (!keybindingCapabilities.binary.commandBindingPatternCorroborated || !keybindingCapabilities.binary.commandBindingValidatorMessageCorroborated) throw new Error("Exact binary did not corroborate command-binding validation");
 if (keybindingCapabilities.actions.filter(({ status }) => status === "exact-binary-token-candidate").length < 10) throw new Error("Runtime keybinding candidate coverage is unexpectedly low");
 if (environmentCapabilities.configurableVariables.length < 300 || !environmentCapabilities.providedToHooks.some(({ name }) => name === "CLAUDE_PROJECT_DIR")) throw new Error("Environment scope coverage is unexpectedly low");

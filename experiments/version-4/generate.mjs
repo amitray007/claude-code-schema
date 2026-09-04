@@ -8,7 +8,7 @@ import {
   activeForVersion,
   keyFromCell,
   markdownTables,
-  parseJsonExample,
+  referenceSections,
   stripMarkdown,
   tableRecords,
   versionBounds
@@ -90,29 +90,39 @@ function tableByHeading(source, heading) {
   return table;
 }
 
-function settingRecord(record, heading, source, version) {
-  const keyCell = record.key ?? record.keys;
-  const key = keyFromCell(keyCell);
-  if (!key) return null;
-  const bounds = versionBounds(`${record.description ?? ""} ${record.example ?? ""}`);
-  if (!activeForVersion(bounds, version)) return null;
-  const parsed = parseJsonExample(record.example);
-  const description = (record.description ?? "")
-    .replace(/\{\/\*\s*(?:min|max)-version:\s*[^*]+\*\/\}/g, "")
-    .trim();
-  const scopes = /^\(Managed settings only\)/i.test(description)
-    ? ["managed"]
-    : /Read from user(?: settings)?, (?:the )?`--settings` flag, and managed settings only/i.test(description)
-      ? ["user", "managed", "cli-settings"]
-      : ["user", "project", "local", "managed", "cli-settings"];
+function settingRecord(section, source, version) {
+  if (!activeForVersion(section.bounds, version)) return null;
+  // The reference page states each key's scope directly, so trust that label
+  // instead of inferring scope from description prose.
+  if (!section.scopes) throw new Error(`${source.id}: unknown scope "${section.scopeLabel}" for ${section.key}`);
   return {
-    key,
-    heading,
-    bounds,
-    example: parsed,
-    scopes,
-    evidence: evidence(source, heading, "existence-and-example")
+    key: section.key,
+    heading: section.heading,
+    bounds: section.bounds,
+    example: parseJsonExampleBlock(section.example, section.key),
+    scopes: section.scopes,
+    evidence: evidence(source, section.heading, "existence-and-example", "official-key-entry")
   };
+}
+
+// A key's example is a whole settings.json object, so take the value stored at
+// the key itself rather than the surrounding wrapper.
+function parseJsonExampleBlock(block, key) {
+  if (!block) return { parsed: false };
+  let document;
+  try {
+    document = JSON.parse(block);
+  } catch {
+    return { parsed: false, display: block.trim() };
+  }
+  let cursor = document;
+  for (const part of key.split(".")) {
+    if (cursor === null || typeof cursor !== "object" || !(part in cursor)) {
+      return { parsed: false, display: block.trim() };
+    }
+    cursor = cursor[part];
+  }
+  return { parsed: true, value: cursor };
 }
 
 function schemaForRecord(record) {
@@ -252,7 +262,7 @@ const v3Manifest = await readJson(version3Directory, "output", "manifest.json");
 const version = v3Manifest.claudeCodeVersion;
 const inheritedEnvSchema = await readJson(version3Directory, "output", "env.schema.json");
 const sourceDefinitions = {
-  settingsDocsExpanded: ["https://code.claude.com/docs/en/settings.md", "settings, scopes, global config, worktree, permissions, sandbox, attribution, helpers, and plugin settings"],
+  settingsDocsExpanded: ["https://code.claude.com/docs/en/settings-reference.md", "per-key settings entries: scope, type, default, and official example"],
   envDocsExpanded: ["https://code.claude.com/docs/en/env-vars.md", "primary configurable environment-variable reference and cross-references"],
   keybindingsDocsExpanded: ["https://code.claude.com/docs/en/keybindings.md", "contexts, actions, version bounds, keystroke syntax, unbinding, validation behavior"],
   pluginReferenceDocs: ["https://code.claude.com/docs/en/plugins-reference.md", "plugin configuration and plugin settings"],
@@ -306,10 +316,10 @@ for (const [name, source, scope] of environmentSupplements) {
 }
 
 const settingsSource = sources.settingsDocsExpanded;
-const availableTable = tableByHeading(settingsSource, "Available settings");
-const availableRecords = tableRecords(availableTable)
-  .map((record) => ({ raw: record, parsed: settingRecord(record, "Available settings", settingsSource, version) }))
+const availableRecords = referenceSections(settingsSource.text, "## All settings")
+  .map((section) => ({ raw: { description: section.section, type: section.type, default: section.default }, parsed: settingRecord(section, settingsSource, version) }))
   .filter(({ parsed }) => parsed);
+if (!availableRecords.length) throw new Error(`${settingsSource.id}: no settings entries found under ## All settings`);
 
 const settingsProperties = {
   $schema: { type: "string", "x-type-status": "verified-by-json-schema-convention" }
@@ -329,19 +339,45 @@ for (const { raw, parsed } of availableRecords) {
   });
 }
 
-const sectionMappings = [
-  ["Worktree settings", "worktree"],
-  ["Permission settings", "permissions"],
-  ["Sandbox settings", "sandbox"]
-];
-for (const [heading, parent] of sectionMappings) {
-  for (const raw of tableRecords(tableByHeading(settingsSource, heading))) {
-    const parsed = settingRecord(raw, heading, settingsSource, version);
-    if (!parsed) continue;
-    const path = parsed.key.startsWith(`${parent}.`) ? parsed.key : `${parent}.${parsed.key}`;
-    setDottedProperty(settingsProperties, path, enrichFromDescription(schemaForRecord(parsed), raw.description ?? ""));
-    facts.push({ path, surface: "settings.json", scopes: parsed.scopes, status: "documented-active", typeEvidence: parsed.example.parsed ? "official-example" : "official-prose", provenance: parsed.evidence });
+// Some entries document the fields of their array elements in a nested table
+// under the key's own section. Record those as `key[].field` paths.
+for (const match of settingsSource.text.matchAll(/\n#### ([^\n]*fields for [^\n]+)\n/g)) {
+  const owner = [...settingsSource.text.slice(0, match.index).matchAll(/### `([^`]+)`/g)].pop()?.[1];
+  if (!owner) continue;
+  const table = markdownTables(settingsSource.text.slice(match.index)).find((candidate) => candidate.heading === match[1]);
+  if (!table) continue;
+  for (const raw of tableRecords(table)) {
+    const field = keyFromCell(raw.field);
+    if (!field) continue;
+    const path = `${owner}[].${field}`;
+    const schema = withEvidence({}, evidence(settingsSource, match[1], "existence-and-type", "official-nested-field-table"));
+    setDottedProperty(settingsProperties, path, schema);
+    facts.push({
+      path,
+      surface: "settings.json",
+      scopes: availableRecords.find(({ parsed }) => parsed.key === owner)?.parsed.scopes ?? ["user", "project", "local", "managed", "cli-settings"],
+      status: "documented-active",
+      typeEvidence: "official-prose",
+      provenance: schema["x-provenance"]?.evidence ?? evidence(settingsSource, match[1], "existence-and-type", "official-nested-field-table")
+    });
   }
+}
+
+// A few keys are also accepted under a parent object. The entry states the
+// alias in its Scope line, so mirror the schema at that path too.
+for (const { raw, parsed } of availableRecords) {
+  const aliasPath = /Also accepted under `[^`]+` as `([^`]+)`/.exec(raw.description ?? "")?.[1];
+  if (!aliasPath) continue;
+  setDottedProperty(settingsProperties, aliasPath, schemaForRecord(parsed));
+  facts.push({
+    path: aliasPath,
+    surface: "settings.json",
+    scopes: parsed.scopes,
+    status: "documented-alias",
+    aliasOf: parsed.key,
+    typeEvidence: parsed.example.parsed ? "official-example" : "official-prose",
+    provenance: parsed.evidence
+  });
 }
 
 const officialExampleSources = [sources.officialStrictSettingsExample, sources.officialSandboxSettingsExample, sources.officialManagedSettingsExample];
@@ -557,13 +593,12 @@ const settingsSchema = {
   "x-claude-code-version": version,
   "x-artifact-kind": "settings-json-schema",
   "x-experiment": "first-party-multi-source-no-schemastore",
-  "x-provenance": { evidence: evidence(settingsSource, "Available settings", "settings-surface") }
+  "x-provenance": { evidence: evidence(settingsSource, "All settings", "settings-surface") }
 };
 
 const globalProperties = {};
-for (const raw of tableRecords(tableByHeading(settingsSource, "Global config settings"))) {
-  const parsed = settingRecord(raw, "Global config settings", settingsSource, version);
-  if (!parsed) continue;
+for (const { raw, parsed } of availableRecords) {
+  if (!parsed.scopes.includes("global-config")) continue;
   globalProperties[parsed.key] = enrichFromDescription(schemaForRecord(parsed), raw.description ?? "");
 }
 const globalConfigSchema = {
@@ -637,7 +672,7 @@ const legacyCandidates = {
   claudeCodeVersion: version,
   policy: "These are accounted-for compatibility candidates, not generated public settings. Promotion requires direct current first-party evidence.",
   settings: [
-    { name: "skipDangerousModePermissionPrompt", status: "documented-at-nested-path", replacementPath: "permissions.skipDangerousModePermissionPrompt", source: "settingsDocsExpanded" },
+    { name: "permissions.skipDangerousModePermissionPrompt", status: "unverified-legacy-or-renamed", possibleReplacement: "skipDangerousModePermissionPrompt", source: "settingsDocsExpanded" },
     { name: "managedMcpServers", status: "different-product-surface", artifact: "desktop-managed-settings.schema.json", source: "desktopDocs" },
     { name: "sshHostAllowlist", status: "different-product-surface", artifact: "desktop-managed-settings.schema.json", source: "desktopDocs" },
     { name: "maxSkillDescriptionChars", status: "unverified-legacy-or-renamed", possibleReplacement: "skillListingMaxDescChars" },

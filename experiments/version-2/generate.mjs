@@ -25,8 +25,8 @@ const sourceDefinitions = {
     role: "guard that mutable docs are paired with the current release"
   },
   settingsDocs: {
-    url: "https://code.claude.com/docs/en/settings.md",
-    role: "public settings existence and prose"
+    url: "https://code.claude.com/docs/en/settings-reference.md",
+    role: "public per-key settings entries: scope, type, default, example"
   },
   envDocs: {
     url: "https://code.claude.com/docs/en/env-vars.md",
@@ -237,24 +237,73 @@ if (version !== latestNpmMetadata.version) {
     `Official docs are mutable and currently describe latest=${latestNpmMetadata.version}; refusing to label them as historical ${version}. Use archived source bytes for historical regeneration.`
   );
 }
-for (const route of ["settings.md", "env-vars.md", "cli-reference.md", "keybindings.md"]) {
+for (const route of ["settings-reference.md", "env-vars.md", "cli-reference.md", "keybindings.md"]) {
   if (!sources.docsIndex.text.includes(route)) {
     throw new Error(`Documentation index no longer advertises ${route}`);
   }
 }
 
-const settingsTables = markdownTables(
-  sources.settingsDocs.text,
-  "### Available settings",
-  "### Global config settings"
-);
-const allSettingsRecords = recordsFromTable(firstTable(settingsTables, "key"))
-  .map((record) => ({
-    key: keyFromCell(record.key),
-    ...rowVersionBounds(record.description),
-    ...versionEvidence(record.description)
-  }))
-  .filter((record) => record.key);
+const SCOPE_LABELS = {
+  "Any file": ["user", "project", "local", "managed", "cli-settings"],
+  "User, local, or managed": ["user", "local", "managed", "cli-settings"],
+  "User or managed": ["user", "managed", "cli-settings"],
+  Managed: ["managed"],
+  "Global config": ["global-config"]
+};
+
+// The settings reference moved from one wide table to a per-key section for
+// each key. Each section carries Scope, Type, and Default bullets plus a JSON
+// example, so read the bullets rather than table columns.
+function referenceSections(markdown, startHeading) {
+  const start = markdown.indexOf(startHeading);
+  if (start === -1) throw new Error(`Could not find section ${startHeading}`);
+  return markdown
+    .slice(start)
+    .replace(/\r/g, "")
+    .split(/\n(?=### `)/)
+    .filter((section) => section.startsWith("### `"))
+    .map((section) => {
+      const key = /^### `([^`]+)`/.exec(section)[1];
+      const bullet = (name) =>
+        new RegExp(`^\\*\\s+\\*\\*${name}\\*\\*:\\s*(.+)$`, "m").exec(section)?.[1]?.trim() ?? "";
+      const scopeLabel = bullet("Scope")
+        .replace(/\[`?([^\]`]+)`?\]\(#scopes\)/, "$1")
+        .split(/\.(?:\s|$)/)[0]
+        .trim();
+      const removedIn = /Removed in v([0-9]+(?:\.[0-9]+)*)/.exec(section)?.[1] ?? null;
+      const bounds = {};
+      if (removedIn) {
+        const parts = removedIn.split(".").map(Number);
+        parts[parts.length - 1] -= 1;
+        bounds.maxVersion = parts.join(".");
+      }
+      return {
+        key,
+        scopeLabel,
+        scopes: SCOPE_LABELS[scopeLabel] ?? null,
+        description: section,
+        type: bullet("Type"),
+        default: bullet("Default"),
+        bounds
+      };
+    });
+}
+
+const settingsSections = referenceSections(sources.settingsDocs.text, "## All settings");
+if (!settingsSections.length) {
+  throw new Error("Settings reference no longer lists keys under ## All settings");
+}
+const allSettingsRecords = settingsSections.map((section) => {
+  if (!section.scopes) {
+    throw new Error(`Unknown settings scope "${section.scopeLabel}" for ${section.key}`);
+  }
+  return {
+    key: section.key,
+    scopes: section.scopes,
+    ...section.bounds,
+    ...versionEvidence(section.description)
+  };
+});
 const settingsRecords = allSettingsRecords.filter((record) =>
   isActiveForVersion(record, version)
 );

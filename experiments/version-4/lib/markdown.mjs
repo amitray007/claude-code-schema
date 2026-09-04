@@ -109,3 +109,59 @@ export function parseJsonExample(cell) {
     return { parsed: false, display: stripMarkdown(cell) };
   }
 }
+
+const SCOPE_LABELS = {
+  "Any file": ["user", "project", "local", "managed", "cli-settings"],
+  "User, local, or managed": ["user", "local", "managed", "cli-settings"],
+  "User or managed": ["user", "managed", "cli-settings"],
+  Managed: ["managed"],
+  "Global config": ["global-config"]
+};
+
+export function scopesFromLabel(label) {
+  return SCOPE_LABELS[label] ?? null;
+}
+
+// The settings reference moved from one wide table to a per-key section for
+// each key. Each section carries Scope, Type, and Default bullets plus a JSON
+// example, so read the bullets rather than table columns.
+export function referenceSections(markdown, startHeading) {
+  const start = markdown.indexOf(startHeading);
+  if (start === -1) throw new Error(`Could not find section ${startHeading}`);
+  return markdown
+    .slice(start)
+    .replace(/\r/g, "")
+    .split(/\n(?=### `)/)
+    .filter((section) => section.startsWith("### `"))
+    .map((section) => {
+      const key = /^### `([^`]+)`/.exec(section)[1];
+      const bullet = (name) =>
+        new RegExp(`^\\*\\s+\\*\\*${name}\\*\\*:\\s*(.+)$`, "m").exec(section)?.[1]?.trim() ?? "";
+      const scopeText = bullet("Scope");
+      // Strip the doc link wrapper, then keep the leading label before any
+      // explanatory prose that follows it.
+      const scopeLabel = scopeText
+        .replace(/\[`?([^\]`]+)`?\]\(#scopes\)/, "$1")
+        .split(/\.(?:\s|$)/)[0]
+        .trim();
+      const removedIn = /Removed in v([0-9]+(?:\.[0-9]+)*)/.exec(section)?.[1] ?? null;
+      return {
+        key,
+        section,
+        heading: key,
+        scopeLabel,
+        scopes: scopesFromLabel(scopeLabel),
+        type: bullet("Type"),
+        default: bullet("Default"),
+        example: /```json[^\n]*\n([\s\S]*?)```/.exec(section)?.[1] ?? null,
+        bounds: removedIn ? { maxVersion: previousVersion(removedIn) } : {}
+      };
+    });
+}
+
+// "Removed in v2.1.257" means the key was last valid on the release before it.
+function previousVersion(version) {
+  const parts = version.split(".").map(Number);
+  parts[parts.length - 1] -= 1;
+  return parts.join(".");
+}
