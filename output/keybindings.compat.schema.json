@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://github.com/amitray007/claude-code-schema/releases/download/v2.1.238/keybindings.compat.schema.json",
+  "$id": "https://github.com/amitray007/claude-code-schema/releases/download/v2.1.260/keybindings.compat.schema.json",
   "title": "Claude Code keybindings — exact parser compatibility",
   "description": "Conservative validator generated only from the official keybindings documentation.",
   "type": "object",
@@ -70,7 +70,7 @@
     "bindings"
   ],
   "additionalProperties": false,
-  "x-claude-code-version": "2.1.238",
+  "x-claude-code-version": "2.1.260",
   "x-artifact-kind": "keybindings-runtime-compat-json-schema",
   "x-validation-limitations": [
     "The current official docs do not document command: bindings; the narrowly patterned compatibility form is accepted but annotated as unverified for this release.",
@@ -80,7 +80,7 @@
     "evidence": [
       {
         "source": "keybindingsDocs",
-        "sourceSha256": "a28bbcdde51c14b2e6a8b0525251169c180917014debf3b7dfe11ce644d5ba3b"
+        "sourceSha256": "1c5df383bb68c62c6817707d1ab2575e5cbb20d3219e26e1183c8fde307f69a1"
       }
     ]
   },
@@ -108,6 +108,7 @@
     "chat:killAgents",
     "chat:modelPicker",
     "chat:newline",
+    "chat:queueSubmit",
     "chat:stash",
     "chat:submit",
     "chat:thinkingToggle",
@@ -119,7 +120,6 @@
     "confirm:previous",
     "confirm:previousField",
     "confirm:toggle",
-    "confirm:toggleExplanation",
     "confirm:yes",
     "diff:back",
     "diff:dismiss",
@@ -168,7 +168,11 @@
     "scroll:top",
     "select:accept",
     "select:cancel",
+    "select:first",
+    "select:last",
     "select:next",
+    "select:pageDown",
+    "select:pageUp",
     "select:previous",
     "selection:clear",
     "selection:copy",
