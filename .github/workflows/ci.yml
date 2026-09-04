@@ -37,6 +37,11 @@ jobs:
       - name: Validate historical experiments and parity benchmark
         run: npm run experiment:benchmark
       - name: Audit production dependencies
+        # Advisory data comes from npm's registry, which fails independently of
+        # this repository. Dependency Review is the blocking gate on pull
+        # requests, so surface advisories here without failing the run.
+        continue-on-error: true
+        timeout-minutes: 3
         run: npm audit --omit=dev --audit-level=high
 
   dependency-review:
@@ -61,6 +66,7 @@ jobs:
           cache: npm
       - name: Audit production dependencies when Dependency Graph is unavailable
         if: vars.ENABLE_DEPENDENCY_REVIEW != 'true'
+        timeout-minutes: 5
         run: |
           npm ci --ignore-scripts
           npm audit --omit=dev --audit-level=high
