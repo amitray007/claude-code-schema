@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://github.com/amitray007/claude-code-schema/releases/download/v2.1.238/global-config.schema.json",
+  "$id": "https://github.com/amitray007/claude-code-schema/releases/download/v2.1.260/global-config.schema.json",
   "title": "Claude Code global config (~/.claude.json)",
   "type": "object",
   "properties": {
@@ -9,15 +9,18 @@
       "examples": [
         true
       ],
+      "x-scopes": [
+        "global-config"
+      ],
       "x-type-status": "independently-derived",
       "x-provenance": {
         "evidence": [
           {
             "source": "settingsDocsExpanded",
-            "sourceSha256": "721118eb9f244a7a06d6eed31ffbec68da245f295f39b2030ec9e70eba02c1dc",
-            "heading": "Global config settings",
+            "sourceSha256": "c3a0e2339cc7dcc65df32847ce6f06f933f55686c9468ada1db60e7b3916559e",
+            "heading": "autoConnectIde",
             "fact": "existence-and-example",
-            "method": "official-markdown-table"
+            "method": "official-key-entry"
           }
         ]
       },
@@ -28,15 +31,18 @@
       "examples": [
         false
       ],
+      "x-scopes": [
+        "global-config"
+      ],
       "x-type-status": "independently-derived",
       "x-provenance": {
         "evidence": [
           {
             "source": "settingsDocsExpanded",
-            "sourceSha256": "721118eb9f244a7a06d6eed31ffbec68da245f295f39b2030ec9e70eba02c1dc",
-            "heading": "Global config settings",
+            "sourceSha256": "c3a0e2339cc7dcc65df32847ce6f06f933f55686c9468ada1db60e7b3916559e",
+            "heading": "autoInstallIdeExtension",
             "fact": "existence-and-example",
-            "method": "official-markdown-table"
+            "method": "official-key-entry"
           }
         ]
       },
@@ -47,15 +53,18 @@
       "examples": [
         "terminal"
       ],
+      "x-scopes": [
+        "global-config"
+      ],
       "x-type-status": "independently-derived",
       "x-provenance": {
         "evidence": [
           {
             "source": "settingsDocsExpanded",
-            "sourceSha256": "721118eb9f244a7a06d6eed31ffbec68da245f295f39b2030ec9e70eba02c1dc",
-            "heading": "Global config settings",
+            "sourceSha256": "c3a0e2339cc7dcc65df32847ce6f06f933f55686c9468ada1db60e7b3916559e",
+            "heading": "diffTool",
             "fact": "existence-and-example",
-            "method": "official-markdown-table"
+            "method": "official-key-entry"
           }
         ]
       },
@@ -66,56 +75,26 @@
       "examples": [
         true
       ],
-      "x-type-status": "independently-derived",
-      "x-provenance": {
-        "evidence": [
-          {
-            "source": "settingsDocsExpanded",
-            "sourceSha256": "721118eb9f244a7a06d6eed31ffbec68da245f295f39b2030ec9e70eba02c1dc",
-            "heading": "Global config settings",
-            "fact": "existence-and-example",
-            "method": "official-markdown-table"
-          }
-        ]
-      },
-      "default": false
-    },
-    "permissionExplainerEnabled": {
-      "type": "boolean",
-      "examples": [
-        false
+      "x-scopes": [
+        "global-config"
       ],
       "x-type-status": "independently-derived",
       "x-provenance": {
         "evidence": [
           {
             "source": "settingsDocsExpanded",
-            "sourceSha256": "721118eb9f244a7a06d6eed31ffbec68da245f295f39b2030ec9e70eba02c1dc",
-            "heading": "Global config settings",
+            "sourceSha256": "c3a0e2339cc7dcc65df32847ce6f06f933f55686c9468ada1db60e7b3916559e",
+            "heading": "externalEditorContext",
             "fact": "existence-and-example",
-            "method": "official-markdown-table"
+            "method": "official-key-entry"
           }
         ]
       },
-      "default": true
-    },
-    "teammateDefaultModel": {
-      "x-type-status": "unverified",
-      "x-provenance": {
-        "evidence": [
-          {
-            "source": "settingsDocsExpanded",
-            "sourceSha256": "721118eb9f244a7a06d6eed31ffbec68da245f295f39b2030ec9e70eba02c1dc",
-            "heading": "Global config settings",
-            "fact": "existence-and-example",
-            "method": "official-markdown-table"
-          }
-        ]
-      }
+      "default": false
     }
   },
   "additionalProperties": true,
-  "x-claude-code-version": "2.1.238",
+  "x-claude-code-version": "2.1.260",
   "x-artifact-kind": "global-config-json-schema",
   "x-surface-path": "~/.claude.json",
   "x-generator-version": "0.1.0"

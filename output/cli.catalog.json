@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
   "artifactKind": "cli-surface-catalog",
-  "claudeCodeVersion": "2.1.238",
+  "claudeCodeVersion": "2.1.260",
   "platformPackage": "@anthropic-ai/claude-code-linux-x64",
-  "binarySha256": "0933b286cf94e1b2504b35ac165ab76b8f822735d53371c56393988c23040d58",
+  "binarySha256": "7a2fdc74b6836ea3d183f665b869f0ee3baebc9713cbebffe5838da4ea7bd82e",
   "probePolicy": {
     "allowedOperations": [
       "--version",
@@ -19,7 +19,7 @@
     "maximumCommands": 80,
     "rawHelpRedistributed": false
   },
-  "versionOutput": "2.1.238 (Claude Code)",
+  "versionOutput": "2.1.260 (Claude Code)",
   "commands": [
     {
       "commandPath": [
@@ -33,8 +33,8 @@
       "signal": null,
       "timedOut": false,
       "outputExceeded": false,
-      "helpSha256": "ef1f514e55a4a06e0834705cb01dc10079abc939dfa8e5f31e438e2bd4d949fd",
-      "helpBytes": 16889,
+      "helpSha256": "6141f1e82e4ffe8433f2e9091575fc0897cbfd2b05052c54178e7497381663ba",
+      "helpBytes": 21503,
       "usage": "claude [options] [command] [prompt]",
       "arguments": [
         {
@@ -492,6 +492,21 @@
         },
         {
           "names": [
+            "--permission-prompts"
+          ],
+          "valueNotation": "<target>",
+          "valueArity": "required",
+          "variadic": false,
+          "negated": false,
+          "repeatable": false,
+          "choices": [
+            "host",
+            "none",
+            "host"
+          ]
+        },
+        {
+          "names": [
             "--plugin-dir"
           ],
           "valueNotation": "<path>",
@@ -577,6 +592,16 @@
         },
         {
           "names": [
+            "--restricted"
+          ],
+          "valueNotation": null,
+          "valueArity": "none",
+          "variadic": false,
+          "negated": false,
+          "repeatable": false
+        },
+        {
+          "names": [
             "-r",
             "--resume"
           ],
@@ -645,6 +670,20 @@
           "variadic": false,
           "negated": false,
           "repeatable": false
+        },
+        {
+          "names": [
+            "--system-prompt-snapshot"
+          ],
+          "valueNotation": "<on|off>",
+          "valueArity": "required",
+          "variadic": false,
+          "negated": false,
+          "repeatable": false,
+          "choices": [
+            "on",
+            "off"
+          ]
         },
         {
           "names": [
@@ -719,6 +758,14 @@
           "argumentNotation": "[options]"
         },
         {
+          "name": "attach",
+          "aliases": [],
+          "commandPath": [
+            "attach"
+          ],
+          "argumentNotation": "<id>"
+        },
+        {
           "name": "auth",
           "aliases": [],
           "commandPath": [
@@ -767,6 +814,14 @@
           "argumentNotation": "[options] [target]"
         },
         {
+          "name": "logs",
+          "aliases": [],
+          "commandPath": [
+            "logs"
+          ],
+          "argumentNotation": "<id>"
+        },
+        {
           "name": "mcp",
           "aliases": [],
           "commandPath": [
@@ -793,12 +848,38 @@
           "argumentNotation": null
         },
         {
+          "name": "respawn",
+          "aliases": [],
+          "commandPath": [
+            "respawn"
+          ],
+          "argumentNotation": "[options] [id]"
+        },
+        {
+          "name": "rm",
+          "aliases": [],
+          "commandPath": [
+            "rm"
+          ],
+          "argumentNotation": "<id>"
+        },
+        {
           "name": "setup-token",
           "aliases": [],
           "commandPath": [
             "setup-token"
           ],
           "argumentNotation": null
+        },
+        {
+          "name": "stop",
+          "aliases": [
+            "kill"
+          ],
+          "commandPath": [
+            "stop"
+          ],
+          "argumentNotation": "<id>"
         },
         {
           "name": "ultrareview",
@@ -834,8 +915,8 @@
       "signal": null,
       "timedOut": false,
       "outputExceeded": false,
-      "helpSha256": "6537df895401122c13c2f04f162b9bcf56419307dd9e21f6598f5e61e72d0117",
-      "helpBytes": 2611,
+      "helpSha256": "95c11e466905c7a264bf68712598090b4fb088a41603cc60e4932690b3283894",
+      "helpBytes": 2736,
       "usage": "claude agents [options]",
       "arguments": [],
       "options": [
@@ -972,6 +1053,16 @@
         },
         {
           "names": [
+            "--restricted"
+          ],
+          "valueNotation": null,
+          "valueArity": "none",
+          "variadic": false,
+          "negated": false,
+          "repeatable": false
+        },
+        {
+          "names": [
             "--setting-sources"
           ],
           "valueNotation": "<sources>",
@@ -1001,6 +1092,34 @@
           "repeatable": false
         }
       ],
+      "childCommands": []
+    },
+    {
+      "commandPath": [
+        "claude",
+        "attach"
+      ],
+      "invocation": [
+        "claude",
+        "attach",
+        "--help"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "timedOut": false,
+      "outputExceeded": false,
+      "helpSha256": "481150bcda27a05b9cae12e03c5a2b26a2bfd3fd27a63814463a91f07576a20d",
+      "helpBytes": 172,
+      "usage": "claude attach <id>",
+      "arguments": [
+        {
+          "name": "id",
+          "notation": "<id>",
+          "valueArity": "required",
+          "variadic": false
+        }
+      ],
+      "options": [],
       "childCommands": []
     },
     {
@@ -1323,6 +1442,34 @@
     {
       "commandPath": [
         "claude",
+        "logs"
+      ],
+      "invocation": [
+        "claude",
+        "logs",
+        "--help"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "timedOut": false,
+      "outputExceeded": false,
+      "helpSha256": "b64386b891b4b50a1d7a1f56c9d4c42b3e1d9ad8c5726689ce4c75a1b31d6ae6",
+      "helpBytes": 81,
+      "usage": "claude logs <id>",
+      "arguments": [
+        {
+          "name": "id",
+          "notation": "<id>",
+          "valueArity": "required",
+          "variadic": false
+        }
+      ],
+      "options": [],
+      "childCommands": []
+    },
+    {
+      "commandPath": [
+        "claude",
         "mcp"
       ],
       "invocation": [
@@ -1334,8 +1481,8 @@
       "signal": null,
       "timedOut": false,
       "outputExceeded": false,
-      "helpSha256": "dd1b5271aa3fc90ef915e204d04aea04fb885c5aa780e4a1107a39c6f75ce471",
-      "helpBytes": 2455,
+      "helpSha256": "101af6472ee6945e5b03fef76ee8edffe6bd8573e73f6742a95eab58d83af59f",
+      "helpBytes": 2473,
       "usage": "claude mcp [options] [command]",
       "arguments": [],
       "options": [
@@ -1568,6 +1715,68 @@
     {
       "commandPath": [
         "claude",
+        "respawn"
+      ],
+      "invocation": [
+        "claude",
+        "respawn",
+        "--help"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "timedOut": false,
+      "outputExceeded": false,
+      "helpSha256": "498cb3f73759a9b7c96c7e3c3b11dbee20623f81140c1689ccf76bdc527efdf8",
+      "helpBytes": 123,
+      "usage": "claude respawn <id>|--all",
+      "arguments": [
+        {
+          "name": "id",
+          "notation": "<id>",
+          "valueArity": "required",
+          "variadic": false
+        }
+      ],
+      "options": [],
+      "childCommands": []
+    },
+    {
+      "commandPath": [
+        "claude",
+        "rm"
+      ],
+      "invocation": [
+        "claude",
+        "rm",
+        "--help"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "timedOut": false,
+      "outputExceeded": false,
+      "helpSha256": "5d95d38a1e77772c03dde3664402d8836a8274729916699948740c13a5a26f8b",
+      "helpBytes": 390,
+      "usage": "claude rm <id> [--discard-unpushed <commit>@<worktree-id>]",
+      "arguments": [
+        {
+          "name": "id",
+          "notation": "<id>",
+          "valueArity": "required",
+          "variadic": false
+        },
+        {
+          "name": "--discard-unpushed <commit>@<worktree-id>",
+          "notation": "[--discard-unpushed <commit>@<worktree-id>]",
+          "valueArity": "optional",
+          "variadic": false
+        }
+      ],
+      "options": [],
+      "childCommands": []
+    },
+    {
+      "commandPath": [
+        "claude",
         "setup-token"
       ],
       "invocation": [
@@ -1601,6 +1810,34 @@
     {
       "commandPath": [
         "claude",
+        "stop"
+      ],
+      "invocation": [
+        "claude",
+        "stop",
+        "--help"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "timedOut": false,
+      "outputExceeded": false,
+      "helpSha256": "e6167fe21f339b224888e24abd478f124c1cbf219edb5de8d1ed92b7bad0e429",
+      "helpBytes": 122,
+      "usage": "claude stop <id>",
+      "arguments": [
+        {
+          "name": "id",
+          "notation": "<id>",
+          "valueArity": "required",
+          "variadic": false
+        }
+      ],
+      "options": [],
+      "childCommands": []
+    },
+    {
+      "commandPath": [
+        "claude",
         "ultrareview"
       ],
       "invocation": [
@@ -1612,7 +1849,7 @@
       "signal": null,
       "timedOut": false,
       "outputExceeded": false,
-      "helpSha256": "364346d7fb174a9cf857a1c98ca8f6111427998434b796e1337f26101a0dba3e",
+      "helpSha256": "2fe4dc1da2b58c7cb3a9226f56d91ae393be791fb2b1b5c08c5900823eec3101",
       "helpBytes": 779,
       "usage": "claude ultrareview [options] [target]",
       "arguments": [
@@ -1674,7 +1911,7 @@
           "variadic": false,
           "negated": false,
           "repeatable": false,
-          "defaultDisplay": "30"
+          "defaultDisplay": "45"
         }
       ],
       "childCommands": []
@@ -2064,8 +2301,8 @@
       "signal": null,
       "timedOut": false,
       "outputExceeded": false,
-      "helpSha256": "8eabb12d0a142ed87dffe8838b6673a14cf9a09b5a1d0a5a931b213d8aa9f8f4",
-      "helpBytes": 1441,
+      "helpSha256": "ef3e2d6516caf9dc87261c39f63ca26fc0ef43315177f445d833fcc926b64e92",
+      "helpBytes": 1452,
       "usage": "claude mcp add [options] <name> <commandOrUrl> [args...]",
       "arguments": [
         {
@@ -2354,8 +2591,8 @@
       "signal": null,
       "timedOut": false,
       "outputExceeded": false,
-      "helpSha256": "c39efa34f374d86f5f597af3b63fb2951ac327eff7efa1c7610ccfc62669333b",
-      "helpBytes": 4202,
+      "helpSha256": "7a05817f3222800bbfa92d6549077752f5f750e18978fe606a43494efc921bea",
+      "helpBytes": 4466,
       "usage": "claude plugin eval [options] [command] [target]",
       "arguments": [
         {
@@ -2453,6 +2690,16 @@
             "--max-cost-usd"
           ],
           "valueNotation": "<usd>",
+          "valueArity": "required",
+          "variadic": false,
+          "negated": false,
+          "repeatable": false
+        },
+        {
+          "names": [
+            "--mocks"
+          ],
+          "valueNotation": "<mode>",
           "valueArity": "required",
           "variadic": false,
           "negated": false,
@@ -3217,8 +3464,8 @@
       "signal": null,
       "timedOut": false,
       "outputExceeded": false,
-      "helpSha256": "07e98759f719e8152f64f20c57e86a5f16d046155283913262a508e5a5a12455",
-      "helpBytes": 372,
+      "helpSha256": "667b62d906d01a844dea5c73b0f5af0326704087e62fc79590d7b20d13530d41",
+      "helpBytes": 441,
       "usage": "claude plugin validate [options] <path>",
       "arguments": [
         {
@@ -3233,6 +3480,16 @@
           "names": [
             "-h",
             "--help"
+          ],
+          "valueNotation": null,
+          "valueArity": "none",
+          "variadic": false,
+          "negated": false,
+          "repeatable": false
+        },
+        {
+          "names": [
+            "--json"
           ],
           "valueNotation": null,
           "valueArity": "none",
@@ -3651,7 +3908,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "a3592d30eab36dc74136a0a214032c487205dfa15c3511ab821900d68471d120"
+            "sourceSha256": "a5d0107ecdc1b96e5dc187fdd8f2b2d3c595e8a1cad2dcb624fe66bed63f4d07"
           }
         ]
       },
@@ -3689,7 +3946,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "a3592d30eab36dc74136a0a214032c487205dfa15c3511ab821900d68471d120"
+            "sourceSha256": "a5d0107ecdc1b96e5dc187fdd8f2b2d3c595e8a1cad2dcb624fe66bed63f4d07"
           }
         ]
       },
@@ -3709,7 +3966,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "a3592d30eab36dc74136a0a214032c487205dfa15c3511ab821900d68471d120"
+            "sourceSha256": "a5d0107ecdc1b96e5dc187fdd8f2b2d3c595e8a1cad2dcb624fe66bed63f4d07"
           }
         ]
       },
@@ -3747,7 +4004,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "a3592d30eab36dc74136a0a214032c487205dfa15c3511ab821900d68471d120"
+            "sourceSha256": "a5d0107ecdc1b96e5dc187fdd8f2b2d3c595e8a1cad2dcb624fe66bed63f4d07"
           }
         ]
       },
@@ -3776,7 +4033,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "a3592d30eab36dc74136a0a214032c487205dfa15c3511ab821900d68471d120"
+            "sourceSha256": "a5d0107ecdc1b96e5dc187fdd8f2b2d3c595e8a1cad2dcb624fe66bed63f4d07"
           }
         ]
       },
@@ -3816,7 +4073,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "a3592d30eab36dc74136a0a214032c487205dfa15c3511ab821900d68471d120"
+            "sourceSha256": "a5d0107ecdc1b96e5dc187fdd8f2b2d3c595e8a1cad2dcb624fe66bed63f4d07"
           }
         ]
       },
@@ -3846,7 +4103,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "a3592d30eab36dc74136a0a214032c487205dfa15c3511ab821900d68471d120"
+            "sourceSha256": "a5d0107ecdc1b96e5dc187fdd8f2b2d3c595e8a1cad2dcb624fe66bed63f4d07"
           }
         ]
       },
@@ -3866,7 +4123,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "a3592d30eab36dc74136a0a214032c487205dfa15c3511ab821900d68471d120"
+            "sourceSha256": "a5d0107ecdc1b96e5dc187fdd8f2b2d3c595e8a1cad2dcb624fe66bed63f4d07"
           }
         ]
       },
@@ -3895,7 +4152,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "a3592d30eab36dc74136a0a214032c487205dfa15c3511ab821900d68471d120"
+            "sourceSha256": "a5d0107ecdc1b96e5dc187fdd8f2b2d3c595e8a1cad2dcb624fe66bed63f4d07"
           }
         ]
       },
@@ -3915,7 +4172,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "a3592d30eab36dc74136a0a214032c487205dfa15c3511ab821900d68471d120"
+            "sourceSha256": "a5d0107ecdc1b96e5dc187fdd8f2b2d3c595e8a1cad2dcb624fe66bed63f4d07"
           }
         ]
       },
@@ -3944,7 +4201,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "a3592d30eab36dc74136a0a214032c487205dfa15c3511ab821900d68471d120"
+            "sourceSha256": "a5d0107ecdc1b96e5dc187fdd8f2b2d3c595e8a1cad2dcb624fe66bed63f4d07"
           }
         ]
       },
@@ -3973,7 +4230,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "a3592d30eab36dc74136a0a214032c487205dfa15c3511ab821900d68471d120"
+            "sourceSha256": "a5d0107ecdc1b96e5dc187fdd8f2b2d3c595e8a1cad2dcb624fe66bed63f4d07"
           }
         ]
       },
@@ -4013,7 +4270,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "a3592d30eab36dc74136a0a214032c487205dfa15c3511ab821900d68471d120"
+            "sourceSha256": "a5d0107ecdc1b96e5dc187fdd8f2b2d3c595e8a1cad2dcb624fe66bed63f4d07"
           }
         ]
       },
@@ -4044,7 +4301,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "a3592d30eab36dc74136a0a214032c487205dfa15c3511ab821900d68471d120"
+            "sourceSha256": "a5d0107ecdc1b96e5dc187fdd8f2b2d3c595e8a1cad2dcb624fe66bed63f4d07"
           }
         ]
       },
@@ -4074,7 +4331,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "a3592d30eab36dc74136a0a214032c487205dfa15c3511ab821900d68471d120"
+            "sourceSha256": "a5d0107ecdc1b96e5dc187fdd8f2b2d3c595e8a1cad2dcb624fe66bed63f4d07"
           }
         ]
       },
@@ -4094,7 +4351,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "a3592d30eab36dc74136a0a214032c487205dfa15c3511ab821900d68471d120"
+            "sourceSha256": "a5d0107ecdc1b96e5dc187fdd8f2b2d3c595e8a1cad2dcb624fe66bed63f4d07"
           }
         ]
       },
@@ -4123,7 +4380,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "a3592d30eab36dc74136a0a214032c487205dfa15c3511ab821900d68471d120"
+            "sourceSha256": "a5d0107ecdc1b96e5dc187fdd8f2b2d3c595e8a1cad2dcb624fe66bed63f4d07"
           }
         ]
       },
@@ -4154,7 +4411,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "a3592d30eab36dc74136a0a214032c487205dfa15c3511ab821900d68471d120"
+            "sourceSha256": "a5d0107ecdc1b96e5dc187fdd8f2b2d3c595e8a1cad2dcb624fe66bed63f4d07"
           }
         ]
       },
@@ -4184,7 +4441,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "a3592d30eab36dc74136a0a214032c487205dfa15c3511ab821900d68471d120"
+            "sourceSha256": "a5d0107ecdc1b96e5dc187fdd8f2b2d3c595e8a1cad2dcb624fe66bed63f4d07"
           }
         ]
       },
@@ -4204,7 +4461,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "a3592d30eab36dc74136a0a214032c487205dfa15c3511ab821900d68471d120"
+            "sourceSha256": "a5d0107ecdc1b96e5dc187fdd8f2b2d3c595e8a1cad2dcb624fe66bed63f4d07"
           }
         ]
       },
@@ -4242,7 +4499,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "a3592d30eab36dc74136a0a214032c487205dfa15c3511ab821900d68471d120"
+            "sourceSha256": "a5d0107ecdc1b96e5dc187fdd8f2b2d3c595e8a1cad2dcb624fe66bed63f4d07"
           }
         ]
       },
@@ -4271,7 +4528,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "a3592d30eab36dc74136a0a214032c487205dfa15c3511ab821900d68471d120"
+            "sourceSha256": "a5d0107ecdc1b96e5dc187fdd8f2b2d3c595e8a1cad2dcb624fe66bed63f4d07"
           }
         ]
       },
@@ -4300,7 +4557,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "a3592d30eab36dc74136a0a214032c487205dfa15c3511ab821900d68471d120"
+            "sourceSha256": "a5d0107ecdc1b96e5dc187fdd8f2b2d3c595e8a1cad2dcb624fe66bed63f4d07"
           }
         ]
       },
@@ -4331,7 +4588,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "a3592d30eab36dc74136a0a214032c487205dfa15c3511ab821900d68471d120"
+            "sourceSha256": "a5d0107ecdc1b96e5dc187fdd8f2b2d3c595e8a1cad2dcb624fe66bed63f4d07"
           }
         ]
       },
@@ -4361,7 +4618,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "a3592d30eab36dc74136a0a214032c487205dfa15c3511ab821900d68471d120"
+            "sourceSha256": "a5d0107ecdc1b96e5dc187fdd8f2b2d3c595e8a1cad2dcb624fe66bed63f4d07"
           }
         ]
       },
@@ -4399,7 +4656,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "a3592d30eab36dc74136a0a214032c487205dfa15c3511ab821900d68471d120"
+            "sourceSha256": "a5d0107ecdc1b96e5dc187fdd8f2b2d3c595e8a1cad2dcb624fe66bed63f4d07"
           }
         ]
       },
@@ -4420,7 +4677,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "a3592d30eab36dc74136a0a214032c487205dfa15c3511ab821900d68471d120"
+            "sourceSha256": "a5d0107ecdc1b96e5dc187fdd8f2b2d3c595e8a1cad2dcb624fe66bed63f4d07"
           }
         ]
       },
@@ -4449,7 +4706,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "a3592d30eab36dc74136a0a214032c487205dfa15c3511ab821900d68471d120"
+            "sourceSha256": "a5d0107ecdc1b96e5dc187fdd8f2b2d3c595e8a1cad2dcb624fe66bed63f4d07"
           }
         ]
       },
@@ -4478,7 +4735,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "a3592d30eab36dc74136a0a214032c487205dfa15c3511ab821900d68471d120"
+            "sourceSha256": "a5d0107ecdc1b96e5dc187fdd8f2b2d3c595e8a1cad2dcb624fe66bed63f4d07"
           }
         ]
       },
@@ -4498,7 +4755,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "a3592d30eab36dc74136a0a214032c487205dfa15c3511ab821900d68471d120"
+            "sourceSha256": "a5d0107ecdc1b96e5dc187fdd8f2b2d3c595e8a1cad2dcb624fe66bed63f4d07"
           }
         ]
       },
@@ -4527,7 +4784,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "a3592d30eab36dc74136a0a214032c487205dfa15c3511ab821900d68471d120"
+            "sourceSha256": "a5d0107ecdc1b96e5dc187fdd8f2b2d3c595e8a1cad2dcb624fe66bed63f4d07"
           }
         ]
       },
@@ -4556,7 +4813,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "a3592d30eab36dc74136a0a214032c487205dfa15c3511ab821900d68471d120"
+            "sourceSha256": "a5d0107ecdc1b96e5dc187fdd8f2b2d3c595e8a1cad2dcb624fe66bed63f4d07"
           }
         ]
       },
@@ -4585,7 +4842,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "a3592d30eab36dc74136a0a214032c487205dfa15c3511ab821900d68471d120"
+            "sourceSha256": "a5d0107ecdc1b96e5dc187fdd8f2b2d3c595e8a1cad2dcb624fe66bed63f4d07"
           }
         ]
       },
@@ -4614,7 +4871,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "a3592d30eab36dc74136a0a214032c487205dfa15c3511ab821900d68471d120"
+            "sourceSha256": "a5d0107ecdc1b96e5dc187fdd8f2b2d3c595e8a1cad2dcb624fe66bed63f4d07"
           }
         ]
       },
@@ -4643,7 +4900,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "a3592d30eab36dc74136a0a214032c487205dfa15c3511ab821900d68471d120"
+            "sourceSha256": "a5d0107ecdc1b96e5dc187fdd8f2b2d3c595e8a1cad2dcb624fe66bed63f4d07"
           }
         ]
       },
@@ -4663,7 +4920,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "a3592d30eab36dc74136a0a214032c487205dfa15c3511ab821900d68471d120"
+            "sourceSha256": "a5d0107ecdc1b96e5dc187fdd8f2b2d3c595e8a1cad2dcb624fe66bed63f4d07"
           }
         ]
       },
@@ -4683,7 +4940,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "a3592d30eab36dc74136a0a214032c487205dfa15c3511ab821900d68471d120"
+            "sourceSha256": "a5d0107ecdc1b96e5dc187fdd8f2b2d3c595e8a1cad2dcb624fe66bed63f4d07"
           }
         ]
       },
@@ -4712,7 +4969,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "a3592d30eab36dc74136a0a214032c487205dfa15c3511ab821900d68471d120"
+            "sourceSha256": "a5d0107ecdc1b96e5dc187fdd8f2b2d3c595e8a1cad2dcb624fe66bed63f4d07"
           }
         ]
       },
@@ -4741,7 +4998,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "a3592d30eab36dc74136a0a214032c487205dfa15c3511ab821900d68471d120"
+            "sourceSha256": "a5d0107ecdc1b96e5dc187fdd8f2b2d3c595e8a1cad2dcb624fe66bed63f4d07"
           }
         ]
       },
@@ -4770,7 +5027,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "a3592d30eab36dc74136a0a214032c487205dfa15c3511ab821900d68471d120"
+            "sourceSha256": "a5d0107ecdc1b96e5dc187fdd8f2b2d3c595e8a1cad2dcb624fe66bed63f4d07"
           }
         ]
       },
@@ -4799,7 +5056,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "a3592d30eab36dc74136a0a214032c487205dfa15c3511ab821900d68471d120"
+            "sourceSha256": "a5d0107ecdc1b96e5dc187fdd8f2b2d3c595e8a1cad2dcb624fe66bed63f4d07"
           }
         ]
       },
@@ -4819,7 +5076,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "a3592d30eab36dc74136a0a214032c487205dfa15c3511ab821900d68471d120"
+            "sourceSha256": "a5d0107ecdc1b96e5dc187fdd8f2b2d3c595e8a1cad2dcb624fe66bed63f4d07"
           }
         ]
       },
@@ -4848,7 +5105,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "a3592d30eab36dc74136a0a214032c487205dfa15c3511ab821900d68471d120"
+            "sourceSha256": "a5d0107ecdc1b96e5dc187fdd8f2b2d3c595e8a1cad2dcb624fe66bed63f4d07"
           }
         ]
       },
@@ -4868,7 +5125,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "a3592d30eab36dc74136a0a214032c487205dfa15c3511ab821900d68471d120"
+            "sourceSha256": "a5d0107ecdc1b96e5dc187fdd8f2b2d3c595e8a1cad2dcb624fe66bed63f4d07"
           }
         ]
       },
@@ -4906,7 +5163,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "a3592d30eab36dc74136a0a214032c487205dfa15c3511ab821900d68471d120"
+            "sourceSha256": "a5d0107ecdc1b96e5dc187fdd8f2b2d3c595e8a1cad2dcb624fe66bed63f4d07"
           }
         ]
       },
@@ -4966,7 +5223,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "a3592d30eab36dc74136a0a214032c487205dfa15c3511ab821900d68471d120"
+            "sourceSha256": "a5d0107ecdc1b96e5dc187fdd8f2b2d3c595e8a1cad2dcb624fe66bed63f4d07"
           }
         ]
       },
@@ -4996,7 +5253,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "a3592d30eab36dc74136a0a214032c487205dfa15c3511ab821900d68471d120"
+            "sourceSha256": "a5d0107ecdc1b96e5dc187fdd8f2b2d3c595e8a1cad2dcb624fe66bed63f4d07"
           }
         ]
       },
@@ -5025,7 +5282,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "a3592d30eab36dc74136a0a214032c487205dfa15c3511ab821900d68471d120"
+            "sourceSha256": "a5d0107ecdc1b96e5dc187fdd8f2b2d3c595e8a1cad2dcb624fe66bed63f4d07"
           }
         ]
       },
@@ -5054,7 +5311,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "a3592d30eab36dc74136a0a214032c487205dfa15c3511ab821900d68471d120"
+            "sourceSha256": "a5d0107ecdc1b96e5dc187fdd8f2b2d3c595e8a1cad2dcb624fe66bed63f4d07"
           }
         ]
       },
@@ -5083,7 +5340,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "a3592d30eab36dc74136a0a214032c487205dfa15c3511ab821900d68471d120"
+            "sourceSha256": "a5d0107ecdc1b96e5dc187fdd8f2b2d3c595e8a1cad2dcb624fe66bed63f4d07"
           }
         ]
       },
@@ -5121,7 +5378,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "a3592d30eab36dc74136a0a214032c487205dfa15c3511ab821900d68471d120"
+            "sourceSha256": "a5d0107ecdc1b96e5dc187fdd8f2b2d3c595e8a1cad2dcb624fe66bed63f4d07"
           }
         ]
       },
@@ -5129,6 +5386,35 @@
     },
     {
       "names": [
+        "--permission-prompts"
+      ],
+      "documentedSpellings": [
+        "--permission-prompts"
+      ],
+      "valueArity": "not-specified-by-doc-table",
+      "documentationUrl": "https://code.claude.com/docs/en/cli-reference#cli-flags",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "cliDocs",
+            "sourceSha256": "a5d0107ecdc1b96e5dc187fdd8f2b2d3c595e8a1cad2dcb624fe66bed63f4d07"
+          }
+        ]
+      },
+      "probeMatches": [
+        {
+          "commandPath": [
+            "claude"
+          ],
+          "names": [
+            "--permission-prompts"
+          ]
+        }
+      ]
+    },
+    {
+      "names": [
         "--plugin-dir"
       ],
       "documentedSpellings": [
@@ -5141,7 +5427,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "a3592d30eab36dc74136a0a214032c487205dfa15c3511ab821900d68471d120"
+            "sourceSha256": "a5d0107ecdc1b96e5dc187fdd8f2b2d3c595e8a1cad2dcb624fe66bed63f4d07"
           }
         ]
       },
@@ -5179,7 +5465,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "a3592d30eab36dc74136a0a214032c487205dfa15c3511ab821900d68471d120"
+            "sourceSha256": "a5d0107ecdc1b96e5dc187fdd8f2b2d3c595e8a1cad2dcb624fe66bed63f4d07"
           }
         ]
       },
@@ -5210,7 +5496,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "a3592d30eab36dc74136a0a214032c487205dfa15c3511ab821900d68471d120"
+            "sourceSha256": "a5d0107ecdc1b96e5dc187fdd8f2b2d3c595e8a1cad2dcb624fe66bed63f4d07"
           }
         ]
       },
@@ -5240,7 +5526,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "a3592d30eab36dc74136a0a214032c487205dfa15c3511ab821900d68471d120"
+            "sourceSha256": "a5d0107ecdc1b96e5dc187fdd8f2b2d3c595e8a1cad2dcb624fe66bed63f4d07"
           }
         ]
       },
@@ -5269,7 +5555,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "a3592d30eab36dc74136a0a214032c487205dfa15c3511ab821900d68471d120"
+            "sourceSha256": "a5d0107ecdc1b96e5dc187fdd8f2b2d3c595e8a1cad2dcb624fe66bed63f4d07"
           }
         ]
       },
@@ -5289,7 +5575,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "a3592d30eab36dc74136a0a214032c487205dfa15c3511ab821900d68471d120"
+            "sourceSha256": "a5d0107ecdc1b96e5dc187fdd8f2b2d3c595e8a1cad2dcb624fe66bed63f4d07"
           }
         ]
       },
@@ -5322,7 +5608,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "a3592d30eab36dc74136a0a214032c487205dfa15c3511ab821900d68471d120"
+            "sourceSha256": "a5d0107ecdc1b96e5dc187fdd8f2b2d3c595e8a1cad2dcb624fe66bed63f4d07"
           }
         ]
       },
@@ -5351,7 +5637,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "a3592d30eab36dc74136a0a214032c487205dfa15c3511ab821900d68471d120"
+            "sourceSha256": "a5d0107ecdc1b96e5dc187fdd8f2b2d3c595e8a1cad2dcb624fe66bed63f4d07"
           }
         ]
       },
@@ -5380,7 +5666,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "a3592d30eab36dc74136a0a214032c487205dfa15c3511ab821900d68471d120"
+            "sourceSha256": "a5d0107ecdc1b96e5dc187fdd8f2b2d3c595e8a1cad2dcb624fe66bed63f4d07"
           }
         ]
       },
@@ -5391,6 +5677,44 @@
           ],
           "names": [
             "--replay-user-messages"
+          ]
+        }
+      ]
+    },
+    {
+      "names": [
+        "--restricted"
+      ],
+      "documentedSpellings": [
+        "--restricted"
+      ],
+      "valueArity": "not-specified-by-doc-table",
+      "documentationUrl": "https://code.claude.com/docs/en/cli-reference#cli-flags",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "cliDocs",
+            "sourceSha256": "a5d0107ecdc1b96e5dc187fdd8f2b2d3c595e8a1cad2dcb624fe66bed63f4d07"
+          }
+        ]
+      },
+      "probeMatches": [
+        {
+          "commandPath": [
+            "claude"
+          ],
+          "names": [
+            "--restricted"
+          ]
+        },
+        {
+          "commandPath": [
+            "claude",
+            "agents"
+          ],
+          "names": [
+            "--restricted"
           ]
         }
       ]
@@ -5411,7 +5735,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "a3592d30eab36dc74136a0a214032c487205dfa15c3511ab821900d68471d120"
+            "sourceSha256": "a5d0107ecdc1b96e5dc187fdd8f2b2d3c595e8a1cad2dcb624fe66bed63f4d07"
           }
         ]
       },
@@ -5441,7 +5765,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "a3592d30eab36dc74136a0a214032c487205dfa15c3511ab821900d68471d120"
+            "sourceSha256": "a5d0107ecdc1b96e5dc187fdd8f2b2d3c595e8a1cad2dcb624fe66bed63f4d07"
           }
         ]
       },
@@ -5470,7 +5794,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "a3592d30eab36dc74136a0a214032c487205dfa15c3511ab821900d68471d120"
+            "sourceSha256": "a5d0107ecdc1b96e5dc187fdd8f2b2d3c595e8a1cad2dcb624fe66bed63f4d07"
           }
         ]
       },
@@ -5499,7 +5823,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "a3592d30eab36dc74136a0a214032c487205dfa15c3511ab821900d68471d120"
+            "sourceSha256": "a5d0107ecdc1b96e5dc187fdd8f2b2d3c595e8a1cad2dcb624fe66bed63f4d07"
           }
         ]
       },
@@ -5537,7 +5861,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "a3592d30eab36dc74136a0a214032c487205dfa15c3511ab821900d68471d120"
+            "sourceSha256": "a5d0107ecdc1b96e5dc187fdd8f2b2d3c595e8a1cad2dcb624fe66bed63f4d07"
           }
         ]
       },
@@ -5575,7 +5899,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "a3592d30eab36dc74136a0a214032c487205dfa15c3511ab821900d68471d120"
+            "sourceSha256": "a5d0107ecdc1b96e5dc187fdd8f2b2d3c595e8a1cad2dcb624fe66bed63f4d07"
           }
         ]
       },
@@ -5613,7 +5937,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "a3592d30eab36dc74136a0a214032c487205dfa15c3511ab821900d68471d120"
+            "sourceSha256": "a5d0107ecdc1b96e5dc187fdd8f2b2d3c595e8a1cad2dcb624fe66bed63f4d07"
           }
         ]
       },
@@ -5642,7 +5966,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "a3592d30eab36dc74136a0a214032c487205dfa15c3511ab821900d68471d120"
+            "sourceSha256": "a5d0107ecdc1b96e5dc187fdd8f2b2d3c595e8a1cad2dcb624fe66bed63f4d07"
           }
         ]
       },
@@ -5662,7 +5986,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "a3592d30eab36dc74136a0a214032c487205dfa15c3511ab821900d68471d120"
+            "sourceSha256": "a5d0107ecdc1b96e5dc187fdd8f2b2d3c595e8a1cad2dcb624fe66bed63f4d07"
           }
         ]
       },
@@ -5691,7 +6015,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "a3592d30eab36dc74136a0a214032c487205dfa15c3511ab821900d68471d120"
+            "sourceSha256": "a5d0107ecdc1b96e5dc187fdd8f2b2d3c595e8a1cad2dcb624fe66bed63f4d07"
           }
         ]
       },
@@ -5711,7 +6035,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "a3592d30eab36dc74136a0a214032c487205dfa15c3511ab821900d68471d120"
+            "sourceSha256": "a5d0107ecdc1b96e5dc187fdd8f2b2d3c595e8a1cad2dcb624fe66bed63f4d07"
           }
         ]
       },
@@ -5740,7 +6064,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "a3592d30eab36dc74136a0a214032c487205dfa15c3511ab821900d68471d120"
+            "sourceSha256": "a5d0107ecdc1b96e5dc187fdd8f2b2d3c595e8a1cad2dcb624fe66bed63f4d07"
           }
         ]
       },
@@ -5769,7 +6093,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "a3592d30eab36dc74136a0a214032c487205dfa15c3511ab821900d68471d120"
+            "sourceSha256": "a5d0107ecdc1b96e5dc187fdd8f2b2d3c595e8a1cad2dcb624fe66bed63f4d07"
           }
         ]
       },
@@ -5810,7 +6134,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "a3592d30eab36dc74136a0a214032c487205dfa15c3511ab821900d68471d120"
+            "sourceSha256": "a5d0107ecdc1b96e5dc187fdd8f2b2d3c595e8a1cad2dcb624fe66bed63f4d07"
           }
         ]
       },
@@ -5842,7 +6166,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "a3592d30eab36dc74136a0a214032c487205dfa15c3511ab821900d68471d120"
+            "sourceSha256": "a5d0107ecdc1b96e5dc187fdd8f2b2d3c595e8a1cad2dcb624fe66bed63f4d07"
           }
         ]
       },
@@ -6247,6 +6571,11 @@
       "exposedByHelpProbe": true
     },
     {
+      "name": "--mocks",
+      "documentedTopLevel": false,
+      "exposedByHelpProbe": true
+    },
+    {
       "name": "--model",
       "documentedTopLevel": true,
       "exposedByHelpProbe": true
@@ -6300,6 +6629,11 @@
       "name": "--permission-prompt-tool",
       "documentedTopLevel": true,
       "exposedByHelpProbe": false
+    },
+    {
+      "name": "--permission-prompts",
+      "documentedTopLevel": true,
+      "exposedByHelpProbe": true
     },
     {
       "name": "--plugin-dir",
@@ -6377,6 +6711,11 @@
       "exposedByHelpProbe": true
     },
     {
+      "name": "--restricted",
+      "documentedTopLevel": true,
+      "exposedByHelpProbe": true
+    },
+    {
       "name": "--resume",
       "documentedTopLevel": true,
       "exposedByHelpProbe": true
@@ -6445,6 +6784,11 @@
       "name": "--system-prompt-file",
       "documentedTopLevel": true,
       "exposedByHelpProbe": false
+    },
+    {
+      "name": "--system-prompt-snapshot",
+      "documentedTopLevel": false,
+      "exposedByHelpProbe": true
     },
     {
       "name": "--tag",
@@ -6597,5 +6941,5 @@
       "exposedByHelpProbe": true
     }
   ],
-  "unclassifiedStaticCandidateCount": 4417
+  "unclassifiedStaticCandidateCount": 2755
 }
