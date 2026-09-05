@@ -13,6 +13,7 @@ import {
   tableRecords,
   versionBounds
 } from "./lib/markdown.mjs";
+import { settingRecord, schemaForRecord } from "./lib/settings.mjs";
 import { mergeSchema, schemaFromValue, setDottedProperty, withEvidence } from "./lib/schema.mjs";
 
 const here = dirname(fileURLToPath(import.meta.url));
@@ -88,52 +89,6 @@ function tableByHeading(source, heading) {
   const table = markdownTables(source.text).find((candidate) => candidate.heading === heading);
   if (!table) throw new Error(`${source.id}: missing table under ${heading}`);
   return table;
-}
-
-function settingRecord(section, source, version) {
-  if (!activeForVersion(section.bounds, version)) return null;
-  // The reference page states each key's scope directly, so trust that label
-  // instead of inferring scope from description prose.
-  if (!section.scopes) throw new Error(`${source.id}: unknown scope "${section.scopeLabel}" for ${section.key}`);
-  return {
-    key: section.key,
-    heading: section.heading,
-    bounds: section.bounds,
-    example: parseJsonExampleBlock(section.example, section.key),
-    scopes: section.scopes,
-    evidence: evidence(source, section.heading, "existence-and-example", "official-key-entry")
-  };
-}
-
-// A key's example is a whole settings.json object, so take the value stored at
-// the key itself rather than the surrounding wrapper.
-function parseJsonExampleBlock(block, key) {
-  if (!block) return { parsed: false };
-  let document;
-  try {
-    document = JSON.parse(block);
-  } catch {
-    return { parsed: false, display: block.trim() };
-  }
-  let cursor = document;
-  for (const part of key.split(".")) {
-    if (cursor === null || typeof cursor !== "object" || !(part in cursor)) {
-      return { parsed: false, display: block.trim() };
-    }
-    cursor = cursor[part];
-  }
-  return { parsed: true, value: cursor };
-}
-
-function schemaForRecord(record) {
-  const base = record.example.parsed ? schemaFromValue(record.example.value) : {};
-  return withEvidence({
-    ...base,
-    ...(record.bounds.minVersion ? { "x-min-version": record.bounds.minVersion } : {}),
-    ...(record.bounds.maxVersion ? { "x-max-version": record.bounds.maxVersion } : {}),
-    ...(record.example.parsed ? { examples: [record.example.value] } : {}),
-    ...(record.scopes.length < 5 ? { "x-scopes": record.scopes } : {})
-  }, record.evidence);
 }
 
 function enrichFromDescription(schema, description) {
@@ -334,7 +289,7 @@ for (const { raw, parsed } of availableRecords) {
     surface: "settings.json",
     scopes: parsed.scopes,
     status: "documented-active",
-    typeEvidence: parsed.example.parsed ? "official-example" : "pending-runtime-or-structural-evidence",
+    typeEvidence: parsed.example.parsed ? "official-example" : parsed.typeSchema.type ? "official-type" : "pending-runtime-or-structural-evidence",
     provenance: parsed.evidence
   });
 }
