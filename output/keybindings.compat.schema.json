@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://github.com/amitray007/claude-code-schema/releases/download/v2.1.260/keybindings.compat.schema.json",
+  "$id": "https://github.com/amitray007/claude-code-schema/releases/download/v2.1.263/keybindings.compat.schema.json",
   "title": "Claude Code keybindings — exact parser compatibility",
   "description": "Conservative validator generated only from the official keybindings documentation.",
   "type": "object",
@@ -38,6 +38,7 @@
               "Footer",
               "MessageSelector",
               "DiffDialog",
+              "DiffPanel",
               "ModelPicker",
               "Select",
               "Plugin",
@@ -70,7 +71,7 @@
     "bindings"
   ],
   "additionalProperties": false,
-  "x-claude-code-version": "2.1.260",
+  "x-claude-code-version": "2.1.263",
   "x-artifact-kind": "keybindings-runtime-compat-json-schema",
   "x-validation-limitations": [
     "The current official docs do not document command: bindings; the narrowly patterned compatibility form is accepted but annotated as unverified for this release.",
@@ -80,14 +81,20 @@
     "evidence": [
       {
         "source": "keybindingsDocs",
-        "sourceSha256": "1c5df383bb68c62c6817707d1ab2575e5cbb20d3219e26e1183c8fde307f69a1"
+        "sourceSha256": "e3089106d21ce207ec2a57a3e6639d6fece54ed6fbfe9b988593d40509636b5c"
       }
     ]
   },
   "x-binary-corroborated-actions": [
+    "app:cycleDiffBase",
+    "app:diffFileListDown",
+    "app:diffFileListUp",
     "app:exit",
     "app:interrupt",
     "app:redraw",
+    "app:toggleDiffNoiseFilter",
+    "app:toggleDiffPreSession",
+    "app:toggleReplTab",
     "app:toggleTodos",
     "app:toggleTranscript",
     "attachments:exit",
