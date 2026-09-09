@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "artifactKind": "release-review-catalog",
-  "claudeCodeVersion": "2.1.263",
+  "claudeCodeVersion": "2.1.266",
   "surface": {
     "product": "Claude Code",
     "interface": "release-review-evidence",
@@ -14,20 +14,41 @@
   "releaseHints": [
     {
       "sourceLine": 5,
-      "bulletSha256": "2433a5290518aeee89fc67e15b7c5583f414705b38300bfe19206f34a9ee30e1",
-      "changeKind": "changed",
-      "facts": [],
+      "bulletSha256": "3ad8b451d358a7c5c60e29cd7c463a88c37c2a6063a0e3f13e015cd03a45b3b0",
+      "changeKind": "fixed",
+      "facts": [
+        {
+          "kind": "environment-variable",
+          "identifier": "CLAUDE_CODE_USE_GATEWAY",
+          "confidence": "high"
+        },
+        {
+          "kind": "environment-variable",
+          "identifier": "ANTHROPIC_BASE_URL",
+          "confidence": "high"
+        },
+        {
+          "kind": "environment-variable",
+          "identifier": "ANTHROPIC_AUTH_TOKEN",
+          "confidence": "high"
+        },
+        {
+          "kind": "setting",
+          "identifier": "apiKeyHelper",
+          "confidence": "high"
+        }
+      ],
       "ambiguousCodeTokens": [],
       "needsReview": true,
       "reviewReasons": [
-        "no-typed-identifier-extracted"
+        "possible-schema-or-catalog-impact"
       ]
     }
   ],
   "releaseHintSource": {
     "changelog": "matchingTagChangelog",
     "githubReleaseNotes": "githubReleaseNotes",
-    "publishedAt": "2026-09-06T02:54:20Z"
+    "publishedAt": "2026-09-08T23:55:14Z"
   },
   "releaseHintPolicy": "Hints never mutate schemas or catalogs automatically. Deterministic evidence and validation are required; ambiguous entries enter human review.",
   "rawProseRedistributed": false,
@@ -64,7 +85,7 @@
     "x-status": "exact-release-binary-validator-corroborated",
     "x-binary": {
       "source": "platformBinary",
-      "sha256": "26d020351e8112f4006790f3cfce43b4c9df0c1bb1d0e542364d64151b81d5ba",
+      "sha256": "19842705e989393fce936804df6d2ab034860e24b8f8880357981d87ffd83fac",
       "pathInPackage": "package/claude",
       "commandBindingPatternCorroborated": true,
       "commandBindingValidatorMessageCorroborated": true
