@@ -122,11 +122,23 @@ export function scopesFromLabel(label) {
   return SCOPE_LABELS[label] ?? null;
 }
 
+// Match the heading by text at any level. The settings reference has moved
+// between `#` and `##` upstream, which broke generation while the per-key
+// sections below it were unchanged.
+export function headingOffset(markdown, startHeading) {
+  const text = startHeading.replace(/^#+\s*/, "");
+  const pattern = new RegExp(
+    `^#{1,6}\\s+${text.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\s*$`,
+    "m"
+  );
+  return pattern.exec(markdown.replace(/\r/g, ""))?.index ?? -1;
+}
+
 // The settings reference moved from one wide table to a per-key section for
 // each key. Each section carries Scope, Type, and Default bullets plus a JSON
 // example, so read the bullets rather than table columns.
 export function referenceSections(markdown, startHeading) {
-  const start = markdown.indexOf(startHeading);
+  const start = headingOffset(markdown, startHeading);
   if (start === -1) throw new Error(`Could not find section ${startHeading}`);
   return markdown
     .slice(start)
