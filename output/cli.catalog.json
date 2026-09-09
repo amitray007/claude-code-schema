@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
   "artifactKind": "cli-surface-catalog",
-  "claudeCodeVersion": "2.1.263",
+  "claudeCodeVersion": "2.1.266",
   "platformPackage": "@anthropic-ai/claude-code-linux-x64",
-  "binarySha256": "26d020351e8112f4006790f3cfce43b4c9df0c1bb1d0e542364d64151b81d5ba",
+  "binarySha256": "19842705e989393fce936804df6d2ab034860e24b8f8880357981d87ffd83fac",
   "probePolicy": {
     "allowedOperations": [
       "--version",
@@ -19,7 +19,7 @@
     "maximumCommands": 80,
     "rawHelpRedistributed": false
   },
-  "versionOutput": "2.1.263 (Claude Code)",
+  "versionOutput": "2.1.266 (Claude Code)",
   "commands": [
     {
       "commandPath": [
@@ -33,8 +33,8 @@
       "signal": null,
       "timedOut": false,
       "outputExceeded": false,
-      "helpSha256": "6141f1e82e4ffe8433f2e9091575fc0897cbfd2b05052c54178e7497381663ba",
-      "helpBytes": 21503,
+      "helpSha256": "03063f8f8e84ee6b5c816a54c80dab1dc921f85cb6d7c7e7e9eb256f0c797b33",
+      "helpBytes": 21400,
       "usage": "claude [options] [command] [prompt]",
       "arguments": [
         {
@@ -915,8 +915,8 @@
       "signal": null,
       "timedOut": false,
       "outputExceeded": false,
-      "helpSha256": "95c11e466905c7a264bf68712598090b4fb088a41603cc60e4932690b3283894",
-      "helpBytes": 2736,
+      "helpSha256": "3e00994f5e4fa279b639bab3fc07fb81012032bd336594f2ed1c2c71da67c0b5",
+      "helpBytes": 2814,
       "usage": "claude agents [options]",
       "arguments": [],
       "options": [
@@ -1343,8 +1343,8 @@
       "signal": null,
       "timedOut": false,
       "outputExceeded": false,
-      "helpSha256": "cf7e55be51f0d8c83ed1883b2b091f93498a25e32d017fd80bde155b55f4d953",
-      "helpBytes": 412,
+      "helpSha256": "8a029f0cfb4fc1773d25233732c41c52d2a20e19f6f12c8eb9535bf9e81751c8",
+      "helpBytes": 420,
       "usage": "claude import [options] [source]",
       "arguments": [
         {
@@ -6976,5 +6976,5 @@
       "exposedByHelpProbe": true
     }
   ],
-  "unclassifiedStaticCandidateCount": 2745
+  "unclassifiedStaticCandidateCount": 2766
 }
