@@ -1,0 +1,69 @@
+name: Documentation drift canary
+
+# Generation reads Anthropic's live documentation, but CI runs on fixtures, so
+# an upstream restructure stays invisible until a publish attempt fails. Run the
+# real generation daily, ahead of discovery, and report drift as an issue.
+
+on:
+  schedule:
+    - cron: "5 1 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: claude-code-schema-docs-drift
+  cancel-in-progress: false
+
+jobs:
+  canary:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6
+      - name: Set up Node.js
+        uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6
+        with:
+          node-version: 24
+          cache: npm
+      - name: Install dependencies without lifecycle scripts
+        run: npm ci --ignore-scripts
+      - name: Generate the current release against live documentation
+        id: generate
+        run: |
+          mkdir -p .work
+          set -o pipefail
+          npm run schema:generate -- \
+            --version latest \
+            --platform-package @anthropic-ai/claude-code-linux-x64 \
+            --output .work/canary \
+            2>&1 | tee .work/canary-error.log
+      - name: Report drift as an issue
+        if: failure() && steps.generate.outcome == 'failure'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh label create docs-drift --repo "$GITHUB_REPOSITORY" --color d93f0b \
+            --description "Live documentation no longer matches the generators" --force
+          marker="claude-code-schema-docs-drift"
+          existing=$(gh issue list --repo "$GITHUB_REPOSITORY" --state open --label docs-drift \
+            --limit 100 --json number,body \
+            --jq ".[] | select(.body != null and (.body | contains(\"$marker\"))) | .number" | head -n 1)
+          if [[ -n "$existing" ]]; then
+            gh issue comment "$existing" --repo "$GITHUB_REPOSITORY" \
+              --body "Generation against live documentation failed again: ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
+            exit 0
+          fi
+          body=$(mktemp)
+          {
+            printf '<!-- %s -->\n' "$marker"
+            printf 'Generation against Anthropic'"'"'s live documentation failed, so schema publication is blocked.\n\n'
+            printf 'Run: %s/%s/actions/runs/%s\n\n' "$GITHUB_SERVER_URL" "$GITHUB_REPOSITORY" "$GITHUB_RUN_ID"
+            printf '```\n%s\n```\n' "$(tail -c 3000 .work/canary-error.log 2>/dev/null)"
+          } > "$body"
+          gh issue create --repo "$GITHUB_REPOSITORY" \
+            --title "Live documentation drift blocks schema generation" \
+            --body-file "$body" --label docs-drift

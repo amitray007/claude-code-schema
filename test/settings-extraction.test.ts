@@ -112,3 +112,31 @@ test("unknown and ambiguous type descriptions remain unconstrained", () => {
     assert.equal(schema["x-provenance"].evidence[0].fact, "existence");
   }
 });
+
+// Upstream moved "All settings" from `##` to `#`, which halted every generator
+// while the per-key sections below it were unchanged. Match on heading text so
+// a heading-level change alone cannot break generation again.
+test("the settings anchor is found at any heading level", () => {
+  const expected = referenceSections(reference, "## All settings").map(
+    (section: { key: string }) => section.key,
+  );
+  assert.ok(expected.length > 0);
+
+  for (const level of ["#", "##", "###"]) {
+    const shifted = reference.replace(
+      /^## All settings$/m,
+      `${level} All settings`,
+    );
+    const keys = referenceSections(shifted, "## All settings").map(
+      (section: { key: string }) => section.key,
+    );
+    assert.deepEqual(keys, expected);
+  }
+});
+
+test("a missing settings anchor still fails loudly", () => {
+  assert.throws(
+    () => referenceSections(reference, "## Nonexistent section"),
+    /Could not find section/,
+  );
+});

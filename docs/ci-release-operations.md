@@ -9,6 +9,7 @@
 | `auto-release-version.yml` | Dispatched by discovery           | Build, validate, diff, attest, and immutably publish the current npm `latest` version      |
 | `analyze-version.yml`      | Reusable and manual               | Generate an exact-version candidate, validate it, upload review evidence, update its issue |
 | `weekly-deep-audit.yml`    | Weekly and manual                 | Re-run live sources, exact binary probes, offline tests, and drift comparison              |
+| `docs-drift-canary.yml`    | Daily and manual                  | Generate against live documentation ahead of discovery and report upstream drift as an issue |
 | `prepare-release-pr.yml`   | Manual                            | Download previously reviewed bytes, revalidate, stage publication files, open an auto-merge PR |
 | `publish-release.yml`      | Merged `output/` files and manual | Validate committed bytes, checksum and attest each JSON file, create a GitHub Release      |
 
