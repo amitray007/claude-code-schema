@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "artifactKind": "environment-surface-catalog",
-  "claudeCodeVersion": "2.1.266",
+  "claudeCodeVersion": "2.1.267",
   "surface": {
     "product": "Claude Code CLI",
     "interface": "process-environment",
@@ -191,6 +191,7 @@
     "CLAUDE_CODE_MESSAGING_TOKEN",
     "CLAUDE_CODE_NATIVE_CURSOR",
     "CLAUDE_CODE_NEW_INIT",
+    "CLAUDE_CODE_NONBLOCKING_STDOUT",
     "CLAUDE_CODE_NO_FLICKER",
     "CLAUDE_CODE_OAUTH_REFRESH_TOKEN",
     "CLAUDE_CODE_OAUTH_SCOPES",
@@ -276,6 +277,7 @@
     "CLAUDE_ENABLE_BYTE_WATCHDOG_BEDROCK",
     "CLAUDE_ENABLE_STREAM_WATCHDOG",
     "CLAUDE_ENV_FILE",
+    "CLAUDE_JOB_DIR",
     "CLAUDE_PID",
     "CLAUDE_REMOTE_CONTROL_SESSION_NAME_PREFIX",
     "CLAUDE_STREAM_FIRST_BYTE_TIMEOUT_MS",
@@ -461,7 +463,7 @@
   ],
   "binaryEvidence": {
     "platformPackage": "@anthropic-ai/claude-code-linux-x64",
-    "binarySha256": "19842705e989393fce936804df6d2ab034860e24b8f8880357981d87ffd83fac",
+    "binarySha256": "0399c793ff571d5946ef923d80b4f330d05ac4b6842a6b0775468f5d389403c0",
     "policy": "Static strings prove token presence only. Binary-only values are candidates, not public API."
   },
   "staticBinaryCandidates": [
@@ -886,6 +888,10 @@
       "documented": false
     },
     {
+      "name": "CLAUDE_CODE_ARTIFACT_HOT",
+      "documented": false
+    },
+    {
       "name": "CLAUDE_CODE_ARTIFACT_LIVE_BASE_URL",
       "documented": false
     },
@@ -1251,6 +1257,10 @@
     },
     {
       "name": "CLAUDE_CODE_DESIGN_OAUTH_CLIENT_ID",
+      "documented": false
+    },
+    {
+      "name": "CLAUDE_CODE_DESKTOP_APP_VERSION",
       "documented": false
     },
     {
@@ -2150,6 +2160,10 @@
       "documented": false
     },
     {
+      "name": "CLAUDE_CODE_MODEL_CAPABILITIES",
+      "documented": false
+    },
+    {
       "name": "CLAUDE_CODE_MODEL_CATALOG",
       "documented": false
     },
@@ -2171,7 +2185,7 @@
     },
     {
       "name": "CLAUDE_CODE_NONBLOCKING_STDOUT",
-      "documented": false
+      "documented": true
     },
     {
       "name": "CLAUDE_CODE_NO_FLICKER",
@@ -2486,6 +2500,10 @@
       "documented": false
     },
     {
+      "name": "CLAUDE_CODE_REMOTE_TOOLS_ADOPT_MCP",
+      "documented": false
+    },
+    {
       "name": "CLAUDE_CODE_REMOTE_TOOLS_POLICY",
       "documented": false
     },
@@ -2579,6 +2597,10 @@
     },
     {
       "name": "CLAUDE_CODE_SDK_HAS_OAUTH_REFRESH",
+      "documented": false
+    },
+    {
+      "name": "CLAUDE_CODE_SENDMESSAGE_HANDBACK",
       "documented": false
     },
     {
