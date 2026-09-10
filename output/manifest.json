@@ -2,34 +2,34 @@
   "schemaVersion": 1,
   "sourcePolicy": "current official documentation, release-tagged first-party examples, integrity-verified platform package, bounded CLI probes, and isolated runtime validation; SchemaStore is not a generation source",
   "artifactKind": "claude-code-surface-manifest",
-  "claudeCodeVersion": "2.1.266",
+  "claudeCodeVersion": "2.1.267",
   "release": {
     "npmPackage": "@anthropic-ai/claude-code",
-    "npmIntegrity": "sha512-zaEL5S5twZgQzmF1b/SBMSOllwMrJiqHXTd25ZWwaZRKr1jUKy4jGTPR/uMLYWsuv9Az1neiaWGLJu93lPYO8w==",
-    "npmTarball": "https://registry.npmjs.org/@anthropic-ai/claude-code/-/claude-code-2.1.266.tgz",
+    "npmIntegrity": "sha512-0rErYxMp/5uJKt2Z8zJVRmuGEijTiDOb659YnELpGsxyrOp0BKhoOrT8tyNrK5yn8VLYXxc3X3KXfT9woL0R4g==",
+    "npmTarball": "https://registry.npmjs.org/@anthropic-ai/claude-code/-/claude-code-2.1.267.tgz",
     "platformPackages": {
-      "@anthropic-ai/claude-code-linux-x64": "2.1.266",
-      "@anthropic-ai/claude-code-win32-x64": "2.1.266",
-      "@anthropic-ai/claude-code-darwin-x64": "2.1.266",
-      "@anthropic-ai/claude-code-linux-arm64": "2.1.266",
-      "@anthropic-ai/claude-code-win32-arm64": "2.1.266",
-      "@anthropic-ai/claude-code-darwin-arm64": "2.1.266",
-      "@anthropic-ai/claude-code-linux-x64-musl": "2.1.266",
-      "@anthropic-ai/claude-code-linux-arm64-musl": "2.1.266"
+      "@anthropic-ai/claude-code-linux-x64": "2.1.267",
+      "@anthropic-ai/claude-code-win32-x64": "2.1.267",
+      "@anthropic-ai/claude-code-darwin-x64": "2.1.267",
+      "@anthropic-ai/claude-code-linux-arm64": "2.1.267",
+      "@anthropic-ai/claude-code-win32-arm64": "2.1.267",
+      "@anthropic-ai/claude-code-darwin-arm64": "2.1.267",
+      "@anthropic-ai/claude-code-linux-x64-musl": "2.1.267",
+      "@anthropic-ai/claude-code-linux-arm64-musl": "2.1.267"
     },
-    "expectedGitTag": "v2.1.266",
+    "expectedGitTag": "v2.1.267",
     "selectedPlatformPackage": "@anthropic-ai/claude-code-linux-x64",
-    "platformNpmIntegrity": "sha512-0YW7k2gyjCKfoNNMn+h9LVOKbZi/XVie2BBLGcoahXtRmWIXNuhazEd0BdvXDbcUc7mi9A2Nwq/TWD/riwO6oA==",
+    "platformNpmIntegrity": "sha512-/tbh7mVwKlsGV4NHSMp+Bxulu2Ly+DSnD7JcsSQex8UO2G7pq8sYXIXXNLR1l2U04Oia/qzH8UkUonRXkwWJeg==",
     "platformIntegrityVerified": true,
-    "binarySha256": "19842705e989393fce936804df6d2ab034860e24b8f8880357981d87ffd83fac"
+    "binarySha256": "0399c793ff571d5946ef923d80b4f330d05ac4b6842a6b0775468f5d389403c0"
   },
   "sources": [
     {
       "id": "npmRelease",
-      "requestedUrl": "https://registry.npmjs.org/@anthropic-ai/claude-code/2.1.266",
-      "resolvedUrl": "https://registry.npmjs.org/@anthropic-ai/claude-code/2.1.266",
+      "requestedUrl": "https://registry.npmjs.org/@anthropic-ai/claude-code/2.1.267",
+      "resolvedUrl": "https://registry.npmjs.org/@anthropic-ai/claude-code/2.1.267",
       "role": "release identity and platform matrix",
-      "sha256": "9c64076735957acb0c312eb05111c9da0740ab416bd21728aebf99e37f49f2f7",
+      "sha256": "2b4148882db1e36c2f8ab761738a5b14f2937df700817113addd88b97ffb9f0c",
       "bytes": 3300
     },
     {
@@ -37,7 +37,7 @@
       "requestedUrl": "https://registry.npmjs.org/@anthropic-ai/claude-code/latest",
       "resolvedUrl": "https://registry.npmjs.org/@anthropic-ai/claude-code/latest",
       "role": "guard that mutable docs are paired with the current release",
-      "sha256": "9c64076735957acb0c312eb05111c9da0740ab416bd21728aebf99e37f49f2f7",
+      "sha256": "2b4148882db1e36c2f8ab761738a5b14f2937df700817113addd88b97ffb9f0c",
       "bytes": 3300
     },
     {
@@ -45,57 +45,57 @@
       "requestedUrl": "https://code.claude.com/docs/en/settings-reference.md",
       "resolvedUrl": "https://code.claude.com/docs/en/settings-reference.md",
       "role": "public per-key settings entries: scope, type, default, example",
-      "sha256": "b797283d5d153661df0adf438130c09fb4734f826a99af13be7ad52c4232d023",
-      "bytes": 424731
+      "sha256": "ca8028b4bef6b527283a2bf08e4b8fb9f8513f4be3958250b9152be402f26386",
+      "bytes": 434670
     },
     {
       "id": "envDocs",
       "requestedUrl": "https://code.claude.com/docs/en/env-vars.md",
       "resolvedUrl": "https://code.claude.com/docs/en/env-vars.md",
       "role": "public environment-variable existence and prose",
-      "sha256": "e63c6d724df26c5b9ca02dafc3824e1ab5440e4f48de90a6768e89b962f15f92",
-      "bytes": 481459
+      "sha256": "a2e450e338df4921fedf8a4d6349da010fb4bd9de2cbc5f1d02529ca47e45555",
+      "bytes": 484329
     },
     {
       "id": "cliDocs",
       "requestedUrl": "https://code.claude.com/docs/en/cli-reference.md",
       "resolvedUrl": "https://code.claude.com/docs/en/cli-reference.md",
       "role": "public top-level flags and prose",
-      "sha256": "7334cf725ef1c84a4fdc0aaa17baaa8a1af2a90fc1bc526279b48076d717b5bf",
-      "bytes": 109584
+      "sha256": "adb9c54834d3b757be74a6010ade324b2e7822cdf6add91d7fb0413873293509",
+      "bytes": 113300
     },
     {
       "id": "keybindingsDocs",
       "requestedUrl": "https://code.claude.com/docs/en/keybindings.md",
       "resolvedUrl": "https://code.claude.com/docs/en/keybindings.md",
       "role": "public actions, contexts, and default shortcuts",
-      "sha256": "335d18b579865522c1be960e1f405157b7767b3f823c599924f0d5baa283a9e4",
-      "bytes": 41709
+      "sha256": "d170308ad1e378b3128caf78e55aa713ed11470d01463d89a3bcd30eca23c6b4",
+      "bytes": 44158
     },
     {
       "id": "docsIndex",
       "requestedUrl": "https://code.claude.com/docs/llms.txt",
       "resolvedUrl": "https://code.claude.com/docs/llms.txt",
       "role": "documentation route discovery",
-      "sha256": "a1e35b093db1646f842fc4d9a0acb52caf5e9a3f77e0e90a226c7dcf14443a9c",
-      "bytes": 45455
+      "sha256": "f475ee9acc9c8ab46f14ce7ccae18fa5a9dca2327fb3a9c8bd4896513b2457ec",
+      "bytes": 45508
     },
     {
       "id": "platformPackageMetadata",
-      "requestedUrl": "https://registry.npmjs.org/%40anthropic-ai%2Fclaude-code-linux-x64/2.1.266",
-      "resolvedUrl": "https://registry.npmjs.org/%40anthropic-ai%2Fclaude-code-linux-x64/2.1.266",
+      "requestedUrl": "https://registry.npmjs.org/%40anthropic-ai%2Fclaude-code-linux-x64/2.1.267",
+      "resolvedUrl": "https://registry.npmjs.org/%40anthropic-ai%2Fclaude-code-linux-x64/2.1.267",
       "role": "exact platform tarball identity and integrity",
-      "sha256": "a68bb7b9c84384b8d353403b74f06a3c6027d3d0e1ecc0ff4f5833331d8a7a92",
+      "sha256": "2ed262a03d033ec52e77fb952b358367865ae2e6c50b5a14e1a58d1b6c79eedb",
       "bytes": 2330
     },
     {
       "id": "platformTarball",
-      "requestedUrl": "https://registry.npmjs.org/@anthropic-ai/claude-code-linux-x64/-/claude-code-linux-x64-2.1.266.tgz",
-      "resolvedUrl": "https://registry.npmjs.org/@anthropic-ai/claude-code-linux-x64/-/claude-code-linux-x64-2.1.266.tgz",
+      "requestedUrl": "https://registry.npmjs.org/@anthropic-ai/claude-code-linux-x64/-/claude-code-linux-x64-2.1.267.tgz",
+      "resolvedUrl": "https://registry.npmjs.org/@anthropic-ai/claude-code-linux-x64/-/claude-code-linux-x64-2.1.267.tgz",
       "role": "integrity-verified package used for static inspection and safe probing",
-      "sha256": "49f12080b2857b25aa8400d389f92a6afea557f656276b69463ab1784d0acce5",
-      "bytes": 97004869,
-      "npmIntegrity": "sha512-0YW7k2gyjCKfoNNMn+h9LVOKbZi/XVie2BBLGcoahXtRmWIXNuhazEd0BdvXDbcUc7mi9A2Nwq/TWD/riwO6oA==",
+      "sha256": "010258658ab7a0aa09ea992cb2a314689e25ce42854c57d6993e3136097039d5",
+      "bytes": 97505280,
+      "npmIntegrity": "sha512-/tbh7mVwKlsGV4NHSMp+Bxulu2Ly+DSnD7JcsSQex8UO2G7pq8sYXIXXNLR1l2U04Oia/qzH8UkUonRXkwWJeg==",
       "integrityVerified": true
     },
     {
@@ -103,8 +103,8 @@
       "role": "extracted executable used only for static strings and bounded help/version probes",
       "extractedFrom": "platformTarball",
       "pathInPackage": "package/claude",
-      "sha256": "19842705e989393fce936804df6d2ab034860e24b8f8880357981d87ffd83fac",
-      "bytes": 215940592,
+      "sha256": "0399c793ff571d5946ef923d80b4f330d05ac4b6842a6b0775468f5d389403c0",
+      "bytes": 217013744,
       "executedOperations": [
         "--version",
         "--help",
@@ -113,58 +113,58 @@
     },
     {
       "id": "matchingTagChangelog",
-      "requestedUrl": "https://raw.githubusercontent.com/anthropics/claude-code/v2.1.266/CHANGELOG.md",
-      "resolvedUrl": "https://raw.githubusercontent.com/anthropics/claude-code/v2.1.266/CHANGELOG.md",
+      "requestedUrl": "https://raw.githubusercontent.com/anthropics/claude-code/v2.1.267/CHANGELOG.md",
+      "resolvedUrl": "https://raw.githubusercontent.com/anthropics/claude-code/v2.1.267/CHANGELOG.md",
       "role": "release-scoped change hints",
-      "sha256": "8b4b6596c456fdb353121e571d7934971a98e477f5ce08a08523ca97872605e1",
-      "bytes": 638939
+      "sha256": "b99d78d9c1d0efbc144395aa20e08571939b63451c9280a0fc64c7f7f97abf67",
+      "bytes": 646903
     },
     {
       "id": "githubReleaseNotes",
-      "requestedUrl": "https://api.github.com/repos/anthropics/claude-code/releases/tags/v2.1.266",
-      "resolvedUrl": "https://api.github.com/repos/anthropics/claude-code/releases/tags/v2.1.266",
+      "requestedUrl": "https://api.github.com/repos/anthropics/claude-code/releases/tags/v2.1.267",
+      "resolvedUrl": "https://api.github.com/repos/anthropics/claude-code/releases/tags/v2.1.267",
       "role": "matching GitHub release metadata and notes",
-      "sha256": "914a5a702e57bbe5c99fd1079ac0fb4facdbbd4c888e74a6b0e47e7af30a59e8",
-      "bytes": 17584
+      "sha256": "e6f53a98ca7d7fbb14ca6e6e08498934fa8810e0dd5ed11f1c9f01f8c2db4643",
+      "bytes": 25085
     },
     {
       "id": "settingsDocsExpanded",
       "requestedUrl": "https://code.claude.com/docs/en/settings-reference.md",
       "resolvedUrl": "https://code.claude.com/docs/en/settings-reference.md",
       "role": "per-key settings entries: scope, type, default, and official example",
-      "sha256": "b797283d5d153661df0adf438130c09fb4734f826a99af13be7ad52c4232d023",
-      "bytes": 424731
+      "sha256": "ca8028b4bef6b527283a2bf08e4b8fb9f8513f4be3958250b9152be402f26386",
+      "bytes": 434670
     },
     {
       "id": "envDocsExpanded",
       "requestedUrl": "https://code.claude.com/docs/en/env-vars.md",
       "resolvedUrl": "https://code.claude.com/docs/en/env-vars.md",
       "role": "primary configurable environment-variable reference and cross-references",
-      "sha256": "e63c6d724df26c5b9ca02dafc3824e1ab5440e4f48de90a6768e89b962f15f92",
-      "bytes": 481459
+      "sha256": "a2e450e338df4921fedf8a4d6349da010fb4bd9de2cbc5f1d02529ca47e45555",
+      "bytes": 484329
     },
     {
       "id": "keybindingsDocsExpanded",
       "requestedUrl": "https://code.claude.com/docs/en/keybindings.md",
       "resolvedUrl": "https://code.claude.com/docs/en/keybindings.md",
       "role": "contexts, actions, version bounds, keystroke syntax, unbinding, validation behavior",
-      "sha256": "335d18b579865522c1be960e1f405157b7767b3f823c599924f0d5baa283a9e4",
-      "bytes": 41709
+      "sha256": "d170308ad1e378b3128caf78e55aa713ed11470d01463d89a3bcd30eca23c6b4",
+      "bytes": 44158
     },
     {
       "id": "pluginReferenceDocs",
       "requestedUrl": "https://code.claude.com/docs/en/plugins-reference.md",
       "resolvedUrl": "https://code.claude.com/docs/en/plugins-reference.md",
       "role": "plugin configuration and plugin settings",
-      "sha256": "3c017b65b48b6884b47882ffcf931dc77dead2048c624ffd76b039de8082bac8",
-      "bytes": 117820
+      "sha256": "65ccac0ce011a4d500c5613cf74cb850f55ab3e0927bfa91c8d6d02471b5baf4",
+      "bytes": 118247
     },
     {
       "id": "statuslineDocs",
       "requestedUrl": "https://code.claude.com/docs/en/statusline.md",
       "resolvedUrl": "https://code.claude.com/docs/en/statusline.md",
       "role": "statusLine and subagentStatusLine structures",
-      "sha256": "20379f8f1b7922c3088faadb0755214837883abd5ad33aba473190f65769e640",
+      "sha256": "25714ae87efd73e8e4306f76fde76471ba55cb1a50ce48d4126baa0731d1cbd1",
       "bytes": 79133
     },
     {
@@ -172,16 +172,16 @@
       "requestedUrl": "https://code.claude.com/docs/en/desktop.md",
       "resolvedUrl": "https://code.claude.com/docs/en/desktop.md",
       "role": "Desktop-only managed settings",
-      "sha256": "bebfa937075bbf49fe055c5636859835fa90df65fde2894a294795e7c025a6bb",
-      "bytes": 99683
+      "sha256": "b78f5f245773175e9751fdce6ed3a2cf535b20ee0f90d6f0c4472d8344589a2c",
+      "bytes": 101937
     },
     {
       "id": "hooksDocs",
       "requestedUrl": "https://code.claude.com/docs/en/hooks.md",
       "resolvedUrl": "https://code.claude.com/docs/en/hooks.md",
       "role": "hook configuration structure",
-      "sha256": "ac2f68e8221903ea4e3fc9e287959da2e979c0e7da95681c34cf5f8d7b36d28a",
-      "bytes": 317650
+      "sha256": "b387875a7957cf3451e74471c48c88c5afc0843850788aaaecefc4599ca2b4f0",
+      "bytes": 319955
     },
     {
       "id": "monitoringDocs",
@@ -196,8 +196,8 @@
       "requestedUrl": "https://code.claude.com/docs/en/auto-mode-config.md",
       "resolvedUrl": "https://code.claude.com/docs/en/auto-mode-config.md",
       "role": "autoMode nested rule structure",
-      "sha256": "d3a8c7f034a5b056a70afbd540adfe9d9e6497a9b8919462ff86bacf0123d2ee",
-      "bytes": 35413
+      "sha256": "8cf836f14171b07eb4c9a26c47e65ca41a27f4053c939898252a172210081192",
+      "bytes": 35791
     },
     {
       "id": "voiceDictationDocs",
@@ -212,61 +212,61 @@
       "requestedUrl": "https://code.claude.com/docs/en/sandboxing.md",
       "resolvedUrl": "https://code.claude.com/docs/en/sandboxing.md",
       "role": "sandbox behavior and nested configuration",
-      "sha256": "b97101f6ba0705b2290bf4f310a33937379a234fc0ee8e98716fbd37d894c7fc",
-      "bytes": 74083
+      "sha256": "9173fa7bfc40900080b167be86897899912ce55ff61ad1072f71a5eab69e80ce",
+      "bytes": 75062
     },
     {
       "id": "managedMcpDocs",
       "requestedUrl": "https://code.claude.com/docs/en/managed-mcp.md",
       "resolvedUrl": "https://code.claude.com/docs/en/managed-mcp.md",
       "role": "managed MCP policy structures",
-      "sha256": "15704aff54b67594209e70a54c7666f499fe27652ce87f5d07ff13e4c193cf8c",
-      "bytes": 38047
+      "sha256": "281b3472edebefc30e32ecc0da6b4b825410dfdee315ccf1c38317d3aaf96bc2",
+      "bytes": 50677
     },
     {
       "id": "serverManagedSettingsDocs",
       "requestedUrl": "https://code.claude.com/docs/en/server-managed-settings.md",
       "resolvedUrl": "https://code.claude.com/docs/en/server-managed-settings.md",
       "role": "server-managed settings delivery and scope",
-      "sha256": "93c6558e96475fd3871d7430f0e5a94d8d9e1de96475e868367389eedce13637",
-      "bytes": 46372
+      "sha256": "8e7a0e4545e8e12507ad6ac1004e608e1d02179be6b8435f265f07d0f195ef0c",
+      "bytes": 46110
     },
     {
       "id": "officialSettingsExamplesReadme",
-      "requestedUrl": "https://raw.githubusercontent.com/anthropics/claude-code/v2.1.266/examples/settings/README.md",
-      "resolvedUrl": "https://raw.githubusercontent.com/anthropics/claude-code/v2.1.266/examples/settings/README.md",
+      "requestedUrl": "https://raw.githubusercontent.com/anthropics/claude-code/v2.1.267/examples/settings/README.md",
+      "resolvedUrl": "https://raw.githubusercontent.com/anthropics/claude-code/v2.1.267/examples/settings/README.md",
       "role": "tag-pinned official settings examples",
       "sha256": "0826863eed98e1bab546873588784f71fd02b0334ce5df1928cd98a2277359ac",
       "bytes": 2031
     },
     {
       "id": "officialStrictSettingsExample",
-      "requestedUrl": "https://raw.githubusercontent.com/anthropics/claude-code/v2.1.266/examples/settings/settings-strict.json",
-      "resolvedUrl": "https://raw.githubusercontent.com/anthropics/claude-code/v2.1.266/examples/settings/settings-strict.json",
+      "requestedUrl": "https://raw.githubusercontent.com/anthropics/claude-code/v2.1.267/examples/settings/settings-strict.json",
+      "resolvedUrl": "https://raw.githubusercontent.com/anthropics/claude-code/v2.1.267/examples/settings/settings-strict.json",
       "role": "tag-pinned strict settings example",
       "sha256": "24434853701e419d030668ca1f045f115cb66cca6edc3748dc90c0d3fa558843",
       "bytes": 608
     },
     {
       "id": "officialSandboxSettingsExample",
-      "requestedUrl": "https://raw.githubusercontent.com/anthropics/claude-code/v2.1.266/examples/settings/settings-bash-sandbox.json",
-      "resolvedUrl": "https://raw.githubusercontent.com/anthropics/claude-code/v2.1.266/examples/settings/settings-bash-sandbox.json",
+      "requestedUrl": "https://raw.githubusercontent.com/anthropics/claude-code/v2.1.267/examples/settings/settings-bash-sandbox.json",
+      "resolvedUrl": "https://raw.githubusercontent.com/anthropics/claude-code/v2.1.267/examples/settings/settings-bash-sandbox.json",
       "role": "tag-pinned sandbox settings example",
       "sha256": "d3b8f709f9b783b38fac3c10f4c15fa28a8eedb44cd644f1140a788115de5d15",
       "bytes": 442
     },
     {
       "id": "officialManagedSettingsExample",
-      "requestedUrl": "https://raw.githubusercontent.com/anthropics/claude-code/v2.1.266/examples/mdm/managed-settings.json",
-      "resolvedUrl": "https://raw.githubusercontent.com/anthropics/claude-code/v2.1.266/examples/mdm/managed-settings.json",
+      "requestedUrl": "https://raw.githubusercontent.com/anthropics/claude-code/v2.1.267/examples/mdm/managed-settings.json",
+      "resolvedUrl": "https://raw.githubusercontent.com/anthropics/claude-code/v2.1.267/examples/mdm/managed-settings.json",
       "role": "tag-pinned managed settings example",
       "sha256": "61592cdc3d8983265ea33becbb59162c75b5cd9e26af7204b09b02c1488b6ad6",
       "bytes": 73
     },
     {
       "id": "officialHookValidator",
-      "requestedUrl": "https://raw.githubusercontent.com/anthropics/claude-code/v2.1.266/plugins/plugin-dev/skills/hook-development/scripts/validate-hook-schema.sh",
-      "resolvedUrl": "https://raw.githubusercontent.com/anthropics/claude-code/v2.1.266/plugins/plugin-dev/skills/hook-development/scripts/validate-hook-schema.sh",
+      "requestedUrl": "https://raw.githubusercontent.com/anthropics/claude-code/v2.1.267/plugins/plugin-dev/skills/hook-development/scripts/validate-hook-schema.sh",
+      "resolvedUrl": "https://raw.githubusercontent.com/anthropics/claude-code/v2.1.267/plugins/plugin-dev/skills/hook-development/scripts/validate-hook-schema.sh",
       "role": "tag-pinned official hook validation logic",
       "sha256": "e7785d6c61d368f5ea5270c979753aea02f776f5b6aa220137ec4585abd720c2",
       "bytes": 5081
@@ -275,86 +275,86 @@
   "artifacts": {
     "settings.schema.json": {
       "artifactKind": "settings-json-schema",
-      "sha256": "19af0642d6dae142143fd3aca6bc2d39527a5c945a3c98adbc8a570a6f9895e5"
+      "sha256": "12f3fefed32da59ae0b0958d247653338243d437b85422db4cf8960155a046a5"
     },
     "global-config.schema.json": {
       "artifactKind": "global-config-json-schema",
-      "sha256": "3c5816db3920dd907f810ab5c4e2c0d5f7fc9fe78e614b415d932baf417bbc83"
+      "sha256": "95a6ecdb08fde5d6771469bd0a64734b563cd0e3670baa6386b8eb20da874241"
     },
     "desktop-managed-settings.schema.json": {
       "artifactKind": "desktop-managed-settings-json-schema",
-      "sha256": "9a4f0e2351f685774ec2cbc9d52cb8ba8cea84d438c599485779f72dcc288b70"
+      "sha256": "922cfc645612cdfd2231a97bc98c1647f53cee79d0ed7500db6afae6e4431929"
     },
     "environment.schema.json": {
       "artifactKind": "environment-object-json-schema",
-      "sha256": "d728047f866201407c82d7954feb4343524c0f9e4b00303abece6300b4f60141"
+      "sha256": "bfc376fa66ca704940b1481c0038b639a16b033bc65c2f1d2e62184f503a545b"
     },
     "keybindings.schema.json": {
       "artifactKind": "keybindings-json-schema",
-      "sha256": "eeeed3efcb108af71f2f67a10044fe5b2e08b2875c91ae77ffea154ef792b930"
+      "sha256": "a7c432db4a909feb04afe9c027c3ee9c0e8333d1317a36e9939b74950713122f"
     },
     "keybindings.compat.schema.json": {
       "artifactKind": "keybindings-runtime-compat-json-schema",
-      "sha256": "11d4a48c81ee623776d60614c1fcc3db9d8fcfc05db8790b1d09448cc00c8ea1"
+      "sha256": "bf6204330e5418e028e96b10f7fdb11afed0fbb8fe3851858a0f1889728b7014"
     },
     "settings.catalog.json": {
       "artifactKind": "settings-surface-catalog",
-      "sha256": "136b9a47ac3dedd91c043bb7bcb9172eda8cff989ac0671092328331384cbc24"
+      "sha256": "0fe40bb50ed4b5577e03be3eb1a83f7a654c5c3f11d864abc0aa7b9636f0e6f6"
     },
     "environment.catalog.json": {
       "artifactKind": "environment-surface-catalog",
-      "sha256": "e4c5086848ade497934ad0db6f067e3ac87f4e74f97450394d49ffb154e59f7a"
+      "sha256": "be09e4e6cab6d12bf023d9fa82071677361d0c08e3787057aae5ea356f990ca1"
     },
     "cli.catalog.json": {
       "artifactKind": "cli-surface-catalog",
-      "sha256": "799ffc26feb15984fa1ebec42808221e72f083bc4b3f832440c2e26ce42fbad4"
+      "sha256": "8b5a271ea802ed4d09c657ba4cf58fea7bdbd8784b1b0df317029c730a10c0ce"
     },
     "keybindings.catalog.json": {
       "artifactKind": "keybindings-surface-catalog",
-      "sha256": "2029b53d38b202fe3303ba186d2785069530c46d789e2bbd5be37f9eed845ce7"
+      "sha256": "5bf1c33a372443853f8984a1eeb27306cfd1f67cecd28471f5ca49e4c781afe9"
     },
     "review.catalog.json": {
       "artifactKind": "release-review-catalog",
-      "sha256": "b7b400f1561fc84d43de510c5c9b7da43356621bdec9761e1ae3d45b8c83b8be"
+      "sha256": "64f3583b26caa7f29f0c49845af93f1b1ba9dcc92ebaaf6e911ece6c27a6b389"
     },
     "claude-code.schema.json": {
       "artifactKind": "combined-configuration-envelope-json-schema",
-      "sha256": "0cce1668df291d36ddbb164e059b4ad7d6513a0b0eecba0bd9414be6b22d9b5a"
+      "sha256": "a2741811705b1d6859103cdeb4de00b9432fb5090d7f08a9059ff29eb960cdc2"
     },
     "catalog.json": {
       "artifactKind": "claude-code-release-catalog",
-      "sha256": "3ed97e4c04b6386218347fcb00694fd4b860b8f3e42bc3f747b880679e0854d6"
+      "sha256": "e3cd42ce439ab21f9398fd76087aac151252fa69daf7b16e738a190102491b79"
     }
   },
   "counts": {
-    "documentedSettingsRows": 223,
-    "settingsSchemaProperties": 165,
+    "documentedSettingsRows": 225,
+    "settingsSchemaProperties": 167,
     "untypedSettingsProperties": 0,
-    "documentedEnvironmentVariables": 352,
-    "documentedTopLevelFlags": 78,
-    "documentedKeybindingActions": 120,
-    "documentedKeybindingContexts": 20,
-    "keybindingSchemaActions": 112,
+    "documentedEnvironmentVariables": 354,
+    "documentedTopLevelFlags": 79,
+    "documentedKeybindingActions": 123,
+    "documentedKeybindingContexts": 22,
+    "keybindingSchemaActions": 115,
     "probedCommands": 46,
     "probedOptionsAcrossCommands": 206,
     "probedArgumentsAcrossCommands": 28,
     "uniqueProbedOptionNames": 138,
-    "staticEnvironmentCandidates": 664,
-    "staticCliOptionStringCandidates": 2918,
+    "staticEnvironmentCandidates": 669,
+    "staticCliOptionStringCandidates": 2907,
     "retainedStaticCliOptionCandidates": 152,
-    "binaryCorroboratedDocumentedSettings": 160,
-    "binaryCorroboratedDocumentedKeybindingActions": 112,
-    "changelogBullets": 1,
-    "changelogEntriesNeedingReview": 1,
-    "typedSettingsProperties": 165,
-    "settingsFacts": 235,
-    "runtimeSettingsDiagnostics": 131,
-    "environmentSchemaProperties": 379,
+    "binaryCorroboratedDocumentedSettings": 162,
+    "binaryCorroboratedDocumentedKeybindingActions": 115,
+    "changelogBullets": 53,
+    "changelogEntriesNeedingReview": 53,
+    "typedSettingsProperties": 167,
+    "settingsFacts": 237,
+    "runtimeSettingsDiagnostics": 132,
+    "environmentSchemaProperties": 381,
     "globalConfigProperties": 4,
     "desktopManagedProperties": 2,
     "legacyCandidatesAccounted": 7,
     "retiredKeybindingActions": 0,
-    "runtimeKeybindingActionCandidates": 448,
+    "runtimeKeybindingActionCandidates": 501,
     "publishedArtifacts": 15,
     "digestedArtifacts": 13,
     "publishedSchemas": 7,
@@ -408,7 +408,6 @@
       "--brief",
       "--file",
       "--help",
-      "--system-prompt-snapshot",
       "-h"
     ],
     "binaryOnlyEnvironmentCandidates": [
@@ -463,6 +462,7 @@
       "CLAUDE_CODE_ARTIFACT_DB_STR_REPLACE",
       "CLAUDE_CODE_ARTIFACT_DELETE",
       "CLAUDE_CODE_ARTIFACT_FIVE_CLASS_ASKS",
+      "CLAUDE_CODE_ARTIFACT_HOT",
       "CLAUDE_CODE_ARTIFACT_LIVE_BASE_URL",
       "CLAUDE_CODE_ARTIFACT_MCP",
       "CLAUDE_CODE_ARTIFACT_MCP6",
@@ -541,6 +541,7 @@
       "CLAUDE_CODE_DEBUG_REPAINTS",
       "CLAUDE_CODE_DECSTBM",
       "CLAUDE_CODE_DESIGN_OAUTH_CLIENT_ID",
+      "CLAUDE_CODE_DESKTOP_APP_VERSION",
       "CLAUDE_CODE_DEV_RAW_CHANGELOG_URL",
       "CLAUDE_CODE_DIAGNOSTICS_FILE",
       "CLAUDE_CODE_DIR_SYNC_DISABLE_ANCHORING",
@@ -682,10 +683,10 @@
       "CLAUDE_CODE_MEMORY_PUSH_DELETE_MODE",
       "CLAUDE_CODE_MOCK_REMOTE_SETTINGS",
       "CLAUDE_CODE_MOCK_TRIAL",
+      "CLAUDE_CODE_MODEL_CAPABILITIES",
       "CLAUDE_CODE_MODEL_CATALOG",
       "CLAUDE_CODE_MODEL_CATALOG_URL",
       "CLAUDE_CODE_NANKEEN_KESTREL",
-      "CLAUDE_CODE_NONBLOCKING_STDOUT",
       "CLAUDE_CODE_NO_MODEL_FALLBACK",
       "CLAUDE_CODE_OAUTH_401_WAIT_MS",
       "CLAUDE_CODE_OAUTH_CLIENT_ID",
@@ -738,6 +739,7 @@
       "CLAUDE_CODE_REMOTE_SESSION_UUID",
       "CLAUDE_CODE_REMOTE_SETTINGS_PATH",
       "CLAUDE_CODE_REMOTE_SETTINGS_POLL_MS",
+      "CLAUDE_CODE_REMOTE_TOOLS_ADOPT_MCP",
       "CLAUDE_CODE_REMOTE_TOOLS_POLICY",
       "CLAUDE_CODE_REMOTE_TOOLS_SERVE",
       "CLAUDE_CODE_REMOTE_TOOLS_SESSION_CHANNEL",
@@ -754,6 +756,7 @@
       "CLAUDE_CODE_SDK_",
       "CLAUDE_CODE_SDK_HAS_HOST_AUTH_REFRESH",
       "CLAUDE_CODE_SDK_HAS_OAUTH_REFRESH",
+      "CLAUDE_CODE_SENDMESSAGE_HANDBACK",
       "CLAUDE_CODE_SESSION_",
       "CLAUDE_CODE_SESSION_ACCESS_TOKEN",
       "CLAUDE_CODE_SESSION_KIND",
@@ -849,12 +852,221 @@
     ],
     "changelogReviewQueue": [
       {
-        "bulletSha256": "3ad8b451d358a7c5c60e29cd7c463a88c37c2a6063a0e3f13e015cd03a45b3b0",
+        "bulletSha256": "0d7198137b5d0d12b1b245e0d2a4a7bec479227fbf4857e9c000692f744223d5",
         "sourceLine": 5
+      },
+      {
+        "bulletSha256": "45822b0337d4ce2b7f40976a052fea35502a754463ce60c3e84812a7eaf1650e",
+        "sourceLine": 6
+      },
+      {
+        "bulletSha256": "2a1d0d56da5e2cfc4daf8932c1fb1a94b506919e63ddf4ca27cf2f5c8d2a6214",
+        "sourceLine": 7
+      },
+      {
+        "bulletSha256": "3e36a17116b0787a8015fa6187a6039b0382dd3da9ade8bd7979e67f691636fd",
+        "sourceLine": 8
+      },
+      {
+        "bulletSha256": "2a192d7794166cbee94701041a3fadb962d171a17ea4486057d2cd80a2d0cc0d",
+        "sourceLine": 9
+      },
+      {
+        "bulletSha256": "5675d40e731686963e62afbcdeb79631fec128593d108364c0013282dd7c55c3",
+        "sourceLine": 10
+      },
+      {
+        "bulletSha256": "7b04def0496c0880a82e53b6dcdd1e215e50bb882006f0fb818507a1f9cb4526",
+        "sourceLine": 11
+      },
+      {
+        "bulletSha256": "59d6a284d5d37bd0def9e5b082954f3492ddd24b7141ed687fb0d232af935f54",
+        "sourceLine": 12
+      },
+      {
+        "bulletSha256": "494954998d0e2a59e90c0088f68700098643b4c206f07b8e5f1c16e685c28afd",
+        "sourceLine": 13
+      },
+      {
+        "bulletSha256": "635c43b32e3d8f61c62a5dc0cc34ccf10c0fb253d3162bfc26f2d8f601b09a47",
+        "sourceLine": 14
+      },
+      {
+        "bulletSha256": "9b1ba9ddf2e60b93c6ded76971933f4d9e1394a3a5fa2d9b53168a9a10a580a7",
+        "sourceLine": 15
+      },
+      {
+        "bulletSha256": "5a1de807455ddf5a055f54527c5cfe70f53100858ab12804a68b2af96399e327",
+        "sourceLine": 16
+      },
+      {
+        "bulletSha256": "d16a2642f20a6491e0cc96198b00d93a61f7ea1ddd3b9d234baaf9f0acea5349",
+        "sourceLine": 17
+      },
+      {
+        "bulletSha256": "777b70656a3a4fb846aa6ba1cfe1a07b924c03662c5be616e24319471b488430",
+        "sourceLine": 18
+      },
+      {
+        "bulletSha256": "26ca4b85c2e302364d3328e1889e4421af4cd24075c493bfbed8bcbf7213a151",
+        "sourceLine": 19
+      },
+      {
+        "bulletSha256": "0cbe2a0db3d1624e996db2dc758112c9bfbf494bec4f47f90771f7552d6f1951",
+        "sourceLine": 20
+      },
+      {
+        "bulletSha256": "7f46c06f0c1abe292059eee76981fa379e6b2c26d62d764a77d0dedf808eee37",
+        "sourceLine": 21
+      },
+      {
+        "bulletSha256": "66f2f1a6978dde2dd77776b9e4b003dde2da71ff1bb7b9c21d11bf5c70e5b56c",
+        "sourceLine": 22
+      },
+      {
+        "bulletSha256": "6bfacdc72568bc105ec4598b9922ae4ba807973c3375cfcb8fb77fa8106cd752",
+        "sourceLine": 23
+      },
+      {
+        "bulletSha256": "ed5da95f4baa745557bc63fbcebb9364a4c34b75dc8449913fc478d97727aa7b",
+        "sourceLine": 24
+      },
+      {
+        "bulletSha256": "113504ec45f97120a387d8358537d33aef2f1f40f598a87566ce20f8e367cb66",
+        "sourceLine": 25
+      },
+      {
+        "bulletSha256": "7ac6f91a690ed52fd55ec072281c8c0690c81f89fd5ac9c410355cb38e4700de",
+        "sourceLine": 26
+      },
+      {
+        "bulletSha256": "293fc3bea0f7a0036a5b03199ea9544e89d715bbdbd51c7285cac0164d803795",
+        "sourceLine": 27
+      },
+      {
+        "bulletSha256": "928966812bf3de3f97b067d6df63e4e71b8db55ef8105446376be6aa11223cad",
+        "sourceLine": 28
+      },
+      {
+        "bulletSha256": "cc9eded2eaa80a52e4c9e7c5b9df2885c221432a10e50ef6b3e67dd6c978b075",
+        "sourceLine": 29
+      },
+      {
+        "bulletSha256": "43082a3d46f924272e7145241c3baf550299f73013880293e1ce60803cb82989",
+        "sourceLine": 30
+      },
+      {
+        "bulletSha256": "98fe1fd3c9541d5458237b3771aa53c84e5fd7a63b054e5f49346cb752f375b5",
+        "sourceLine": 31
+      },
+      {
+        "bulletSha256": "5a183fd8ae6844930fdfd298833996ed022f7700e881a1a0f41aeca1b6ca7643",
+        "sourceLine": 32
+      },
+      {
+        "bulletSha256": "0e8f6d56cd478c64743c1635e9b64cba7d813062bed20a080e2a5d9b4f35dfe7",
+        "sourceLine": 33
+      },
+      {
+        "bulletSha256": "dc33a0a39d8d41db3917685d2a7b746fa978ff0551a73e6e788aefa2ef90b2f6",
+        "sourceLine": 34
+      },
+      {
+        "bulletSha256": "85addbd95ea34452a0e41151edefaeb9cfd64303ac37dbb6d342b86f1cbb8941",
+        "sourceLine": 35
+      },
+      {
+        "bulletSha256": "a71724ddbe60406f6ff9219535a1cb5509fa48408ab68e5efb430664ba7acb96",
+        "sourceLine": 36
+      },
+      {
+        "bulletSha256": "568543ad0f687d19f01d6d4afa859258729df4931c24e9b02fbe2f0e2d128141",
+        "sourceLine": 37
+      },
+      {
+        "bulletSha256": "b8f9c828fa71f7b74db748f6bce675d5f0aa6c25da3dd4f654444ffb3e4ac9a9",
+        "sourceLine": 38
+      },
+      {
+        "bulletSha256": "6d362bad269c10fa8adfdcea40430565182bb806aab1331698d56f8bc6765227",
+        "sourceLine": 39
+      },
+      {
+        "bulletSha256": "6179f57e57b7c52fc2bedfd02994d8b613a34d20f17c4c095816b5f811e5f881",
+        "sourceLine": 40
+      },
+      {
+        "bulletSha256": "a7b575fe16188e9aefc61fbe43e893ffe95b83a21476d144dbe0b7d2cefb59ad",
+        "sourceLine": 41
+      },
+      {
+        "bulletSha256": "e0b36378a940fe5dadf3e842db20cc7ea766fc59d37b818d983d15d71be8a3f8",
+        "sourceLine": 42
+      },
+      {
+        "bulletSha256": "d07d76e4a20cbf546397d1f7259a94e9b83d2190283fd999ee4c12afe743d5e7",
+        "sourceLine": 43
+      },
+      {
+        "bulletSha256": "f14cdd920506f742e2dbf8eccd277331bea528dba1af88322cebfa0cef0a9189",
+        "sourceLine": 44
+      },
+      {
+        "bulletSha256": "d1f01961558abb34d50dcddff4f87709e4256b26d5e52e4fc0942ea72d4627a7",
+        "sourceLine": 45
+      },
+      {
+        "bulletSha256": "b794abd2e9e10c7868b3a3b8bee515926996aa943804addb5eeedcc98a09b993",
+        "sourceLine": 46
+      },
+      {
+        "bulletSha256": "e150c782bc781057f3e3bb5243cc7e80cae0c579f0d0dd22a0e7cc0660128de3",
+        "sourceLine": 47
+      },
+      {
+        "bulletSha256": "1ac4943f2a8bd06edaed5940623ef3f6cb3b18037c840524995ae9723ad7fee8",
+        "sourceLine": 48
+      },
+      {
+        "bulletSha256": "f854b7211599e282ac5d24bd2726388dc10b22e35528377722e2c22eb410a8d2",
+        "sourceLine": 49
+      },
+      {
+        "bulletSha256": "c5ca4e2ee4444751d255dea424db66c309d6f8c4e16b41a0942e418c9ccf65c5",
+        "sourceLine": 50
+      },
+      {
+        "bulletSha256": "2d178bd385d60917c9ccf96ef601b74a5cac4c40f19e725a2b6188d6178e5d7f",
+        "sourceLine": 51
+      },
+      {
+        "bulletSha256": "9e5659de41e4c8322dbe1e2a82582d1fce623f87061956ce81a016287122c3ce",
+        "sourceLine": 52
+      },
+      {
+        "bulletSha256": "a1fa82bfaab210474fa62a03d7a707bf083430b3f7d077c83b3cc5f1b3864d90",
+        "sourceLine": 53
+      },
+      {
+        "bulletSha256": "b0be876788f322fa4ab92a86c5e4e3ba35c1b0e623005e1699cd85cd24a77b6f",
+        "sourceLine": 54
+      },
+      {
+        "bulletSha256": "d89e3797c6d57217a594c841b61d2b540104ba775f35e6daf076b57b3cebda01",
+        "sourceLine": 55
+      },
+      {
+        "bulletSha256": "755ff57149beadf1012711414c315385d31713f6c4982422192a9cc6c6efb8d6",
+        "sourceLine": 56
+      },
+      {
+        "bulletSha256": "be23b82cb4675271f27e4104e994789d5c26c5f2a78e32917481da5adaac1e52",
+        "sourceLine": 57
       }
     ],
     "runtimeAcceptedNullOrUnreported": [
       "effortLevel",
+      "maxEffortLevel",
       "modelSettings",
       "promptCacheTtl",
       "subagentPromptCacheTtl",
@@ -948,8 +1160,8 @@
       "networkSuppressionRequested": true,
       "credentialsInherited": false,
       "rawOutputRedistributed": false,
-      "configSha256": "d0ad710fe605324afeaa598b36ac2cce661b9c48445fdc12399f218e46571e46",
-      "diagnosticsSha256": "e723270108f1df8d072d247a5e2e1f804cad2093bd7ab5cf34bcdf36e9866bdf",
+      "configSha256": "6533bbbed90bbb83e6531e86faa4fc3912972b88a3e28da3a0d6e1a5eb3b418c",
+      "diagnosticsSha256": "2021ebaf251282021688b55a32d578a42379387abd858541a48f21cd44853834",
       "rawOutputExcludedFromDeterministicArtifacts": true,
       "exitCode": 0
     },

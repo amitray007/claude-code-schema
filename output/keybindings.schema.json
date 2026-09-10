@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://github.com/amitray007/claude-code-schema/releases/download/v2.1.266/keybindings.schema.json",
+  "$id": "https://github.com/amitray007/claude-code-schema/releases/download/v2.1.267/keybindings.schema.json",
   "title": "Claude Code keybindings",
   "description": "Conservative validator generated only from the official keybindings documentation.",
   "type": "object",
@@ -40,8 +40,10 @@
               "DiffDialog",
               "DiffPanel",
               "ModelPicker",
+              "EffortSlider",
               "Select",
               "Plugin",
+              "Agents",
               "Scroll"
             ]
           },
@@ -52,6 +54,8 @@
                 {
                   "type": "string",
                   "enum": [
+                    "agents:switchView",
+                    "agents:togglePin",
                     "app:cycleDiffBase",
                     "app:diffFileListDown",
                     "app:diffFileListUp",
@@ -101,6 +105,7 @@
                     "diff:previousFile",
                     "diff:previousSource",
                     "diff:viewDetails",
+                    "effortSlider:thisSessionOnly",
                     "footer:clearSelection",
                     "footer:dismiss",
                     "footer:down",
@@ -172,7 +177,7 @@
                   "x-status": "exact-release-binary-validator-corroborated",
                   "x-binary": {
                     "source": "platformBinary",
-                    "sha256": "19842705e989393fce936804df6d2ab034860e24b8f8880357981d87ffd83fac",
+                    "sha256": "0399c793ff571d5946ef923d80b4f330d05ac4b6842a6b0775468f5d389403c0",
                     "pathInPackage": "package/claude",
                     "commandBindingPatternCorroborated": true,
                     "commandBindingValidatorMessageCorroborated": true
@@ -197,7 +202,7 @@
     "bindings"
   ],
   "additionalProperties": false,
-  "x-claude-code-version": "2.1.266",
+  "x-claude-code-version": "2.1.267",
   "x-artifact-kind": "keybindings-json-schema",
   "x-validation-limitations": [
     "The current official docs do not document command: bindings; the narrowly patterned compatibility form is accepted but annotated as unverified for this release.",
@@ -207,11 +212,13 @@
     "evidence": [
       {
         "source": "keybindingsDocs",
-        "sourceSha256": "335d18b579865522c1be960e1f405157b7767b3f823c599924f0d5baa283a9e4"
+        "sourceSha256": "d170308ad1e378b3128caf78e55aa713ed11470d01463d89a3bcd30eca23c6b4"
       }
     ]
   },
   "x-binary-corroborated-actions": [
+    "agents:switchView",
+    "agents:togglePin",
     "app:cycleDiffBase",
     "app:diffFileListDown",
     "app:diffFileListUp",
@@ -261,6 +268,7 @@
     "diff:previousFile",
     "diff:previousSource",
     "diff:viewDetails",
+    "effortSlider:thisSessionOnly",
     "footer:clearSelection",
     "footer:dismiss",
     "footer:down",
