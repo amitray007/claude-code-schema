@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://github.com/amitray007/claude-code-schema/releases/download/v2.1.267/global-config.schema.json",
+  "$id": "https://github.com/amitray007/claude-code-schema/releases/download/v2.1.268/global-config.schema.json",
   "title": "Claude Code global config (~/.claude.json)",
   "type": "object",
   "properties": {
@@ -17,7 +17,7 @@
         "evidence": [
           {
             "source": "settingsDocsExpanded",
-            "sourceSha256": "ca8028b4bef6b527283a2bf08e4b8fb9f8513f4be3958250b9152be402f26386",
+            "sourceSha256": "811cfad7d21b8ebbbd64aeb288e903c6720594286d2a21d2b787639b7ab0ac1b",
             "heading": "autoConnectIde",
             "fact": "existence-and-example",
             "method": "official-key-entry"
@@ -39,7 +39,7 @@
         "evidence": [
           {
             "source": "settingsDocsExpanded",
-            "sourceSha256": "ca8028b4bef6b527283a2bf08e4b8fb9f8513f4be3958250b9152be402f26386",
+            "sourceSha256": "811cfad7d21b8ebbbd64aeb288e903c6720594286d2a21d2b787639b7ab0ac1b",
             "heading": "autoInstallIdeExtension",
             "fact": "existence-and-example",
             "method": "official-key-entry"
@@ -61,7 +61,7 @@
         "evidence": [
           {
             "source": "settingsDocsExpanded",
-            "sourceSha256": "ca8028b4bef6b527283a2bf08e4b8fb9f8513f4be3958250b9152be402f26386",
+            "sourceSha256": "811cfad7d21b8ebbbd64aeb288e903c6720594286d2a21d2b787639b7ab0ac1b",
             "heading": "diffTool",
             "fact": "existence-and-example",
             "method": "official-key-entry"
@@ -83,7 +83,7 @@
         "evidence": [
           {
             "source": "settingsDocsExpanded",
-            "sourceSha256": "ca8028b4bef6b527283a2bf08e4b8fb9f8513f4be3958250b9152be402f26386",
+            "sourceSha256": "811cfad7d21b8ebbbd64aeb288e903c6720594286d2a21d2b787639b7ab0ac1b",
             "heading": "externalEditorContext",
             "fact": "existence-and-example",
             "method": "official-key-entry"
@@ -94,7 +94,7 @@
     }
   },
   "additionalProperties": true,
-  "x-claude-code-version": "2.1.267",
+  "x-claude-code-version": "2.1.268",
   "x-artifact-kind": "global-config-json-schema",
   "x-surface-path": "~/.claude.json",
   "x-generator-version": "0.1.0"
