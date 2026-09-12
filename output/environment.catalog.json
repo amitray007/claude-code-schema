@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "artifactKind": "environment-surface-catalog",
-  "claudeCodeVersion": "2.1.268",
+  "claudeCodeVersion": "2.1.269",
   "surface": {
     "product": "Claude Code CLI",
     "interface": "process-environment",
@@ -367,6 +367,7 @@
     "OTEL_METRICS_EXPORTER",
     "OTEL_METRICS_INCLUDE_ACCOUNT_UUID",
     "OTEL_METRICS_INCLUDE_ENTRYPOINT",
+    "OTEL_METRICS_INCLUDE_REPOSITORY",
     "OTEL_METRICS_INCLUDE_RESOURCE_ATTRIBUTES",
     "OTEL_METRICS_INCLUDE_SESSION_ID",
     "OTEL_METRICS_INCLUDE_VERSION",
@@ -464,7 +465,7 @@
   ],
   "binaryEvidence": {
     "platformPackage": "@anthropic-ai/claude-code-linux-x64",
-    "binarySha256": "9691a2b7bd796712ca8cffb8e32e54ff7fc45b662540233171a16a94a0425653",
+    "binarySha256": "25e44883f54419569a3d739f38cbbdaebe83b09895da0f343e1b003710a4775b",
     "policy": "Static strings prove token presence only. Binary-only values are candidates, not public API."
   },
   "staticBinaryCandidates": [
@@ -929,6 +930,10 @@
       "documented": false
     },
     {
+      "name": "CLAUDE_CODE_ARTIFACT_REPL",
+      "documented": false
+    },
+    {
       "name": "CLAUDE_CODE_ARTIFACT_ROOM",
       "documented": false
     },
@@ -1069,6 +1074,10 @@
       "documented": false
     },
     {
+      "name": "CLAUDE_CODE_BASH_EDIT_DIFF",
+      "documented": false
+    },
+    {
       "name": "CLAUDE_CODE_BASH_OUTPUT_AUDIENCE_NOTE",
       "documented": false
     },
@@ -1098,6 +1107,14 @@
     },
     {
       "name": "CLAUDE_CODE_BREEZY_HORIZON",
+      "documented": false
+    },
+    {
+      "name": "CLAUDE_CODE_BRIDGE_CHILD_ARTIFACT",
+      "documented": false
+    },
+    {
+      "name": "CLAUDE_CODE_BRIDGE_CHILD_AUTO_DEFAULT",
       "documented": false
     },
     {
@@ -1142,10 +1159,6 @@
     },
     {
       "name": "CLAUDE_CODE_CCR_EARLY_HYDRATE_PREFETCH",
-      "documented": false
-    },
-    {
-      "name": "CLAUDE_CODE_CCR_LAZY_SUBAGENT_HYDRATE",
       "documented": false
     },
     {
@@ -1541,6 +1554,10 @@
       "documented": false
     },
     {
+      "name": "CLAUDE_CODE_DISABLE_WINDOWS_SHELL_LAUNCHER",
+      "documented": false
+    },
+    {
       "name": "CLAUDE_CODE_DISABLE_WORKFLOWS",
       "documented": true
     },
@@ -1765,6 +1782,10 @@
       "documented": true
     },
     {
+      "name": "CLAUDE_CODE_FLAG_FETCH_WAIT_MS",
+      "documented": false
+    },
+    {
       "name": "CLAUDE_CODE_FLEETVIEW_SIMPLE",
       "documented": false
     },
@@ -1845,6 +1866,10 @@
       "documented": false
     },
     {
+      "name": "CLAUDE_CODE_GATEWAY_MODEL_DISCOVERY_TIMEOUT_MS",
+      "documented": false
+    },
+    {
       "name": "CLAUDE_CODE_GATEWAY_TOKEN",
       "documented": false
     },
@@ -1891,10 +1916,6 @@
     {
       "name": "CLAUDE_CODE_GOAL_CHECKIN_MINUTES",
       "documented": true
-    },
-    {
-      "name": "CLAUDE_CODE_GOAL_CHECKIN_MINUTES0",
-      "documented": false
     },
     {
       "name": "CLAUDE_CODE_GORSE_PLOVER",
@@ -2389,6 +2410,18 @@
       "documented": false
     },
     {
+      "name": "CLAUDE_CODE_POST_TURN_MEMORY",
+      "documented": false
+    },
+    {
+      "name": "CLAUDE_CODE_POST_TURN_MEMORY_CONFIG",
+      "documented": false
+    },
+    {
+      "name": "CLAUDE_CODE_POST_TURN_MEMORY_SYNC",
+      "documented": false
+    },
+    {
       "name": "CLAUDE_CODE_POWERSHELL_RESPECT_EXECUTION_POLICY",
       "documented": true
     },
@@ -2657,6 +2690,10 @@
       "documented": false
     },
     {
+      "name": "CLAUDE_CODE_SESSION_ATTENDED",
+      "documented": false
+    },
+    {
       "name": "CLAUDE_CODE_SESSION_ID",
       "documented": true
     },
@@ -2679,6 +2716,10 @@
     {
       "name": "CLAUDE_CODE_SHELL",
       "documented": true
+    },
+    {
+      "name": "CLAUDE_CODE_SHELL_LAUNCHER_SCRIPT",
+      "documented": false
     },
     {
       "name": "CLAUDE_CODE_SHELL_PREFIX",
@@ -3129,10 +3170,6 @@
       "documented": false
     },
     {
-      "name": "CLAUDE_CODE_WALNUT_SPIRE",
-      "documented": false
-    },
-    {
       "name": "CLAUDE_CODE_WEBFETCH_CACHE_TTL_MS",
       "documented": true
     },
@@ -3174,6 +3211,10 @@
     },
     {
       "name": "CLAUDE_CODE_WORKFLOW_LAUNCH_SHA256",
+      "documented": false
+    },
+    {
+      "name": "CLAUDE_CODE_WORKFLOW_MAX_CONCURRENT_AGENTS",
       "documented": false
     },
     {
