@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://github.com/amitray007/claude-code-schema/releases/download/v2.1.268/global-config.schema.json",
+  "$id": "https://github.com/amitray007/claude-code-schema/releases/download/v2.1.269/global-config.schema.json",
   "title": "Claude Code global config (~/.claude.json)",
   "type": "object",
   "properties": {
@@ -17,7 +17,7 @@
         "evidence": [
           {
             "source": "settingsDocsExpanded",
-            "sourceSha256": "811cfad7d21b8ebbbd64aeb288e903c6720594286d2a21d2b787639b7ab0ac1b",
+            "sourceSha256": "c5e7d34906a10a220e49db99b8dfc00da0cd72ac5bcc122bff56b99e72872cf2",
             "heading": "autoConnectIde",
             "fact": "existence-and-example",
             "method": "official-key-entry"
@@ -39,8 +39,30 @@
         "evidence": [
           {
             "source": "settingsDocsExpanded",
-            "sourceSha256": "811cfad7d21b8ebbbd64aeb288e903c6720594286d2a21d2b787639b7ab0ac1b",
+            "sourceSha256": "c5e7d34906a10a220e49db99b8dfc00da0cd72ac5bcc122bff56b99e72872cf2",
             "heading": "autoInstallIdeExtension",
+            "fact": "existence-and-example",
+            "method": "official-key-entry"
+          }
+        ]
+      },
+      "default": true
+    },
+    "copyOnSelect": {
+      "type": "boolean",
+      "examples": [
+        false
+      ],
+      "x-scopes": [
+        "global-config"
+      ],
+      "x-type-status": "independently-derived",
+      "x-provenance": {
+        "evidence": [
+          {
+            "source": "settingsDocsExpanded",
+            "sourceSha256": "c5e7d34906a10a220e49db99b8dfc00da0cd72ac5bcc122bff56b99e72872cf2",
+            "heading": "copyOnSelect",
             "fact": "existence-and-example",
             "method": "official-key-entry"
           }
@@ -61,7 +83,7 @@
         "evidence": [
           {
             "source": "settingsDocsExpanded",
-            "sourceSha256": "811cfad7d21b8ebbbd64aeb288e903c6720594286d2a21d2b787639b7ab0ac1b",
+            "sourceSha256": "c5e7d34906a10a220e49db99b8dfc00da0cd72ac5bcc122bff56b99e72872cf2",
             "heading": "diffTool",
             "fact": "existence-and-example",
             "method": "official-key-entry"
@@ -83,7 +105,7 @@
         "evidence": [
           {
             "source": "settingsDocsExpanded",
-            "sourceSha256": "811cfad7d21b8ebbbd64aeb288e903c6720594286d2a21d2b787639b7ab0ac1b",
+            "sourceSha256": "c5e7d34906a10a220e49db99b8dfc00da0cd72ac5bcc122bff56b99e72872cf2",
             "heading": "externalEditorContext",
             "fact": "existence-and-example",
             "method": "official-key-entry"
@@ -94,7 +116,7 @@
     }
   },
   "additionalProperties": true,
-  "x-claude-code-version": "2.1.268",
+  "x-claude-code-version": "2.1.269",
   "x-artifact-kind": "global-config-json-schema",
   "x-surface-path": "~/.claude.json",
   "x-generator-version": "0.1.0"
