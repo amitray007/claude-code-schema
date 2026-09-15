@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
   "artifactKind": "cli-surface-catalog",
-  "claudeCodeVersion": "2.1.270",
+  "claudeCodeVersion": "2.1.272",
   "platformPackage": "@anthropic-ai/claude-code-linux-x64",
-  "binarySha256": "3a624a5a7cd79bbad4d32bd7db36f1197ecf458bc5bf1e2aed81834a01ad3ef0",
+  "binarySha256": "d81396a668eb76fbddb49a2a5841f1b5d7af96b4c1f6500ced92f2c988f5bcd4",
   "probePolicy": {
     "allowedOperations": [
       "--version",
@@ -19,7 +19,7 @@
     "maximumCommands": 80,
     "rawHelpRedistributed": false
   },
-  "versionOutput": "2.1.270 (Claude Code)",
+  "versionOutput": "2.1.272 (Claude Code)",
   "commands": [
     {
       "commandPath": [
@@ -3000,8 +3000,8 @@
       "signal": null,
       "timedOut": false,
       "outputExceeded": false,
-      "helpSha256": "bb057881cb539d716f1caa6ea7f34c6e46c01428d6ebc8d704b94c989db570b6",
-      "helpBytes": 1244,
+      "helpSha256": "1428c8559231187b41388496fd480c9df37eff35a4c5cce12b26261db0f81a75",
+      "helpBytes": 2003,
       "usage": "claude plugin install|i [options] <plugin>",
       "arguments": [
         {
@@ -3012,6 +3012,16 @@
         }
       ],
       "options": [
+        {
+          "names": [
+            "--accept-command"
+          ],
+          "valueNotation": "<sha256>",
+          "valueArity": "required",
+          "variadic": false,
+          "negated": false,
+          "repeatable": false
+        },
         {
           "names": [
             "--config"
@@ -3476,8 +3486,8 @@
       "signal": null,
       "timedOut": false,
       "outputExceeded": false,
-      "helpSha256": "0ddbc88c50f95aa2e06ebfea6f7bfdacb627cefe6b3b72408ce09b4709132e31",
-      "helpBytes": 877,
+      "helpSha256": "79a4f58d5fe643dac54101909fd3e4a215bc11b848e4e97d9eb6644fa8e44070",
+      "helpBytes": 1651,
       "usage": "claude plugin update [options] <plugin>",
       "arguments": [
         {
@@ -3488,6 +3498,16 @@
         }
       ],
       "options": [
+        {
+          "names": [
+            "--accept-command"
+          ],
+          "valueNotation": "<sha256>",
+          "valueArity": "required",
+          "variadic": false,
+          "negated": false,
+          "repeatable": false
+        },
         {
           "names": [
             "-h",
@@ -6337,6 +6357,11 @@
       "exposedByHelpProbe": true
     },
     {
+      "name": "--accept-command",
+      "documentedTopLevel": false,
+      "exposedByHelpProbe": true
+    },
+    {
       "name": "--add-dir",
       "documentedTopLevel": true,
       "exposedByHelpProbe": true
@@ -7112,5 +7137,5 @@
       "exposedByHelpProbe": true
     }
   ],
-  "unclassifiedStaticCandidateCount": 2777
+  "unclassifiedStaticCandidateCount": 2805
 }

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "artifactKind": "environment-surface-catalog",
-  "claudeCodeVersion": "2.1.270",
+  "claudeCodeVersion": "2.1.272",
   "surface": {
     "product": "Claude Code CLI",
     "interface": "process-environment",
@@ -465,7 +465,7 @@
   ],
   "binaryEvidence": {
     "platformPackage": "@anthropic-ai/claude-code-linux-x64",
-    "binarySha256": "3a624a5a7cd79bbad4d32bd7db36f1197ecf458bc5bf1e2aed81834a01ad3ef0",
+    "binarySha256": "d81396a668eb76fbddb49a2a5841f1b5d7af96b4c1f6500ced92f2c988f5bcd4",
     "policy": "Static strings prove token presence only. Binary-only values are candidates, not public API."
   },
   "staticBinaryCandidates": [
@@ -886,6 +886,10 @@
       "documented": false
     },
     {
+      "name": "CLAUDE_CODE_ARTIFACT_FD",
+      "documented": false
+    },
+    {
       "name": "CLAUDE_CODE_ARTIFACT_FIVE_CLASS_ASKS",
       "documented": false
     },
@@ -914,6 +918,10 @@
       "documented": false
     },
     {
+      "name": "CLAUDE_CODE_ARTIFACT_PATH_PIN",
+      "documented": false
+    },
+    {
       "name": "CLAUDE_CODE_ARTIFACT_PIN",
       "documented": false
     },
@@ -927,6 +935,10 @@
     },
     {
       "name": "CLAUDE_CODE_ARTIFACT_PREVIEW0",
+      "documented": false
+    },
+    {
+      "name": "CLAUDE_CODE_ARTIFACT_QUICKSTART",
       "documented": false
     },
     {
@@ -1051,6 +1063,10 @@
     },
     {
       "name": "CLAUDE_CODE_AUTO_MODE_SEGMENTED_TRANSCRIPT",
+      "documented": false
+    },
+    {
+      "name": "CLAUDE_CODE_AUTO_MODE_SERVER",
       "documented": false
     },
     {
@@ -1542,6 +1558,10 @@
       "documented": true
     },
     {
+      "name": "CLAUDE_CODE_DISABLE_TURN_HANDOFF",
+      "documented": false
+    },
+    {
       "name": "CLAUDE_CODE_DISABLE_UNKNOWN_MODEL_WINDOW_ENFORCEMENT",
       "documented": true
     },
@@ -1878,10 +1898,6 @@
       "documented": false
     },
     {
-      "name": "CLAUDE_CODE_GAULT_KESTREL",
-      "documented": false
-    },
-    {
       "name": "CLAUDE_CODE_GB_BASE_URL",
       "documented": false
     },
@@ -2158,6 +2174,10 @@
       "documented": true
     },
     {
+      "name": "CLAUDE_CODE_MCP_CONNECTOR_PREWAIT_MS",
+      "documented": false
+    },
+    {
       "name": "CLAUDE_CODE_MCP_MEMORY_CGROUP",
       "documented": false
     },
@@ -2399,10 +2419,6 @@
     },
     {
       "name": "CLAUDE_CODE_POLISHED_DEWDROP",
-      "documented": false
-    },
-    {
-      "name": "CLAUDE_CODE_POLISHED_DEWDROPG",
       "documented": false
     },
     {
@@ -2827,6 +2843,10 @@
     },
     {
       "name": "CLAUDE_CODE_SLACK_TAG_TOKEN",
+      "documented": false
+    },
+    {
+      "name": "CLAUDE_CODE_SLEEPY_SNOWFLAKE",
       "documented": false
     },
     {
