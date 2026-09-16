@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://github.com/amitray007/claude-code-schema/releases/download/v2.1.272/global-config.schema.json",
+  "$id": "https://github.com/amitray007/claude-code-schema/releases/download/v2.1.273/global-config.schema.json",
   "title": "Claude Code global config (~/.claude.json)",
   "type": "object",
   "properties": {
@@ -17,7 +17,7 @@
         "evidence": [
           {
             "source": "settingsDocsExpanded",
-            "sourceSha256": "7c892e1eb6a53633e4fce984cace416a4f16860012d45ab116c95ba765214bf8",
+            "sourceSha256": "e5de607985e31488ff5a28e68b22c2a7b1649f9e18ec4db8d074a2838cdc3e97",
             "heading": "autoConnectIde",
             "fact": "existence-and-example",
             "method": "official-key-entry"
@@ -39,7 +39,7 @@
         "evidence": [
           {
             "source": "settingsDocsExpanded",
-            "sourceSha256": "7c892e1eb6a53633e4fce984cace416a4f16860012d45ab116c95ba765214bf8",
+            "sourceSha256": "e5de607985e31488ff5a28e68b22c2a7b1649f9e18ec4db8d074a2838cdc3e97",
             "heading": "autoInstallIdeExtension",
             "fact": "existence-and-example",
             "method": "official-key-entry"
@@ -61,7 +61,7 @@
         "evidence": [
           {
             "source": "settingsDocsExpanded",
-            "sourceSha256": "7c892e1eb6a53633e4fce984cace416a4f16860012d45ab116c95ba765214bf8",
+            "sourceSha256": "e5de607985e31488ff5a28e68b22c2a7b1649f9e18ec4db8d074a2838cdc3e97",
             "heading": "copyOnSelect",
             "fact": "existence-and-example",
             "method": "official-key-entry"
@@ -83,7 +83,7 @@
         "evidence": [
           {
             "source": "settingsDocsExpanded",
-            "sourceSha256": "7c892e1eb6a53633e4fce984cace416a4f16860012d45ab116c95ba765214bf8",
+            "sourceSha256": "e5de607985e31488ff5a28e68b22c2a7b1649f9e18ec4db8d074a2838cdc3e97",
             "heading": "diffTool",
             "fact": "existence-and-example",
             "method": "official-key-entry"
@@ -105,7 +105,7 @@
         "evidence": [
           {
             "source": "settingsDocsExpanded",
-            "sourceSha256": "7c892e1eb6a53633e4fce984cace416a4f16860012d45ab116c95ba765214bf8",
+            "sourceSha256": "e5de607985e31488ff5a28e68b22c2a7b1649f9e18ec4db8d074a2838cdc3e97",
             "heading": "externalEditorContext",
             "fact": "existence-and-example",
             "method": "official-key-entry"
@@ -116,7 +116,7 @@
     }
   },
   "additionalProperties": true,
-  "x-claude-code-version": "2.1.272",
+  "x-claude-code-version": "2.1.273",
   "x-artifact-kind": "global-config-json-schema",
   "x-surface-path": "~/.claude.json",
   "x-generator-version": "0.1.0"
