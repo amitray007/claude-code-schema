@@ -278,10 +278,12 @@ function referenceSections(markdown, startHeading) {
       const key = /^### `([^`]+)`/.exec(section)[1];
       const bullet = (name) =>
         new RegExp(`^\\*\\s+\\*\\*${name}\\*\\*:\\s*(.+)$`, "m").exec(section)?.[1]?.trim() ?? "";
-      const scopeLabel = bullet("Scope")
-        .replace(/\[`?([^\]`]+)`?\]\(#scopes\)/, "$1")
-        .split(/\.(?:\s|$)/)[0]
-        .trim();
+      const scopeText = bullet("Scope");
+      // The text linked to #scopes is the scope name. Everything after it is
+      // explanatory prose, which upstream now joins with a comma as well as a
+      // period, so read the link instead of splitting on sentences.
+      const scopeLink = /\[`?([^\]`]+)`?\]\(#scopes\)/.exec(scopeText)?.[1];
+      const scopeLabel = (scopeLink ?? scopeText.split(/\.(?:\s|$)/)[0]).trim();
       const removedIn = /Removed in v([0-9]+(?:\.[0-9]+)*)/.exec(section)?.[1] ?? null;
       const bounds = {};
       if (removedIn) {
@@ -305,20 +307,22 @@ const settingsSections = referenceSections(sources.settingsDocs.text, "## All se
 if (!settingsSections.length) {
   throw new Error("Settings reference no longer lists keys under ## All settings");
 }
-const allSettingsRecords = settingsSections.map((section) => {
-  if (!section.scopes) {
-    throw new Error(`Unknown settings scope "${section.scopeLabel}" for ${section.key}`);
-  }
-  return {
-    key: section.key,
-    scopes: section.scopes,
-    ...section.bounds,
-    ...versionEvidence(section.description)
-  };
-});
-const settingsRecords = allSettingsRecords.filter((record) =>
-  isActiveForVersion(record, version)
-);
+// A key the docs removed loses its Scope bullet upstream, so drop keys by
+// version before requiring a scope. Otherwise a key removed from a release
+// blocks generation for the very release that excludes it.
+const settingsRecords = settingsSections
+  .filter((section) => isActiveForVersion(section.bounds, version))
+  .map((section) => {
+    if (!section.scopes) {
+      throw new Error(`Unknown settings scope "${section.scopeLabel}" for ${section.key}`);
+    }
+    return {
+      key: section.key,
+      scopes: section.scopes,
+      ...section.bounds,
+      ...versionEvidence(section.description)
+    };
+  });
 
 const envTables = markdownTables(
   sources.envDocs.text,
@@ -581,7 +585,7 @@ const manifest = {
       keybindings: keybindingsSchema["x-validation-limitations"]
     },
     rowsExcludedByVersion: {
-      settings: allSettingsRecords.length - settingsRecords.length,
+      settings: settingsSections.length - settingsRecords.length,
       environment: allEnvRecords.length - envRecords.length,
       flags: allFlagRecords.length - flagRecords.length,
       keybindingDefaults: allKeybindingDefaults.length - keybindingDefaults.length

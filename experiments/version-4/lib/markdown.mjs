@@ -150,12 +150,11 @@ export function referenceSections(markdown, startHeading) {
       const bullet = (name) =>
         new RegExp(`^\\*\\s+\\*\\*${name}\\*\\*:\\s*(.+)$`, "m").exec(section)?.[1]?.trim() ?? "";
       const scopeText = bullet("Scope");
-      // Strip the doc link wrapper, then keep the leading label before any
-      // explanatory prose that follows it.
-      const scopeLabel = scopeText
-        .replace(/\[`?([^\]`]+)`?\]\(#scopes\)/, "$1")
-        .split(/\.(?:\s|$)/)[0]
-        .trim();
+      // The text linked to #scopes is the scope name. Everything after it is
+      // explanatory prose, which upstream now joins with a comma as well as a
+      // period, so read the link instead of splitting on sentences.
+      const scopeLink = /\[`?([^\]`]+)`?\]\(#scopes\)/.exec(scopeText)?.[1];
+      const scopeLabel = (scopeLink ?? scopeText.split(/\.(?:\s|$)/)[0]).trim();
       const removedIn = /Removed in v([0-9]+(?:\.[0-9]+)*)/.exec(section)?.[1] ?? null;
       return {
         key,

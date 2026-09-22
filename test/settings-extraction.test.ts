@@ -134,6 +134,47 @@ test("the settings anchor is found at any heading level", () => {
   }
 });
 
+// Upstream joins the scope link to explanatory prose with a comma, and drops
+// the bullets entirely from a key it has removed. Both shapes reached the
+// generators as an unknown scope and blocked every live generation for days.
+const driftedReference = `## All settings
+
+### \`syncClaudeAiSkills\`
+
+* **Scope**: [\`User, local, or managed\`](#scopes), and files passed with \`--settings\`. A repository can't turn it off for you.
+* **Type**: Boolean
+* **Default**: unset
+
+### \`taskOutputMaxChars\`
+
+<Warning>
+  Removed in v2.1.277, together with the \`TaskOutput\` tool it sized.
+</Warning>
+
+Through v2.1.276, this key sized the output Claude received inline.
+`;
+
+test("a scope link followed by prose resolves to the linked scope", () => {
+  const [section] = referenceSections(driftedReference, "## All settings");
+  assert.equal(section.key, "syncClaudeAiSkills");
+  const scopes = ["user", "local", "managed", "cli-settings"];
+  assert.deepEqual(section.scopes, scopes);
+  assert.deepEqual(settingRecord(section, source, "2.1.280").scopes, scopes);
+});
+
+test("a removed key that lost its bullets is excluded by version", () => {
+  const [active, removed] = referenceSections(
+    driftedReference,
+    "## All settings",
+  );
+  assert.equal(removed.key, "taskOutputMaxChars");
+  assert.equal(removed.bounds.maxVersion, "2.1.276");
+  assert.equal(removed.scopes, null);
+  assert.equal(settingRecord(removed, source, "2.1.280"), null);
+  // The neighbouring key proves this fixture still yields records at all.
+  assert.ok(settingRecord(active, source, "2.1.280"));
+});
+
 test("a missing settings anchor still fails loudly", () => {
   assert.throws(
     () => referenceSections(reference, "## Nonexistent section"),
