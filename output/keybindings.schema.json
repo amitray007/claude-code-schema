@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://github.com/amitray007/claude-code-schema/releases/download/v2.1.273/keybindings.schema.json",
+  "$id": "https://github.com/amitray007/claude-code-schema/releases/download/v2.1.280/keybindings.schema.json",
   "title": "Claude Code keybindings",
   "description": "Conservative validator generated only from the official keybindings documentation.",
   "type": "object",
@@ -86,6 +86,7 @@
                     "chat:modelPicker",
                     "chat:newline",
                     "chat:queueSubmit",
+                    "chat:sendNow",
                     "chat:stash",
                     "chat:submit",
                     "chat:thinkingToggle",
@@ -177,7 +178,7 @@
                   "x-status": "exact-release-binary-validator-corroborated",
                   "x-binary": {
                     "source": "platformBinary",
-                    "sha256": "6c752e2cc7c110c9df15f26d8d134d438c5ae95dbd610efc1a308bf7f9c5f6c1",
+                    "sha256": "1e08503dbdf3c2cb0d706d32f3408277388d1c76ef108673e8fe42c1b322925b",
                     "pathInPackage": "package/claude",
                     "commandBindingPatternCorroborated": true,
                     "commandBindingValidatorMessageCorroborated": true
@@ -202,7 +203,7 @@
     "bindings"
   ],
   "additionalProperties": false,
-  "x-claude-code-version": "2.1.273",
+  "x-claude-code-version": "2.1.280",
   "x-artifact-kind": "keybindings-json-schema",
   "x-validation-limitations": [
     "The current official docs do not document command: bindings; the narrowly patterned compatibility form is accepted but annotated as unverified for this release.",
@@ -212,7 +213,7 @@
     "evidence": [
       {
         "source": "keybindingsDocs",
-        "sourceSha256": "d6070bb5c33a18703cd975c228b81773cd8d2d69519f3a7bc404f3f766f84667"
+        "sourceSha256": "f7752ba067007d89a7b0f9b2d4e7e2f986d42b8c65b28e81664f6cfcb3f7b3c6"
       }
     ]
   },
@@ -249,6 +250,7 @@
     "chat:modelPicker",
     "chat:newline",
     "chat:queueSubmit",
+    "chat:sendNow",
     "chat:stash",
     "chat:submit",
     "chat:thinkingToggle",
