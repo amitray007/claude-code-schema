@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
   "artifactKind": "cli-surface-catalog",
-  "claudeCodeVersion": "2.1.280",
+  "claudeCodeVersion": "2.1.281",
   "platformPackage": "@anthropic-ai/claude-code-linux-x64",
-  "binarySha256": "1e08503dbdf3c2cb0d706d32f3408277388d1c76ef108673e8fe42c1b322925b",
+  "binarySha256": "56fe3da88458465fb27d7e9299dddb3fead55750fb9c2de795f233b5eea6dce1",
   "probePolicy": {
     "allowedOperations": [
       "--version",
@@ -19,7 +19,7 @@
     "maximumCommands": 80,
     "rawHelpRedistributed": false
   },
-  "versionOutput": "2.1.280 (Claude Code)",
+  "versionOutput": "2.1.281 (Claude Code)",
   "commands": [
     {
       "commandPath": [
@@ -33,8 +33,8 @@
       "signal": null,
       "timedOut": false,
       "outputExceeded": false,
-      "helpSha256": "28d7cbef1dae5a6df13480efedb873424eb60f7cb2eb535803a3893e5dd1b6e7",
-      "helpBytes": 21643,
+      "helpSha256": "8b3a708845f9ba07704e0ef72de221091d5c4a3a5e9b647db03f0da6e74e60f1",
+      "helpBytes": 21734,
       "usage": "claude [options] [command] [prompt]",
       "arguments": [
         {
@@ -69,7 +69,7 @@
           "names": [
             "--agents"
           ],
-          "valueNotation": "<json>",
+          "valueNotation": "<json-or-file>",
           "valueArity": "required",
           "variadic": false,
           "negated": false,
@@ -3496,8 +3496,8 @@
       "signal": null,
       "timedOut": false,
       "outputExceeded": false,
-      "helpSha256": "79a4f58d5fe643dac54101909fd3e4a215bc11b848e4e97d9eb6644fa8e44070",
-      "helpBytes": 1651,
+      "helpSha256": "b27e2d38969e5804881c24f8237f3f057d1fffeaabb7a6a6eadc1fba54a93477",
+      "helpBytes": 1658,
       "usage": "claude plugin update [options] <plugin>",
       "arguments": [
         {
@@ -3549,7 +3549,7 @@
           "variadic": false,
           "negated": false,
           "repeatable": false,
-          "defaultDisplay": "user"
+          "defaultDisplay": "auto-detect"
         },
         {
           "names": [
@@ -7152,5 +7152,5 @@
       "exposedByHelpProbe": true
     }
   ],
-  "unclassifiedStaticCandidateCount": 2928
+  "unclassifiedStaticCandidateCount": 2942
 }
