@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://github.com/amitray007/claude-code-schema/releases/download/v2.1.282/keybindings.compat.schema.json",
+  "$id": "https://github.com/amitray007/claude-code-schema/releases/download/v2.1.283/keybindings.compat.schema.json",
   "title": "Claude Code keybindings — exact parser compatibility",
   "description": "Conservative validator generated only from the official keybindings documentation.",
   "type": "object",
@@ -73,7 +73,7 @@
     "bindings"
   ],
   "additionalProperties": false,
-  "x-claude-code-version": "2.1.282",
+  "x-claude-code-version": "2.1.283",
   "x-artifact-kind": "keybindings-runtime-compat-json-schema",
   "x-validation-limitations": [
     "The current official docs do not document command: bindings; the narrowly patterned compatibility form is accepted but annotated as unverified for this release.",
@@ -83,7 +83,7 @@
     "evidence": [
       {
         "source": "keybindingsDocs",
-        "sourceSha256": "3d4cfdcedc4526c6d7231b72f0d4ad1db39a4b2592edb5b5503ac3a1e691430d"
+        "sourceSha256": "8b6dde14f71f4f389cae1ae6acc1c0a95ff1f9e70d326b81e2fd470a21e1df7b"
       }
     ]
   },
@@ -139,7 +139,6 @@
     "diff:nextSource",
     "diff:previousFile",
     "diff:previousSource",
-    "diff:viewDetails",
     "effortSlider:thisSessionOnly",
     "footer:clearSelection",
     "footer:dismiss",
@@ -157,11 +156,6 @@
     "historySearch:cycleScope",
     "historySearch:execute",
     "historySearch:next",
-    "messageSelector:bottom",
-    "messageSelector:down",
-    "messageSelector:select",
-    "messageSelector:top",
-    "messageSelector:up",
     "modelPicker:decreaseEffort",
     "modelPicker:increaseEffort",
     "modelPicker:thisSessionOnly",
