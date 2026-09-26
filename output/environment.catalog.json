@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "artifactKind": "environment-surface-catalog",
-  "claudeCodeVersion": "2.1.282",
+  "claudeCodeVersion": "2.1.283",
   "surface": {
     "product": "Claude Code CLI",
     "interface": "process-environment",
@@ -125,6 +125,7 @@
     "CLAUDE_CODE_DISABLE_CFC_PROMPT",
     "CLAUDE_CODE_DISABLE_CLAUDE_MDS",
     "CLAUDE_CODE_DISABLE_CRON",
+    "CLAUDE_CODE_DISABLE_DANGEROUS_RM_TIMEOUT",
     "CLAUDE_CODE_DISABLE_EXPERIMENTAL_BETAS",
     "CLAUDE_CODE_DISABLE_EXPLORE_PLAN_AGENTS",
     "CLAUDE_CODE_DISABLE_FAST_MODE",
@@ -141,6 +142,8 @@
     "CLAUDE_CODE_DISABLE_OFFICIAL_MARKETPLACE_AUTOINSTALL",
     "CLAUDE_CODE_DISABLE_PERMISSION_PROMPT_NOTIFY_HOOKS",
     "CLAUDE_CODE_DISABLE_POLICY_SKILLS",
+    "CLAUDE_CODE_DISABLE_POWERSHELL_CMD_RM_DENY",
+    "CLAUDE_CODE_DISABLE_SUBSTITUTION_RM_PROMPT",
     "CLAUDE_CODE_DISABLE_TERMINAL_TITLE",
     "CLAUDE_CODE_DISABLE_THINKING",
     "CLAUDE_CODE_DISABLE_UNKNOWN_MODEL_WINDOW_ENFORCEMENT",
@@ -477,7 +480,7 @@
   ],
   "binaryEvidence": {
     "platformPackage": "@anthropic-ai/claude-code-linux-x64",
-    "binarySha256": "3afe8535c0cc33f0e24f7b25dab7a1727b8b592196f8496a8bc302ba2161eed3",
+    "binarySha256": "1859583ce32920595c61ef868bee52e1b1594f7486db209935e01f1e5e804ae2",
     "policy": "Static strings prove token presence only. Binary-only values are candidates, not public API."
   },
   "staticBinaryCandidates": [
@@ -806,6 +809,10 @@
       "documented": false
     },
     {
+      "name": "CLAUDE_CODE_AGENT_PROXY_GIT_HOSTS",
+      "documented": false
+    },
+    {
       "name": "CLAUDE_CODE_AGENT_RULE_DISABLED",
       "documented": false
     },
@@ -942,10 +949,6 @@
       "documented": false
     },
     {
-      "name": "CLAUDE_CODE_ARTIFACT_OPEN_ACTIONC",
-      "documented": false
-    },
-    {
       "name": "CLAUDE_CODE_ARTIFACT_PATH_PIN",
       "documented": false
     },
@@ -1030,10 +1033,6 @@
       "documented": false
     },
     {
-      "name": "CLAUDE_CODE_AUTO_BACKGROUND_WORKER_CHECKIN_SECONDS",
-      "documented": true
-    },
-    {
       "name": "CLAUDE_CODE_AUTO_COMPACT_WINDOW",
       "documented": true
     },
@@ -1055,6 +1054,10 @@
     },
     {
       "name": "CLAUDE_CODE_AUTO_MODE_CLASSIFY_EDITS",
+      "documented": false
+    },
+    {
+      "name": "CLAUDE_CODE_AUTO_MODE_CLASSIFY_EDITS3",
       "documented": false
     },
     {
@@ -1206,10 +1209,6 @@
       "documented": true
     },
     {
-      "name": "CLAUDE_CODE_BS_AS_CTRL_BACKSPACE4",
-      "documented": false
-    },
-    {
       "name": "CLAUDE_CODE_BUBBLEWRAP",
       "documented": false
     },
@@ -1250,6 +1249,10 @@
       "documented": true
     },
     {
+      "name": "CLAUDE_CODE_CLIENT_DATA_URL",
+      "documented": false
+    },
+    {
       "name": "CLAUDE_CODE_CLIENT_KEY",
       "documented": true
     },
@@ -1263,10 +1266,6 @@
     },
     {
       "name": "CLAUDE_CODE_COLD_COMPACT",
-      "documented": false
-    },
-    {
-      "name": "CLAUDE_CODE_COLD_COMPACT8",
       "documented": false
     },
     {
@@ -1303,10 +1302,6 @@
     },
     {
       "name": "CLAUDE_CODE_COORDINATOR_SKILL_GUIDANCE",
-      "documented": false
-    },
-    {
-      "name": "CLAUDE_CODE_COORDINATOR_WORKER_CHECKIN_SECONDS",
       "documented": false
     },
     {
@@ -1366,10 +1361,6 @@
       "documented": false
     },
     {
-      "name": "CLAUDE_CODE_DIR_SYNC_CHAIN",
-      "documented": false
-    },
-    {
       "name": "CLAUDE_CODE_DIR_SYNC_DISABLE_ANCHORING",
       "documented": false
     },
@@ -1404,10 +1395,6 @@
     {
       "name": "CLAUDE_CODE_DISABLE_ADVISOR_TOOL",
       "documented": true
-    },
-    {
-      "name": "CLAUDE_CODE_DISABLE_ADVISOR_TOOLB",
-      "documented": false
     },
     {
       "name": "CLAUDE_CODE_DISABLE_AGENT_VIEW",
@@ -1487,7 +1474,7 @@
     },
     {
       "name": "CLAUDE_CODE_DISABLE_DANGEROUS_RM_TIMEOUT",
-      "documented": false
+      "documented": true
     },
     {
       "name": "CLAUDE_CODE_DISABLE_DIR_SYNC",
@@ -1558,10 +1545,6 @@
       "documented": false
     },
     {
-      "name": "CLAUDE_CODE_DISABLE_MEMORY_RO_UNSAVED_NOTICEH",
-      "documented": false
-    },
-    {
       "name": "CLAUDE_CODE_DISABLE_MEMORY_STREAM_LIST",
       "documented": false
     },
@@ -1572,6 +1555,10 @@
     {
       "name": "CLAUDE_CODE_DISABLE_MOUSE_CLICKS",
       "documented": true
+    },
+    {
+      "name": "CLAUDE_CODE_DISABLE_MOUSE_CLICKSC",
+      "documented": false
     },
     {
       "name": "CLAUDE_CODE_DISABLE_MTLS_RELOAD_ON_STALE_CONNECTION",
@@ -1618,15 +1605,15 @@
       "documented": true
     },
     {
+      "name": "CLAUDE_CODE_DISABLE_POWERSHELL_CMD_RM_DENY",
+      "documented": true
+    },
+    {
       "name": "CLAUDE_CODE_DISABLE_PRECOMPACT_SKIP",
       "documented": false
     },
     {
       "name": "CLAUDE_CODE_DISABLE_REFUSAL_FALLBACK",
-      "documented": false
-    },
-    {
-      "name": "CLAUDE_CODE_DISABLE_REFUSAL_FALLBACKO",
       "documented": false
     },
     {
@@ -1639,7 +1626,7 @@
     },
     {
       "name": "CLAUDE_CODE_DISABLE_SUBSTITUTION_RM_PROMPT",
-      "documented": false
+      "documented": true
     },
     {
       "name": "CLAUDE_CODE_DISABLE_TERMINAL_TITLE",
@@ -1683,6 +1670,10 @@
     },
     {
       "name": "CLAUDE_CODE_DISPATCH_V2S",
+      "documented": false
+    },
+    {
+      "name": "CLAUDE_CODE_DISPATCH_V2SI",
       "documented": false
     },
     {
@@ -1754,10 +1745,6 @@
       "documented": false
     },
     {
-      "name": "CLAUDE_CODE_ENABLE_EXPERIMENTAL_ADVISOR_TOOLA",
-      "documented": false
-    },
-    {
       "name": "CLAUDE_CODE_ENABLE_FEEDBACK_SURVEY_FOR_OTEL",
       "documented": true
     },
@@ -1799,10 +1786,6 @@
     },
     {
       "name": "CLAUDE_CODE_ENABLE_REFRESH_MCP_TOOLS",
-      "documented": false
-    },
-    {
-      "name": "CLAUDE_CODE_ENABLE_REFRESH_MCP_TOOLSA",
       "documented": false
     },
     {
@@ -1894,7 +1877,7 @@
       "documented": false
     },
     {
-      "name": "CLAUDE_CODE_EXPERIMENTAL_OBSERVER_AGENTSM",
+      "name": "CLAUDE_CODE_EXPERIMENTAL_OBSERVER_AGENTSN",
       "documented": false
     },
     {
@@ -2058,6 +2041,10 @@
       "documented": true
     },
     {
+      "name": "CLAUDE_CODE_GOAL_CHECKIN_MINUTESC",
+      "documented": false
+    },
+    {
       "name": "CLAUDE_CODE_GORSE_PLOVER",
       "documented": false
     },
@@ -2098,19 +2085,11 @@
       "documented": true
     },
     {
-      "name": "CLAUDE_CODE_HIDE_CWDC",
-      "documented": false
-    },
-    {
       "name": "CLAUDE_CODE_HIDE_SETTINGS_HINT",
       "documented": false
     },
     {
       "name": "CLAUDE_CODE_HOLD_REPORT_PARK_AT_INIT",
-      "documented": false
-    },
-    {
-      "name": "CLAUDE_CODE_HOLD_REPORT_PARK_AT_INITG",
       "documented": false
     },
     {
@@ -2210,7 +2189,7 @@
       "documented": false
     },
     {
-      "name": "CLAUDE_CODE_INLINE_TOOLSM",
+      "name": "CLAUDE_CODE_INLINE_TOOLSJ",
       "documented": false
     },
     {
@@ -2274,6 +2253,10 @@
       "documented": true
     },
     {
+      "name": "CLAUDE_CODE_MAX_CONCURRENT_SUBAGENTSF",
+      "documented": false
+    },
+    {
       "name": "CLAUDE_CODE_MAX_CONTEXT_TOKENS",
       "documented": true
     },
@@ -2306,16 +2289,16 @@
       "documented": true
     },
     {
-      "name": "CLAUDE_CODE_MAX_TOOL_USE_CONCURRENCY1",
-      "documented": false
-    },
-    {
       "name": "CLAUDE_CODE_MAX_TURNS",
       "documented": true
     },
     {
       "name": "CLAUDE_CODE_MAX_WEB_SEARCHES_PER_SESSION",
       "documented": true
+    },
+    {
+      "name": "CLAUDE_CODE_MAX_WEB_SEARCHES_PER_SESSIONQ",
+      "documented": false
     },
     {
       "name": "CLAUDE_CODE_MCP_ALLOWLIST_ENV",
@@ -2367,6 +2350,10 @@
     },
     {
       "name": "CLAUDE_CODE_MEMORY_PUSH_DELETE_MODE",
+      "documented": false
+    },
+    {
+      "name": "CLAUDE_CODE_MEMORY_SUBAGENT_APPEND",
       "documented": false
     },
     {
@@ -2770,7 +2757,19 @@
       "documented": false
     },
     {
+      "name": "CLAUDE_CODE_REMOTE_TOOLS_CALLER_SESSIONS_MAX",
+      "documented": false
+    },
+    {
+      "name": "CLAUDE_CODE_REMOTE_TOOLS_FORWARD",
+      "documented": false
+    },
+    {
       "name": "CLAUDE_CODE_REMOTE_TOOLS_JUMP_QUEUE",
+      "documented": false
+    },
+    {
+      "name": "CLAUDE_CODE_REMOTE_TOOLS_PIN_STORED_LOGIN",
       "documented": false
     },
     {
@@ -2946,10 +2945,6 @@
       "documented": false
     },
     {
-      "name": "CLAUDE_CODE_SILENT_TURN_REMINDERH",
-      "documented": false
-    },
-    {
       "name": "CLAUDE_CODE_SILENT_TURN_REMINDER_TEXT",
       "documented": false
     },
@@ -3087,6 +3082,10 @@
     },
     {
       "name": "CLAUDE_CODE_SUBAGENT_CACHE_EVICT",
+      "documented": false
+    },
+    {
+      "name": "CLAUDE_CODE_SUBAGENT_CACHE_EVICTF",
       "documented": false
     },
     {
@@ -3234,10 +3233,6 @@
       "documented": false
     },
     {
-      "name": "CLAUDE_CODE_THINKING_DISPLAY_UPDATESN",
-      "documented": false
-    },
-    {
       "name": "CLAUDE_CODE_THISTLE_GREBE",
       "documented": false
     },
@@ -3323,6 +3318,10 @@
     },
     {
       "name": "CLAUDE_CODE_TURN_UPDATES",
+      "documented": false
+    },
+    {
+      "name": "CLAUDE_CODE_TURN_UPDATESJ",
       "documented": false
     },
     {
@@ -3414,10 +3413,6 @@
       "documented": false
     },
     {
-      "name": "CLAUDE_CODE_WEBSEARCH_CCR_PROXY_FAST",
-      "documented": false
-    },
-    {
       "name": "CLAUDE_CODE_WEBSEARCH_USE_CCR_PROXY",
       "documented": false
     },
@@ -3439,6 +3434,10 @@
     },
     {
       "name": "CLAUDE_CODE_WISE_COMET",
+      "documented": false
+    },
+    {
+      "name": "CLAUDE_CODE_WORKER_CHECKIN_SCHEDULE",
       "documented": false
     },
     {
