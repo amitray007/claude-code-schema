@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "artifactKind": "settings-surface-catalog",
-  "claudeCodeVersion": "2.1.283",
+  "claudeCodeVersion": "2.1.287",
   "surface": {
     "product": "Claude Code CLI",
     "interface": "configuration",
@@ -48,7 +48,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "advisorModel",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -71,7 +71,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "agent",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -94,7 +94,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "agentPushNotifEnabled",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -113,8 +113,27 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "allowAllClaudeAiMcps",
+          "fact": "existence-and-example",
+          "method": "official-key-entry"
+        }
+      ],
+      "runtimeCorroborated": true
+    },
+    {
+      "path": "allowClaudeInChromeWithManagedMcp",
+      "surface": "settings.json",
+      "scopes": [
+        "managed"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
+          "heading": "allowClaudeInChromeWithManagedMcp",
           "fact": "existence-and-example",
           "method": "official-key-entry"
         }
@@ -132,7 +151,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "allowedChannelPlugins",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -155,7 +174,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "allowedHttpHookUrls",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -178,13 +197,31 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "allowedMcpServers",
           "fact": "existence-and-example",
           "method": "official-key-entry"
         }
       ],
       "runtimeCorroborated": true
+    },
+    {
+      "path": "allowedProviders",
+      "surface": "settings.json",
+      "scopes": [
+        "managed"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
+          "heading": "allowedProviders",
+          "fact": "existence-and-example",
+          "method": "official-key-entry"
+        }
+      ]
     },
     {
       "path": "allowManagedHooksOnly",
@@ -197,7 +234,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "allowManagedHooksOnly",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -215,7 +252,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "allowManagedMcpServersOnly",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -233,7 +270,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "allowManagedPermissionRulesOnly",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -255,7 +292,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "alwaysThinkingEnabled",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -278,13 +315,33 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "apiKeyHelper",
           "fact": "existence-and-example",
           "method": "official-key-entry"
         }
       ],
       "runtimeCorroborated": true
+    },
+    {
+      "path": "appendPlugins",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
+          "heading": "appendPlugins",
+          "fact": "existence-and-example",
+          "method": "official-key-entry"
+        }
+      ]
     },
     {
       "path": "askUserQuestionTimeout",
@@ -299,7 +356,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "askUserQuestionTimeout",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -321,7 +378,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "attribution",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -344,7 +401,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "attribution.commit",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -366,7 +423,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "attribution.pr",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -388,7 +445,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "attribution.sessionUrl",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -410,7 +467,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "autoCompactEnabled",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -433,7 +490,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "autoCompactWindow",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -451,7 +508,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "autoConnectIde",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -471,7 +528,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "autoContinueAtUsageLimit",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -489,7 +546,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "autoInstallIdeExtension",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -511,7 +568,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "autoMemoryDirectory",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -534,7 +591,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "autoMemoryEnabled",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -555,7 +612,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "autoMode",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -576,7 +633,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "autoMode.classifyAllShell",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -598,7 +655,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "autoScrollEnabled",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -621,7 +678,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "autoUpdatesChannel",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -644,7 +701,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "availableModels",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -663,7 +720,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "availableModelsMatch",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -686,7 +743,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "awaySummaryEnabled",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -709,7 +766,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "awsAuthRefresh",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -732,7 +789,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "awsCredentialExport",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -755,7 +812,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "axScreenReader",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -776,7 +833,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "bashEditDiffEnabled",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -799,7 +856,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "bashOutputMaxChars",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -817,7 +874,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "blockedMarketplaces",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -835,7 +892,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "browserExternalPageTools",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -853,8 +910,26 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "channelsEnabled",
+          "fact": "existence-and-example",
+          "method": "official-key-entry"
+        }
+      ]
+    },
+    {
+      "path": "claudeInChromeDefaultEnabled",
+      "surface": "settings.json",
+      "scopes": [
+        "global-config"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
+          "heading": "claudeInChromeDefaultEnabled",
           "fact": "existence-and-example",
           "method": "official-key-entry"
         }
@@ -871,7 +946,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "claudeMd",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -894,7 +969,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "claudeMdExcludes",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -917,7 +992,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "cleanupPeriodDays",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -940,13 +1015,31 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "companyAnnouncements",
           "fact": "existence-and-example",
           "method": "official-key-entry"
         }
       ],
       "runtimeCorroborated": true
+    },
+    {
+      "path": "copyFullResponse",
+      "surface": "settings.json",
+      "scopes": [
+        "global-config"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
+          "heading": "copyFullResponse",
+          "fact": "existence-and-example",
+          "method": "official-key-entry"
+        }
+      ]
     },
     {
       "path": "copyOnSelect",
@@ -959,7 +1052,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "copyOnSelect",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -981,7 +1074,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "crossSessionInbound",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -1004,13 +1097,31 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "defaultShell",
           "fact": "existence-and-example",
           "method": "official-key-entry"
         }
       ],
       "runtimeCorroborated": true
+    },
+    {
+      "path": "defaultToAgentsView",
+      "surface": "settings.json",
+      "scopes": [
+        "global-config"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
+          "heading": "defaultToAgentsView",
+          "fact": "existence-and-example",
+          "method": "official-key-entry"
+        }
+      ]
     },
     {
       "path": "deniedMcpServers",
@@ -1027,7 +1138,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "deniedMcpServers",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -1046,7 +1157,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "deniedModels",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -1067,7 +1178,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "desktopSessionCleanupPeriodDays",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -1088,7 +1199,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "dialogExpiry",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -1106,7 +1217,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "diffTool",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -1128,7 +1239,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "disableAgentView",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -1150,7 +1261,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "disableAllHooks",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -1173,7 +1284,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "disableArtifact",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -1195,7 +1306,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "disableAutoMode",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -1213,7 +1324,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "disableBrowserExternalNavigation",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -1235,7 +1346,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "disableBundledSkills",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -1257,7 +1368,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "disableClaudeAiConnectors",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -1275,7 +1386,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "disableCommandPluginSources",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -1297,7 +1408,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "disableDeepLinkRegistration",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -1315,7 +1426,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "disableDesktopLocalSessions",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -1337,7 +1448,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "disabledMcpjsonServers",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -1356,7 +1467,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "disableMobileSimulatorTools",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -1378,7 +1489,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "disableRemoteControl",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -1396,7 +1507,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "disableSideloadFlags",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -1418,7 +1529,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "disableSkillShellExecution",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -1440,7 +1551,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "disableWorkflows",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -1462,7 +1573,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "editorMode",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -1484,7 +1595,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "effortLevel",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -1506,7 +1617,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "emojiCompletionEnabled",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -1529,7 +1640,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "enableAllProjectMcpServers",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -1551,7 +1662,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "enableArtifact",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -1573,7 +1684,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "enabledMcpjsonServers",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -1596,7 +1707,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "enabledPlugins",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -1619,7 +1730,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "enableWorkflows",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -1641,7 +1752,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "enforceAvailableModels",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -1663,7 +1774,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "env",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -1682,7 +1793,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "externalEditorContext",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -1704,7 +1815,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "extraKnownMarketplaces",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -1727,7 +1838,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "fallbackModel",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -1750,7 +1861,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "fastMode",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -1773,7 +1884,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "fastModePerSessionOptIn",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -1793,7 +1904,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "feedbackDrafts",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -1815,7 +1926,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "feedbackSurveyRate",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -1838,7 +1949,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "fileCheckpointingEnabled",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -1861,7 +1972,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "fileSuggestion",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -1882,7 +1993,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "footerLinksRegexes",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -1900,7 +2011,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "forceLoginGatewayUrl",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -1922,7 +2033,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "forceLoginMethod",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -1944,7 +2055,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "forceLoginOrgUUID",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -1963,7 +2074,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "forceRemoteSettingsRefresh",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -1982,7 +2093,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "gatewayInternalNetworks",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -2004,7 +2115,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "gcpAuthRefresh",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -2027,7 +2138,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "hooks",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -2050,7 +2161,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "httpHookAllowedEnvVars",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -2073,7 +2184,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "includeCoAuthoredBy",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -2096,7 +2207,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "includeGitInstructions",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -2119,7 +2230,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "inputNeededNotifEnabled",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -2142,7 +2253,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "isolatePeerMachines",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -2164,7 +2275,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "keybindingFlavor",
           "fact": "existence-and-type",
           "method": "official-key-entry"
@@ -2186,13 +2297,31 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "language",
           "fact": "existence-and-example",
           "method": "official-key-entry"
         }
       ],
       "runtimeCorroborated": true
+    },
+    {
+      "path": "leftArrowOpensAgents",
+      "surface": "settings.json",
+      "scopes": [
+        "global-config"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
+          "heading": "leftArrowOpensAgents",
+          "fact": "existence-and-example",
+          "method": "official-key-entry"
+        }
+      ]
     },
     {
       "path": "managedMcpServers",
@@ -2205,7 +2334,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "managedMcpServers",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -2224,7 +2353,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "managedSourcesBehavior",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -2247,7 +2376,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "maxEffortLevel",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -2269,7 +2398,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "maxProseWidth",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -2291,7 +2420,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "minimumVersion",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -2314,7 +2443,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "model",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -2337,7 +2466,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "modelOverrides",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -2358,7 +2487,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "modelPicker",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -2377,7 +2506,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "modelPricing",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -2400,7 +2529,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "modelSettings",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -2422,7 +2551,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "otelHeadersHelper",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -2445,7 +2574,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "outputStyle",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -2464,7 +2593,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "parentSettingsBehavior",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -2487,7 +2616,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "permissions",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -2510,7 +2639,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "permissions.additionalDirectories",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -2532,7 +2661,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "permissions.allow",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -2554,7 +2683,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "permissions.ask",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -2576,7 +2705,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "permissions.blockReadsOutsideWorkingDirectories",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -2598,7 +2727,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "permissions.defaultMode",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -2620,7 +2749,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "permissions.deny",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -2643,7 +2772,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "disableAutoMode",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -2665,7 +2794,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "permissions.disableBypassPermissionsMode",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -2687,7 +2816,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "plansDirectory",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -2708,7 +2837,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "pluginConfigs",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -2727,7 +2856,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "pluginSuggestionMarketplaces",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -2746,7 +2875,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "pluginTrustMessage",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -2765,7 +2894,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "policyHelper",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -2783,7 +2912,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "policyHelper.path",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -2801,7 +2930,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "policyHelper.refreshIntervalMs",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -2819,7 +2948,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "policyHelper.timeoutMs",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -2841,7 +2970,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "preferredNotifChannel",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -2863,13 +2992,33 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "prefersReducedMotion",
           "fact": "existence-and-example",
           "method": "official-key-entry"
         }
       ],
       "runtimeCorroborated": true
+    },
+    {
+      "path": "prependPlugins",
+      "surface": "settings.json",
+      "scopes": [
+        "user",
+        "managed",
+        "cli-settings"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
+          "heading": "prependPlugins",
+          "fact": "existence-and-example",
+          "method": "official-key-entry"
+        }
+      ]
     },
     {
       "path": "processWrapper",
@@ -2884,7 +3033,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "processWrapper",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -2907,7 +3056,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "promptCacheTtl",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -2929,13 +3078,31 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "promptSuggestionEnabled",
           "fact": "existence-and-example",
           "method": "official-key-entry"
         }
       ],
       "runtimeCorroborated": true
+    },
+    {
+      "path": "prStatusFooterEnabled",
+      "surface": "settings.json",
+      "scopes": [
+        "global-config"
+      ],
+      "status": "documented-active",
+      "typeEvidence": "official-example",
+      "provenance": [
+        {
+          "source": "settingsDocsExpanded",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
+          "heading": "prStatusFooterEnabled",
+          "fact": "existence-and-example",
+          "method": "official-key-entry"
+        }
+      ]
     },
     {
       "path": "prUrlTemplate",
@@ -2952,7 +3119,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "prUrlTemplate",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -2975,7 +3142,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "remote.defaultEnvironmentId",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -2997,7 +3164,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "remoteControlAtStartup",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -3015,7 +3182,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "requiredMaximumVersion",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -3034,7 +3201,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "requiredMinimumVersion",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -3057,7 +3224,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "respectGitignore",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -3080,7 +3247,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "respondToBashCommands",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -3103,7 +3270,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "sandbox",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -3124,7 +3291,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "sandbox.allowAppleEvents",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -3146,7 +3313,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "sandbox.allowUnsandboxedCommands",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -3168,7 +3335,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "sandbox.autoAllowBashIfSandboxed",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -3186,7 +3353,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "sandbox.bwrapPath",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -3208,7 +3375,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "sandbox.credentials",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -3228,7 +3395,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "sandbox.credentials.allowPlaintextInject",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -3248,7 +3415,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "sandbox.credentials.awsPairs",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -3270,7 +3437,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "sandbox.credentials.envVars",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -3292,7 +3459,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "Mask fields for environment variables",
           "fact": "existence-and-type",
           "method": "official-nested-field-table"
@@ -3314,7 +3481,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "Mask fields for environment variables",
           "fact": "existence-and-type",
           "method": "official-nested-field-table"
@@ -3336,7 +3503,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "Mask fields for environment variables",
           "fact": "existence-and-type",
           "method": "official-nested-field-table"
@@ -3358,7 +3525,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "Mask fields for environment variables",
           "fact": "existence-and-type",
           "method": "official-nested-field-table"
@@ -3380,7 +3547,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "Mask fields for environment variables",
           "fact": "existence-and-type",
           "method": "official-nested-field-table"
@@ -3402,7 +3569,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "sandbox.credentials.files",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -3424,7 +3591,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "Mask fields for files",
           "fact": "existence-and-type",
           "method": "official-nested-field-table"
@@ -3446,7 +3613,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "Mask fields for files",
           "fact": "existence-and-type",
           "method": "official-nested-field-table"
@@ -3468,7 +3635,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "Mask fields for files",
           "fact": "existence-and-type",
           "method": "official-nested-field-table"
@@ -3490,7 +3657,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "Mask fields for files",
           "fact": "existence-and-type",
           "method": "official-nested-field-table"
@@ -3512,7 +3679,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "Mask fields for files",
           "fact": "existence-and-type",
           "method": "official-nested-field-table"
@@ -3534,7 +3701,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "Mask fields for files",
           "fact": "existence-and-type",
           "method": "official-nested-field-table"
@@ -3554,7 +3721,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "sandbox.credentials.sigv4",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -3576,7 +3743,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "sandbox.enabled",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -3598,7 +3765,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "sandbox.enableWeakerNestedSandbox",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -3620,7 +3787,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "sandbox.enableWeakerNetworkIsolation",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -3642,7 +3809,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "sandbox.excludedCommands",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -3664,7 +3831,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "sandbox.failIfUnavailable",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -3686,7 +3853,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "sandbox.filesystem",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -3704,7 +3871,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "sandbox.filesystem.allowManagedReadPathsOnly",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -3726,7 +3893,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "sandbox.filesystem.allowRead",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -3748,7 +3915,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "sandbox.filesystem.allowWrite",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -3770,7 +3937,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "sandbox.filesystem.denyRead",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -3792,7 +3959,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "sandbox.filesystem.denyWrite",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -3812,7 +3979,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "sandbox.filesystem.disabled",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -3834,7 +4001,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "sandbox.ignoreViolations",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -3856,7 +4023,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "sandbox.network",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -3878,7 +4045,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "sandbox.network.allowAllUnixSockets",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -3900,7 +4067,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "sandbox.network.allowedDomains",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -3922,7 +4089,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "sandbox.network.allowLocalBinding",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -3944,7 +4111,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "sandbox.network.allowMachLookup",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -3962,7 +4129,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "sandbox.network.allowManagedDomainsOnly",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -3984,7 +4151,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "sandbox.network.allowUnixSockets",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -4006,7 +4173,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "sandbox.network.deniedDomains",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -4028,7 +4195,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "sandbox.network.httpProxyPort",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -4050,7 +4217,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "sandbox.network.socksProxyPort",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -4070,7 +4237,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "sandbox.network.strictAllowlist",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -4090,7 +4257,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "sandbox.network.tlsTerminate",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -4110,7 +4277,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "sandbox.ripgrep",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -4128,7 +4295,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "sandbox.socatPath",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -4150,7 +4317,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "showClearContextOnPlanAccept",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -4173,7 +4340,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "showThinkingSummaries",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -4196,7 +4363,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "showTurnDuration",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -4219,7 +4386,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "skillListingBudgetFraction",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -4242,7 +4409,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "skillListingMaxDescChars",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -4265,7 +4432,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "skillOverrides",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -4286,7 +4453,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "skipAutoPermissionPrompt",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -4307,7 +4474,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "skipDangerousModePermissionPrompt",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -4329,7 +4496,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "skipWebFetchPreflight",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -4349,7 +4516,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "spellcheck",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -4371,7 +4538,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "spinnerTipsEnabled",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -4394,7 +4561,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "spinnerTipsOverride",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -4416,7 +4583,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "spinnerVerbs",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -4437,7 +4604,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "sshConfigs",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -4456,7 +4623,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "sshHostAllowlist",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -4478,7 +4645,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "statusLine",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -4497,7 +4664,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "strictKnownMarketplaces",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -4515,7 +4682,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "strictPluginOnlyCustomization",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -4533,7 +4700,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "strictPluginOnlyCustomization.agents",
           "fact": "existence",
           "method": "official-key-entry"
@@ -4551,7 +4718,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "strictPluginOnlyCustomization.hooks",
           "fact": "existence",
           "method": "official-key-entry"
@@ -4569,7 +4736,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "strictPluginOnlyCustomization.mcp",
           "fact": "existence",
           "method": "official-key-entry"
@@ -4587,7 +4754,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "strictPluginOnlyCustomization.skills",
           "fact": "existence",
           "method": "official-key-entry"
@@ -4609,7 +4776,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "subagentPromptCacheTtl",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -4631,7 +4798,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "subagentStatusLine",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -4654,7 +4821,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "switchModelsOnFlag",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -4676,7 +4843,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "syncClaudeAiPlugins",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -4697,7 +4864,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "syncClaudeAiSkills",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -4719,7 +4886,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "syntaxHighlightingDisabled",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -4742,7 +4909,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "teammateMode",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -4764,7 +4931,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "terminalProgressBarEnabled",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -4787,7 +4954,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "terminalTitleFromRename",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -4810,7 +4977,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "theme",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -4832,7 +4999,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "timeFormat",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -4855,7 +5022,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "timeZone",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -4878,7 +5045,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "tui",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -4901,7 +5068,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "ultracode",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -4922,7 +5089,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "useAutoModeDuringPlan",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -4944,7 +5111,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "verbose",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -4967,7 +5134,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "viewMode",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -4987,7 +5154,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "vimInsertModeRemaps",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -5009,7 +5176,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "voice",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -5032,7 +5199,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "voiceEnabled",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -5055,7 +5222,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "wheelScrollAccelerationEnabled",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -5078,7 +5245,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "workflowKeywordTriggerEnabled",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -5101,7 +5268,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "workflowSizeGuideline",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -5124,7 +5291,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "worktree",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -5147,7 +5314,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "worktree.baseRef",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -5169,7 +5336,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "worktree.bgIsolation",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -5191,7 +5358,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "worktree.sparsePaths",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -5213,7 +5380,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "worktree.symlinkDirectories",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -5231,7 +5398,7 @@
       "provenance": [
         {
           "source": "settingsDocsExpanded",
-          "sourceSha256": "f1fd2bc842574eb858fb073473a5ce15e10db8da602ec1419cc2a5894c5c44b9",
+          "sourceSha256": "ea1896d7e05ebedca4df0ae0f468698e9b70e8917f343b32f53c8c9ff8eabebf",
           "heading": "wslInheritsWindowsSettings",
           "fact": "existence-and-example",
           "method": "official-key-entry"
@@ -5258,7 +5425,7 @@
   "runtimeValidation": {
     "binary": {
       "source": "platformBinary",
-      "sha256": "1859583ce32920595c61ef868bee52e1b1594f7486db209935e01f1e5e804ae2",
+      "sha256": "3920489a5109cff5786a1a392c25277408ff22bc796d5edb9c16a60e5a1718f0",
       "pathInPackage": "package/claude",
       "commandBindingPatternCorroborated": true,
       "commandBindingValidatorMessageCorroborated": true
@@ -5268,15 +5435,15 @@
     "networkSuppressionRequested": true,
     "credentialsInherited": false,
     "rawOutputRedistributed": false,
-    "configSha256": "81865398e7cc1edcf84421531e6944ae235f17c9c1003de79e13ff16d360e862",
-    "diagnosticsSha256": "17e78f5db8dbb9aa8eaefb6dafef530be0d954df96e6dffd159b68f0c83230e0",
+    "configSha256": "c4d5970187f9268b99746a9d46c7bc3ebbf57278237dc3c1f094152c87275494",
+    "diagnosticsSha256": "02e0126c0c840ca6b712144ce5e3df0423cc18b9d300fd9b6df081ea32763b0e",
     "rawOutputExcludedFromDeterministicArtifacts": true,
     "exitCode": 0,
-    "diagnosticCount": 104
+    "diagnosticCount": 105
   },
   "binaryEvidence": {
     "platformPackage": "@anthropic-ai/claude-code-linux-x64",
-    "binarySha256": "1859583ce32920595c61ef868bee52e1b1594f7486db209935e01f1e5e804ae2",
+    "binarySha256": "3920489a5109cff5786a1a392c25277408ff22bc796d5edb9c16a60e5a1718f0",
     "policy": "Static strings prove token presence only. Binary-only values are candidates, not public API."
   },
   "binaryCorroborated": [
@@ -5284,14 +5451,17 @@
     "agent",
     "agentPushNotifEnabled",
     "allowAllClaudeAiMcps",
+    "allowClaudeInChromeWithManagedMcp",
     "allowManagedHooksOnly",
     "allowManagedMcpServersOnly",
     "allowManagedPermissionRulesOnly",
     "allowedChannelPlugins",
     "allowedHttpHookUrls",
     "allowedMcpServers",
+    "allowedProviders",
     "alwaysThinkingEnabled",
     "apiKeyHelper",
+    "appendPlugins",
     "askUserQuestionTimeout",
     "attribution",
     "autoCompactEnabled",
@@ -5314,13 +5484,16 @@
     "bashOutputMaxChars",
     "blockedMarketplaces",
     "channelsEnabled",
+    "claudeInChromeDefaultEnabled",
     "claudeMd",
     "claudeMdExcludes",
     "cleanupPeriodDays",
     "companyAnnouncements",
+    "copyFullResponse",
     "copyOnSelect",
     "crossSessionInbound",
     "defaultShell",
+    "defaultToAgentsView",
     "deniedMcpServers",
     "deniedModels",
     "desktopSessionCleanupPeriodDays",
@@ -5374,6 +5547,7 @@
     "isolatePeerMachines",
     "keybindingFlavor",
     "language",
+    "leftArrowOpensAgents",
     "managedMcpServers",
     "managedSourcesBehavior",
     "maxEffortLevel",
@@ -5393,9 +5567,11 @@
     "pluginSuggestionMarketplaces",
     "pluginTrustMessage",
     "policyHelper",
+    "prStatusFooterEnabled",
     "prUrlTemplate",
     "preferredNotifChannel",
     "prefersReducedMotion",
+    "prependPlugins",
     "processWrapper",
     "promptCacheTtl",
     "promptSuggestionEnabled",
