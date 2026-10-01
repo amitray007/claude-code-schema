@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
   "artifactKind": "cli-surface-catalog",
-  "claudeCodeVersion": "2.1.283",
+  "claudeCodeVersion": "2.1.287",
   "platformPackage": "@anthropic-ai/claude-code-linux-x64",
-  "binarySha256": "1859583ce32920595c61ef868bee52e1b1594f7486db209935e01f1e5e804ae2",
+  "binarySha256": "3920489a5109cff5786a1a392c25277408ff22bc796d5edb9c16a60e5a1718f0",
   "probePolicy": {
     "allowedOperations": [
       "--version",
@@ -19,7 +19,7 @@
     "maximumCommands": 80,
     "rawHelpRedistributed": false
   },
-  "versionOutput": "2.1.283 (Claude Code)",
+  "versionOutput": "2.1.287 (Claude Code)",
   "commands": [
     {
       "commandPath": [
@@ -33,8 +33,8 @@
       "signal": null,
       "timedOut": false,
       "outputExceeded": false,
-      "helpSha256": "f3869a153d7153b1b0903b0e5e83133e49327bf8badf24b3409e17ae58b5b127",
-      "helpBytes": 22177,
+      "helpSha256": "5e6abc13358fb88ddd3cac3c169c931f914aef8d5d3d0693b9bfd44411433569",
+      "helpBytes": 21900,
       "usage": "claude [options] [command] [prompt]",
       "arguments": [
         {
@@ -179,16 +179,6 @@
         },
         {
           "names": [
-            "--client-data-url"
-          ],
-          "valueNotation": "<url>",
-          "valueArity": "required",
-          "variadic": false,
-          "negated": false,
-          "repeatable": false
-        },
-        {
-          "names": [
             "--cloud"
           ],
           "valueNotation": "[description|session_id|url]",
@@ -235,6 +225,16 @@
           ],
           "valueNotation": "<path>",
           "valueArity": "required",
+          "variadic": false,
+          "negated": false,
+          "repeatable": false
+        },
+        {
+          "names": [
+            "--desktop"
+          ],
+          "valueNotation": null,
+          "valueArity": "none",
           "variadic": false,
           "negated": false,
           "repeatable": false
@@ -1534,8 +1534,8 @@
       "signal": null,
       "timedOut": false,
       "outputExceeded": false,
-      "helpSha256": "691464c1abe93459513be58a11062da11a4050d9b4f57d3b435c005c9af85a99",
-      "helpBytes": 3437,
+      "helpSha256": "76f99e64a762ed79ea0a814a0a5a3a5bb1aa0e9a313878db409cf081229ae33b",
+      "helpBytes": 3702,
       "usage": "claude plugin|plugins [options] [command]",
       "arguments": [],
       "options": [
@@ -1552,6 +1552,15 @@
         }
       ],
       "childCommands": [
+        {
+          "name": "configure",
+          "aliases": [],
+          "commandPath": [
+            "plugin",
+            "configure"
+          ],
+          "argumentNotation": "[options] <plugin>"
+        },
         {
           "name": "details",
           "aliases": [],
@@ -1647,6 +1656,15 @@
             "tag"
           ],
           "argumentNotation": "[options] [path]"
+        },
+        {
+          "name": "test",
+          "aliases": [],
+          "commandPath": [
+            "plugin",
+            "test"
+          ],
+          "argumentNotation": "[dir]"
         },
         {
           "name": "uninstall",
@@ -2434,6 +2452,68 @@
       "commandPath": [
         "claude",
         "plugin",
+        "configure"
+      ],
+      "invocation": [
+        "claude",
+        "plugin",
+        "configure",
+        "--help"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "timedOut": false,
+      "outputExceeded": false,
+      "helpSha256": "74d38b7ab6ff768a282f54c8ea5bac60ca0db0b3d5165819374fac4371bd77eb",
+      "helpBytes": 369,
+      "usage": "claude plugin configure [options] <plugin>",
+      "arguments": [
+        {
+          "name": "plugin",
+          "notation": "<plugin>",
+          "valueArity": "required",
+          "variadic": false
+        }
+      ],
+      "options": [
+        {
+          "names": [
+            "-h",
+            "--help"
+          ],
+          "valueNotation": null,
+          "valueArity": "none",
+          "variadic": false,
+          "negated": false,
+          "repeatable": false
+        },
+        {
+          "names": [
+            "--json"
+          ],
+          "valueNotation": null,
+          "valueArity": "none",
+          "variadic": false,
+          "negated": false,
+          "repeatable": false
+        },
+        {
+          "names": [
+            "--values-stdin"
+          ],
+          "valueNotation": null,
+          "valueArity": "none",
+          "variadic": false,
+          "negated": false,
+          "repeatable": false
+        }
+      ],
+      "childCommands": []
+    },
+    {
+      "commandPath": [
+        "claude",
+        "plugin",
         "details"
       ],
       "invocation": [
@@ -3010,8 +3090,8 @@
       "signal": null,
       "timedOut": false,
       "outputExceeded": false,
-      "helpSha256": "8ffa65ee89c1eefe2b6a98baa1653ee904f38c2c4f89892589fb46a6223d0168",
-      "helpBytes": 2213,
+      "helpSha256": "cb4726d6d12b932c5ef7ef0fe567b25bb3cc76fc425592a58da09ae8739db1a9",
+      "helpBytes": 2436,
       "usage": "claude plugin install|i [options] <plugin>",
       "arguments": [
         {
@@ -3115,8 +3195,8 @@
       "signal": null,
       "timedOut": false,
       "outputExceeded": false,
-      "helpSha256": "8554b757a5ca8e5bea554660b3c6903167636b5677214609a21094d120968313",
-      "helpBytes": 216,
+      "helpSha256": "08ada2a5494602673075d22320c3800b39d843b9d1a1640b231e444f7e27f700",
+      "helpBytes": 414,
       "usage": "claude plugin list [options]",
       "arguments": [],
       "options": [
@@ -3126,6 +3206,16 @@
           ],
           "valueNotation": null,
           "valueArity": "none",
+          "variadic": false,
+          "negated": false,
+          "repeatable": false
+        },
+        {
+          "names": [
+            "--data-size"
+          ],
+          "valueNotation": "[plugin]",
+          "valueArity": "optional",
           "variadic": false,
           "negated": false,
           "repeatable": false
@@ -3391,6 +3481,48 @@
           "negated": false,
           "repeatable": false,
           "defaultDisplay": "\"origin\""
+        }
+      ],
+      "childCommands": []
+    },
+    {
+      "commandPath": [
+        "claude",
+        "plugin",
+        "test"
+      ],
+      "invocation": [
+        "claude",
+        "plugin",
+        "test",
+        "--help"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "timedOut": false,
+      "outputExceeded": false,
+      "helpSha256": "e3c2470de444ef01936fb0f41f05b5a9e39e36719e4bef3cf279018145d50c9c",
+      "helpBytes": 395,
+      "usage": "claude plugin test [dir]",
+      "arguments": [
+        {
+          "name": "dir",
+          "notation": "[dir]",
+          "valueArity": "optional",
+          "variadic": false
+        }
+      ],
+      "options": [
+        {
+          "names": [
+            "-h",
+            "--help"
+          ],
+          "valueNotation": null,
+          "valueArity": "none",
+          "variadic": false,
+          "negated": false,
+          "repeatable": false
         }
       ],
       "childCommands": []
@@ -3815,8 +3947,8 @@
       "signal": null,
       "timedOut": false,
       "outputExceeded": false,
-      "helpSha256": "eac27e26b1ec94e4d07425266df038ac4aaa93407d77cdd9fb5e00c24d4467bc",
-      "helpBytes": 676,
+      "helpSha256": "d7b100758bcb85e12286534647d838e03c796ad7d0a05a8b115a55d854c6f61b",
+      "helpBytes": 806,
       "usage": "claude plugin marketplace add [options] <source>",
       "arguments": [
         {
@@ -3841,6 +3973,16 @@
           "names": [
             "-h",
             "--help"
+          ],
+          "valueNotation": null,
+          "valueArity": "none",
+          "variadic": false,
+          "negated": false,
+          "repeatable": false
+        },
+        {
+          "names": [
+            "--json"
           ],
           "valueNotation": null,
           "valueArity": "none",
@@ -3936,8 +4078,8 @@
       "signal": null,
       "timedOut": false,
       "outputExceeded": false,
-      "helpSha256": "4b00dea687b7d53b0b02dc7e675b8b22d8eb86e03d2cde9fbde2ddd61be903d1",
-      "helpBytes": 331,
+      "helpSha256": "71b63ea94dbb08f003403856935706d71e7d8d18bac0545ee9db13fb9315e10f",
+      "helpBytes": 453,
       "usage": "claude plugin marketplace remove|rm [options] <name>",
       "arguments": [
         {
@@ -3952,6 +4094,16 @@
           "names": [
             "-h",
             "--help"
+          ],
+          "valueNotation": null,
+          "valueArity": "none",
+          "variadic": false,
+          "negated": false,
+          "repeatable": false
+        },
+        {
+          "names": [
+            "--json"
           ],
           "valueNotation": null,
           "valueArity": "none",
@@ -3990,8 +4142,8 @@
       "signal": null,
       "timedOut": false,
       "outputExceeded": false,
-      "helpSha256": "aa89e92278841c59b1dcef75578ae36cac7184e6603eb2098adfc1d94a51faad",
-      "helpBytes": 181,
+      "helpSha256": "0daa879977c29f06004ef89470d1d0fe8b65e4d0d90e291e0a8de8d7c8865aa2",
+      "helpBytes": 318,
       "usage": "claude plugin marketplace update [options] [name]",
       "arguments": [
         {
@@ -4006,6 +4158,16 @@
           "names": [
             "-h",
             "--help"
+          ],
+          "valueNotation": null,
+          "valueArity": "none",
+          "variadic": false,
+          "negated": false,
+          "repeatable": false
+        },
+        {
+          "names": [
+            "--json"
           ],
           "valueNotation": null,
           "valueArity": "none",
@@ -4045,7 +4207,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "4a961c54b1572b17b85855dab53b11b24a4fbfdc815aec4f76d3a0d533fb3971"
+            "sourceSha256": "7ae06c04372724043d560d2d37a9c132262849035611df9eeb29cf9786811252"
           }
         ]
       },
@@ -4083,7 +4245,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "4a961c54b1572b17b85855dab53b11b24a4fbfdc815aec4f76d3a0d533fb3971"
+            "sourceSha256": "7ae06c04372724043d560d2d37a9c132262849035611df9eeb29cf9786811252"
           }
         ]
       },
@@ -4103,7 +4265,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "4a961c54b1572b17b85855dab53b11b24a4fbfdc815aec4f76d3a0d533fb3971"
+            "sourceSha256": "7ae06c04372724043d560d2d37a9c132262849035611df9eeb29cf9786811252"
           }
         ]
       },
@@ -4141,7 +4303,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "4a961c54b1572b17b85855dab53b11b24a4fbfdc815aec4f76d3a0d533fb3971"
+            "sourceSha256": "7ae06c04372724043d560d2d37a9c132262849035611df9eeb29cf9786811252"
           }
         ]
       },
@@ -4170,7 +4332,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "4a961c54b1572b17b85855dab53b11b24a4fbfdc815aec4f76d3a0d533fb3971"
+            "sourceSha256": "7ae06c04372724043d560d2d37a9c132262849035611df9eeb29cf9786811252"
           }
         ]
       },
@@ -4210,7 +4372,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "4a961c54b1572b17b85855dab53b11b24a4fbfdc815aec4f76d3a0d533fb3971"
+            "sourceSha256": "7ae06c04372724043d560d2d37a9c132262849035611df9eeb29cf9786811252"
           }
         ]
       },
@@ -4240,7 +4402,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "4a961c54b1572b17b85855dab53b11b24a4fbfdc815aec4f76d3a0d533fb3971"
+            "sourceSha256": "7ae06c04372724043d560d2d37a9c132262849035611df9eeb29cf9786811252"
           }
         ]
       },
@@ -4260,7 +4422,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "4a961c54b1572b17b85855dab53b11b24a4fbfdc815aec4f76d3a0d533fb3971"
+            "sourceSha256": "7ae06c04372724043d560d2d37a9c132262849035611df9eeb29cf9786811252"
           }
         ]
       },
@@ -4280,7 +4442,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "4a961c54b1572b17b85855dab53b11b24a4fbfdc815aec4f76d3a0d533fb3971"
+            "sourceSha256": "7ae06c04372724043d560d2d37a9c132262849035611df9eeb29cf9786811252"
           }
         ]
       },
@@ -4309,7 +4471,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "4a961c54b1572b17b85855dab53b11b24a4fbfdc815aec4f76d3a0d533fb3971"
+            "sourceSha256": "7ae06c04372724043d560d2d37a9c132262849035611df9eeb29cf9786811252"
           }
         ]
       },
@@ -4329,7 +4491,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "4a961c54b1572b17b85855dab53b11b24a4fbfdc815aec4f76d3a0d533fb3971"
+            "sourceSha256": "7ae06c04372724043d560d2d37a9c132262849035611df9eeb29cf9786811252"
           }
         ]
       },
@@ -4358,7 +4520,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "4a961c54b1572b17b85855dab53b11b24a4fbfdc815aec4f76d3a0d533fb3971"
+            "sourceSha256": "7ae06c04372724043d560d2d37a9c132262849035611df9eeb29cf9786811252"
           }
         ]
       },
@@ -4387,7 +4549,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "4a961c54b1572b17b85855dab53b11b24a4fbfdc815aec4f76d3a0d533fb3971"
+            "sourceSha256": "7ae06c04372724043d560d2d37a9c132262849035611df9eeb29cf9786811252"
           }
         ]
       },
@@ -4427,7 +4589,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "4a961c54b1572b17b85855dab53b11b24a4fbfdc815aec4f76d3a0d533fb3971"
+            "sourceSha256": "7ae06c04372724043d560d2d37a9c132262849035611df9eeb29cf9786811252"
           }
         ]
       },
@@ -4458,7 +4620,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "4a961c54b1572b17b85855dab53b11b24a4fbfdc815aec4f76d3a0d533fb3971"
+            "sourceSha256": "7ae06c04372724043d560d2d37a9c132262849035611df9eeb29cf9786811252"
           }
         ]
       },
@@ -4488,7 +4650,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "4a961c54b1572b17b85855dab53b11b24a4fbfdc815aec4f76d3a0d533fb3971"
+            "sourceSha256": "7ae06c04372724043d560d2d37a9c132262849035611df9eeb29cf9786811252"
           }
         ]
       },
@@ -4508,7 +4670,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "4a961c54b1572b17b85855dab53b11b24a4fbfdc815aec4f76d3a0d533fb3971"
+            "sourceSha256": "7ae06c04372724043d560d2d37a9c132262849035611df9eeb29cf9786811252"
           }
         ]
       },
@@ -4537,7 +4699,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "4a961c54b1572b17b85855dab53b11b24a4fbfdc815aec4f76d3a0d533fb3971"
+            "sourceSha256": "7ae06c04372724043d560d2d37a9c132262849035611df9eeb29cf9786811252"
           }
         ]
       },
@@ -4568,7 +4730,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "4a961c54b1572b17b85855dab53b11b24a4fbfdc815aec4f76d3a0d533fb3971"
+            "sourceSha256": "7ae06c04372724043d560d2d37a9c132262849035611df9eeb29cf9786811252"
           }
         ]
       },
@@ -4598,7 +4760,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "4a961c54b1572b17b85855dab53b11b24a4fbfdc815aec4f76d3a0d533fb3971"
+            "sourceSha256": "7ae06c04372724043d560d2d37a9c132262849035611df9eeb29cf9786811252"
           }
         ]
       },
@@ -4618,7 +4780,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "4a961c54b1572b17b85855dab53b11b24a4fbfdc815aec4f76d3a0d533fb3971"
+            "sourceSha256": "7ae06c04372724043d560d2d37a9c132262849035611df9eeb29cf9786811252"
           }
         ]
       },
@@ -4656,7 +4818,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "4a961c54b1572b17b85855dab53b11b24a4fbfdc815aec4f76d3a0d533fb3971"
+            "sourceSha256": "7ae06c04372724043d560d2d37a9c132262849035611df9eeb29cf9786811252"
           }
         ]
       },
@@ -4685,7 +4847,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "4a961c54b1572b17b85855dab53b11b24a4fbfdc815aec4f76d3a0d533fb3971"
+            "sourceSha256": "7ae06c04372724043d560d2d37a9c132262849035611df9eeb29cf9786811252"
           }
         ]
       },
@@ -4696,6 +4858,35 @@
           ],
           "names": [
             "--debug-file"
+          ]
+        }
+      ]
+    },
+    {
+      "names": [
+        "--desktop"
+      ],
+      "documentedSpellings": [
+        "--desktop"
+      ],
+      "valueArity": "not-specified-by-doc-table",
+      "documentationUrl": "https://code.claude.com/docs/en/cli-reference#cli-flags",
+      "versionMarkers": [],
+      "provenance": {
+        "evidence": [
+          {
+            "source": "cliDocs",
+            "sourceSha256": "7ae06c04372724043d560d2d37a9c132262849035611df9eeb29cf9786811252"
+          }
+        ]
+      },
+      "probeMatches": [
+        {
+          "commandPath": [
+            "claude"
+          ],
+          "names": [
+            "--desktop"
           ]
         }
       ]
@@ -4714,7 +4905,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "4a961c54b1572b17b85855dab53b11b24a4fbfdc815aec4f76d3a0d533fb3971"
+            "sourceSha256": "7ae06c04372724043d560d2d37a9c132262849035611df9eeb29cf9786811252"
           }
         ]
       },
@@ -4745,7 +4936,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "4a961c54b1572b17b85855dab53b11b24a4fbfdc815aec4f76d3a0d533fb3971"
+            "sourceSha256": "7ae06c04372724043d560d2d37a9c132262849035611df9eeb29cf9786811252"
           }
         ]
       },
@@ -4775,7 +4966,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "4a961c54b1572b17b85855dab53b11b24a4fbfdc815aec4f76d3a0d533fb3971"
+            "sourceSha256": "7ae06c04372724043d560d2d37a9c132262849035611df9eeb29cf9786811252"
           }
         ]
       },
@@ -4813,7 +5004,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "4a961c54b1572b17b85855dab53b11b24a4fbfdc815aec4f76d3a0d533fb3971"
+            "sourceSha256": "7ae06c04372724043d560d2d37a9c132262849035611df9eeb29cf9786811252"
           }
         ]
       },
@@ -4834,7 +5025,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "4a961c54b1572b17b85855dab53b11b24a4fbfdc815aec4f76d3a0d533fb3971"
+            "sourceSha256": "7ae06c04372724043d560d2d37a9c132262849035611df9eeb29cf9786811252"
           }
         ]
       },
@@ -4863,7 +5054,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "4a961c54b1572b17b85855dab53b11b24a4fbfdc815aec4f76d3a0d533fb3971"
+            "sourceSha256": "7ae06c04372724043d560d2d37a9c132262849035611df9eeb29cf9786811252"
           }
         ]
       },
@@ -4892,7 +5083,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "4a961c54b1572b17b85855dab53b11b24a4fbfdc815aec4f76d3a0d533fb3971"
+            "sourceSha256": "7ae06c04372724043d560d2d37a9c132262849035611df9eeb29cf9786811252"
           }
         ]
       },
@@ -4912,7 +5103,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "4a961c54b1572b17b85855dab53b11b24a4fbfdc815aec4f76d3a0d533fb3971"
+            "sourceSha256": "7ae06c04372724043d560d2d37a9c132262849035611df9eeb29cf9786811252"
           }
         ]
       },
@@ -4941,7 +5132,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "4a961c54b1572b17b85855dab53b11b24a4fbfdc815aec4f76d3a0d533fb3971"
+            "sourceSha256": "7ae06c04372724043d560d2d37a9c132262849035611df9eeb29cf9786811252"
           }
         ]
       },
@@ -4970,7 +5161,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "4a961c54b1572b17b85855dab53b11b24a4fbfdc815aec4f76d3a0d533fb3971"
+            "sourceSha256": "7ae06c04372724043d560d2d37a9c132262849035611df9eeb29cf9786811252"
           }
         ]
       },
@@ -4999,7 +5190,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "4a961c54b1572b17b85855dab53b11b24a4fbfdc815aec4f76d3a0d533fb3971"
+            "sourceSha256": "7ae06c04372724043d560d2d37a9c132262849035611df9eeb29cf9786811252"
           }
         ]
       },
@@ -5028,7 +5219,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "4a961c54b1572b17b85855dab53b11b24a4fbfdc815aec4f76d3a0d533fb3971"
+            "sourceSha256": "7ae06c04372724043d560d2d37a9c132262849035611df9eeb29cf9786811252"
           }
         ]
       },
@@ -5057,7 +5248,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "4a961c54b1572b17b85855dab53b11b24a4fbfdc815aec4f76d3a0d533fb3971"
+            "sourceSha256": "7ae06c04372724043d560d2d37a9c132262849035611df9eeb29cf9786811252"
           }
         ]
       },
@@ -5077,7 +5268,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "4a961c54b1572b17b85855dab53b11b24a4fbfdc815aec4f76d3a0d533fb3971"
+            "sourceSha256": "7ae06c04372724043d560d2d37a9c132262849035611df9eeb29cf9786811252"
           }
         ]
       },
@@ -5097,7 +5288,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "4a961c54b1572b17b85855dab53b11b24a4fbfdc815aec4f76d3a0d533fb3971"
+            "sourceSha256": "7ae06c04372724043d560d2d37a9c132262849035611df9eeb29cf9786811252"
           }
         ]
       },
@@ -5126,7 +5317,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "4a961c54b1572b17b85855dab53b11b24a4fbfdc815aec4f76d3a0d533fb3971"
+            "sourceSha256": "7ae06c04372724043d560d2d37a9c132262849035611df9eeb29cf9786811252"
           }
         ]
       },
@@ -5155,7 +5346,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "4a961c54b1572b17b85855dab53b11b24a4fbfdc815aec4f76d3a0d533fb3971"
+            "sourceSha256": "7ae06c04372724043d560d2d37a9c132262849035611df9eeb29cf9786811252"
           }
         ]
       },
@@ -5184,7 +5375,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "4a961c54b1572b17b85855dab53b11b24a4fbfdc815aec4f76d3a0d533fb3971"
+            "sourceSha256": "7ae06c04372724043d560d2d37a9c132262849035611df9eeb29cf9786811252"
           }
         ]
       },
@@ -5213,7 +5404,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "4a961c54b1572b17b85855dab53b11b24a4fbfdc815aec4f76d3a0d533fb3971"
+            "sourceSha256": "7ae06c04372724043d560d2d37a9c132262849035611df9eeb29cf9786811252"
           }
         ]
       },
@@ -5233,7 +5424,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "4a961c54b1572b17b85855dab53b11b24a4fbfdc815aec4f76d3a0d533fb3971"
+            "sourceSha256": "7ae06c04372724043d560d2d37a9c132262849035611df9eeb29cf9786811252"
           }
         ]
       },
@@ -5262,7 +5453,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "4a961c54b1572b17b85855dab53b11b24a4fbfdc815aec4f76d3a0d533fb3971"
+            "sourceSha256": "7ae06c04372724043d560d2d37a9c132262849035611df9eeb29cf9786811252"
           }
         ]
       },
@@ -5282,7 +5473,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "4a961c54b1572b17b85855dab53b11b24a4fbfdc815aec4f76d3a0d533fb3971"
+            "sourceSha256": "7ae06c04372724043d560d2d37a9c132262849035611df9eeb29cf9786811252"
           }
         ]
       },
@@ -5320,7 +5511,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "4a961c54b1572b17b85855dab53b11b24a4fbfdc815aec4f76d3a0d533fb3971"
+            "sourceSha256": "7ae06c04372724043d560d2d37a9c132262849035611df9eeb29cf9786811252"
           }
         ]
       },
@@ -5380,7 +5571,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "4a961c54b1572b17b85855dab53b11b24a4fbfdc815aec4f76d3a0d533fb3971"
+            "sourceSha256": "7ae06c04372724043d560d2d37a9c132262849035611df9eeb29cf9786811252"
           }
         ]
       },
@@ -5410,7 +5601,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "4a961c54b1572b17b85855dab53b11b24a4fbfdc815aec4f76d3a0d533fb3971"
+            "sourceSha256": "7ae06c04372724043d560d2d37a9c132262849035611df9eeb29cf9786811252"
           }
         ]
       },
@@ -5439,7 +5630,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "4a961c54b1572b17b85855dab53b11b24a4fbfdc815aec4f76d3a0d533fb3971"
+            "sourceSha256": "7ae06c04372724043d560d2d37a9c132262849035611df9eeb29cf9786811252"
           }
         ]
       },
@@ -5468,7 +5659,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "4a961c54b1572b17b85855dab53b11b24a4fbfdc815aec4f76d3a0d533fb3971"
+            "sourceSha256": "7ae06c04372724043d560d2d37a9c132262849035611df9eeb29cf9786811252"
           }
         ]
       },
@@ -5497,7 +5688,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "4a961c54b1572b17b85855dab53b11b24a4fbfdc815aec4f76d3a0d533fb3971"
+            "sourceSha256": "7ae06c04372724043d560d2d37a9c132262849035611df9eeb29cf9786811252"
           }
         ]
       },
@@ -5535,7 +5726,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "4a961c54b1572b17b85855dab53b11b24a4fbfdc815aec4f76d3a0d533fb3971"
+            "sourceSha256": "7ae06c04372724043d560d2d37a9c132262849035611df9eeb29cf9786811252"
           }
         ]
       },
@@ -5555,7 +5746,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "4a961c54b1572b17b85855dab53b11b24a4fbfdc815aec4f76d3a0d533fb3971"
+            "sourceSha256": "7ae06c04372724043d560d2d37a9c132262849035611df9eeb29cf9786811252"
           }
         ]
       },
@@ -5584,7 +5775,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "4a961c54b1572b17b85855dab53b11b24a4fbfdc815aec4f76d3a0d533fb3971"
+            "sourceSha256": "7ae06c04372724043d560d2d37a9c132262849035611df9eeb29cf9786811252"
           }
         ]
       },
@@ -5622,7 +5813,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "4a961c54b1572b17b85855dab53b11b24a4fbfdc815aec4f76d3a0d533fb3971"
+            "sourceSha256": "7ae06c04372724043d560d2d37a9c132262849035611df9eeb29cf9786811252"
           }
         ]
       },
@@ -5653,7 +5844,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "4a961c54b1572b17b85855dab53b11b24a4fbfdc815aec4f76d3a0d533fb3971"
+            "sourceSha256": "7ae06c04372724043d560d2d37a9c132262849035611df9eeb29cf9786811252"
           }
         ]
       },
@@ -5683,7 +5874,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "4a961c54b1572b17b85855dab53b11b24a4fbfdc815aec4f76d3a0d533fb3971"
+            "sourceSha256": "7ae06c04372724043d560d2d37a9c132262849035611df9eeb29cf9786811252"
           }
         ]
       },
@@ -5712,7 +5903,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "4a961c54b1572b17b85855dab53b11b24a4fbfdc815aec4f76d3a0d533fb3971"
+            "sourceSha256": "7ae06c04372724043d560d2d37a9c132262849035611df9eeb29cf9786811252"
           }
         ]
       },
@@ -5732,7 +5923,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "4a961c54b1572b17b85855dab53b11b24a4fbfdc815aec4f76d3a0d533fb3971"
+            "sourceSha256": "7ae06c04372724043d560d2d37a9c132262849035611df9eeb29cf9786811252"
           }
         ]
       },
@@ -5765,7 +5956,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "4a961c54b1572b17b85855dab53b11b24a4fbfdc815aec4f76d3a0d533fb3971"
+            "sourceSha256": "7ae06c04372724043d560d2d37a9c132262849035611df9eeb29cf9786811252"
           }
         ]
       },
@@ -5794,7 +5985,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "4a961c54b1572b17b85855dab53b11b24a4fbfdc815aec4f76d3a0d533fb3971"
+            "sourceSha256": "7ae06c04372724043d560d2d37a9c132262849035611df9eeb29cf9786811252"
           }
         ]
       },
@@ -5823,7 +6014,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "4a961c54b1572b17b85855dab53b11b24a4fbfdc815aec4f76d3a0d533fb3971"
+            "sourceSha256": "7ae06c04372724043d560d2d37a9c132262849035611df9eeb29cf9786811252"
           }
         ]
       },
@@ -5852,7 +6043,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "4a961c54b1572b17b85855dab53b11b24a4fbfdc815aec4f76d3a0d533fb3971"
+            "sourceSha256": "7ae06c04372724043d560d2d37a9c132262849035611df9eeb29cf9786811252"
           }
         ]
       },
@@ -5892,7 +6083,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "4a961c54b1572b17b85855dab53b11b24a4fbfdc815aec4f76d3a0d533fb3971"
+            "sourceSha256": "7ae06c04372724043d560d2d37a9c132262849035611df9eeb29cf9786811252"
           }
         ]
       },
@@ -5922,7 +6113,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "4a961c54b1572b17b85855dab53b11b24a4fbfdc815aec4f76d3a0d533fb3971"
+            "sourceSha256": "7ae06c04372724043d560d2d37a9c132262849035611df9eeb29cf9786811252"
           }
         ]
       },
@@ -5951,7 +6142,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "4a961c54b1572b17b85855dab53b11b24a4fbfdc815aec4f76d3a0d533fb3971"
+            "sourceSha256": "7ae06c04372724043d560d2d37a9c132262849035611df9eeb29cf9786811252"
           }
         ]
       },
@@ -5980,7 +6171,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "4a961c54b1572b17b85855dab53b11b24a4fbfdc815aec4f76d3a0d533fb3971"
+            "sourceSha256": "7ae06c04372724043d560d2d37a9c132262849035611df9eeb29cf9786811252"
           }
         ]
       },
@@ -6018,7 +6209,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "4a961c54b1572b17b85855dab53b11b24a4fbfdc815aec4f76d3a0d533fb3971"
+            "sourceSha256": "7ae06c04372724043d560d2d37a9c132262849035611df9eeb29cf9786811252"
           }
         ]
       },
@@ -6056,7 +6247,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "4a961c54b1572b17b85855dab53b11b24a4fbfdc815aec4f76d3a0d533fb3971"
+            "sourceSha256": "7ae06c04372724043d560d2d37a9c132262849035611df9eeb29cf9786811252"
           }
         ]
       },
@@ -6094,7 +6285,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "4a961c54b1572b17b85855dab53b11b24a4fbfdc815aec4f76d3a0d533fb3971"
+            "sourceSha256": "7ae06c04372724043d560d2d37a9c132262849035611df9eeb29cf9786811252"
           }
         ]
       },
@@ -6123,7 +6314,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "4a961c54b1572b17b85855dab53b11b24a4fbfdc815aec4f76d3a0d533fb3971"
+            "sourceSha256": "7ae06c04372724043d560d2d37a9c132262849035611df9eeb29cf9786811252"
           }
         ]
       },
@@ -6143,7 +6334,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "4a961c54b1572b17b85855dab53b11b24a4fbfdc815aec4f76d3a0d533fb3971"
+            "sourceSha256": "7ae06c04372724043d560d2d37a9c132262849035611df9eeb29cf9786811252"
           }
         ]
       },
@@ -6172,7 +6363,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "4a961c54b1572b17b85855dab53b11b24a4fbfdc815aec4f76d3a0d533fb3971"
+            "sourceSha256": "7ae06c04372724043d560d2d37a9c132262849035611df9eeb29cf9786811252"
           }
         ]
       },
@@ -6201,7 +6392,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "4a961c54b1572b17b85855dab53b11b24a4fbfdc815aec4f76d3a0d533fb3971"
+            "sourceSha256": "7ae06c04372724043d560d2d37a9c132262849035611df9eeb29cf9786811252"
           }
         ]
       },
@@ -6221,7 +6412,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "4a961c54b1572b17b85855dab53b11b24a4fbfdc815aec4f76d3a0d533fb3971"
+            "sourceSha256": "7ae06c04372724043d560d2d37a9c132262849035611df9eeb29cf9786811252"
           }
         ]
       },
@@ -6250,7 +6441,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "4a961c54b1572b17b85855dab53b11b24a4fbfdc815aec4f76d3a0d533fb3971"
+            "sourceSha256": "7ae06c04372724043d560d2d37a9c132262849035611df9eeb29cf9786811252"
           }
         ]
       },
@@ -6279,7 +6470,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "4a961c54b1572b17b85855dab53b11b24a4fbfdc815aec4f76d3a0d533fb3971"
+            "sourceSha256": "7ae06c04372724043d560d2d37a9c132262849035611df9eeb29cf9786811252"
           }
         ]
       },
@@ -6320,7 +6511,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "4a961c54b1572b17b85855dab53b11b24a4fbfdc815aec4f76d3a0d533fb3971"
+            "sourceSha256": "7ae06c04372724043d560d2d37a9c132262849035611df9eeb29cf9786811252"
           }
         ]
       },
@@ -6352,7 +6543,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "4a961c54b1572b17b85855dab53b11b24a4fbfdc815aec4f76d3a0d533fb3971"
+            "sourceSha256": "7ae06c04372724043d560d2d37a9c132262849035611df9eeb29cf9786811252"
           }
         ]
       },
@@ -6522,11 +6713,6 @@
       "exposedByHelpProbe": true
     },
     {
-      "name": "--client-data-url",
-      "documentedTopLevel": false,
-      "exposedByHelpProbe": true
-    },
-    {
       "name": "--client-id",
       "documentedTopLevel": false,
       "exposedByHelpProbe": true
@@ -6577,6 +6763,11 @@
       "exposedByHelpProbe": true
     },
     {
+      "name": "--data-size",
+      "documentedTopLevel": false,
+      "exposedByHelpProbe": true
+    },
+    {
       "name": "--debug",
       "documentedTopLevel": true,
       "exposedByHelpProbe": true
@@ -6589,6 +6780,11 @@
     {
       "name": "--description",
       "documentedTopLevel": false,
+      "exposedByHelpProbe": true
+    },
+    {
+      "name": "--desktop",
+      "documentedTopLevel": true,
       "exposedByHelpProbe": true
     },
     {
@@ -7057,6 +7253,11 @@
       "exposedByHelpProbe": true
     },
     {
+      "name": "--values-stdin",
+      "documentedTopLevel": false,
+      "exposedByHelpProbe": true
+    },
+    {
       "name": "--verbose",
       "documentedTopLevel": true,
       "exposedByHelpProbe": true
@@ -7167,5 +7368,5 @@
       "exposedByHelpProbe": true
     }
   ],
-  "unclassifiedStaticCandidateCount": 2957
+  "unclassifiedStaticCandidateCount": 2935
 }

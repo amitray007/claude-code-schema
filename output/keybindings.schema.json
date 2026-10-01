@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://github.com/amitray007/claude-code-schema/releases/download/v2.1.283/keybindings.schema.json",
+  "$id": "https://github.com/amitray007/claude-code-schema/releases/download/v2.1.287/keybindings.schema.json",
   "title": "Claude Code keybindings",
   "description": "Conservative validator generated only from the official keybindings documentation.",
   "type": "object",
@@ -105,7 +105,10 @@
                     "diff:nextSource",
                     "diff:previousFile",
                     "diff:previousSource",
+                    "effortSlider:decreaseEffort",
+                    "effortSlider:increaseEffort",
                     "effortSlider:thisSessionOnly",
+                    "effortSlider:toggleUltracode",
                     "footer:clearSelection",
                     "footer:dismiss",
                     "footer:down",
@@ -172,7 +175,7 @@
                   "x-status": "exact-release-binary-validator-corroborated",
                   "x-binary": {
                     "source": "platformBinary",
-                    "sha256": "1859583ce32920595c61ef868bee52e1b1594f7486db209935e01f1e5e804ae2",
+                    "sha256": "3920489a5109cff5786a1a392c25277408ff22bc796d5edb9c16a60e5a1718f0",
                     "pathInPackage": "package/claude",
                     "commandBindingPatternCorroborated": true,
                     "commandBindingValidatorMessageCorroborated": true
@@ -197,7 +200,7 @@
     "bindings"
   ],
   "additionalProperties": false,
-  "x-claude-code-version": "2.1.283",
+  "x-claude-code-version": "2.1.287",
   "x-artifact-kind": "keybindings-json-schema",
   "x-validation-limitations": [
     "The current official docs do not document command: bindings; the narrowly patterned compatibility form is accepted but annotated as unverified for this release.",
@@ -207,7 +210,7 @@
     "evidence": [
       {
         "source": "keybindingsDocs",
-        "sourceSha256": "8b6dde14f71f4f389cae1ae6acc1c0a95ff1f9e70d326b81e2fd470a21e1df7b"
+        "sourceSha256": "35229c269ea1f3e8952ce48dc360d621303e48337228916eac72d91a80e46c7c"
       }
     ]
   },
@@ -263,7 +266,10 @@
     "diff:nextSource",
     "diff:previousFile",
     "diff:previousSource",
+    "effortSlider:decreaseEffort",
+    "effortSlider:increaseEffort",
     "effortSlider:thisSessionOnly",
+    "effortSlider:toggleUltracode",
     "footer:clearSelection",
     "footer:dismiss",
     "footer:down",
