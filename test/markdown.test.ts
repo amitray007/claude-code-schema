@@ -68,3 +68,14 @@ test("invalid table row syntax fails explicitly", () => {
     /start and end with a pipe/,
   );
 });
+
+// Upstream docs switched to the shortest GFM separator, `| :- | :- |`, which
+// blocked every release until the parsers accepted it.
+test("markdown tables accept single-dash separator rows", () => {
+  const tables = markdownTables(`## Variables
+| Variable | Purpose |
+| :- | - |
+| \`ALPHA\` | first |`);
+  assert.equal(tables.length, 1);
+  assert.equal(keyFromCell(tableRecords(tables[0]!)[0]?.variable), "ALPHA");
+});

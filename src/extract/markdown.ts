@@ -65,10 +65,7 @@ export function markdownTables(markdown: string): MarkdownTable[] {
     const header = splitMarkdownRow(line);
     const next = lines[index + 1];
     const separator = next?.startsWith("|") ? splitMarkdownRow(next) : [];
-    if (
-      !separator.length ||
-      !separator.every((cell) => /^:?-{3,}:?$/.test(cell))
-    )
+    if (!separator.length || !separator.every((cell) => /^:?-+:?$/.test(cell)))
       continue;
     const rows: string[][] = [];
     index += 2;

@@ -49,7 +49,7 @@ export function markdownTables(markdown) {
     const separator = lines[index + 1]?.startsWith("|")
       ? splitMarkdownRow(lines[index + 1])
       : [];
-    if (!separator.length || !separator.every((cell) => /^:?-{3,}:?$/.test(cell))) continue;
+    if (!separator.length || !separator.every((cell) => /^:?-+:?$/.test(cell))) continue;
     const rows = [];
     index += 2;
     while (index < lines.length && lines[index].startsWith("|")) {

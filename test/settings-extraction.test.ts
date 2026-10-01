@@ -10,7 +10,9 @@ const moduleUrl = (name: string) =>
   pathToFileURL(
     resolve(repositoryRoot, "experiments/version-4/lib", `${name}.mjs`),
   ).href;
-const { referenceSections } = await import(moduleUrl("markdown"));
+const { referenceSections, markdownTables } = await import(
+  moduleUrl("markdown")
+);
 const { settingRecord, schemaForRecord, schemaFromDocumentedType } =
   await import(moduleUrl("settings"));
 
@@ -180,4 +182,12 @@ test("a missing settings anchor still fails loudly", () => {
     () => referenceSections(reference, "## Nonexistent section"),
     /Could not find section/,
   );
+});
+
+test("production markdown tables accept single-dash separator rows", () => {
+  const tables = markdownTables(`| Variable | Purpose |
+| :- | :- |
+| \`ALPHA\` | first |`);
+  assert.equal(tables.length, 1);
+  assert.deepEqual(tables[0].rows, [["`ALPHA`", "first"]]);
 });

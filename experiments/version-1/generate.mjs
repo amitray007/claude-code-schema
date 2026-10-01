@@ -125,7 +125,7 @@ function splitMarkdownRow(line) {
 }
 
 function isSeparatorRow(cells) {
-  return cells.every((cell) => /^:?-{3,}:?$/.test(cell));
+  return cells.every((cell) => /^:?-+:?$/.test(cell));
 }
 
 function markdownTables(markdown, startHeading, endHeading) {
