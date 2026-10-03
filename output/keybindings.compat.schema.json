@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://github.com/amitray007/claude-code-schema/releases/download/v2.1.287/keybindings.compat.schema.json",
+  "$id": "https://github.com/amitray007/claude-code-schema/releases/download/v2.1.288/keybindings.compat.schema.json",
   "title": "Claude Code keybindings — exact parser compatibility",
   "description": "Conservative validator generated only from the official keybindings documentation.",
   "type": "object",
@@ -43,6 +43,8 @@
               "EffortSlider",
               "Select",
               "Plugin",
+              "Pane",
+              "PaneField",
               "Agents",
               "Scroll"
             ]
@@ -73,7 +75,7 @@
     "bindings"
   ],
   "additionalProperties": false,
-  "x-claude-code-version": "2.1.287",
+  "x-claude-code-version": "2.1.288",
   "x-artifact-kind": "keybindings-runtime-compat-json-schema",
   "x-validation-limitations": [
     "The current official docs do not document command: bindings; the narrowly patterned compatibility form is accepted but annotated as unverified for this release.",
@@ -83,7 +85,7 @@
     "evidence": [
       {
         "source": "keybindingsDocs",
-        "sourceSha256": "35229c269ea1f3e8952ce48dc360d621303e48337228916eac72d91a80e46c7c"
+        "sourceSha256": "e5a63c9828e1115f39fb368e31ec21c6212f068d3eca76116f0a03167a780ba1"
       }
     ]
   },
