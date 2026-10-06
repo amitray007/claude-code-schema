@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "artifactKind": "environment-surface-catalog",
-  "claudeCodeVersion": "2.1.289",
+  "claudeCodeVersion": "2.1.291",
   "surface": {
     "product": "Claude Code CLI",
     "interface": "process-environment",
@@ -157,6 +157,7 @@
     "CLAUDE_CODE_DISABLE_WINDOWS_SHELL_LAUNCHER",
     "CLAUDE_CODE_DISABLE_WORKFLOWS",
     "CLAUDE_CODE_EFFORT_LEVEL",
+    "CLAUDE_CODE_EMIT_SESSION_STATE_EVENTS",
     "CLAUDE_CODE_ENABLE_AUTO_MODE",
     "CLAUDE_CODE_ENABLE_AWAY_SUMMARY",
     "CLAUDE_CODE_ENABLE_BACKGROUND_PLUGIN_REFRESH",
@@ -185,6 +186,7 @@
     "CLAUDE_CODE_GLOB_NO_IGNORE",
     "CLAUDE_CODE_GLOB_TIMEOUT_SECONDS",
     "CLAUDE_CODE_GOAL_CHECKIN_MINUTES",
+    "CLAUDE_CODE_GZIP_REQUEST_BODIES",
     "CLAUDE_CODE_HIDE_CWD",
     "CLAUDE_CODE_IDE_HOST_OVERRIDE",
     "CLAUDE_CODE_IDE_SKIP_AUTO_INSTALL",
@@ -491,7 +493,7 @@
   ],
   "binaryEvidence": {
     "platformPackage": "@anthropic-ai/claude-code-linux-x64",
-    "binarySha256": "a186b99e4a9c88366cd49df2f7dad56c61fc306ef0140b19ee64b7c42a8d1348",
+    "binarySha256": "078fad28d0297c9a25d306b635b2d8816c6839347520f29eb54ffea5d56142fb",
     "policy": "Static strings prove token presence only. Binary-only values are candidates, not public API."
   },
   "staticBinaryCandidates": [
@@ -848,10 +850,6 @@
       "documented": true
     },
     {
-      "name": "CLAUDE_CODE_ALWAYS_ENABLE_EFFORTE",
-      "documented": false
-    },
-    {
       "name": "CLAUDE_CODE_AMBER_ASTROLABE",
       "documented": false
     },
@@ -877,6 +875,10 @@
     },
     {
       "name": "CLAUDE_CODE_ARTIFACT",
+      "documented": false
+    },
+    {
+      "name": "CLAUDE_CODE_ARTIFACTR",
       "documented": false
     },
     {
@@ -960,6 +962,10 @@
       "documented": false
     },
     {
+      "name": "CLAUDE_CODE_ARTIFACT_MCP6",
+      "documented": false
+    },
+    {
       "name": "CLAUDE_CODE_ARTIFACT_MULTI_FILE",
       "documented": false
     },
@@ -985,6 +991,10 @@
     },
     {
       "name": "CLAUDE_CODE_ARTIFACT_PREVIEW",
+      "documented": false
+    },
+    {
+      "name": "CLAUDE_CODE_ARTIFACT_PREVIEW0",
       "documented": false
     },
     {
@@ -1073,10 +1083,6 @@
     },
     {
       "name": "CLAUDE_CODE_AUTO_MODE_CLASSIFIER_OVERLAP",
-      "documented": false
-    },
-    {
-      "name": "CLAUDE_CODE_AUTO_MODE_CLASSIFIER_OVERLAPC",
       "documented": false
     },
     {
@@ -1244,6 +1250,10 @@
       "documented": false
     },
     {
+      "name": "CLAUDE_CODE_BRIEF_UPLOAD0",
+      "documented": false
+    },
+    {
       "name": "CLAUDE_CODE_BS_AS_CTRL_BACKSPACE",
       "documented": true
     },
@@ -1253,6 +1263,10 @@
     },
     {
       "name": "CLAUDE_CODE_BYOC_ENABLE_DATADOG",
+      "documented": false
+    },
+    {
+      "name": "CLAUDE_CODE_CALM_MOCHI",
       "documented": false
     },
     {
@@ -1324,6 +1338,10 @@
       "documented": false
     },
     {
+      "name": "CLAUDE_CODE_COLD_COMPACTI",
+      "documented": false
+    },
+    {
       "name": "CLAUDE_CODE_COMPILED_ACORN",
       "documented": false
     },
@@ -1369,6 +1387,10 @@
     },
     {
       "name": "CLAUDE_CODE_COZY_TEAPOT",
+      "documented": false
+    },
+    {
+      "name": "CLAUDE_CODE_CURRIED_TRINKET",
       "documented": false
     },
     {
@@ -1592,6 +1614,10 @@
       "documented": false
     },
     {
+      "name": "CLAUDE_CODE_DISABLE_MEMORY_RO_UNSAVED_NOTICE4",
+      "documented": false
+    },
+    {
       "name": "CLAUDE_CODE_DISABLE_MEMORY_STREAM_LIST",
       "documented": false
     },
@@ -1606,6 +1632,10 @@
     {
       "name": "CLAUDE_CODE_DISABLE_MOUSE_CLICKS",
       "documented": true
+    },
+    {
+      "name": "CLAUDE_CODE_DISABLE_MOUSE_CLICKSC",
+      "documented": false
     },
     {
       "name": "CLAUDE_CODE_DISABLE_MTLS_RELOAD_ON_STALE_CONNECTION",
@@ -1657,6 +1687,10 @@
     },
     {
       "name": "CLAUDE_CODE_DISABLE_PRECOMPACT_SKIP",
+      "documented": false
+    },
+    {
+      "name": "CLAUDE_CODE_DISABLE_PROACTIVITY",
       "documented": false
     },
     {
@@ -1753,7 +1787,7 @@
     },
     {
       "name": "CLAUDE_CODE_EMIT_SESSION_STATE_EVENTS",
-      "documented": false
+      "documented": true
     },
     {
       "name": "CLAUDE_CODE_EMIT_STARTUP_TIMING",
@@ -1917,10 +1951,6 @@
     },
     {
       "name": "CLAUDE_CODE_EXPERIMENTAL_OBSERVER_AGENTS",
-      "documented": false
-    },
-    {
-      "name": "CLAUDE_CODE_EXPERIMENTAL_OBSERVER_AGENTS5",
       "documented": false
     },
     {
@@ -2105,14 +2135,10 @@
     },
     {
       "name": "CLAUDE_CODE_GZIP_REQUEST_BODIES",
-      "documented": false
+      "documented": true
     },
     {
       "name": "CLAUDE_CODE_GZIP_REQUEST_BODY_BLOCKS",
-      "documented": false
-    },
-    {
-      "name": "CLAUDE_CODE_GZIP_REQUEST_BODY_BLOCKST",
       "documented": false
     },
     {
@@ -2136,16 +2162,16 @@
       "documented": false
     },
     {
+      "name": "CLAUDE_CODE_HARMONIC_RIDDLE",
+      "documented": false
+    },
+    {
       "name": "CLAUDE_CODE_HFI_BEARER_TOKEN",
       "documented": false
     },
     {
       "name": "CLAUDE_CODE_HIDE_CWD",
       "documented": true
-    },
-    {
-      "name": "CLAUDE_CODE_HIDE_CWDG",
-      "documented": false
     },
     {
       "name": "CLAUDE_CODE_HIDE_SETTINGS_HINT",
@@ -2165,6 +2191,10 @@
     },
     {
       "name": "CLAUDE_CODE_HOOKS_SAME_THREAD",
+      "documented": false
+    },
+    {
+      "name": "CLAUDE_CODE_HOSTED_DESKTOP",
       "documented": false
     },
     {
@@ -2248,6 +2278,10 @@
       "documented": true
     },
     {
+      "name": "CLAUDE_CODE_IDLE_COMPACT_MIN_TOKENS",
+      "documented": false
+    },
+    {
       "name": "CLAUDE_CODE_IDLE_THRESHOLD_MINUTES",
       "documented": false
     },
@@ -2316,6 +2350,10 @@
       "documented": false
     },
     {
+      "name": "CLAUDE_CODE_MARKETPLACE_NAMEH",
+      "documented": false
+    },
+    {
       "name": "CLAUDE_CODE_MARKETPLACE_URL",
       "documented": false
     },
@@ -2362,6 +2400,10 @@
     {
       "name": "CLAUDE_CODE_MAX_WEB_SEARCHES_PER_SESSION",
       "documented": true
+    },
+    {
+      "name": "CLAUDE_CODE_MAX_WEB_SEARCHES_PER_SESSIONH",
+      "documented": false
     },
     {
       "name": "CLAUDE_CODE_MCP_ALLOWLIST_ENV",
@@ -2440,6 +2482,10 @@
       "documented": true
     },
     {
+      "name": "CLAUDE_CODE_MESSAGING_SOCKETP",
+      "documented": false
+    },
+    {
       "name": "CLAUDE_CODE_MESSAGING_TOKEN",
       "documented": true
     },
@@ -2476,10 +2522,6 @@
       "documented": true
     },
     {
-      "name": "CLAUDE_CODE_NEW_INITE",
-      "documented": false
-    },
-    {
       "name": "CLAUDE_CODE_NONBLOCKING_STDOUT",
       "documented": true
     },
@@ -2510,10 +2552,6 @@
     {
       "name": "CLAUDE_CODE_OAUTH_SCOPES",
       "documented": true
-    },
-    {
-      "name": "CLAUDE_CODE_OAUTH_SCOPESG",
-      "documented": false
     },
     {
       "name": "CLAUDE_CODE_OAUTH_TOKEN",
@@ -2796,6 +2834,26 @@
       "documented": false
     },
     {
+      "name": "CLAUDE_CODE_RELAUNCH_PROACTIVITY_",
+      "documented": false
+    },
+    {
+      "name": "CLAUDE_CODE_RELAUNCH_PROACTIVITY_BASELINE",
+      "documented": false
+    },
+    {
+      "name": "CLAUDE_CODE_RELAUNCH_PROACTIVITY_DECIDED",
+      "documented": false
+    },
+    {
+      "name": "CLAUDE_CODE_RELAUNCH_PROACTIVITY_EVER_ON",
+      "documented": false
+    },
+    {
+      "name": "CLAUDE_CODE_RELAUNCH_PROACTIVITY_LEVEL",
+      "documented": false
+    },
+    {
       "name": "CLAUDE_CODE_RELAUNCH_TERMINAL_SIZE",
       "documented": false
     },
@@ -2817,6 +2875,10 @@
     },
     {
       "name": "CLAUDE_CODE_REMOTE_RAW_EVENTS_FILE",
+      "documented": false
+    },
+    {
+      "name": "CLAUDE_CODE_REMOTE_SDK_URL",
       "documented": false
     },
     {
@@ -2860,6 +2922,10 @@
       "documented": false
     },
     {
+      "name": "CLAUDE_CODE_REMOTE_TOOLS_HOST_ALLOWS_UNATTENDED",
+      "documented": false
+    },
+    {
       "name": "CLAUDE_CODE_REMOTE_TOOLS_JUMP_QUEUE",
       "documented": false
     },
@@ -2881,6 +2947,10 @@
     },
     {
       "name": "CLAUDE_CODE_REMOTE_TOOLS_SPECULATIVE_CLASSIFIER",
+      "documented": false
+    },
+    {
+      "name": "CLAUDE_CODE_REMOVE_PROMPT_STRINGS",
       "documented": false
     },
     {
@@ -2944,8 +3014,16 @@
       "documented": false
     },
     {
+      "name": "CLAUDE_CODE_RESUME_TOLERATES_CONTEXT_SEEDS",
+      "documented": false
+    },
+    {
       "name": "CLAUDE_CODE_RETRY_WATCHDOG",
       "documented": true
+    },
+    {
+      "name": "CLAUDE_CODE_RIPPLING_TULIP",
+      "documented": false
     },
     {
       "name": "CLAUDE_CODE_RUSTLING_PIXEL",
@@ -2968,10 +3046,6 @@
       "documented": true
     },
     {
-      "name": "CLAUDE_CODE_SCROLL_SPEEDA",
-      "documented": false
-    },
-    {
       "name": "CLAUDE_CODE_SDK_",
       "documented": false
     },
@@ -2989,6 +3063,10 @@
     },
     {
       "name": "CLAUDE_CODE_SENDMESSAGE_HANDBACK",
+      "documented": false
+    },
+    {
+      "name": "CLAUDE_CODE_SENDMESSAGE_HANDBACKG",
       "documented": false
     },
     {
@@ -3052,6 +3130,10 @@
       "documented": false
     },
     {
+      "name": "CLAUDE_CODE_SILENT_TURN_REMINDER_SECONDS",
+      "documented": false
+    },
+    {
       "name": "CLAUDE_CODE_SILENT_TURN_REMINDER_TEXT",
       "documented": false
     },
@@ -3066,10 +3148,6 @@
     {
       "name": "CLAUDE_CODE_SIMPLE_SYSTEM_PROMPT",
       "documented": true
-    },
-    {
-      "name": "CLAUDE_CODE_SIMPLE_SYSTEM_PROMPT3",
-      "documented": false
     },
     {
       "name": "CLAUDE_CODE_SIMULATE_PROXY_USAGE",
@@ -3126,10 +3204,6 @@
     {
       "name": "CLAUDE_CODE_SKIP_MODEL_ACCESS_MEMORY",
       "documented": true
-    },
-    {
-      "name": "CLAUDE_CODE_SKIP_MODEL_ACCESS_MEMORYE",
-      "documented": false
     },
     {
       "name": "CLAUDE_CODE_SKIP_PLUGIN_MCP_SERVERS",
@@ -3200,6 +3274,14 @@
       "documented": true
     },
     {
+      "name": "CLAUDE_CODE_STREAMED_BUMBLEBEE",
+      "documented": false
+    },
+    {
+      "name": "CLAUDE_CODE_STREAMED_BUMBLEBEE_TEXT",
+      "documented": false
+    },
+    {
       "name": "CLAUDE_CODE_SUBAGENT_CACHE_EVICT",
       "documented": false
     },
@@ -3214,6 +3296,10 @@
     {
       "name": "CLAUDE_CODE_SUBAGENT_PROMPT_CACHE_TTL",
       "documented": true
+    },
+    {
+      "name": "CLAUDE_CODE_SUBAGENT_PROMPT_SNAPSHOT",
+      "documented": false
     },
     {
       "name": "CLAUDE_CODE_SUBPROCESS_ENV_SCRUB",
@@ -3232,7 +3318,7 @@
       "documented": false
     },
     {
-      "name": "CLAUDE_CODE_SUPPRESS_SESSION_ATTRIBUTIONN",
+      "name": "CLAUDE_CODE_SUPPRESS_SESSION_ATTRIBUTIONK",
       "documented": false
     },
     {
@@ -3268,7 +3354,7 @@
       "documented": false
     },
     {
-      "name": "CLAUDE_CODE_SYNC_REUSE_WITHIN_MSG",
+      "name": "CLAUDE_CODE_SYNC_REUSE_WITHIN_MSF",
       "documented": false
     },
     {
@@ -3528,10 +3614,6 @@
       "documented": true
     },
     {
-      "name": "CLAUDE_CODE_WEBFETCH_DEADLINE_MSG",
-      "documented": false
-    },
-    {
       "name": "CLAUDE_CODE_WEBFETCH_USE_CCR_PROXY",
       "documented": false
     },
@@ -3549,6 +3631,10 @@
     },
     {
       "name": "CLAUDE_CODE_WEB_SEARCH_FAST_ARG",
+      "documented": false
+    },
+    {
+      "name": "CLAUDE_CODE_WEB_SEARCH_REFILLS_PER_HOUR",
       "documented": false
     },
     {
@@ -3601,10 +3687,6 @@
     },
     {
       "name": "CLAUDE_CODE_WORKSPACE_HOST_PATHS",
-      "documented": false
-    },
-    {
-      "name": "CLAUDE_CODE_WORKSPACE_HOST_PATHSF",
       "documented": false
     },
     {
