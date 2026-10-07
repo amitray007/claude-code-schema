@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "artifactKind": "settings-surface-catalog",
-  "claudeCodeVersion": "2.1.291",
+  "claudeCodeVersion": "2.1.292",
   "surface": {
     "product": "Claude Code CLI",
     "interface": "configuration",
@@ -5425,7 +5425,7 @@
   "runtimeValidation": {
     "binary": {
       "source": "platformBinary",
-      "sha256": "078fad28d0297c9a25d306b635b2d8816c6839347520f29eb54ffea5d56142fb",
+      "sha256": "a967e7b1d8b4e47ee421d5433027880347952b0c0857abf880e2c942a4ec93b3",
       "pathInPackage": "package/claude",
       "commandBindingPatternCorroborated": true,
       "commandBindingValidatorMessageCorroborated": true
@@ -5443,7 +5443,7 @@
   },
   "binaryEvidence": {
     "platformPackage": "@anthropic-ai/claude-code-linux-x64",
-    "binarySha256": "078fad28d0297c9a25d306b635b2d8816c6839347520f29eb54ffea5d56142fb",
+    "binarySha256": "a967e7b1d8b4e47ee421d5433027880347952b0c0857abf880e2c942a4ec93b3",
     "policy": "Static strings prove token presence only. Binary-only values are candidates, not public API."
   },
   "binaryCorroborated": [
