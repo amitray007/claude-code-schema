@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://github.com/amitray007/claude-code-schema/releases/download/v2.1.292/keybindings.compat.schema.json",
+  "$id": "https://github.com/amitray007/claude-code-schema/releases/download/v2.1.293/keybindings.compat.schema.json",
   "title": "Claude Code keybindings — exact parser compatibility",
   "description": "Conservative validator generated only from the official keybindings documentation.",
   "type": "object",
@@ -43,6 +43,9 @@
               "EffortSlider",
               "Select",
               "Plugin",
+              "AbovePrompt",
+              "AbovePromptInput",
+              "AbovePromptSelect",
               "Pane",
               "PaneField",
               "Agents",
@@ -75,7 +78,7 @@
     "bindings"
   ],
   "additionalProperties": false,
-  "x-claude-code-version": "2.1.292",
+  "x-claude-code-version": "2.1.293",
   "x-artifact-kind": "keybindings-runtime-compat-json-schema",
   "x-validation-limitations": [
     "The current official docs do not document command: bindings; the narrowly patterned compatibility form is accepted but annotated as unverified for this release.",
@@ -85,11 +88,19 @@
     "evidence": [
       {
         "source": "keybindingsDocs",
-        "sourceSha256": "f5185a065e85f2802a7004527ca543812dd4a4abc7fd6219474f15275ff8cd77"
+        "sourceSha256": "fe47379bf3b71c92a713875c1cc56642670fc4d70b9f612b6518c4c010d19065"
       }
     ]
   },
   "x-binary-corroborated-actions": [
+    "abovePrompt:focus",
+    "abovePrompt:highlightNext",
+    "abovePrompt:highlightPrevious",
+    "abovePrompt:leave",
+    "abovePrompt:next",
+    "abovePrompt:press",
+    "abovePrompt:previous",
+    "abovePrompt:toggle",
     "agents:find",
     "agents:nextGroup",
     "agents:previousGroup",
@@ -150,6 +161,7 @@
     "effortSlider:thisSessionOnly",
     "effortSlider:toggleUltracode",
     "footer:clearSelection",
+    "footer:close",
     "footer:dismiss",
     "footer:down",
     "footer:next",
@@ -168,6 +180,17 @@
     "modelPicker:decreaseEffort",
     "modelPicker:increaseEffort",
     "modelPicker:thisSessionOnly",
+    "pane:bottom",
+    "pane:close",
+    "pane:grow",
+    "pane:next",
+    "pane:pageDown",
+    "pane:pageUp",
+    "pane:previous",
+    "pane:scrollDown",
+    "pane:scrollUp",
+    "pane:shrink",
+    "pane:top",
     "permission:toggleDebug",
     "plugin:favorite",
     "plugin:install",
