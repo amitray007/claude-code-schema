@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "artifactKind": "environment-surface-catalog",
-  "claudeCodeVersion": "2.1.292",
+  "claudeCodeVersion": "2.1.293",
   "surface": {
     "product": "Claude Code CLI",
     "interface": "process-environment",
@@ -177,6 +177,7 @@
     "CLAUDE_CODE_FORCE_SESSION_PERSISTENCE",
     "CLAUDE_CODE_FORCE_STRIKETHROUGH",
     "CLAUDE_CODE_FORCE_SYNC_OUTPUT",
+    "CLAUDE_CODE_FORCE_TERMINAL_IMAGES",
     "CLAUDE_CODE_FORK_SUBAGENT",
     "CLAUDE_CODE_FORWARD_SUBAGENT_TEXT",
     "CLAUDE_CODE_GATEWAY_HINT_HEADERS",
@@ -294,6 +295,7 @@
     "CLAUDE_CODE_USE_VERTEX",
     "CLAUDE_CODE_WEBFETCH_CACHE_TTL_MS",
     "CLAUDE_CODE_WEBFETCH_DEADLINE_MS",
+    "CLAUDE_CODE_WEB_SEARCH_REFILLS_PER_HOUR",
     "CLAUDE_CODE_WORKER_CHECKIN_SCHEDULE",
     "CLAUDE_CODE_WORKFLOW_MAX_CONCURRENT_AGENTS",
     "CLAUDE_CODE_WORKFLOW_PREFIX_STAGGER_MS",
@@ -423,7 +425,8 @@
     "VERTEX_REGION_CLAUDE_5_SONNET",
     "VERTEX_REGION_CLAUDE_FABLE_5",
     "VERTEX_REGION_CLAUDE_FABLE_5_1",
-    "VERTEX_REGION_CLAUDE_HAIKU_4_5"
+    "VERTEX_REGION_CLAUDE_HAIKU_4_5",
+    "VERTEX_REGION_CLAUDE_HAIKU_5_5"
   ],
   "providedToHooks": [
     {
@@ -494,7 +497,7 @@
   ],
   "binaryEvidence": {
     "platformPackage": "@anthropic-ai/claude-code-linux-x64",
-    "binarySha256": "a967e7b1d8b4e47ee421d5433027880347952b0c0857abf880e2c942a4ec93b3",
+    "binarySha256": "8968405e26db478af44eabc4635ab5ca557057b702a54460a59c13e1b253e978",
     "policy": "Static strings prove token presence only. Binary-only values are candidates, not public API."
   },
   "staticBinaryCandidates": [
@@ -963,10 +966,6 @@
       "documented": false
     },
     {
-      "name": "CLAUDE_CODE_ARTIFACT_MCP6",
-      "documented": false
-    },
-    {
       "name": "CLAUDE_CODE_ARTIFACT_MULTI_FILE",
       "documented": false
     },
@@ -976,10 +975,6 @@
     },
     {
       "name": "CLAUDE_CODE_ARTIFACT_OPEN_ACTION",
-      "documented": false
-    },
-    {
-      "name": "CLAUDE_CODE_ARTIFACT_OPEN_ACTIONK",
       "documented": false
     },
     {
@@ -1259,6 +1254,10 @@
       "documented": false
     },
     {
+      "name": "CLAUDE_CODE_BRIEF_UPLOADQ",
+      "documented": false
+    },
+    {
       "name": "CLAUDE_CODE_BS_AS_CTRL_BACKSPACE",
       "documented": true
     },
@@ -1340,6 +1339,10 @@
     },
     {
       "name": "CLAUDE_CODE_COLD_COMPACT",
+      "documented": false
+    },
+    {
+      "name": "CLAUDE_CODE_COLD_COMPACTE",
       "documented": false
     },
     {
@@ -1432,6 +1435,10 @@
     },
     {
       "name": "CLAUDE_CODE_DESKTOP_APP_VERSION",
+      "documented": false
+    },
+    {
+      "name": "CLAUDE_CODE_DESKTOP_SKILL_SWITCHES",
       "documented": false
     },
     {
@@ -1543,10 +1550,6 @@
       "documented": true
     },
     {
-      "name": "CLAUDE_CODE_DISABLE_DANGEROUS_RM_TIMEOUTI",
-      "documented": false
-    },
-    {
       "name": "CLAUDE_CODE_DISABLE_DIR_",
       "documented": false
     },
@@ -1633,10 +1636,6 @@
     {
       "name": "CLAUDE_CODE_DISABLE_MOUSE_CLICKS",
       "documented": true
-    },
-    {
-      "name": "CLAUDE_CODE_DISABLE_MOUSE_CLICKSC",
-      "documented": false
     },
     {
       "name": "CLAUDE_CODE_DISABLE_MTLS_RELOAD_ON_STALE_CONNECTION",
@@ -1767,11 +1766,11 @@
       "documented": false
     },
     {
-      "name": "CLAUDE_CODE_DOWNLOAD_DEADLINE_MS_FOR_TESTING",
+      "name": "CLAUDE_CODE_DONT_INHERIT_ENVF",
       "documented": false
     },
     {
-      "name": "CLAUDE_CODE_DOWNLOAD_DEADLINE_MS_FOR_TESTINGI",
+      "name": "CLAUDE_CODE_DOWNLOAD_DEADLINE_MS_FOR_TESTING",
       "documented": false
     },
     {
@@ -1828,6 +1827,10 @@
     },
     {
       "name": "CLAUDE_CODE_ENABLE_EXPERIMENTAL_ADVISOR_TOOL",
+      "documented": false
+    },
+    {
+      "name": "CLAUDE_CODE_ENABLE_EXPERIMENTAL_ADVISOR_TOOLB",
       "documented": false
     },
     {
@@ -1959,10 +1962,6 @@
       "documented": false
     },
     {
-      "name": "CLAUDE_CODE_EXPERIMENTAL_OBSERVER_AGENTSN",
-      "documented": false
-    },
-    {
       "name": "CLAUDE_CODE_EXTRA_BODY",
       "documented": true
     },
@@ -2040,7 +2039,7 @@
     },
     {
       "name": "CLAUDE_CODE_FORCE_TERMINAL_IMAGES",
-      "documented": false
+      "documented": true
     },
     {
       "name": "CLAUDE_CODE_FORCE_TIP_ID",
@@ -2183,15 +2182,15 @@
       "documented": true
     },
     {
-      "name": "CLAUDE_CODE_HIDE_CWDA",
-      "documented": false
-    },
-    {
       "name": "CLAUDE_CODE_HIDE_SETTINGS_HINT",
       "documented": false
     },
     {
       "name": "CLAUDE_CODE_HOLD_REPORT_PARK_AT_INIT",
+      "documented": false
+    },
+    {
+      "name": "CLAUDE_CODE_HOLD_REPORT_PARK_AT_INITI",
       "documented": false
     },
     {
@@ -2417,10 +2416,6 @@
     {
       "name": "CLAUDE_CODE_MAX_WEB_SEARCHES_PER_SESSION",
       "documented": true
-    },
-    {
-      "name": "CLAUDE_CODE_MAX_WEB_SEARCHES_PER_SESSIONP",
-      "documented": false
     },
     {
       "name": "CLAUDE_CODE_MCP_ALLOWLIST_ENV",
@@ -2715,10 +2710,6 @@
       "documented": false
     },
     {
-      "name": "CLAUDE_CODE_PLUGIN_USE_ZIP_CACHEZ",
-      "documented": false
-    },
-    {
       "name": "CLAUDE_CODE_POLICY_HELPER_PS1_PATH",
       "documented": false
     },
@@ -2728,6 +2719,10 @@
     },
     {
       "name": "CLAUDE_CODE_POLISHED_DEWDROP",
+      "documented": false
+    },
+    {
+      "name": "CLAUDE_CODE_POLISHED_DEWDROPA",
       "documented": false
     },
     {
@@ -2967,6 +2962,10 @@
       "documented": false
     },
     {
+      "name": "CLAUDE_CODE_REMOTE_TOOLS_SESSION_CHANNELF",
+      "documented": false
+    },
+    {
       "name": "CLAUDE_CODE_REMOTE_TOOLS_SPECULATIVE_CLASSIFIER",
       "documented": false
     },
@@ -2996,10 +2995,6 @@
     },
     {
       "name": "CLAUDE_CODE_RESULT_NONCE",
-      "documented": false
-    },
-    {
-      "name": "CLAUDE_CODE_RESULT_NONCEP",
       "documented": false
     },
     {
@@ -3151,10 +3146,6 @@
       "documented": false
     },
     {
-      "name": "CLAUDE_CODE_SILENT_TURN_REMINDERB",
-      "documented": false
-    },
-    {
       "name": "CLAUDE_CODE_SILENT_TURN_REMINDER_SECONDS",
       "documented": false
     },
@@ -3215,7 +3206,7 @@
       "documented": true
     },
     {
-      "name": "CLAUDE_CODE_SKIP_FAST_MODE_ORG_CHECKH",
+      "name": "CLAUDE_CODE_SKIP_FAST_MODE_ORG_CHECKC",
       "documented": false
     },
     {
@@ -3264,10 +3255,6 @@
     },
     {
       "name": "CLAUDE_CODE_SLEEPY_SNOWFLAKE",
-      "documented": false
-    },
-    {
-      "name": "CLAUDE_CODE_SLEEPY_SNOWFLAKEC",
       "documented": false
     },
     {
@@ -3348,6 +3335,10 @@
     },
     {
       "name": "CLAUDE_CODE_SUPPRESS_SESSION_ATTRIBUTION",
+      "documented": false
+    },
+    {
+      "name": "CLAUDE_CODE_SUPPRESS_SESSION_ATTRIBUTIONF",
       "documented": false
     },
     {
@@ -3464,6 +3455,10 @@
     },
     {
       "name": "CLAUDE_CODE_THINKING_DISPLAY_UPDATES",
+      "documented": false
+    },
+    {
+      "name": "CLAUDE_CODE_THINKING_DISPLAY_UPDATESA",
       "documented": false
     },
     {
@@ -3660,7 +3655,7 @@
     },
     {
       "name": "CLAUDE_CODE_WEB_SEARCH_REFILLS_PER_HOUR",
-      "documented": false
+      "documented": true
     },
     {
       "name": "CLAUDE_CODE_WHIMSICAL_ELEPHANT",
