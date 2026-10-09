@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "artifactKind": "environment-surface-catalog",
-  "claudeCodeVersion": "2.1.293",
+  "claudeCodeVersion": "2.1.295",
   "surface": {
     "product": "Claude Code CLI",
     "interface": "process-environment",
@@ -222,6 +222,7 @@
     "CLAUDE_CODE_OTEL_FLUSH_TIMEOUT_MS",
     "CLAUDE_CODE_OTEL_HEADERS_HELPER_DEBOUNCE_MS",
     "CLAUDE_CODE_OTEL_SHUTDOWN_TIMEOUT_MS",
+    "CLAUDE_CODE_OVERLOADED_RETRY_BASE_DELAY_MS",
     "CLAUDE_CODE_PACKAGE_MANAGER_AUTO_UPDATE",
     "CLAUDE_CODE_PERFORCE_MODE",
     "CLAUDE_CODE_PLUGIN_CACHE_DIR",
@@ -246,6 +247,7 @@
     "CLAUDE_CODE_RESUME_INTERRUPTED_TURN_MAX_AGE_MS",
     "CLAUDE_CODE_RESUME_PROMPT",
     "CLAUDE_CODE_RETRY_WATCHDOG",
+    "CLAUDE_CODE_RETRY_WATCHDOG_MAX_WAIT_MS",
     "CLAUDE_CODE_SAFE_MODE",
     "CLAUDE_CODE_SCRIPT_CAPS",
     "CLAUDE_CODE_SCROLL_SPEED",
@@ -497,7 +499,7 @@
   ],
   "binaryEvidence": {
     "platformPackage": "@anthropic-ai/claude-code-linux-x64",
-    "binarySha256": "8968405e26db478af44eabc4635ab5ca557057b702a54460a59c13e1b253e978",
+    "binarySha256": "4503bfe11a6c7fcc1e0b39b5e0d347c04248f750b03b0977b3ad6b531fe6f358",
     "policy": "Static strings prove token presence only. Binary-only values are candidates, not public API."
   },
   "staticBinaryCandidates": [
@@ -882,10 +884,6 @@
       "documented": false
     },
     {
-      "name": "CLAUDE_CODE_ARTIFACTR",
-      "documented": false
-    },
-    {
       "name": "CLAUDE_CODE_ARTIFACTS_API_BASE_URL",
       "documented": false
     },
@@ -942,10 +940,6 @@
       "documented": false
     },
     {
-      "name": "CLAUDE_CODE_ARTIFACT_FIVE_CLASS_ASKS",
-      "documented": false
-    },
-    {
       "name": "CLAUDE_CODE_ARTIFACT_FRESH_READ",
       "documented": false
     },
@@ -966,6 +960,10 @@
       "documented": false
     },
     {
+      "name": "CLAUDE_CODE_ARTIFACT_MCPH",
+      "documented": false
+    },
+    {
       "name": "CLAUDE_CODE_ARTIFACT_MULTI_FILE",
       "documented": false
     },
@@ -975,6 +973,10 @@
     },
     {
       "name": "CLAUDE_CODE_ARTIFACT_OPEN_ACTION",
+      "documented": false
+    },
+    {
+      "name": "CLAUDE_CODE_ARTIFACT_OPEN_ACTIONK",
       "documented": false
     },
     {
@@ -1067,6 +1069,10 @@
     },
     {
       "name": "CLAUDE_CODE_AUTH_FAIL_EXIT_MS",
+      "documented": false
+    },
+    {
+      "name": "CLAUDE_CODE_AUTOUPDATER_DISABLED_BY_HOST",
       "documented": false
     },
     {
@@ -1254,7 +1260,7 @@
       "documented": false
     },
     {
-      "name": "CLAUDE_CODE_BRIEF_UPLOADQ",
+      "name": "CLAUDE_CODE_BRIEF_UPLOAD0",
       "documented": false
     },
     {
@@ -1339,10 +1345,6 @@
     },
     {
       "name": "CLAUDE_CODE_COLD_COMPACT",
-      "documented": false
-    },
-    {
-      "name": "CLAUDE_CODE_COLD_COMPACTE",
       "documented": false
     },
     {
@@ -1520,6 +1522,10 @@
     {
       "name": "CLAUDE_CODE_DISABLE_BG_SHELL_PRESSURE_REAP",
       "documented": true
+    },
+    {
+      "name": "CLAUDE_CODE_DISABLE_BG_STABLE_PATH",
+      "documented": false
     },
     {
       "name": "CLAUDE_CODE_DISABLE_BUNDLED_SKILLS",
@@ -1766,10 +1772,6 @@
       "documented": false
     },
     {
-      "name": "CLAUDE_CODE_DONT_INHERIT_ENVF",
-      "documented": false
-    },
-    {
       "name": "CLAUDE_CODE_DOWNLOAD_DEADLINE_MS_FOR_TESTING",
       "documented": false
     },
@@ -1827,10 +1829,6 @@
     },
     {
       "name": "CLAUDE_CODE_ENABLE_EXPERIMENTAL_ADVISOR_TOOL",
-      "documented": false
-    },
-    {
-      "name": "CLAUDE_CODE_ENABLE_EXPERIMENTAL_ADVISOR_TOOLB",
       "documented": false
     },
     {
@@ -1959,6 +1957,10 @@
     },
     {
       "name": "CLAUDE_CODE_EXPERIMENTAL_OBSERVER_AGENTS",
+      "documented": false
+    },
+    {
+      "name": "CLAUDE_CODE_EXPERIMENTAL_OBSERVER_AGENTSB",
       "documented": false
     },
     {
@@ -2190,10 +2192,6 @@
       "documented": false
     },
     {
-      "name": "CLAUDE_CODE_HOLD_REPORT_PARK_AT_INITI",
-      "documented": false
-    },
-    {
       "name": "CLAUDE_CODE_HOME_SEED_HOLD_TIMEOUT_MS",
       "documented": false
     },
@@ -2314,11 +2312,11 @@
       "documented": false
     },
     {
-      "name": "CLAUDE_CODE_INSTALLED_VIA_NPM_WRAPPER",
+      "name": "CLAUDE_CODE_INLINE_TOOLSQ",
       "documented": false
     },
     {
-      "name": "CLAUDE_CODE_INTRO_FRAME",
+      "name": "CLAUDE_CODE_INSTALLED_VIA_NPM_WRAPPER",
       "documented": false
     },
     {
@@ -2370,6 +2368,10 @@
       "documented": false
     },
     {
+      "name": "CLAUDE_CODE_MARKETPLACE_NAMEK",
+      "documented": false
+    },
+    {
       "name": "CLAUDE_CODE_MARKETPLACE_URL",
       "documented": false
     },
@@ -2416,6 +2418,10 @@
     {
       "name": "CLAUDE_CODE_MAX_WEB_SEARCHES_PER_SESSION",
       "documented": true
+    },
+    {
+      "name": "CLAUDE_CODE_MAX_WEB_SEARCHES_PER_SESSIONH",
+      "documented": false
     },
     {
       "name": "CLAUDE_CODE_MCP_ALLOWLIST_ENV",
@@ -2479,6 +2485,10 @@
     },
     {
       "name": "CLAUDE_CODE_MEMORY_API_TOKEN",
+      "documented": false
+    },
+    {
+      "name": "CLAUDE_CODE_MEMORY_API_TOKENE",
       "documented": false
     },
     {
@@ -2599,7 +2609,7 @@
     },
     {
       "name": "CLAUDE_CODE_OVERLOADED_RETRY_BASE_DELAY_MS",
-      "documented": false
+      "documented": true
     },
     {
       "name": "CLAUDE_CODE_OVERRIDE_DATE",
@@ -2686,6 +2696,10 @@
       "documented": true
     },
     {
+      "name": "CLAUDE_CODE_PLUGIN_DIR_WATCH1",
+      "documented": false
+    },
+    {
       "name": "CLAUDE_CODE_PLUGIN_GIT_TIMEOUT_MS",
       "documented": true
     },
@@ -2722,7 +2736,7 @@
       "documented": false
     },
     {
-      "name": "CLAUDE_CODE_POLISHED_DEWDROPA",
+      "name": "CLAUDE_CODE_POLISHED_DEWDROPL",
       "documented": false
     },
     {
@@ -2962,10 +2976,6 @@
       "documented": false
     },
     {
-      "name": "CLAUDE_CODE_REMOTE_TOOLS_SESSION_CHANNELF",
-      "documented": false
-    },
-    {
       "name": "CLAUDE_CODE_REMOTE_TOOLS_SPECULATIVE_CLASSIFIER",
       "documented": false
     },
@@ -2992,6 +3002,14 @@
     {
       "name": "CLAUDE_CODE_RESTRICTED",
       "documented": true
+    },
+    {
+      "name": "CLAUDE_CODE_RESTRICTEDY",
+      "documented": false
+    },
+    {
+      "name": "CLAUDE_CODE_RESTRICT_PERSONAL_CONFIG",
+      "documented": false
     },
     {
       "name": "CLAUDE_CODE_RESULT_NONCE",
@@ -3039,6 +3057,10 @@
     },
     {
       "name": "CLAUDE_CODE_RETRY_WATCHDOG",
+      "documented": true
+    },
+    {
+      "name": "CLAUDE_CODE_RETRY_WATCHDOG_MAX_WAIT_MS",
       "documented": true
     },
     {
@@ -3142,6 +3164,10 @@
       "documented": true
     },
     {
+      "name": "CLAUDE_CODE_SHELL_PREFIXD",
+      "documented": false
+    },
+    {
       "name": "CLAUDE_CODE_SILENT_TURN_REMINDER",
       "documented": false
     },
@@ -3206,10 +3232,6 @@
       "documented": true
     },
     {
-      "name": "CLAUDE_CODE_SKIP_FAST_MODE_ORG_CHECKC",
-      "documented": false
-    },
-    {
       "name": "CLAUDE_CODE_SKIP_FOUNDRY_AUTH",
       "documented": true
     },
@@ -3255,6 +3277,10 @@
     },
     {
       "name": "CLAUDE_CODE_SLEEPY_SNOWFLAKE",
+      "documented": false
+    },
+    {
+      "name": "CLAUDE_CODE_SLEEP_COMPACT",
       "documented": false
     },
     {
@@ -3306,6 +3332,14 @@
       "documented": false
     },
     {
+      "name": "CLAUDE_CODE_SUBAGENT_CACHE_EVICTF",
+      "documented": false
+    },
+    {
+      "name": "CLAUDE_CODE_SUBAGENT_CONFIG_WARNING",
+      "documented": false
+    },
+    {
       "name": "CLAUDE_CODE_SUBAGENT_MODEL",
       "documented": true
     },
@@ -3335,10 +3369,6 @@
     },
     {
       "name": "CLAUDE_CODE_SUPPRESS_SESSION_ATTRIBUTION",
-      "documented": false
-    },
-    {
-      "name": "CLAUDE_CODE_SUPPRESS_SESSION_ATTRIBUTIONF",
       "documented": false
     },
     {
@@ -3455,10 +3485,6 @@
     },
     {
       "name": "CLAUDE_CODE_THINKING_DISPLAY_UPDATES",
-      "documented": false
-    },
-    {
-      "name": "CLAUDE_CODE_THINKING_DISPLAY_UPDATESA",
       "documented": false
     },
     {
@@ -3635,6 +3661,10 @@
     },
     {
       "name": "CLAUDE_CODE_WEBFETCH_USE_CCR_PROXY",
+      "documented": false
+    },
+    {
+      "name": "CLAUDE_CODE_WEBSEARCH_CITATIONS",
       "documented": false
     },
     {
