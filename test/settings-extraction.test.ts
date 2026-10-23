@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { readFile } from "node:fs/promises";
 import { resolve } from "node:path";
 import { pathToFileURL } from "node:url";
 import test from "node:test";
@@ -190,4 +191,62 @@ test("production markdown tables accept single-dash separator rows", () => {
 | \`ALPHA\` | first |`);
   assert.equal(tables.length, 1);
   assert.deepEqual(tables[0].rows, [["`ALPHA`", "first"]]);
+});
+
+// A reduced live-doc fixture keeps the desktop-only key's user-only scope.
+const userScopeReference = `# All settings
+
+## Agents, sessions, and worktrees
+
+### \`worktree.location\`
+
+Only the desktop app reads this key.
+
+* **Scope**: [\`User\`](#scopes), in \`~/.claude/settings.json\` on the remote machine
+* **Type**: string, an absolute path or one that starts with \`~/\`
+* **Default**: unset
+
+\`\`\`json settings.json theme={null}
+{"worktree": {"location": "~/worktrees"}}
+\`\`\`
+`;
+
+test("user-only settings preserve scope, nested example, and type", () => {
+  const [section] = referenceSections(userScopeReference, "## All settings");
+  assert.equal(section.key, "worktree.location");
+  assert.deepEqual(section.scopes, ["user"]);
+  const record = settingRecord(section, source, "2.1.309");
+  assert.deepEqual(record.scopes, ["user"]);
+  const schema = schemaForRecord(record);
+  assert.equal(schema.type, "string");
+  assert.deepEqual(schema.examples, ["~/worktrees"]);
+});
+
+test("unrecognized scopes still fail closed", () => {
+  const [section] = referenceSections(
+    userScopeReference.replace("[`User`]", "[`Unknown scope`]"),
+    "## All settings",
+  );
+  assert.equal(section.scopes, null);
+  assert.throws(
+    () => settingRecord(section, source, "2.1.309"),
+    /unknown scope "Unknown scope" for worktree.location/,
+  );
+});
+
+test("the V2 base parser accepts the same live user-only fixture", async () => {
+  const script = await readFile(
+    resolve(repositoryRoot, "experiments/version-2/generate.mjs"),
+    "utf8",
+  );
+  // Execute the actual base parser without its network and generation effects.
+  const start = script.indexOf("const SCOPE_LABELS =");
+  const end = script.indexOf("const settingsSections =", start);
+  assert.ok(start >= 0 && end > start);
+  const parse = new Function(
+    `${script.slice(start, end)}; return referenceSections;`,
+  )();
+  const [section] = parse(userScopeReference, "## All settings");
+  assert.deepEqual(section.scopes, ["user"]);
+  assert.equal(section.key, "worktree.location");
 });

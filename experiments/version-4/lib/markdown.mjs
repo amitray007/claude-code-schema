@@ -114,6 +114,7 @@ const SCOPE_LABELS = {
   "Any file": ["user", "project", "local", "managed", "cli-settings"],
   "User, local, or managed": ["user", "local", "managed", "cli-settings"],
   "User or managed": ["user", "managed", "cli-settings"],
+  User: ["user"],
   Managed: ["managed"],
   "Global config": ["global-config"]
 };
