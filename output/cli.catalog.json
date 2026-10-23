@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
   "artifactKind": "cli-surface-catalog",
-  "claudeCodeVersion": "2.1.296",
+  "claudeCodeVersion": "2.1.309",
   "platformPackage": "@anthropic-ai/claude-code-linux-x64",
-  "binarySha256": "24972e3bc859fab2b46ed4c1e51f7d6130f06d3bd550811a114640de3370d0de",
+  "binarySha256": "4d704a8aecbe038affa3000f498ae17c1b4f753add8facb8764120affc99b658",
   "probePolicy": {
     "allowedOperations": [
       "--version",
@@ -19,7 +19,7 @@
     "maximumCommands": 80,
     "rawHelpRedistributed": false
   },
-  "versionOutput": "2.1.296 (Claude Code)",
+  "versionOutput": "2.1.309 (Claude Code)",
   "commands": [
     {
       "commandPath": [
@@ -33,8 +33,8 @@
       "signal": null,
       "timedOut": false,
       "outputExceeded": false,
-      "helpSha256": "1653f2539853f196b864241a4c011be3e457b7516c080c3d2b9a5675488e8061",
-      "helpBytes": 22115,
+      "helpSha256": "fcd42bdc3e8136c07673db6fe6839f4bb5223b4607bc12773fbd1ce37ae37e68",
+      "helpBytes": 22318,
       "usage": "claude [options] [command] [prompt]",
       "arguments": [
         {
@@ -1517,6 +1517,87 @@
             "add"
           ],
           "argumentNotation": "[options] <name> <commandOrUrl> [args...]"
+        },
+        {
+          "name": "add-from-claude-desktop",
+          "aliases": [],
+          "commandPath": [
+            "mcp",
+            "add-from-claude-desktop"
+          ],
+          "argumentNotation": "[options]"
+        },
+        {
+          "name": "add-json",
+          "aliases": [],
+          "commandPath": [
+            "mcp",
+            "add-json"
+          ],
+          "argumentNotation": "[options] <name> <json>"
+        },
+        {
+          "name": "get",
+          "aliases": [],
+          "commandPath": [
+            "mcp",
+            "get"
+          ],
+          "argumentNotation": "<name>"
+        },
+        {
+          "name": "list",
+          "aliases": [],
+          "commandPath": [
+            "mcp",
+            "list"
+          ],
+          "argumentNotation": null
+        },
+        {
+          "name": "login",
+          "aliases": [],
+          "commandPath": [
+            "mcp",
+            "login"
+          ],
+          "argumentNotation": "[options] <name>"
+        },
+        {
+          "name": "logout",
+          "aliases": [],
+          "commandPath": [
+            "mcp",
+            "logout"
+          ],
+          "argumentNotation": "<name>"
+        },
+        {
+          "name": "remove",
+          "aliases": [],
+          "commandPath": [
+            "mcp",
+            "remove"
+          ],
+          "argumentNotation": "[options] <name>"
+        },
+        {
+          "name": "reset-project-choices",
+          "aliases": [],
+          "commandPath": [
+            "mcp",
+            "reset-project-choices"
+          ],
+          "argumentNotation": null
+        },
+        {
+          "name": "serve",
+          "aliases": [],
+          "commandPath": [
+            "mcp",
+            "serve"
+          ],
+          "argumentNotation": "[options]"
         }
       ]
     },
@@ -1922,9 +2003,9 @@
       "signal": null,
       "timedOut": false,
       "outputExceeded": false,
-      "helpSha256": "2fe4dc1da2b58c7cb3a9226f56d91ae393be791fb2b1b5c08c5900823eec3101",
-      "helpBytes": 779,
-      "usage": "claude ultrareview [options] [target]",
+      "helpSha256": "405decb86c3f7bbbdc772c32b57e69528ae7b6adcd37f8286b1eeb5e715c0635",
+      "helpBytes": 1148,
+      "usage": "claude ultrareview [target] [options]",
       "arguments": [
         {
           "name": "target",
@@ -1985,6 +2066,16 @@
           "negated": false,
           "repeatable": false,
           "defaultDisplay": "45"
+        },
+        {
+          "names": [
+            "--trust-workspace"
+          ],
+          "valueNotation": null,
+          "valueArity": "none",
+          "variadic": false,
+          "negated": false,
+          "repeatable": false
         }
       ],
       "childCommands": []
@@ -2003,8 +2094,8 @@
       "signal": null,
       "timedOut": false,
       "outputExceeded": false,
-      "helpSha256": "abe790c07bc33d674875cff52348f99783f36ed0fb3100fca35bb68d154ec28d",
-      "helpBytes": 131,
+      "helpSha256": "45dff313b652b9f357fdd2ea23557b00be188c6db5723ec27f01daf9bd3d3968",
+      "helpBytes": 192,
       "usage": "claude update|upgrade [options]",
       "arguments": [],
       "options": [
@@ -2490,6 +2581,438 @@
     {
       "commandPath": [
         "claude",
+        "mcp",
+        "add-from-claude-desktop"
+      ],
+      "invocation": [
+        "claude",
+        "mcp",
+        "add-from-claude-desktop",
+        "--help"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "timedOut": false,
+      "outputExceeded": false,
+      "helpSha256": "95f7470fe29dae2b46703f12a433c24dfddd413f4f263d0489f3968a2b6cc80a",
+      "helpBytes": 279,
+      "usage": "claude mcp add-from-claude-desktop [options]",
+      "arguments": [],
+      "options": [
+        {
+          "names": [
+            "-h",
+            "--help"
+          ],
+          "valueNotation": null,
+          "valueArity": "none",
+          "variadic": false,
+          "negated": false,
+          "repeatable": false
+        },
+        {
+          "names": [
+            "-s",
+            "--scope"
+          ],
+          "valueNotation": "<scope>",
+          "valueArity": "required",
+          "variadic": false,
+          "negated": false,
+          "repeatable": false,
+          "defaultDisplay": "\"local\""
+        }
+      ],
+      "childCommands": []
+    },
+    {
+      "commandPath": [
+        "claude",
+        "mcp",
+        "add-json"
+      ],
+      "invocation": [
+        "claude",
+        "mcp",
+        "add-json",
+        "--help"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "timedOut": false,
+      "outputExceeded": false,
+      "helpSha256": "acb80f8d7b136140dfdeab4b897a8fb343a40bb198a39e1d69a2299539a138a7",
+      "helpBytes": 402,
+      "usage": "claude mcp add-json [options] <name> <json>",
+      "arguments": [
+        {
+          "name": "name",
+          "notation": "<name>",
+          "valueArity": "required",
+          "variadic": false
+        },
+        {
+          "name": "json",
+          "notation": "<json>",
+          "valueArity": "required",
+          "variadic": false
+        }
+      ],
+      "options": [
+        {
+          "names": [
+            "--client-secret"
+          ],
+          "valueNotation": null,
+          "valueArity": "none",
+          "variadic": false,
+          "negated": false,
+          "repeatable": false
+        },
+        {
+          "names": [
+            "-h",
+            "--help"
+          ],
+          "valueNotation": null,
+          "valueArity": "none",
+          "variadic": false,
+          "negated": false,
+          "repeatable": false
+        },
+        {
+          "names": [
+            "-s",
+            "--scope"
+          ],
+          "valueNotation": "<scope>",
+          "valueArity": "required",
+          "variadic": false,
+          "negated": false,
+          "repeatable": false,
+          "defaultDisplay": "\"local\""
+        }
+      ],
+      "childCommands": []
+    },
+    {
+      "commandPath": [
+        "claude",
+        "mcp",
+        "get"
+      ],
+      "invocation": [
+        "claude",
+        "mcp",
+        "get",
+        "--help"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "timedOut": false,
+      "outputExceeded": false,
+      "helpSha256": "ccd75cfef8646906c1d2e70aae95c36e6be66d08bea12bffe8dd5ed1bcccc5d6",
+      "helpBytes": 276,
+      "usage": "claude mcp get [options] <name>",
+      "arguments": [
+        {
+          "name": "name",
+          "notation": "<name>",
+          "valueArity": "required",
+          "variadic": false
+        }
+      ],
+      "options": [
+        {
+          "names": [
+            "-h",
+            "--help"
+          ],
+          "valueNotation": null,
+          "valueArity": "none",
+          "variadic": false,
+          "negated": false,
+          "repeatable": false
+        }
+      ],
+      "childCommands": []
+    },
+    {
+      "commandPath": [
+        "claude",
+        "mcp",
+        "list"
+      ],
+      "invocation": [
+        "claude",
+        "mcp",
+        "list",
+        "--help"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "timedOut": false,
+      "outputExceeded": false,
+      "helpSha256": "e69958bbfa2e760e929b435f3fd8cab6f357dbc651dec1817119e8e7a32868ba",
+      "helpBytes": 266,
+      "usage": "claude mcp list [options]",
+      "arguments": [],
+      "options": [
+        {
+          "names": [
+            "-h",
+            "--help"
+          ],
+          "valueNotation": null,
+          "valueArity": "none",
+          "variadic": false,
+          "negated": false,
+          "repeatable": false
+        }
+      ],
+      "childCommands": []
+    },
+    {
+      "commandPath": [
+        "claude",
+        "mcp",
+        "login"
+      ],
+      "invocation": [
+        "claude",
+        "mcp",
+        "login",
+        "--help"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "timedOut": false,
+      "outputExceeded": false,
+      "helpSha256": "229e94dd35446edbfa203b7ff73199b71a1184d9f8de12cd5f4be502948ab05e",
+      "helpBytes": 339,
+      "usage": "claude mcp login [options] <name>",
+      "arguments": [
+        {
+          "name": "name",
+          "notation": "<name>",
+          "valueArity": "required",
+          "variadic": false
+        }
+      ],
+      "options": [
+        {
+          "names": [
+            "-h",
+            "--help"
+          ],
+          "valueNotation": null,
+          "valueArity": "none",
+          "variadic": false,
+          "negated": false,
+          "repeatable": false
+        },
+        {
+          "names": [
+            "--no-browser"
+          ],
+          "valueNotation": null,
+          "valueArity": "none",
+          "variadic": false,
+          "negated": true,
+          "repeatable": false
+        }
+      ],
+      "childCommands": []
+    },
+    {
+      "commandPath": [
+        "claude",
+        "mcp",
+        "logout"
+      ],
+      "invocation": [
+        "claude",
+        "mcp",
+        "logout",
+        "--help"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "timedOut": false,
+      "outputExceeded": false,
+      "helpSha256": "c1300344e3f617a789c22a2d524351145b8c9237dc9742f1a8b32b969b6a0cda",
+      "helpBytes": 140,
+      "usage": "claude mcp logout [options] <name>",
+      "arguments": [
+        {
+          "name": "name",
+          "notation": "<name>",
+          "valueArity": "required",
+          "variadic": false
+        }
+      ],
+      "options": [
+        {
+          "names": [
+            "-h",
+            "--help"
+          ],
+          "valueNotation": null,
+          "valueArity": "none",
+          "variadic": false,
+          "negated": false,
+          "repeatable": false
+        }
+      ],
+      "childCommands": []
+    },
+    {
+      "commandPath": [
+        "claude",
+        "mcp",
+        "remove"
+      ],
+      "invocation": [
+        "claude",
+        "mcp",
+        "remove",
+        "--help"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "timedOut": false,
+      "outputExceeded": false,
+      "helpSha256": "c23de3c8b982c05030a0f7374c712b773a1fb2c600d0a88dc6a68356fdad0739",
+      "helpBytes": 275,
+      "usage": "claude mcp remove [options] <name>",
+      "arguments": [
+        {
+          "name": "name",
+          "notation": "<name>",
+          "valueArity": "required",
+          "variadic": false
+        }
+      ],
+      "options": [
+        {
+          "names": [
+            "-h",
+            "--help"
+          ],
+          "valueNotation": null,
+          "valueArity": "none",
+          "variadic": false,
+          "negated": false,
+          "repeatable": false
+        },
+        {
+          "names": [
+            "-s",
+            "--scope"
+          ],
+          "valueNotation": "<scope>",
+          "valueArity": "required",
+          "variadic": false,
+          "negated": false,
+          "repeatable": false
+        }
+      ],
+      "childCommands": []
+    },
+    {
+      "commandPath": [
+        "claude",
+        "mcp",
+        "reset-project-choices"
+      ],
+      "invocation": [
+        "claude",
+        "mcp",
+        "reset-project-choices",
+        "--help"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "timedOut": false,
+      "outputExceeded": false,
+      "helpSha256": "5408f9288472bf30a8df7d3c4fb427d2e3d13de00f8e9a884d02c5150d3624ae",
+      "helpBytes": 186,
+      "usage": "claude mcp reset-project-choices [options]",
+      "arguments": [],
+      "options": [
+        {
+          "names": [
+            "-h",
+            "--help"
+          ],
+          "valueNotation": null,
+          "valueArity": "none",
+          "variadic": false,
+          "negated": false,
+          "repeatable": false
+        }
+      ],
+      "childCommands": []
+    },
+    {
+      "commandPath": [
+        "claude",
+        "mcp",
+        "serve"
+      ],
+      "invocation": [
+        "claude",
+        "mcp",
+        "serve",
+        "--help"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "timedOut": false,
+      "outputExceeded": false,
+      "helpSha256": "1061841856dadd25964b853425c825aa37b1889a88bec09352fb1dc6a6175ec9",
+      "helpBytes": 207,
+      "usage": "claude mcp serve [options]",
+      "arguments": [],
+      "options": [
+        {
+          "names": [
+            "-d",
+            "--debug"
+          ],
+          "valueNotation": null,
+          "valueArity": "none",
+          "variadic": false,
+          "negated": false,
+          "repeatable": false
+        },
+        {
+          "names": [
+            "-h",
+            "--help"
+          ],
+          "valueNotation": null,
+          "valueArity": "none",
+          "variadic": false,
+          "negated": false,
+          "repeatable": false
+        },
+        {
+          "names": [
+            "--verbose"
+          ],
+          "valueNotation": null,
+          "valueArity": "none",
+          "variadic": false,
+          "negated": false,
+          "repeatable": false
+        }
+      ],
+      "childCommands": []
+    },
+    {
+      "commandPath": [
+        "claude",
         "plugin",
         "configure"
       ],
@@ -2746,8 +3269,8 @@
       "signal": null,
       "timedOut": false,
       "outputExceeded": false,
-      "helpSha256": "43a358ed40cb18d57f91ea109008ab99529e2ba064b0dcb2b620e33eba7be049",
-      "helpBytes": 6171,
+      "helpSha256": "977039b69c29455afd5cafe0dc42257c08cb7d90ae7ac611b3874692b7104e90",
+      "helpBytes": 6701,
       "usage": "claude plugin eval [options] [command] [target]",
       "arguments": [
         {
@@ -2806,6 +3329,16 @@
           "valueNotation": "<n>",
           "valueArity": "required",
           "variadic": false,
+          "negated": false,
+          "repeatable": false
+        },
+        {
+          "names": [
+            "--disallow-tools"
+          ],
+          "valueNotation": "<tools...>",
+          "valueArity": "required",
+          "variadic": true,
           "negated": false,
           "repeatable": false
         },
@@ -3772,8 +4305,8 @@
       "signal": null,
       "timedOut": false,
       "outputExceeded": false,
-      "helpSha256": "667b62d906d01a844dea5c73b0f5af0326704087e62fc79590d7b20d13530d41",
-      "helpBytes": 441,
+      "helpSha256": "1473854412a1a9c6d0c38d54075c4c99426c78c7b8f287c9268212b71e0051f9",
+      "helpBytes": 1150,
       "usage": "claude plugin validate [options] <path>",
       "arguments": [
         {
@@ -3804,6 +4337,19 @@
           "variadic": false,
           "negated": false,
           "repeatable": false
+        },
+        {
+          "names": [
+            "--profile"
+          ],
+          "valueNotation": "<name>",
+          "valueArity": "required",
+          "variadic": false,
+          "negated": false,
+          "repeatable": false,
+          "choices": [
+            "directory"
+          ]
         },
         {
           "names": [
@@ -4172,7 +4718,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "2257fa9ba5aad2446e45bfbe08c115713b1480e4090b40e946ad10044cde3276"
+            "sourceSha256": "bd5644a7251c1551c05186e1d542cd20109444645e4ab5c01d7ee33e3befa030"
           }
         ]
       },
@@ -4210,7 +4756,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "2257fa9ba5aad2446e45bfbe08c115713b1480e4090b40e946ad10044cde3276"
+            "sourceSha256": "bd5644a7251c1551c05186e1d542cd20109444645e4ab5c01d7ee33e3befa030"
           }
         ]
       },
@@ -4230,7 +4776,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "2257fa9ba5aad2446e45bfbe08c115713b1480e4090b40e946ad10044cde3276"
+            "sourceSha256": "bd5644a7251c1551c05186e1d542cd20109444645e4ab5c01d7ee33e3befa030"
           }
         ]
       },
@@ -4268,7 +4814,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "2257fa9ba5aad2446e45bfbe08c115713b1480e4090b40e946ad10044cde3276"
+            "sourceSha256": "bd5644a7251c1551c05186e1d542cd20109444645e4ab5c01d7ee33e3befa030"
           }
         ]
       },
@@ -4297,7 +4843,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "2257fa9ba5aad2446e45bfbe08c115713b1480e4090b40e946ad10044cde3276"
+            "sourceSha256": "bd5644a7251c1551c05186e1d542cd20109444645e4ab5c01d7ee33e3befa030"
           }
         ]
       },
@@ -4337,7 +4883,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "2257fa9ba5aad2446e45bfbe08c115713b1480e4090b40e946ad10044cde3276"
+            "sourceSha256": "bd5644a7251c1551c05186e1d542cd20109444645e4ab5c01d7ee33e3befa030"
           }
         ]
       },
@@ -4367,7 +4913,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "2257fa9ba5aad2446e45bfbe08c115713b1480e4090b40e946ad10044cde3276"
+            "sourceSha256": "bd5644a7251c1551c05186e1d542cd20109444645e4ab5c01d7ee33e3befa030"
           }
         ]
       },
@@ -4387,7 +4933,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "2257fa9ba5aad2446e45bfbe08c115713b1480e4090b40e946ad10044cde3276"
+            "sourceSha256": "bd5644a7251c1551c05186e1d542cd20109444645e4ab5c01d7ee33e3befa030"
           }
         ]
       },
@@ -4407,7 +4953,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "2257fa9ba5aad2446e45bfbe08c115713b1480e4090b40e946ad10044cde3276"
+            "sourceSha256": "bd5644a7251c1551c05186e1d542cd20109444645e4ab5c01d7ee33e3befa030"
           }
         ]
       },
@@ -4436,7 +4982,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "2257fa9ba5aad2446e45bfbe08c115713b1480e4090b40e946ad10044cde3276"
+            "sourceSha256": "bd5644a7251c1551c05186e1d542cd20109444645e4ab5c01d7ee33e3befa030"
           }
         ]
       },
@@ -4456,7 +5002,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "2257fa9ba5aad2446e45bfbe08c115713b1480e4090b40e946ad10044cde3276"
+            "sourceSha256": "bd5644a7251c1551c05186e1d542cd20109444645e4ab5c01d7ee33e3befa030"
           }
         ]
       },
@@ -4485,7 +5031,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "2257fa9ba5aad2446e45bfbe08c115713b1480e4090b40e946ad10044cde3276"
+            "sourceSha256": "bd5644a7251c1551c05186e1d542cd20109444645e4ab5c01d7ee33e3befa030"
           }
         ]
       },
@@ -4514,7 +5060,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "2257fa9ba5aad2446e45bfbe08c115713b1480e4090b40e946ad10044cde3276"
+            "sourceSha256": "bd5644a7251c1551c05186e1d542cd20109444645e4ab5c01d7ee33e3befa030"
           }
         ]
       },
@@ -4554,7 +5100,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "2257fa9ba5aad2446e45bfbe08c115713b1480e4090b40e946ad10044cde3276"
+            "sourceSha256": "bd5644a7251c1551c05186e1d542cd20109444645e4ab5c01d7ee33e3befa030"
           }
         ]
       },
@@ -4585,7 +5131,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "2257fa9ba5aad2446e45bfbe08c115713b1480e4090b40e946ad10044cde3276"
+            "sourceSha256": "bd5644a7251c1551c05186e1d542cd20109444645e4ab5c01d7ee33e3befa030"
           }
         ]
       },
@@ -4615,7 +5161,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "2257fa9ba5aad2446e45bfbe08c115713b1480e4090b40e946ad10044cde3276"
+            "sourceSha256": "bd5644a7251c1551c05186e1d542cd20109444645e4ab5c01d7ee33e3befa030"
           }
         ]
       },
@@ -4635,7 +5181,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "2257fa9ba5aad2446e45bfbe08c115713b1480e4090b40e946ad10044cde3276"
+            "sourceSha256": "bd5644a7251c1551c05186e1d542cd20109444645e4ab5c01d7ee33e3befa030"
           }
         ]
       },
@@ -4664,7 +5210,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "2257fa9ba5aad2446e45bfbe08c115713b1480e4090b40e946ad10044cde3276"
+            "sourceSha256": "bd5644a7251c1551c05186e1d542cd20109444645e4ab5c01d7ee33e3befa030"
           }
         ]
       },
@@ -4695,7 +5241,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "2257fa9ba5aad2446e45bfbe08c115713b1480e4090b40e946ad10044cde3276"
+            "sourceSha256": "bd5644a7251c1551c05186e1d542cd20109444645e4ab5c01d7ee33e3befa030"
           }
         ]
       },
@@ -4725,7 +5271,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "2257fa9ba5aad2446e45bfbe08c115713b1480e4090b40e946ad10044cde3276"
+            "sourceSha256": "bd5644a7251c1551c05186e1d542cd20109444645e4ab5c01d7ee33e3befa030"
           }
         ]
       },
@@ -4745,7 +5291,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "2257fa9ba5aad2446e45bfbe08c115713b1480e4090b40e946ad10044cde3276"
+            "sourceSha256": "bd5644a7251c1551c05186e1d542cd20109444645e4ab5c01d7ee33e3befa030"
           }
         ]
       },
@@ -4783,7 +5329,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "2257fa9ba5aad2446e45bfbe08c115713b1480e4090b40e946ad10044cde3276"
+            "sourceSha256": "bd5644a7251c1551c05186e1d542cd20109444645e4ab5c01d7ee33e3befa030"
           }
         ]
       },
@@ -4791,6 +5337,16 @@
         {
           "commandPath": [
             "claude"
+          ],
+          "names": [
+            "--debug"
+          ]
+        },
+        {
+          "commandPath": [
+            "claude",
+            "mcp",
+            "serve"
           ],
           "names": [
             "--debug"
@@ -4812,7 +5368,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "2257fa9ba5aad2446e45bfbe08c115713b1480e4090b40e946ad10044cde3276"
+            "sourceSha256": "bd5644a7251c1551c05186e1d542cd20109444645e4ab5c01d7ee33e3befa030"
           }
         ]
       },
@@ -4841,7 +5397,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "2257fa9ba5aad2446e45bfbe08c115713b1480e4090b40e946ad10044cde3276"
+            "sourceSha256": "bd5644a7251c1551c05186e1d542cd20109444645e4ab5c01d7ee33e3befa030"
           }
         ]
       },
@@ -4870,7 +5426,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "2257fa9ba5aad2446e45bfbe08c115713b1480e4090b40e946ad10044cde3276"
+            "sourceSha256": "bd5644a7251c1551c05186e1d542cd20109444645e4ab5c01d7ee33e3befa030"
           }
         ]
       },
@@ -4901,7 +5457,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "2257fa9ba5aad2446e45bfbe08c115713b1480e4090b40e946ad10044cde3276"
+            "sourceSha256": "bd5644a7251c1551c05186e1d542cd20109444645e4ab5c01d7ee33e3befa030"
           }
         ]
       },
@@ -4931,7 +5487,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "2257fa9ba5aad2446e45bfbe08c115713b1480e4090b40e946ad10044cde3276"
+            "sourceSha256": "bd5644a7251c1551c05186e1d542cd20109444645e4ab5c01d7ee33e3befa030"
           }
         ]
       },
@@ -4969,7 +5525,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "2257fa9ba5aad2446e45bfbe08c115713b1480e4090b40e946ad10044cde3276"
+            "sourceSha256": "bd5644a7251c1551c05186e1d542cd20109444645e4ab5c01d7ee33e3befa030"
           }
         ]
       },
@@ -4990,7 +5546,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "2257fa9ba5aad2446e45bfbe08c115713b1480e4090b40e946ad10044cde3276"
+            "sourceSha256": "bd5644a7251c1551c05186e1d542cd20109444645e4ab5c01d7ee33e3befa030"
           }
         ]
       },
@@ -5019,7 +5575,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "2257fa9ba5aad2446e45bfbe08c115713b1480e4090b40e946ad10044cde3276"
+            "sourceSha256": "bd5644a7251c1551c05186e1d542cd20109444645e4ab5c01d7ee33e3befa030"
           }
         ]
       },
@@ -5048,7 +5604,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "2257fa9ba5aad2446e45bfbe08c115713b1480e4090b40e946ad10044cde3276"
+            "sourceSha256": "bd5644a7251c1551c05186e1d542cd20109444645e4ab5c01d7ee33e3befa030"
           }
         ]
       },
@@ -5068,7 +5624,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "2257fa9ba5aad2446e45bfbe08c115713b1480e4090b40e946ad10044cde3276"
+            "sourceSha256": "bd5644a7251c1551c05186e1d542cd20109444645e4ab5c01d7ee33e3befa030"
           }
         ]
       },
@@ -5097,7 +5653,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "2257fa9ba5aad2446e45bfbe08c115713b1480e4090b40e946ad10044cde3276"
+            "sourceSha256": "bd5644a7251c1551c05186e1d542cd20109444645e4ab5c01d7ee33e3befa030"
           }
         ]
       },
@@ -5126,7 +5682,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "2257fa9ba5aad2446e45bfbe08c115713b1480e4090b40e946ad10044cde3276"
+            "sourceSha256": "bd5644a7251c1551c05186e1d542cd20109444645e4ab5c01d7ee33e3befa030"
           }
         ]
       },
@@ -5155,7 +5711,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "2257fa9ba5aad2446e45bfbe08c115713b1480e4090b40e946ad10044cde3276"
+            "sourceSha256": "bd5644a7251c1551c05186e1d542cd20109444645e4ab5c01d7ee33e3befa030"
           }
         ]
       },
@@ -5184,7 +5740,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "2257fa9ba5aad2446e45bfbe08c115713b1480e4090b40e946ad10044cde3276"
+            "sourceSha256": "bd5644a7251c1551c05186e1d542cd20109444645e4ab5c01d7ee33e3befa030"
           }
         ]
       },
@@ -5213,7 +5769,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "2257fa9ba5aad2446e45bfbe08c115713b1480e4090b40e946ad10044cde3276"
+            "sourceSha256": "bd5644a7251c1551c05186e1d542cd20109444645e4ab5c01d7ee33e3befa030"
           }
         ]
       },
@@ -5233,7 +5789,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "2257fa9ba5aad2446e45bfbe08c115713b1480e4090b40e946ad10044cde3276"
+            "sourceSha256": "bd5644a7251c1551c05186e1d542cd20109444645e4ab5c01d7ee33e3befa030"
           }
         ]
       },
@@ -5253,7 +5809,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "2257fa9ba5aad2446e45bfbe08c115713b1480e4090b40e946ad10044cde3276"
+            "sourceSha256": "bd5644a7251c1551c05186e1d542cd20109444645e4ab5c01d7ee33e3befa030"
           }
         ]
       },
@@ -5282,7 +5838,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "2257fa9ba5aad2446e45bfbe08c115713b1480e4090b40e946ad10044cde3276"
+            "sourceSha256": "bd5644a7251c1551c05186e1d542cd20109444645e4ab5c01d7ee33e3befa030"
           }
         ]
       },
@@ -5311,7 +5867,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "2257fa9ba5aad2446e45bfbe08c115713b1480e4090b40e946ad10044cde3276"
+            "sourceSha256": "bd5644a7251c1551c05186e1d542cd20109444645e4ab5c01d7ee33e3befa030"
           }
         ]
       },
@@ -5340,7 +5896,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "2257fa9ba5aad2446e45bfbe08c115713b1480e4090b40e946ad10044cde3276"
+            "sourceSha256": "bd5644a7251c1551c05186e1d542cd20109444645e4ab5c01d7ee33e3befa030"
           }
         ]
       },
@@ -5369,7 +5925,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "2257fa9ba5aad2446e45bfbe08c115713b1480e4090b40e946ad10044cde3276"
+            "sourceSha256": "bd5644a7251c1551c05186e1d542cd20109444645e4ab5c01d7ee33e3befa030"
           }
         ]
       },
@@ -5389,7 +5945,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "2257fa9ba5aad2446e45bfbe08c115713b1480e4090b40e946ad10044cde3276"
+            "sourceSha256": "bd5644a7251c1551c05186e1d542cd20109444645e4ab5c01d7ee33e3befa030"
           }
         ]
       },
@@ -5418,7 +5974,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "2257fa9ba5aad2446e45bfbe08c115713b1480e4090b40e946ad10044cde3276"
+            "sourceSha256": "bd5644a7251c1551c05186e1d542cd20109444645e4ab5c01d7ee33e3befa030"
           }
         ]
       },
@@ -5438,7 +5994,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "2257fa9ba5aad2446e45bfbe08c115713b1480e4090b40e946ad10044cde3276"
+            "sourceSha256": "bd5644a7251c1551c05186e1d542cd20109444645e4ab5c01d7ee33e3befa030"
           }
         ]
       },
@@ -5476,7 +6032,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "2257fa9ba5aad2446e45bfbe08c115713b1480e4090b40e946ad10044cde3276"
+            "sourceSha256": "bd5644a7251c1551c05186e1d542cd20109444645e4ab5c01d7ee33e3befa030"
           }
         ]
       },
@@ -5536,7 +6092,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "2257fa9ba5aad2446e45bfbe08c115713b1480e4090b40e946ad10044cde3276"
+            "sourceSha256": "bd5644a7251c1551c05186e1d542cd20109444645e4ab5c01d7ee33e3befa030"
           }
         ]
       },
@@ -5566,7 +6122,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "2257fa9ba5aad2446e45bfbe08c115713b1480e4090b40e946ad10044cde3276"
+            "sourceSha256": "bd5644a7251c1551c05186e1d542cd20109444645e4ab5c01d7ee33e3befa030"
           }
         ]
       },
@@ -5595,7 +6151,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "2257fa9ba5aad2446e45bfbe08c115713b1480e4090b40e946ad10044cde3276"
+            "sourceSha256": "bd5644a7251c1551c05186e1d542cd20109444645e4ab5c01d7ee33e3befa030"
           }
         ]
       },
@@ -5624,7 +6180,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "2257fa9ba5aad2446e45bfbe08c115713b1480e4090b40e946ad10044cde3276"
+            "sourceSha256": "bd5644a7251c1551c05186e1d542cd20109444645e4ab5c01d7ee33e3befa030"
           }
         ]
       },
@@ -5653,7 +6209,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "2257fa9ba5aad2446e45bfbe08c115713b1480e4090b40e946ad10044cde3276"
+            "sourceSha256": "bd5644a7251c1551c05186e1d542cd20109444645e4ab5c01d7ee33e3befa030"
           }
         ]
       },
@@ -5691,7 +6247,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "2257fa9ba5aad2446e45bfbe08c115713b1480e4090b40e946ad10044cde3276"
+            "sourceSha256": "bd5644a7251c1551c05186e1d542cd20109444645e4ab5c01d7ee33e3befa030"
           }
         ]
       },
@@ -5711,7 +6267,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "2257fa9ba5aad2446e45bfbe08c115713b1480e4090b40e946ad10044cde3276"
+            "sourceSha256": "bd5644a7251c1551c05186e1d542cd20109444645e4ab5c01d7ee33e3befa030"
           }
         ]
       },
@@ -5740,7 +6296,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "2257fa9ba5aad2446e45bfbe08c115713b1480e4090b40e946ad10044cde3276"
+            "sourceSha256": "bd5644a7251c1551c05186e1d542cd20109444645e4ab5c01d7ee33e3befa030"
           }
         ]
       },
@@ -5778,7 +6334,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "2257fa9ba5aad2446e45bfbe08c115713b1480e4090b40e946ad10044cde3276"
+            "sourceSha256": "bd5644a7251c1551c05186e1d542cd20109444645e4ab5c01d7ee33e3befa030"
           }
         ]
       },
@@ -5809,7 +6365,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "2257fa9ba5aad2446e45bfbe08c115713b1480e4090b40e946ad10044cde3276"
+            "sourceSha256": "bd5644a7251c1551c05186e1d542cd20109444645e4ab5c01d7ee33e3befa030"
           }
         ]
       },
@@ -5839,7 +6395,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "2257fa9ba5aad2446e45bfbe08c115713b1480e4090b40e946ad10044cde3276"
+            "sourceSha256": "bd5644a7251c1551c05186e1d542cd20109444645e4ab5c01d7ee33e3befa030"
           }
         ]
       },
@@ -5868,7 +6424,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "2257fa9ba5aad2446e45bfbe08c115713b1480e4090b40e946ad10044cde3276"
+            "sourceSha256": "bd5644a7251c1551c05186e1d542cd20109444645e4ab5c01d7ee33e3befa030"
           }
         ]
       },
@@ -5888,7 +6444,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "2257fa9ba5aad2446e45bfbe08c115713b1480e4090b40e946ad10044cde3276"
+            "sourceSha256": "bd5644a7251c1551c05186e1d542cd20109444645e4ab5c01d7ee33e3befa030"
           }
         ]
       },
@@ -5921,7 +6477,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "2257fa9ba5aad2446e45bfbe08c115713b1480e4090b40e946ad10044cde3276"
+            "sourceSha256": "bd5644a7251c1551c05186e1d542cd20109444645e4ab5c01d7ee33e3befa030"
           }
         ]
       },
@@ -5950,7 +6506,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "2257fa9ba5aad2446e45bfbe08c115713b1480e4090b40e946ad10044cde3276"
+            "sourceSha256": "bd5644a7251c1551c05186e1d542cd20109444645e4ab5c01d7ee33e3befa030"
           }
         ]
       },
@@ -5979,7 +6535,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "2257fa9ba5aad2446e45bfbe08c115713b1480e4090b40e946ad10044cde3276"
+            "sourceSha256": "bd5644a7251c1551c05186e1d542cd20109444645e4ab5c01d7ee33e3befa030"
           }
         ]
       },
@@ -6008,7 +6564,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "2257fa9ba5aad2446e45bfbe08c115713b1480e4090b40e946ad10044cde3276"
+            "sourceSha256": "bd5644a7251c1551c05186e1d542cd20109444645e4ab5c01d7ee33e3befa030"
           }
         ]
       },
@@ -6048,7 +6604,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "2257fa9ba5aad2446e45bfbe08c115713b1480e4090b40e946ad10044cde3276"
+            "sourceSha256": "bd5644a7251c1551c05186e1d542cd20109444645e4ab5c01d7ee33e3befa030"
           }
         ]
       },
@@ -6078,7 +6634,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "2257fa9ba5aad2446e45bfbe08c115713b1480e4090b40e946ad10044cde3276"
+            "sourceSha256": "bd5644a7251c1551c05186e1d542cd20109444645e4ab5c01d7ee33e3befa030"
           }
         ]
       },
@@ -6107,7 +6663,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "2257fa9ba5aad2446e45bfbe08c115713b1480e4090b40e946ad10044cde3276"
+            "sourceSha256": "bd5644a7251c1551c05186e1d542cd20109444645e4ab5c01d7ee33e3befa030"
           }
         ]
       },
@@ -6136,7 +6692,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "2257fa9ba5aad2446e45bfbe08c115713b1480e4090b40e946ad10044cde3276"
+            "sourceSha256": "bd5644a7251c1551c05186e1d542cd20109444645e4ab5c01d7ee33e3befa030"
           }
         ]
       },
@@ -6174,7 +6730,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "2257fa9ba5aad2446e45bfbe08c115713b1480e4090b40e946ad10044cde3276"
+            "sourceSha256": "bd5644a7251c1551c05186e1d542cd20109444645e4ab5c01d7ee33e3befa030"
           }
         ]
       },
@@ -6212,7 +6768,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "2257fa9ba5aad2446e45bfbe08c115713b1480e4090b40e946ad10044cde3276"
+            "sourceSha256": "bd5644a7251c1551c05186e1d542cd20109444645e4ab5c01d7ee33e3befa030"
           }
         ]
       },
@@ -6250,7 +6806,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "2257fa9ba5aad2446e45bfbe08c115713b1480e4090b40e946ad10044cde3276"
+            "sourceSha256": "bd5644a7251c1551c05186e1d542cd20109444645e4ab5c01d7ee33e3befa030"
           }
         ]
       },
@@ -6279,7 +6835,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "2257fa9ba5aad2446e45bfbe08c115713b1480e4090b40e946ad10044cde3276"
+            "sourceSha256": "bd5644a7251c1551c05186e1d542cd20109444645e4ab5c01d7ee33e3befa030"
           }
         ]
       },
@@ -6299,7 +6855,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "2257fa9ba5aad2446e45bfbe08c115713b1480e4090b40e946ad10044cde3276"
+            "sourceSha256": "bd5644a7251c1551c05186e1d542cd20109444645e4ab5c01d7ee33e3befa030"
           }
         ]
       },
@@ -6328,7 +6884,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "2257fa9ba5aad2446e45bfbe08c115713b1480e4090b40e946ad10044cde3276"
+            "sourceSha256": "bd5644a7251c1551c05186e1d542cd20109444645e4ab5c01d7ee33e3befa030"
           }
         ]
       },
@@ -6357,7 +6913,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "2257fa9ba5aad2446e45bfbe08c115713b1480e4090b40e946ad10044cde3276"
+            "sourceSha256": "bd5644a7251c1551c05186e1d542cd20109444645e4ab5c01d7ee33e3befa030"
           }
         ]
       },
@@ -6377,7 +6933,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "2257fa9ba5aad2446e45bfbe08c115713b1480e4090b40e946ad10044cde3276"
+            "sourceSha256": "bd5644a7251c1551c05186e1d542cd20109444645e4ab5c01d7ee33e3befa030"
           }
         ]
       },
@@ -6406,7 +6962,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "2257fa9ba5aad2446e45bfbe08c115713b1480e4090b40e946ad10044cde3276"
+            "sourceSha256": "bd5644a7251c1551c05186e1d542cd20109444645e4ab5c01d7ee33e3befa030"
           }
         ]
       },
@@ -6435,7 +6991,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "2257fa9ba5aad2446e45bfbe08c115713b1480e4090b40e946ad10044cde3276"
+            "sourceSha256": "bd5644a7251c1551c05186e1d542cd20109444645e4ab5c01d7ee33e3befa030"
           }
         ]
       },
@@ -6443,6 +6999,16 @@
         {
           "commandPath": [
             "claude"
+          ],
+          "names": [
+            "--verbose"
+          ]
+        },
+        {
+          "commandPath": [
+            "claude",
+            "mcp",
+            "serve"
           ],
           "names": [
             "--verbose"
@@ -6476,7 +7042,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "2257fa9ba5aad2446e45bfbe08c115713b1480e4090b40e946ad10044cde3276"
+            "sourceSha256": "bd5644a7251c1551c05186e1d542cd20109444645e4ab5c01d7ee33e3befa030"
           }
         ]
       },
@@ -6508,7 +7074,7 @@
         "evidence": [
           {
             "source": "cliDocs",
-            "sourceSha256": "2257fa9ba5aad2446e45bfbe08c115713b1480e4090b40e946ad10044cde3276"
+            "sourceSha256": "bd5644a7251c1551c05186e1d542cd20109444645e4ab5c01d7ee33e3befa030"
           }
         ]
       },
@@ -6758,6 +7324,11 @@
       "exposedByHelpProbe": true
     },
     {
+      "name": "--disallow-tools",
+      "documentedTopLevel": false,
+      "exposedByHelpProbe": true
+    },
+    {
       "name": "--disallowed-tools",
       "documentedTopLevel": true,
       "exposedByHelpProbe": true
@@ -6963,6 +7534,11 @@
       "exposedByHelpProbe": true
     },
     {
+      "name": "--no-browser",
+      "documentedTopLevel": false,
+      "exposedByHelpProbe": true
+    },
+    {
       "name": "--no-chrome",
       "documentedTopLevel": true,
       "exposedByHelpProbe": true
@@ -7030,6 +7606,11 @@
     {
       "name": "--print",
       "documentedTopLevel": true,
+      "exposedByHelpProbe": true
+    },
+    {
+      "name": "--profile",
+      "documentedTopLevel": false,
       "exposedByHelpProbe": true
     },
     {
@@ -7223,6 +7804,11 @@
       "exposedByHelpProbe": true
     },
     {
+      "name": "--trust-workspace",
+      "documentedTopLevel": false,
+      "exposedByHelpProbe": true
+    },
+    {
       "name": "--values-stdin",
       "documentedTopLevel": false,
       "exposedByHelpProbe": true
@@ -7338,5 +7924,5 @@
       "exposedByHelpProbe": true
     }
   ],
-  "unclassifiedStaticCandidateCount": 2960
+  "unclassifiedStaticCandidateCount": 3190
 }
