@@ -148,7 +148,9 @@ function sectionLines(text, heading) {
   if (start === -1) return [];
   const result = [];
   for (let index = start + 1; index < lines.length; index += 1) {
-    if (/^[A-Z][A-Za-z ]+:$/.test(lines[index].trim())) break;
+    // Only unindented headings end a section. Wrapped descriptions can
+    // contain labels such as "Example:" that are not new sections.
+    if (/^[A-Z][A-Za-z ]+:$/.test(lines[index])) break;
     result.push(lines[index]);
   }
   return result;
