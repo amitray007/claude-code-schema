@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "artifactKind": "environment-surface-catalog",
-  "claudeCodeVersion": "2.1.310",
+  "claudeCodeVersion": "2.1.311",
   "surface": {
     "product": "Claude Code CLI",
     "interface": "process-environment",
@@ -505,7 +505,7 @@
   ],
   "binaryEvidence": {
     "platformPackage": "@anthropic-ai/claude-code-linux-x64",
-    "binarySha256": "b73676430af12f97316a798b8371f81d640f90a58bdcb8f3ce56a835bb47df56",
+    "binarySha256": "86dc1fcc69498159eaf15f446613e847010f9036bfbbdffd4c49350be8489ada",
     "policy": "Static strings prove token presence only. Binary-only values are candidates, not public API."
   },
   "staticBinaryCandidates": [
@@ -826,6 +826,10 @@
       "documented": false
     },
     {
+      "name": "CLAUDE_CODE_AGENTS_MD_ROWS_EVERY_PROCESS",
+      "documented": false
+    },
+    {
       "name": "CLAUDE_CODE_AGENT_PROGRESS_SUMMARIES",
       "documented": false
     },
@@ -971,10 +975,6 @@
     },
     {
       "name": "CLAUDE_CODE_ARTIFACT_MCP",
-      "documented": false
-    },
-    {
-      "name": "CLAUDE_CODE_ARTIFACT_MCP6",
       "documented": false
     },
     {
@@ -1382,6 +1382,10 @@
       "documented": true
     },
     {
+      "name": "CLAUDE_CODE_CHROME_LATE_MCP_SERVER",
+      "documented": false
+    },
+    {
       "name": "CLAUDE_CODE_CHROME_MCP_ORG_DENIED",
       "documented": false
     },
@@ -1455,6 +1459,10 @@
     },
     {
       "name": "CLAUDE_CODE_COORDINATOR_SKILL_GUIDANCE",
+      "documented": false
+    },
+    {
+      "name": "CLAUDE_CODE_COUNT_GARBAGE_COLLECTIONS",
       "documented": false
     },
     {
@@ -1650,6 +1658,10 @@
       "documented": false
     },
     {
+      "name": "CLAUDE_CODE_DISABLE_EMPTY_CLASSIC_DISPATCH_SKIP",
+      "documented": false
+    },
+    {
       "name": "CLAUDE_CODE_DISABLE_EXPERIMENTAL_BETAS",
       "documented": true
     },
@@ -1704,6 +1716,10 @@
     {
       "name": "CLAUDE_CODE_DISABLE_LEGACY_MODEL_REMAP",
       "documented": true
+    },
+    {
+      "name": "CLAUDE_CODE_DISABLE_LONE_SEC_DEFAULT_SHORTCUT",
+      "documented": false
     },
     {
       "name": "CLAUDE_CODE_DISABLE_MCP_TASK_BACKGROUND",
@@ -1778,6 +1794,10 @@
       "documented": false
     },
     {
+      "name": "CLAUDE_CODE_DISABLE_OTEL_EVENT_SKIP",
+      "documented": false
+    },
+    {
       "name": "CLAUDE_CODE_DISABLE_PERMISSION_PROMPT_NOTIFY_HOOKS",
       "documented": true
     },
@@ -1799,6 +1819,10 @@
     },
     {
       "name": "CLAUDE_CODE_DISABLE_PROACTIVITY",
+      "documented": false
+    },
+    {
+      "name": "CLAUDE_CODE_DISABLE_QUIET_BACKGROUND_WAIT",
       "documented": false
     },
     {
@@ -1866,6 +1890,10 @@
       "documented": false
     },
     {
+      "name": "CLAUDE_CODE_DISABLE_WORKING_SYNC_WATCH",
+      "documented": false
+    },
+    {
       "name": "CLAUDE_CODE_DISPATCH_V2D",
       "documented": false
     },
@@ -1911,6 +1939,10 @@
     },
     {
       "name": "CLAUDE_CODE_EMIT_TOOL_USE_SUMMARIES",
+      "documented": false
+    },
+    {
+      "name": "CLAUDE_CODE_EMIT_USER_PROMPT_SUBMIT_HOOK_EVENTS",
       "documented": false
     },
     {
@@ -2051,6 +2083,10 @@
     },
     {
       "name": "CLAUDE_CODE_EVAL_INTERVIEW_SESSION",
+      "documented": false
+    },
+    {
+      "name": "CLAUDE_CODE_EVEN_MORE_DANGEROUSLY_SKIP_PERMISSIONS",
       "documented": false
     },
     {
@@ -2438,6 +2474,10 @@
       "documented": false
     },
     {
+      "name": "CLAUDE_CODE_INCREMENTAL_REQUEST_BODY",
+      "documented": false
+    },
+    {
       "name": "CLAUDE_CODE_INLINE_TOOLS",
       "documented": false
     },
@@ -2570,6 +2610,10 @@
       "documented": false
     },
     {
+      "name": "CLAUDE_CODE_MCP_HANDED_LISTINGS",
+      "documented": false
+    },
+    {
       "name": "CLAUDE_CODE_MCP_MEMORY_CGROUP",
       "documented": false
     },
@@ -2579,6 +2623,10 @@
     },
     {
       "name": "CLAUDE_CODE_MCP_PREWAIT_SERVERS_MS",
+      "documented": false
+    },
+    {
+      "name": "CLAUDE_CODE_MCP_REGISTRY_FETCH_AT_STARTUP",
       "documented": false
     },
     {
@@ -2811,6 +2859,10 @@
     },
     {
       "name": "CLAUDE_CODE_PEWTER_OWL_TOOL",
+      "documented": false
+    },
+    {
+      "name": "CLAUDE_CODE_PLAIN_DELTA_FAST_PATH",
       "documented": false
     },
     {
@@ -3278,6 +3330,10 @@
       "documented": false
     },
     {
+      "name": "CLAUDE_CODE_SDK_HAS_SESSIONS_OAUTH_REFRESH",
+      "documented": false
+    },
+    {
       "name": "CLAUDE_CODE_SDK_READS_SESSION_STATE",
       "documented": false
     },
@@ -3296,6 +3352,10 @@
     {
       "name": "CLAUDE_CODE_SESSIONEND_HOOKS_TIMEOUT_MS",
       "documented": true
+    },
+    {
+      "name": "CLAUDE_CODE_SESSIONS_OAUTH_TOKEN",
+      "documented": false
     },
     {
       "name": "CLAUDE_CODE_SESSION_",
@@ -3420,6 +3480,10 @@
     {
       "name": "CLAUDE_CODE_SKIP_MANTLE_AUTH",
       "documented": true
+    },
+    {
+      "name": "CLAUDE_CODE_SKIP_MCP_DEBUG_LOG_FILES",
+      "documented": false
     },
     {
       "name": "CLAUDE_CODE_SKIP_MODEL_ACCESS_MEMORY",
@@ -3730,10 +3794,6 @@
       "documented": false
     },
     {
-      "name": "CLAUDE_CODE_TOOL_CONTAINER_PLUGINS_NAMED",
-      "documented": false
-    },
-    {
       "name": "CLAUDE_CODE_TOOL_MEMORY_CGROUP_EXCLUDE",
       "documented": true
     },
@@ -3791,6 +3851,10 @@
     },
     {
       "name": "CLAUDE_CODE_ULTRAREVIEW_QUOTA_FIXTURE",
+      "documented": false
+    },
+    {
+      "name": "CLAUDE_CODE_UNWATCHED_REPLY_HOLD_MS",
       "documented": false
     },
     {
