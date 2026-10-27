@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
   "artifactKind": "cli-surface-catalog",
-  "claudeCodeVersion": "2.1.310",
+  "claudeCodeVersion": "2.1.311",
   "platformPackage": "@anthropic-ai/claude-code-linux-x64",
-  "binarySha256": "b73676430af12f97316a798b8371f81d640f90a58bdcb8f3ce56a835bb47df56",
+  "binarySha256": "86dc1fcc69498159eaf15f446613e847010f9036bfbbdffd4c49350be8489ada",
   "probePolicy": {
     "allowedOperations": [
       "--version",
@@ -19,7 +19,7 @@
     "maximumCommands": 80,
     "rawHelpRedistributed": false
   },
-  "versionOutput": "2.1.310 (Claude Code)",
+  "versionOutput": "2.1.311 (Claude Code)",
   "commands": [
     {
       "commandPath": [
@@ -33,8 +33,8 @@
       "signal": null,
       "timedOut": false,
       "outputExceeded": false,
-      "helpSha256": "fcd42bdc3e8136c07673db6fe6839f4bb5223b4607bc12773fbd1ce37ae37e68",
-      "helpBytes": 22318,
+      "helpSha256": "684cd8c87607463f8b02de09f5b3457b10c20c3271923ce8040ef443aa495bc6",
+      "helpBytes": 22394,
       "usage": "claude [options] [command] [prompt]",
       "arguments": [
         {
@@ -1792,8 +1792,8 @@
       "signal": null,
       "timedOut": false,
       "outputExceeded": false,
-      "helpSha256": "665f9b8ba7a552f443f0bbfab7c8216676e1efd0fda0c523fbe11daa7b140c89",
-      "helpBytes": 468,
+      "helpSha256": "807f890e7960063448392d46ecd12c6447454067e47d668e9fa014df7ca240fe",
+      "helpBytes": 504,
       "usage": "claude purge [options] [path]",
       "arguments": [
         {
@@ -7924,5 +7924,5 @@
       "exposedByHelpProbe": true
     }
   ],
-  "unclassifiedStaticCandidateCount": 3192
+  "unclassifiedStaticCandidateCount": 3199
 }
